@@ -1,0 +1,218 @@
+{
+  "segmentId": "analogy-concepts-5",
+  "hash": "457a14cfa7f4d3a7d50e",
+  "provider": "ssml_timestamps_precomputed",
+  "voice": "en-PH-RosaNeural",
+  "durationMs": 9520,
+  "timestamps": [
+    {
+      "index": 0,
+      "word": "Here",
+      "charStart": 0,
+      "charEnd": 4,
+      "startMs": 80,
+      "endMs": 420,
+      "isKeyTerm": false
+    },
+    {
+      "index": 1,
+      "word": "is",
+      "charStart": 5,
+      "charEnd": 7,
+      "startMs": 465,
+      "endMs": 725,
+      "isKeyTerm": false
+    },
+    {
+      "index": 2,
+      "word": "the",
+      "charStart": 8,
+      "charEnd": 11,
+      "startMs": 770,
+      "endMs": 1070,
+      "isKeyTerm": false
+    },
+    {
+      "index": 3,
+      "word": "secret",
+      "charStart": 12,
+      "charEnd": 18,
+      "startMs": 1115,
+      "endMs": 1535,
+      "isKeyTerm": true
+    },
+    {
+      "index": 4,
+      "word": "weapon:",
+      "charStart": 19,
+      "charEnd": 26,
+      "startMs": 1580,
+      "endMs": 2000,
+      "isKeyTerm": false
+    },
+    {
+      "index": 5,
+      "word": "build",
+      "charStart": 27,
+      "charEnd": 32,
+      "startMs": 2280,
+      "endMs": 2660,
+      "isKeyTerm": false
+    },
+    {
+      "index": 6,
+      "word": "a",
+      "charStart": 33,
+      "charEnd": 34,
+      "startMs": 2705,
+      "endMs": 2925,
+      "isKeyTerm": false
+    },
+    {
+      "index": 7,
+      "word": "short",
+      "charStart": 35,
+      "charEnd": 40,
+      "startMs": 2970,
+      "endMs": 3350,
+      "isKeyTerm": false
+    },
+    {
+      "index": 8,
+      "word": "Bridge",
+      "charStart": 41,
+      "charEnd": 47,
+      "startMs": 3395,
+      "endMs": 3815,
+      "isKeyTerm": true
+    },
+    {
+      "index": 9,
+      "word": "Sentence",
+      "charStart": 48,
+      "charEnd": 56,
+      "startMs": 3860,
+      "endMs": 4360,
+      "isKeyTerm": true
+    },
+    {
+      "index": 10,
+      "word": "for",
+      "charStart": 57,
+      "charEnd": 60,
+      "startMs": 4405,
+      "endMs": 4705,
+      "isKeyTerm": false
+    },
+    {
+      "index": 11,
+      "word": "Pair",
+      "charStart": 61,
+      "charEnd": 65,
+      "startMs": 4750,
+      "endMs": 5090,
+      "isKeyTerm": true
+    },
+    {
+      "index": 12,
+      "word": "1,",
+      "charStart": 66,
+      "charEnd": 68,
+      "startMs": 5135,
+      "endMs": 5355,
+      "isKeyTerm": false
+    },
+    {
+      "index": 13,
+      "word": "then",
+      "charStart": 69,
+      "charEnd": 73,
+      "startMs": 5635,
+      "endMs": 5975,
+      "isKeyTerm": false
+    },
+    {
+      "index": 14,
+      "word": "plug",
+      "charStart": 74,
+      "charEnd": 78,
+      "startMs": 6020,
+      "endMs": 6360,
+      "isKeyTerm": false
+    },
+    {
+      "index": 15,
+      "word": "Pair",
+      "charStart": 79,
+      "charEnd": 83,
+      "startMs": 6405,
+      "endMs": 6745,
+      "isKeyTerm": true
+    },
+    {
+      "index": 16,
+      "word": "2",
+      "charStart": 84,
+      "charEnd": 85,
+      "startMs": 6790,
+      "endMs": 7010,
+      "isKeyTerm": false
+    },
+    {
+      "index": 17,
+      "word": "into",
+      "charStart": 86,
+      "charEnd": 90,
+      "startMs": 7055,
+      "endMs": 7395,
+      "isKeyTerm": false
+    },
+    {
+      "index": 18,
+      "word": "the",
+      "charStart": 91,
+      "charEnd": 94,
+      "startMs": 7440,
+      "endMs": 7740,
+      "isKeyTerm": false
+    },
+    {
+      "index": 19,
+      "word": "exact",
+      "charStart": 95,
+      "charEnd": 100,
+      "startMs": 7785,
+      "endMs": 8165,
+      "isKeyTerm": false
+    },
+    {
+      "index": 20,
+      "word": "same",
+      "charStart": 101,
+      "charEnd": 105,
+      "startMs": 8210,
+      "endMs": 8550,
+      "isKeyTerm": false
+    },
+    {
+      "index": 21,
+      "word": "sentence",
+      "charStart": 106,
+      "charEnd": 114,
+      "startMs": 8595,
+      "endMs": 9095,
+      "isKeyTerm": true
+    },
+    {
+      "index": 22,
+      "word": "frame!",
+      "charStart": 115,
+      "charEnd": 121,
+      "startMs": 9140,
+      "endMs": 9520,
+      "isKeyTerm": false
+    }
+  ],
+  "ssml": "<speak version=\"1.0\" xmlns=\"http://www.w3.org/2001/10/synthesis\" xmlns:mstts=\"https://www.w3.org/2001/mstts\" xml:lang=\"en-PH\">\n  <voice name=\"en-PH-RosaNeural\">\n    <mstts:express-as style=\"cheerful\">\n      <prosody rate=\"102%\" pitch=\"+4%\">\n        Here&apos;s the <emphasis level=\"moderate\">secret</emphasis> trick that makes every quiz easy. <break time=\"550ms\"/> Build a short <emphasis level=\"moderate\">bridge sentence</emphasis> for the <emphasis level=\"moderate\">first pair</emphasis>. <break time=\"550ms\"/> Then, <break time=\"300ms\"/> plug the <emphasis level=\"moderate\">second pair</emphasis> into that exact same sentence! <break time=\"550ms\"/> Ready? <break time=\"650ms\"/> Let&apos;s test it on the five rules below.\n      </prosody>\n    </mstts:express-as>\n  </voice>\n</speak>",
+  "createdAt": "2026-11-02T15:06:59.803Z"
+}

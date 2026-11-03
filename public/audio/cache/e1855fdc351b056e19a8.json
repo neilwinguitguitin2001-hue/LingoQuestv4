@@ -1,0 +1,290 @@
+{
+  "segmentId": "analogy-cheatsheet-1",
+  "hash": "e1855fdc351b056e19a8",
+  "provider": "ssml_timestamps_precomputed",
+  "voice": "en-PH-RosaNeural",
+  "durationMs": 10795,
+  "timestamps": [
+    {
+      "index": 0,
+      "word": "Quick",
+      "charStart": 0,
+      "charEnd": 5,
+      "startMs": 80,
+      "endMs": 460,
+      "isKeyTerm": false
+    },
+    {
+      "index": 1,
+      "word": "Memory",
+      "charStart": 6,
+      "charEnd": 12,
+      "startMs": 505,
+      "endMs": 925,
+      "isKeyTerm": false
+    },
+    {
+      "index": 2,
+      "word": "Recap:",
+      "charStart": 13,
+      "charEnd": 19,
+      "startMs": 970,
+      "endMs": 1350,
+      "isKeyTerm": false
+    },
+    {
+      "index": 3,
+      "word": "(:)",
+      "charStart": 20,
+      "charEnd": 23,
+      "startMs": 1630,
+      "endMs": 1820,
+      "isKeyTerm": false
+    },
+    {
+      "index": 4,
+      "word": "=",
+      "charStart": 24,
+      "charEnd": 25,
+      "startMs": 1865,
+      "endMs": 2055,
+      "isKeyTerm": false
+    },
+    {
+      "index": 5,
+      "word": "\"is",
+      "charStart": 26,
+      "charEnd": 29,
+      "startMs": 2100,
+      "endMs": 2360,
+      "isKeyTerm": false
+    },
+    {
+      "index": 6,
+      "word": "to\"",
+      "charStart": 30,
+      "charEnd": 33,
+      "startMs": 2405,
+      "endMs": 2665,
+      "isKeyTerm": false
+    },
+    {
+      "index": 7,
+      "word": "|",
+      "charStart": 34,
+      "charEnd": 35,
+      "startMs": 2710,
+      "endMs": 2900,
+      "isKeyTerm": false
+    },
+    {
+      "index": 8,
+      "word": "(::)",
+      "charStart": 36,
+      "charEnd": 40,
+      "startMs": 2945,
+      "endMs": 3135,
+      "isKeyTerm": false
+    },
+    {
+      "index": 9,
+      "word": "=",
+      "charStart": 41,
+      "charEnd": 42,
+      "startMs": 3180,
+      "endMs": 3370,
+      "isKeyTerm": false
+    },
+    {
+      "index": 10,
+      "word": "\"as\"",
+      "charStart": 43,
+      "charEnd": 47,
+      "startMs": 3415,
+      "endMs": 3675,
+      "isKeyTerm": false
+    },
+    {
+      "index": 11,
+      "word": "|",
+      "charStart": 48,
+      "charEnd": 49,
+      "startMs": 3720,
+      "endMs": 3910,
+      "isKeyTerm": false
+    },
+    {
+      "index": 12,
+      "word": "S-ynonym",
+      "charStart": 50,
+      "charEnd": 58,
+      "startMs": 3955,
+      "endMs": 4415,
+      "isKeyTerm": true
+    },
+    {
+      "index": 13,
+      "word": "=",
+      "charStart": 59,
+      "charEnd": 60,
+      "startMs": 4460,
+      "endMs": 4650,
+      "isKeyTerm": false
+    },
+    {
+      "index": 14,
+      "word": "S-ame",
+      "charStart": 61,
+      "charEnd": 66,
+      "startMs": 4695,
+      "endMs": 5035,
+      "isKeyTerm": true
+    },
+    {
+      "index": 15,
+      "word": "|",
+      "charStart": 67,
+      "charEnd": 68,
+      "startMs": 5080,
+      "endMs": 5270,
+      "isKeyTerm": false
+    },
+    {
+      "index": 16,
+      "word": "A-ntonym",
+      "charStart": 69,
+      "charEnd": 77,
+      "startMs": 5315,
+      "endMs": 5775,
+      "isKeyTerm": true
+    },
+    {
+      "index": 17,
+      "word": "=",
+      "charStart": 78,
+      "charEnd": 79,
+      "startMs": 5820,
+      "endMs": 6010,
+      "isKeyTerm": false
+    },
+    {
+      "index": 18,
+      "word": "A-gainst/Opposite",
+      "charStart": 80,
+      "charEnd": 97,
+      "startMs": 6055,
+      "endMs": 6675,
+      "isKeyTerm": false
+    },
+    {
+      "index": 19,
+      "word": "|",
+      "charStart": 98,
+      "charEnd": 99,
+      "startMs": 6720,
+      "endMs": 6910,
+      "isKeyTerm": false
+    },
+    {
+      "index": 20,
+      "word": "Cause",
+      "charStart": 100,
+      "charEnd": 105,
+      "startMs": 6955,
+      "endMs": 7335,
+      "isKeyTerm": false
+    },
+    {
+      "index": 21,
+      "word": "→",
+      "charStart": 106,
+      "charEnd": 107,
+      "startMs": 7380,
+      "endMs": 7570,
+      "isKeyTerm": false
+    },
+    {
+      "index": 22,
+      "word": "Effect",
+      "charStart": 108,
+      "charEnd": 114,
+      "startMs": 7615,
+      "endMs": 8035,
+      "isKeyTerm": false
+    },
+    {
+      "index": 23,
+      "word": "|",
+      "charStart": 115,
+      "charEnd": 116,
+      "startMs": 8080,
+      "endMs": 8270,
+      "isKeyTerm": false
+    },
+    {
+      "index": 24,
+      "word": "Part",
+      "charStart": 117,
+      "charEnd": 121,
+      "startMs": 8315,
+      "endMs": 8655,
+      "isKeyTerm": false
+    },
+    {
+      "index": 25,
+      "word": "→",
+      "charStart": 122,
+      "charEnd": 123,
+      "startMs": 8700,
+      "endMs": 8890,
+      "isKeyTerm": false
+    },
+    {
+      "index": 26,
+      "word": "Whole",
+      "charStart": 124,
+      "charEnd": 129,
+      "startMs": 8935,
+      "endMs": 9315,
+      "isKeyTerm": false
+    },
+    {
+      "index": 27,
+      "word": "|",
+      "charStart": 130,
+      "charEnd": 131,
+      "startMs": 9360,
+      "endMs": 9550,
+      "isKeyTerm": false
+    },
+    {
+      "index": 28,
+      "word": "Object",
+      "charStart": 132,
+      "charEnd": 138,
+      "startMs": 9595,
+      "endMs": 10015,
+      "isKeyTerm": false
+    },
+    {
+      "index": 29,
+      "word": "→",
+      "charStart": 139,
+      "charEnd": 140,
+      "startMs": 10060,
+      "endMs": 10250,
+      "isKeyTerm": false
+    },
+    {
+      "index": 30,
+      "word": "Location.",
+      "charStart": 141,
+      "charEnd": 150,
+      "startMs": 10295,
+      "endMs": 10795,
+      "isKeyTerm": false
+    }
+  ],
+  "ssml": "<speak version=\"1.0\" xmlns=\"http://www.w3.org/2001/10/synthesis\" xmlns:mstts=\"https://www.w3.org/2001/mstts\" xml:lang=\"en-PH\">\n  <voice name=\"en-PH-RosaNeural\">\n    <mstts:express-as style=\"cheerful\">\n      <prosody rate=\"102%\" pitch=\"+4%\">\n        Here is your final thirty-second cheatsheet before the quiz! <break time=\"550ms\"/> Single colon means <emphasis level=\"moderate\">is to</emphasis>. <break time=\"550ms\"/> Double colon means as. <break time=\"550ms\"/> Remember the first letters: S in <phoneme alphabet=\"ipa\" ph=\"ˈsɪnənɪm\"><emphasis level=\"moderate\">Synonym</emphasis></phoneme> stands for <emphasis level=\"moderate\">Same</emphasis>! <break time=\"550ms\"/> A in <phoneme alphabet=\"ipa\" ph=\"ˈæntənɪm\"><emphasis level=\"moderate\">Antonym</emphasis></phoneme> stands for Against, <break time=\"300ms\"/> or <emphasis level=\"moderate\">opposite</emphasis>! <break time=\"550ms\"/> Check whether one word causes the other, <break time=\"300ms\"/> or is a part of the other. <break time=\"550ms\"/> Now go restore that island bridge!\n      </prosody>\n    </mstts:express-as>\n  </voice>\n</speak>",
+  "createdAt": "2026-11-02T15:06:59.810Z"
+}

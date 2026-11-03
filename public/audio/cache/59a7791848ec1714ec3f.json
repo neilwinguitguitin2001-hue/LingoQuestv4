@@ -1,0 +1,236 @@
+{
+  "segmentId": "analogy-concepts-4",
+  "hash": "59a7791848ec1714ec3f",
+  "provider": "ssml_timestamps_precomputed",
+  "voice": "en-PH-RosaNeural",
+  "durationMs": 10545,
+  "timestamps": [
+    {
+      "index": 0,
+      "word": "Part",
+      "charStart": 0,
+      "charEnd": 4,
+      "startMs": 80,
+      "endMs": 420,
+      "isKeyTerm": true
+    },
+    {
+      "index": 1,
+      "word": "to",
+      "charStart": 5,
+      "charEnd": 7,
+      "startMs": 465,
+      "endMs": 725,
+      "isKeyTerm": false
+    },
+    {
+      "index": 2,
+      "word": "Whole",
+      "charStart": 8,
+      "charEnd": 13,
+      "startMs": 770,
+      "endMs": 1150,
+      "isKeyTerm": true
+    },
+    {
+      "index": 3,
+      "word": "links",
+      "charStart": 14,
+      "charEnd": 19,
+      "startMs": 1195,
+      "endMs": 1575,
+      "isKeyTerm": false
+    },
+    {
+      "index": 4,
+      "word": "a",
+      "charStart": 20,
+      "charEnd": 21,
+      "startMs": 1620,
+      "endMs": 1840,
+      "isKeyTerm": false
+    },
+    {
+      "index": 5,
+      "word": "piece",
+      "charStart": 22,
+      "charEnd": 27,
+      "startMs": 1885,
+      "endMs": 2265,
+      "isKeyTerm": false
+    },
+    {
+      "index": 6,
+      "word": "to",
+      "charStart": 28,
+      "charEnd": 30,
+      "startMs": 2310,
+      "endMs": 2570,
+      "isKeyTerm": false
+    },
+    {
+      "index": 7,
+      "word": "its",
+      "charStart": 31,
+      "charEnd": 34,
+      "startMs": 2615,
+      "endMs": 2915,
+      "isKeyTerm": false
+    },
+    {
+      "index": 8,
+      "word": "whole",
+      "charStart": 35,
+      "charEnd": 40,
+      "startMs": 2960,
+      "endMs": 3340,
+      "isKeyTerm": true
+    },
+    {
+      "index": 9,
+      "word": "object",
+      "charStart": 41,
+      "charEnd": 47,
+      "startMs": 3385,
+      "endMs": 3805,
+      "isKeyTerm": false
+    },
+    {
+      "index": 10,
+      "word": "(Plank",
+      "charStart": 48,
+      "charEnd": 54,
+      "startMs": 3850,
+      "endMs": 4230,
+      "isKeyTerm": true
+    },
+    {
+      "index": 11,
+      "word": ":",
+      "charStart": 55,
+      "charEnd": 56,
+      "startMs": 4275,
+      "endMs": 4465,
+      "isKeyTerm": false
+    },
+    {
+      "index": 12,
+      "word": "Bridge),",
+      "charStart": 57,
+      "charEnd": 65,
+      "startMs": 4745,
+      "endMs": 5165,
+      "isKeyTerm": false
+    },
+    {
+      "index": 13,
+      "word": "while",
+      "charStart": 66,
+      "charEnd": 71,
+      "startMs": 5445,
+      "endMs": 5825,
+      "isKeyTerm": false
+    },
+    {
+      "index": 14,
+      "word": "Location",
+      "charStart": 72,
+      "charEnd": 80,
+      "startMs": 5870,
+      "endMs": 6370,
+      "isKeyTerm": true
+    },
+    {
+      "index": 15,
+      "word": "links",
+      "charStart": 81,
+      "charEnd": 86,
+      "startMs": 6415,
+      "endMs": 6795,
+      "isKeyTerm": false
+    },
+    {
+      "index": 16,
+      "word": "a",
+      "charStart": 87,
+      "charEnd": 88,
+      "startMs": 6840,
+      "endMs": 7060,
+      "isKeyTerm": false
+    },
+    {
+      "index": 17,
+      "word": "subject",
+      "charStart": 89,
+      "charEnd": 96,
+      "startMs": 7105,
+      "endMs": 7565,
+      "isKeyTerm": false
+    },
+    {
+      "index": 18,
+      "word": "to",
+      "charStart": 97,
+      "charEnd": 99,
+      "startMs": 7610,
+      "endMs": 7870,
+      "isKeyTerm": false
+    },
+    {
+      "index": 19,
+      "word": "its",
+      "charStart": 100,
+      "charEnd": 103,
+      "startMs": 7915,
+      "endMs": 8215,
+      "isKeyTerm": false
+    },
+    {
+      "index": 20,
+      "word": "home",
+      "charStart": 104,
+      "charEnd": 108,
+      "startMs": 8260,
+      "endMs": 8600,
+      "isKeyTerm": false
+    },
+    {
+      "index": 21,
+      "word": "(Eagle",
+      "charStart": 109,
+      "charEnd": 115,
+      "startMs": 8645,
+      "endMs": 9025,
+      "isKeyTerm": true
+    },
+    {
+      "index": 22,
+      "word": ":",
+      "charStart": 116,
+      "charEnd": 117,
+      "startMs": 9070,
+      "endMs": 9260,
+      "isKeyTerm": false
+    },
+    {
+      "index": 23,
+      "word": "Mount",
+      "charStart": 118,
+      "charEnd": 123,
+      "startMs": 9540,
+      "endMs": 9920,
+      "isKeyTerm": false
+    },
+    {
+      "index": 24,
+      "word": "Hamiguitan).",
+      "charStart": 124,
+      "charEnd": 136,
+      "startMs": 9965,
+      "endMs": 10545,
+      "isKeyTerm": true
+    }
+  ],
+  "ssml": "<speak version=\"1.0\" xmlns=\"http://www.w3.org/2001/10/synthesis\" xmlns:mstts=\"https://www.w3.org/2001/mstts\" xml:lang=\"en-PH\">\n  <voice name=\"en-PH-RosaNeural\">\n    <mstts:express-as style=\"friendly\">\n      <prosody rate=\"93%\" pitch=\"+1%\">\n        Next up, <break time=\"300ms\"/> let&apos;s check <emphasis level=\"moderate\">Part to Whole</emphasis> and <emphasis level=\"moderate\">Location</emphasis>. <break time=\"550ms\"/> One wooden <emphasis level=\"moderate\">plank</emphasis> is part of a whole island bridge. <break time=\"550ms\"/> And where does the Philippine <emphasis level=\"moderate\">Eagle</emphasis> live? <break time=\"650ms\"/> <break time=\"800ms\"/> High up on Mount <phoneme alphabet=\"ipa\" ph=\"hɑːmiˈɡiːtɑːn\"><emphasis level=\"moderate\">Hamiguitan</emphasis></phoneme>! <break time=\"550ms\"/> That&apos;s a <emphasis level=\"moderate\">Location</emphasis> <phoneme alphabet=\"ipa\" ph=\"əˈnælədʒi\">analogy</phoneme>.\n      </prosody>\n    </mstts:express-as>\n  </voice>\n</speak>",
+  "createdAt": "2026-11-02T15:06:59.803Z"
+}

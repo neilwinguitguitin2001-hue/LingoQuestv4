@@ -1,0 +1,14 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Official LingoQuest App Icon squircle background matching App icon@1x.png -->
+  <rect width="512" height="512" rx="118" fill="#0F4299"/>
+
+  <!-- Outer Q ring with integrated speech bubble pointer (symmetric 45-degree pointer & hollow center) -->
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M 372.5 298.4 L 388 388 L 298.4 372.5 A 124 124 0 1 1 372.5 298.4 Z M 256 174 A 82 82 0 1 0 256 338 A 82 82 0 1 0 256 174 Z" fill="#FFFFFF"/>
+
+  <!-- Central 4-point sparkle star in brand sky blue -->
+  <path d="M 256 194 Q 263 249 318 256 Q 263 263 256 318 Q 249 263 194 256 Q 249 249 256 194 Z" fill="#5AA8F8"/>
+
+  <!-- Two sparkle dots in pure white -->
+  <circle cx="298" cy="202" r="9.5" fill="#FFFFFF"/>
+  <circle cx="202" cy="300" r="6.8" fill="#FFFFFF"/>
+</svg>

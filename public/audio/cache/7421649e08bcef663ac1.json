@@ -1,0 +1,245 @@
+{
+  "segmentId": "analogy-concepts-2",
+  "hash": "7421649e08bcef663ac1",
+  "provider": "ssml_timestamps_precomputed",
+  "voice": "en-PH-RosaNeural",
+  "durationMs": 12080,
+  "timestamps": [
+    {
+      "index": 0,
+      "word": "First,",
+      "charStart": 0,
+      "charEnd": 6,
+      "startMs": 80,
+      "endMs": 460,
+      "isKeyTerm": false
+    },
+    {
+      "index": 1,
+      "word": "check",
+      "charStart": 7,
+      "charEnd": 12,
+      "startMs": 740,
+      "endMs": 1120,
+      "isKeyTerm": false
+    },
+    {
+      "index": 2,
+      "word": "if",
+      "charStart": 13,
+      "charEnd": 15,
+      "startMs": 1165,
+      "endMs": 1425,
+      "isKeyTerm": false
+    },
+    {
+      "index": 3,
+      "word": "the",
+      "charStart": 16,
+      "charEnd": 19,
+      "startMs": 1470,
+      "endMs": 1770,
+      "isKeyTerm": false
+    },
+    {
+      "index": 4,
+      "word": "words",
+      "charStart": 20,
+      "charEnd": 25,
+      "startMs": 1815,
+      "endMs": 2195,
+      "isKeyTerm": false
+    },
+    {
+      "index": 5,
+      "word": "are",
+      "charStart": 26,
+      "charEnd": 29,
+      "startMs": 2240,
+      "endMs": 2540,
+      "isKeyTerm": false
+    },
+    {
+      "index": 6,
+      "word": "opposites",
+      "charStart": 30,
+      "charEnd": 39,
+      "startMs": 2585,
+      "endMs": 3125,
+      "isKeyTerm": true
+    },
+    {
+      "index": 7,
+      "word": "or",
+      "charStart": 40,
+      "charEnd": 42,
+      "startMs": 3170,
+      "endMs": 3430,
+      "isKeyTerm": false
+    },
+    {
+      "index": 8,
+      "word": "twins!",
+      "charStart": 43,
+      "charEnd": 49,
+      "startMs": 3475,
+      "endMs": 3855,
+      "isKeyTerm": true
+    },
+    {
+      "index": 9,
+      "word": "Antonyms",
+      "charStart": 50,
+      "charEnd": 58,
+      "startMs": 4335,
+      "endMs": 4835,
+      "isKeyTerm": true
+    },
+    {
+      "index": 10,
+      "word": "flip",
+      "charStart": 59,
+      "charEnd": 63,
+      "startMs": 4880,
+      "endMs": 5220,
+      "isKeyTerm": false
+    },
+    {
+      "index": 11,
+      "word": "to",
+      "charStart": 64,
+      "charEnd": 66,
+      "startMs": 5265,
+      "endMs": 5525,
+      "isKeyTerm": false
+    },
+    {
+      "index": 12,
+      "word": "opposite",
+      "charStart": 67,
+      "charEnd": 75,
+      "startMs": 5570,
+      "endMs": 6070,
+      "isKeyTerm": true
+    },
+    {
+      "index": 13,
+      "word": "meanings",
+      "charStart": 76,
+      "charEnd": 84,
+      "startMs": 6115,
+      "endMs": 6615,
+      "isKeyTerm": false
+    },
+    {
+      "index": 14,
+      "word": "(Night",
+      "charStart": 85,
+      "charEnd": 91,
+      "startMs": 6660,
+      "endMs": 7040,
+      "isKeyTerm": false
+    },
+    {
+      "index": 15,
+      "word": ":",
+      "charStart": 92,
+      "charEnd": 93,
+      "startMs": 7085,
+      "endMs": 7275,
+      "isKeyTerm": false
+    },
+    {
+      "index": 16,
+      "word": "Day),",
+      "charStart": 94,
+      "charEnd": 99,
+      "startMs": 7555,
+      "endMs": 7855,
+      "isKeyTerm": false
+    },
+    {
+      "index": 17,
+      "word": "while",
+      "charStart": 100,
+      "charEnd": 105,
+      "startMs": 8135,
+      "endMs": 8515,
+      "isKeyTerm": false
+    },
+    {
+      "index": 18,
+      "word": "Synonyms",
+      "charStart": 106,
+      "charEnd": 114,
+      "startMs": 8560,
+      "endMs": 9060,
+      "isKeyTerm": true
+    },
+    {
+      "index": 19,
+      "word": "share",
+      "charStart": 115,
+      "charEnd": 120,
+      "startMs": 9105,
+      "endMs": 9485,
+      "isKeyTerm": false
+    },
+    {
+      "index": 20,
+      "word": "the",
+      "charStart": 121,
+      "charEnd": 124,
+      "startMs": 9530,
+      "endMs": 9830,
+      "isKeyTerm": false
+    },
+    {
+      "index": 21,
+      "word": "same",
+      "charStart": 125,
+      "charEnd": 129,
+      "startMs": 9875,
+      "endMs": 10215,
+      "isKeyTerm": false
+    },
+    {
+      "index": 22,
+      "word": "meaning",
+      "charStart": 130,
+      "charEnd": 137,
+      "startMs": 10260,
+      "endMs": 10720,
+      "isKeyTerm": false
+    },
+    {
+      "index": 23,
+      "word": "(Happy",
+      "charStart": 138,
+      "charEnd": 144,
+      "startMs": 10765,
+      "endMs": 11145,
+      "isKeyTerm": false
+    },
+    {
+      "index": 24,
+      "word": ":",
+      "charStart": 145,
+      "charEnd": 146,
+      "startMs": 11190,
+      "endMs": 11380,
+      "isKeyTerm": false
+    },
+    {
+      "index": 25,
+      "word": "Joyful).",
+      "charStart": 147,
+      "charEnd": 155,
+      "startMs": 11660,
+      "endMs": 12080,
+      "isKeyTerm": false
+    }
+  ],
+  "ssml": "<speak version=\"1.0\" xmlns=\"http://www.w3.org/2001/10/synthesis\" xmlns:mstts=\"https://www.w3.org/2001/mstts\" xml:lang=\"en-PH\">\n  <voice name=\"en-PH-RosaNeural\">\n    <mstts:express-as style=\"friendly\">\n      <prosody rate=\"93%\" pitch=\"+1%\">\n        First, <break time=\"300ms\"/> ask yourself a quick question. <break time=\"550ms\"/> Are the two words <emphasis level=\"moderate\">opposites</emphasis>, <break time=\"300ms\"/> or are they <emphasis level=\"moderate\">twins</emphasis>? <break time=\"650ms\"/> <emphasis level=\"moderate\">Antonyms</emphasis> have opposite meanings, <break time=\"300ms\"/> like night is to day. <break time=\"550ms\"/> <emphasis level=\"moderate\">Synonyms</emphasis> mean the exact same thing, <break time=\"300ms\"/> like happy is to joyful!\n      </prosody>\n    </mstts:express-as>\n  </voice>\n</speak>",
+  "createdAt": "2026-11-02T15:06:59.801Z"
+}

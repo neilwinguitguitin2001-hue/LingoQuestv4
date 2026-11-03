@@ -1,0 +1,200 @@
+{
+  "segmentId": "analogy-examples-1",
+  "hash": "c674aa06f1d0e29ca9a9",
+  "provider": "ssml_timestamps_precomputed",
+  "voice": "en-PH-RosaNeural",
+  "durationMs": 9690,
+  "timestamps": [
+    {
+      "index": 0,
+      "word": "Step",
+      "charStart": 0,
+      "charEnd": 4,
+      "startMs": 80,
+      "endMs": 420,
+      "isKeyTerm": false
+    },
+    {
+      "index": 1,
+      "word": "1:",
+      "charStart": 5,
+      "charEnd": 7,
+      "startMs": 465,
+      "endMs": 685,
+      "isKeyTerm": false
+    },
+    {
+      "index": 2,
+      "word": "Look",
+      "charStart": 8,
+      "charEnd": 12,
+      "startMs": 965,
+      "endMs": 1305,
+      "isKeyTerm": false
+    },
+    {
+      "index": 3,
+      "word": "at",
+      "charStart": 13,
+      "charEnd": 15,
+      "startMs": 1350,
+      "endMs": 1610,
+      "isKeyTerm": false
+    },
+    {
+      "index": 4,
+      "word": "the",
+      "charStart": 16,
+      "charEnd": 19,
+      "startMs": 1655,
+      "endMs": 1955,
+      "isKeyTerm": false
+    },
+    {
+      "index": 5,
+      "word": "first",
+      "charStart": 20,
+      "charEnd": 25,
+      "startMs": 2000,
+      "endMs": 2380,
+      "isKeyTerm": false
+    },
+    {
+      "index": 6,
+      "word": "complete",
+      "charStart": 26,
+      "charEnd": 34,
+      "startMs": 2425,
+      "endMs": 2925,
+      "isKeyTerm": false
+    },
+    {
+      "index": 7,
+      "word": "pair:",
+      "charStart": 35,
+      "charEnd": 40,
+      "startMs": 2970,
+      "endMs": 3310,
+      "isKeyTerm": false
+    },
+    {
+      "index": 8,
+      "word": "\"tranquil",
+      "charStart": 41,
+      "charEnd": 50,
+      "startMs": 3590,
+      "endMs": 4090,
+      "isKeyTerm": true
+    },
+    {
+      "index": 9,
+      "word": ":",
+      "charStart": 51,
+      "charEnd": 52,
+      "startMs": 4135,
+      "endMs": 4325,
+      "isKeyTerm": false
+    },
+    {
+      "index": 10,
+      "word": "calm",
+      "charStart": 53,
+      "charEnd": 57,
+      "startMs": 4605,
+      "endMs": 4945,
+      "isKeyTerm": true
+    },
+    {
+      "index": 11,
+      "word": "::",
+      "charStart": 58,
+      "charEnd": 60,
+      "startMs": 4990,
+      "endMs": 5180,
+      "isKeyTerm": false
+    },
+    {
+      "index": 12,
+      "word": "pristine",
+      "charStart": 61,
+      "charEnd": 69,
+      "startMs": 5460,
+      "endMs": 5960,
+      "isKeyTerm": true
+    },
+    {
+      "index": 13,
+      "word": ":",
+      "charStart": 70,
+      "charEnd": 71,
+      "startMs": 6005,
+      "endMs": 6195,
+      "isKeyTerm": false
+    },
+    {
+      "index": 14,
+      "word": "________\".",
+      "charStart": 72,
+      "charEnd": 82,
+      "startMs": 6475,
+      "endMs": 6665,
+      "isKeyTerm": false
+    },
+    {
+      "index": 15,
+      "word": "Both",
+      "charStart": 83,
+      "charEnd": 87,
+      "startMs": 7145,
+      "endMs": 7485,
+      "isKeyTerm": false
+    },
+    {
+      "index": 16,
+      "word": "\"tranquil\"",
+      "charStart": 88,
+      "charEnd": 98,
+      "startMs": 7530,
+      "endMs": 8030,
+      "isKeyTerm": true
+    },
+    {
+      "index": 17,
+      "word": "and",
+      "charStart": 99,
+      "charEnd": 102,
+      "startMs": 8075,
+      "endMs": 8375,
+      "isKeyTerm": false
+    },
+    {
+      "index": 18,
+      "word": "\"calm\"",
+      "charStart": 103,
+      "charEnd": 109,
+      "startMs": 8420,
+      "endMs": 8760,
+      "isKeyTerm": true
+    },
+    {
+      "index": 19,
+      "word": "mean",
+      "charStart": 110,
+      "charEnd": 114,
+      "startMs": 8805,
+      "endMs": 9145,
+      "isKeyTerm": false
+    },
+    {
+      "index": 20,
+      "word": "peaceful.",
+      "charStart": 115,
+      "charEnd": 124,
+      "startMs": 9190,
+      "endMs": 9690,
+      "isKeyTerm": true
+    }
+  ],
+  "ssml": "<speak version=\"1.0\" xmlns=\"http://www.w3.org/2001/10/synthesis\" xmlns:mstts=\"https://www.w3.org/2001/mstts\" xml:lang=\"en-PH\">\n  <voice name=\"en-PH-RosaNeural\">\n    <mstts:express-as style=\"friendly\">\n      <prosody rate=\"98%\" pitch=\"+2%\">\n        Okay, <break time=\"300ms\"/> let&apos;s solve this puzzle step by step. <break time=\"550ms\"/> Look at the first pair: <phoneme alphabet=\"ipa\" ph=\"ˈtræŋkwɪl\"><emphasis level=\"moderate\">tranquil</emphasis></phoneme> is to <emphasis level=\"moderate\">calm</emphasis>, <break time=\"300ms\"/> as <emphasis level=\"moderate\">pristine</emphasis> is to blank. <break time=\"550ms\"/> Don&apos;t look at the choices yet! <break time=\"550ms\"/> First, <break time=\"300ms\"/> what do <phoneme alphabet=\"ipa\" ph=\"ˈtræŋkwɪl\"><emphasis level=\"moderate\">tranquil</emphasis></phoneme> and <emphasis level=\"moderate\">calm</emphasis> mean? <break time=\"650ms\"/> <break time=\"800ms\"/> Both describe water that&apos;s <emphasis level=\"moderate\">peaceful</emphasis> and still, <break time=\"300ms\"/> like <phoneme alphabet=\"ipa\" ph=\"puːˈhɑːdɑː\">Pujada</phoneme> Bay at sunrise.\n      </prosody>\n    </mstts:express-as>\n  </voice>\n</speak>",
+  "createdAt": "2026-11-02T15:06:59.805Z"
+}

@@ -1,0 +1,191 @@
+{
+  "segmentId": "analogy-concepts-3",
+  "hash": "237cdb35fdf42ff35bc9",
+  "provider": "ssml_timestamps_precomputed",
+  "voice": "en-PH-RosaNeural",
+  "durationMs": 8660,
+  "timestamps": [
+    {
+      "index": 0,
+      "word": "When",
+      "charStart": 0,
+      "charEnd": 4,
+      "startMs": 80,
+      "endMs": 420,
+      "isKeyTerm": false
+    },
+    {
+      "index": 1,
+      "word": "Word",
+      "charStart": 5,
+      "charEnd": 9,
+      "startMs": 465,
+      "endMs": 805,
+      "isKeyTerm": false
+    },
+    {
+      "index": 2,
+      "word": "A",
+      "charStart": 10,
+      "charEnd": 11,
+      "startMs": 850,
+      "endMs": 1070,
+      "isKeyTerm": false
+    },
+    {
+      "index": 3,
+      "word": "triggers",
+      "charStart": 12,
+      "charEnd": 20,
+      "startMs": 1115,
+      "endMs": 1615,
+      "isKeyTerm": false
+    },
+    {
+      "index": 4,
+      "word": "Word",
+      "charStart": 21,
+      "charEnd": 25,
+      "startMs": 1660,
+      "endMs": 2000,
+      "isKeyTerm": false
+    },
+    {
+      "index": 5,
+      "word": "B,",
+      "charStart": 26,
+      "charEnd": 28,
+      "startMs": 2045,
+      "endMs": 2265,
+      "isKeyTerm": false
+    },
+    {
+      "index": 6,
+      "word": "you",
+      "charStart": 29,
+      "charEnd": 32,
+      "startMs": 2545,
+      "endMs": 2845,
+      "isKeyTerm": false
+    },
+    {
+      "index": 7,
+      "word": "have",
+      "charStart": 33,
+      "charEnd": 37,
+      "startMs": 2890,
+      "endMs": 3230,
+      "isKeyTerm": false
+    },
+    {
+      "index": 8,
+      "word": "a",
+      "charStart": 38,
+      "charEnd": 39,
+      "startMs": 3275,
+      "endMs": 3495,
+      "isKeyTerm": false
+    },
+    {
+      "index": 9,
+      "word": "Cause",
+      "charStart": 40,
+      "charEnd": 45,
+      "startMs": 3540,
+      "endMs": 3920,
+      "isKeyTerm": true
+    },
+    {
+      "index": 10,
+      "word": "and",
+      "charStart": 46,
+      "charEnd": 49,
+      "startMs": 3965,
+      "endMs": 4265,
+      "isKeyTerm": false
+    },
+    {
+      "index": 11,
+      "word": "Effect",
+      "charStart": 50,
+      "charEnd": 56,
+      "startMs": 4310,
+      "endMs": 4730,
+      "isKeyTerm": true
+    },
+    {
+      "index": 12,
+      "word": "relationship:",
+      "charStart": 57,
+      "charEnd": 70,
+      "startMs": 4775,
+      "endMs": 5395,
+      "isKeyTerm": false
+    },
+    {
+      "index": 13,
+      "word": "Cold",
+      "charStart": 71,
+      "charEnd": 75,
+      "startMs": 5675,
+      "endMs": 6015,
+      "isKeyTerm": false
+    },
+    {
+      "index": 14,
+      "word": ":",
+      "charStart": 76,
+      "charEnd": 77,
+      "startMs": 6060,
+      "endMs": 6250,
+      "isKeyTerm": false
+    },
+    {
+      "index": 15,
+      "word": "Shiver",
+      "charStart": 78,
+      "charEnd": 84,
+      "startMs": 6530,
+      "endMs": 6950,
+      "isKeyTerm": true
+    },
+    {
+      "index": 16,
+      "word": "::",
+      "charStart": 85,
+      "charEnd": 87,
+      "startMs": 6995,
+      "endMs": 7185,
+      "isKeyTerm": false
+    },
+    {
+      "index": 17,
+      "word": "Hot",
+      "charStart": 88,
+      "charEnd": 91,
+      "startMs": 7465,
+      "endMs": 7765,
+      "isKeyTerm": false
+    },
+    {
+      "index": 18,
+      "word": ":",
+      "charStart": 92,
+      "charEnd": 93,
+      "startMs": 7810,
+      "endMs": 8000,
+      "isKeyTerm": false
+    },
+    {
+      "index": 19,
+      "word": "Sweat.",
+      "charStart": 94,
+      "charEnd": 100,
+      "startMs": 8280,
+      "endMs": 8660,
+      "isKeyTerm": true
+    }
+  ],
+  "ssml": "<speak version=\"1.0\" xmlns=\"http://www.w3.org/2001/10/synthesis\" xmlns:mstts=\"https://www.w3.org/2001/mstts\" xml:lang=\"en-PH\">\n  <voice name=\"en-PH-RosaNeural\">\n    <mstts:express-as style=\"friendly\">\n      <prosody rate=\"93%\" pitch=\"+1%\">\n        Now, <break time=\"300ms\"/> what if the first word makes the second word happen? <break time=\"650ms\"/> <break time=\"800ms\"/> That&apos;s <emphasis level=\"moderate\">Cause</emphasis> and <emphasis level=\"moderate\">Effect</emphasis>! <break time=\"550ms\"/> Cold weather makes you <emphasis level=\"moderate\">shiver</emphasis>, <break time=\"300ms\"/> just as a hot afternoon in <phoneme alphabet=\"ipa\" ph=\"ˈmɑːti\">Mati</phoneme> makes you <emphasis level=\"moderate\">sweat</emphasis>.\n      </prosody>\n    </mstts:express-as>\n  </voice>\n</speak>",
+  "createdAt": "2026-11-02T15:06:59.802Z"
+}

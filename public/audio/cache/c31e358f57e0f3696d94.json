@@ -1,0 +1,344 @@
+{
+  "segmentId": "analogy-tips-3",
+  "hash": "c31e358f57e0f3696d94",
+  "provider": "ssml_timestamps_precomputed",
+  "voice": "en-PH-RosaNeural",
+  "durationMs": 15560,
+  "timestamps": [
+    {
+      "index": 0,
+      "word": "Pro",
+      "charStart": 0,
+      "charEnd": 3,
+      "startMs": 80,
+      "endMs": 380,
+      "isKeyTerm": false
+    },
+    {
+      "index": 1,
+      "word": "Tip:",
+      "charStart": 4,
+      "charEnd": 8,
+      "startMs": 425,
+      "endMs": 725,
+      "isKeyTerm": false
+    },
+    {
+      "index": 2,
+      "word": "Match",
+      "charStart": 9,
+      "charEnd": 14,
+      "startMs": 1005,
+      "endMs": 1385,
+      "isKeyTerm": false
+    },
+    {
+      "index": 3,
+      "word": "the",
+      "charStart": 15,
+      "charEnd": 18,
+      "startMs": 1430,
+      "endMs": 1730,
+      "isKeyTerm": false
+    },
+    {
+      "index": 4,
+      "word": "part",
+      "charStart": 19,
+      "charEnd": 23,
+      "startMs": 1775,
+      "endMs": 2115,
+      "isKeyTerm": false
+    },
+    {
+      "index": 5,
+      "word": "of",
+      "charStart": 24,
+      "charEnd": 26,
+      "startMs": 2160,
+      "endMs": 2420,
+      "isKeyTerm": false
+    },
+    {
+      "index": 6,
+      "word": "speech",
+      "charStart": 27,
+      "charEnd": 33,
+      "startMs": 2465,
+      "endMs": 2885,
+      "isKeyTerm": false
+    },
+    {
+      "index": 7,
+      "word": "(Noun",
+      "charStart": 34,
+      "charEnd": 39,
+      "startMs": 2930,
+      "endMs": 3270,
+      "isKeyTerm": false
+    },
+    {
+      "index": 8,
+      "word": "with",
+      "charStart": 40,
+      "charEnd": 44,
+      "startMs": 3315,
+      "endMs": 3655,
+      "isKeyTerm": false
+    },
+    {
+      "index": 9,
+      "word": "Noun,",
+      "charStart": 45,
+      "charEnd": 50,
+      "startMs": 3700,
+      "endMs": 4040,
+      "isKeyTerm": false
+    },
+    {
+      "index": 10,
+      "word": "Adjective",
+      "charStart": 51,
+      "charEnd": 60,
+      "startMs": 4320,
+      "endMs": 4860,
+      "isKeyTerm": true
+    },
+    {
+      "index": 11,
+      "word": "with",
+      "charStart": 61,
+      "charEnd": 65,
+      "startMs": 4905,
+      "endMs": 5245,
+      "isKeyTerm": false
+    },
+    {
+      "index": 12,
+      "word": "Adjective)",
+      "charStart": 66,
+      "charEnd": 76,
+      "startMs": 5290,
+      "endMs": 5830,
+      "isKeyTerm": true
+    },
+    {
+      "index": 13,
+      "word": "and",
+      "charStart": 77,
+      "charEnd": 80,
+      "startMs": 5875,
+      "endMs": 6175,
+      "isKeyTerm": false
+    },
+    {
+      "index": 14,
+      "word": "never",
+      "charStart": 81,
+      "charEnd": 86,
+      "startMs": 6220,
+      "endMs": 6600,
+      "isKeyTerm": false
+    },
+    {
+      "index": 15,
+      "word": "pick",
+      "charStart": 87,
+      "charEnd": 91,
+      "startMs": 6645,
+      "endMs": 6985,
+      "isKeyTerm": false
+    },
+    {
+      "index": 16,
+      "word": "a",
+      "charStart": 92,
+      "charEnd": 93,
+      "startMs": 7030,
+      "endMs": 7250,
+      "isKeyTerm": false
+    },
+    {
+      "index": 17,
+      "word": "word",
+      "charStart": 94,
+      "charEnd": 98,
+      "startMs": 7295,
+      "endMs": 7635,
+      "isKeyTerm": false
+    },
+    {
+      "index": 18,
+      "word": "just",
+      "charStart": 99,
+      "charEnd": 103,
+      "startMs": 7680,
+      "endMs": 8020,
+      "isKeyTerm": false
+    },
+    {
+      "index": 19,
+      "word": "because",
+      "charStart": 104,
+      "charEnd": 111,
+      "startMs": 8065,
+      "endMs": 8525,
+      "isKeyTerm": false
+    },
+    {
+      "index": 20,
+      "word": "it",
+      "charStart": 112,
+      "charEnd": 114,
+      "startMs": 8570,
+      "endMs": 8830,
+      "isKeyTerm": false
+    },
+    {
+      "index": 21,
+      "word": "sounds",
+      "charStart": 115,
+      "charEnd": 121,
+      "startMs": 8875,
+      "endMs": 9295,
+      "isKeyTerm": false
+    },
+    {
+      "index": 22,
+      "word": "loosely",
+      "charStart": 122,
+      "charEnd": 129,
+      "startMs": 9340,
+      "endMs": 9800,
+      "isKeyTerm": false
+    },
+    {
+      "index": 23,
+      "word": "related",
+      "charStart": 130,
+      "charEnd": 137,
+      "startMs": 9845,
+      "endMs": 10305,
+      "isKeyTerm": false
+    },
+    {
+      "index": 24,
+      "word": "(like",
+      "charStart": 138,
+      "charEnd": 143,
+      "startMs": 10350,
+      "endMs": 10690,
+      "isKeyTerm": false
+    },
+    {
+      "index": 25,
+      "word": "\"lion",
+      "charStart": 144,
+      "charEnd": 149,
+      "startMs": 10735,
+      "endMs": 11075,
+      "isKeyTerm": false
+    },
+    {
+      "index": 26,
+      "word": ":",
+      "charStart": 150,
+      "charEnd": 151,
+      "startMs": 11120,
+      "endMs": 11310,
+      "isKeyTerm": false
+    },
+    {
+      "index": 27,
+      "word": "roar\"",
+      "charStart": 152,
+      "charEnd": 157,
+      "startMs": 11590,
+      "endMs": 11930,
+      "isKeyTerm": false
+    },
+    {
+      "index": 28,
+      "word": "when",
+      "charStart": 158,
+      "charEnd": 162,
+      "startMs": 11975,
+      "endMs": 12315,
+      "isKeyTerm": false
+    },
+    {
+      "index": 29,
+      "word": "you",
+      "charStart": 163,
+      "charEnd": 166,
+      "startMs": 12360,
+      "endMs": 12660,
+      "isKeyTerm": false
+    },
+    {
+      "index": 30,
+      "word": "need",
+      "charStart": 167,
+      "charEnd": 171,
+      "startMs": 12705,
+      "endMs": 13045,
+      "isKeyTerm": false
+    },
+    {
+      "index": 31,
+      "word": "a",
+      "charStart": 172,
+      "charEnd": 173,
+      "startMs": 13090,
+      "endMs": 13310,
+      "isKeyTerm": false
+    },
+    {
+      "index": 32,
+      "word": "location",
+      "charStart": 174,
+      "charEnd": 182,
+      "startMs": 13355,
+      "endMs": 13855,
+      "isKeyTerm": true
+    },
+    {
+      "index": 33,
+      "word": "like",
+      "charStart": 183,
+      "charEnd": 187,
+      "startMs": 13900,
+      "endMs": 14240,
+      "isKeyTerm": false
+    },
+    {
+      "index": 34,
+      "word": "\"lion",
+      "charStart": 188,
+      "charEnd": 193,
+      "startMs": 14285,
+      "endMs": 14625,
+      "isKeyTerm": false
+    },
+    {
+      "index": 35,
+      "word": ":",
+      "charStart": 194,
+      "charEnd": 195,
+      "startMs": 14670,
+      "endMs": 14860,
+      "isKeyTerm": false
+    },
+    {
+      "index": 36,
+      "word": "forest\").",
+      "charStart": 196,
+      "charEnd": 205,
+      "startMs": 15140,
+      "endMs": 15560,
+      "isKeyTerm": true
+    }
+  ],
+  "ssml": "<speak version=\"1.0\" xmlns=\"http://www.w3.org/2001/10/synthesis\" xmlns:mstts=\"https://www.w3.org/2001/mstts\" xml:lang=\"en-PH\">\n  <voice name=\"en-PH-RosaNeural\">\n    <mstts:express-as style=\"friendly\">\n      <prosody rate=\"93%\" pitch=\"+1%\">\n        Two more quick tips! <break time=\"550ms\"/> First, <break time=\"300ms\"/> match the <emphasis level=\"moderate\">grammar</emphasis>. <break time=\"550ms\"/> If Pair One uses two <emphasis level=\"moderate\">adjectives</emphasis>, <break time=\"300ms\"/> like courageous is to brave, <break time=\"300ms\"/> Pair Two must also use two <emphasis level=\"moderate\">adjectives</emphasis>, <break time=\"300ms\"/> like honest is to truthful. <break time=\"550ms\"/> Second, <break time=\"300ms\"/> don&apos;t get fooled by words that just sound related. <break time=\"550ms\"/> Fish is to sea tells us where a fish lives, <break time=\"300ms\"/> so lion is to <emphasis level=\"moderate\">forest</emphasis>, <break time=\"300ms\"/> not roar!\n      </prosody>\n    </mstts:express-as>\n  </voice>\n</speak>",
+  "createdAt": "2026-11-02T15:06:59.808Z"
+}

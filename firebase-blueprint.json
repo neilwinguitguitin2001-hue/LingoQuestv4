@@ -1,0 +1,146 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "Represents an authenticated user profile with role-based access control and approval status",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Unique user identifier" },
+        "uid": { "type": "string", "description": "Authentication UID" },
+        "displayName": { "type": "string", "maxLength": 100, "description": "Full display name of the user" },
+        "name": { "type": "string", "maxLength": 100, "description": "Full name alias of the user" },
+        "email": { "type": "string", "maxLength": 150, "description": "Email address or DepEd email" },
+        "role": { "type": "string", "enum": ["student", "teacher", "admin"], "description": "System role (default student)" },
+        "status": { "type": "string", "enum": ["pending", "approved", "rejected", "suspended"], "description": "Account status" },
+        "gradeLevel": { "type": "number", "description": "Enrolled grade level (7-10)" },
+        "school": { "type": "string", "maxLength": 150, "description": "School name in DepEd Davao Oriental" },
+        "schoolName": { "type": "string", "maxLength": 150, "description": "School name alias" },
+        "section": { "type": "string", "maxLength": 50, "description": "Student school section (optional)" },
+        "classCode": { "type": "string", "maxLength": 30, "description": "Class code linking student to approved teacher" },
+        "lrn": { "type": "string", "maxLength": 20, "description": "12-digit Learner Reference Number" },
+        "createdAt": { "type": "string", "description": "Account registration timestamp" },
+        "lastLoginAt": { "type": "string", "description": "Last login timestamp" },
+        "updatedAt": { "type": "string", "description": "Last profile update timestamp" }
+      },
+      "required": ["role"]
+    },
+    "Progress": {
+      "title": "Progress",
+      "description": "Student game progression, XP, level, coins/gems, streak, unlocked islands, and completed quests",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "maxLength": 128, "description": "Owner Firebase Auth UID" },
+        "userId": { "type": "string", "maxLength": 128, "description": "Student user ID alias" },
+        "xp": { "type": "number", "description": "Total experience points earned" },
+        "level": { "type": "number", "description": "Current player level" },
+        "coins": { "type": "number", "description": "Coins / gems earned" },
+        "gems": { "type": "number", "description": "Gems earned" },
+        "streak": { "type": "number", "description": "Active learning streak in days" },
+        "currentIsland": { "type": "string", "maxLength": 100, "description": "Current active island ID or name" },
+        "unlockedIslands": { "type": "array", "description": "List of unlocked island IDs" },
+        "completedQuests": { "type": "array", "description": "List of completed module/quest IDs" },
+        "updatedAt": { "type": "string", "description": "Timestamp of last progress sync" }
+      },
+      "required": ["uid", "xp", "level"]
+    },
+    "QuizResult": {
+      "title": "QuizResult",
+      "description": "Individual quiz attempt record stored when a student completes an island bridge quest",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "maxLength": 128, "description": "Student Firebase Auth UID" },
+        "questId": { "type": "string", "maxLength": 100, "description": "Module / quest identifier" },
+        "score": { "type": "number", "description": "Number of correct answers" },
+        "total": { "type": "number", "description": "Total number of questions" },
+        "percentage": { "type": "number", "description": "Percentage score (0-100)" },
+        "passed": { "type": "boolean", "description": "Whether the 80% bridge restoration threshold was met" },
+        "timeSpent": { "type": "number", "description": "Time spent in seconds" },
+        "createdAt": { "type": "string", "description": "Completion timestamp" }
+      },
+      "required": ["uid", "questId", "score", "total", "createdAt"]
+    },
+    "LeaderboardEntry": {
+      "title": "LeaderboardEntry",
+      "description": "Publicly readable leaderboard entry writable only by the owner with non-negative XP validation",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "maxLength": 128, "description": "Student Firebase Auth UID" },
+        "displayName": { "type": "string", "maxLength": 100, "description": "Student display name" },
+        "school": { "type": "string", "maxLength": 150, "description": "Student school name" },
+        "gradeLevel": { "type": "number", "description": "Student grade level" },
+        "section": { "type": "string", "maxLength": 50, "description": "Student section" },
+        "xp": { "type": "number", "description": "Total non-negative XP" },
+        "level": { "type": "number", "description": "Current level" },
+        "updatedAt": { "type": "string", "description": "Last update timestamp" }
+      },
+      "required": ["displayName", "xp", "level"]
+    },
+    "Admin": {
+      "title": "Admin",
+      "description": "Administrator whitelist record used by security rules to confirm administrative authority",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "Admin UID" },
+        "email": { "type": "string", "maxLength": 150, "description": "Admin email" },
+        "name": { "type": "string", "maxLength": 100, "description": "Admin full name" },
+        "createdAt": { "type": "string", "description": "Seed timestamp" }
+      },
+      "required": ["uid", "email"]
+    },
+    "Module": {
+      "title": "Module",
+      "description": "Curriculum module containing English lessons and gamified quiz questions managed exclusively by administrators",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 64, "description": "Module unique identifier" },
+        "gradeLevel": { "type": "number", "description": "Target grade level (7 to 10)" },
+        "quarter": { "type": "number", "description": "Quarter number (1 to 4)" },
+        "title": { "type": "string", "maxLength": 150, "description": "Curriculum topic title" },
+        "requiredPassingScore": { "type": "number", "description": "Minimum passing score percentage" }
+      },
+      "required": ["id", "gradeLevel", "quarter", "title", "requiredPassingScore"]
+    },
+    "AuditLog": {
+      "title": "AuditLog",
+      "description": "Immutable administrative audit trail",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 100, "description": "Unique log entry ID" },
+        "adminId": { "type": "string", "maxLength": 100, "description": "UID of the administrator" },
+        "actionType": { "type": "string", "description": "Category of admin action" },
+        "timestamp": { "type": "string", "description": "Event timestamp" }
+      },
+      "required": ["id", "adminId", "actionType", "timestamp"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "entities/User" },
+      "description": "User profiles (displayName, email, role, gradeLevel, school, section, createdAt, lastLoginAt)"
+    },
+    "/progress/{userId}": {
+      "schema": { "$ref": "entities/Progress" },
+      "description": "Student progress documents (xp, level, coins/gems, streak, currentIsland, unlockedIslands[], completedQuests[], updatedAt)"
+    },
+    "/quizResults/{resultId}": {
+      "schema": { "$ref": "entities/QuizResult" },
+      "description": "Individual quiz attempt records (uid, questId, score, total, timeSpent, createdAt)"
+    },
+    "/leaderboard/{userId}": {
+      "schema": { "$ref": "entities/LeaderboardEntry" },
+      "description": "Publicly readable leaderboard documents writable only by the owner"
+    },
+    "/admins/{adminId}": {
+      "schema": { "$ref": "entities/Admin" },
+      "description": "Whitelist of verified system administrators"
+    },
+    "/modules/{moduleId}": {
+      "schema": { "$ref": "entities/Module" },
+      "description": "Curriculum modules readable by all students and faculty, managed only by admins"
+    },
+    "/audit_logs/{logId}": {
+      "schema": { "$ref": "entities/AuditLog" },
+      "description": "Admin action history readable and appendable only by administrators"
+    }
+  }
+}

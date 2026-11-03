@@ -1,0 +1,685 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #EEF4FB;
+    color: #0A192F;
+  }
+
+  h1, h2, .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-mono, .tabular-nums {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes bridgePulse {
+  0%, 100% {
+    opacity: 0.9;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+}
+
+@keyframes logoFloatLoop {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-6px) rotate(-1.5deg);
+  }
+  66% {
+    transform: translateY(4px) rotate(1.2deg);
+  }
+}
+
+@keyframes logoGlowPulse {
+  0%, 100% {
+    opacity: 0.45;
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.12);
+  }
+}
+
+@keyframes waveDrift {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(6px);
+  }
+}
+
+@keyframes bubbleFloat {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-3px) scale(1.04);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 4s ease-in-out infinite;
+}
+
+.animate-bridge-pulse {
+  animation: bridgePulse 2.5s ease-in-out infinite;
+}
+
+
+.animate-wave-drift {
+  animation: waveDrift 6s ease-in-out infinite;
+}
+
+.animate-bubble-float {
+  transform-origin: 124px 50px;
+  animation: bubbleFloat 3s ease-in-out infinite;
+}
+
+@keyframes boatBobRealistic {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  20% {
+    transform: translateY(-3.5px) rotate(-1.5deg);
+  }
+  45% {
+    transform: translateY(-1.5px) rotate(0.8deg);
+  }
+  70% {
+    transform: translateY(2.8px) rotate(1.2deg);
+  }
+  85% {
+    transform: translateY(1px) rotate(-0.6deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+@keyframes boatWakeWash {
+  0% {
+    transform: scale(0.65) translateY(0);
+    opacity: 0.75;
+  }
+  50% {
+    opacity: 0.45;
+  }
+  100% {
+    transform: scale(1.8) translateY(2px);
+    opacity: 0;
+  }
+}
+
+@keyframes oceanSwellOrganic {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(14px, -2.5px);
+  }
+  50% {
+    transform: translate(28px, 0px);
+  }
+  75% {
+    transform: translate(14px, 2px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes causticShimmer {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.75;
+    transform: scale(1.04);
+  }
+}
+
+@keyframes shoreWashGently {
+  0%, 100% {
+    opacity: 0.25;
+    transform: scale(0.98);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.025);
+  }
+}
+
+@keyframes cloudDriftLayer1 {
+  0% {
+    transform: translate(-20px, 0px) scale(1, 1);
+  }
+  33% {
+    transform: translate(16px, -2px) scale(1.02, 1.015);
+  }
+  66% {
+    transform: translate(38px, 1px) scale(0.99, 1.01);
+  }
+  100% {
+    transform: translate(-20px, 0px) scale(1, 1);
+  }
+}
+
+@keyframes cloudDriftLayer2 {
+  0% {
+    transform: translate(24px, 0px) scale(1, 1);
+  }
+  33% {
+    transform: translate(-10px, -2px) scale(1.025, 1.02);
+  }
+  66% {
+    transform: translate(-34px, 1px) scale(1.01, 0.99);
+  }
+  100% {
+    transform: translate(24px, 0px) scale(1, 1);
+  }
+}
+
+.animate-boat-realistic {
+  animation: boatBobRealistic 4.2s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+
+.animate-boat-wake-wash {
+  animation: boatWakeWash 2.2s cubic-bezier(0.2, 0.6, 0.4, 1) infinite;
+}
+
+.animate-ocean-swell {
+  animation: oceanSwellOrganic 10s ease-in-out infinite;
+}
+
+.animate-caustic-shimmer {
+  animation: causticShimmer 4s ease-in-out infinite;
+}
+
+.animate-shore-wash {
+  animation: shoreWashGently 5s ease-in-out infinite;
+}
+
+.animate-cloud-layer-1 {
+  animation: cloudDriftLayer1 65s ease-in-out infinite;
+}
+
+.animate-cloud-layer-2 {
+  animation: cloudDriftLayer2 45s ease-in-out infinite;
+}
+
+@keyframes frondWindFlutter1 {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  30% {
+    transform: rotate(-3deg);
+  }
+  70% {
+    transform: rotate(2.5deg);
+  }
+}
+
+@keyframes frondWindFlutter2 {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  35% {
+    transform: rotate(3deg);
+  }
+  65% {
+    transform: rotate(-2.5deg);
+  }
+}
+
+@keyframes routePulse {
+  0% {
+    stroke-dashoffset: 40;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-frond-flutter-1 {
+  animation: frondWindFlutter1 3.5s ease-in-out infinite;
+}
+
+.animate-frond-flutter-2 {
+  animation: frondWindFlutter2 4s ease-in-out infinite;
+}
+
+.animate-route-flow {
+  animation: routePulse 2.4s linear infinite;
+}
+
+@keyframes lqEmblemFloat {
+  0%, 100% {
+    transform: translateY(0px) scale(1) rotate(0deg);
+  }
+  40% {
+    transform: translateY(-6px) scale(1.04) rotate(-2deg);
+  }
+  75% {
+    transform: translateY(2px) scale(0.98) rotate(1.5deg);
+  }
+}
+
+@keyframes lqStarTwinkle {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.22) rotate(90deg);
+    opacity: 0.92;
+  }
+}
+
+@keyframes lqDotPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+  50% {
+    transform: scale(1.45);
+    opacity: 1;
+  }
+}
+
+@keyframes lqProgressSweep {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes lqPageEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(10px) scale(0.992);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes lqOrbitSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-lq-emblem-float {
+  animation: lqEmblemFloat 2.2s cubic-bezier(0.34, 1.56, 0.64, 1) infinite;
+}
+
+.animate-lq-star-twinkle {
+  transform-origin: 256px 256px;
+  animation: lqStarTwinkle 1.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.animate-lq-dot-pulse-1 {
+  transform-origin: 298px 202px;
+  animation: lqDotPulse 1.4s ease-in-out infinite;
+}
+
+.animate-lq-dot-pulse-2 {
+  transform-origin: 202px 300px;
+  animation: lqDotPulse 1.4s ease-in-out 0.35s infinite;
+}
+
+.animate-lq-progress-sweep {
+  animation: lqProgressSweep 1.1s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+.animate-lq-page-enter {
+  animation: lqPageEnter 0.42s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-lq-orbit-spin {
+  animation: lqOrbitSpin 8s linear infinite;
+}
+
+@keyframes lqDashboardHeroIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.99);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes lqDashboardStatsIn {
+  0% {
+    opacity: 0;
+    transform: translateY(12px) scale(0.985);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes lqDashboardPanelIn {
+  0% {
+    opacity: 0;
+    transform: translateY(14px) scale(0.992);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes lqScaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95) translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: lqDashboardPanelIn 0.38s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-scale-in {
+  animation: lqScaleIn 0.32s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-dashboard-hero {
+  animation: lqDashboardHeroIn 0.46s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-dashboard-stats {
+  animation: lqDashboardStatsIn 0.52s cubic-bezier(0.16, 1, 0.3, 1) 0.06s both;
+}
+
+.animate-dashboard-tabs {
+  animation: lqDashboardStatsIn 0.48s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+}
+
+.animate-dashboard-panel {
+  animation: lqDashboardPanelIn 0.42s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float-slow,
+  .animate-bridge-pulse,
+  .animate-wave-drift,
+  .animate-bubble-float,
+  .animate-boat-bob,
+  .animate-boat-realistic,
+  .animate-boat-wake,
+  .animate-boat-wake-wash,
+  .animate-frond-flutter-1,
+  .animate-frond-flutter-2,
+  .animate-cloud-drift,
+  .animate-cloud-layer-1,
+  .animate-cloud-layer-2,
+  .animate-ocean-swell,
+  .animate-caustic-shimmer,
+  .animate-shore-wash,
+  .animate-lq-emblem-float,
+  .animate-lq-star-twinkle,
+  .animate-lq-dot-pulse-1,
+  .animate-lq-dot-pulse-2,
+  .animate-lq-progress-sweep,
+  .animate-lq-page-enter,
+  .animate-lq-orbit-spin,
+  .animate-fade-in,
+  .animate-scale-in,
+  .animate-dashboard-hero,
+  .animate-dashboard-stats,
+  .animate-dashboard-tabs,
+  .animate-dashboard-panel {
+    animation: none;
+  }
+}
+
+/* Official Google Sign-In Material Button Styling */
+/* Shared dashboard header/footer palette: ocean blue with woven green accents. */
+[data-dashboard-theme] {
+  background-color: #0b2a4a !important;
+  color: #e0f2fe !important;
+  border-color: #2563eb !important;
+}
+
+[data-dashboard-theme] [class*="bg-[#C62828]"] {
+  background-color: #0f766e !important;
+}
+
+[data-dashboard-theme] [class*="border-[#F57F17]"],
+[data-dashboard-theme] [class*="border-[#8D6E63]"],
+[data-dashboard-theme] [class*="border-[#231F20]"] {
+  border-color: #2563eb !important;
+}
+
+[data-dashboard-theme] [class*="text-[#F57F17]"],
+[data-dashboard-theme] [class*="hover:text-[#F57F17]"] {
+  color: #4ade80 !important;
+}
+
+[data-dashboard-theme] [class*="shadow-[2px_2px_0px_#F57F17]"] {
+  box-shadow: 2px 2px 0 #22c55e !important;
+}
+
+.gsi-material-button {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -webkit-appearance: none;
+  background-color: WHITE;
+  background-image: none;
+  border: 1px solid #747775;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #1f1f1f;
+  cursor: pointer;
+  font-family: 'Roboto', arial, sans-serif;
+  font-size: 14px;
+  height: 40px;
+  letter-spacing: 0.25px;
+  outline: none;
+  overflow: hidden;
+  padding: 0 12px;
+  position: relative;
+  text-align: center;
+  -webkit-transition: background-color .218s, border-color .218s, box-shadow .218s;
+  transition: background-color .218s, border-color .218s, box-shadow .218s;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: auto;
+  max-width: 400px;
+  min-width: min-content;
+}
+
+.gsi-material-button .gsi-material-button-icon {
+  height: 20px;
+  margin-right: 10px;
+  min-width: 20px;
+  width: 20px;
+}
+
+.gsi-material-button .gsi-material-button-content-wrapper {
+  -webkit-align-items: center;
+  align-items: center;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  height: 100%;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+}
+
+.gsi-material-button .gsi-material-button-contents {
+  -webkit-flex-grow: 1;
+  flex-grow: 1;
+  font-family: 'Roboto', arial, sans-serif;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: top;
+}
+
+.gsi-material-button .gsi-material-button-state {
+  -webkit-transition: opacity .218s;
+  transition: opacity .218s;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.gsi-material-button:disabled {
+  cursor: default;
+  background-color: #ffffff61;
+  border-color: #1f1f1f1f;
+}
+
+.gsi-material-button:disabled .gsi-material-button-contents {
+  opacity: 38%;
+}
+
+.gsi-material-button:disabled .gsi-material-button-icon {
+  opacity: 38%;
+}
+
+.gsi-material-button:not(:disabled):active .gsi-material-button-state,
+.gsi-material-button:not(:disabled):focus .gsi-material-button-state {
+  background-color: #303030;
+  opacity: 12%;
+}
+
+.gsi-material-button:not(:disabled):hover {
+  -webkit-box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .30), 0 1px 3px 1px rgba(60, 64, 67, .15);
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .30), 0 1px 3px 1px rgba(60, 64, 67, .15);
+}
+
+.gsi-material-button:not(:disabled):hover .gsi-material-button-state {
+  background-color: #303030;
+  opacity: 8%;
+}
+
+/* ============================================================================
+   LINOCUT WOODBLOCK & INABEL WEAVE AESTHETIC SYSTEM
+   Replaces soft UI container drop shadows with crisp 2D offset ink borders
+   (4px 4px 0px #231F20) and solid #231F20 ink outlines.
+   ============================================================================ */
+
+.linocut-card {
+  border: 2px solid #231F20 !important;
+  box-shadow: 4px 4px 0px #231F20 !important;
+}
+
+.linocut-card-sm {
+  border: 2px solid #231F20 !important;
+  box-shadow: 3px 3px 0px #231F20 !important;
+}
+
+.linocut-btn {
+  border: 2px solid #231F20 !important;
+  box-shadow: 3px 3px 0px #231F20 !important;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.linocut-btn:hover:not(:disabled) {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px #231F20 !important;
+}
+
+.linocut-btn:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px #231F20 !important;
+}
+
+/* Replace soft drop-shadows on all UI container blocks (div, section, article, aside)
+   with the signature 2D offset border (4px 4px 0px #231F20) */
+div.shadow-2xs,
+div.shadow-xs,
+div.shadow-sm,
+div.shadow,
+div.shadow-md,
+div.shadow-lg,
+div.shadow-xl,
+div.shadow-2xl,
+section.shadow-2xs,
+section.shadow-xs,
+section.shadow-sm,
+section.shadow,
+section.shadow-md,
+section.shadow-lg,
+section.shadow-xl,
+section.shadow-2xl,
+article.shadow-sm,
+article.shadow-md,
+article.shadow-lg,
+aside.shadow-sm,
+aside.shadow-md,
+aside.shadow-lg,
+section.rounded-2xl,
+section.rounded-3xl,
+div.rounded-2xl.border.bg-white,
+div.rounded-3xl.border.bg-white {
+  border: 2px solid #231F20 !important;
+  box-shadow: 4px 4px 0px #231F20 !important;
+}
+
+/* Reusable CSS-only Inabel woven geometric strip for compact headers */
+.inabel-header-strip {
+  height: 14px;
+  width: 100%;
+  border-bottom: 2px solid #123B63;
+  background-color: #07192F;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='14' viewBox='0 0 48 14'%3E%3Crect width='48' height='14' fill='%2307192F'/%3E%3Cpolygon points='0,7 7,1 11,1 4,7 11,13 7,13' fill='%2338BDF8'/%3E%3Cpolygon points='48,7 41,1 37,1 44,7 37,13 41,13' fill='%2338BDF8'/%3E%3Cpolygon points='24,1 32,7 24,13 16,7' fill='%2322C55E'/%3E%3Cpolygon points='24,3.5 28.5,7 24,10.5 19.5,7' fill='%2307192F'/%3E%3Crect x='22.5' y='5.5' width='3' height='3' fill='%23DBEAFE'/%3E%3Cpolygon points='12,5 15,7 12,9 9,7' fill='%23DBEAFE'/%3E%3Cpolygon points='36,5 39,7 36,9 33,7' fill='%23DBEAFE'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+}

@@ -1,0 +1,40 @@
+<svg width="800" height="380" viewBox="0 0 800 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@900&amp;family=Plus+Jakarta+Sans:wght@500;800&amp;display=swap');
+      .wordmark-lingo { font-family: 'Nunito', system-ui, sans-serif; font-weight: 900; font-size: 106px; fill: #0F4299; letter-spacing: -1.5px; }
+      .wordmark-uest { font-family: 'Nunito', system-ui, sans-serif; font-weight: 900; font-size: 106px; fill: #297CF6; letter-spacing: -1.5px; }
+      .tagline-text { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-weight: 800; font-size: 17.5px; fill: #0F4299; letter-spacing: 5px; text-anchor: middle; }
+      .subtitle-text { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-weight: 500; font-size: 13.5px; fill: #2E4D7E; letter-spacing: 0.4px; text-anchor: middle; }
+    </style>
+  </defs>
+  <rect width="800" height="380" fill="#FFFFFF"/>
+
+  <!-- Centered Lockup Group -->
+  <g transform="translate(108, 92)">
+    <!-- Lingo text -->
+    <text x="0" y="86" class="wordmark-lingo">Lingo</text>
+
+    <!-- Q Emblem: centered inline at scale 0.43 -->
+    <g transform="translate(268, -12) scale(0.43)">
+      <!-- Soft ice-blue lens circle -->
+      <circle cx="256" cy="256" r="82" fill="#E5F0FE"/>
+      <!-- Outer Q ring with speech pointer -->
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M 372.5 298.4 L 388 388 L 298.4 372.5 A 124 124 0 1 1 372.5 298.4 Z M 256 174 A 82 82 0 1 0 256 338 A 82 82 0 1 0 256 174 Z" fill="#0F4299"/>
+      <!-- Royal blue star -->
+      <path d="M 256 194 Q 263 249 318 256 Q 263 263 256 318 Q 249 263 194 256 Q 249 249 256 194 Z" fill="#1B6CEB"/>
+      <!-- Ice blue sparkle dots -->
+      <circle cx="298" cy="202" r="9.5" fill="#E5F0FE"/>
+      <circle cx="202" cy="300" r="6.8" fill="#E5F0FE"/>
+    </g>
+
+    <!-- uest text -->
+    <text x="392" y="86" class="wordmark-uest">uest</text>
+  </g>
+
+  <!-- Tagline: LEARN ENGLISH · LEVEL UP -->
+  <text x="400" y="244" class="tagline-text">LEARN ENGLISH · LEVEL UP</text>
+
+  <!-- Subtitle: A Gamified E-Learning System · DepEd Davao Oriental -->
+  <text x="400" y="278" class="subtitle-text">A Gamified E-Learning System · DepEd Davao Oriental</text>
+</svg>

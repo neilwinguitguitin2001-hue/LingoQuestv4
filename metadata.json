@@ -1,0 +1,8 @@
+{
+  "name": "LingoQuest",
+  "description": "A gamified English learning platform for Filipino students featuring interactive island-based modules and real-time progress tracking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

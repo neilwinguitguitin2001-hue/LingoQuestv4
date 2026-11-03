@@ -1,0 +1,17 @@
+{
+  "name": "LingoQuest — Learn English · Level Up",
+  "short_name": "LingoQuest",
+  "description": "A gamified English language e-learning adventure for DepEd Davao Oriental. Learn English · Level Up with interactive island bridge quests.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#07172C",
+  "theme_color": "#0A3C8A",
+  "icons": [
+    {
+      "src": "/logo.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

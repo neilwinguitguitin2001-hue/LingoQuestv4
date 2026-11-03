@@ -1,0 +1,191 @@
+{
+  "segmentId": "analogy-tips-2",
+  "hash": "005fc718d49deedca1c2",
+  "provider": "ssml_timestamps_precomputed",
+  "voice": "en-PH-RosaNeural",
+  "durationMs": 8980,
+  "timestamps": [
+    {
+      "index": 0,
+      "word": "Verified",
+      "charStart": 0,
+      "charEnd": 8,
+      "startMs": 80,
+      "endMs": 580,
+      "isKeyTerm": false
+    },
+    {
+      "index": 1,
+      "word": "Fix",
+      "charStart": 9,
+      "charEnd": 12,
+      "startMs": 625,
+      "endMs": 925,
+      "isKeyTerm": false
+    },
+    {
+      "index": 2,
+      "word": "#1:",
+      "charStart": 13,
+      "charEnd": 16,
+      "startMs": 970,
+      "endMs": 1190,
+      "isKeyTerm": false
+    },
+    {
+      "index": 3,
+      "word": "\"finger",
+      "charStart": 17,
+      "charEnd": 24,
+      "startMs": 1470,
+      "endMs": 1890,
+      "isKeyTerm": false
+    },
+    {
+      "index": 4,
+      "word": ":",
+      "charStart": 25,
+      "charEnd": 26,
+      "startMs": 1935,
+      "endMs": 2125,
+      "isKeyTerm": false
+    },
+    {
+      "index": 5,
+      "word": "hand",
+      "charStart": 27,
+      "charEnd": 31,
+      "startMs": 2405,
+      "endMs": 2745,
+      "isKeyTerm": false
+    },
+    {
+      "index": 6,
+      "word": "::",
+      "charStart": 32,
+      "charEnd": 34,
+      "startMs": 2790,
+      "endMs": 2980,
+      "isKeyTerm": false
+    },
+    {
+      "index": 7,
+      "word": "leaf",
+      "charStart": 35,
+      "charEnd": 39,
+      "startMs": 3260,
+      "endMs": 3600,
+      "isKeyTerm": true
+    },
+    {
+      "index": 8,
+      "word": ":",
+      "charStart": 40,
+      "charEnd": 41,
+      "startMs": 3645,
+      "endMs": 3835,
+      "isKeyTerm": false
+    },
+    {
+      "index": 9,
+      "word": "tree\"",
+      "charStart": 42,
+      "charEnd": 47,
+      "startMs": 4115,
+      "endMs": 4455,
+      "isKeyTerm": true
+    },
+    {
+      "index": 10,
+      "word": "(Correct).",
+      "charStart": 48,
+      "charEnd": 58,
+      "startMs": 4500,
+      "endMs": 4960,
+      "isKeyTerm": false
+    },
+    {
+      "index": 11,
+      "word": "Both",
+      "charStart": 59,
+      "charEnd": 63,
+      "startMs": 5440,
+      "endMs": 5780,
+      "isKeyTerm": false
+    },
+    {
+      "index": 12,
+      "word": "pairs",
+      "charStart": 64,
+      "charEnd": 69,
+      "startMs": 5825,
+      "endMs": 6205,
+      "isKeyTerm": false
+    },
+    {
+      "index": 13,
+      "word": "move",
+      "charStart": 70,
+      "charEnd": 74,
+      "startMs": 6250,
+      "endMs": 6590,
+      "isKeyTerm": false
+    },
+    {
+      "index": 14,
+      "word": "from",
+      "charStart": 75,
+      "charEnd": 79,
+      "startMs": 6635,
+      "endMs": 6975,
+      "isKeyTerm": false
+    },
+    {
+      "index": 15,
+      "word": "Part",
+      "charStart": 80,
+      "charEnd": 84,
+      "startMs": 7020,
+      "endMs": 7360,
+      "isKeyTerm": true
+    },
+    {
+      "index": 16,
+      "word": "first",
+      "charStart": 85,
+      "charEnd": 90,
+      "startMs": 7405,
+      "endMs": 7785,
+      "isKeyTerm": false
+    },
+    {
+      "index": 17,
+      "word": "to",
+      "charStart": 91,
+      "charEnd": 93,
+      "startMs": 7830,
+      "endMs": 8090,
+      "isKeyTerm": false
+    },
+    {
+      "index": 18,
+      "word": "Whole",
+      "charStart": 94,
+      "charEnd": 99,
+      "startMs": 8135,
+      "endMs": 8515,
+      "isKeyTerm": true
+    },
+    {
+      "index": 19,
+      "word": "second.",
+      "charStart": 100,
+      "charEnd": 107,
+      "startMs": 8560,
+      "endMs": 8980,
+      "isKeyTerm": false
+    }
+  ],
+  "ssml": "<speak version=\"1.0\" xmlns=\"http://www.w3.org/2001/10/synthesis\" xmlns:mstts=\"https://www.w3.org/2001/mstts\" xml:lang=\"en-PH\">\n  <voice name=\"en-PH-RosaNeural\">\n    <mstts:express-as style=\"cheerful\">\n      <prosody rate=\"97%\" pitch=\"+2%\">\n        Here&apos;s how we fix it. <break time=\"550ms\"/> Put the small part first on both sides! <break time=\"550ms\"/> Finger is to hand, <break time=\"300ms\"/> as <emphasis level=\"moderate\">leaf</emphasis> is to <emphasis level=\"moderate\">tree</emphasis>. <break time=\"550ms\"/> Now both pairs move from <emphasis level=\"moderate\">Part to Whole</emphasis>. <break time=\"550ms\"/> Always check your arrow <emphasis level=\"moderate\">direction</emphasis> before tapping submit!\n      </prosody>\n    </mstts:express-as>\n  </voice>\n</speak>",
+  "createdAt": "2026-11-02T15:06:59.807Z"
+}

@@ -1,0 +1,30 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Helper functions
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(uid) {
+      return isSignedIn() && request.auth.uid == uid;
+    }
+
+    function isValidImageUpload() {
+      return request.resource != null
+        && request.resource.size < 2 * 1024 * 1024 // Max 2 MB profile image
+        && request.resource.contentType.matches('image/.*');
+    }
+
+    // User profile avatars: publicly readable for leaderboards, writable only by account owner
+    match /avatars/{uid}/{fileName} {
+      allow read: if isSignedIn();
+      allow write: if isOwner(uid) && isValidImageUpload();
+    }
+
+    // Deny everything else by default
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}
