@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { PDF_MODULES } from './data/curriculum/pdfCurriculum';
 import { PdfLessonView } from './components/PdfLessonView';
+import { LessonAndQuizView } from './components/LessonAndQuizView';
 import type { Module } from './types/lingoquest';
 import './index.css';
 
 function CurriculumPreview() {
   const [grade, setGrade] = useState(7);
   const [quarter, setQuarter] = useState(1);
+  const [gameModule,setGameModule]=useState<Module|null>(null);
   const [selected, setSelected] = useState<Module | null>(null);
   return <main className="min-h-screen bg-slate-50 p-4 sm:p-8">
     <div className="mx-auto max-w-6xl space-y-6">
@@ -15,7 +17,7 @@ function CurriculumPreview() {
         <h1 className="text-2xl font-bold">LingoQuest · Learning Modules</h1>
         <p className="mt-2 text-sm text-sky-100">106 PDF learning modules · Grades 7–10 · Quarters 1–4</p>
       </header>
-      {selected ? <PdfLessonView key={selected.id} module={selected} onBack={() => setSelected(null)} onComplete={() => {}} /> : <>
+      {gameModule ? <LessonAndQuizView module={gameModule} nextModule={null} initialStage="QUIZ_SETUP" isPersonalization={false} isPreviewMode previewRole="teacher" onBackToMap={()=>setGameModule(null)} onCompleteLesson={()=>{}} onSubmitQuizResult={()=>({totalPointsAwarded:0,newlyUnlockedBadges:[],bridgeNewlyRestored:false})} onAdvanceToNextModule={()=>{}} onOpenWritingLabWithPrompt={()=>{}} /> : selected ? <PdfLessonView onStartGames={()=>setGameModule(selected)} key={selected.id} module={selected} onBack={() => setSelected(null)} onComplete={() => {}} /> : <>
         <div className="flex flex-wrap gap-4">
           <label className="text-sm font-semibold text-slate-800">Grade
             <select value={grade} onChange={(e) => setGrade(Number(e.target.value))} className="ml-3 rounded-lg border border-sky-300 bg-white p-2">
@@ -42,3 +44,5 @@ function CurriculumPreview() {
 }
 
 createRoot(document.getElementById('root')!).render(<CurriculumPreview />);
+
+import './components/digital-learning.css';

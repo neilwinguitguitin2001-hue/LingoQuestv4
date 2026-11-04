@@ -11,3 +11,5 @@ createRoot(document.getElementById('root')!).render(
     </AuthProvider>
   </StrictMode>,
 );
+
+import './components/digital-learning.css';

@@ -1043,21 +1043,18 @@ export default function App() {
         };
 
         const newlyCompleted = !currentProg.lessonCompleted;
-        const isPdfLesson = Boolean(modules.find((m) => m.id === moduleId)?.pdfLesson);
         const updatedProg: ModuleProgress = {
           ...currentProg,
           lessonCompleted: true,
-          isBridgeRestored: isPdfLesson ? true : currentProg.isBridgeRestored,
           lastAttemptDate: new Date().toISOString().split('T')[0],
         };
 
         const updatedBadges = Array.from(new Set([...st.badges, 'first_lesson']));
 
-        const bonusPoints = newlyCompleted ? 50 : 0;
+        const bonusPoints = newlyCompleted ? 50 : 10;
         const updatedStudent: StudentAccount = {
           ...st,
           points: st.points + bonusPoints,
-          completedModules: isPdfLesson ? Array.from(new Set([...st.completedModules, moduleId])) : st.completedModules,
           badges: updatedBadges,
           progressByModule: {
             ...st.progressByModule,

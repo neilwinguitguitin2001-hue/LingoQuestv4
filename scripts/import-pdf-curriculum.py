@@ -206,7 +206,6 @@ for f in inventory:
   'sha256':d['sha256'],'pageCount':d['pageCount'],'notes':notes,'discussionPages':selected},
   'overview':overview,'concepts':concepts,'guidedAnalysis':guided,'pitfallsAndTips':tips,
   'vocabularyBank':vocab,'selfCheck':objectives+checks,'studyCheatsheet':summary,'answerKey':answers}
- for c in module['concepts']:c['image']='/curriculum/'+f['id']+'-p'+str(c['page'])+'.webp'
  all_data.append(module)
 
 for grade in range(7,11):

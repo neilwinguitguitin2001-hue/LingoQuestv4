@@ -11,7 +11,6 @@ export function isModuleFullyCompleted(mod: Module, student: StudentAccount): bo
   if (!prog) return false;
 
   const lessonDone = Boolean(prog.lessonCompleted);
-  if (mod.pdfLesson) return lessonDone;
   const quizDone = Boolean(
     prog.isBridgeRestored ||
     (typeof prog.bestScorePercent === 'number' && prog.bestScorePercent >= 75)

@@ -1,4 +1,6 @@
-import { PdfLessonView } from './PdfLessonView';
+import { PdfLessonView, QuestCompanion, SourceGraphic } from './PdfLessonView';
+import { useDigitalContent } from '../data/curriculum/digitalContent';
+import { createSourceGameSession } from '../utils/sourceGameSession';
 import React, { useEffect, useRef, useState } from 'react';
 import {
   AlertTriangle,
@@ -129,6 +131,9 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
   completedVisualItems = [],
   onAwardVisualXP,
 }) => {
+  const sourceContent = useDigitalContent(module.pdfLesson);
+  const quizBank = module.pdfLesson ? sourceContent.data?.games || [] : module.quizQuestions || [];
+  const [sourceReviewMessage, setSourceReviewMessage] = useState('');
   const [stage, setStage] = useState<'LESSON' | 'QUIZ_SETUP' | 'PLAYING_QUIZ' | 'QUIZ_RESULTS'>(
     initialStage
   );
@@ -285,60 +290,12 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
   const startQuizSession = () => {
     soundFX.playClick();
     stopAllVoicePlayback();
-    const allQuestions = module.quizQuestions || [];
-
-    let pool: QuizQuestion[] = [];
-
-    if (gameModeFilter !== 'all') {
-      // The student picked a specific game mode: play 5 questions for that mode
-      const specificModeQuestions = allQuestions.filter((q) => q.type === gameModeFilter);
-      // Shuffle the questions for variety per student/session
-      const shuffled = [...specificModeQuestions].sort(() => Math.random() - 0.5);
-      pool = shuffled.slice(0, 5);
-      if (pool.length === 0) {
-        pool = allQuestions.slice(0, 5);
-      }
-    } else {
-      // The student chose "Full Quest Mix" ('all'):
-      // Give only 1 question per game mode and make it random per student
-      const analogyQuestions = allQuestions.filter((q) => q.type === 'analogyMaster');
-      const missingPieceQuestions = allQuestions.filter((q) => q.type === 'missingPiece');
-      const crosswordQuestions = allQuestions.filter((q) => q.type === 'crosswordGame');
-      const pictureHuntQuestions = allQuestions.filter((q) => q.type === 'pictureHunt');
-      const typeHunterQuestions = allQuestions.filter((q) => q.type === 'typeHunter');
-
-      const getRandomOne = (items: QuizQuestion[]): QuizQuestion | null => {
-        if (!items || items.length === 0) return null;
-        const randomIndex = Math.floor(Math.random() * items.length);
-        return items[randomIndex];
-      };
-
-      const selectedFromEach: QuizQuestion[] = [];
-      const q1 = getRandomOne(analogyQuestions);
-      if (q1) selectedFromEach.push(q1);
-      const q2 = getRandomOne(missingPieceQuestions);
-      if (q2) selectedFromEach.push(q2);
-      const q3 = getRandomOne(crosswordQuestions);
-      if (q3) selectedFromEach.push(q3);
-      const q4 = getRandomOne(pictureHuntQuestions);
-      if (q4) selectedFromEach.push(q4);
-      const q5 = getRandomOne(typeHunterQuestions);
-      if (q5) selectedFromEach.push(q5);
-
-      // Randomize the order of the 5 modes per student/session
-      pool = [...selectedFromEach].sort(() => Math.random() - 0.5);
-      if (pool.length === 0) {
-        pool = allQuestions.slice(0, 5);
-      }
+    const finalPool = createSourceGameSession(module, quizBank, gameModeFilter, difficulty);
+    if (!finalPool) {
+      setSourceReviewMessage('Source review needed: this mode does not yet have five distinct verified questions for this PDF. No incomplete game can start.');
+      return;
     }
-
-    // Apply difficulty time limit settings
-    const defaultTime = difficulty === 'easy' ? 45 : difficulty === 'moderate' ? 30 : 20;
-    const finalPool = pool.map((q) => ({
-      ...q,
-      timeLimitSeconds: defaultTime,
-    }));
-
+    setSourceReviewMessage('');
     setActiveQuestions(finalPool);
     setCurrentQIndex(0);
     setTimeLeft(finalPool[0]?.timeLimitSeconds || 45);
@@ -392,6 +349,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
       setQuestionLocked(false);
     } else {
       const total = activeQuestions.length;
+      if (activeQuestions.length !== 5 || answerLogs.length !== 5) return;
       const score = answerLogs.filter((a) => a.isCorrect).length;
       const percentage = Math.round((score / total) * 100);
       const passed = percentage >= module.requiredPassingScore;
@@ -467,9 +425,9 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
     }
   };
 
-  if (module.pdfLesson) {
+  if (module.pdfLesson && stage === 'LESSON') {
     return <PdfLessonView key={module.id} module={module}
-      initialSelfCheck={initialStage === 'QUIZ_SETUP'}
+      onStartGames={() => { onCompleteLesson(module.id); setStage('QUIZ_SETUP'); }}
       onBack={onBackToMap} onComplete={() => onCompleteLesson(module.id)} />;
   }
 
@@ -481,6 +439,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
   }
 
   if (stage === 'QUIZ_SETUP') {
+    const canStartSourceGame = !!createSourceGameSession(module, quizBank, gameModeFilter, difficulty, () => .5);
     const difficultyConfigs: Array<{
       id: DifficultyLevel;
       label: string;
@@ -503,20 +462,20 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
       },
       {
         id: 'moderate',
-        label: 'Moderate Level',
+        label: 'Medium Level',
         timePerQ: 30,
         pointsPerQ: 150,
-        complexityDesc: 'Intermediate grade-level questions with a brisk 30-second countdown timer.',
+        complexityDesc: 'Verified source questions with a 30-second countdown timer.',
         borderColor: 'border-amber-500',
         activeBg: 'bg-amber-50/70',
-        badgeText: '▲ MODERATE · 30s / QUESTION',
+        badgeText: '▲ MEDIUM · 30s / QUESTION',
       },
       {
         id: 'hard',
         label: 'Hard Level',
         timePerQ: 20,
         pointsPerQ: 200,
-        complexityDesc: 'Advanced vocabulary & syntax challenges with a rapid 20-second timer. Awards the Storm Conqueror badge!',
+        complexityDesc: 'Verified source questions with a 20-second countdown timer. Existing hard-level rewards apply.',
         borderColor: 'border-red-500',
         activeBg: 'bg-red-50/70',
         badgeText: '◆ HARD · 20s / QUESTION',
@@ -538,37 +497,37 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
       {
         id: 'analogyMaster',
         title: 'Master Quiz (Analogy Master · 5 Questions)',
-        desc: 'Plays all 5 questions for Analogy Master mode (verbal logic, antonyms, synonyms, relationships).',
+        desc: 'Play five distinct source analogies.',
         icon: <Scale className="w-4 h-4 text-rose-600" />,
       },
       {
         id: 'missingPiece',
         title: 'Missing Piece Quiz (5 Questions)',
-        desc: 'Plays all 5 questions for Missing Piece mode (sentence structure, grammatical connectors, and rule terms).',
+        desc: 'Complete five statements using terms from this PDF.',
         icon: <Puzzle className="w-4 h-4 text-purple-600" />,
       },
       {
         id: 'pictureHunt',
         title: 'Picture Hunt Quiz (5 Questions)',
-        desc: 'Plays all 5 questions for Picture Hunt mode (identifying corresponding visual scenes and artwork).',
+        desc: 'Explore five reviewed visual questions from this PDF.',
         icon: <ImageIcon className="w-4 h-4 text-amber-600" />,
       },
       {
         id: 'crosswordGame',
         title: 'Crossword Game (5 Questions)',
-        desc: 'Plays all 5 questions for Crossword Game mode (solving across and down letter clues).',
+        desc: 'Solve five source-based word clues.',
         icon: <Grid3X3 className="w-4 h-4 text-indigo-600" />,
       },
       {
         id: 'typeHunter',
         title: 'Hunter Quiz (Word Hunter · 5 Questions)',
-        desc: 'Plays all 5 questions for Word Hunter mode (typing target vocabulary and master concepts).',
+        desc: 'Type five terms supported by this PDF.',
         icon: <Keyboard className="w-4 h-4 text-emerald-600" />,
       },
     ];
 
     return (
-      <div className="max-w-4xl mx-auto space-y-6">
+      <div className="digital-game max-w-4xl mx-auto space-y-6">
         {/* Faculty / Admin Preview Bar */}
         {isPreviewMode && (
           <div className="bg-gradient-to-r from-[#0A192F] via-[#0F3460] to-[#1E3E62] text-white p-4 rounded-2xl border border-sky-500/30 shadow-md flex flex-col sm:flex-row sm:items-center justify-between gap-3 animate-fade-in">
@@ -586,7 +545,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                   </span>
                 </div>
                 <p className="text-xs text-slate-200">
-                  Previewing quizzes for <strong>{module.title}</strong> · 25 Questions Total (5 per game mode)
+                  Previewing quizzes for <strong>{module.title}</strong> · Verified source bank · exactly 5 per playable session
                 </p>
               </div>
             </div>
@@ -650,7 +609,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
               }`}
             >
               <ListChecks className="w-4 h-4" />
-              <span>Audit All 25 Questions with Answer Keys</span>
+              <span>Inspect Verified Source Questions</span>
             </button>
           </div>
         )}
@@ -670,7 +629,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                   Grade {module.gradeLevel} Module {module.moduleNumber}: {module.title}
                 </h2>
                 <p className="text-xs text-slate-500 mt-0.5">
-                  DepEd MELC: {module.lessonContent.melcCompetency} · Total Questions: {module.quizQuestions?.length || 25}
+                  DepEd MELC: {module.lessonContent.melcCompetency} · Total Questions: {quizBank.length}
                 </p>
               </div>
 
@@ -694,12 +653,12 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
             <div className="flex flex-wrap items-center gap-1.5 p-1 bg-slate-100 rounded-xl">
               {(
                 [
-                  { id: 'all', label: 'All 25 Questions' },
-                  { id: 'analogyMaster', label: 'Analogy Master (5)' },
-                  { id: 'missingPiece', label: 'Missing Piece (5)' },
-                  { id: 'crosswordGame', label: 'Crossword Game (5)' },
-                  { id: 'pictureHunt', label: 'Picture Hunt (5)' },
-                  { id: 'typeHunter', label: 'Word Hunter (5)' },
+                  { id: 'all', label: 'Verified Source Questions' },
+                  { id: 'analogyMaster', label: 'Analogy Master' },
+                  { id: 'missingPiece', label: 'Missing Piece' },
+                  { id: 'crosswordGame', label: 'Crossword Game' },
+                  { id: 'pictureHunt', label: 'Picture Hunt' },
+                  { id: 'typeHunter', label: 'Word Hunter' },
                 ] as const
               ).map((f) => (
                 <button
@@ -722,7 +681,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
 
             {/* Questions List */}
             <div className="space-y-4">
-              {(module.quizQuestions || [])
+              {(quizBank || [])
                 .filter((q) => (inspectedMode === 'all' ? true : q.type === inspectedMode))
                 .map((q, idx) => {
                   const gameInfo = getGameTypeLabel(q.type);
@@ -785,7 +744,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                                 }`}
                               >
                                 <div className="h-20 w-full mb-1 rounded-lg overflow-hidden border border-slate-200">
-                                  <PictureHuntArtwork sceneId={opt.sceneId} />
+                                  {opt.sourceGraphic ? <SourceGraphic block={opt.sourceGraphic}/> : opt.sourceImageUrl ? <img className="source-picture-option" src={opt.sourceImageUrl} alt={opt.caption}/> : <PictureHuntArtwork sceneId={opt.sceneId} />}
                                 </div>
                                 <div className="text-[11px] font-bold text-slate-800 flex items-center justify-center gap-1">
                                   {isCorrectOpt && <Check className="w-3 h-3 text-emerald-600" />}
@@ -904,7 +863,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
 
           <div>
             <h2 className="text-sm font-bold text-slate-900 mb-3">
-              1. Select Difficulty Level (Adjusts Question Complexity & Timer per Question)
+              1. Select Difficulty Level (Timer & Scoring)
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {difficultyConfigs.map((cfg) => {
@@ -953,6 +912,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
               {formatConfigs.map((fmt) => {
                 const isSelected = gameModeFilter === fmt.id;
+                const ready = !!createSourceGameSession(module, quizBank, fmt.id, difficulty, () => .5);
                 return (
                   <button
                     key={fmt.id}
@@ -975,13 +935,14 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                     </div>
                     <p className="text-xs text-slate-600 mt-1.5 leading-relaxed">
                       {fmt.desc}
-                    </p>
+                    </p><p className={ready ? 'ready-tag text-xs mt-2' : 'review-tag text-xs mt-2'}>{ready ? '5 verified source questions · Ready' : 'Needs source review · Locked'}</p>
                   </button>
                 );
               })}
             </div>
           </div>
 
+          {(!canStartSourceGame || sourceReviewMessage) && <div role="status" className="game-source-review">{sourceContent.error || sourceReviewMessage || (sourceContent.data ? 'Source review needed: fewer than five distinct verified items are available for this mode. Starting an incomplete game is disabled.' : 'Loading and checking this module’s source question bank…')}</div>}
           <div className="pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="text-xs text-slate-600">
               Score at least <span className="font-mono font-bold text-slate-900">{module.requiredPassingScore}%</span> to restore the bridge for Module {module.moduleNumber} and unlock the next destination!
@@ -989,6 +950,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
             <button
               type="button"
               onClick={startQuizSession}
+              disabled={!canStartSourceGame}
               className="w-full sm:w-auto px-6 py-3 bg-sky-600 hover:bg-sky-700 text-white text-sm font-bold rounded-xl transition-colors flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer"
             >
               <span>Launch Gamified Quiz Now</span>
@@ -1003,6 +965,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
   }
 
   if (stage === 'PLAYING_QUIZ') {
+    if (activeQuestions.length !== 5) return <div role="alert" className="game-source-review">Source review needed. A game requires exactly five verified questions.</div>;
     const currentQ = activeQuestions[currentQIndex];
     if (!currentQ) return null;
 
@@ -1011,7 +974,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
     const timerPercent = Math.max(0, Math.round((timeLeft / currentQ.timeLimitSeconds) * 100));
 
     return (
-      <div className="max-w-4xl mx-auto space-y-6">
+      <div className="digital-game max-w-4xl mx-auto space-y-6">
         {/* Faculty / Admin Preview Bar */}
         {isPreviewMode && (
           <div className="bg-gradient-to-r from-[#0A192F] via-[#0F3460] to-[#1E3E62] text-white p-4 rounded-2xl border border-sky-500/30 shadow-md flex flex-col sm:flex-row sm:items-center justify-between gap-3 animate-fade-in">
@@ -1123,6 +1086,8 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
           </div>
         )}
 
+        <div className="game-celebration"><div><strong>{gameInfo.name}</strong><p className="game-status">Question {currentQIndex + 1}/5 · {difficulty === 'moderate' ? 'Medium' : difficulty}</p></div><QuestCompanion celebrate={!!latestLog?.isCorrect}/></div>
+        <div className="game-progress-track" role="progressbar" aria-label="Game progress" aria-valuenow={currentQIndex+1} aria-valuemin={1} aria-valuemax={5}><span style={{width:`${(currentQIndex+1)*20}%`}}/></div>
         {/* Educator Answer Inspector Banner */}
         {isPreviewMode && !questionLocked && (
           <div className="p-3 bg-amber-50 border border-amber-300 rounded-2xl flex flex-wrap items-center justify-between gap-3 text-xs shadow-xs animate-fade-in">
@@ -1243,6 +1208,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
             </h2>
           </div>
 
+          {currentQ.sourceGraphic && <SourceGraphic block={currentQ.sourceGraphic}/>}
           {currentQ.type === 'typeHunter' && (
             <div className="space-y-5">
               {currentQ.contextSentence && (
@@ -1289,6 +1255,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                     autoFocus
                     value={typedInput}
                     onChange={(e) => setTypedInput(e.target.value)}
+                    aria-label="Your source term answer"
                     placeholder={`Type the ${currentQ.answer.length}-letter answer here...`}
                     className="flex-1 px-4 py-3 text-base font-mono rounded-xl border border-slate-300 focus:border-sky-600 focus:outline-none disabled:bg-slate-100"
                   />
@@ -1332,7 +1299,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                         : 'border-slate-200 hover:border-sky-500 bg-white'
                     }`}
                   >
-                    <PictureHuntArtwork sceneId={pic.sceneId} className="w-full h-36" />
+                    {pic.sourceGraphic ? <SourceGraphic block={pic.sourceGraphic}/> : pic.sourceImageUrl ? <img className="source-picture-option" src={pic.sourceImageUrl} alt={pic.caption}/> : <PictureHuntArtwork sceneId={pic.sceneId} className="w-full h-36" />}
                     <div className="mt-3 flex items-center justify-between">
                       <span className="text-sm font-bold text-slate-900">{pic.label}</span>
                       {questionLocked && isCorrectPic && (
@@ -1599,6 +1566,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                     autoFocus
                     value={typedInput}
                     onChange={(e) => setTypedInput(e.target.value)}
+                    aria-label="Your crossword answer"
                     placeholder={`Type ${currentQ.answer.length}-letter crossword word...`}
                     className="flex-1 px-4 py-3 text-base font-mono rounded-xl border border-slate-300 focus:border-indigo-600 focus:outline-none disabled:bg-slate-100 uppercase"
                   />
@@ -1618,7 +1586,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
 
           {questionLocked && latestLog && (
             <div
-              className={`p-4 rounded-xl border flex flex-col sm:flex-row sm:items-center justify-between gap-4 ${
+              className={`p-4 rounded-xl border flex flex-col sm:flex-row sm:items-center justify-between gap-4 ${latestLog.isCorrect ? 'answer-success' : 'answer-retry'} ${
                 latestLog.isCorrect
                   ? 'bg-emerald-50 border-emerald-300 text-emerald-950'
                   : 'bg-red-50 border-red-300 text-red-950'
@@ -1643,6 +1611,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                   )}
                 </div>
                 <p className="text-xs sm:text-sm opacity-90">{currentQ.explanation}</p>
+                {currentQ.source && <p className="game-source-proof">Source: {module.pdfLesson?.source.fileName} · PDF p. {currentQ.source.page}</p>}
               </div>
 
               <button
@@ -1779,7 +1748,8 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
 
   if (stage === 'QUIZ_RESULTS' && finalOutcome) {
     return (
-      <div className="max-w-4xl mx-auto space-y-6">
+      <div className="digital-game max-w-4xl mx-auto space-y-6">
+        <div className="game-celebration" role="status"><div><strong>{finalOutcome.passed ? 'Quest completed!' : 'Keep exploring the source lesson'}</strong><p className="game-status">{finalOutcome.score}/5 · {finalOutcome.pointsAwarded} XP awarded</p></div><QuestCompanion celebrate={finalOutcome.passed}/></div>
         {/* Faculty / Admin Preview Bar */}
         {isPreviewMode && (
           <div className="bg-gradient-to-r from-[#0A192F] via-[#0F3460] to-[#1E3E62] text-white p-4 rounded-2xl border border-sky-500/30 shadow-md flex flex-col sm:flex-row sm:items-center justify-between gap-3 animate-fade-in">

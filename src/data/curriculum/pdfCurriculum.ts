@@ -17,13 +17,15 @@ import g10q3 from './pdf/g10q3.json';
 import g10q4 from './pdf/g10q4.json';
 
 export interface PdfExcerpt {
+  term?: string;
   page: number;
   text: string;
   kind: string;
-  image?: string;
+
 }
 
 export interface PdfLesson {
+  digitalContentUrl?: string;
   id: string;
   grade: 7 | 8 | 9 | 10;
   quarter: 1 | 2 | 3 | 4;
