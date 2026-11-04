@@ -17,6 +17,11 @@ export default defineConfig(({mode}) => {
       'import.meta.env.VITE_SUPABASE_ANON_KEY': JSON.stringify(supabaseKey),
     },
     plugins: [react(), tailwindcss()],
+    build: {
+      rolldownOptions: {
+        input: { main: path.resolve(__dirname, 'index.html'), curriculum: path.resolve(__dirname, 'curriculum-preview.html') },
+      },
+    },
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),

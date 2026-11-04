@@ -1,3 +1,6 @@
+import { PdfLessonView, QuestCompanion, SourceGraphic } from './PdfLessonView';
+import { useDigitalContent } from '../data/curriculum/digitalContent';
+import { createSourceGameSession } from '../utils/sourceGameSession';
 import React, { useEffect, useRef, useState } from 'react';
 import {
   AlertTriangle,
@@ -45,7 +48,6 @@ import { BadgeIcon } from './BadgeIcon';
 import { InabelStrip } from './InabelStrip';
 import { PictureHuntArtwork } from './PictureHuntArtwork';
 import {
-  getModuleVisualConfig,
   VISUAL_XP_REWARDS,
   type VisualActivityKey,
 } from '../data/moduleVisualConfigs';
@@ -129,6 +131,9 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
   completedVisualItems = [],
   onAwardVisualXP,
 }) => {
+  const sourceContent = useDigitalContent(module.pdfLesson);
+  const quizBank = module.pdfLesson ? sourceContent.data?.games || [] : module.quizQuestions || [];
+  const [sourceReviewMessage, setSourceReviewMessage] = useState('');
   const [stage, setStage] = useState<'LESSON' | 'QUIZ_SETUP' | 'PLAYING_QUIZ' | 'QUIZ_RESULTS'>(
     initialStage
   );
@@ -181,7 +186,6 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
   const [flippedVocabMap, setFlippedVocabMap] = useState<Record<string, boolean>>({});
   const [xpToast, setXpToast] = useState<XPToastPayload | null>(null);
 
-  const visualConfig = React.useMemo(() => getModuleVisualConfig(module), [module]);
 
   const handleToggleDataSaver = () => {
     soundFX.playClick();
@@ -286,60 +290,12 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
   const startQuizSession = () => {
     soundFX.playClick();
     stopAllVoicePlayback();
-    const allQuestions = module.quizQuestions || [];
-
-    let pool: QuizQuestion[] = [];
-
-    if (gameModeFilter !== 'all') {
-      // The student picked a specific game mode: play 5 questions for that mode
-      const specificModeQuestions = allQuestions.filter((q) => q.type === gameModeFilter);
-      // Shuffle the questions for variety per student/session
-      const shuffled = [...specificModeQuestions].sort(() => Math.random() - 0.5);
-      pool = shuffled.slice(0, 5);
-      if (pool.length === 0) {
-        pool = allQuestions.slice(0, 5);
-      }
-    } else {
-      // The student chose "Full Quest Mix" ('all'):
-      // Give only 1 question per game mode and make it random per student
-      const analogyQuestions = allQuestions.filter((q) => q.type === 'analogyMaster');
-      const missingPieceQuestions = allQuestions.filter((q) => q.type === 'missingPiece');
-      const crosswordQuestions = allQuestions.filter((q) => q.type === 'crosswordGame');
-      const pictureHuntQuestions = allQuestions.filter((q) => q.type === 'pictureHunt');
-      const typeHunterQuestions = allQuestions.filter((q) => q.type === 'typeHunter');
-
-      const getRandomOne = (items: QuizQuestion[]): QuizQuestion | null => {
-        if (!items || items.length === 0) return null;
-        const randomIndex = Math.floor(Math.random() * items.length);
-        return items[randomIndex];
-      };
-
-      const selectedFromEach: QuizQuestion[] = [];
-      const q1 = getRandomOne(analogyQuestions);
-      if (q1) selectedFromEach.push(q1);
-      const q2 = getRandomOne(missingPieceQuestions);
-      if (q2) selectedFromEach.push(q2);
-      const q3 = getRandomOne(crosswordQuestions);
-      if (q3) selectedFromEach.push(q3);
-      const q4 = getRandomOne(pictureHuntQuestions);
-      if (q4) selectedFromEach.push(q4);
-      const q5 = getRandomOne(typeHunterQuestions);
-      if (q5) selectedFromEach.push(q5);
-
-      // Randomize the order of the 5 modes per student/session
-      pool = [...selectedFromEach].sort(() => Math.random() - 0.5);
-      if (pool.length === 0) {
-        pool = allQuestions.slice(0, 5);
-      }
+    const finalPool = createSourceGameSession(module, quizBank, gameModeFilter, difficulty);
+    if (!finalPool) {
+      setSourceReviewMessage('Source review needed: this mode does not yet have five distinct verified questions for this PDF. No incomplete game can start.');
+      return;
     }
-
-    // Apply difficulty time limit settings
-    const defaultTime = difficulty === 'easy' ? 45 : difficulty === 'moderate' ? 30 : 20;
-    const finalPool = pool.map((q) => ({
-      ...q,
-      timeLimitSeconds: defaultTime,
-    }));
-
+    setSourceReviewMessage('');
     setActiveQuestions(finalPool);
     setCurrentQIndex(0);
     setTimeLeft(finalPool[0]?.timeLimitSeconds || 45);
@@ -393,6 +349,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
       setQuestionLocked(false);
     } else {
       const total = activeQuestions.length;
+      if (activeQuestions.length !== 5 || answerLogs.length !== 5) return;
       const score = answerLogs.filter((a) => a.isCorrect).length;
       const percentage = Math.round((score / total) * 100);
       const passed = percentage >= module.requiredPassingScore;
@@ -468,1094 +425,21 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
     }
   };
 
+  if (module.pdfLesson && stage === 'LESSON') {
+    return <PdfLessonView key={module.id} module={module}
+      onStartGames={() => { onCompleteLesson(module.id); setStage('QUIZ_SETUP'); }}
+      onBack={onBackToMap} onComplete={() => onCompleteLesson(module.id)} />;
+  }
+
   if (stage === 'LESSON') {
-    const { lessonContent } = module;
-
-    // Derived rich vocabulary bank
-    const vocabList = (lessonContent.vocabularyGlossary && lessonContent.vocabularyGlossary.length > 0)
-      ? lessonContent.vocabularyGlossary
-      : [
-          {
-            term: module.title.split(' ')[0],
-            partOfSpeech: 'Core Focus',
-            definition: `The central linguistic concept of Module ${module.moduleNumber} in Grade ${module.gradeLevel}.`,
-            exampleSentence: `Mastering ${module.title.toLowerCase()} provides the foundation for advanced academic reading and speech.`,
-          },
-          ...lessonContent.keyRules.slice(0, 4).map((rule) => {
-            const colonIdx = rule.indexOf(':');
-            const term = colonIdx > 0 ? rule.slice(0, colonIdx) : rule.split(' ')[0];
-            const desc = colonIdx > 0 ? rule.slice(colonIdx + 1).trim() : rule;
-            return {
-              term,
-              partOfSpeech: 'Rule / Concept',
-              definition: desc,
-              exampleSentence: `Learners apply ${term} to ensure grammatical accuracy and clarity in writing.`,
-            };
-          }),
-        ];
-
-    // Derived common student pitfalls & exam tips
-    const mistakesList = (lessonContent.commonMistakesAndTips && lessonContent.commonMistakesAndTips.length > 0)
-      ? lessonContent.commonMistakesAndTips
-      : [
-          {
-            mistake: `Relying on surface word associations rather than the exact grammatical relationship in ${module.title}.`,
-            correction: 'Analyze the structural role and surrounding sentence markers before answering.',
-            why: 'Sentence context clues specify exact syntactic agreements and relational categories.',
-          },
-          {
-            mistake: 'Overlooking punctuation cues, auxiliary verbs, or tense indicators in the prompt.',
-            correction: 'Inspect verb forms, colons, commas, and connecting transition markers.',
-            why: 'Punctuation and auxiliary verbs signal key grammatical voice, tense shifts, and analogy logic.',
-          },
-          {
-            mistake: 'Selecting an answer without substituting distractors back into the prompt sentence.',
-            correction: 'Perform a substitution check to confirm logical and grammatical consistency.',
-            why: 'Direct substitution reveals grammatical flaws and eliminates misleading false cognates.',
-          },
-        ];
-
-    // Derived interactive mastery checklist
-    const checklistItems = (lessonContent.studyChecklist && lessonContent.studyChecklist.length > 0)
-      ? lessonContent.studyChecklist
-      : [
-          `I can clearly state the primary purpose and definition of ${module.title}.`,
-          `I understand the key structural rules and formulas for this module.`,
-          `I can analyze the guided model examples and spot their context clues.`,
-          `I know how to avoid common mistakes and false distractors in this topic.`,
-          `I can connect this lesson's concept to real-world communication in Davao Oriental.`,
-          `I am ready to achieve at least 75% on the quiz to restore the island bridge.`,
-        ];
-
-    const checkedCount = checklistItems.filter((_, idx) => Boolean(checkedObjectives[idx])).length;
-    const allChecked = checkedCount === checklistItems.length;
-
-    const handleCopyStudyNotes = () => {
-      soundFX.playClick();
-      const textToCopy = [
-        `============================================================`,
-        `LINGOQUEST STUDY CHEATSHEET: ${module.title.toUpperCase()}`,
-        `Grade ${module.gradeLevel} · Quarter ${module.quarter} · Module ${module.moduleNumber}`,
-        `DepEd Competency: ${lessonContent.melcCompetency}`,
-        `Island Destination: ${currentIslandName} (Davao Oriental)`,
-        `============================================================\n`,
-        `[1] LESSON OVERVIEW:`,
-        lessonContent.overview,
-        `\n[2] KEY RULES & GUIDELINES:`,
-        ...lessonContent.keyRules.map((r, i) => `0${i + 1}. ${r}`),
-        `\n[3] GUIDED MODEL EXAMPLES:`,
-        ...lessonContent.examples.map((ex, i) => `• Example ${i + 1} (${ex.title}):\n  "${ex.example}"\n  Analysis: ${ex.analysis}`),
-        `\n[4] KEY VOCABULARY & TERMS:`,
-        ...vocabList.map((v) => `• ${v.term} [${v.partOfSpeech}]: ${v.definition}\n  Example: "${v.exampleSentence}"`),
-        `\n[5] COMMON MISTAKES & HOW TO AVOID THEM:`,
-        ...mistakesList.map((m) => `• Pitfall: ${m.mistake}\n  Correction: ${m.correction}\n  Why: ${m.why}`),
-        `\n[6] DAVAO ORIENTAL CULTURAL HERITAGE APPLICATION:`,
-        lessonContent.culturalConnection,
-        `\n============================================================`,
-      ].join('\n');
-
-      if (navigator.clipboard?.writeText) {
-        navigator.clipboard.writeText(textToCopy).then(() => {
-          setCopiedNotes(true);
-          setTimeout(() => setCopiedNotes(false), 2500);
-        });
-      }
-    };
-
-    return (
-      <div className="space-y-6">
-        {/* Faculty / Admin Preview Bar */}
-        {isPreviewMode && (
-          <div className="bg-gradient-to-r from-[#0A192F] via-[#0F3460] to-[#1E3E62] text-white p-4 rounded-2xl border border-sky-500/30 shadow-md flex flex-col sm:flex-row sm:items-center justify-between gap-3 animate-fade-in">
-            <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl bg-amber-400 text-slate-950 flex items-center justify-center shrink-0 font-bold shadow">
-                <Compass className="w-5 h-5" />
-              </div>
-              <div>
-                <div className="flex items-center gap-2">
-                  <span className="text-[11px] font-black uppercase tracking-wider text-amber-300">
-                    {previewRole === 'teacher' ? 'Faculty Preview Mode' : 'Admin Preview Mode'}
-                  </span>
-                  <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-white/10 text-sky-200 border border-white/20">
-                    Grade {module.gradeLevel} · Module {module.moduleNumber}
-                  </span>
-                </div>
-                <p className="text-xs text-slate-200">
-                  Previewing interactive lesson for <strong>{module.title}</strong> ({module.lessonContent.melcCompetency})
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-2 shrink-0">
-              <button
-                type="button"
-                onClick={() => {
-                  soundFX.playClick();
-                  onBackToMap();
-                }}
-                className="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-semibold border border-white/20 transition cursor-pointer flex items-center gap-1.5"
-              >
-                <ArrowLeft className="w-3.5 h-3.5" />
-                <span>Island Map</span>
-              </button>
-              {onReturnToDashboard && (
-                <button
-                  type="button"
-                  onClick={() => {
-                    soundFX.playClick();
-                    onReturnToDashboard();
-                  }}
-                  className="px-3 py-1.5 rounded-xl bg-sky-600 hover:bg-sky-500 text-white text-xs font-bold transition cursor-pointer"
-                >
-                  <span>{previewRole === 'teacher' ? 'Classroom Portal' : 'Admin Console'}</span>
-                </button>
-              )}
-            </div>
-          </div>
-        )}
-
-        {/* Top Header Card */}
-        <div className="bg-white border-2 border-[#231F20] linocut-card rounded-xl overflow-hidden">
-          <InabelStrip
-            variant="royal"
-            label={`DepEd MELC Module ${module.moduleNumber} • ${currentIslandName}`}
-            rightText={`Grade ${module.gradeLevel} • Quarter ${module.quarter}`}
-          />
-          <div className="p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-          <div>
-            <div className="flex flex-wrap items-center gap-2.5 mb-1.5">
-              <button
-                type="button"
-                onClick={() => {
-                  soundFX.playClick();
-                  onBackToMap();
-                }}
-                className="text-xs font-semibold text-sky-700 hover:text-sky-900 flex items-center gap-1.5 cursor-pointer"
-              >
-                <ArrowLeft className="w-3.5 h-3.5" />
-                <span>Back to Island Map ({currentIslandName})</span>
-              </button>
-              <span className="text-slate-300">·</span>
-              <button
-                type="button"
-                onClick={handleGoToStudentDashboard}
-                className="text-xs font-semibold text-indigo-700 hover:text-indigo-900 flex items-center gap-1.5 cursor-pointer"
-              >
-                <LayoutDashboard className="w-3.5 h-3.5 text-indigo-500" />
-                <span>Student Dashboard</span>
-              </button>
-            </div>
-            <div className="flex flex-wrap items-center gap-2 text-xs text-slate-500">
-              <span className="font-semibold text-sky-800">Grade {module.gradeLevel}</span>
-              <span>·</span>
-              <span>Quarter {module.quarter}</span>
-              <span>·</span>
-              <span>Module {module.moduleNumber}</span>
-              <span>·</span>
-              <span className="capitalize font-medium text-slate-700">{module.topicType.replace('-', ' ')}</span>
-              <span>·</span>
-              <span className="bg-sky-100 text-sky-800 px-2 py-0.5 rounded-full font-bold text-[10px]">
-                Pass: {module.requiredPassingScore}%
-              </span>
-            </div>
-            <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 font-display mt-1">
-              {module.title}
-            </h1>
-          </div>
-
-          <div className="flex flex-wrap items-center gap-2">
-            {/* Visual XP Mastery Pill */}
-            <div
-              className="px-2.5 py-1.5 rounded-lg bg-amber-50 border border-amber-200 text-amber-800 text-[11px] font-bold flex items-center gap-1.5"
-              title="Interactive visual activities completed in this module"
-            >
-              <Sparkles className="w-3.5 h-3.5 text-amber-500" />
-              <span>Visuals: {localCompletedVisuals.length}/9 ★</span>
-            </div>
-
-            {/* Data Saver Mode Toggle */}
-            <button
-              type="button"
-              onClick={handleToggleDataSaver}
-              className={`px-2.5 py-1.5 rounded-lg text-[11px] font-bold border transition-colors flex items-center gap-1.5 cursor-pointer ${
-                dataSaver
-                  ? 'bg-emerald-50 border-emerald-300 text-emerald-800'
-                  : 'bg-slate-100 hover:bg-slate-200 border-slate-200 text-slate-600'
-              }`}
-              title="Toggle Data Saver Mode (pauses autoplay animations and shows static posters until tapped)"
-            >
-              <span>{dataSaver ? '⚡ Data Saver: ON' : '⚡ Data Saver: OFF'}</span>
-            </button>
-
-            <button
-              type="button"
-              onClick={handleCopyStudyNotes}
-              className="px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-lg transition-colors flex items-center gap-1.5 cursor-pointer"
-              title="Copy formatted lesson summary notes to clipboard"
-            >
-              {copiedNotes ? (
-                <>
-                  <Check className="w-3.5 h-3.5 text-emerald-600" />
-                  <span className="text-emerald-700">Copied!</span>
-                </>
-              ) : (
-                <>
-                  <Copy className="w-3.5 h-3.5 text-slate-600" />
-                  <span>Copy Notes</span>
-                </>
-              )}
-            </button>
-            <button
-              type="button"
-              onClick={() => {
-                soundFX.playClick();
-                onCompleteLesson(module.id);
-                setStage('QUIZ_SETUP');
-              }}
-              className="px-4 py-2.5 bg-sky-600 hover:bg-sky-700 text-white text-xs font-bold rounded-lg transition-colors flex items-center gap-2 whitespace-nowrap cursor-pointer shadow-xs"
-            >
-              <span>Complete & Start Quiz</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
-          </div>
-          </div>
-        </div>
-
-        {/* Detailed Lesson Navigation Tabs */}
-        <div className="flex items-center gap-1.5 overflow-x-auto pb-1 bg-white p-1.5 border-2 border-[#231F20] linocut-card rounded-xl">
-          {[
-            {
-              id: 'concepts',
-              label: 'Concepts & Rules',
-              icon: BookOpen,
-              isVisualDone:
-                localCompletedVisuals.includes('explainer') &&
-                localCompletedVisuals.includes('diagram') &&
-                localCompletedVisuals.includes('minigame'),
-              hasPartialVisual:
-                localCompletedVisuals.includes('explainer') ||
-                localCompletedVisuals.includes('diagram') ||
-                localCompletedVisuals.includes('minigame'),
-            },
-            {
-              id: 'examples',
-              label: 'Guided Analysis',
-              icon: Sparkles,
-              isVisualDone: localCompletedVisuals.includes('stepper'),
-              hasPartialVisual: localCompletedVisuals.includes('stepper'),
-            },
-            {
-              id: 'tips',
-              label: 'Pitfalls & Tips',
-              icon: AlertTriangle,
-              isVisualDone: localCompletedVisuals.includes('pitfalls'),
-              hasPartialVisual: localCompletedVisuals.includes('pitfalls'),
-            },
-            {
-              id: 'cultural',
-              label: 'Davao Oriental Context',
-              icon: Compass,
-              isVisualDone: localCompletedVisuals.includes('hotspots'),
-              hasPartialVisual: localCompletedVisuals.includes('hotspots'),
-            },
-            {
-              id: 'vocabulary',
-              label: 'Vocabulary Bank',
-              icon: FileText,
-              isVisualDone: localCompletedVisuals.includes('vocabFlip'),
-              hasPartialVisual: localCompletedVisuals.includes('vocabFlip'),
-            },
-            {
-              id: 'checklist',
-              label: `Self-Check (${checkedCount}/${checklistItems.length})`,
-              icon: ListChecks,
-              isVisualDone: localCompletedVisuals.includes('selfCheck') || allChecked,
-              hasPartialVisual: localCompletedVisuals.includes('selfCheck') || checkedCount > 0,
-            },
-            {
-              id: 'cheatsheet',
-              label: 'Study Cheatsheet',
-              icon: Copy,
-              isVisualDone: localCompletedVisuals.includes('cheatsheet'),
-              hasPartialVisual: localCompletedVisuals.includes('cheatsheet'),
-            },
-          ].map((tab) => {
-            const Icon = tab.icon;
-            const isActive = lessonActiveTab === tab.id;
-            return (
-              <button
-                key={tab.id}
-                type="button"
-                onClick={() => {
-                  soundFX.playClick();
-                  setLessonActiveTab(tab.id as any);
-                }}
-                className={`px-3 py-2 text-xs font-bold rounded-lg transition-all flex items-center gap-1.5 whitespace-nowrap cursor-pointer ${
-                  isActive
-                    ? 'bg-sky-600 text-white shadow-xs'
-                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
-                }`}
-              >
-                <Icon className="w-3.5 h-3.5" />
-                <span>{tab.label}</span>
-                {tab.isVisualDone ? (
-                  <span
-                    className={`w-4 h-4 rounded-full flex items-center justify-center text-[10px] font-black ${
-                      isActive ? 'bg-white text-sky-700' : 'bg-emerald-100 text-emerald-700'
-                    }`}
-                    title="Visual interactive completed!"
-                  >
-                    ✓
-                  </span>
-                ) : tab.hasPartialVisual ? (
-                  <span
-                    className={`w-2 h-2 rounded-full ${
-                      isActive ? 'bg-amber-300' : 'bg-amber-400'
-                    }`}
-                    title="In progress"
-                  />
-                ) : null}
-              </button>
-            );
-          })}
-        </div>
-
-        {/* Main Content Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-          {/* Left Column: Interactive Study Tabs */}
-          <div className="lg:col-span-7 space-y-6">
-            {/* TAB 1: CONCEPTS & RULES */}
-            {lessonActiveTab === 'concepts' && (
-              <div className="space-y-6">
-                <section className="bg-white border-2 border-[#231F20] linocut-card rounded-xl overflow-hidden space-y-4">
-                  <InabelStrip variant="royal" label="01. Lesson Concept & DepEd Competency" />
-                  <div className="px-6 pb-6 space-y-4">
-                  <div className="flex items-center justify-between border-b border-slate-100 pb-3">
-                    <h2 className="text-lg font-bold text-slate-900 font-display flex items-center gap-2">
-                      <BookOpen className="w-5 h-5 text-sky-600" />
-                      <span>01. Lesson Concept & DepEd Competency</span>
-                    </h2>
-                    <span className="text-xs px-2.5 py-0.5 rounded-full bg-sky-50 text-sky-800 font-bold border border-sky-200">
-                      Module {module.moduleNumber} Core Study
-                    </span>
-                  </div>
-
-                  {/* MELC Competency Banner */}
-                  <div className="p-4 rounded-xl bg-gradient-to-r from-sky-50 to-blue-50 border border-sky-200 text-sky-950 space-y-1.5">
-                    <div className="flex items-center gap-2 text-[11px] font-black uppercase tracking-wider text-sky-700">
-                      <span>Official DepEd MELC Standard:</span>
-                    </div>
-                    <p className="text-xs sm:text-sm font-semibold leading-relaxed">
-                      {lessonContent.melcCompetency}
-                    </p>
-                  </div>
-
-                  {/* Conceptual Overview */}
-                  <div className="space-y-2">
-                    <h3 className="text-xs font-bold text-slate-500 uppercase tracking-wider">
-                      Comprehensive Conceptual Overview
-                    </h3>
-                    <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
-                      {lessonContent.overview}
-                    </p>
-                  </div>
-
-                  {/* Key Rules List with Animated Visual Illustrations */}
-                  <div className="pt-2 space-y-3">
-                    <div className="flex items-center justify-between">
-                      <h3 className="text-sm font-bold text-slate-900">
-                        Essential Rules & Animated Visual Examples:
-                      </h3>
-                      <span className="text-xs text-slate-500 font-medium font-mono">
-                        {lessonContent.keyRules.length} Guidelines
-                      </span>
-                    </div>
-
-                    <div className="space-y-3">
-                      {lessonContent.keyRules.map((rule, i) => {
-                        const colonIdx = rule.indexOf(':');
-                        const ruleTitle = colonIdx > 0 ? rule.slice(0, colonIdx) : `Rule ${i + 1}`;
-                        const ruleBody = colonIdx > 0 ? rule.slice(colonIdx + 1).trim() : rule;
-                        const ruleVis = visualConfig.tabs.concepts.ruleVisuals[i];
-                        return (
-                          <div
-                            key={i}
-                            className="rounded-xl border-2 border-[#231F20] linocut-card-sm bg-slate-50/70 hover:bg-slate-50 transition-colors overflow-hidden"
-                          >
-                            <InabelStrip
-                              variant={i % 2 === 0 ? 'royal' : 'amber'}
-                              height={10}
-                            />
-                            <div className="p-4 space-y-1.5">
-                            <div className="flex items-center gap-2">
-                              <span className="font-mono text-xs font-bold text-sky-700 px-1.5 py-0.5 bg-sky-100/70 rounded">
-                                0{i + 1}
-                              </span>
-                              <span className="text-xs font-bold text-slate-900">{ruleTitle}</span>
-                            </div>
-                            <p className="text-xs sm:text-sm text-slate-700 pl-7 leading-relaxed">
-                              {ruleBody}
-                            </p>
-                            {ruleVis && (
-                              <div className="pl-7">
-                                <RuleVisualIllustration spec={ruleVis} dataSaver={dataSaver} />
-                              </div>
-                            )}
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
-                  </div>
-                </section>
-
-                {/* 1B: Interactive Animated Diagram */}
-                <VisualErrorBoundary fallbackTitle="Interactive Concept Bridge">
-                  <InteractiveDiagram
-                    title={visualConfig.tabs.concepts.interactiveDiagram.title}
-                    subtitle={visualConfig.tabs.concepts.interactiveDiagram.subtitle}
-                    nodes={visualConfig.tabs.concepts.interactiveDiagram.nodes}
-                    xpReward={visualConfig.tabs.concepts.interactiveDiagram.xp}
-                    isCompleted={localCompletedVisuals.includes('diagram')}
-                    onComplete={() =>
-                      triggerVisualActivityComplete(
-                        'diagram',
-                        visualConfig.tabs.concepts.interactiveDiagram.xp,
-                        'Interactive Concept Bridge Solved'
-                      )
-                    }
-                  />
-                </VisualErrorBoundary>
-
-                {/* 1C: Mini Visual Sorting Game */}
-                <VisualErrorBoundary fallbackTitle="Mini Sorting Game">
-                  <DragDropMatch
-                    title={visualConfig.tabs.concepts.miniGame.title}
-                    subtitle={visualConfig.tabs.concepts.miniGame.subtitle}
-                    categories={visualConfig.tabs.concepts.miniGame.categories}
-                    items={visualConfig.tabs.concepts.miniGame.items}
-                    xpReward={visualConfig.tabs.concepts.miniGame.xp}
-                    isCompleted={localCompletedVisuals.includes('minigame')}
-                    onComplete={() =>
-                      triggerVisualActivityComplete(
-                        'minigame',
-                        visualConfig.tabs.concepts.miniGame.xp,
-                        'Concept Sorting Mini-Game Mastered'
-                      )
-                    }
-                  />
-                </VisualErrorBoundary>
-              </div>
-            )}
-
-            {/* TAB 2: GUIDED MODEL ANALYSIS */}
-            {lessonActiveTab === 'examples' && (
-              <div className="space-y-6">
-                {/* 2A: Animated Step-by-Step Sentence Walkthrough */}
-                <VisualErrorBoundary fallbackTitle="Animated Walkthrough Stepper">
-                  <AnimatedStepper
-                    steps={visualConfig.tabs.guidedAnalysis.steps}
-                    xpReward={visualConfig.tabs.guidedAnalysis.xp}
-                    isCompleted={localCompletedVisuals.includes('stepper')}
-                    onComplete={() =>
-                      triggerVisualActivityComplete(
-                        'stepper',
-                        visualConfig.tabs.guidedAnalysis.xp,
-                        'Guided Sentence Walkthrough Completed'
-                      )
-                    }
-                  />
-                </VisualErrorBoundary>
-
-                <section className="bg-white border-2 border-[#231F20] linocut-card rounded-xl overflow-hidden space-y-5">
-                  <InabelStrip variant="amber" label="02. Guided Examples & Text Analysis" />
-                  <div className="px-6 pb-6 space-y-5">
-                  <div className="flex items-center justify-between border-b border-slate-100 pb-3">
-                    <h2 className="text-lg font-bold text-slate-900 font-display flex items-center gap-2">
-                      <Sparkles className="w-5 h-5 text-amber-500" />
-                      <span>02. Guided Examples & Text Analysis</span>
-                    </h2>
-                    <span className="text-xs text-slate-500 font-medium">Model Solutions</span>
-                  </div>
-
-                  <p className="text-xs sm:text-sm text-slate-600">
-                    Examine how expert readers and writers analyze and solve questions for this competency:
-                  </p>
-
-                  <div className="space-y-4">
-                    {lessonContent.examples.map((ex, i) => (
-                      <div
-                        key={i}
-                        className="rounded-xl border-2 border-[#231F20] linocut-card-sm bg-[#F8FAFC] overflow-hidden"
-                      >
-                        <InabelStrip variant="royal" height={10} />
-                        <div className="p-4 sm:p-5 space-y-3">
-                        <div className="flex items-center justify-between">
-                          <span className="text-xs font-bold text-sky-700 bg-sky-100 px-2.5 py-0.5 rounded-md">
-                            Model Example 0{i + 1} · {ex.title}
-                          </span>
-                          <span className="text-[11px] text-slate-400 font-mono">Walkthrough</span>
-                        </div>
-                        <blockquote className="text-sm sm:text-base font-semibold text-slate-900 border-l-4 border-sky-600 pl-4 py-1 bg-white rounded-r-lg p-2 shadow-xs">
-                          “{ex.example}”
-                        </blockquote>
-                        <div className="p-3 bg-sky-50/60 border border-sky-100 rounded-lg text-xs sm:text-sm text-slate-700 space-y-1">
-                          <div className="font-bold text-sky-950 flex items-center gap-1.5">
-                            <Sparkles className="w-3.5 h-3.5 text-amber-500" />
-                            <span>Step-by-Step Reason & Analysis:</span>
-                          </div>
-                          <p className="leading-relaxed">{ex.analysis}</p>
-                        </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* 3-Step Protocol Card */}
-                  <div className="p-4 bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl border border-amber-200 text-xs text-amber-950 space-y-2">
-                    <div className="font-bold flex items-center gap-1.5 text-amber-900">
-                      <Lightbulb className="w-4 h-4 text-amber-600" />
-                      <span>The 3-Step Mastery Protocol for Quizzes:</span>
-                    </div>
-                    <ol className="list-decimal list-inside space-y-1 text-slate-700">
-                      <li><strong>Identify Markers:</strong> Read the prompt and locate surrounding signal keywords.</li>
-                      <li><strong>Test the Relationship:</strong> Apply the rule formula (e.g. colon notation, verb voice shift).</li>
-                      <li><strong>Substitute & Verify:</strong> Re-insert the target choice into the sentence to verify coherence.</li>
-                    </ol>
-                  </div>
-                  </div>
-                </section>
-              </div>
-            )}
-
-            {/* TAB 3: PITFALLS & TIPS */}
-            {lessonActiveTab === 'tips' && (
-              <div className="space-y-6">
-                {/* 3A: Animated Pitfall Comparison & Spot-the-Mistake Challenge */}
-                <VisualErrorBoundary fallbackTitle="Pitfall Comparison Cards">
-                  <PitfallComparisonCards
-                    pairs={visualConfig.tabs.pitfalls.pairs}
-                    xpReward={visualConfig.tabs.pitfalls.xp}
-                    isCompleted={localCompletedVisuals.includes('pitfalls')}
-                    onComplete={() =>
-                      triggerVisualActivityComplete(
-                        'pitfalls',
-                        visualConfig.tabs.pitfalls.xp,
-                        'Pitfalls & Spot-the-Mistake Completed'
-                      )
-                    }
-                  />
-                </VisualErrorBoundary>
-
-                <section className="bg-white border-2 border-[#231F20] linocut-card rounded-xl overflow-hidden space-y-5">
-                  <InabelStrip variant="crimson" label="03. Common Pitfalls & High-Yield Exam Tips" />
-                  <div className="px-6 pb-6 space-y-5">
-                  <div className="flex items-center justify-between border-b border-slate-100 pb-3">
-                    <h2 className="text-lg font-bold text-slate-900 font-display flex items-center gap-2">
-                      <AlertTriangle className="w-5 h-5 text-amber-500" />
-                      <span>03. Common Pitfalls & High-Yield Exam Tips</span>
-                    </h2>
-                    <span className="text-xs text-slate-500 font-medium">Error Prevention</span>
-                  </div>
-
-                  <p className="text-xs sm:text-sm text-slate-600">
-                    Review the most frequent mistakes made by junior high school learners and learn how to avoid them:
-                  </p>
-
-                  <div className="space-y-4">
-                    {mistakesList.map((m, i) => (
-                      <div
-                        key={i}
-                        className="rounded-xl border-2 border-[#231F20] linocut-card-sm bg-white overflow-hidden"
-                      >
-                        <InabelStrip variant="crimson" height={10} />
-                        <div className="p-4 space-y-2.5">
-                        <div className="flex items-start gap-2.5 text-xs">
-                          <span className="px-2 py-0.5 rounded bg-red-100 text-red-800 font-bold shrink-0">
-                            ✕ Pitfall
-                          </span>
-                          <span className="font-medium text-slate-800">{m.mistake}</span>
-                        </div>
-                        <div className="flex items-start gap-2.5 text-xs">
-                          <span className="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold shrink-0">
-                            ✓ Correction
-                          </span>
-                          <span className="font-semibold text-emerald-950">{m.correction}</span>
-                        </div>
-                        <div className="p-2.5 bg-slate-50 rounded-lg text-[11px] text-slate-600 border border-slate-100">
-                          <strong className="text-slate-800">Linguistic Insight: </strong>
-                          {m.why}
-                        </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="p-4 bg-sky-50 rounded-xl border border-sky-200 text-xs text-sky-950 space-y-1.5">
-                    <div className="font-bold text-sky-900 flex items-center gap-1.5">
-                      <Sparkles className="w-4 h-4 text-sky-600" />
-                      <span>Pro Quiz Strategy:</span>
-                    </div>
-                    <p className="leading-relaxed">
-                      Before submitting your answer in the quiz, read the entire sentence aloud in your head. Correct grammar flows naturally with proper stress, pause, and semantic agreement.
-                    </p>
-                  </div>
-                  </div>
-                </section>
-              </div>
-            )}
-
-            {/* TAB 4: DAVAO ORIENTAL CONTEXT */}
-            {lessonActiveTab === 'cultural' && (
-              <div className="space-y-6">
-                {/* 4A: Interactive Illustrated Davao Oriental Hotspot Scene */}
-                <VisualErrorBoundary fallbackTitle="Davao Oriental Hotspot Explorer">
-                  <HotspotScene
-                    scene={visualConfig.tabs.davaoContext.scene}
-                    sceneTitle={visualConfig.tabs.davaoContext.sceneTitle}
-                    sceneSubtitle={visualConfig.tabs.davaoContext.sceneSubtitle}
-                    municipality={visualConfig.tabs.davaoContext.municipality}
-                    hotspots={visualConfig.tabs.davaoContext.hotspots}
-                    xpReward={visualConfig.tabs.davaoContext.xp}
-                    isCompleted={localCompletedVisuals.includes('hotspots')}
-                    onComplete={() =>
-                      triggerVisualActivityComplete(
-                        'hotspots',
-                        visualConfig.tabs.davaoContext.xp,
-                        'Davao Oriental Heritage Hotspots Explored'
-                      )
-                    }
-                  />
-                </VisualErrorBoundary>
-
-                <section className="bg-white border-2 border-[#231F20] linocut-card rounded-xl overflow-hidden space-y-4">
-                  <InabelStrip variant="emerald" label="04. Davao Oriental Real-World Heritage Context" />
-                  <div className="px-6 pb-6 space-y-4">
-                  <div className="flex items-center justify-between border-b border-slate-100 pb-3">
-                    <h2 className="text-lg font-bold text-slate-900 font-display flex items-center gap-2">
-                      <Compass className="w-5 h-5 text-emerald-600" />
-                      <span>04. Davao Oriental Real-World Heritage Context</span>
-                    </h2>
-                    <span className="text-xs text-emerald-700 font-bold">Local Connection</span>
-                  </div>
-
-                  <div className="p-4 rounded-xl bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-200 text-emerald-950 space-y-2">
-                    <div className="text-xs font-bold uppercase tracking-wider text-emerald-800 flex items-center gap-2">
-                      <span>Island Location: {currentIslandName}</span>
-                    </div>
-                    <p className="text-sm leading-relaxed text-slate-800">
-                      {lessonContent.culturalConnection}
-                    </p>
-                  </div>
-
-                  <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2 text-xs text-slate-700">
-                    <h3 className="font-bold text-slate-900 flex items-center gap-1.5">
-                      <Award className="w-4 h-4 text-amber-500" />
-                      <span>Why Local Cultural Context Matters:</span>
-                    </h3>
-                    <p className="leading-relaxed">
-                      In the DepEd curriculum for Region XI, English competencies are grounded in the living heritage of Davao Oriental—from Mandaya oral epics and Dagmay weaving to Pujada Bay marine sanctuaries and the biodiversity of Mount Hamiguitan. Learning language through local heritage helps learners become proud ambassadors of their home province.
-                    </p>
-                  </div>
-                  </div>
-                </section>
-              </div>
-            )}
-
-            {/* TAB 5: VOCABULARY BANK */}
-            {lessonActiveTab === 'vocabulary' && (
-              <div className="space-y-6">
-                <section className="bg-white border-2 border-[#231F20] linocut-card rounded-xl overflow-hidden space-y-4">
-                  <InabelStrip variant="indigo" label="05. Interactive 3D Vocabulary Flip Cards & Audio" />
-                  <div className="px-6 pb-6 space-y-4">
-                  <div className="flex items-center justify-between border-b border-slate-100 pb-3">
-                    <div>
-                      <h2 className="text-lg font-bold text-slate-900 font-display flex items-center gap-2">
-                        <FileText className="w-5 h-5 text-sky-600" />
-                        <span>05. Interactive 3D Vocabulary Flip Cards & Audio</span>
-                      </h2>
-                      <p className="text-xs text-slate-500 mt-0.5">
-                        Tap any card to flip between definition and Davao Oriental context sentence, or tap <strong>Speak</strong> to hear pronunciation.
-                      </p>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className="text-xs px-2.5 py-1 rounded-full bg-amber-50 text-amber-800 border border-amber-200 font-bold">
-                        {localCompletedVisuals.includes('vocabFlip')
-                          ? '✓ +10 XP Earned'
-                          : `+${visualConfig.tabs.vocabulary.xp} XP`}
-                      </span>
-                    </div>
-                  </div>
-
-                  <VisualErrorBoundary fallbackTitle="Interactive Vocabulary Cards">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-                      {visualConfig.tabs.vocabulary.cards.map((v, i) => (
-                        <FlipCard
-                          key={v.id || i}
-                          card={v}
-                          isFlipped={Boolean(flippedVocabMap[v.id || String(i)])}
-                          onToggleFlip={() => {
-                            const key = v.id || String(i);
-                            const nextState = { ...flippedVocabMap, [key]: !flippedVocabMap[key] };
-                            setFlippedVocabMap(nextState);
-                            const flippedCount = Object.values(nextState).filter(Boolean).length;
-                            if (
-                              flippedCount >= Math.min(2, visualConfig.tabs.vocabulary.cards.length) &&
-                              !localCompletedVisuals.includes('vocabFlip')
-                            ) {
-                              triggerVisualActivityComplete(
-                                'vocabFlip',
-                                visualConfig.tabs.vocabulary.xp,
-                                'Vocabulary Flip Cards Explored'
-                              );
-                            }
-                          }}
-                        />
-                      ))}
-                    </div>
-                  </VisualErrorBoundary>
-                  </div>
-                </section>
-              </div>
-            )}
-
-            {/* TAB 6: SELF-CHECK CHECKLIST */}
-            {lessonActiveTab === 'checklist' && (
-              <div className="space-y-6">
-                {/* 6A: Gamified Lightning Self-Check Challenge */}
-                <VisualErrorBoundary fallbackTitle="Self-Check Lightning Challenge">
-                  <SelfCheckVisualChallenge
-                    questions={visualConfig.tabs.selfCheck.questions}
-                    timerSeconds={visualConfig.tabs.selfCheck.timerSeconds}
-                    xpReward={visualConfig.tabs.selfCheck.xp}
-                    isCompleted={localCompletedVisuals.includes('selfCheck')}
-                    onComplete={() =>
-                      triggerVisualActivityComplete(
-                        'selfCheck',
-                        visualConfig.tabs.selfCheck.xp,
-                        'Self-Check Lightning Challenge Passed'
-                      )
-                    }
-                  />
-                </VisualErrorBoundary>
-
-                <section className="bg-white border-2 border-[#231F20] linocut-card rounded-xl overflow-hidden space-y-5">
-                  <InabelStrip variant="emerald" label="06. Interactive Self-Check Mastery Rubric" />
-                  <div className="px-6 pb-6 space-y-5">
-                  <div className="flex items-center justify-between border-b border-slate-100 pb-3">
-                    <h2 className="text-lg font-bold text-slate-900 font-display flex items-center gap-2">
-                      <ListChecks className="w-5 h-5 text-emerald-600" />
-                      <span>06. Interactive Self-Check Mastery Rubric</span>
-                    </h2>
-                    <span className="text-xs font-bold font-mono text-emerald-700">
-                      {checkedCount} / {checklistItems.length} Mastered
-                    </span>
-                  </div>
-
-                  <p className="text-xs sm:text-sm text-slate-600">
-                    Click each objective once you feel confident. Completing all checks verifies you are fully prepared for the quiz:
-                  </p>
-
-                  {/* Progress Bar */}
-                  <div className="space-y-1.5">
-                    <div className="flex justify-between text-xs font-bold text-slate-700">
-                      <span>Self-Assessment Readiness</span>
-                      <span>{Math.round((checkedCount / checklistItems.length) * 100)}%</span>
-                    </div>
-                    <div className="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden">
-                      <div
-                        className="h-full bg-emerald-500 transition-all duration-300 rounded-full"
-                        style={{ width: `${(checkedCount / checklistItems.length) * 100}%` }}
-                      />
-                    </div>
-                  </div>
-
-                  <div className="space-y-2.5">
-                    {checklistItems.map((item, idx) => {
-                      const isDone = Boolean(checkedObjectives[idx]);
-                      return (
-                        <button
-                          key={idx}
-                          type="button"
-                          onClick={() => {
-                            soundFX.playClick();
-                            setCheckedObjectives((prev) => ({
-                              ...prev,
-                              [idx]: !prev[idx],
-                            }));
-                          }}
-                          className={`w-full text-left p-3.5 rounded-xl border transition-all flex items-start gap-3 cursor-pointer ${
-                            isDone
-                              ? 'bg-emerald-50/80 border-emerald-300 text-emerald-950 shadow-xs'
-                              : 'bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100'
-                          }`}
-                        >
-                          <div
-                            className={`w-5 h-5 rounded-md border flex items-center justify-center shrink-0 mt-0.5 ${
-                              isDone
-                                ? 'bg-emerald-600 border-emerald-600 text-white'
-                                : 'bg-white border-slate-300'
-                            }`}
-                          >
-                            {isDone && <Check className="w-3.5 h-3.5 stroke-[3]" />}
-                          </div>
-                          <span className={`text-xs sm:text-sm font-medium ${isDone ? 'line-through text-emerald-900/80' : ''}`}>
-                            {item}
-                          </span>
-                        </button>
-                      );
-                    })}
-                  </div>
-
-                  {allChecked ? (
-                    <div className="p-4 bg-emerald-50 rounded-xl border border-emerald-200 flex flex-col sm:flex-row items-center justify-between gap-3 text-emerald-950">
-                      <div>
-                        <div className="text-xs font-bold text-emerald-900">🎉 All Objectives Mastered!</div>
-                        <div className="text-xs text-emerald-800">You are ready to restore the island bridge!</div>
-                      </div>
-                      <button
-                        type="button"
-                        onClick={() => {
-                          soundFX.playClick();
-                          onCompleteLesson(module.id);
-                          setStage('QUIZ_SETUP');
-                        }}
-                        className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-lg transition-colors cursor-pointer whitespace-nowrap"
-                      >
-                        Launch Quiz Now
-                      </button>
-                    </div>
-                  ) : (
-                    <div className="text-xs text-slate-500 text-center">
-                      Check off each goal above as you review the lesson material.
-                    </div>
-                  )}
-                  </div>
-                </section>
-              </div>
-            )}
-
-            {/* TAB 7: STUDY CHEATSHEET */}
-            {lessonActiveTab === 'cheatsheet' && (
-              <div className="space-y-6">
-                {/* 7A: Animated Step-by-Step Study Infographic */}
-                <VisualErrorBoundary fallbackTitle="Animated Cheatsheet Infographic">
-                  <AnimatedCheatsheetInfographic
-                    moduleTitle={module.title}
-                    nodes={visualConfig.tabs.cheatsheet.nodes}
-                    xpReward={visualConfig.tabs.cheatsheet.xp}
-                    isCompleted={localCompletedVisuals.includes('cheatsheet')}
-                    onComplete={() =>
-                      triggerVisualActivityComplete(
-                        'cheatsheet',
-                        visualConfig.tabs.cheatsheet.xp,
-                        'Interactive Study Cheatsheet Unfolded'
-                      )
-                    }
-                  />
-                </VisualErrorBoundary>
-
-                <section className="bg-white border-2 border-[#231F20] linocut-card rounded-xl overflow-hidden space-y-4">
-                  <InabelStrip variant="royal" label="07. Printable Study Summary & Cheatsheet" />
-                  <div className="px-6 pb-6 space-y-4">
-                  <div className="flex items-center justify-between border-b border-slate-100 pb-3">
-                    <h2 className="text-lg font-bold text-slate-900 font-display flex items-center gap-2">
-                      <Copy className="w-5 h-5 text-sky-600" />
-                      <span>07. Printable Study Summary & Cheatsheet</span>
-                    </h2>
-                    <button
-                      type="button"
-                      onClick={handleCopyStudyNotes}
-                      className="px-3 py-1.5 bg-sky-600 hover:bg-sky-700 text-white text-xs font-bold rounded-lg transition-colors flex items-center gap-1.5 cursor-pointer"
-                    >
-                      {copiedNotes ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
-                      <span>{copiedNotes ? 'Copied!' : 'Copy Summary'}</span>
-                    </button>
-                  </div>
-
-                  <div className="p-4 bg-slate-900 text-slate-100 rounded-xl font-mono text-xs space-y-3 overflow-x-auto max-h-96 overflow-y-auto leading-relaxed">
-                    <div className="text-sky-300 font-bold border-b border-slate-800 pb-2">
-                      === LINGOQUEST MODULE CHEATSHEET: {module.title.toUpperCase()} ===
-                    </div>
-                    <div>
-                      <span className="text-amber-400 font-bold">[COMPETENCY]</span> {lessonContent.melcCompetency}
-                    </div>
-                    <div>
-                      <span className="text-amber-400 font-bold">[CORE OVERVIEW]</span>
-                      <p className="mt-1 text-slate-300 font-sans">{lessonContent.overview}</p>
-                    </div>
-                    <div>
-                      <span className="text-amber-400 font-bold">[KEY RULES]</span>
-                      <ul className="list-disc list-inside mt-1 space-y-1 text-slate-300 font-sans">
-                        {lessonContent.keyRules.map((r, i) => (
-                          <li key={i}>{r}</li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div>
-                      <span className="text-amber-400 font-bold">[GUIDED EXAMPLES]</span>
-                      <ul className="list-disc list-inside mt-1 space-y-1 text-slate-300 font-sans">
-                        {lessonContent.examples.map((ex, i) => (
-                          <li key={i}>"{ex.example}" — {ex.analysis}</li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div>
-                      <span className="text-amber-400 font-bold">[LOCAL CONTEXT]</span>
-                      <p className="mt-1 text-slate-300 font-sans">{lessonContent.culturalConnection}</p>
-                    </div>
-                  </div>
-                  </div>
-                </section>
-              </div>
-            )}
-          </div>
-
-          {/* Right Column: Warm-up Diagnostic & Writing Lab */}
-          <div className="lg:col-span-5 space-y-6">
-            {/* Quick Practice Diagnostic Warm-Up */}
-            <section className="bg-white border-2 border-[#231F20] linocut-card rounded-xl overflow-hidden space-y-4">
-              <InabelStrip variant="amber" label="Interactive Diagnostic Warm-Up" rightText="Instant Check" />
-              <div className="px-6 pb-6 space-y-4">
-              <div className="flex items-center justify-between">
-                <h2 className="text-base font-bold text-slate-900 font-display flex items-center gap-2">
-                  <Sparkles className="w-4 h-4 text-amber-500" />
-                  <span>Interactive Diagnostic Warm-Up</span>
-                </h2>
-                <span className="text-xs text-sky-700 font-bold bg-sky-50 px-2.5 py-0.5 rounded-full">
-                  Instant Feedback
-                </span>
-              </div>
-              <p className="text-xs text-slate-500">
-                Test your baseline understanding with this quick diagnostic question before beginning the quiz:
-              </p>
-
-              <div className="p-3.5 bg-slate-50 rounded-xl border border-slate-200 font-semibold text-xs sm:text-sm text-slate-900 leading-snug">
-                {lessonContent.warmupQuestion.question}
-              </div>
-
-              <div className="space-y-2">
-                {lessonContent.warmupQuestion.options.map((opt) => {
-                  const isChosen = warmupSelected === opt;
-                  const isRight = opt === lessonContent.warmupQuestion.correctAnswer;
-                  return (
-                    <button
-                      key={opt}
-                      type="button"
-                      onClick={() => {
-                        soundFX.playClick();
-                        setWarmupSelected(opt);
-                        setWarmupSubmitted(true);
-                        if (opt === lessonContent.warmupQuestion.correctAnswer) {
-                          soundFX.playCorrect();
-                        } else {
-                          soundFX.playIncorrect();
-                        }
-                      }}
-                      className={`w-full text-left p-3 rounded-lg border text-xs sm:text-sm font-medium transition-all cursor-pointer ${
-                        warmupSubmitted && isChosen
-                          ? isRight
-                            ? 'bg-emerald-50 border-emerald-500 text-emerald-950 font-bold scale-[1.01] shadow-xs'
-                            : 'bg-red-50 border-red-400 text-red-950'
-                          : 'bg-slate-50 hover:bg-slate-100 border-slate-200 text-slate-800'
-                      }`}
-                    >
-                      <div className="flex items-center justify-between gap-2">
-                        <span>{opt}</span>
-                        {warmupSubmitted && isChosen && (
-                          <span className="font-mono text-xs font-bold shrink-0">
-                            {isRight ? '✓ CORRECT' : '✕ TRY AGAIN'}
-                          </span>
-                        )}
-                      </div>
-                    </button>
-                  );
-                })}
-              </div>
-
-              {warmupSubmitted && (
-                <div className="space-y-2.5">
-                  <MascotReaction
-                    mood={warmupSelected === lessonContent.warmupQuestion.correctAnswer ? 'cheer' : 'encourage'}
-                    message={
-                      warmupSelected === lessonContent.warmupQuestion.correctAnswer
-                        ? `Husay! ${lessonContent.warmupQuestion.feedback}`
-                        : 'Not quite! Check the relationship order and signal clues in the prompt, then tap another option.'
-                    }
-                  />
-                </div>
-              )}
-              </div>
-            </section>
-
-            {/* AI Writing Lab Integration Card */}
-            <section className="bg-white border-2 border-[#231F20] linocut-card rounded-xl overflow-hidden space-y-3">
-              <InabelStrip variant="emerald" label="Grammar & Writing Coach Activity" rightText="+100 Bonus Pts" />
-              <div className="px-6 pb-6 space-y-3">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2 text-xs font-semibold text-sky-700">
-                  <Feather className="w-4 h-4" />
-                  <span>Grammar & Writing Coach Activity</span>
-                </div>
-                <span className="text-xs font-bold text-amber-600 bg-amber-50 px-2 py-0.5 rounded-full border border-amber-200">
-                  +100 Bonus Pts
-                </span>
-              </div>
-              <h3 className="text-sm font-bold text-slate-900">
-                {lessonContent.writingPrompt.title}
-              </h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                {lessonContent.writingPrompt.instructions}
-              </p>
-              {lessonContent.writingPrompt.sampleStarter && (
-                <div className="p-2.5 bg-slate-50 rounded-lg text-[11px] text-slate-600 border border-slate-100 italic">
-                  <strong>Starter Idea: </strong>
-                  “{lessonContent.writingPrompt.sampleStarter}”
-                </div>
-              )}
-              <button
-                type="button"
-                onClick={() => {
-                  soundFX.playClick();
-                  onCompleteLesson(module.id);
-                  onOpenWritingLabWithPrompt(module);
-                }}
-                className="w-full py-2.5 px-4 bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold rounded-lg transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-xs"
-              >
-                <Feather className="w-3.5 h-3.5" />
-                <span>Open Writing Activity in Studio</span>
-              </button>
-              </div>
-            </section>
-
-            {/* Primary Action Button */}
-            <button
-              type="button"
-              onClick={() => {
-                soundFX.playClick();
-                onCompleteLesson(module.id);
-                setStage('QUIZ_SETUP');
-              }}
-              className="w-full py-3.5 px-5 bg-sky-600 hover:bg-sky-700 text-white text-sm font-bold rounded-xl transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-xs"
-            >
-              <span>Proceed to Start Quiz & Restore Bridge</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
-          </div>
-        </div>
-
-        {/* Floating XP Reward & Badge Toast */}
-        <XPToast
-          toast={xpToast}
-          onDismiss={() => setXpToast(null)}
-        />
-
-      </div>
-    );
+    return <div className="rounded-xl border p-6">
+      <p>This module has no verified PDF lesson. Select a module from the source curriculum.</p>
+      <button type="button" onClick={onBackToMap}>Back to modules</button>
+    </div>;
   }
 
   if (stage === 'QUIZ_SETUP') {
+    const canStartSourceGame = !!createSourceGameSession(module, quizBank, gameModeFilter, difficulty, () => .5);
     const difficultyConfigs: Array<{
       id: DifficultyLevel;
       label: string;
@@ -1578,20 +462,20 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
       },
       {
         id: 'moderate',
-        label: 'Moderate Level',
+        label: 'Medium Level',
         timePerQ: 30,
         pointsPerQ: 150,
-        complexityDesc: 'Intermediate grade-level questions with a brisk 30-second countdown timer.',
+        complexityDesc: 'Verified source questions with a 30-second countdown timer.',
         borderColor: 'border-amber-500',
         activeBg: 'bg-amber-50/70',
-        badgeText: '▲ MODERATE · 30s / QUESTION',
+        badgeText: '▲ MEDIUM · 30s / QUESTION',
       },
       {
         id: 'hard',
         label: 'Hard Level',
         timePerQ: 20,
         pointsPerQ: 200,
-        complexityDesc: 'Advanced vocabulary & syntax challenges with a rapid 20-second timer. Awards the Storm Conqueror badge!',
+        complexityDesc: 'Verified source questions with a 20-second countdown timer. Existing hard-level rewards apply.',
         borderColor: 'border-red-500',
         activeBg: 'bg-red-50/70',
         badgeText: '◆ HARD · 20s / QUESTION',
@@ -1613,37 +497,37 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
       {
         id: 'analogyMaster',
         title: 'Master Quiz (Analogy Master · 5 Questions)',
-        desc: 'Plays all 5 questions for Analogy Master mode (verbal logic, antonyms, synonyms, relationships).',
+        desc: 'Play five distinct source analogies.',
         icon: <Scale className="w-4 h-4 text-rose-600" />,
       },
       {
         id: 'missingPiece',
         title: 'Missing Piece Quiz (5 Questions)',
-        desc: 'Plays all 5 questions for Missing Piece mode (sentence structure, grammatical connectors, and rule terms).',
+        desc: 'Complete five statements using terms from this PDF.',
         icon: <Puzzle className="w-4 h-4 text-purple-600" />,
       },
       {
         id: 'pictureHunt',
         title: 'Picture Hunt Quiz (5 Questions)',
-        desc: 'Plays all 5 questions for Picture Hunt mode (identifying corresponding visual scenes and artwork).',
+        desc: 'Explore five reviewed visual questions from this PDF.',
         icon: <ImageIcon className="w-4 h-4 text-amber-600" />,
       },
       {
         id: 'crosswordGame',
         title: 'Crossword Game (5 Questions)',
-        desc: 'Plays all 5 questions for Crossword Game mode (solving across and down letter clues).',
+        desc: 'Solve five source-based word clues.',
         icon: <Grid3X3 className="w-4 h-4 text-indigo-600" />,
       },
       {
         id: 'typeHunter',
         title: 'Hunter Quiz (Word Hunter · 5 Questions)',
-        desc: 'Plays all 5 questions for Word Hunter mode (typing target vocabulary and master concepts).',
+        desc: 'Type five terms supported by this PDF.',
         icon: <Keyboard className="w-4 h-4 text-emerald-600" />,
       },
     ];
 
     return (
-      <div className="max-w-4xl mx-auto space-y-6">
+      <div className="digital-game max-w-4xl mx-auto space-y-6">
         {/* Faculty / Admin Preview Bar */}
         {isPreviewMode && (
           <div className="bg-gradient-to-r from-[#0A192F] via-[#0F3460] to-[#1E3E62] text-white p-4 rounded-2xl border border-sky-500/30 shadow-md flex flex-col sm:flex-row sm:items-center justify-between gap-3 animate-fade-in">
@@ -1661,7 +545,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                   </span>
                 </div>
                 <p className="text-xs text-slate-200">
-                  Previewing quizzes for <strong>{module.title}</strong> · 25 Questions Total (5 per game mode)
+                  Previewing quizzes for <strong>{module.title}</strong> · Verified source bank · exactly 5 per playable session
                 </p>
               </div>
             </div>
@@ -1725,7 +609,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
               }`}
             >
               <ListChecks className="w-4 h-4" />
-              <span>Audit All 25 Questions with Answer Keys</span>
+              <span>Inspect Verified Source Questions</span>
             </button>
           </div>
         )}
@@ -1745,7 +629,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                   Grade {module.gradeLevel} Module {module.moduleNumber}: {module.title}
                 </h2>
                 <p className="text-xs text-slate-500 mt-0.5">
-                  DepEd MELC: {module.lessonContent.melcCompetency} · Total Questions: {module.quizQuestions?.length || 25}
+                  DepEd MELC: {module.lessonContent.melcCompetency} · Total Questions: {quizBank.length}
                 </p>
               </div>
 
@@ -1769,12 +653,12 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
             <div className="flex flex-wrap items-center gap-1.5 p-1 bg-slate-100 rounded-xl">
               {(
                 [
-                  { id: 'all', label: 'All 25 Questions' },
-                  { id: 'analogyMaster', label: 'Analogy Master (5)' },
-                  { id: 'missingPiece', label: 'Missing Piece (5)' },
-                  { id: 'crosswordGame', label: 'Crossword Game (5)' },
-                  { id: 'pictureHunt', label: 'Picture Hunt (5)' },
-                  { id: 'typeHunter', label: 'Word Hunter (5)' },
+                  { id: 'all', label: 'Verified Source Questions' },
+                  { id: 'analogyMaster', label: 'Analogy Master' },
+                  { id: 'missingPiece', label: 'Missing Piece' },
+                  { id: 'crosswordGame', label: 'Crossword Game' },
+                  { id: 'pictureHunt', label: 'Picture Hunt' },
+                  { id: 'typeHunter', label: 'Word Hunter' },
                 ] as const
               ).map((f) => (
                 <button
@@ -1797,7 +681,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
 
             {/* Questions List */}
             <div className="space-y-4">
-              {(module.quizQuestions || [])
+              {(quizBank || [])
                 .filter((q) => (inspectedMode === 'all' ? true : q.type === inspectedMode))
                 .map((q, idx) => {
                   const gameInfo = getGameTypeLabel(q.type);
@@ -1860,7 +744,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                                 }`}
                               >
                                 <div className="h-20 w-full mb-1 rounded-lg overflow-hidden border border-slate-200">
-                                  <PictureHuntArtwork sceneId={opt.sceneId} />
+                                  {opt.sourceGraphic ? <SourceGraphic block={opt.sourceGraphic}/> : opt.sourceImageUrl ? <img className="source-picture-option" src={opt.sourceImageUrl} alt={opt.caption}/> : <PictureHuntArtwork sceneId={opt.sceneId} />}
                                 </div>
                                 <div className="text-[11px] font-bold text-slate-800 flex items-center justify-center gap-1">
                                   {isCorrectOpt && <Check className="w-3 h-3 text-emerald-600" />}
@@ -1979,7 +863,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
 
           <div>
             <h2 className="text-sm font-bold text-slate-900 mb-3">
-              1. Select Difficulty Level (Adjusts Question Complexity & Timer per Question)
+              1. Select Difficulty Level (Timer & Scoring)
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {difficultyConfigs.map((cfg) => {
@@ -2028,6 +912,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
               {formatConfigs.map((fmt) => {
                 const isSelected = gameModeFilter === fmt.id;
+                const ready = !!createSourceGameSession(module, quizBank, fmt.id, difficulty, () => .5);
                 return (
                   <button
                     key={fmt.id}
@@ -2050,13 +935,14 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                     </div>
                     <p className="text-xs text-slate-600 mt-1.5 leading-relaxed">
                       {fmt.desc}
-                    </p>
+                    </p><p className={ready ? 'ready-tag text-xs mt-2' : 'review-tag text-xs mt-2'}>{ready ? '5 verified source questions · Ready' : 'Needs source review · Locked'}</p>
                   </button>
                 );
               })}
             </div>
           </div>
 
+          {(!canStartSourceGame || sourceReviewMessage) && <div role="status" className="game-source-review">{sourceContent.error || sourceReviewMessage || (sourceContent.data ? 'Source review needed: fewer than five distinct verified items are available for this mode. Starting an incomplete game is disabled.' : 'Loading and checking this module’s source question bank…')}</div>}
           <div className="pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="text-xs text-slate-600">
               Score at least <span className="font-mono font-bold text-slate-900">{module.requiredPassingScore}%</span> to restore the bridge for Module {module.moduleNumber} and unlock the next destination!
@@ -2064,6 +950,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
             <button
               type="button"
               onClick={startQuizSession}
+              disabled={!canStartSourceGame}
               className="w-full sm:w-auto px-6 py-3 bg-sky-600 hover:bg-sky-700 text-white text-sm font-bold rounded-xl transition-colors flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer"
             >
               <span>Launch Gamified Quiz Now</span>
@@ -2078,6 +965,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
   }
 
   if (stage === 'PLAYING_QUIZ') {
+    if (activeQuestions.length !== 5) return <div role="alert" className="game-source-review">Source review needed. A game requires exactly five verified questions.</div>;
     const currentQ = activeQuestions[currentQIndex];
     if (!currentQ) return null;
 
@@ -2086,7 +974,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
     const timerPercent = Math.max(0, Math.round((timeLeft / currentQ.timeLimitSeconds) * 100));
 
     return (
-      <div className="max-w-4xl mx-auto space-y-6">
+      <div className="digital-game max-w-4xl mx-auto space-y-6">
         {/* Faculty / Admin Preview Bar */}
         {isPreviewMode && (
           <div className="bg-gradient-to-r from-[#0A192F] via-[#0F3460] to-[#1E3E62] text-white p-4 rounded-2xl border border-sky-500/30 shadow-md flex flex-col sm:flex-row sm:items-center justify-between gap-3 animate-fade-in">
@@ -2198,6 +1086,8 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
           </div>
         )}
 
+        <div className="game-celebration"><div><strong>{gameInfo.name}</strong><p className="game-status">Question {currentQIndex + 1}/5 · {difficulty === 'moderate' ? 'Medium' : difficulty}</p></div><QuestCompanion celebrate={!!latestLog?.isCorrect}/></div>
+        <div className="game-progress-track" role="progressbar" aria-label="Game progress" aria-valuenow={currentQIndex+1} aria-valuemin={1} aria-valuemax={5}><span style={{width:`${(currentQIndex+1)*20}%`}}/></div>
         {/* Educator Answer Inspector Banner */}
         {isPreviewMode && !questionLocked && (
           <div className="p-3 bg-amber-50 border border-amber-300 rounded-2xl flex flex-wrap items-center justify-between gap-3 text-xs shadow-xs animate-fade-in">
@@ -2318,6 +1208,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
             </h2>
           </div>
 
+          {currentQ.sourceGraphic && <SourceGraphic block={currentQ.sourceGraphic}/>}
           {currentQ.type === 'typeHunter' && (
             <div className="space-y-5">
               {currentQ.contextSentence && (
@@ -2364,6 +1255,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                     autoFocus
                     value={typedInput}
                     onChange={(e) => setTypedInput(e.target.value)}
+                    aria-label="Your source term answer"
                     placeholder={`Type the ${currentQ.answer.length}-letter answer here...`}
                     className="flex-1 px-4 py-3 text-base font-mono rounded-xl border border-slate-300 focus:border-sky-600 focus:outline-none disabled:bg-slate-100"
                   />
@@ -2407,7 +1299,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                         : 'border-slate-200 hover:border-sky-500 bg-white'
                     }`}
                   >
-                    <PictureHuntArtwork sceneId={pic.sceneId} className="w-full h-36" />
+                    {pic.sourceGraphic ? <SourceGraphic block={pic.sourceGraphic}/> : pic.sourceImageUrl ? <img className="source-picture-option" src={pic.sourceImageUrl} alt={pic.caption}/> : <PictureHuntArtwork sceneId={pic.sceneId} className="w-full h-36" />}
                     <div className="mt-3 flex items-center justify-between">
                       <span className="text-sm font-bold text-slate-900">{pic.label}</span>
                       {questionLocked && isCorrectPic && (
@@ -2674,6 +1566,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                     autoFocus
                     value={typedInput}
                     onChange={(e) => setTypedInput(e.target.value)}
+                    aria-label="Your crossword answer"
                     placeholder={`Type ${currentQ.answer.length}-letter crossword word...`}
                     className="flex-1 px-4 py-3 text-base font-mono rounded-xl border border-slate-300 focus:border-indigo-600 focus:outline-none disabled:bg-slate-100 uppercase"
                   />
@@ -2693,7 +1586,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
 
           {questionLocked && latestLog && (
             <div
-              className={`p-4 rounded-xl border flex flex-col sm:flex-row sm:items-center justify-between gap-4 ${
+              className={`p-4 rounded-xl border flex flex-col sm:flex-row sm:items-center justify-between gap-4 ${latestLog.isCorrect ? 'answer-success' : 'answer-retry'} ${
                 latestLog.isCorrect
                   ? 'bg-emerald-50 border-emerald-300 text-emerald-950'
                   : 'bg-red-50 border-red-300 text-red-950'
@@ -2718,6 +1611,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                   )}
                 </div>
                 <p className="text-xs sm:text-sm opacity-90">{currentQ.explanation}</p>
+                {currentQ.source && <p className="game-source-proof">Source: {module.pdfLesson?.source.fileName} · PDF p. {currentQ.source.page}</p>}
               </div>
 
               <button
@@ -2854,7 +1748,8 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
 
   if (stage === 'QUIZ_RESULTS' && finalOutcome) {
     return (
-      <div className="max-w-4xl mx-auto space-y-6">
+      <div className="digital-game max-w-4xl mx-auto space-y-6">
+        <div className="game-celebration" role="status"><div><strong>{finalOutcome.passed ? 'Quest completed!' : 'Keep exploring the source lesson'}</strong><p className="game-status">{finalOutcome.score}/5 · {finalOutcome.pointsAwarded} XP awarded</p></div><QuestCompanion celebrate={finalOutcome.passed}/></div>
         {/* Faculty / Admin Preview Bar */}
         {isPreviewMode && (
           <div className="bg-gradient-to-r from-[#0A192F] via-[#0F3460] to-[#1E3E62] text-white p-4 rounded-2xl border border-sky-500/30 shadow-md flex flex-col sm:flex-row sm:items-center justify-between gap-3 animate-fade-in">

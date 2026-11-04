@@ -107,6 +107,8 @@ export type PictureSceneId =
   | 'coastal_horizon';
 
 export interface PictureOption {
+  sourceGraphic?: import('../data/curriculum/digitalContent').DigitalBlock;
+  sourceImageUrl?: string;
   id: string;
   sceneId: PictureSceneId;
   label: string;
@@ -122,6 +124,10 @@ export interface CrosswordClueInfo {
 }
 
 export interface QuizQuestion {
+  sourceGraphic?: import('../data/curriculum/digitalContent').DigitalBlock;
+  source?: { fileId: string; page: number; quote: string; answerQuote: string; sourceId: string; kind: string; instructionPage?: number;
+    answerKeyPage?: number; answerKeyQuote?: string };
+  sourceImageUrl?: string;
   id: string;
   type: QuizGameType;
   difficulty: DifficultyLevel;
@@ -190,6 +196,7 @@ export interface LessonContent {
 }
 
 export interface Module {
+  pdfLesson?: import('../data/curriculum/pdfCurriculum').PdfLesson;
   id: string;
   gradeLevel: GradeLevel;
   quarter: QuarterNumber;

@@ -1,3 +1,4 @@
+import { PdfLessonView } from './PdfLessonView';
 import React, { useState, useMemo } from 'react';
 import {
   BookOpen,
@@ -143,6 +144,16 @@ export const ComprehensiveCurriculumView: React.FC<ComprehensiveCurriculumViewPr
 
   // Copy full answer key to clipboard
   const handleCopyAnswerKey = (mod: Module) => {
+    if (mod.pdfLesson) {
+      const pdf = mod.pdfLesson;
+      const text = [pdf.source.fileName, pdf.source.url,
+        ...pdf.selfCheck.map((e) => `PDF p. ${e.page}: ${e.text}`),
+        ...pdf.answerKey.map((e) => `Checking guide · PDF p. ${e.page}: ${e.text}`),
+      ].join('\n\n');
+      navigator.clipboard?.writeText(text).then(() => setCopyFeedback(mod.id)).catch(() => setCopyFeedback(null));
+      return;
+    }
+
     soundFX.playClick();
     const islandInfo = DAVAO_ORIENTAL_QUARTER_ISLANDS[mod.quarter];
     let text = `=========================================\n`;
@@ -239,7 +250,7 @@ export const ComprehensiveCurriculumView: React.FC<ComprehensiveCurriculumViewPr
                 </>
               ) : (
                 <>
-                  Teacher View: Inspect all curriculum modules and <strong className="text-emerald-300">quizzes with complete official answers and explanations</strong> on your assigned grade level{assignedList.length > 1 ? 's' : ''} (<strong className="text-amber-200">{assignedList.map((g) => `Grade ${g}`).join(', ')}</strong>) to prepare classroom instruction and formative assessments.
+                  Teacher View: Inspect all curriculum modules and <strong className="text-emerald-300">PDF lessons and source assessment materials</strong> on your assigned grade level{assignedList.length > 1 ? 's' : ''} (<strong className="text-amber-200">{assignedList.map((g) => `Grade ${g}`).join(', ')}</strong>) to prepare classroom instruction and formative assessments.
                 </>
               )}
             </p>
@@ -661,7 +672,7 @@ export const ComprehensiveCurriculumView: React.FC<ComprehensiveCurriculumViewPr
                       <span className="text-blue-600 font-bold">Pass: {mod.requiredPassingScore}%</span>
                     </div>
                     <div className="text-slate-700 font-medium line-clamp-2 leading-relaxed">
-                      {mod.lessonContent?.melcCompetency || 'Competency alignment verified with Davao Oriental secondary syllabus.'}
+                      {mod.lessonContent?.melcCompetency || 'See the objectives in the source PDF.'}
                     </div>
                   </div>
 
@@ -947,7 +958,7 @@ export const ComprehensiveCurriculumView: React.FC<ComprehensiveCurriculumViewPr
                         Grade {mod.gradeLevel} • Q{mod.quarter}
                       </span>
                       <span className="text-xs font-bold text-slate-400">
-                        Module #{mod.moduleNumber} ({mod.topicType})
+                        {mod.pdfLesson?.sourceLabel || `Module ${mod.moduleNumber}`} ({mod.topicType})
                       </span>
                     </div>
                     <h3 className="text-lg font-black font-display text-slate-900 mt-1">
@@ -1076,7 +1087,14 @@ export const ComprehensiveCurriculumView: React.FC<ComprehensiveCurriculumViewPr
       {/* ---------------------------------------------------- */}
       {/* DEEP-DIVE MODAL FOR SELECTED MODULE */}
       {/* ---------------------------------------------------- */}
-      {activeModuleDetail && (
+      {activeModuleDetail?.pdfLesson && (
+        <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/70 p-4" role="dialog" aria-modal="true" aria-label="PDF curriculum inspector">
+          <div className="mx-auto max-w-5xl rounded-2xl bg-slate-50 p-5">
+            <PdfLessonView key={activeModuleDetail.id} module={activeModuleDetail} initialSelfCheck onBack={() => setActiveModuleDetail(null)} onComplete={() => {}} />
+          </div>
+        </div>
+      )}
+      {activeModuleDetail && !activeModuleDetail.pdfLesson && (
         <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-3 sm:p-5 overflow-y-auto">
           <div className="bg-white rounded-3xl max-w-4xl w-full max-h-[92vh] flex flex-col shadow-2xl overflow-hidden my-auto animate-scale-in">
             {/* Modal Header */}

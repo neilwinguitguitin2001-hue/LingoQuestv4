@@ -7,7 +7,6 @@ import {
   INITIAL_STUDENTS,
   INITIAL_TEACHERS,
 } from './data/seedData';
-import { expandModuleTo25Questions } from './data/curriculum/curriculumBuilder';
 import {
   AdminAccount,
   AuditLogEntry,
@@ -217,7 +216,7 @@ function safeSetItem(key: string, value: string): void {
 function normalizeModuleIslands(rawModules: Module[]): Module[] {
   return rawModules.map((m) => {
     const qInfo = DAVAO_ORIENTAL_QUARTER_ISLANDS[m.quarter as QuarterNumber];
-    const with25 = expandModuleTo25Questions(m);
+    const with25 = m;
     if (qInfo) {
       return {
         ...with25,
@@ -334,24 +333,7 @@ export default function App() {
     return INITIAL_ADMINS;
   });
 
-  const [modules, setModules] = useState<Module[]>(() => {
-    const baseModules = normalizeModuleIslands(ALL_MODULES);
-    try {
-      const saved = localStorage.getItem(STORAGE_KEY_CUSTOM_MODULES);
-      if (saved) {
-        const customList: Module[] = JSON.parse(saved);
-        if (Array.isArray(customList) && customList.length > 0) {
-          const map = new Map<string, Module>();
-          baseModules.forEach((m) => map.set(m.id, m));
-          customList.forEach((m) => map.set(m.id, normalizeModuleIslands([m])[0] || m));
-          return Array.from(map.values());
-        }
-      }
-    } catch (e) {
-      console.warn('Failed to load custom modules, using base curriculum', e);
-    }
-    return baseModules;
-  });
+  const [modules, setModules] = useState<Module[]>(() => normalizeModuleIslands(ALL_MODULES));
 
   const [auditLogs, setAuditLogs] = useState<AuditLogEntry[]>(INITIAL_AUDIT_LOGS);
   const [emailNotifications, setEmailNotifications] = useState<EmailNotificationRecord[]>(() =>
@@ -552,16 +534,6 @@ export default function App() {
           if (dbStudents.length > 0) setStudents(dbStudents);
           if (dbTeachers.length > 0) setTeachers(normalizeTeacherClassCodes(dbTeachers));
           if (dbAdmins.length > 0) setAdmins(dbAdmins);
-        }
-        if (res?.customModules && Array.isArray(res.customModules) && res.customModules.length > 0) {
-          setModules((prev) => {
-            const map = new Map<string, Module>();
-            prev.forEach((m) => map.set(m.id, m));
-            res.customModules!.forEach((m) =>
-              map.set(m.id, normalizeModuleIslands([m])[0] || m)
-            );
-            return Array.from(map.values());
-          });
         }
         if (res?.auditLogs && Array.isArray(res.auditLogs) && res.auditLogs.length > 0) {
           setAuditLogs(res.auditLogs);
@@ -1450,31 +1422,13 @@ export default function App() {
     return ok;
   };
 
-  const handleAdminCreateModule = async (mod: Module) => {
-    if (!currentAdmin) return mod;
-    const created = await apiCreateNewModule(mod, currentAdmin);
-    setModules((prev) => [created, ...prev.filter((m) => m.id !== created.id)]);
-    apiGetAuditLogs().then(setAuditLogs);
-    return created;
+  const handleAdminCreateModule = async (_mod: Module): Promise<Module> => {
+    throw new Error('Curriculum is managed from the approved PDF source files.');
   };
-
-  const handleAdminUpdateModule = async (mod: Module) => {
-    if (!currentAdmin) return mod;
-    const updated = await apiUpdateExistingModule(mod, currentAdmin);
-    setModules((prev) => prev.map((m) => (m.id === updated.id ? updated : m)));
-    apiGetAuditLogs().then(setAuditLogs);
-    return updated;
+  const handleAdminUpdateModule = async (_mod: Module): Promise<Module> => {
+    throw new Error('Update the corresponding PDF source mapping to change a lesson.');
   };
-
-  const handleAdminDeleteModule = async (moduleId: string, moduleTitle: string) => {
-    if (!currentAdmin) return false;
-    const ok = await apiDeleteExistingModule(moduleId, moduleTitle, currentAdmin);
-    if (ok) {
-      setModules((prev) => prev.filter((m) => m.id !== moduleId));
-      apiGetAuditLogs().then(setAuditLogs);
-    }
-    return ok;
-  };
+  const handleAdminDeleteModule = async (_moduleId: string, _moduleTitle: string) => false;
 
   const handleAdminDeleteTeacher = async (teacherId: string, reason?: string) => {
     if (!currentAdmin) return false;

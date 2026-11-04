@@ -1,0 +1,39 @@
+{
+  "repository": "neilwinguitguitin2001-hue/LingoQuestv4",
+  "baseCommit": "26238ba2148e0ac97a708984a56dfc69ff139320",
+  "sourcePdfCount": 106,
+  "sourcePageCount": 2430,
+  "completedModules": 106,
+  "remainingModules": [],
+  "validatedExcerpts": 3084,
+  "status": "digital-lessons-complete-assessment-and-image-review-pending",
+  "countsByGradeQuarter": {
+    "g7q1": 10,
+    "g7q2": 5,
+    "g7q3": 7,
+    "g7q4": 8,
+    "g8q1": 5,
+    "g8q2": 5,
+    "g8q3": 6,
+    "g8q4": 6,
+    "g9q1": 8,
+    "g9q2": 2,
+    "g9q3": 7,
+    "g9q4": 13,
+    "g10q1": 8,
+    "g10q2": 8,
+    "g10q3": 5,
+    "g10q4": 3
+  },
+  "resumeInstructions": "All 106 lessons have native digital extraction. Inspect source-game-review.json for assessment banks needing review and source-figure-text-review.json for image label review. Do not fill deficient banks from another PDF. Follow PDF_CURRICULUM.md rebuild and validation commands.",
+  "originalDiscussionPageImages": 0,
+  "delivery": {
+    "pullRequest": "https://github.com/neilwinguitguitin2001-hue/LingoQuestv4/pull/2",
+    "branch": "codex/pdf-only-curriculum",
+    "previewPath": "/curriculum-preview.html",
+    "productionUpdated": false
+  },
+  "playableDifficultyCombinations": 123,
+  "blockedDifficultyCombinations": 1785,
+  "imageTranscriptionReviewOccurrences": 480
+}
