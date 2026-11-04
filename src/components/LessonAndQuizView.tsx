@@ -38,7 +38,6 @@ import {
   Module,
   QuizGameType,
   QuizQuestion,
-  getDavaoOrientalIsland,
 } from '../types/lingoquest';
 import { soundFX } from '../utils/soundEffects';
 import { BadgeIcon } from './BadgeIcon';
@@ -65,6 +64,7 @@ import {
   type XPToastPayload,
 } from './visuals/LessonVisuals';
 import { stopAllVoicePlayback } from '../utils/voiceEngineClient';
+import { getStrictLessonModule } from '../data/curriculum/strictDriveLesson';
 
 export interface QuizCompletionPayload {
   moduleId: string;
@@ -181,7 +181,8 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
   const [flippedVocabMap, setFlippedVocabMap] = useState<Record<string, boolean>>({});
   const [xpToast, setXpToast] = useState<XPToastPayload | null>(null);
 
-  const visualConfig = React.useMemo(() => getModuleVisualConfig(module), [module]);
+  const strictLessonModule = React.useMemo(() => getStrictLessonModule(module), [module]);
+  const visualConfig = React.useMemo(() => getModuleVisualConfig(strictLessonModule), [strictLessonModule]);
 
   const handleToggleDataSaver = () => {
     soundFX.playClick();
@@ -225,7 +226,6 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
   };
 
   const timerRef = useRef<number | null>(null);
-  const currentIslandName = getDavaoOrientalIsland(module.quarter)?.name || module.islandName;
 
   const handleGoToStudentDashboard = () => {
     soundFX.playClick();
@@ -469,63 +469,17 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
   };
 
   if (stage === 'LESSON') {
-    const { lessonContent } = module;
+    const { lessonContent } = strictLessonModule;
 
+    // Vocabulary is source-only: never synthesize terms that are absent from the PDF.
     // Derived rich vocabulary bank
-    const vocabList = (lessonContent.vocabularyGlossary && lessonContent.vocabularyGlossary.length > 0)
-      ? lessonContent.vocabularyGlossary
-      : [
-          {
-            term: module.title.split(' ')[0],
-            partOfSpeech: 'Core Focus',
-            definition: `The central linguistic concept of Module ${module.moduleNumber} in Grade ${module.gradeLevel}.`,
-            exampleSentence: `Mastering ${module.title.toLowerCase()} provides the foundation for advanced academic reading and speech.`,
-          },
-          ...lessonContent.keyRules.slice(0, 4).map((rule) => {
-            const colonIdx = rule.indexOf(':');
-            const term = colonIdx > 0 ? rule.slice(0, colonIdx) : rule.split(' ')[0];
-            const desc = colonIdx > 0 ? rule.slice(colonIdx + 1).trim() : rule;
-            return {
-              term,
-              partOfSpeech: 'Rule / Concept',
-              definition: desc,
-              exampleSentence: `Learners apply ${term} to ensure grammatical accuracy and clarity in writing.`,
-            };
-          }),
-        ];
+    const vocabList = lessonContent.vocabularyGlossary || [];
 
     // Derived common student pitfalls & exam tips
-    const mistakesList = (lessonContent.commonMistakesAndTips && lessonContent.commonMistakesAndTips.length > 0)
-      ? lessonContent.commonMistakesAndTips
-      : [
-          {
-            mistake: `Relying on surface word associations rather than the exact grammatical relationship in ${module.title}.`,
-            correction: 'Analyze the structural role and surrounding sentence markers before answering.',
-            why: 'Sentence context clues specify exact syntactic agreements and relational categories.',
-          },
-          {
-            mistake: 'Overlooking punctuation cues, auxiliary verbs, or tense indicators in the prompt.',
-            correction: 'Inspect verb forms, colons, commas, and connecting transition markers.',
-            why: 'Punctuation and auxiliary verbs signal key grammatical voice, tense shifts, and analogy logic.',
-          },
-          {
-            mistake: 'Selecting an answer without substituting distractors back into the prompt sentence.',
-            correction: 'Perform a substitution check to confirm logical and grammatical consistency.',
-            why: 'Direct substitution reveals grammatical flaws and eliminates misleading false cognates.',
-          },
-        ];
+    const mistakesList = lessonContent.commonMistakesAndTips || [];
 
     // Derived interactive mastery checklist
-    const checklistItems = (lessonContent.studyChecklist && lessonContent.studyChecklist.length > 0)
-      ? lessonContent.studyChecklist
-      : [
-          `I can clearly state the primary purpose and definition of ${module.title}.`,
-          `I understand the key structural rules and formulas for this module.`,
-          `I can analyze the guided model examples and spot their context clues.`,
-          `I know how to avoid common mistakes and false distractors in this topic.`,
-          `I can connect this lesson's concept to real-world communication in Davao Oriental.`,
-          `I am ready to achieve at least 75% on the quiz to restore the island bridge.`,
-        ];
+    const checklistItems = lessonContent.studyChecklist || [];
 
     const checkedCount = checklistItems.filter((_, idx) => Boolean(checkedObjectives[idx])).length;
     const allChecked = checkedCount === checklistItems.length;
@@ -537,7 +491,6 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
         `LINGOQUEST STUDY CHEATSHEET: ${module.title.toUpperCase()}`,
         `Grade ${module.gradeLevel} · Quarter ${module.quarter} · Module ${module.moduleNumber}`,
         `DepEd Competency: ${lessonContent.melcCompetency}`,
-        `Island Destination: ${currentIslandName} (Davao Oriental)`,
         `============================================================\n`,
         `[1] LESSON OVERVIEW:`,
         lessonContent.overview,
@@ -549,8 +502,6 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
         ...vocabList.map((v) => `• ${v.term} [${v.partOfSpeech}]: ${v.definition}\n  Example: "${v.exampleSentence}"`),
         `\n[5] COMMON MISTAKES & HOW TO AVOID THEM:`,
         ...mistakesList.map((m) => `• Pitfall: ${m.mistake}\n  Correction: ${m.correction}\n  Why: ${m.why}`),
-        `\n[6] DAVAO ORIENTAL CULTURAL HERITAGE APPLICATION:`,
-        lessonContent.culturalConnection,
         `\n============================================================`,
       ].join('\n');
 
@@ -618,7 +569,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
         <div className="bg-white border-2 border-[#231F20] linocut-card rounded-xl overflow-hidden">
           <InabelStrip
             variant="royal"
-            label={`DepEd MELC Module ${module.moduleNumber} • ${currentIslandName}`}
+            label={`DepEd MELC Module ${module.moduleNumber} • ${`Quarter ${module.quarter}`}`}
             rightText={`Grade ${module.gradeLevel} • Quarter ${module.quarter}`}
           />
           <div className="p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -633,7 +584,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                 className="text-xs font-semibold text-sky-700 hover:text-sky-900 flex items-center gap-1.5 cursor-pointer"
               >
                 <ArrowLeft className="w-3.5 h-3.5" />
-                <span>Back to Island Map ({currentIslandName})</span>
+                <span>Back to Modules</span>
               </button>
               <span className="text-slate-300">·</span>
               <button
@@ -750,13 +701,6 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
               icon: AlertTriangle,
               isVisualDone: localCompletedVisuals.includes('pitfalls'),
               hasPartialVisual: localCompletedVisuals.includes('pitfalls'),
-            },
-            {
-              id: 'cultural',
-              label: 'Davao Oriental Context',
-              icon: Compass,
-              isVisualDone: localCompletedVisuals.includes('hotspots'),
-              hasPartialVisual: localCompletedVisuals.includes('hotspots'),
             },
             {
               id: 'vocabulary',
@@ -1106,63 +1050,6 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
               </div>
             )}
 
-            {/* TAB 4: DAVAO ORIENTAL CONTEXT */}
-            {lessonActiveTab === 'cultural' && (
-              <div className="space-y-6">
-                {/* 4A: Interactive Illustrated Davao Oriental Hotspot Scene */}
-                <VisualErrorBoundary fallbackTitle="Davao Oriental Hotspot Explorer">
-                  <HotspotScene
-                    scene={visualConfig.tabs.davaoContext.scene}
-                    sceneTitle={visualConfig.tabs.davaoContext.sceneTitle}
-                    sceneSubtitle={visualConfig.tabs.davaoContext.sceneSubtitle}
-                    municipality={visualConfig.tabs.davaoContext.municipality}
-                    hotspots={visualConfig.tabs.davaoContext.hotspots}
-                    xpReward={visualConfig.tabs.davaoContext.xp}
-                    isCompleted={localCompletedVisuals.includes('hotspots')}
-                    onComplete={() =>
-                      triggerVisualActivityComplete(
-                        'hotspots',
-                        visualConfig.tabs.davaoContext.xp,
-                        'Davao Oriental Heritage Hotspots Explored'
-                      )
-                    }
-                  />
-                </VisualErrorBoundary>
-
-                <section className="bg-white border-2 border-[#231F20] linocut-card rounded-xl overflow-hidden space-y-4">
-                  <InabelStrip variant="emerald" label="04. Davao Oriental Real-World Heritage Context" />
-                  <div className="px-6 pb-6 space-y-4">
-                  <div className="flex items-center justify-between border-b border-slate-100 pb-3">
-                    <h2 className="text-lg font-bold text-slate-900 font-display flex items-center gap-2">
-                      <Compass className="w-5 h-5 text-emerald-600" />
-                      <span>04. Davao Oriental Real-World Heritage Context</span>
-                    </h2>
-                    <span className="text-xs text-emerald-700 font-bold">Local Connection</span>
-                  </div>
-
-                  <div className="p-4 rounded-xl bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-200 text-emerald-950 space-y-2">
-                    <div className="text-xs font-bold uppercase tracking-wider text-emerald-800 flex items-center gap-2">
-                      <span>Island Location: {currentIslandName}</span>
-                    </div>
-                    <p className="text-sm leading-relaxed text-slate-800">
-                      {lessonContent.culturalConnection}
-                    </p>
-                  </div>
-
-                  <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2 text-xs text-slate-700">
-                    <h3 className="font-bold text-slate-900 flex items-center gap-1.5">
-                      <Award className="w-4 h-4 text-amber-500" />
-                      <span>Why Local Cultural Context Matters:</span>
-                    </h3>
-                    <p className="leading-relaxed">
-                      In the DepEd curriculum for Region XI, English competencies are grounded in the living heritage of Davao Oriental—from Mandaya oral epics and Dagmay weaving to Pujada Bay marine sanctuaries and the biodiversity of Mount Hamiguitan. Learning language through local heritage helps learners become proud ambassadors of their home province.
-                    </p>
-                  </div>
-                  </div>
-                </section>
-              </div>
-            )}
-
             {/* TAB 5: VOCABULARY BANK */}
             {lessonActiveTab === 'vocabulary' && (
               <div className="space-y-6">
@@ -1176,7 +1063,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                         <span>05. Interactive 3D Vocabulary Flip Cards & Audio</span>
                       </h2>
                       <p className="text-xs text-slate-500 mt-0.5">
-                        Tap any card to flip between definition and Davao Oriental context sentence, or tap <strong>Speak</strong> to hear pronunciation.
+                        Tap any card to flip between definition and module example sentence, or tap <strong>Speak</strong> to hear pronunciation.
                       </p>
                     </div>
                     <div className="flex items-center gap-2">
@@ -1924,14 +1811,14 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
         <div className="bg-white border-2 border-[#231F20] linocut-card rounded-xl overflow-hidden space-y-6">
           <InabelStrip
             variant="royal"
-            label={`Quiz Challenge Setup • ${currentIslandName}`}
+            label={`Quiz Challenge Setup • ${`Quarter ${module.quarter}`}`}
             rightText={`Passing Mark: ${module.requiredPassingScore}%`}
           />
           <div className="px-6 sm:px-8 pb-6 sm:pb-8 space-y-6">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-5">
             <div>
               <div className="text-xs text-slate-500">
-                Module {module.moduleNumber} Quiz Setup · {currentIslandName} · Passing Score:{' '}
+                Module {module.moduleNumber} Quiz Setup · {`Quarter ${module.quarter}`} · Passing Score:{' '}
                 <span className="font-mono font-semibold text-slate-900">
                   {module.requiredPassingScore}%
                 </span>
@@ -2810,7 +2697,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                   </div>
                 </button>
 
-                {/* Option 3: Return to Island Map */}
+                {/* Option 3: Return to Modules */}
                 <button
                   type="button"
                   onClick={() => {
@@ -2825,11 +2712,11 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                   </div>
                   <div className="flex-1">
                     <div className="text-sm font-bold text-slate-900 flex items-center justify-between">
-                      <span>Return to Island Map</span>
+                      <span>Return to Modules</span>
                       <ArrowRight className="w-4 h-4 text-slate-600 opacity-0 group-hover:opacity-100 transition-opacity" />
                     </div>
                     <p className="text-xs text-slate-600 mt-0.5">
-                      Explore the Davao Oriental archipelago map and choose another module quest.
+                      Choose another English module to continue learning.
                     </p>
                   </div>
                 </button>
@@ -2959,8 +2846,8 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
             <div className="flex items-center justify-between text-xs text-sky-200 mb-3">
               <span>
                 {isPersonalization
-                  ? `Personalization Practice: Grade ${module.gradeLevel} · ${currentIslandName}`
-                  : `${currentIslandName} · Bridge from Module ${module.moduleNumber}`}
+                  ? `Personalization Practice: Grade ${module.gradeLevel} · ${`Quarter ${module.quarter}`}`
+                  : `${`Quarter ${module.quarter}`} · Bridge from Module ${module.moduleNumber}`}
               </span>
               <span className="font-mono font-semibold text-amber-300">
                 {finalOutcome.passed ? '✓ BRIDGE RESTORED & NEXT MODULE UNLOCKED' : '🔒 BRIDGE REMAINS BROKEN'}
@@ -3168,7 +3055,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                 }}
                 className="px-4 py-2.5 border border-slate-300 hover:bg-slate-50 text-slate-800 text-xs font-semibold rounded-lg transition-colors cursor-pointer"
               >
-                Return to Island Map
+                Return to Modules
               </button>
 
               {(finalOutcome.passed || isPreviewMode) && nextModule && (
