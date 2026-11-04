@@ -4,3 +4,5 @@
 @media(prefers-reduced-motion:reduce){.digital-learning *,.digital-game *{animation:none!important;transition:none!important;scroll-behavior:auto!important}.digital-learning button:hover,.digital-game button:hover{transform:none!important}.vocab-front,.vocab-back{transform:none!important}.is-flipped .vocab-front{visibility:hidden}.vocab-back{visibility:hidden}.is-flipped .vocab-back{visibility:visible}}
 
 .source-game-graphic{width:100%;height:150px;background:white;border-radius:12px}.source-game-graphic text{font-family:Arial,sans-serif}
+
+.expanded-source{border-top:1px solid #c9e5ef;margin-top:1rem;padding-top:.8rem}.expanded-source summary{font-size:.8rem;color:#075985;font-weight:700;padding:.6rem;cursor:pointer}.expanded-source[open]{display:grid;gap:1rem}

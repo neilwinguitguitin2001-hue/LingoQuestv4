@@ -28,7 +28,8 @@ Original PDFs, extraction JSON, OCR evidence and expiring download references li
 6. `../pdf-tools/bin/python scripts/add-reviewed-visual-game.py`
 7. `../pdf-tools/bin/python scripts/add-reviewed-picture-analogies.py`
 8. `../pdf-tools/bin/python scripts/transcribe-source-figures.py`
-9. `python3 scripts/pack-source-figures.py`
+9. `../pdf-tools/bin/python scripts/review-sparse-tables.py`
+10. `python3 scripts/pack-source-figures.py`
 
 Small original crops are stored once per module's lazy-loaded asset dictionary; large optimized images remain external. The loader verifies the source hash and resolves local assets. Unrelated source content is not loaded as a quiz fallback.
 

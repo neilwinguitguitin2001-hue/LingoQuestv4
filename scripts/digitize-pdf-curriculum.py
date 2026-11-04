@@ -47,7 +47,7 @@ def extract_page(doc,page_num,fid):
     try:
         for t in page.find_tables().tables:
             rows=[[flat(x or '') for x in row] for row in t.extract()]
-            if len(rows)>1 and len(rows[0])>1 and sum(len(x) for row in rows for x in row)>35:
+            if len(rows)>1 and len(rows[0])>1 and sum(sum(bool(row[c].strip()) for row in rows if c<len(row))>=2 for c in range(len(rows[0])))>=2 and sum(len(x) for row in rows for x in row)>35:
                 tables.append({'type':'table','rows':rows,'bbox':list(t.bbox),'text':' '.join(x for row in rows for x in row)})
     except Exception as e:REPORT.append({'fileId':fid,'page':page_num,'reason':'Table extraction requires review','detail':str(e)})
     diagrams=[];drawings=page.get_drawings()

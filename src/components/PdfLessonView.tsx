@@ -39,7 +39,7 @@ function Block({block,terms}:{block:DigitalBlock;terms:string[]}) {
 function Excerpt({excerpt,lesson,content,section,index,terms}:{excerpt:PdfExcerpt;lesson:PdfLesson;content?:DigitalContent;section:string;index:number;terms:string[]}) {
   const ids=content?.excerptBlocks[`${section}:${index}`];
   const blocks=ids?.map(id=>content!.blocks[id]).filter(Boolean) || excerpt.text.split(/\n\s*\n/).filter(Boolean).map(text=>({type:'paragraph' as const,text,page:excerpt.page}));
-  return <article className={`source-card source-${section}`}><Citation lesson={lesson} page={excerpt.page}/><div className="source-blocks">{blocks.map((block,i)=><Block key={i} block={block} terms={terms}/>)}</div></article>;
+  return <article className={`source-card source-${section}`}><Citation lesson={lesson} page={excerpt.page}/><div className="source-blocks">{blocks.slice(0,4).map((block,i)=><Block key={i} block={block} terms={terms}/>)}{blocks.length>4&&<details className="expanded-source"><summary>Explore the remaining explanation and examples ({blocks.length-4} source elements)</summary>{blocks.slice(4).map((block,i)=><Block key={i} block={block} terms={terms}/>)}</details>}</div></article>;
 }
 function VocabularyCard({excerpt,lesson}:{excerpt:PdfExcerpt;lesson:PdfLesson}) {
   const [flipped,setFlipped]=useState(false);

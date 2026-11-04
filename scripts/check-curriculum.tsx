@@ -47,7 +47,7 @@ for (const module of PDF_MODULES) {
     assert.equal(new Set(result.map(q=>q.source!.sourceId)).size, 5);
     assert.ok(result.every(q=>q.source!.fileId===module.pdfLesson!.source.fileId && q.difficulty===difficulty));
    } else blocked++;
-   if (difficulty === 'easy') modes[mode] = {verified: new Set(content.games.filter(q=>q.type===mode).map(q=>q.source!.sourceId)).size, status: result?'ready':'needs-source-review'};
+   if (difficulty === 'easy') modes[mode] = {verified: mode === 'all' ? (result?.length || 0) : new Set(content.games.filter(q=>q.type===mode).map(q=>q.source!.sourceId)).size, status: result?'ready':'needs-source-review'};
   }
  }
  assert.equal(createSourceGameSession(module, content.games.slice(0, 4), 'typeHunter', 'easy'), null);
