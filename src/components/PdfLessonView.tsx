@@ -19,9 +19,16 @@ function SourceExcerpt({ excerpt, lesson }: { excerpt: PdfExcerpt; lesson: PdfLe
         className="text-xs font-semibold text-sky-700 underline underline-offset-2">
         {lesson.sourceLabel} · PDF page {excerpt.page}
       </a>
-      {excerpt.image && <img src={excerpt.image} alt={`Original instructional diagram, PDF page ${excerpt.page}`}
-        className="mt-4 mx-auto w-full max-w-2xl" loading="lazy" />}
-      <p className="mt-3 whitespace-pre-wrap break-words text-sm leading-7 text-slate-800">{excerpt.text}</p>
+      {excerpt.image ? <>
+        <a href={`${lesson.source.url}#page=${excerpt.page}`} target="_blank" rel="noreferrer" aria-label={`Open original PDF page ${excerpt.page}`}>
+          <img src={excerpt.image} alt={`Original instructional page, PDF page ${excerpt.page}`}
+            className="mt-4 mx-auto w-full max-w-2xl" loading="lazy" />
+        </a>
+        <details className="mt-4 border-t border-sky-100 pt-3">
+          <summary className="cursor-pointer text-sm font-semibold text-sky-800">Text transcript</summary>
+          <p className="mt-3 whitespace-pre-wrap break-words text-sm leading-7 text-slate-800">{excerpt.text}</p>
+        </details>
+      </> : <p className="mt-3 whitespace-pre-wrap break-words text-sm leading-7 text-slate-800">{excerpt.text}</p>}
     </article>
   );
 }

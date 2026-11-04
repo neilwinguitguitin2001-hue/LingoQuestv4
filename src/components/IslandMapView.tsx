@@ -328,7 +328,7 @@ export const IslandMapView: React.FC<IslandMapViewProps> = ({
                   Next Recommended Quest · Quarter {currentQuestModule.quarter} ({getDavaoOrientalIsland(currentQuestModule.quarter)?.name || currentQuestModule.islandName})
                 </div>
                 <div className="text-sm font-semibold text-slate-900">
-                  Module {currentQuestModule.moduleNumber}: {currentQuestModule.title}
+                  {currentQuestModule.title}
                 </div>
               </div>
               <button
@@ -444,11 +444,11 @@ export const IslandMapView: React.FC<IslandMapViewProps> = ({
             <Lock className="w-5 h-5 text-amber-400 shrink-0" />
             <div className="text-xs sm:text-sm">
               <span className="font-semibold text-amber-300">
-                Module {lockedNoticeModule.moduleNumber} ({lockedNoticeModule.title}) is currently locked!
+                {lockedNoticeModule.title} is currently locked!
               </span>{' '}
-              To restore the bridge and unlock this module, finish the interactive lesson and pass the quiz (75%+) for{' '}
+              {lockedNoticeModule.pdfLesson ? 'To unlock this module, complete' : 'To restore the bridge and unlock this module, finish the interactive lesson and pass the quiz (75%+) for'}{' '}
               <span className="underline font-bold">
-                Module {lockedNoticeModule.moduleNumber - 1}
+                {lockedNoticeModule.pdfLesson ? 'the preceding PDF lesson' : `Module ${lockedNoticeModule.moduleNumber - 1}`}
               </span>{' '}
               first.
             </div>
@@ -460,7 +460,7 @@ export const IslandMapView: React.FC<IslandMapViewProps> = ({
                 onClick={() => handleModuleClick(currentQuestModule, false)}
                 className="px-3 py-1.5 bg-amber-400 text-slate-950 text-xs font-semibold rounded-lg hover:bg-amber-300 transition-colors whitespace-nowrap cursor-pointer"
               >
-                Go to Module {currentQuestModule.moduleNumber}
+                Go to {currentQuestModule.pdfLesson?.sourceLabel || `Module ${currentQuestModule.moduleNumber}`}
               </button>
             )}
             <button
@@ -607,14 +607,14 @@ export const IslandMapView: React.FC<IslandMapViewProps> = ({
                                 ? 'royal'
                                 : 'dark'
                             }
-                            label={`Module ${mod.moduleNumber} • ${mod.topicType.replace('-', ' ')}`}
+                            label={`${mod.pdfLesson?.sourceLabel || `Module ${mod.moduleNumber}`} • ${mod.pdfLesson ? 'PDF learning module' : mod.topicType.replace('-', ' ')}`}
                             rightText={bridgeRestored ? `${bestScore}%` : `Pass ${mod.requiredPassingScore}%`}
                           />
                           <div className="p-5 flex-1 flex flex-col justify-between">
                           <div>
                             <div className="flex items-center justify-between text-xs mb-2">
                               <span className="font-mono font-semibold text-slate-600">
-                                MODULE {mod.moduleNumber}
+                                {mod.pdfLesson?.sourceLabel || `Module ${mod.moduleNumber}`}
                               </span>
                               <span
                                 className={`font-semibold flex items-center gap-1 ${
@@ -680,7 +680,7 @@ export const IslandMapView: React.FC<IslandMapViewProps> = ({
                             <div className="flex items-center justify-between text-xs mb-1.5">
                               <span className="text-slate-500 font-medium">
                                 {idx < quarterModules.length - 1
-                                  ? `Bridge to Module ${mod.moduleNumber + 1}`
+                                  ? `Bridge to ${quarterModules[idx + 1].pdfLesson?.sourceLabel || `Module ${mod.moduleNumber + 1}`}`
                                   : quarterNum < 4
                                   ? `Strait Bridge to Q${quarterNum + 1}`
                                   : 'Archipelago Summit Bridge'}

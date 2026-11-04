@@ -21,6 +21,8 @@ for m in modules:
     assert m['title'] and len(m['overview']['text']) > 20, m['id']
     assert m['overview']['page'] in m['source']['discussionPages'], m['id']
     assert m['concepts'] and m['selfCheck'] and m['guidedAnalysis'], m['id']
+    for c in m['concepts']:
+        assert (root / 'public' / c['image'].lstrip('/')).exists(), m['id']
     for section in ['concepts','guidedAnalysis','pitfallsAndTips','vocabularyBank','selfCheck','studyCheatsheet','answerKey','overview']:
         excerpts = [m[section]] if section == 'overview' else m[section]
         for e in excerpts:
@@ -29,7 +31,7 @@ for m in modules:
             quote = normalize(e['text'])
             if fid == '1O7Uz5PO8R7RBLJpxEIXqBY-YGV9sO-m1' and e['page'] == 11:
                 # Diagram transcription checked against the original rendered page.
-                assert (root / 'public/curriculum/g7-q3-m5-page11.webp').exists()
+                assert (root / 'public/curriculum' / (fid + '-p11.webp')).exists()
             else:
                 # The only edits allowed are whitespace and explicit major headings.
                 page = normalize(re.sub(r'(?i)What\s*(?:is|[’\x27]s)\s+It\s*\??', '', page))

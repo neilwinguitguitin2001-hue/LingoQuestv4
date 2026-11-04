@@ -13,9 +13,9 @@ OUT.mkdir(parents=True, exist_ok=True)
 
 # Source labels, not array offsets. A range includes both endpoints.
 DISCUSSION = {
- '7-1': {'1':'7,10-12','2':'14-17','3':'8-11','4':'11-13','5':'9-11','6':'10-12','7':'7-10','8':'8-11','9':'8-12','10':'9-11'},
- '7-2': {'1':'9,17,19,22','2':'10,19','3':'10-11','4':'9-10,22-25,35-38','7':'9-12,21-22'},
- '7-3': {'1':'9-11','2':'8-10','3':'8','4':'10-12','5':'11-12,17-18','6':'10-12','7':'9-11'},
+ '7-1': {'1':'7,10-12','2':'14-17','3':'8-11','4':'11-13','5':'9-10','6':'10-12','7':'7-10','8':'8-11','9':'8-12','10':'9-11'},
+ '7-2': {'1':'9,17,19,22','2':'10,19','3':'10-11','4':'9-10,22-25,35-38','7':'9-12,22'},
+ '7-3': {'1':'9-11','2':'8-10','3':'8','4':'10-12','5':'11,17-18','6':'10-12','7':'9-11'},
  '7-4': {'1':'10-13','2':'9-12,15-17','3':'10-12','4':'8-13','5':'10-11','6':'8,11-12','7':'8','8':'10-12'},
  '8-1': {'1':'10-15','2':'11-21','3':'9-11,17-19,26-27','4':'9-13','5':'10-12,18-19,24-27'},
  '8-2': {'1':'13-20','2':'10-17','3':'10-14','4':'11-15','5':'12-25'},
@@ -191,7 +191,7 @@ for f in inventory:
   flat=re.sub(r'\s+',' ',c['text'])
   for m in re.finditer(r'(?:^|(?<=[.!?])\s+)([A-Z][A-Za-z -]{1,65})\s+(?:is|are|refers to|means)\s+[^.!?]+[.!?]',flat):
    if len(m[0])<650 and not re.match(r'(It|This|There|They|We|You|He|She|The following|In |For |Example)',m[1]):vocab.append(excerpt(c['page'],m[0].strip(),'definition'))
-  for m in re.finditer(r'(?:Remember|Note:|Take note|Do not|Don[’\x27]t)[^.!?\n]{15,500}[.!?]',flat,re.I):
+  for m in re.finditer(r'(?:Remember(?:!|:| that)|Note:|Take note)[^.!?\n]{15,500}[.!?]',flat,re.I):
    tips.append(excerpt(c['page'],m[0].strip(),'reminder'))
  # Summary is extractive: select complete source definition sentences, not new claims.
  summary=(vocab[:5] or [overview])
@@ -206,7 +206,7 @@ for f in inventory:
   'sha256':d['sha256'],'pageCount':d['pageCount'],'notes':notes,'discussionPages':selected},
   'overview':overview,'concepts':concepts,'guidedAnalysis':guided,'pitfallsAndTips':tips,
   'vocabularyBank':vocab,'selfCheck':objectives+checks,'studyCheatsheet':summary,'answerKey':answers}
- if key=='7-3-5':module['concepts'][0]['image']='/curriculum/g7-q3-m5-page11.webp'
+ for c in module['concepts']:c['image']='/curriculum/'+f['id']+'-p'+str(c['page'])+'.webp'
  all_data.append(module)
 
 for grade in range(7,11):

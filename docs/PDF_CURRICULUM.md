@@ -18,7 +18,7 @@ source hashes identify the exact originals used for this update.
 - The six requested sections use source discussions, definitions, activities,
   objectives, reviews, and assessment pages. Empty sections remain empty.
 - The study cheatsheet selects source definition sentences; it does not generate claims.
-- Source activities remain open-response where applicable. The source key/rubric is
+- Original discussion-page images preserve tables, columns and diagrams in the lesson reader, with accessible text transcripts. Source activities remain open-response where applicable. The source key/rubric is
   available separately; no synthetic multiple-choice games or automatic scores are added.
 - The Grade 7 Q3 Module 5 diagram on PDF page 11 includes image-based text. Its
   transcription was checked against the rendered original; the original diagram is
@@ -60,11 +60,14 @@ PDF's SHA256, page count and 1-based page text.
 
 ```sh
 python3 scripts/import-pdf-curriculum.py
+python3 scripts/render-pdf-discussion-pages.py
 python3 scripts/verify-pdf-curriculum.py
 npx tsx scripts/check-curriculum.tsx
 npm run lint
 npm run build
 ```
+
+The page renderer requires PyMuPDF and Pillow in the authoring Python environment.
 
 The source verification checks all published excerpts against their own originals,
 all 106 mappings, numbering gaps, split modules and disclosed label discrepancies.

@@ -5,8 +5,8 @@
   "sourcePageCount": 2430,
   "completedModules": 106,
   "remainingModules": [],
-  "validatedExcerpts": 4125,
-  "status": "source data, shared lesson reader, source verification, renderer checks, typecheck and production build complete; GitHub/Vercel publication pending",
+  "validatedExcerpts": 3997,
+  "status": "curriculum-complete",
   "countsByGradeQuarter": {
     "g7q1": 10,
     "g7q2": 5,
@@ -25,5 +25,12 @@
     "g10q3": 5,
     "g10q4": 3
   },
-  "resumeInstructions": "Inspect branch codex/pdf-only-curriculum and latest Vercel preview. No curriculum modules remain unprocessed. Original downloads are in the ignored .curriculum-sources folder. If interrupted by a real usage limit, resume publication and visual QA after the requested five-hour window."
+  "resumeInstructions": "Inspect branch codex/pdf-only-curriculum and latest Vercel preview. No curriculum modules remain unprocessed. Original downloads are in the ignored .curriculum-sources folder. If interrupted by a real usage limit, resume publication and visual QA after the requested five-hour window.",
+  "originalDiscussionPageImages": 458,
+  "delivery": {
+    "pullRequest": "https://github.com/neilwinguitguitin2001-hue/LingoQuestv4/pull/2",
+    "branch": "codex/pdf-only-curriculum",
+    "previewPath": "/curriculum-preview.html",
+    "productionUpdated": false
+  }
 }

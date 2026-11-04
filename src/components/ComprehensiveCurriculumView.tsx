@@ -958,7 +958,7 @@ export const ComprehensiveCurriculumView: React.FC<ComprehensiveCurriculumViewPr
                         Grade {mod.gradeLevel} • Q{mod.quarter}
                       </span>
                       <span className="text-xs font-bold text-slate-400">
-                        Module #{mod.moduleNumber} ({mod.topicType})
+                        {mod.pdfLesson?.sourceLabel || `Module ${mod.moduleNumber}`} ({mod.topicType})
                       </span>
                     </div>
                     <h3 className="text-lg font-black font-display text-slate-900 mt-1">
