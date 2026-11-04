@@ -886,25 +886,10 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
           .split('\n')
           .map((r) => r.trim())
           .filter(Boolean),
-        examples: editingModule?.lessonContent?.examples || [
-          {
-            title: 'Sample Model Sentence',
-            example: 'The teacher explained the rules clearly and encouragingly.',
-            analysis: 'Demonstrates balanced parallel adverbial construction.',
-          },
-        ],
-        culturalConnection: formCulturalConnection.trim(),
-        warmupQuestion: editingModule?.lessonContent?.warmupQuestion || {
-          question: 'Which element establishes parallelism?',
-          options: ['Equal grammatical structure', 'Rhyming syllables', 'Longer word count', 'Random word order'],
-          correctAnswer: 'Equal grammatical structure',
-          feedback: 'Parallelism coordinates elements of identical grammatical form.',
-        },
-        writingPrompt: editingModule?.lessonContent?.writingPrompt || {
-          title: 'Coastal Reflections of Davao Oriental',
-          instructions: 'Write a 3-4 sentence paragraph using appropriate cohesive devices.',
-          sampleStarter: 'Along the pristine coasts of Mati City, ...',
-        },
+        examples: editingModule?.lessonContent?.examples || [],
+        culturalConnection: '',
+        warmupQuestion: { question: '', options: [], correctAnswer: '', feedback: '' },
+        writingPrompt: { title: '', instructions: '', sampleStarter: '' },
       },
       quizQuestions: formQuizQuestions.length > 0 ? formQuizQuestions : editingModule?.quizQuestions || [],
     };
@@ -2634,12 +2619,6 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
           <ComprehensiveCurriculumView
             modules={modules}
             userRole="admin"
-            onCreateModule={openCreateModuleModal}
-            onEditModule={openEditModuleModal}
-            onDeleteModule={(mod) => {
-              soundFX.playClick();
-              setDeletingModule(mod);
-            }}
             onPreviewIslandMap={onPreviewAsStudent}
           />
         </div>

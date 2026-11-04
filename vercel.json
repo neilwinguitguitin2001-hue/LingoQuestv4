@@ -5,7 +5,7 @@
   "outputDirectory": "dist",
   "rewrites": [
     {
-      "source": "/((?!api/|assets/|favicon\\.ico|favicon\\.svg|logo\\.svg|logo-primary\\.svg|logo-reversed\\.svg|manifest\\.json).*)",
+      "source": "/((?!api/|assets/|curriculum/|curriculum-preview\\.html|favicon\\.ico|favicon\\.svg|logo\\.svg|logo-primary\\.svg|logo-reversed\\.svg|manifest\\.json).*)",
       "destination": "/index.html"
     }
   ],

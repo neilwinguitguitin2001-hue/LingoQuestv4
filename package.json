@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "clean": "rm -rf dist server.js",
     "lint": "tsc --noEmit",
-    "generate-voice": "tsx scripts/generate-voice.ts"
+    "generate-voice": "tsx scripts/generate-voice.ts",
+    "check:curriculum": "tsx scripts/check-curriculum.tsx"
   },
   "dependencies": {
     "@google/genai": "^2.32.0",

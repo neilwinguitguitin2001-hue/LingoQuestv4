@@ -190,6 +190,7 @@ export interface LessonContent {
 }
 
 export interface Module {
+  pdfLesson?: import('../data/curriculum/pdfCurriculum').PdfLesson;
   id: string;
   gradeLevel: GradeLevel;
   quarter: QuarterNumber;

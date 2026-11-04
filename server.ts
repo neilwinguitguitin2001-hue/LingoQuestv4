@@ -1,4 +1,5 @@
 import 'dotenv/config';
+import { PDF_MODULES } from './src/data/curriculum/pdfCurriculum.ts';
 import express from 'express';
 import { createServer as createHttpServer } from 'http';
 import { createServer as createViteServer } from 'vite';
@@ -245,43 +246,13 @@ async function startServer() {
     }
   });
 
-  // Cloud SQL Curriculum Modules Endpoints
-  app.get('/api/modules', requireAuth, async (_req: AuthRequest, res) => {
-    try {
-      const modules = await getAllCustomModulesFromDb();
-      res.json(modules);
-    } catch (error: unknown) {
-      const message = error instanceof Error ? error.message : 'Failed to fetch modules';
-      console.error('Failed to fetch modules:', error);
-      res.status(500).json({ error: message });
-    }
+  // Curriculum is built and reviewed from the approved PDF originals.
+  app.get('/api/modules', requireAuth, (_req: AuthRequest, res) => res.json(PDF_MODULES));
+  app.post('/api/modules', requireAuth, (_req: AuthRequest, res) => {
+    res.status(409).json({ error: 'Update the approved PDF source mapping to change curriculum.' });
   });
-
-  app.post('/api/modules', requireAuth, async (req: AuthRequest, res) => {
-    try {
-      const { module: moduleData, updatedBy } = req.body || {};
-      if (!moduleData || !moduleData.id) {
-        res.status(400).json({ error: 'Valid module payload is required.' });
-        return;
-      }
-      const saved = await upsertCustomModuleInDb(moduleData, updatedBy || req.user?.uid);
-      res.json(saved);
-    } catch (error: unknown) {
-      const message = error instanceof Error ? error.message : 'Failed to save module';
-      console.error('Failed to save module:', error);
-      res.status(500).json({ error: message });
-    }
-  });
-
-  app.delete('/api/modules/:moduleId', requireAuth, async (req: AuthRequest, res) => {
-    try {
-      await deleteCustomModuleFromDb(String(req.params.moduleId));
-      res.json({ success: true });
-    } catch (error: unknown) {
-      const message = error instanceof Error ? error.message : 'Failed to delete module';
-      console.error('Failed to delete module:', error);
-      res.status(500).json({ error: message });
-    }
+  app.delete('/api/modules/:moduleId', requireAuth, (_req: AuthRequest, res) => {
+    res.status(409).json({ error: 'PDF curriculum is managed in the source repository.' });
   });
 
   // Cloud SQL Student Progress Endpoint

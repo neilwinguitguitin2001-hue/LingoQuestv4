@@ -1,0 +1,29 @@
+{
+  "repository": "neilwinguitguitin2001-hue/LingoQuestv4",
+  "baseCommit": "26238ba2148e0ac97a708984a56dfc69ff139320",
+  "sourcePdfCount": 106,
+  "sourcePageCount": 2430,
+  "completedModules": 106,
+  "remainingModules": [],
+  "validatedExcerpts": 4125,
+  "status": "source data, shared lesson reader, source verification, renderer checks, typecheck and production build complete; GitHub/Vercel publication pending",
+  "countsByGradeQuarter": {
+    "g7q1": 10,
+    "g7q2": 5,
+    "g7q3": 7,
+    "g7q4": 8,
+    "g8q1": 5,
+    "g8q2": 5,
+    "g8q3": 6,
+    "g8q4": 6,
+    "g9q1": 8,
+    "g9q2": 2,
+    "g9q3": 7,
+    "g9q4": 13,
+    "g10q1": 8,
+    "g10q2": 8,
+    "g10q3": 5,
+    "g10q4": 3
+  },
+  "resumeInstructions": "Inspect branch codex/pdf-only-curriculum and latest Vercel preview. No curriculum modules remain unprocessed. Original downloads are in the ignored .curriculum-sources folder. If interrupted by a real usage limit, resume publication and visual QA after the requested five-hour window."
+}

@@ -161,20 +161,6 @@ function setCachedUsers(users: UserAccount[]) {
 }
 
 function getCachedModules(): Module[] {
-  try {
-    const raw = localStorage.getItem(CACHE_KEY_CUSTOM_MODULES);
-    if (raw) {
-      const custom: Module[] = JSON.parse(raw);
-      if (Array.isArray(custom) && custom.length > 0) {
-        const moduleMap = new Map<string, Module>();
-        ALL_MODULES.forEach((m) => moduleMap.set(m.id, m));
-        custom.forEach((m) => moduleMap.set(m.id, m));
-        return Array.from(moduleMap.values());
-      }
-    }
-  } catch (e) {
-    console.warn('Failed reading cached modules', e);
-  }
   return ALL_MODULES;
 }
 
@@ -641,12 +627,6 @@ export async function initializeFirestoreSeed(): Promise<{
       }
       if (Array.isArray(data.users) && data.users.length > 0) {
         setCachedUsers(data.users);
-      }
-      if (Array.isArray(data.customModules) && data.customModules.length > 0) {
-        const moduleMap = new Map<string, Module>();
-        ALL_MODULES.forEach((m) => moduleMap.set(m.id, m));
-        data.customModules.forEach((m: Module) => moduleMap.set(m.id, m));
-        setCachedModules(Array.from(moduleMap.values()));
       }
       if (Array.isArray(data.auditLogs) && data.auditLogs.length > 0) {
         setCachedAuditLogs(data.auditLogs);
@@ -1657,20 +1637,7 @@ export function verifyClassCode(
 // Module Manager (Admins Only)
 // ----------------------------------------------------
 export async function getAllModules(): Promise<Module[]> {
-  try {
-    const fetched = await cloudSqlFetch<Module[]>('/api/modules');
-    if (Array.isArray(fetched) && fetched.length > 0) {
-      const moduleMap = new Map<string, Module>();
-      ALL_MODULES.forEach((m) => moduleMap.set(m.id, m));
-      fetched.forEach((m) => moduleMap.set(m.id, m));
-      const combined = Array.from(moduleMap.values());
-      setCachedModules(combined);
-      return combined;
-    }
-  } catch (error) {
-    console.warn('getAllModules fallback to cache:', error);
-  }
-  return getCachedModules();
+  return ALL_MODULES;
 }
 
 export async function createNewModule(
