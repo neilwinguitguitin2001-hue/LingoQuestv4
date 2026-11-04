@@ -134,6 +134,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
 }) => {
   const sourceContent = useDigitalContent(sourceModule.pdfLesson);
   const module = React.useMemo(() => ({ ...sourceModule, quizQuestions: sourceContent.data?.games || sourceModule.quizQuestions }), [sourceModule, sourceContent.data]);
+  const sourceModuleLabel = module.pdfLesson?.sourceLabel || `Module ${module.moduleNumber}`;
   const [sourceReviewMessage, setSourceReviewMessage] = useState('');
   const [stage, setStage] = useState<'LESSON' | 'QUIZ_SETUP' | 'PLAYING_QUIZ' | 'QUIZ_RESULTS'>(
     initialStage
@@ -441,7 +442,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
       const textToCopy = [
         `============================================================`,
         `LINGOQUEST STUDY CHEATSHEET: ${module.title.toUpperCase()}`,
-        `Grade ${module.gradeLevel} · Quarter ${module.quarter} · Module ${module.moduleNumber}`,
+        `Grade ${module.gradeLevel} · Quarter ${module.quarter} · ${sourceModuleLabel}`,
         `DepEd Competency: ${lessonContent.melcCompetency}`,
         `Island Destination: ${currentIslandName} (Davao Oriental)`,
         `============================================================\n`,
@@ -483,7 +484,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                     {previewRole === 'teacher' ? 'Faculty Preview Mode' : 'Admin Preview Mode'}
                   </span>
                   <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-white/10 text-sky-200 border border-white/20">
-                    Grade {module.gradeLevel} · {module.pdfLesson?.sourceLabel || `Module ${module.moduleNumber}`}
+                    Grade {module.gradeLevel} · {sourceModuleLabel}
                   </span>
                 </div>
                 <p className="text-xs text-slate-200">
@@ -524,7 +525,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
         <div className="bg-white border-2 border-[#231F20] linocut-card rounded-xl overflow-hidden">
           <InabelStrip
             variant="royal"
-            label={`DepEd MELC Module ${module.moduleNumber} • ${currentIslandName}`}
+            label={`DepEd MELC ${sourceModuleLabel} • ${currentIslandName}`}
             rightText={`Grade ${module.gradeLevel} • Quarter ${module.quarter}`}
           />
           <div className="p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -556,7 +557,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
               <span>·</span>
               <span>Quarter {module.quarter}</span>
               <span>·</span>
-              <span>{module.pdfLesson?.sourceLabel || `Module ${module.moduleNumber}`}</span>
+              <span>{sourceModuleLabel}</span>
               <span>·</span>
               <span className="capitalize font-medium text-slate-700">{module.topicType.replace('-', ' ')}</span>
               <span>·</span>
@@ -742,7 +743,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                       <span>01. Lesson Concept & DepEd Competency</span>
                     </h2>
                     <span className="text-xs px-2.5 py-0.5 rounded-full bg-sky-50 text-sky-800 font-bold border border-sky-200">
-                      {module.pdfLesson?.sourceLabel || `Module ${module.moduleNumber}`} Core Study
+                      {sourceModuleLabel} Core Study
                     </span>
                   </div>
 
@@ -1565,7 +1566,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                     {previewRole === 'teacher' ? 'Faculty Preview Mode' : 'Admin Preview Mode'}
                   </span>
                   <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-white/10 text-sky-200 border border-white/20">
-                    Grade {module.gradeLevel} · {module.pdfLesson?.sourceLabel || `Module ${module.moduleNumber}`} Quizzes
+                    Grade {module.gradeLevel} · {sourceModuleLabel} Quizzes
                   </span>
                 </div>
                 <p className="text-xs text-slate-200">
@@ -1650,7 +1651,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                   <span>Curriculum Answer Key & Pedagogical Audit</span>
                 </div>
                 <h2 className="text-xl sm:text-2xl font-bold font-display text-slate-900 mt-1">
-                  Grade {module.gradeLevel} {module.pdfLesson?.sourceLabel || `Module ${module.moduleNumber}`}: {module.title}
+                  Grade {module.gradeLevel} {sourceModuleLabel}: {module.title}
                 </h2>
                 <p className="text-xs text-slate-500 mt-0.5">
                   DepEd MELC: {module.lessonContent.melcCompetency} · Total Questions: {module.quizQuestions?.length || 0}
@@ -1839,7 +1840,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-5">
             <div>
               <div className="text-xs text-slate-500">
-                {module.pdfLesson?.sourceLabel || `Module ${module.moduleNumber}`} Quiz Setup · {currentIslandName} · Passing Score:{' '}
+                {sourceModuleLabel} Quiz Setup · {currentIslandName} · Passing Score:{' '}
                 <span className="font-mono font-semibold text-slate-900">
                   {module.requiredPassingScore}%
                 </span>
@@ -1968,7 +1969,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
           {(!canStart || sourceReviewMessage) && <p role="status">{sourceContent.error || sourceReviewMessage || (sourceContent.data ? 'Source review needed: fewer than five verified questions are available for this PDF and game mode.' : 'Loading the verified source question bank…')}</p>}
           <div className="pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="text-xs text-slate-600">
-              Score at least <span className="font-mono font-bold text-slate-900">{module.requiredPassingScore}%</span> to restore the bridge for {module.pdfLesson?.sourceLabel || `Module ${module.moduleNumber}`} and unlock the next destination!
+              Score at least <span className="font-mono font-bold text-slate-900">{module.requiredPassingScore}%</span> to restore the bridge for {sourceModuleLabel} and unlock the next destination!
             </div>
             <button
               type="button"
@@ -2015,7 +2016,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                   </span>
                 </div>
                 <p className="text-xs text-slate-200">
-                  Testing Grade {module.gradeLevel} {module.pdfLesson?.sourceLabel || `Module ${module.moduleNumber}`}: {module.title}
+                  Testing Grade {module.gradeLevel} {sourceModuleLabel}: {module.title}
                 </p>
               </div>
             </div>
@@ -2063,7 +2064,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                   </span>
                 </div>
                 <p className="text-xs text-slate-300">
-                  Grade {module.gradeLevel} {module.pdfLesson?.sourceLabel || `Module ${module.moduleNumber}`}: <span className="font-semibold text-white">{module.title}</span>
+                  Grade {module.gradeLevel} {sourceModuleLabel}: <span className="font-semibold text-white">{module.title}</span>
                 </p>
               </div>
             </div>
@@ -2150,7 +2151,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div>
               <div className="text-xs text-slate-500">
-                {module.pdfLesson?.sourceLabel || `Module ${module.moduleNumber}`}: {module.title} ·{' '}
+                {sourceModuleLabel}: {module.title} ·{' '}
                 <span className="uppercase font-mono font-semibold text-slate-800">
                   {difficulty} MODE
                 </span>
@@ -2663,7 +2664,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                       Exit Quiz Challenge?
                     </h3>
                     <p className="text-xs text-slate-500">
-                      You are taking the {module.pdfLesson?.sourceLabel || `Module ${module.moduleNumber}`} quiz ({currentQIndex + 1} of {activeQuestions.length}). Where would you like to go?
+                      You are taking the {sourceModuleLabel} quiz ({currentQIndex + 1} of {activeQuestions.length}). Where would you like to go?
                     </p>
                   </div>
                 </div>
@@ -2697,7 +2698,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                       <ArrowRight className="w-4 h-4 text-sky-600 opacity-0 group-hover:opacity-100 transition-opacity" />
                     </div>
                     <p className="text-xs text-slate-600 mt-0.5">
-                      Return to study notes, examples, vocabulary, and self-checks for {module.pdfLesson?.sourceLabel || `Module ${module.moduleNumber}`}.
+                      Return to study notes, examples, vocabulary, and self-checks for {sourceModuleLabel}.
                     </p>
                   </div>
                 </button>
@@ -2820,14 +2821,14 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
         <div className="bg-white border-2 border-[#231F20] linocut-card rounded-xl overflow-hidden space-y-6">
           <InabelStrip
             variant={finalOutcome.passed ? 'emerald' : 'crimson'}
-            label={`Module ${module.moduleNumber} Quiz Summary • ${difficulty.toUpperCase()} Difficulty`}
+            label={`${sourceModuleLabel} Quiz Summary • ${difficulty.toUpperCase()} Difficulty`}
             rightText={`${finalOutcome.percentage}% Score`}
           />
           <div className="px-6 sm:px-8 pb-6 sm:pb-8 space-y-6">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-slate-100 pb-6">
             <div className="space-y-1.5">
               <div className="text-xs font-mono font-semibold text-slate-500">
-                {(module.pdfLesson?.sourceLabel || `Module ${module.moduleNumber}`).toUpperCase()} QUIZ SUMMARY · {difficulty.toUpperCase()} DIFFICULTY
+                {(sourceModuleLabel).toUpperCase()} QUIZ SUMMARY · {difficulty.toUpperCase()} DIFFICULTY
               </div>
               <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 font-display">
                 {finalOutcome.passed
@@ -2872,7 +2873,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
               <span>
                 {isPersonalization
                   ? `Personalization Practice: Grade ${module.gradeLevel} · ${currentIslandName}`
-                  : `${currentIslandName} · Bridge from Module ${module.moduleNumber}`}
+                  : `${currentIslandName} · Bridge from ${sourceModuleLabel}`}
               </span>
               <span className="font-mono font-semibold text-amber-300">
                 {finalOutcome.passed ? '✓ BRIDGE RESTORED & NEXT MODULE UNLOCKED' : '🔒 BRIDGE REMAINS BROKEN'}
@@ -3092,7 +3093,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                   }}
                   className="px-5 py-2.5 bg-sky-600 hover:bg-sky-700 text-white text-xs font-bold rounded-lg transition-colors flex items-center gap-1.5 cursor-pointer"
                 >
-                  <span>{isPreviewMode ? 'Preview Next Module' : `Continue to Module ${nextModule.moduleNumber}`}</span>
+                  <span>{isPreviewMode ? 'Preview Next Module' : `Continue to ${nextModule.pdfLesson?.sourceLabel || `Module ${nextModule.moduleNumber}`}`}</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
               )}

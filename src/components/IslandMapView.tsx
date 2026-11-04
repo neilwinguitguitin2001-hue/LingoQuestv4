@@ -87,6 +87,12 @@ export const IslandMapView: React.FC<IslandMapViewProps> = ({
   const gradeModules = modules
     .filter((m) => m.gradeLevel === activeGrade)
     .sort((a, b) => a.moduleNumber - b.moduleNumber);
+  const sourceLabel = (m: Module) => m.pdfLesson?.sourceLabel || `Module ${m.moduleNumber}`;
+  const sequenceLabel = (number: number) => {
+    const target = gradeModules.find(m => m.moduleNumber === number);
+    return target ? sourceLabel(target) : `Module ${number}`;
+  };
+
 
   const isModuleUnlocked = (mod: Module): boolean => {
     if (isPreviewMode) return true;
@@ -327,7 +333,7 @@ export const IslandMapView: React.FC<IslandMapViewProps> = ({
                   Next Recommended Quest · Quarter {currentQuestModule.quarter} ({getDavaoOrientalIsland(currentQuestModule.quarter)?.name || currentQuestModule.islandName})
                 </div>
                 <div className="text-sm font-semibold text-slate-900">
-                  Module {currentQuestModule.moduleNumber}: {currentQuestModule.title}
+                  {sourceLabel(currentQuestModule)}: {currentQuestModule.title}
                 </div>
               </div>
               <button
@@ -443,11 +449,11 @@ export const IslandMapView: React.FC<IslandMapViewProps> = ({
             <Lock className="w-5 h-5 text-amber-400 shrink-0" />
             <div className="text-xs sm:text-sm">
               <span className="font-semibold text-amber-300">
-                Module {lockedNoticeModule.moduleNumber} ({lockedNoticeModule.title}) is currently locked!
+                {sourceLabel(lockedNoticeModule)} ({lockedNoticeModule.title}) is currently locked!
               </span>{' '}
               To restore the bridge and unlock this module, finish the interactive lesson and pass the quiz (75%+) for{' '}
               <span className="underline font-bold">
-                Module {lockedNoticeModule.moduleNumber - 1}
+                {sequenceLabel(lockedNoticeModule.moduleNumber - 1)}
               </span>{' '}
               first.
             </div>
@@ -459,7 +465,7 @@ export const IslandMapView: React.FC<IslandMapViewProps> = ({
                 onClick={() => handleModuleClick(currentQuestModule, false)}
                 className="px-3 py-1.5 bg-amber-400 text-slate-950 text-xs font-semibold rounded-lg hover:bg-amber-300 transition-colors whitespace-nowrap cursor-pointer"
               >
-                Go to Module {currentQuestModule.moduleNumber}
+                Go to {sourceLabel(currentQuestModule)}
               </button>
             )}
             <button
@@ -482,7 +488,7 @@ export const IslandMapView: React.FC<IslandMapViewProps> = ({
             searchQuery.trim()
               ? m.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
                 m.lessonContent.melcCompetency.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                String(m.moduleNumber).includes(searchQuery.trim())
+                String(m.pdfLesson?.sourceNumber || m.moduleNumber).toLowerCase().includes(searchQuery.trim().toLowerCase())
               : true
           );
           if (quarterModules.length === 0 && searchQuery.trim()) return null;
@@ -679,7 +685,7 @@ export const IslandMapView: React.FC<IslandMapViewProps> = ({
                             <div className="flex items-center justify-between text-xs mb-1.5">
                               <span className="text-slate-500 font-medium">
                                 {idx < quarterModules.length - 1
-                                  ? `Bridge to Module ${mod.moduleNumber + 1}`
+                                  ? `Bridge to ${sequenceLabel(mod.moduleNumber + 1)}`
                                   : quarterNum < 4
                                   ? `Strait Bridge to Q${quarterNum + 1}`
                                   : 'Archipelago Summit Bridge'}
@@ -841,7 +847,7 @@ export const IslandMapView: React.FC<IslandMapViewProps> = ({
           <div className="bg-white rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-hidden linocut-card border-2 border-[#231F20] flex flex-col animate-scale-up">
             <InabelStrip
               variant="amber"
-              label={`Curriculum Inspector • Grade ${inspectingModule.gradeLevel} Module ${inspectingModule.moduleNumber}`}
+              label={`Curriculum Inspector • Grade ${inspectingModule.gradeLevel} ${sourceLabel(inspectingModule)}`}
               rightText={`${inspectingModule.quizQuestions?.length || 0} Questions`}
             />
             {/* Modal Header */}
@@ -849,7 +855,7 @@ export const IslandMapView: React.FC<IslandMapViewProps> = ({
               <div className="space-y-1">
                 <div className="flex flex-wrap items-center gap-2">
                   <span className="px-2.5 py-0.5 rounded-full text-[11px] font-black uppercase tracking-wider bg-amber-400 text-slate-950">
-                    Grade {inspectingModule.gradeLevel} · Quarter {inspectingModule.quarter} Module {inspectingModule.moduleNumber}
+                    Grade {inspectingModule.gradeLevel} · Quarter {inspectingModule.quarter} {sourceLabel(inspectingModule)}
                   </span>
                   <span className="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-white/10 text-sky-200 border border-white/20">
                     {inspectingModule.islandName || getDavaoOrientalIsland(inspectingModule.quarter)?.name}
