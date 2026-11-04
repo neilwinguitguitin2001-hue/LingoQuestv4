@@ -158,28 +158,10 @@
     "pitfallsAndTips": [],
     "vocabularyBank": [
       {
-        "page": 9,
-        "text": "Research is required not just for students and academics, but for all professionals and nonprofessionals alike.",
-        "kind": "definition",
-        "term": "Research"
-      },
-      {
-        "page": 9,
-        "text": "Emphasis is placed on the collection of numerical data, the summary of those data and the drawing of inferences from the data.",
-        "kind": "definition",
-        "term": "Emphasis"
-      },
-      {
         "page": 12,
         "text": "Variables are any quality of a person, group subject, event, condition or situation that varies or takes on different values.",
         "kind": "definition",
         "term": "Variables"
-      },
-      {
-        "page": 12,
-        "text": "The population is all 250 employees, and the sample is random because each employee has an equal chance of being chosen.",
-        "kind": "definition",
-        "term": "population"
       }
     ],
     "selfCheck": [
@@ -271,28 +253,10 @@
         "kind": "overview"
       },
       {
-        "page": 9,
-        "text": "Research is required not just for students and academics, but for all professionals and nonprofessionals alike.",
-        "kind": "definition",
-        "term": "Research"
-      },
-      {
-        "page": 9,
-        "text": "Emphasis is placed on the collection of numerical data, the summary of those data and the drawing of inferences from the data.",
-        "kind": "definition",
-        "term": "Emphasis"
-      },
-      {
         "page": 12,
         "text": "Variables are any quality of a person, group subject, event, condition or situation that varies or takes on different values.",
         "kind": "definition",
         "term": "Variables"
-      },
-      {
-        "page": 12,
-        "text": "The population is all 250 employees, and the sample is random because each employee has an equal chance of being chosen.",
-        "kind": "definition",
-        "term": "population"
       }
     ],
     "answerKey": [
@@ -397,12 +361,6 @@
         "text": "A technical definition is a definition in the technical sense, while an operational definition includes information from the real world.",
         "kind": "definition",
         "term": "technical definition"
-      },
-      {
-        "page": 10,
-        "text": "Operational definition would be an automobile is a car or truck that gets you around from place to place and caries cargo or passengers, and makes it easier to live in the city or provinces.",
-        "kind": "definition",
-        "term": "Operational definition"
       }
     ],
     "selfCheck": [
@@ -432,12 +390,6 @@
         "page": 10,
         "text": "A technical definition is a definition in the technical sense, while an operational definition includes information from the real world.",
         "kind": "overview"
-      },
-      {
-        "page": 10,
-        "text": "Operational definition would be an automobile is a car or truck that gets you around from place to place and caries cargo or passengers, and makes it easier to live in the city or provinces.",
-        "kind": "definition",
-        "term": "Operational definition"
       }
     ],
     "answerKey": [
@@ -525,12 +477,6 @@
         "text": "Expanded definition is used to define technical terms with a very detailed explanation, sometimes, with the use of examples and visuals.",
         "kind": "definition",
         "term": "Expanded definition"
-      },
-      {
-        "page": 8,
-        "text": "Expanded definitions are usually found in academic texts (Gonzales, et al.",
-        "kind": "definition",
-        "term": "Expanded definitions"
       }
     ],
     "selfCheck": [
@@ -555,12 +501,6 @@
         "page": 8,
         "text": "Expanded definition is used to define technical terms with a very detailed explanation, sometimes, with the use of examples and visuals.",
         "kind": "overview"
-      },
-      {
-        "page": 8,
-        "text": "Expanded definitions are usually found in academic texts (Gonzales, et al.",
-        "kind": "definition",
-        "term": "Expanded definitions"
       }
     ],
     "answerKey": [],

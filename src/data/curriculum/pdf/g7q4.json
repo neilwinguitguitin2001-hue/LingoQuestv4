@@ -112,12 +112,6 @@
       },
       {
         "page": 12,
-        "text": "Accuracy It is necessary to use accurate terminologies in academic writing.",
-        "kind": "definition",
-        "term": "Accuracy"
-      },
-      {
-        "page": 12,
         "text": "Objectivity Being objective means that you are concerned with facts rather than personal feelings or biases.",
         "kind": "definition",
         "term": "Objectivity"
@@ -176,12 +170,6 @@
         "text": "Academic Writing is … Academic Writing is not …  Formal and unbiased X Personal  Clear and precise X Long-winded  Focused and well-structured  Well-sourced X Emotive and impressive  Correct and consistent Source: Base, Knowledge, and Academic writing.",
         "kind": "definition",
         "term": "Academic Writing"
-      },
-      {
-        "page": 12,
-        "text": "Accuracy It is necessary to use accurate terminologies in academic writing.",
-        "kind": "definition",
-        "term": "Accuracy"
       },
       {
         "page": 12,
@@ -1011,27 +999,9 @@
     "vocabularyBank": [
       {
         "page": 10,
-        "text": "Conflict provides crucial tension in any story and is used to reveal a deeper meaning in a narrative while highlighting characters’ motivations, values and weaknesses.",
-        "kind": "definition",
-        "term": "Conflict"
-      },
-      {
-        "page": 10,
         "text": "Internal Conflict is when a character struggles with their own opposing desires or beliefs.",
         "kind": "definition",
         "term": "Internal Conflict"
-      },
-      {
-        "page": 10,
-        "text": "Including both internal and external conflict is crucial for a good story, because life always includes both.",
-        "kind": "definition",
-        "term": "external conflict"
-      },
-      {
-        "page": 10,
-        "text": "Character This is a common type of conflict in which one character’s needs or wants are at odds with another’s.",
-        "kind": "definition",
-        "term": "Character"
       }
     ],
     "selfCheck": [
@@ -1099,27 +1069,9 @@
       },
       {
         "page": 10,
-        "text": "Conflict provides crucial tension in any story and is used to reveal a deeper meaning in a narrative while highlighting characters’ motivations, values and weaknesses.",
-        "kind": "definition",
-        "term": "Conflict"
-      },
-      {
-        "page": 10,
         "text": "Internal Conflict is when a character struggles with their own opposing desires or beliefs.",
         "kind": "definition",
         "term": "Internal Conflict"
-      },
-      {
-        "page": 10,
-        "text": "Including both internal and external conflict is crucial for a good story, because life always includes both.",
-        "kind": "definition",
-        "term": "external conflict"
-      },
-      {
-        "page": 10,
-        "text": "Character This is a common type of conflict in which one character’s needs or wants are at odds with another’s.",
-        "kind": "definition",
-        "term": "Character"
       }
     ],
     "answerKey": [
@@ -1558,12 +1510,6 @@
     "vocabularyBank": [
       {
         "page": 10,
-        "text": "Writing an informative essay effectively is essential in conveying to the reader certain information clearly and comprehensively.",
-        "kind": "definition",
-        "term": "informative essay"
-      },
-      {
-        "page": 10,
         "text": "The word essay is derived from the French infinitive essayer which means \"to try\" or \"to attempt.",
         "kind": "definition",
         "term": "essay"
@@ -1612,12 +1558,6 @@
         "page": 10,
         "text": "The word essay is derived from the French infinitive essayer which means \"to try\" or \"to attempt.\"",
         "kind": "overview"
-      },
-      {
-        "page": 10,
-        "text": "Writing an informative essay effectively is essential in conveying to the reader certain information clearly and comprehensively.",
-        "kind": "definition",
-        "term": "informative essay"
       },
       {
         "page": 10,

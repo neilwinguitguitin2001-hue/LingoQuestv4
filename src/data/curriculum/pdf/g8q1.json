@@ -131,48 +131,6 @@
         "text": "Context clues are words that appear in sentences to help understand the meanings of difficult words.",
         "kind": "definition",
         "term": "Context clues"
-      },
-      {
-        "page": 14,
-        "text": "A mallet is ___________.",
-        "kind": "definition",
-        "term": "mallet"
-      },
-      {
-        "page": 14,
-        "text": "To smite is to _________.",
-        "kind": "definition",
-        "term": "smite"
-      },
-      {
-        "page": 14,
-        "text": "To shiver is to ____.",
-        "kind": "definition",
-        "term": "shiver"
-      },
-      {
-        "page": 14,
-        "text": "Writhing means _______.",
-        "kind": "definition",
-        "term": "Writhing"
-      },
-      {
-        "page": 14,
-        "text": "Cunning means _____________________.",
-        "kind": "definition",
-        "term": "Cunning"
-      },
-      {
-        "page": 14,
-        "text": "Foundry means _____________________.",
-        "kind": "definition",
-        "term": "Foundry"
-      },
-      {
-        "page": 14,
-        "text": "Rekindled means ____________________.",
-        "kind": "definition",
-        "term": "Rekindled"
       }
     ],
     "selfCheck": [
@@ -217,30 +175,6 @@
         "page": 11,
         "text": "Context clues are words that appear in sentences to help understand the meanings of difficult words.",
         "kind": "overview"
-      },
-      {
-        "page": 14,
-        "text": "A mallet is ___________.",
-        "kind": "definition",
-        "term": "mallet"
-      },
-      {
-        "page": 14,
-        "text": "To smite is to _________.",
-        "kind": "definition",
-        "term": "smite"
-      },
-      {
-        "page": 14,
-        "text": "To shiver is to ____.",
-        "kind": "definition",
-        "term": "shiver"
-      },
-      {
-        "page": 14,
-        "text": "Writhing means _______.",
-        "kind": "definition",
-        "term": "Writhing"
       }
     ],
     "answerKey": [
@@ -439,12 +373,6 @@
         "text": "A bibliography is taken from the Greek word ‘biblion’, which means ‘book’ and ‘graphia’, which means ‘to write.",
         "kind": "definition",
         "term": "bibliography"
-      },
-      {
-        "page": 12,
-        "text": "The three main citation styles are the following:The American Psychological Association (APA) Style which is used in social and behavioral sciences.",
-        "kind": "definition",
-        "term": "citation"
       }
     ],
     "selfCheck": [
@@ -520,12 +448,6 @@
         "text": "A bibliography is taken from the Greek word ‘biblion’, which means ‘book’ and ‘graphia’, which means ‘to write.",
         "kind": "definition",
         "term": "bibliography"
-      },
-      {
-        "page": 12,
-        "text": "The three main citation styles are the following:The American Psychological Association (APA) Style which is used in social and behavioral sciences.",
-        "kind": "definition",
-        "term": "citation"
       }
     ],
     "answerKey": [
@@ -1229,26 +1151,7 @@
         "kind": "reminder"
       }
     ],
-    "vocabularyBank": [
-      {
-        "page": 10,
-        "text": "The word must is one of the words that you can use to express opinions in order to convince or persuade.",
-        "kind": "definition",
-        "term": "must"
-      },
-      {
-        "page": 11,
-        "text": "Type of Verb Functions Examples Modals It is used to give a I suggest you play with your brother and sister or suggestion which a you could join me pray for your Tatay’s safety.",
-        "kind": "definition",
-        "term": "Verb"
-      },
-      {
-        "page": 25,
-        "text": "The adverb clearly is placed at the beginning of the sentence.",
-        "kind": "definition",
-        "term": "adverb"
-      }
-    ],
+    "vocabularyBank": [],
     "selfCheck": [
       {
         "page": 5,
@@ -1316,24 +1219,6 @@
         "page": 10,
         "text": "The underlined words are verbs used to highlight emotions and opinions.",
         "kind": "overview"
-      },
-      {
-        "page": 10,
-        "text": "The word must is one of the words that you can use to express opinions in order to convince or persuade.",
-        "kind": "definition",
-        "term": "must"
-      },
-      {
-        "page": 11,
-        "text": "Type of Verb Functions Examples Modals It is used to give a I suggest you play with your brother and sister or suggestion which a you could join me pray for your Tatay’s safety.",
-        "kind": "definition",
-        "term": "Verb"
-      },
-      {
-        "page": 25,
-        "text": "The adverb clearly is placed at the beginning of the sentence.",
-        "kind": "definition",
-        "term": "adverb"
       }
     ],
     "answerKey": [

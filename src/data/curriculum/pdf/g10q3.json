@@ -138,12 +138,6 @@
       },
       {
         "page": 9,
-        "text": "Argumentative essay writing is a common assignment for high school and college students.",
-        "kind": "definition",
-        "term": "Argumentative essay writing"
-      },
-      {
-        "page": 9,
         "text": "A claim is also called a position, stand, or point of view.",
         "kind": "definition",
         "term": "claim"
@@ -227,12 +221,6 @@
         "text": "An argumentative essay is a piece of writing that takes a stance on an issue.",
         "kind": "definition",
         "term": "argumentative essay"
-      },
-      {
-        "page": 9,
-        "text": "Argumentative essay writing is a common assignment for high school and college students.",
-        "kind": "definition",
-        "term": "Argumentative essay writing"
       },
       {
         "page": 9,
@@ -340,18 +328,6 @@
     "vocabularyBank": [
       {
         "page": 9,
-        "text": "Consider the topic that is not too broad or too narrow.",
-        "kind": "definition",
-        "term": "topic"
-      },
-      {
-        "page": 9,
-        "text": "The thesis statement is considered the most essential part of informative writing.",
-        "kind": "definition",
-        "term": "thesis statement"
-      },
-      {
-        "page": 9,
         "text": "The thesis sentence is a sentence that summarizes the entire essay.",
         "kind": "definition",
         "term": "thesis sentence"
@@ -389,18 +365,6 @@
         "page": 9,
         "text": "An informative text educates readers about a topic or subject.",
         "kind": "overview"
-      },
-      {
-        "page": 9,
-        "text": "Consider the topic that is not too broad or too narrow.",
-        "kind": "definition",
-        "term": "topic"
-      },
-      {
-        "page": 9,
-        "text": "The thesis statement is considered the most essential part of informative writing.",
-        "kind": "definition",
-        "term": "thesis statement"
       },
       {
         "page": 9,
@@ -528,12 +492,6 @@
         "text": "Persuasive writing is a type of writing that aims at convincing people to think, feel, or to act in the writer’s way.",
         "kind": "definition",
         "term": "Persuasive writing"
-      },
-      {
-        "page": 13,
-        "text": "Argumentative writing is a type of writing wherein the writer aims at presenting an issue (be it scientific, political, social, etc.",
-        "kind": "definition",
-        "term": "Argumentative writing"
       }
     ],
     "selfCheck": [
@@ -583,12 +541,6 @@
         "page": 9,
         "text": "Persuasive writing is a type of writing that aims at convincing people to think, feel, or to act in the writer’s way.",
         "kind": "overview"
-      },
-      {
-        "page": 13,
-        "text": "Argumentative writing is a type of writing wherein the writer aims at presenting an issue (be it scientific, political, social, etc.",
-        "kind": "definition",
-        "term": "Argumentative writing"
       }
     ],
     "answerKey": [],
@@ -703,12 +655,6 @@
         "text": "A critique is an in-depth evaluation of a story, novel, film, or other reading/viewing materials for the purpose of giving the public an insight into the text.",
         "kind": "definition",
         "term": "critique"
-      },
-      {
-        "page": 10,
-        "text": "Structure is equally important.",
-        "kind": "definition",
-        "term": "Structure"
       }
     ],
     "selfCheck": [
@@ -748,12 +694,6 @@
         "page": 9,
         "text": "A critique is an in-depth evaluation of a story, novel, film, or other reading/viewing materials for the purpose of giving the public an insight into the text.",
         "kind": "overview"
-      },
-      {
-        "page": 10,
-        "text": "Structure is equally important.",
-        "kind": "definition",
-        "term": "Structure"
       }
     ],
     "answerKey": [
@@ -850,21 +790,9 @@
       },
       {
         "page": 10,
-        "text": "Character- It is a person, animal, being , Structure/ form creature or anything personified in a story.",
-        "kind": "definition",
-        "term": "Character"
-      },
-      {
-        "page": 10,
         "text": "Tone- It is the overall emotion conveyed by both the choices of words, theme, sensory images, symbolism and the narrator of the story such as suspenseful, affectionate, happy or sad.",
         "kind": "definition",
         "term": "Tone"
-      },
-      {
-        "page": 10,
-        "text": "The narrator is a participant in the story relating his or her own experiences directly or an observer.",
-        "kind": "definition",
-        "term": "narrator"
       },
       {
         "page": 10,
@@ -944,21 +872,9 @@
       },
       {
         "page": 10,
-        "text": "Character- It is a person, animal, being , Structure/ form creature or anything personified in a story.",
-        "kind": "definition",
-        "term": "Character"
-      },
-      {
-        "page": 10,
         "text": "Tone- It is the overall emotion conveyed by both the choices of words, theme, sensory images, symbolism and the narrator of the story such as suspenseful, affectionate, happy or sad.",
         "kind": "definition",
         "term": "Tone"
-      },
-      {
-        "page": 10,
-        "text": "The narrator is a participant in the story relating his or her own experiences directly or an observer.",
-        "kind": "definition",
-        "term": "narrator"
       }
     ],
     "answerKey": [],

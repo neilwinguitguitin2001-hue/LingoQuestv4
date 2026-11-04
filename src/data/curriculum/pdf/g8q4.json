@@ -179,12 +179,6 @@
     "vocabularyBank": [
       {
         "page": 11,
-        "text": "Idea development is essential in writing.",
-        "kind": "definition",
-        "term": "Idea development"
-      },
-      {
-        "page": 11,
         "text": "Grammatical signals are writing devices such as transitional devices, connectors, determiners, and repetitions that are used to maintain text coherence.",
         "kind": "definition",
         "term": "Grammatical signals"
@@ -194,24 +188,6 @@
         "text": "Pattern of idea development refers to the structure of writing on how the ideas are being presented.",
         "kind": "definition",
         "term": "Pattern of idea development"
-      },
-      {
-        "page": 11,
-        "text": "The general idea is expressed in the first sentence which is ‘Clouds are classified into three major groups.",
-        "kind": "definition",
-        "term": "general idea"
-      },
-      {
-        "page": 13,
-        "text": "Claim and Counterclaim This pattern of idea development refers to the structure of presenting a side of an issue in an argumentative manner.",
-        "kind": "definition",
-        "term": "Claim"
-      },
-      {
-        "page": 13,
-        "text": "Problem-Solution Here are the other transitional devices that can be used for claim- counterclaim pattern of idea development: however, nevertheless, on one hand, on the other hand, admittedly, some people say, some may say, of course, nevertheless, and but not only that.",
-        "kind": "definition",
-        "term": "Problem-Solution"
       }
     ],
     "selfCheck": [
@@ -278,18 +254,6 @@
         "text": "Pattern of idea development refers to the structure of writing on how the ideas are being presented.",
         "kind": "definition",
         "term": "Pattern of idea development"
-      },
-      {
-        "page": 11,
-        "text": "The general idea is expressed in the first sentence which is ‘Clouds are classified into three major groups.",
-        "kind": "definition",
-        "term": "general idea"
-      },
-      {
-        "page": 13,
-        "text": "Claim and Counterclaim This pattern of idea development refers to the structure of presenting a side of an issue in an argumentative manner.",
-        "kind": "definition",
-        "term": "Claim"
       }
     ],
     "answerKey": [
@@ -971,12 +935,6 @@
         "text": "Development Development refers to the principle when a paragraph describes, elaborates, explains, and supports its topic sentence.",
         "kind": "definition",
         "term": "Development"
-      },
-      {
-        "page": 13,
-        "text": "The topic sentence which is ‘Apples make us healthy’ is elaborated with facts.",
-        "kind": "definition",
-        "term": "topic sentence"
       }
     ],
     "selfCheck": [
@@ -1049,12 +1007,6 @@
         "text": "Development Development refers to the principle when a paragraph describes, elaborates, explains, and supports its topic sentence.",
         "kind": "definition",
         "term": "Development"
-      },
-      {
-        "page": 13,
-        "text": "The topic sentence which is ‘Apples make us healthy’ is elaborated with facts.",
-        "kind": "definition",
-        "term": "topic sentence"
       }
     ],
     "answerKey": [
@@ -1214,18 +1166,6 @@
         "text": "Text types are distinguished from one another based on their purpose, their structure, and recurrent language features.",
         "kind": "definition",
         "term": "Text types"
-      },
-      {
-        "page": 11,
-        "text": "Explanation Why Sleep is Important Sleep is like food for your brain.",
-        "kind": "definition",
-        "term": "Explanation"
-      },
-      {
-        "page": 12,
-        "text": "Expository text There are several characteristics which distinguish plants from animals.",
-        "kind": "definition",
-        "term": "Expository text"
       }
     ],
     "selfCheck": [
@@ -1285,18 +1225,6 @@
         "page": 11,
         "text": "Text types are distinguished from one another based on their purpose, their structure, and recurrent language features.",
         "kind": "overview"
-      },
-      {
-        "page": 11,
-        "text": "Explanation Why Sleep is Important Sleep is like food for your brain.",
-        "kind": "definition",
-        "term": "Explanation"
-      },
-      {
-        "page": 12,
-        "text": "Expository text There are several characteristics which distinguish plants from animals.",
-        "kind": "definition",
-        "term": "Expository text"
       }
     ],
     "answerKey": [

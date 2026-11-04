@@ -222,14 +222,7 @@
         "kind": "reminder"
       }
     ],
-    "vocabularyBank": [
-      {
-        "page": 9,
-        "text": "Some examples of conjunctive adverbs are however, moreover, namely, nevertheless, meanwhile, subsequently, and furthermore.",
-        "kind": "definition",
-        "term": "conjunctive adverbs"
-      }
-    ],
+    "vocabularyBank": [],
     "selfCheck": [
       {
         "page": 5,
@@ -277,12 +270,6 @@
         "page": 9,
         "text": "Conjunctions or connectors have its functions in the sentences.",
         "kind": "overview"
-      },
-      {
-        "page": 9,
-        "text": "Some examples of conjunctive adverbs are however, moreover, namely, nevertheless, meanwhile, subsequently, and furthermore.",
-        "kind": "definition",
-        "term": "conjunctive adverbs"
       }
     ],
     "answerKey": [],
@@ -383,12 +370,6 @@
         "text": "An opinion is a type of assertion which expresses a judgment, viewpoint, or statement about matters commonly considered to be subjective.",
         "kind": "definition",
         "term": "opinion"
-      },
-      {
-        "page": 10,
-        "text": "An opinion statement is composed mainly of a debatable topic and a focus (i.",
-        "kind": "definition",
-        "term": "opinion statement"
       }
     ],
     "selfCheck": [
@@ -433,12 +414,6 @@
         "page": 9,
         "text": "An opinion is a type of assertion which expresses a judgment, viewpoint, or statement about matters commonly considered to be subjective.",
         "kind": "overview"
-      },
-      {
-        "page": 10,
-        "text": "An opinion statement is composed mainly of a debatable topic and a focus (i.",
-        "kind": "definition",
-        "term": "opinion statement"
       }
     ],
     "answerKey": [
@@ -602,12 +577,6 @@
         "text": "An argumentative essay is a type of essay that presents arguments about both sides of an issue.",
         "kind": "definition",
         "term": "argumentative essay"
-      },
-      {
-        "page": 21,
-        "text": "The thesis statement is part of the introduction.",
-        "kind": "definition",
-        "term": "thesis statement"
       }
     ],
     "selfCheck": [
@@ -664,12 +633,6 @@
         "text": "An argumentative essay is a type of essay that presents arguments about both sides of an issue.",
         "kind": "definition",
         "term": "argumentative essay"
-      },
-      {
-        "page": 21,
-        "text": "The thesis statement is part of the introduction.",
-        "kind": "definition",
-        "term": "thesis statement"
       }
     ],
     "answerKey": [],
@@ -780,12 +743,6 @@
         "text": "CLAIM OF FACT A claim whether something is true or untrue but there must always be potential for controversy, conflict and change.",
         "kind": "definition",
         "term": "CLAIM OF FACT"
-      },
-      {
-        "page": 9,
-        "text": "Identify what type of claim are they (Fact, Policy, and Value).",
-        "kind": "definition",
-        "term": "claim"
       }
     ],
     "selfCheck": [
@@ -826,12 +783,6 @@
         "text": "CLAIM OF FACT A claim whether something is true or untrue but there must always be potential for controversy, conflict and change.",
         "kind": "definition",
         "term": "CLAIM OF FACT"
-      },
-      {
-        "page": 9,
-        "text": "Identify what type of claim are they (Fact, Policy, and Value).",
-        "kind": "definition",
-        "term": "claim"
       }
     ],
     "answerKey": [],
@@ -1081,18 +1032,6 @@
         "text": "Emojis are considered as gestural and visual.",
         "kind": "definition",
         "term": "Emojis"
-      },
-      {
-        "page": 10,
-        "text": "Linguistic is not always the most important mode; this depends on the other modes at play in the text, the type of text, and other factors.",
-        "kind": "definition",
-        "term": "Linguistic"
-      },
-      {
-        "page": 10,
-        "text": "The linguistic mode is the best way to express details and list.",
-        "kind": "definition",
-        "term": "linguistic mode"
       }
     ],
     "selfCheck": [
@@ -1128,18 +1067,6 @@
         "text": "Emojis are considered as gestural and visual.",
         "kind": "definition",
         "term": "Emojis"
-      },
-      {
-        "page": 10,
-        "text": "Linguistic is not always the most important mode; this depends on the other modes at play in the text, the type of text, and other factors.",
-        "kind": "definition",
-        "term": "Linguistic"
-      },
-      {
-        "page": 10,
-        "text": "The linguistic mode is the best way to express details and list.",
-        "kind": "definition",
-        "term": "linguistic mode"
       }
     ],
     "answerKey": [],
@@ -1222,20 +1149,7 @@
       }
     ],
     "pitfallsAndTips": [],
-    "vocabularyBank": [
-      {
-        "page": 9,
-        "text": "The speaker is trying to cover too much and ends up boring their listeners.",
-        "kind": "definition",
-        "term": "speaker"
-      },
-      {
-        "page": 11,
-        "text": "If the audience is dressed formally, you don't want to show up in shorts and a tee shirt.",
-        "kind": "definition",
-        "term": "audience"
-      }
-    ],
+    "vocabularyBank": [],
     "selfCheck": [
       {
         "page": 5,
@@ -1278,18 +1192,6 @@
         "page": 9,
         "text": "Public speaking occurs when you give a speech before a live audience.",
         "kind": "overview"
-      },
-      {
-        "page": 9,
-        "text": "The speaker is trying to cover too much and ends up boring their listeners.",
-        "kind": "definition",
-        "term": "speaker"
-      },
-      {
-        "page": 11,
-        "text": "If the audience is dressed formally, you don't want to show up in shorts and a tee shirt.",
-        "kind": "definition",
-        "term": "audience"
       }
     ],
     "answerKey": [],

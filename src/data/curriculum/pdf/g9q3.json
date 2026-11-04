@@ -176,12 +176,6 @@
         "text": "Evaluation is a skill founded on one's capacity to understand the content.",
         "kind": "definition",
         "term": "Evaluation"
-      },
-      {
-        "page": 5,
-        "text": "The main idea is presented in the last sentence: It is an entertaining disaster movie that poses the horrible idea that diseases lurk in nature, and they could strike humanity at any time.",
-        "kind": "definition",
-        "term": "main idea"
       }
     ],
     "selfCheck": [
@@ -222,12 +216,6 @@
         "text": "Evaluation is a skill founded on one's capacity to understand the content.",
         "kind": "definition",
         "term": "Evaluation"
-      },
-      {
-        "page": 5,
-        "text": "The main idea is presented in the last sentence: It is an entertaining disaster movie that poses the horrible idea that diseases lurk in nature, and they could strike humanity at any time.",
-        "kind": "definition",
-        "term": "main idea"
       }
     ],
     "answerKey": [],
@@ -486,12 +474,6 @@
         "text": "An argument is usually the main idea, often called a \"claim\" or \"thesis statement,\" backed up with evidence that supports the idea.",
         "kind": "definition",
         "term": "argument"
-      },
-      {
-        "page": 3,
-        "text": "Facts are a powerful means of convincing.",
-        "kind": "definition",
-        "term": "Facts"
       }
     ],
     "selfCheck": [
@@ -532,12 +514,6 @@
         "text": "An argument is usually the main idea, often called a \"claim\" or \"thesis statement,\" backed up with evidence that supports the idea.",
         "kind": "definition",
         "term": "argument"
-      },
-      {
-        "page": 3,
-        "text": "Facts are a powerful means of convincing.",
-        "kind": "definition",
-        "term": "Facts"
       }
     ],
     "answerKey": [
@@ -597,14 +573,7 @@
       }
     ],
     "pitfallsAndTips": [],
-    "vocabularyBank": [
-      {
-        "page": 4,
-        "text": "A claim cannot stand alone if there is no evidence to support it.",
-        "kind": "definition",
-        "term": "claim"
-      }
-    ],
+    "vocabularyBank": [],
     "selfCheck": [
       {
         "page": 2,
@@ -642,12 +611,6 @@
         "page": 4,
         "text": "In identifying the point or claim raised in a paragraph, one must first determine the main idea – the central point or thought the speaker wants to communicate.",
         "kind": "overview"
-      },
-      {
-        "page": 4,
-        "text": "A claim cannot stand alone if there is no evidence to support it.",
-        "kind": "definition",
-        "term": "claim"
       }
     ],
     "answerKey": [
@@ -711,14 +674,7 @@
       }
     ],
     "pitfallsAndTips": [],
-    "vocabularyBank": [
-      {
-        "page": 4,
-        "text": "Explain how the pieces of evidence are supposed to relate to the claim.",
-        "kind": "definition",
-        "term": "evidence"
-      }
-    ],
+    "vocabularyBank": [],
     "selfCheck": [
       {
         "page": 2,
@@ -751,12 +707,6 @@
         "page": 4,
         "text": "When analyzing pieces of evidence, we should tell how the author intended them to support the claim.",
         "kind": "overview"
-      },
-      {
-        "page": 4,
-        "text": "Explain how the pieces of evidence are supposed to relate to the claim.",
-        "kind": "definition",
-        "term": "evidence"
       }
     ],
     "answerKey": [

@@ -484,20 +484,7 @@
         "kind": "reminder"
       }
     ],
-    "vocabularyBank": [
-      {
-        "page": 11,
-        "text": "The opinion-marking signal used in sentence C is From what I know.",
-        "kind": "definition",
-        "term": "opinion"
-      },
-      {
-        "page": 12,
-        "text": "The opinion-marking signals used are Maybe, I think, and Perhaps.",
-        "kind": "definition",
-        "term": "opinion-marking signals"
-      }
-    ],
+    "vocabularyBank": [],
     "selfCheck": [
       {
         "page": 5,
@@ -545,18 +532,6 @@
         "page": 10,
         "text": "Opinions refer to personal beliefs (Donnchaidh, 2020).",
         "kind": "overview"
-      },
-      {
-        "page": 11,
-        "text": "The opinion-marking signal used in sentence C is From what I know.",
-        "kind": "definition",
-        "term": "opinion"
-      },
-      {
-        "page": 12,
-        "text": "The opinion-marking signals used are Maybe, I think, and Perhaps.",
-        "kind": "definition",
-        "term": "opinion-marking signals"
       }
     ],
     "answerKey": [
@@ -680,18 +655,6 @@
     "vocabularyBank": [
       {
         "page": 10,
-        "text": "The concept of diversity is more than just acknowledging our differences.",
-        "kind": "definition",
-        "term": "diversity"
-      },
-      {
-        "page": 10,
-        "text": "Infographics and print text are examples of multimodal text.",
-        "kind": "definition",
-        "term": "Infographics"
-      },
-      {
-        "page": 10,
         "text": "Multimodal Texts are often live, digital text, or paper-based.",
         "kind": "definition",
         "term": "Multimodal Texts"
@@ -749,18 +712,6 @@
         "page": 10,
         "text": "Multimodal Texts are often live, digital text, or paper-based.",
         "kind": "overview"
-      },
-      {
-        "page": 10,
-        "text": "The concept of diversity is more than just acknowledging our differences.",
-        "kind": "definition",
-        "term": "diversity"
-      },
-      {
-        "page": 10,
-        "text": "Infographics and print text are examples of multimodal text.",
-        "kind": "definition",
-        "term": "Infographics"
       }
     ],
     "answerKey": [
@@ -904,12 +855,6 @@
     ],
     "vocabularyBank": [
       {
-        "page": 11,
-        "text": "The most commonly used graphic organizer is the Venn Diagram.",
-        "kind": "definition",
-        "term": "graphic organizer"
-      },
-      {
         "page": 13,
         "text": "An opinion refers to a view or judgment formed in the mind about a particular topic or issue.",
         "kind": "definition",
@@ -963,12 +908,6 @@
         "page": 11,
         "text": "Comparing is the process of looking at the similarities of two things or ideas with the use of appropriate transition signals.",
         "kind": "overview"
-      },
-      {
-        "page": 11,
-        "text": "The most commonly used graphic organizer is the Venn Diagram.",
-        "kind": "definition",
-        "term": "graphic organizer"
       },
       {
         "page": 13,
@@ -1202,12 +1141,6 @@
     ],
     "vocabularyBank": [
       {
-        "page": 19,
-        "text": "Sarcasm is generally negatively conveyed.",
-        "kind": "definition",
-        "term": "Sarcasm"
-      },
-      {
         "page": 20,
         "text": "Proverb is an old but familiar saying that usually gives advice.",
         "kind": "definition",
@@ -1271,12 +1204,6 @@
         "page": 12,
         "text": "Generally, language is divided into two categories, literal and figurative.",
         "kind": "overview"
-      },
-      {
-        "page": 19,
-        "text": "Sarcasm is generally negatively conveyed.",
-        "kind": "definition",
-        "term": "Sarcasm"
       },
       {
         "page": 20,

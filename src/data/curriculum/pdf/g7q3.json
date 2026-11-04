@@ -108,12 +108,6 @@
         "text": "Multimedia means that computer information can be represented through audio, video, and animation in addition to traditional media.",
         "kind": "definition",
         "term": "Multimedia"
-      },
-      {
-        "page": 10,
-        "text": "Interactivity is heightened by the possibility of easy feedback.",
-        "kind": "definition",
-        "term": "Interactivity"
       }
     ],
     "selfCheck": [
@@ -153,12 +147,6 @@
         "page": 9,
         "text": "Multimedia means that computer information can be represented through audio, video, and animation in addition to traditional media.",
         "kind": "overview"
-      },
-      {
-        "page": 10,
-        "text": "Interactivity is heightened by the possibility of easy feedback.",
-        "kind": "definition",
-        "term": "Interactivity"
       }
     ],
     "answerKey": [
@@ -261,12 +249,6 @@
     "vocabularyBank": [
       {
         "page": 8,
-        "text": "Speech delivery is an important part of public speaking.",
-        "kind": "definition",
-        "term": "Speech delivery"
-      },
-      {
-        "page": 8,
         "text": "Delivery refers to the presentation of the speech you studied, planned, described, and practiced in the form of public speaking.",
         "kind": "definition",
         "term": "Delivery"
@@ -331,12 +313,6 @@
         "page": 8,
         "text": "Delivery refers to the presentation of the speech you studied, planned, described, and practiced in the form of public speaking.",
         "kind": "overview"
-      },
-      {
-        "page": 8,
-        "text": "Speech delivery is an important part of public speaking.",
-        "kind": "definition",
-        "term": "Speech delivery"
       },
       {
         "page": 8,
@@ -592,34 +568,10 @@
         "term": "CONVICTION"
       },
       {
-        "page": 11,
-        "text": "PowerPoint Presentation Microsoft PowerPoint is probably the most commonly used form of visual aid.",
-        "kind": "definition",
-        "term": "PowerPoint"
-      },
-      {
         "page": 12,
         "text": "Drawing Drawing is creating a picture with a variety of tools like pencils, crayons, pens or markers.",
         "kind": "definition",
         "term": "Drawing"
-      },
-      {
-        "page": 12,
-        "text": "Painting Painting is often called the most important form of visual art.",
-        "kind": "definition",
-        "term": "Painting"
-      },
-      {
-        "page": 12,
-        "text": "Photograph Photography is making pictures by letting light pass through the lenses of a camera onto a film.",
-        "kind": "definition",
-        "term": "Photograph"
-      },
-      {
-        "page": 12,
-        "text": "Film Filmmaking is the process of directing and producing movies for television and cinemas.",
-        "kind": "definition",
-        "term": "Film"
       },
       {
         "page": 12,
@@ -678,22 +630,10 @@
         "term": "CONVICTION"
       },
       {
-        "page": 11,
-        "text": "PowerPoint Presentation Microsoft PowerPoint is probably the most commonly used form of visual aid.",
-        "kind": "definition",
-        "term": "PowerPoint"
-      },
-      {
         "page": 12,
         "text": "Drawing Drawing is creating a picture with a variety of tools like pencils, crayons, pens or markers.",
         "kind": "definition",
         "term": "Drawing"
-      },
-      {
-        "page": 12,
-        "text": "Painting Painting is often called the most important form of visual art.",
-        "kind": "definition",
-        "term": "Painting"
       }
     ],
     "answerKey": [
@@ -1144,14 +1084,7 @@
         "kind": "reminder"
       }
     ],
-    "vocabularyBank": [
-      {
-        "page": 10,
-        "text": "Thought-Provoking Questions Simple questions - are questions which are plainly stated and does not require active participation.",
-        "kind": "definition",
-        "term": "Thought-Provoking Questions"
-      }
-    ],
+    "vocabularyBank": [],
     "selfCheck": [
       {
         "page": 5,
@@ -1194,12 +1127,6 @@
         "page": 9,
         "text": "Wh-questions begin with what, when, where, who, whom, which, whose, why, and how.",
         "kind": "overview"
-      },
-      {
-        "page": 10,
-        "text": "Thought-Provoking Questions Simple questions - are questions which are plainly stated and does not require active participation.",
-        "kind": "definition",
-        "term": "Thought-Provoking Questions"
       }
     ],
     "answerKey": [

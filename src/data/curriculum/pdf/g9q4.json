@@ -865,14 +865,7 @@
         "kind": "reminder"
       }
     ],
-    "vocabularyBank": [
-      {
-        "page": 9,
-        "text": "What I Have Learned Listening definitely is not as easy as it looks.",
-        "kind": "definition",
-        "term": "Listening"
-      }
-    ],
+    "vocabularyBank": [],
     "selfCheck": [
       {
         "page": 5,
@@ -950,12 +943,6 @@
         "page": 9,
         "text": "Listening definitely is not as easy as it looks.",
         "kind": "overview"
-      },
-      {
-        "page": 9,
-        "text": "What I Have Learned Listening definitely is not as easy as it looks.",
-        "kind": "definition",
-        "term": "Listening"
       }
     ],
     "answerKey": [
@@ -1645,14 +1632,7 @@
       }
     ],
     "pitfallsAndTips": [],
-    "vocabularyBank": [
-      {
-        "page": 9,
-        "text": "TYPES OF NON-VERBAL COMMUNICATION There are many different types of nonverbal communication.",
-        "kind": "definition",
-        "term": "NON-VERBAL COMMUNICATION"
-      }
-    ],
+    "vocabularyBank": [],
     "selfCheck": [
       {
         "page": 5,
@@ -1685,12 +1665,6 @@
         "page": 8,
         "text": "There are two ways we can send or express a message (or communicate) to someone.",
         "kind": "overview"
-      },
-      {
-        "page": 9,
-        "text": "TYPES OF NON-VERBAL COMMUNICATION There are many different types of nonverbal communication.",
-        "kind": "definition",
-        "term": "NON-VERBAL COMMUNICATION"
       }
     ],
     "answerKey": [

@@ -1,12 +1,12 @@
 {
   "modules": 106,
   "blocks": {
-    "paragraph": 13439,
-    "table": 329,
+    "paragraph": 13347,
+    "heading": 1674,
     "figure": 2280,
-    "diagram": 412,
-    "heading": 1674
+    "table": 329,
+    "diagram": 412
   },
-  "sourceBackedQuestions": 607,
+  "sourceBackedQuestions": 407,
   "fullPageLessonImages": 0
 }

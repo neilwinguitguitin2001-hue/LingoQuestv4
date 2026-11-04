@@ -318,12 +318,6 @@
         "text": "Viewing Genre is another type of genre which is in a form of visual.",
         "kind": "definition",
         "term": "Viewing Genre"
-      },
-      {
-        "page": 15,
-        "text": "The Main audience is mostly children.",
-        "kind": "definition",
-        "term": "audience"
       }
     ],
     "selfCheck": [
@@ -368,12 +362,6 @@
         "page": 14,
         "text": "Viewing Genre is another type of genre which is in a form of visual.",
         "kind": "overview"
-      },
-      {
-        "page": 15,
-        "text": "The Main audience is mostly children.",
-        "kind": "definition",
-        "term": "audience"
       }
     ],
     "answerKey": [
@@ -502,12 +490,6 @@
         "term": "Voice"
       },
       {
-        "page": 9,
-        "text": "The verb is formed by adding the past participle of the verb to the appropriate form of to be.",
-        "kind": "definition",
-        "term": "verb"
-      },
-      {
         "page": 10,
         "text": "The passive verb is formed with “be verb” (auxiliary) plus the main verb.",
         "kind": "definition",
@@ -551,12 +533,6 @@
         "page": 8,
         "text": "Voice means that the action is acted or acted upon.",
         "kind": "overview"
-      },
-      {
-        "page": 9,
-        "text": "The verb is formed by adding the past participle of the verb to the appropriate form of to be.",
-        "kind": "definition",
-        "term": "verb"
       },
       {
         "page": 10,
@@ -1001,26 +977,7 @@
       }
     ],
     "pitfallsAndTips": [],
-    "vocabularyBank": [
-      {
-        "page": 11,
-        "text": "Past Perfect Past Perfect If the verb in the direct speech is in the past perfect Karen said, “I had Karen said that she had tense, there is no change in baked cupcakes baked cupcakes before tense in the reported speech.",
-        "kind": "definition",
-        "term": "direct speech"
-      },
-      {
-        "page": 11,
-        "text": "Reported Speech is usually introduced by a verb in the past tense but it can also be introduced by a verb in present tense: He says that .",
-        "kind": "definition",
-        "term": "Reported Speech"
-      },
-      {
-        "page": 11,
-        "text": "When the reporting verb is in a present, present perfect or future tense, we can report the direct speech without any change of tense: Example: Paul (phoning from the station): I’m trying to get a taxi.",
-        "kind": "definition",
-        "term": "reporting verb"
-      }
-    ],
+    "vocabularyBank": [],
     "selfCheck": [
       {
         "page": 4,
@@ -1058,24 +1015,6 @@
         "page": 10,
         "text": "Direct speech has quotation marks; reported speech does not use quotation marks.",
         "kind": "overview"
-      },
-      {
-        "page": 11,
-        "text": "Past Perfect Past Perfect If the verb in the direct speech is in the past perfect Karen said, “I had Karen said that she had tense, there is no change in baked cupcakes baked cupcakes before tense in the reported speech.",
-        "kind": "definition",
-        "term": "direct speech"
-      },
-      {
-        "page": 11,
-        "text": "Reported Speech is usually introduced by a verb in the past tense but it can also be introduced by a verb in present tense: He says that .",
-        "kind": "definition",
-        "term": "Reported Speech"
-      },
-      {
-        "page": 11,
-        "text": "When the reporting verb is in a present, present perfect or future tense, we can report the direct speech without any change of tense: Example: Paul (phoning from the station): I’m trying to get a taxi.",
-        "kind": "definition",
-        "term": "reporting verb"
       }
     ],
     "answerKey": [
@@ -1196,18 +1135,6 @@
         "text": "Phrase is a group of words that work together to make meaning, but it is not a complete sentence.",
         "kind": "definition",
         "term": "Phrase"
-      },
-      {
-        "page": 9,
-        "text": "A gerund phrase is • Walking in the rain can be difficult.",
-        "kind": "definition",
-        "term": "gerund phrase"
-      },
-      {
-        "page": 10,
-        "text": "Infinitive Here are some examples: Phrase: An • To make lemonade, you have to start with infinitive phrase is a lemons.",
-        "kind": "definition",
-        "term": "Infinitive"
       }
     ],
     "selfCheck": [
@@ -1252,18 +1179,6 @@
         "page": 9,
         "text": "Phrase is a group of words that work together to make meaning, but it is not a complete sentence.",
         "kind": "overview"
-      },
-      {
-        "page": 9,
-        "text": "A gerund phrase is • Walking in the rain can be difficult.",
-        "kind": "definition",
-        "term": "gerund phrase"
-      },
-      {
-        "page": 10,
-        "text": "Infinitive Here are some examples: Phrase: An • To make lemonade, you have to start with infinitive phrase is a lemons.",
-        "kind": "definition",
-        "term": "Infinitive"
       }
     ],
     "answerKey": [
@@ -1702,14 +1617,7 @@
         "kind": "reminder"
       }
     ],
-    "vocabularyBank": [
-      {
-        "page": 9,
-        "text": "Skimming and Scanning are examples of fast reading styles.",
-        "kind": "definition",
-        "term": "Skimming"
-      }
-    ],
+    "vocabularyBank": [],
     "selfCheck": [
       {
         "page": 4,
