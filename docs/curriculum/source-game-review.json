@@ -1,0 +1,3394 @@
+[
+  {
+    "moduleId": "g7-q1-m1",
+    "grade": 7,
+    "quarter": 1,
+    "sourceLabel": "Module 1",
+    "modes": {
+      "analogyMaster": {
+        "verified": 15,
+        "status": "ready"
+      },
+      "missingPiece": {
+        "verified": 6,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "verified": 6,
+        "status": "ready"
+      },
+      "pictureHunt": {
+        "verified": 5,
+        "status": "ready"
+      },
+      "typeHunter": {
+        "verified": 6,
+        "status": "ready"
+      },
+      "all": {
+        "verified": 5,
+        "status": "ready"
+      }
+    }
+  },
+  {
+    "moduleId": "g7-q1-m2",
+    "grade": 7,
+    "quarter": 1,
+    "sourceLabel": "Module 2",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 1,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 2,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g7-q1-m3",
+    "grade": 7,
+    "quarter": 1,
+    "sourceLabel": "Module 3",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 2,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 3,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g7-q1-m4",
+    "grade": 7,
+    "quarter": 1,
+    "sourceLabel": "Module 4",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 1,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g7-q1-m5",
+    "grade": 7,
+    "quarter": 1,
+    "sourceLabel": "Module 5",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 2,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g7-q1-m6",
+    "grade": 7,
+    "quarter": 1,
+    "sourceLabel": "Module 6",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 3,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g7-q1-m7",
+    "grade": 7,
+    "quarter": 1,
+    "sourceLabel": "Module 7",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 2,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 3,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g7-q1-m8",
+    "grade": 7,
+    "quarter": 1,
+    "sourceLabel": "Module 8",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g7-q1-m9",
+    "grade": 7,
+    "quarter": 1,
+    "sourceLabel": "Module 9",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 1,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g7-q1-m10",
+    "grade": 7,
+    "quarter": 1,
+    "sourceLabel": "Module 10",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 1,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 1,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g7-q2-m1",
+    "grade": 7,
+    "quarter": 2,
+    "sourceLabel": "Module 1",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 1,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 2,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g7-q2-m2",
+    "grade": 7,
+    "quarter": 2,
+    "sourceLabel": "Module 2",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g7-q2-m3",
+    "grade": 7,
+    "quarter": 2,
+    "sourceLabel": "Module 3",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 1,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g7-q2-m4",
+    "grade": 7,
+    "quarter": 2,
+    "sourceLabel": "Module 4",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 3,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 3,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g7-q2-m7",
+    "grade": 7,
+    "quarter": 2,
+    "sourceLabel": "Module 7",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 2,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g7-q3-m1",
+    "grade": 7,
+    "quarter": 3,
+    "sourceLabel": "Module 1",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 2,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 2,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g7-q3-m2",
+    "grade": 7,
+    "quarter": 3,
+    "sourceLabel": "Module 2",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 4,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 1,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 4,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g7-q3-m3",
+    "grade": 7,
+    "quarter": 3,
+    "sourceLabel": "Module 3",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 1,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g7-q3-m4",
+    "grade": 7,
+    "quarter": 3,
+    "sourceLabel": "Module 4",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 8,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "verified": 8,
+        "status": "ready"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 8,
+        "status": "ready"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g7-q3-m5",
+    "grade": 7,
+    "quarter": 3,
+    "sourceLabel": "Module 5",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 2,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g7-q3-m6",
+    "grade": 7,
+    "quarter": 3,
+    "sourceLabel": "Module 6",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 2,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 2,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g7-q3-m7",
+    "grade": 7,
+    "quarter": 3,
+    "sourceLabel": "Module 7",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 1,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g7-q4-m1",
+    "grade": 7,
+    "quarter": 4,
+    "sourceLabel": "Module 1",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 2,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 3,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g7-q4-m2",
+    "grade": 7,
+    "quarter": 4,
+    "sourceLabel": "Module 2",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 6,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "verified": 2,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 6,
+        "status": "ready"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g7-q4-m3",
+    "grade": 7,
+    "quarter": 4,
+    "sourceLabel": "Module 3",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 1,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 1,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g7-q4-m4",
+    "grade": 7,
+    "quarter": 4,
+    "sourceLabel": "Module 4",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 5,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "verified": 2,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 5,
+        "status": "ready"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g7-q4-m5",
+    "grade": 7,
+    "quarter": 4,
+    "sourceLabel": "Module 5",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 4,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 2,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 4,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g7-q4-m6",
+    "grade": 7,
+    "quarter": 4,
+    "sourceLabel": "Module 6",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 6,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "verified": 6,
+        "status": "ready"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 6,
+        "status": "ready"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g7-q4-m7",
+    "grade": 7,
+    "quarter": 4,
+    "sourceLabel": "Module 7",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 2,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 3,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g7-q4-m8",
+    "grade": 7,
+    "quarter": 4,
+    "sourceLabel": "Module 8",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 1,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 3,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g8-q1-m1",
+    "grade": 8,
+    "quarter": 1,
+    "sourceLabel": "Module 1",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 8,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "verified": 7,
+        "status": "ready"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 8,
+        "status": "ready"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g8-q1-m2",
+    "grade": 8,
+    "quarter": 1,
+    "sourceLabel": "Module 2",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 2,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 2,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g8-q1-m3",
+    "grade": 8,
+    "quarter": 1,
+    "sourceLabel": "Module 3",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 2,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g8-q1-m4",
+    "grade": 8,
+    "quarter": 1,
+    "sourceLabel": "Module 4",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 1,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g8-q1-m5",
+    "grade": 8,
+    "quarter": 1,
+    "sourceLabel": "Module 5",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 3,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 3,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g8-q2-m1",
+    "grade": 8,
+    "quarter": 2,
+    "sourceLabel": "Module 1",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 10,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "verified": 6,
+        "status": "ready"
+      },
+      "pictureHunt": {
+        "verified": 5,
+        "status": "ready"
+      },
+      "typeHunter": {
+        "verified": 10,
+        "status": "ready"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g8-q2-m2",
+    "grade": 8,
+    "quarter": 2,
+    "sourceLabel": "Module 2",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 1,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 2,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g8-q2-m3",
+    "grade": 8,
+    "quarter": 2,
+    "sourceLabel": "Module 3",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 2,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 3,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g8-q2-m4",
+    "grade": 8,
+    "quarter": 2,
+    "sourceLabel": "Module 4",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 1,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 2,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g8-q2-m5",
+    "grade": 8,
+    "quarter": 2,
+    "sourceLabel": "Module 5",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 2,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 2,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g8-q3-m1",
+    "grade": 8,
+    "quarter": 3,
+    "sourceLabel": "Module 1",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 2,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 2,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g8-q3-m2",
+    "grade": 8,
+    "quarter": 3,
+    "sourceLabel": "Module 2",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 1,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g8-q3-m3",
+    "grade": 8,
+    "quarter": 3,
+    "sourceLabel": "Module 3",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 6,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "verified": 4,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 6,
+        "status": "ready"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g8-q3-m4",
+    "grade": 8,
+    "quarter": 3,
+    "sourceLabel": "Module 4",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 4,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 4,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 4,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g8-q3-m5",
+    "grade": 8,
+    "quarter": 3,
+    "sourceLabel": "Module 5",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 4,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 3,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 4,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g8-q3-m6",
+    "grade": 8,
+    "quarter": 3,
+    "sourceLabel": "Module 6",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 1,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g8-q4-m1",
+    "grade": 8,
+    "quarter": 4,
+    "sourceLabel": "Module 1",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 6,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "verified": 1,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 6,
+        "status": "ready"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g8-q4-m2",
+    "grade": 8,
+    "quarter": 4,
+    "sourceLabel": "Module 2",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 4,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 1,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 4,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g8-q4-m3",
+    "grade": 8,
+    "quarter": 4,
+    "sourceLabel": "Module 3",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g8-q4-m4",
+    "grade": 8,
+    "quarter": 4,
+    "sourceLabel": "Module 4",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 5,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "verified": 4,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 5,
+        "status": "ready"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g8-q4-m5",
+    "grade": 8,
+    "quarter": 4,
+    "sourceLabel": "Module 5",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 1,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 3,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g8-q4-m6",
+    "grade": 8,
+    "quarter": 4,
+    "sourceLabel": "Module 6",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 1,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 2,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g9-q1-w1",
+    "grade": 9,
+    "quarter": 1,
+    "sourceLabel": "Week 1",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 1,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 1,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g9-q1-w2",
+    "grade": 9,
+    "quarter": 1,
+    "sourceLabel": "Week 2",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g9-q1-w3",
+    "grade": 9,
+    "quarter": 1,
+    "sourceLabel": "Week 3",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 1,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g9-q1-w4",
+    "grade": 9,
+    "quarter": 1,
+    "sourceLabel": "Week 4",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 1,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g9-q1-w5",
+    "grade": 9,
+    "quarter": 1,
+    "sourceLabel": "Week 5",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 1,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g9-q1-w6",
+    "grade": 9,
+    "quarter": 1,
+    "sourceLabel": "Week 6",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 5,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "verified": 2,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 5,
+        "status": "ready"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g9-q1-w7",
+    "grade": 9,
+    "quarter": 1,
+    "sourceLabel": "Week 7",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 1,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g9-q1-w8",
+    "grade": 9,
+    "quarter": 1,
+    "sourceLabel": "Week 8",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 1,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g9-q2-m1",
+    "grade": 9,
+    "quarter": 2,
+    "sourceLabel": "Module 1",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 4,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 4,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 4,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g9-q2-m2",
+    "grade": 9,
+    "quarter": 2,
+    "sourceLabel": "Module 2",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 4,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 1,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 4,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g9-q3-w1",
+    "grade": 9,
+    "quarter": 3,
+    "sourceLabel": "Week 1",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 2,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 2,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g9-q3-w2",
+    "grade": 9,
+    "quarter": 3,
+    "sourceLabel": "Week 2",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 1,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 2,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g9-q3-w3",
+    "grade": 9,
+    "quarter": 3,
+    "sourceLabel": "Week 3",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g9-q3-w4-5",
+    "grade": 9,
+    "quarter": 3,
+    "sourceLabel": "Weeks 4-5",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g9-q3-w6",
+    "grade": 9,
+    "quarter": 3,
+    "sourceLabel": "Week 6",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 2,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 2,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g9-q3-w7",
+    "grade": 9,
+    "quarter": 3,
+    "sourceLabel": "Week 7",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 1,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 1,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g9-q3-w8",
+    "grade": 9,
+    "quarter": 3,
+    "sourceLabel": "Week 8",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 1,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 1,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g9-q4-m1",
+    "grade": 9,
+    "quarter": 4,
+    "sourceLabel": "Module 1",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 1,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 2,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g9-q4-m2",
+    "grade": 9,
+    "quarter": 4,
+    "sourceLabel": "Module 2",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 1,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g9-q4-m3",
+    "grade": 9,
+    "quarter": 4,
+    "sourceLabel": "Module 3",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 2,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 2,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g9-q4-m4",
+    "grade": 9,
+    "quarter": 4,
+    "sourceLabel": "Module 4",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g9-q4-m5",
+    "grade": 9,
+    "quarter": 4,
+    "sourceLabel": "Module 5",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 1,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 1,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g9-q4-m6",
+    "grade": 9,
+    "quarter": 4,
+    "sourceLabel": "Module 6",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 1,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 1,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g9-q4-m7",
+    "grade": 9,
+    "quarter": 4,
+    "sourceLabel": "Module 7",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g9-q4-m8",
+    "grade": 9,
+    "quarter": 4,
+    "sourceLabel": "Module 8",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 1,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 2,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g9-q4-m9",
+    "grade": 9,
+    "quarter": 4,
+    "sourceLabel": "Module 9",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 4,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 3,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 4,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g9-q4-m11",
+    "grade": 9,
+    "quarter": 4,
+    "sourceLabel": "Module 11",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g9-q4-m12",
+    "grade": 9,
+    "quarter": 4,
+    "sourceLabel": "Module 12",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 1,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g9-q4-m13",
+    "grade": 9,
+    "quarter": 4,
+    "sourceLabel": "Module 13",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 2,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g9-q4-m14",
+    "grade": 9,
+    "quarter": 4,
+    "sourceLabel": "Module 14",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 8,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "verified": 3,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 8,
+        "status": "ready"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g10-q1-m1",
+    "grade": 10,
+    "quarter": 1,
+    "sourceLabel": "Module 1",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 4,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 1,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 4,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g10-q1-m2",
+    "grade": 10,
+    "quarter": 1,
+    "sourceLabel": "Module 2",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g10-q1-m3",
+    "grade": 10,
+    "quarter": 1,
+    "sourceLabel": "Module 3",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 3,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 3,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g10-q1-m4",
+    "grade": 10,
+    "quarter": 1,
+    "sourceLabel": "Module 4",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 4,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 4,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 4,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g10-q1-m5",
+    "grade": 10,
+    "quarter": 1,
+    "sourceLabel": "Module 5",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 1,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 3,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g10-q1-m6",
+    "grade": 10,
+    "quarter": 1,
+    "sourceLabel": "Module 6",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 1,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 2,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g10-q1-m7",
+    "grade": 10,
+    "quarter": 1,
+    "sourceLabel": "Module 7",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 2,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 3,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g10-q1-m8",
+    "grade": 10,
+    "quarter": 1,
+    "sourceLabel": "Module 8",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 8,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "verified": 6,
+        "status": "ready"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 8,
+        "status": "ready"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g10-q2-m1",
+    "grade": 10,
+    "quarter": 2,
+    "sourceLabel": "Module 1",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 5,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "verified": 5,
+        "status": "ready"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 5,
+        "status": "ready"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g10-q2-m2",
+    "grade": 10,
+    "quarter": 2,
+    "sourceLabel": "Module 2",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 1,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g10-q2-m3",
+    "grade": 10,
+    "quarter": 2,
+    "sourceLabel": "Module 3",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 1,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 2,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g10-q2-m4",
+    "grade": 10,
+    "quarter": 2,
+    "sourceLabel": "Module 4",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 4,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 4,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g10-q2-m5",
+    "grade": 10,
+    "quarter": 2,
+    "sourceLabel": "Module 5",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 1,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 2,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g10-q2-m6",
+    "grade": 10,
+    "quarter": 2,
+    "sourceLabel": "Module 6",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 1,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g10-q2-m7",
+    "grade": 10,
+    "quarter": 2,
+    "sourceLabel": "Module 7",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 2,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 3,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g10-q2-m8",
+    "grade": 10,
+    "quarter": 2,
+    "sourceLabel": "Module 8",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 2,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 2,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g10-q3-m1",
+    "grade": 10,
+    "quarter": 3,
+    "sourceLabel": "Module 1",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 1,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 3,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g10-q3-m2a",
+    "grade": 10,
+    "quarter": 3,
+    "sourceLabel": "Module 2A",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 1,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 3,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g10-q3-m2b",
+    "grade": 10,
+    "quarter": 3,
+    "sourceLabel": "Module 2B",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 2,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g10-q3-m3",
+    "grade": 10,
+    "quarter": 3,
+    "sourceLabel": "Module 3",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 2,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 2,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g10-q3-m4",
+    "grade": 10,
+    "quarter": 3,
+    "sourceLabel": "Module 4",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 6,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "verified": 4,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 6,
+        "status": "ready"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g10-q4-m1",
+    "grade": 10,
+    "quarter": 4,
+    "sourceLabel": "Module 1",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 4,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 4,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 4,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g10-q4-m2",
+    "grade": 10,
+    "quarter": 4,
+    "sourceLabel": "Module 2",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 2,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  },
+  {
+    "moduleId": "g10-q4-m3",
+    "grade": 10,
+    "quarter": 4,
+    "sourceLabel": "Module 3",
+    "modes": {
+      "analogyMaster": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "missingPiece": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "crosswordGame": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "pictureHunt": {
+        "verified": 0,
+        "status": "needs-source-review"
+      },
+      "typeHunter": {
+        "verified": 2,
+        "status": "needs-source-review"
+      },
+      "all": {
+        "verified": 0,
+        "status": "needs-source-review"
+      }
+    }
+  }
+]

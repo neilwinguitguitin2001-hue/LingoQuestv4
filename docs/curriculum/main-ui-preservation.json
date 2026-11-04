@@ -1,0 +1,186 @@
+{
+  "baseCommit": "26238ba2148e0ac97a708984a56dfc69ff139320",
+  "protectedFilesUnchanged": 45,
+  "protectedFiles": [
+    {
+      "path": "package-lock.json",
+      "sha": "6166ad1551049392a379551996916db18e4e3649"
+    },
+    {
+      "path": "package.json",
+      "sha": "169461f99b175737016e8044440b667a1d66048e"
+    },
+    {
+      "path": "public/logo-primary.svg",
+      "sha": "6f70fc9c1f646b04a74cd30179478c36a6bca1ef"
+    },
+    {
+      "path": "public/logo-reversed.svg",
+      "sha": "bf0aa89876e6eae6b9c90d9dfdafb44c7e830acc"
+    },
+    {
+      "path": "public/logo.svg",
+      "sha": "1f5bd65ae8916a5a29919df1fff5cdc7cd78a968"
+    },
+    {
+      "path": "server.ts",
+      "sha": "c4cc29800f1e3a66f3f746526e6a9758d00c8490"
+    },
+    {
+      "path": "src/components/AdminDashboardView.tsx",
+      "sha": "9cd25c58001a7a56801bcd71339cc1ec7399091e"
+    },
+    {
+      "path": "src/components/AdminFeedbackConsoleView.tsx",
+      "sha": "a65f3b3dc0f665eab3054de384387079c9a3aa33"
+    },
+    {
+      "path": "src/components/AuthScreen.tsx",
+      "sha": "9b34d63a52160a315cd59b26316e82c1dc3b5f93"
+    },
+    {
+      "path": "src/components/BadgeIcon.tsx",
+      "sha": "d9973b7e85c1551998a59ad25f59e995da9201cd"
+    },
+    {
+      "path": "src/components/CelebrationOverlay.tsx",
+      "sha": "e866f318866dfcbe5c0b2c8dfe51c8d306e30af7"
+    },
+    {
+      "path": "src/components/CirclePhotoCropModal.tsx",
+      "sha": "560667b3ae59daef83f1e0c91cc14162debc60d6"
+    },
+    {
+      "path": "src/components/ComprehensiveCurriculumView.tsx",
+      "sha": "8cae32fd390e9b139dc0befdf329ac12411adb67"
+    },
+    {
+      "path": "src/components/CurriculumArchipelagoSection.tsx",
+      "sha": "3ee57ddfc4e49d7497890ba0a8e08b97dffb60e4"
+    },
+    {
+      "path": "src/components/EmailNotificationCenter.tsx",
+      "sha": "ff12f7a612b9f3f7865e189af3ef6ae3d984e53d"
+    },
+    {
+      "path": "src/components/FilipinianaMotifs.tsx",
+      "sha": "be5e883e5297386059be1a5bbb2add12d6335c08"
+    },
+    {
+      "path": "src/components/FloatingFeedbackWidget.tsx",
+      "sha": "626826bff4de0d339932b8b0457a1aca1b5f5065"
+    },
+    {
+      "path": "src/components/InabelHeaderStrip.tsx",
+      "sha": "846ebdb784978cf16911f2c3b22c8c0def3e3c75"
+    },
+    {
+      "path": "src/components/InabelStrip.tsx",
+      "sha": "e5b9e99ba8a748d65ff1864d684822832a546524"
+    },
+    {
+      "path": "src/components/InteractiveIslandMap.tsx",
+      "sha": "360d40867d703875e4a3a3b7c4e92af22ce798a5"
+    },
+    {
+      "path": "src/components/LeaderboardView.tsx",
+      "sha": "6cc5bb7b3b86eb931766d826af104beab183fc49"
+    },
+    {
+      "path": "src/components/LingoQuestLogo.tsx",
+      "sha": "e21b707f43d1b71d7522c56c92ab71d6dc4aa4af"
+    },
+    {
+      "path": "src/components/NetworkStatusToast.tsx",
+      "sha": "9507c92bc669f8101c802051334c7e370c7f4905"
+    },
+    {
+      "path": "src/components/PendingApprovalScreen.tsx",
+      "sha": "8f3c3a2f1452b0cb860070885519dbbbfa4dd3bc"
+    },
+    {
+      "path": "src/components/PictureHuntArtwork.tsx",
+      "sha": "3176707edf11c2349405dba6b3ec1e5e531c24b2"
+    },
+    {
+      "path": "src/components/ProfileBadgesView.tsx",
+      "sha": "e39bf39f316b692136b73b1b95003743351b8b4c"
+    },
+    {
+      "path": "src/components/StudentDashboardView.tsx",
+      "sha": "707ca9017ec1dd9e41af181ac4fc2412ad9d3d02"
+    },
+    {
+      "path": "src/components/StudentProgressView.tsx",
+      "sha": "abfd5118e397d40095cfab4eeff79a7be6107713"
+    },
+    {
+      "path": "src/components/TeacherDashboardView.tsx",
+      "sha": "e617fe8ed2407a497e239c9597b18a92d85758dd"
+    },
+    {
+      "path": "src/components/VoicePlayer.tsx",
+      "sha": "a989971af004b3a4afc26434cd2090012d00082e"
+    },
+    {
+      "path": "src/components/VoiceQAView.tsx",
+      "sha": "2a91f5e4251c13301f651eb6815b11211de4494d"
+    },
+    {
+      "path": "src/components/WritingLabView.tsx",
+      "sha": "aa1e2f16809da0c9e313c498369b3304c257c558"
+    },
+    {
+      "path": "src/components/visuals/LessonVisuals.tsx",
+      "sha": "441e1d734baabe1ea3bfa3bb06d473ea5c127af0"
+    },
+    {
+      "path": "src/context/AuthContext.tsx",
+      "sha": "5cb081bcc6f27d622243035c3f386ecf8f997828"
+    },
+    {
+      "path": "src/db/drizzle.config.ts",
+      "sha": "3ca60a0af4ce69a901cebbe86cbd73620021afbe"
+    },
+    {
+      "path": "src/db/index.ts",
+      "sha": "749e02b4d59c5b43651820dd636954a344f8cc45"
+    },
+    {
+      "path": "src/db/schema.ts",
+      "sha": "dbfdd8b9189f54be6cbf7d51432949094058c327"
+    },
+    {
+      "path": "src/db/users.ts",
+      "sha": "8b940e1e94dd615f255ebad0be1bbfe6b5062bb4"
+    },
+    {
+      "path": "src/firebase.ts",
+      "sha": "9adfc419e1b2da1af532ff9d06080c9c7d1284c9"
+    },
+    {
+      "path": "src/index.css",
+      "sha": "be7cc34b2d79458e2fb95a485eab909b10e89e0a"
+    },
+    {
+      "path": "src/lib/supabase.ts",
+      "sha": "8dd28e1a8553534240827ba53338f55a1394faf9"
+    },
+    {
+      "path": "src/main.tsx",
+      "sha": "a93fb74f6c8270d2d01abd5c17863ff6ece6b501"
+    },
+    {
+      "path": "src/utils/progression.ts",
+      "sha": "2aba2c217c0826ae5959ae6ea35d66b4c2d80287"
+    },
+    {
+      "path": "vercel.json",
+      "sha": "d08e0cfbe596d6e079710f25b9acdb261b58740d"
+    },
+    {
+      "path": "vite.config.ts",
+      "sha": "fa50b7f024eb8a23098e34d4ea5e1fb21477d212"
+    }
+  ]
+}

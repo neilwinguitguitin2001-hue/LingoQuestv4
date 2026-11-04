@@ -1,3 +1,5 @@
+import type { PdfLesson } from '../data/curriculum/pdfCurriculum';
+import type { DigitalBlock } from '../data/curriculum/digitalContent';
 export type GradeLevel = 7 | 8 | 9 | 10;
 export type QuarterNumber = 1 | 2 | 3 | 4;
 
@@ -107,6 +109,8 @@ export type PictureSceneId =
   | 'coastal_horizon';
 
 export interface PictureOption {
+  sourceImageUrl?: string;
+  sourceGraphic?: DigitalBlock;
   id: string;
   sceneId: PictureSceneId;
   label: string;
@@ -122,6 +126,9 @@ export interface CrosswordClueInfo {
 }
 
 export interface QuizQuestion {
+  sourceGraphic?: DigitalBlock;
+  sourceImageUrl?: string;
+  source?: { fileId: string; page: number; quote: string; answerQuote: string; sourceId: string; kind: string; instructionPage?: number; answerKeyPage?: number; answerKeyQuote?: string };
   id: string;
   type: QuizGameType;
   difficulty: DifficultyLevel;
@@ -190,6 +197,7 @@ export interface LessonContent {
 }
 
 export interface Module {
+  pdfLesson?: PdfLesson;
   id: string;
   gradeLevel: GradeLevel;
   quarter: QuarterNumber;

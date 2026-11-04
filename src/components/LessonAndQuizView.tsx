@@ -1,3 +1,6 @@
+import { SourceActivity, SourceExcerpt, SourceGraphic } from './SourceContent';
+import { useDigitalContent } from '../data/curriculum/digitalContent';
+import { createSourceGameSession } from '../utils/sourceGameSession';
 import React, { useEffect, useRef, useState } from 'react';
 import {
   AlertTriangle,
@@ -113,7 +116,7 @@ interface QuestionAnswerLog {
 }
 
 export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
-  module,
+  module: sourceModule,
   nextModule,
   initialStage = 'LESSON',
   isPersonalization,
@@ -129,6 +132,9 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
   completedVisualItems = [],
   onAwardVisualXP,
 }) => {
+  const sourceContent = useDigitalContent(sourceModule.pdfLesson);
+  const module = React.useMemo(() => ({ ...sourceModule, quizQuestions: sourceContent.data?.games || sourceModule.quizQuestions }), [sourceModule, sourceContent.data]);
+  const [sourceReviewMessage, setSourceReviewMessage] = useState('');
   const [stage, setStage] = useState<'LESSON' | 'QUIZ_SETUP' | 'PLAYING_QUIZ' | 'QUIZ_RESULTS'>(
     initialStage
   );
@@ -283,63 +289,15 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
     };
   }, [stage, currentQIndex, questionLocked, activeQuestions, showExitModal]);
 
-  const startQuizSession = () => {
+  const startQuizSession = (requestedMode: QuizGameType | 'all' = gameModeFilter) => {
     soundFX.playClick();
     stopAllVoicePlayback();
-    const allQuestions = module.quizQuestions || [];
-
-    let pool: QuizQuestion[] = [];
-
-    if (gameModeFilter !== 'all') {
-      // The student picked a specific game mode: play 5 questions for that mode
-      const specificModeQuestions = allQuestions.filter((q) => q.type === gameModeFilter);
-      // Shuffle the questions for variety per student/session
-      const shuffled = [...specificModeQuestions].sort(() => Math.random() - 0.5);
-      pool = shuffled.slice(0, 5);
-      if (pool.length === 0) {
-        pool = allQuestions.slice(0, 5);
-      }
-    } else {
-      // The student chose "Full Quest Mix" ('all'):
-      // Give only 1 question per game mode and make it random per student
-      const analogyQuestions = allQuestions.filter((q) => q.type === 'analogyMaster');
-      const missingPieceQuestions = allQuestions.filter((q) => q.type === 'missingPiece');
-      const crosswordQuestions = allQuestions.filter((q) => q.type === 'crosswordGame');
-      const pictureHuntQuestions = allQuestions.filter((q) => q.type === 'pictureHunt');
-      const typeHunterQuestions = allQuestions.filter((q) => q.type === 'typeHunter');
-
-      const getRandomOne = (items: QuizQuestion[]): QuizQuestion | null => {
-        if (!items || items.length === 0) return null;
-        const randomIndex = Math.floor(Math.random() * items.length);
-        return items[randomIndex];
-      };
-
-      const selectedFromEach: QuizQuestion[] = [];
-      const q1 = getRandomOne(analogyQuestions);
-      if (q1) selectedFromEach.push(q1);
-      const q2 = getRandomOne(missingPieceQuestions);
-      if (q2) selectedFromEach.push(q2);
-      const q3 = getRandomOne(crosswordQuestions);
-      if (q3) selectedFromEach.push(q3);
-      const q4 = getRandomOne(pictureHuntQuestions);
-      if (q4) selectedFromEach.push(q4);
-      const q5 = getRandomOne(typeHunterQuestions);
-      if (q5) selectedFromEach.push(q5);
-
-      // Randomize the order of the 5 modes per student/session
-      pool = [...selectedFromEach].sort(() => Math.random() - 0.5);
-      if (pool.length === 0) {
-        pool = allQuestions.slice(0, 5);
-      }
+    const finalPool = sourceContent.data && createSourceGameSession(module, module.quizQuestions, requestedMode, difficulty);
+    if (!finalPool) {
+      setSourceReviewMessage('Source review needed: five distinct verified questions from this PDF are required.');
+      return;
     }
-
-    // Apply difficulty time limit settings
-    const defaultTime = difficulty === 'easy' ? 45 : difficulty === 'moderate' ? 30 : 20;
-    const finalPool = pool.map((q) => ({
-      ...q,
-      timeLimitSeconds: defaultTime,
-    }));
-
+    setSourceReviewMessage('');
     setActiveQuestions(finalPool);
     setCurrentQIndex(0);
     setTimeLeft(finalPool[0]?.timeLimitSeconds || 45);
@@ -392,6 +350,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
       setSelectedOption('');
       setQuestionLocked(false);
     } else {
+      if (activeQuestions.length !== 5 || answerLogs.length !== 5) return;
       const total = activeQuestions.length;
       const score = answerLogs.filter((a) => a.isCorrect).length;
       const percentage = Math.round((score / total) * 100);
@@ -471,62 +430,9 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
   if (stage === 'LESSON') {
     const { lessonContent } = module;
 
-    // Derived rich vocabulary bank
-    const vocabList = (lessonContent.vocabularyGlossary && lessonContent.vocabularyGlossary.length > 0)
-      ? lessonContent.vocabularyGlossary
-      : [
-          {
-            term: module.title.split(' ')[0],
-            partOfSpeech: 'Core Focus',
-            definition: `The central linguistic concept of Module ${module.moduleNumber} in Grade ${module.gradeLevel}.`,
-            exampleSentence: `Mastering ${module.title.toLowerCase()} provides the foundation for advanced academic reading and speech.`,
-          },
-          ...lessonContent.keyRules.slice(0, 4).map((rule) => {
-            const colonIdx = rule.indexOf(':');
-            const term = colonIdx > 0 ? rule.slice(0, colonIdx) : rule.split(' ')[0];
-            const desc = colonIdx > 0 ? rule.slice(colonIdx + 1).trim() : rule;
-            return {
-              term,
-              partOfSpeech: 'Rule / Concept',
-              definition: desc,
-              exampleSentence: `Learners apply ${term} to ensure grammatical accuracy and clarity in writing.`,
-            };
-          }),
-        ];
-
-    // Derived common student pitfalls & exam tips
-    const mistakesList = (lessonContent.commonMistakesAndTips && lessonContent.commonMistakesAndTips.length > 0)
-      ? lessonContent.commonMistakesAndTips
-      : [
-          {
-            mistake: `Relying on surface word associations rather than the exact grammatical relationship in ${module.title}.`,
-            correction: 'Analyze the structural role and surrounding sentence markers before answering.',
-            why: 'Sentence context clues specify exact syntactic agreements and relational categories.',
-          },
-          {
-            mistake: 'Overlooking punctuation cues, auxiliary verbs, or tense indicators in the prompt.',
-            correction: 'Inspect verb forms, colons, commas, and connecting transition markers.',
-            why: 'Punctuation and auxiliary verbs signal key grammatical voice, tense shifts, and analogy logic.',
-          },
-          {
-            mistake: 'Selecting an answer without substituting distractors back into the prompt sentence.',
-            correction: 'Perform a substitution check to confirm logical and grammatical consistency.',
-            why: 'Direct substitution reveals grammatical flaws and eliminates misleading false cognates.',
-          },
-        ];
-
-    // Derived interactive mastery checklist
-    const checklistItems = (lessonContent.studyChecklist && lessonContent.studyChecklist.length > 0)
-      ? lessonContent.studyChecklist
-      : [
-          `I can clearly state the primary purpose and definition of ${module.title}.`,
-          `I understand the key structural rules and formulas for this module.`,
-          `I can analyze the guided model examples and spot their context clues.`,
-          `I know how to avoid common mistakes and false distractors in this topic.`,
-          `I can connect this lesson's concept to real-world communication in Davao Oriental.`,
-          `I am ready to achieve at least 75% on the quiz to restore the island bridge.`,
-        ];
-
+    const vocabList = lessonContent.vocabularyGlossary || [];
+    const mistakesList = lessonContent.commonMistakesAndTips || [];
+    const checklistItems = lessonContent.studyChecklist || [];
     const checkedCount = checklistItems.filter((_, idx) => Boolean(checkedObjectives[idx])).length;
     const allChecked = checkedCount === checklistItems.length;
 
@@ -577,7 +483,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                     {previewRole === 'teacher' ? 'Faculty Preview Mode' : 'Admin Preview Mode'}
                   </span>
                   <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-white/10 text-sky-200 border border-white/20">
-                    Grade {module.gradeLevel} · Module {module.moduleNumber}
+                    Grade {module.gradeLevel} · {module.pdfLesson?.sourceLabel || `Module ${module.moduleNumber}`}
                   </span>
                 </div>
                 <p className="text-xs text-slate-200">
@@ -650,7 +556,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
               <span>·</span>
               <span>Quarter {module.quarter}</span>
               <span>·</span>
-              <span>Module {module.moduleNumber}</span>
+              <span>{module.pdfLesson?.sourceLabel || `Module ${module.moduleNumber}`}</span>
               <span>·</span>
               <span className="capitalize font-medium text-slate-700">{module.topicType.replace('-', ' ')}</span>
               <span>·</span>
@@ -836,7 +742,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                       <span>01. Lesson Concept & DepEd Competency</span>
                     </h2>
                     <span className="text-xs px-2.5 py-0.5 rounded-full bg-sky-50 text-sky-800 font-bold border border-sky-200">
-                      Module {module.moduleNumber} Core Study
+                      {module.pdfLesson?.sourceLabel || `Module ${module.moduleNumber}`} Core Study
                     </span>
                   </div>
 
@@ -858,6 +764,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                     <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
                       {lessonContent.overview}
                     </p>
+                    {module.pdfLesson?.source.notes.map((note,i)=><p key={i} className="text-xs text-slate-500">{note}</p>)}
                   </div>
 
                   {/* Key Rules List with Animated Visual Illustrations */}
@@ -874,7 +781,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                     <div className="space-y-3">
                       {lessonContent.keyRules.map((rule, i) => {
                         const colonIdx = rule.indexOf(':');
-                        const ruleTitle = colonIdx > 0 ? rule.slice(0, colonIdx) : `Rule ${i + 1}`;
+                        const ruleTitle = module.pdfLesson ? `${module.pdfLesson.sourceLabel} · PDF p. ${module.pdfLesson.concepts[i].page}` : (colonIdx > 0 ? rule.slice(0, colonIdx) : `Rule ${i + 1}`);
                         const ruleBody = colonIdx > 0 ? rule.slice(colonIdx + 1).trim() : rule;
                         const ruleVis = visualConfig.tabs.concepts.ruleVisuals[i];
                         return (
@@ -893,9 +800,9 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                               </span>
                               <span className="text-xs font-bold text-slate-900">{ruleTitle}</span>
                             </div>
-                            <p className="text-xs sm:text-sm text-slate-700 pl-7 leading-relaxed">
-                              {ruleBody}
-                            </p>
+                            <div className="text-xs sm:text-sm text-slate-700 pl-7 leading-relaxed">
+                              {module.pdfLesson ? <SourceExcerpt lesson={module.pdfLesson} excerpt={module.pdfLesson.concepts[i]} content={sourceContent.data} section="concepts" index={i}/> : ruleBody}
+                            </div>
                             {ruleVis && (
                               <div className="pl-7">
                                 <RuleVisualIllustration spec={ruleVis} dataSaver={dataSaver} />
@@ -912,7 +819,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
 
                 {/* 1B: Interactive Animated Diagram */}
                 <VisualErrorBoundary fallbackTitle="Interactive Concept Bridge">
-                  <InteractiveDiagram
+                  <SourceActivity ready={visualConfig.tabs.concepts.interactiveDiagram.nodes.length === 5} title="Interactive Concept Bridge"><InteractiveDiagram
                     title={visualConfig.tabs.concepts.interactiveDiagram.title}
                     subtitle={visualConfig.tabs.concepts.interactiveDiagram.subtitle}
                     nodes={visualConfig.tabs.concepts.interactiveDiagram.nodes}
@@ -925,12 +832,12 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                         'Interactive Concept Bridge Solved'
                       )
                     }
-                  />
+                  /></SourceActivity>
                 </VisualErrorBoundary>
 
                 {/* 1C: Mini Visual Sorting Game */}
                 <VisualErrorBoundary fallbackTitle="Mini Sorting Game">
-                  <DragDropMatch
+                  <SourceActivity ready={visualConfig.tabs.concepts.miniGame.items.length === 5} title="Mini Sorting Game"><DragDropMatch
                     title={visualConfig.tabs.concepts.miniGame.title}
                     subtitle={visualConfig.tabs.concepts.miniGame.subtitle}
                     categories={visualConfig.tabs.concepts.miniGame.categories}
@@ -944,7 +851,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                         'Concept Sorting Mini-Game Mastered'
                       )
                     }
-                  />
+                  /></SourceActivity>
                 </VisualErrorBoundary>
               </div>
             )}
@@ -954,7 +861,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
               <div className="space-y-6">
                 {/* 2A: Animated Step-by-Step Sentence Walkthrough */}
                 <VisualErrorBoundary fallbackTitle="Animated Walkthrough Stepper">
-                  <AnimatedStepper
+                  <SourceActivity ready={visualConfig.tabs.guidedAnalysis.steps.length > 0} title="Animated Walkthrough Stepper"><AnimatedStepper
                     steps={visualConfig.tabs.guidedAnalysis.steps}
                     xpReward={visualConfig.tabs.guidedAnalysis.xp}
                     isCompleted={localCompletedVisuals.includes('stepper')}
@@ -965,7 +872,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                         'Guided Sentence Walkthrough Completed'
                       )
                     }
-                  />
+                  /></SourceActivity>
                 </VisualErrorBoundary>
 
                 <section className="bg-white border-2 border-[#231F20] linocut-card rounded-xl overflow-hidden space-y-5">
@@ -998,7 +905,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                           <span className="text-[11px] text-slate-400 font-mono">Walkthrough</span>
                         </div>
                         <blockquote className="text-sm sm:text-base font-semibold text-slate-900 border-l-4 border-sky-600 pl-4 py-1 bg-white rounded-r-lg p-2 shadow-xs">
-                          “{ex.example}”
+                          {module.pdfLesson ? <SourceExcerpt lesson={module.pdfLesson} excerpt={module.pdfLesson.guidedAnalysis[i]} content={sourceContent.data} section="guidedAnalysis" index={i}/> : ex.example}
                         </blockquote>
                         <div className="p-3 bg-sky-50/60 border border-sky-100 rounded-lg text-xs sm:text-sm text-slate-700 space-y-1">
                           <div className="font-bold text-sky-950 flex items-center gap-1.5">
@@ -1019,9 +926,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                       <span>The 3-Step Mastery Protocol for Quizzes:</span>
                     </div>
                     <ol className="list-decimal list-inside space-y-1 text-slate-700">
-                      <li><strong>Identify Markers:</strong> Read the prompt and locate surrounding signal keywords.</li>
-                      <li><strong>Test the Relationship:</strong> Apply the rule formula (e.g. colon notation, verb voice shift).</li>
-                      <li><strong>Substitute & Verify:</strong> Re-insert the target choice into the sentence to verify coherence.</li>
+                      {module.pdfLesson?.studyCheatsheet.slice(0,3).map((e,i)=><li key={i}>{e.text}</li>)}
                     </ol>
                   </div>
                   </div>
@@ -1034,7 +939,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
               <div className="space-y-6">
                 {/* 3A: Animated Pitfall Comparison & Spot-the-Mistake Challenge */}
                 <VisualErrorBoundary fallbackTitle="Pitfall Comparison Cards">
-                  <PitfallComparisonCards
+                  <SourceActivity ready={visualConfig.tabs.pitfalls.pairs.length >= 5} title="Pitfall Comparison Cards"><PitfallComparisonCards
                     pairs={visualConfig.tabs.pitfalls.pairs}
                     xpReward={visualConfig.tabs.pitfalls.xp}
                     isCompleted={localCompletedVisuals.includes('pitfalls')}
@@ -1045,7 +950,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                         'Pitfalls & Spot-the-Mistake Completed'
                       )
                     }
-                  />
+                  /></SourceActivity>
                 </VisualErrorBoundary>
 
                 <section className="bg-white border-2 border-[#231F20] linocut-card rounded-xl overflow-hidden space-y-5">
@@ -1064,6 +969,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                   </p>
 
                   <div className="space-y-4">
+                    {module.pdfLesson?.pitfallsAndTips.map((e,i)=><SourceExcerpt key={i} lesson={module.pdfLesson!} excerpt={e} content={sourceContent.data} section="pitfallsAndTips" index={i}/>)}
                     {mistakesList.map((m, i) => (
                       <div
                         key={i}
@@ -1098,7 +1004,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                       <span>Pro Quiz Strategy:</span>
                     </div>
                     <p className="leading-relaxed">
-                      Before submitting your answer in the quiz, read the entire sentence aloud in your head. Correct grammar flows naturally with proper stress, pause, and semantic agreement.
+                      {module.pdfLesson?.pitfallsAndTips[0]?.text || 'No separate source-supported correction or reminder has been identified in this PDF.'}
                     </p>
                   </div>
                   </div>
@@ -1111,7 +1017,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
               <div className="space-y-6">
                 {/* 4A: Interactive Illustrated Davao Oriental Hotspot Scene */}
                 <VisualErrorBoundary fallbackTitle="Davao Oriental Hotspot Explorer">
-                  <HotspotScene
+                  <SourceActivity ready={visualConfig.tabs.davaoContext.hotspots.length > 0} title="Davao Oriental Hotspot Explorer"><HotspotScene
                     scene={visualConfig.tabs.davaoContext.scene}
                     sceneTitle={visualConfig.tabs.davaoContext.sceneTitle}
                     sceneSubtitle={visualConfig.tabs.davaoContext.sceneSubtitle}
@@ -1126,7 +1032,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                         'Davao Oriental Heritage Hotspots Explored'
                       )
                     }
-                  />
+                  /></SourceActivity>
                 </VisualErrorBoundary>
 
                 <section className="bg-white border-2 border-[#231F20] linocut-card rounded-xl overflow-hidden space-y-4">
@@ -1145,7 +1051,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                       <span>Island Location: {currentIslandName}</span>
                     </div>
                     <p className="text-sm leading-relaxed text-slate-800">
-                      {lessonContent.culturalConnection}
+                      {lessonContent.culturalConnection || 'No source-supported localized material has been identified in this PDF.'}
                     </p>
                   </div>
 
@@ -1155,7 +1061,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                       <span>Why Local Cultural Context Matters:</span>
                     </h3>
                     <p className="leading-relaxed">
-                      In the DepEd curriculum for Region XI, English competencies are grounded in the living heritage of Davao Oriental—from Mandaya oral epics and Dagmay weaving to Pujada Bay marine sanctuaries and the biodiversity of Mount Hamiguitan. Learning language through local heritage helps learners become proud ambassadors of their home province.
+                      No localized educational examples are included unless they appear in this module’s PDF.
                     </p>
                   </div>
                   </div>
@@ -1176,7 +1082,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                         <span>05. Interactive 3D Vocabulary Flip Cards & Audio</span>
                       </h2>
                       <p className="text-xs text-slate-500 mt-0.5">
-                        Tap any card to flip between definition and Davao Oriental context sentence, or tap <strong>Speak</strong> to hear pronunciation.
+                        Tap any card to reveal its PDF definition, or tap <strong>Speak</strong> to hear pronunciation.
                       </p>
                     </div>
                     <div className="flex items-center gap-2">
@@ -1225,7 +1131,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
               <div className="space-y-6">
                 {/* 6A: Gamified Lightning Self-Check Challenge */}
                 <VisualErrorBoundary fallbackTitle="Self-Check Lightning Challenge">
-                  <SelfCheckVisualChallenge
+                  <SourceActivity ready={visualConfig.tabs.selfCheck.questions.length === 5} title="Self-Check Lightning Challenge"><SelfCheckVisualChallenge
                     questions={visualConfig.tabs.selfCheck.questions}
                     timerSeconds={visualConfig.tabs.selfCheck.timerSeconds}
                     xpReward={visualConfig.tabs.selfCheck.xp}
@@ -1237,7 +1143,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                         'Self-Check Lightning Challenge Passed'
                       )
                     }
-                  />
+                  /></SourceActivity>
                 </VisualErrorBoundary>
 
                 <section className="bg-white border-2 border-[#231F20] linocut-card rounded-xl overflow-hidden space-y-5">
@@ -1331,6 +1237,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                       Check off each goal above as you review the lesson material.
                     </div>
                   )}
+                  {module.pdfLesson && <details><summary>PDF activities and source checking guide</summary><div className="space-y-4">{module.pdfLesson.selfCheck.map((e,i)=><SourceExcerpt key={'activity-'+i} lesson={module.pdfLesson!} excerpt={e} content={sourceContent.data} section="selfCheck" index={i}/>)}{module.pdfLesson.answerKey.map((e,i)=><SourceExcerpt key={'key-'+i} lesson={module.pdfLesson!} excerpt={e} content={sourceContent.data} section="answerKey" index={i}/>)}</div></details>}
                   </div>
                 </section>
               </div>
@@ -1341,7 +1248,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
               <div className="space-y-6">
                 {/* 7A: Animated Step-by-Step Study Infographic */}
                 <VisualErrorBoundary fallbackTitle="Animated Cheatsheet Infographic">
-                  <AnimatedCheatsheetInfographic
+                  <SourceActivity ready={visualConfig.tabs.cheatsheet.nodes.length > 0} title="Animated Cheatsheet Infographic"><AnimatedCheatsheetInfographic
                     moduleTitle={module.title}
                     nodes={visualConfig.tabs.cheatsheet.nodes}
                     xpReward={visualConfig.tabs.cheatsheet.xp}
@@ -1353,7 +1260,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                         'Interactive Study Cheatsheet Unfolded'
                       )
                     }
-                  />
+                  /></SourceActivity>
                 </VisualErrorBoundary>
 
                 <section className="bg-white border-2 border-[#231F20] linocut-card rounded-xl overflow-hidden space-y-4">
@@ -1403,7 +1310,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                     </div>
                     <div>
                       <span className="text-amber-400 font-bold">[LOCAL CONTEXT]</span>
-                      <p className="mt-1 text-slate-300 font-sans">{lessonContent.culturalConnection}</p>
+                      <p className="mt-1 text-slate-300 font-sans">{lessonContent.culturalConnection || 'No source-supported localized material has been identified in this PDF.'}</p>
                     </div>
                   </div>
                   </div>
@@ -1556,6 +1463,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
   }
 
   if (stage === 'QUIZ_SETUP') {
+    const canStart = !!sourceContent.data && !!createSourceGameSession(module,module.quizQuestions,gameModeFilter,difficulty,()=>.5);
     const difficultyConfigs: Array<{
       id: DifficultyLevel;
       label: string;
@@ -1657,11 +1565,11 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                     {previewRole === 'teacher' ? 'Faculty Preview Mode' : 'Admin Preview Mode'}
                   </span>
                   <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-white/10 text-sky-200 border border-white/20">
-                    Grade {module.gradeLevel} · Module {module.moduleNumber} Quizzes
+                    Grade {module.gradeLevel} · {module.pdfLesson?.sourceLabel || `Module ${module.moduleNumber}`} Quizzes
                   </span>
                 </div>
                 <p className="text-xs text-slate-200">
-                  Previewing quizzes for <strong>{module.title}</strong> · 25 Questions Total (5 per game mode)
+                  Previewing quizzes for <strong>{module.title}</strong> · {module.quizQuestions.length} verified questions (5 per playable game)
                 </p>
               </div>
             </div>
@@ -1725,7 +1633,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
               }`}
             >
               <ListChecks className="w-4 h-4" />
-              <span>Audit All 25 Questions with Answer Keys</span>
+              <span>Audit Verified PDF Questions with Answer Keys</span>
             </button>
           </div>
         )}
@@ -1742,10 +1650,10 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                   <span>Curriculum Answer Key & Pedagogical Audit</span>
                 </div>
                 <h2 className="text-xl sm:text-2xl font-bold font-display text-slate-900 mt-1">
-                  Grade {module.gradeLevel} Module {module.moduleNumber}: {module.title}
+                  Grade {module.gradeLevel} {module.pdfLesson?.sourceLabel || `Module ${module.moduleNumber}`}: {module.title}
                 </h2>
                 <p className="text-xs text-slate-500 mt-0.5">
-                  DepEd MELC: {module.lessonContent.melcCompetency} · Total Questions: {module.quizQuestions?.length || 25}
+                  DepEd MELC: {module.lessonContent.melcCompetency} · Total Questions: {module.quizQuestions?.length || 0}
                 </p>
               </div>
 
@@ -1769,7 +1677,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
             <div className="flex flex-wrap items-center gap-1.5 p-1 bg-slate-100 rounded-xl">
               {(
                 [
-                  { id: 'all', label: 'All 25 Questions' },
+                  { id: 'all', label: `All Questions (${module.quizQuestions.length})` },
                   { id: 'analogyMaster', label: 'Analogy Master (5)' },
                   { id: 'missingPiece', label: 'Missing Piece (5)' },
                   { id: 'crosswordGame', label: 'Crossword Game (5)' },
@@ -1825,7 +1733,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                               soundFX.playClick();
                               setGameModeFilter(q.type);
                               setSetupPreviewTab('simulation');
-                              startQuizSession();
+                              startQuizSession(q.type);
                             }}
                             className="text-[11px] font-bold text-sky-700 hover:text-sky-900 flex items-center gap-1 cursor-pointer"
                           >
@@ -1860,7 +1768,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                                 }`}
                               >
                                 <div className="h-20 w-full mb-1 rounded-lg overflow-hidden border border-slate-200">
-                                  <PictureHuntArtwork sceneId={opt.sceneId} />
+                                  <>{opt.sourceGraphic ? <SourceGraphic block={opt.sourceGraphic}/> : opt.sourceImageUrl ? <img src={opt.sourceImageUrl} alt={opt.caption} className="w-full h-auto object-contain"/> : <PictureHuntArtwork sceneId={opt.sceneId}/>}</>
                                 </div>
                                 <div className="text-[11px] font-bold text-slate-800 flex items-center justify-center gap-1">
                                   {isCorrectOpt && <Check className="w-3 h-3 text-emerald-600" />}
@@ -1931,7 +1839,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-5">
             <div>
               <div className="text-xs text-slate-500">
-                Module {module.moduleNumber} Quiz Setup · {currentIslandName} · Passing Score:{' '}
+                {module.pdfLesson?.sourceLabel || `Module ${module.moduleNumber}`} Quiz Setup · {currentIslandName} · Passing Score:{' '}
                 <span className="font-mono font-semibold text-slate-900">
                   {module.requiredPassingScore}%
                 </span>
@@ -2049,7 +1957,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                       </span>
                     </div>
                     <p className="text-xs text-slate-600 mt-1.5 leading-relaxed">
-                      {fmt.desc}
+                      {fmt.desc}{sourceContent.data && !createSourceGameSession(module,module.quizQuestions,fmt.id,difficulty,()=>.5) ? ' · Source review needed' : ''}
                     </p>
                   </button>
                 );
@@ -2057,13 +1965,15 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
             </div>
           </div>
 
+          {(!canStart || sourceReviewMessage) && <p role="status">{sourceContent.error || sourceReviewMessage || (sourceContent.data ? 'Source review needed: fewer than five verified questions are available for this PDF and game mode.' : 'Loading the verified source question bank…')}</p>}
           <div className="pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="text-xs text-slate-600">
-              Score at least <span className="font-mono font-bold text-slate-900">{module.requiredPassingScore}%</span> to restore the bridge for Module {module.moduleNumber} and unlock the next destination!
+              Score at least <span className="font-mono font-bold text-slate-900">{module.requiredPassingScore}%</span> to restore the bridge for {module.pdfLesson?.sourceLabel || `Module ${module.moduleNumber}`} and unlock the next destination!
             </div>
             <button
               type="button"
-              onClick={startQuizSession}
+              onClick={() => startQuizSession()}
+              disabled={!canStart}
               className="w-full sm:w-auto px-6 py-3 bg-sky-600 hover:bg-sky-700 text-white text-sm font-bold rounded-xl transition-colors flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer"
             >
               <span>Launch Gamified Quiz Now</span>
@@ -2078,6 +1988,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
   }
 
   if (stage === 'PLAYING_QUIZ') {
+    if (activeQuestions.length !== 5) return <SourceActivity ready={false} title="Source review needed">{null}</SourceActivity>;
     const currentQ = activeQuestions[currentQIndex];
     if (!currentQ) return null;
 
@@ -2104,7 +2015,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                   </span>
                 </div>
                 <p className="text-xs text-slate-200">
-                  Testing Grade {module.gradeLevel} Module {module.moduleNumber}: {module.title}
+                  Testing Grade {module.gradeLevel} {module.pdfLesson?.sourceLabel || `Module ${module.moduleNumber}`}: {module.title}
                 </p>
               </div>
             </div>
@@ -2152,7 +2063,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                   </span>
                 </div>
                 <p className="text-xs text-slate-300">
-                  Grade {module.gradeLevel} Module {module.moduleNumber}: <span className="font-semibold text-white">{module.title}</span>
+                  Grade {module.gradeLevel} {module.pdfLesson?.sourceLabel || `Module ${module.moduleNumber}`}: <span className="font-semibold text-white">{module.title}</span>
                 </p>
               </div>
             </div>
@@ -2239,7 +2150,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div>
               <div className="text-xs text-slate-500">
-                Module {module.moduleNumber}: {module.title} ·{' '}
+                {module.pdfLesson?.sourceLabel || `Module ${module.moduleNumber}`}: {module.title} ·{' '}
                 <span className="uppercase font-mono font-semibold text-slate-800">
                   {difficulty} MODE
                 </span>
@@ -2318,6 +2229,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
             </h2>
           </div>
 
+          {currentQ.sourceGraphic && <SourceGraphic block={currentQ.sourceGraphic}/>}
           {currentQ.type === 'typeHunter' && (
             <div className="space-y-5">
               {currentQ.contextSentence && (
@@ -2407,7 +2319,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                         : 'border-slate-200 hover:border-sky-500 bg-white'
                     }`}
                   >
-                    <PictureHuntArtwork sceneId={pic.sceneId} className="w-full h-36" />
+                    <>{pic.sourceGraphic ? <SourceGraphic block={pic.sourceGraphic}/> : pic.sourceImageUrl ? <img src={pic.sourceImageUrl} alt={pic.caption} className="w-full h-36 object-contain"/> : <PictureHuntArtwork sceneId={pic.sceneId} className="w-full h-36"/>}</>
                     <div className="mt-3 flex items-center justify-between">
                       <span className="text-sm font-bold text-slate-900">{pic.label}</span>
                       {questionLocked && isCorrectPic && (
@@ -2717,7 +2629,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                     </>
                   )}
                 </div>
-                <p className="text-xs sm:text-sm opacity-90">{currentQ.explanation}</p>
+                <p className="text-xs sm:text-sm opacity-90">{currentQ.explanation}{currentQ.source && ` · PDF p. ${currentQ.source.page}`}</p>
               </div>
 
               <button
@@ -2751,7 +2663,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                       Exit Quiz Challenge?
                     </h3>
                     <p className="text-xs text-slate-500">
-                      You are taking the Module {module.moduleNumber} quiz ({currentQIndex + 1} of {activeQuestions.length}). Where would you like to go?
+                      You are taking the {module.pdfLesson?.sourceLabel || `Module ${module.moduleNumber}`} quiz ({currentQIndex + 1} of {activeQuestions.length}). Where would you like to go?
                     </p>
                   </div>
                 </div>
@@ -2785,7 +2697,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                       <ArrowRight className="w-4 h-4 text-sky-600 opacity-0 group-hover:opacity-100 transition-opacity" />
                     </div>
                     <p className="text-xs text-slate-600 mt-0.5">
-                      Return to study notes, examples, vocabulary, and self-checks for Module {module.moduleNumber}.
+                      Return to study notes, examples, vocabulary, and self-checks for {module.pdfLesson?.sourceLabel || `Module ${module.moduleNumber}`}.
                     </p>
                   </div>
                 </button>
@@ -2915,7 +2827,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-slate-100 pb-6">
             <div className="space-y-1.5">
               <div className="text-xs font-mono font-semibold text-slate-500">
-                MODULE {module.moduleNumber} QUIZ SUMMARY · {difficulty.toUpperCase()} DIFFICULTY
+                {(module.pdfLesson?.sourceLabel || `Module ${module.moduleNumber}`).toUpperCase()} QUIZ SUMMARY · {difficulty.toUpperCase()} DIFFICULTY
               </div>
               <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 font-display">
                 {finalOutcome.passed
@@ -3119,7 +3031,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
             <div className="flex flex-wrap items-center gap-2.5">
               <button
                 type="button"
-                onClick={startQuizSession}
+                onClick={() => startQuizSession()}
                 className="px-4 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-900 text-xs font-semibold rounded-lg transition-colors flex items-center gap-1.5 cursor-pointer"
               >
                 <RefreshCw className="w-3.5 h-3.5" />

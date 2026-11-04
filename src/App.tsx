@@ -7,7 +7,6 @@ import {
   INITIAL_STUDENTS,
   INITIAL_TEACHERS,
 } from './data/seedData';
-import { expandModuleTo25Questions } from './data/curriculum/curriculumBuilder';
 import {
   AdminAccount,
   AuditLogEntry,
@@ -215,9 +214,9 @@ function safeSetItem(key: string, value: string): void {
 })();
 
 function normalizeModuleIslands(rawModules: Module[]): Module[] {
-  return rawModules.map((m) => {
+  return rawModules.filter(m => ALL_MODULES.some(source => source.id === m.id)).map((m) => {
     const qInfo = DAVAO_ORIENTAL_QUARTER_ISLANDS[m.quarter as QuarterNumber];
-    const with25 = expandModuleTo25Questions(m);
+    const with25 = ALL_MODULES.find(source => source.id === m.id)!;
     if (qInfo) {
       return {
         ...with25,
@@ -343,7 +342,7 @@ export default function App() {
         if (Array.isArray(customList) && customList.length > 0) {
           const map = new Map<string, Module>();
           baseModules.forEach((m) => map.set(m.id, m));
-          customList.forEach((m) => map.set(m.id, normalizeModuleIslands([m])[0] || m));
+          normalizeModuleIslands(customList).forEach((m) => map.set(m.id, m));
           return Array.from(map.values());
         }
       }
@@ -557,9 +556,7 @@ export default function App() {
           setModules((prev) => {
             const map = new Map<string, Module>();
             prev.forEach((m) => map.set(m.id, m));
-            res.customModules!.forEach((m) =>
-              map.set(m.id, normalizeModuleIslands([m])[0] || m)
-            );
+            normalizeModuleIslands(res.customModules!).forEach((m) => map.set(m.id, m));
             return Array.from(map.values());
           });
         }
