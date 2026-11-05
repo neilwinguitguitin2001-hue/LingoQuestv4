@@ -42,5 +42,9 @@ export async function questGame<T>(action: string, fields: Record<string, unknow
     }
     throw new Error(message);
   }
+  const balance = (data as { balance?: unknown } | null)?.balance;
+  if (typeof balance === 'number' && Number.isFinite(balance)) {
+    window.dispatchEvent(new CustomEvent('lingoquest:quest-balance', { detail: { balance } }));
+  }
   return data as T;
 }
