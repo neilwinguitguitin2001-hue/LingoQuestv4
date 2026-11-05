@@ -418,7 +418,8 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
           {QUEST_POWER_UPS.map(power=>{
             const question=activeQuestions[currentQIndex];
-            const incompatible=power.kind==='fifty_fifty'&&((question?.options?.length||question?.pictureOptions?.length||0)<4)
+            const incompatible=(questionLocked&&power.kind!=='second_chance')
+              ||power.kind==='fifty_fifty'&&((question?.options?.length||question?.pictureOptions?.length||0)<4)
               ||power.kind==='second_chance'&&(!questionLocked||answerLogs.at(-1)?.isCorrect)
               ||!serverSessionId;
             return <button key={power.kind} type="button" onClick={()=>purchasePowerUp(power.kind)} disabled={questBusy||usedPowerUps.includes(power.kind)||incompatible} className="rounded-xl border border-sky-200 bg-sky-50 px-3 py-3 text-left text-sm font-semibold text-slate-900 hover:bg-sky-100 disabled:opacity-45 disabled:cursor-not-allowed">{power.label} <span className="float-right text-sky-800">{power.cost} coins</span></button>;
@@ -2097,6 +2098,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
             rightText={`${finalOutcome.percentage}% Score`}
           />
           <div className="px-6 sm:px-8 pb-6 sm:pb-8 space-y-6">
+          {serverSessionId&&<p className="inline-flex rounded-xl border border-sky-200 bg-sky-50 px-4 py-2 text-sm font-bold text-sky-900" role="status">Quest Coins balance: {questBalance}</p>}
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-slate-100 pb-6">
             <div className="space-y-1.5">
               <div className="text-xs font-mono font-semibold text-slate-500">

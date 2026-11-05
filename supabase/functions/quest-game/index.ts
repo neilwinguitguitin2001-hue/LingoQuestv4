@@ -6,7 +6,7 @@ const service = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
 const admin = createClient(url, service, { auth: { persistSession: false } });
 const cors = {
   'access-control-allow-origin': '*',
-  'access-control-allow-headers': 'authorization, apikey, content-type',
+  'access-control-allow-headers': 'authorization, apikey, content-type, x-client-info, x-supabase-api-version',
   'access-control-allow-methods': 'POST, OPTIONS',
   'content-type': 'application/json',
 };

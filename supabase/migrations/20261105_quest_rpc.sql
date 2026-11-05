@@ -115,7 +115,7 @@ end $$;
 
 create or replace function public.quest_purchase(p_user uuid,p_session uuid,p_kind text)
 returns jsonb language plpgsql security definer set search_path = public as $$
-declare v_session quest_sessions%rowtype; v_question jsonb; v_cost integer; v_balance integer; v_data jsonb:='{}'::jsonb; v_id text; v_answer text; v_time integer;
+declare v_session quest_sessions%rowtype; v_question jsonb; v_cost integer; v_balance integer; v_data jsonb:='{}'::jsonb; v_id text; v_answer text; v_hint_answer text; v_time integer;
 begin
   v_cost:=case p_kind when 'smart_hint' then 30 when 'time_freeze' then 50 when 'fifty_fifty' then 60 when 'extra_time' then 40 when 'second_chance' then 80 when 'lesson_peek' then 20 else null end;
   if v_cost is null then raise exception 'Unknown power-up'; end if;
@@ -135,10 +135,16 @@ begin
   insert into quest_wallets(user_id) values(p_user) on conflict do nothing;
   select balance into v_balance from quest_wallets where user_id=p_user for update;
   if v_balance<v_cost then raise exception 'Insufficient Quest Coins'; end if;
-  insert into quest_powerup_uses(session_id,kind,question_index,cost) values(p_session,p_kind,v_session.next_index,v_cost);
+  insert into quest_powerup_uses(session_id,kind,question_index,cost) values(p_session,p_kind,case when p_kind='second_chance' then v_session.next_index-1 else v_session.next_index end,v_cost);
   update quest_wallets set balance=balance-v_cost,updated_at=now() where user_id=p_user returning balance into v_balance;
   insert into quest_ledger(user_id,event_key,amount,balance_after) values(p_user,'purchase:'||p_session||':'||p_kind,-v_cost,v_balance);
-  if p_kind='smart_hint' then v_data:=jsonb_build_object('hint','The source expression begins with “'||left(v_answer,1)||'” and appears on PDF page '||(v_question->'source'->>'page')||'.'); end if;
+  if p_kind='smart_hint' then
+    v_hint_answer:=v_answer;
+    if v_question->>'type'='pictureHunt' then
+      select option->>'label' into v_hint_answer from jsonb_array_elements(v_question->'pictureOptions') option where option->>'id'=v_answer;
+    end if;
+    v_data:=jsonb_build_object('hint','The source expression begins with “'||left(coalesce(v_hint_answer,''),1)||'” and appears on PDF page '||(v_question->'source'->>'page')||'.');
+  end if;
   if p_kind='lesson_peek' then v_data:=jsonb_build_object('reminder',v_question->>'contextSentence'); end if;
   if p_kind='fifty_fifty' then
     if v_question ? 'pictureOptions' then
