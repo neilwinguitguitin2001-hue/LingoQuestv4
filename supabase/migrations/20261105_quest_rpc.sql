@@ -115,7 +115,7 @@ end $$;
 
 create or replace function public.quest_purchase(p_user uuid,p_session uuid,p_kind text)
 returns jsonb language plpgsql security definer set search_path = public as $$
-declare v_session quest_sessions%rowtype; v_question jsonb; v_cost integer; v_balance integer; v_data jsonb:='{}'::jsonb; v_id text; v_answer text; v_hint_answer text; v_time integer;
+declare v_session quest_sessions%rowtype; v_question jsonb; v_cost integer; v_balance integer; v_data jsonb:='{}'::jsonb; v_id text; v_answer text; v_hint_answer text; v_reminder text; v_reminder_page text; v_time integer;
 begin
   v_cost:=case p_kind when 'smart_hint' then 30 when 'time_freeze' then 50 when 'fifty_fifty' then 60 when 'extra_time' then 40 when 'second_chance' then 80 when 'lesson_peek' then 20 else null end;
   if v_cost is null then raise exception 'Unknown power-up'; end if;
@@ -131,6 +131,10 @@ begin
   end if;
   select payload into v_question from quest_question_bank where id=v_id;
   v_answer:=v_question->>'answer';
+  v_hint_answer:=v_answer;
+  if v_question->>'type'='pictureHunt' then
+    select option->>'label' into v_hint_answer from jsonb_array_elements(v_question->'pictureOptions') option where option->>'id'=v_answer;
+  end if;
   if p_kind='fifty_fifty' and jsonb_array_length(coalesce(v_question->'options',v_question->'pictureOptions','[]'::jsonb))<4 then raise exception '50/50 needs four choices'; end if;
   insert into quest_wallets(user_id) values(p_user) on conflict do nothing;
   select balance into v_balance from quest_wallets where user_id=p_user for update;
@@ -139,13 +143,16 @@ begin
   update quest_wallets set balance=balance-v_cost,updated_at=now() where user_id=p_user returning balance into v_balance;
   insert into quest_ledger(user_id,event_key,amount,balance_after) values(p_user,'purchase:'||p_session||':'||p_kind,-v_cost,v_balance);
   if p_kind='smart_hint' then
-    v_hint_answer:=v_answer;
-    if v_question->>'type'='pictureHunt' then
-      select option->>'label' into v_hint_answer from jsonb_array_elements(v_question->'pictureOptions') option where option->>'id'=v_answer;
-    end if;
     v_data:=jsonb_build_object('hint','The source expression begins with “'||left(coalesce(v_hint_answer,''),1)||'” and appears on PDF page '||(v_question->'source'->>'page')||'.');
   end if;
-  if p_kind='lesson_peek' then v_data:=jsonb_build_object('reminder',v_question->>'contextSentence'); end if;
+  if p_kind='lesson_peek' then
+    select q.payload->'source'->>'quote',q.payload->'source'->>'page' into v_reminder,v_reminder_page
+      from quest_question_bank q where q.module_id=v_session.module_id
+      and q.payload->'source'->>'quote'<>v_question->'source'->>'quote'
+      and position(lower(coalesce(v_hint_answer,'')) in lower(q.payload->'source'->>'quote'))=0
+      order by random() limit 1;
+    v_data:=jsonb_build_object('reminder',coalesce('PDF p. '||v_reminder_page||': '||v_reminder,v_question->>'contextSentence'));
+  end if;
   if p_kind='fifty_fifty' then
     if v_question ? 'pictureOptions' then
       select jsonb_build_object('remove',coalesce(jsonb_agg(value->>'id'),'[]'::jsonb)) into v_data from (

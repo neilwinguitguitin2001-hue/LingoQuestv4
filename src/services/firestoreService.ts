@@ -1,5 +1,6 @@
 import { signInWithPopup } from 'firebase/auth';
 import { auth, googleAuthProvider } from '../lib/firebase';
+import { supabase } from '../lib/supabase';
 import {
   ALL_MODULES,
   INITIAL_ADMINS,
@@ -1930,6 +1931,24 @@ export async function persistStudentProgress(
   moduleId: string,
   prog: ModuleProgress
 ): Promise<void> {
+  if (supabase) {
+    try {
+      const { data: { user }, error: authError } = await supabase.auth.getUser();
+      if (authError || !user || user.id !== student.id) throw new Error('Student session does not match progress owner.');
+      const { error } = await supabase.from('student_progress').upsert({
+        user_id: user.id,
+        xp: Math.max(0, Math.floor(student.points)),
+        badges: student.badges,
+        completed_quests: student.completedModules,
+        progress_by_module: student.progressByModule,
+        updated_at: new Date().toISOString(),
+      }, { onConflict: 'user_id' });
+      if (error) throw error;
+      return;
+    } catch (error) {
+      console.warn('Supabase student progress write error:', error);
+    }
+  }
   try {
     await cloudSqlFetch('/api/progress', {
       method: 'POST',
@@ -1942,6 +1961,38 @@ export async function persistStudentProgress(
   } catch (error) {
     console.warn('persistStudentProgress Cloud SQL write error:', error);
   }
+}
+
+export async function hydrateStudentProgressFromSupabase(student: StudentAccount): Promise<StudentAccount> {
+  if (!supabase) return student;
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user || user.id !== student.id) return student;
+  const { data, error } = await supabase.from('student_progress')
+    .select('xp,badges,completed_quests,progress_by_module')
+    .eq('user_id', user.id).maybeSingle();
+  if (error) throw error;
+  if (!data) return student;
+  const remoteProgress = (data.progress_by_module || {}) as Record<string, ModuleProgress>;
+  const progressByModule = { ...student.progressByModule };
+  for (const [moduleId, remote] of Object.entries(remoteProgress)) {
+    const local = progressByModule[moduleId];
+    progressByModule[moduleId] = local ? {
+      ...local, ...remote,
+      lessonCompleted: Boolean(local.lessonCompleted || remote.lessonCompleted),
+      isBridgeRestored: Boolean(local.isBridgeRestored || remote.isBridgeRestored),
+      bestScorePercent: Math.max(local.bestScorePercent || 0, remote.bestScorePercent || 0),
+      attemptsCount: Math.max(local.attemptsCount || 0, remote.attemptsCount || 0),
+      completedDifficulties: [...new Set([...(local.completedDifficulties || []), ...(remote.completedDifficulties || [])])],
+      quizHistory: [...new Map([...(local.quizHistory || []), ...(remote.quizHistory || [])].map(attempt => [attempt.id, attempt])).values()],
+    } : remote;
+  }
+  return {
+    ...student,
+    points: Math.max(student.points || 0, Number(data.xp) || 0),
+    badges: [...new Set([...(student.badges || []), ...((data.badges || []) as string[])])],
+    completedModules: [...new Set([...(student.completedModules || []), ...((data.completed_quests || []) as string[])])],
+    progressByModule,
+  };
 }
 
 // ----------------------------------------------------
