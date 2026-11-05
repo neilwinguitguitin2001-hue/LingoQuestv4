@@ -9,13 +9,17 @@ export interface DigitalBlock {
   rows?: string[][];
   images?: {src:string;x:number;y:number;width:number;height:number;alt?:string}[];
   transcript?: string;
+  monochrome?: boolean;
+  bbox?: number[];
   src?: string;
   width?: number;
   height?: number;
   shapes?: { d: string; stroke: string; fill: string; width: number }[];
   labels?: { text: string; x: number; y: number; size: number }[];
 }
+export interface SourceSection { id:string;title:string;kind:'discussion'|'objectives'|'activity'|'assessment'|'review'|'answers';entries:{page:number;blockIds:string[]}[]; }
 export interface DigitalContent {
+  sourceSections?: SourceSection[];
   fileId: string;
   sourceSha256: string;
   blocks: Record<string, DigitalBlock>;

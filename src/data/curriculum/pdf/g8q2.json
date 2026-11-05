@@ -19,6 +19,12 @@
         13,
         14,
         15,
+        16
+      ],
+      "verifiedRecallPages": [
+        13,
+        14,
+        15,
         16,
         17,
         18,
@@ -34,42 +40,22 @@
     "concepts": [
       {
         "page": 13,
-        "text": "As you continue, you will learn the different types of visual-verbal illustrations to help\nyou simplify the presentation of information in expository texts.\n\nWhat are visual-verbal illustrations?\n\nVisual-verbal illustrations are the ways of presenting information in a simple and\nattractive manner to catch the readers’ interest. These illustrations help explain concepts\neasily using graphs, maps, tables, infographics, charts and the like.\nBelow are the commonly used visual-verbal illustrations.\n\n1. Graph is a diagram that shows the relationships of information presented. Below are\nthe different kinds of graphs.\n\na.  Line Graph is a kind of graph that presents information trends using data\ndots connected by straight line segments.\n\nCOVID-19 CASES IN THE PHILIPPINES FROM\nMARCH-JUNE 2020\n\n40000                                                                              37514             CASES 30000\nOF\n20000                                                18086\n10000                              8488\n2084             0                NUMBER\nMARCH         APRIL         MAY         JUNE\n\nThe line shows the increase of the number of COVID-19 cases from March - June 2020.\n\nb. Bar Graph is a kind of graph that characterizes categorical data with\nrectangular bars of equal width.\n\nCOVID-19 Cases in the Philippines from March-June 2020\n\nCases    40000                 30000\nof\n\n10000                             Number\nMarch               April          May             June\n\nThe bar graph above shows the increase  of the number  of COVID-19 cases from\nMarch-June 2020.",
+        "text": "As you continue, you will learn the different types of visual-verbal illustrations to help\n\nyou simplify the presentation of information in expository texts.\n\nWhat are visual-verbal illustrations?\n\nVisual-verbal illustrations are the ways of presenting information in a simple and\n\nattractive manner to catch the readers’ interest. These illustrations help explain concepts easily using graphs, maps, tables, infographics, charts and the like. Below are the commonly used visual-verbal illustrations.\n\n1. Graph is a diagram that shows the relationships of information presented. Below are the different kinds of graphs.\n\na. Line Graph is a kind of graph that presents information trends using data dots connected by straight line segments.\n\nMARCH APRIL MAY JUNE NUMBER OF CASES COVID-19 CASES IN THE PHILIPPINES FROM  MARCH-JUNE 2020\n\nThe line shows the increase of the number of COVID-19 cases from March - June 2020.\n\nb. Bar Graph is a kind of graph that characterizes categorical data with rectangular bars of equal width.\n\nCOVID-19 Cases in the Philippines from March-June 2020\n\nNumber of Cases\n\nMarch\n\nApril\n\nMay\n\nJune\n\nThe bar graph above shows the increase of the number of COVID-19 cases from March-June 2020.",
         "kind": "discussion"
       },
       {
         "page": 14,
-        "text": "2.  Table is an organized arrangement of data usually in rows and columns.\nEnrollment of Kampupot National High School SY 2019-2020\n\nEnrollment Data\n\nGrade 8 Section\nMale  Female   Total\n\nGumamela         20     30      50\n\nRose              25     20      45\n\nSampaguita        20     28      48\n\nTotal              65     78     143\n\nThe table shows the enrollment data of the three Grade 8 sections in which section\nGumamela has the highest number of students (50), followed by section Sampaguita\n(48), and lastly, section Rose (45).\n\n3. Map is a diagram or visual representation that shows the relative position of the parts\nof something. It could be a drawing or a photograph.\n\nLuzon\n\nVisayas\n\nMindanao\n\nThe illustration shows the Philippine Map.",
+        "text": "2. Table is an organized arrangement of data usually in rows and columns.\n\nEnrollment of Kampupot National High School SY 2019-2020\n\nGrade 8 Section Enrollment Data    Male Female Total Gumamela 20 30 50 Rose 25 20 45 Sampaguita 20 28 48 Total 65 78 143\n\nThe table shows the enrollment data of the three Grade 8 sections in which section Gumamela has the highest number of students (50), followed by section Sampaguita (48), and lastly, section Rose (45).\n\n3. Map is a diagram or visual representation that shows the relative position of the parts of something. It could be a drawing or a photograph.\n\nLuzon\n\nVisayas\n\nMindanao\n\nThe illustration shows the Philippine Map.",
         "kind": "discussion"
       },
       {
         "page": 15,
-        "text": "4. Concept map displays the organization and relationship of concepts and ideas.\n\nLaguna\n\nTarlac\nNueva Ecija\n\nEight cities\nrepresenting the\nManila                            eight rays of the                        Cavite\nsun in the\nPhilippine flag\n\nBatangas                                     Pampanga\n\nBulacan\n\nThe concept map shows the eight cities representing the eight rays of the sun in the\nPhilippine flag.\n\n5. Chart is an illustration that presents information in a tabular or circular form.\n\nThese are the different kinds of charts.\n\na. Pie Chart is circular in form that presents how a whole is sliced into parts.\n\nCOVID-19 CASES IN THE PHILIPPINES FROM MARCH-JUNE\n\nMarch\nApril\n\nJune                     May\n\nSource: \"Home - COVID 19 PH Official Website\". COVID 19 PH Official Website, 2020.\nhttp://www.covid19.gov.ph/.\n\nThe pie chart above shows the increase of the number of COVID-19 cases from\nMarch-June 2020.",
+        "text": "4. Concept map displays the organization and relationship of concepts and ideas.\n\nLaguna\n\nTarlac\n\nNueva Ecija\n\nEight cities representing the\n\nCavite\n\nManila\n\neight rays of the sun in the Philippine flag\n\nBatangas\n\nPampanga\n\nBulacan\n\nThe concept map shows the eight cities representing the eight rays of the sun in the\n\nPhilippine flag.\n\n5. Chart is an illustration that presents information in a tabular or circular form.\n\nThese are the different kinds of charts.\n\na. Pie Chart is circular in form that presents how a whole is sliced into parts.\n\nCOVID-19 CASES IN THE PHILIPPINES FROM MARCH-JUNE\n\nMarch April\n\nJune\n\nMay\n\nSource: \"Home - COVID 19 PH Official Website\". COVID 19 PH Official Website, 2020.\n\nhttp://www.covid19.gov.ph/.\n\nThe pie chart above shows the increase of the number of COVID-19 cases from\n\nMarch-June 2020.",
         "kind": "discussion"
       },
       {
         "page": 16,
-        "text": "b. Flowchart is an illustration that shows a step-by-step process.\n\nGet the Learner\nPROCESS OF                             Enrollment and Survey                Fill out the LESF\nENROLLMENT                        Form (LESF) from the            completely and\nschool guard or from the               correctly.\nbarangay personnel.\n\nSubmit it to the school\nguard or barangay\npersonnel. You can also\ndrop it in the drop box\nprovided.\n\nThe flow chart above shows the process of enrollment.\n\n6.  Infographic is a combination of visual images and text presentation of specific\ninformation.\n\nSource: \"Get Ready For Disasters: Workbook For Intermediate Students\". 2016. Deped LR Portal.\nhttps://lrmds.deped.gov.ph/detail/11265.\n\nThe infographic material contains rainfall advisory and people’s appropriate response.",
-        "kind": "discussion"
-      },
-      {
-        "page": 17,
-        "text": "What’s More\n\nThis time, you will practice what you have learned on visual-verbal illustrations about graphs,\ntables, maps, concept maps, charts, and infographics. Read and do what is asked in each\nactivity below.\n\nActivity 1. Match Me\n\nDirections: Match the definition found in column A with the appropriate illustration found\nin column B. Write your answers on a separate sheet.\n\nA                              B\n\n1.   It  is  circular  in                             Bar Graph                               a.\nform  that  presents               6\nhow  a  whole   is               4\nsliced into parts.\n\nCategory 1    Category 2    Category 3    Category 4\n\nPie Chart\n2    It  displays  the         b.\norganization   and                                 4th Qtr\n3rd Qtr\nrelationship       of\nconcepts and ideas.\n\n2nd Qtr                               1st Qtr\n\n3.  It is an organized                                 c.                   Concept Map\narrangement of data\nusually in rows and\ncolumns.",
-        "kind": "discussion"
-      },
-      {
-        "page": 18,
-        "text": "4.   It  is a  kind  of         d.                                                   Table\ngraph that presents\nNutritional Status of Grade 8 Gumamela information   trends\nName  Underweight    Normal   Overweight using   data   dots\nconnected      by\nstraight           line\nsegments.\n\n5. It is a graph that         e.\nLine Graph characterizes\ncategorical data with               6\nrectangular bars of                                      4\nequal width.\n\nCategory 1      Category 2      Category 3      Category 4\n\nSeries 1         Series 2\n\nAssessment 1: Check Me\n\nDirections: Put a check mark (✓) in the box if the statement is true. Put an (X) mark if the\nstatement is false. Write your answers on a separate sheet.\n\n1. Chart is an illustration that presents information in a tabular or circular form.\n\n2. Map is in a tabular form that shows the relative position of the parts of\nsomething.\n3. Flow chart is an illustration that shows a step-by-step process.\n\n4. Table is a circular arrangement of data usually in rows and columns.\n\n5. Line Graph is a kind of graph that presents information trends using data dots\nconnected by straight line segments.\n6. Bar Graph is a kind of graph that characterizes categorical data with\nrectangular bars of equal width.\n7. Pie Chart is circular in form that presents how a whole is sliced into parts.\n\n8. Concept map displays the organization and relationship of concepts and\nideas.\n9. Graph is a diagram that shows the relationships of information presented.\n\n10. Infographic is a combination of visual images and text presentation of\nspecific information.",
-        "kind": "discussion"
-      },
-      {
-        "page": 19,
-        "text": "Activity 2: Be Ready\n\nRead and take note of the important details mentioned in the selection below.\n\nEARLY WARNING\n\nThere are some ways we can learn that a disaster is coming, like monitoring the\nweather, observing increasing water levels in rivers, or knowing that a tsunami often follows\nan earthquake.\n\nThere are different people who can keep you informed about what you should do\nand where you can go. This could be your family, neighbors, and the media. Sometimes,\npolice or local officials will also inform you if you need to leave your home. You may even\nhave a local RC 143 Disaster Management Team that will help you in these times, guiding\nyou on when to evacuate, what to bring, and where to go to stay safe in times of disaster.\nYour community may have a local warning system to announce if a hazard is approaching.\nThis warning system could be a megaphone, a bell, a rain gauge, a colored flag, or a\nbamboo clapper. It’s important to listen, watch, and talk to people around you.\n\nSource: \"Get Ready For Disasters: Workbook For Intermediate Students\". 2016. Deped LR Portal.\nhttps://lrmds.deped.gov.ph/detail/11265.\n\nPost Reading\n\n•  What are the ways to learn if a disaster is coming?\n•  What are the local warning devices used to announce the approaching disaster?\n•  Have you ever experienced a disaster before? If yes, what disaster was it?\n•  What precautionary measures did you do?\n\nAssessment 2A: Concept Mapping\n\nDirections: Based on the selection “Early Warning”, identify the people you can contact in\ncase of emergencies by filling in the concept map below. Write your answers on\na separate sheet.\n\nPeople you can contact in case\nof emergencies",
-        "kind": "discussion"
-      },
-      {
-        "page": 20,
-        "text": "Assessment 2B: Connect Me\n\nDirections: Below are pieces of information from the selection “Early Warning”. Arrange them\nbased on how they are presented in the text by filling in the organizer. Write your\nanswers on a separate sheet.\n\n•  The local warning system like a megaphone, a bell, a rain gauge, a colored flag,\nor a bamboo clapper is used to announce if a hazard is approaching.\n\n•  There are different people who can keep you informed like your family,\nneighbors, and the media.\n\n•  There are some ways we can learn that a disaster is coming like monitoring the\nweather, and etc.\n\n•    It’s important to listen, watch, and talk to people around you.\n\n•  You may even have a local RC 143 Disaster Management Team.\n\n•   Police or local officials will also inform you if you need to leave your home.\n\nEarly Warnings",
+        "text": "b. Flowchart is an illustration that shows a step-by-step process.\n\nGet the Learner\n\nPROCESS OF\n\nEnrollment and Survey\n\nFill out the LESF\n\nENROLLMENT\n\ncompletely and\n\nForm (LESF) from the\n\ncorrectly.\n\nschool guard or from the barangay personnel.\n\nSubmit it to the school guard or barangay personnel. You can also drop it in the drop box\n\nprovided.\n\nThe flow chart above shows the process of enrollment.\n\n6. Infographic is a combination of visual images and text presentation of specific information.\n\nSource: \"Get Ready For Disasters: Workbook For Intermediate Students\". 2016. Deped LR Portal.\n\nhttps://lrmds.deped.gov.ph/detail/11265.\n\nThe infographic material contains rainfall advisory and people’s appropriate response.",
         "kind": "discussion"
       }
     ],
@@ -319,7 +305,115 @@
         "kind": "answer key"
       }
     ],
-    "digitalContentUrl": "/assets/curriculum/content/g8-q2-m1.json"
+    "digitalContentUrl": "/assets/curriculum/content/g8-q2-m1.json",
+    "sourceSections": [
+      {
+        "id": "concepts",
+        "title": "Concepts & Rules",
+        "kind": "discussion",
+        "pages": [
+          13,
+          14,
+          15,
+          16
+        ]
+      },
+      {
+        "id": "need-to-know",
+        "title": "What I Need to Know",
+        "kind": "objectives",
+        "pages": [
+          5
+        ]
+      },
+      {
+        "id": "what-i-know",
+        "title": "What I Know",
+        "kind": "activity",
+        "pages": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      {
+        "id": "whats-in",
+        "title": "What’s In",
+        "kind": "activity",
+        "pages": [
+          11,
+          12
+        ]
+      },
+      {
+        "id": "whats-new",
+        "title": "What’s New",
+        "kind": "activity",
+        "pages": [
+          12
+        ]
+      },
+      {
+        "id": "whats-more",
+        "title": "What’s More",
+        "kind": "activity",
+        "pages": [
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ]
+      },
+      {
+        "id": "learned",
+        "title": "What I Have Learned",
+        "kind": "review",
+        "pages": [
+          23
+        ]
+      },
+      {
+        "id": "can-do",
+        "title": "What I Can Do",
+        "kind": "activity",
+        "pages": [
+          23,
+          24
+        ]
+      },
+      {
+        "id": "assessment",
+        "title": "Assessment",
+        "kind": "assessment",
+        "pages": [
+          25,
+          26,
+          27,
+          28,
+          29
+        ]
+      },
+      {
+        "id": "additional",
+        "title": "Additional Activities",
+        "kind": "activity",
+        "pages": [
+          30
+        ]
+      },
+      {
+        "id": "answer-key",
+        "title": "Answer Key",
+        "kind": "answers",
+        "pages": [
+          31
+        ]
+      }
+    ]
   },
   {
     "id": "g8-q2-m2",
@@ -341,6 +435,12 @@
         10,
         11,
         12,
+        13
+      ],
+      "verifiedRecallPages": [
+        10,
+        11,
+        12,
         13,
         14,
         15,
@@ -356,42 +456,22 @@
     "concepts": [
       {
         "page": 10,
-        "text": "In this lesson, you will learn how to express opinions using opinion-marking signals.\n\nOpinions refer to personal beliefs (Donnchaidh, 2020). They tell about how someone feels,\nthinks, or takes a stand about something. They are influenced by a person’s experiences,\nbackground knowledge, emotions, and preferences. Others may agree or disagree with\nopinions, but they may not prove or disprove them.\n\nThe group of words that introduces opinions are called opinion-marking signals. They are used\nas signal words that will help express and identify opinions. They are usually written in the\nbeginning part of a sentence.\n\nBelow are examples of opinion-marking signals.\n\nMaybe…             Perhaps…               Probably…\n\nI think…                            I believe…                              I feel…\n\nI hope…                            I should…                               I love…\n\nI hate…              The best…                              It seems…\n\nMy favorite…           For me…                      In my opinion…\n\nIn my experience…     From my point of view…        It is my belief…\n\nI am convinced that…      I am confident that…              I am certain that…\n\nFrom what I know…         I must admit that…                 I take the view that…\n\nI might be wrong, but…    If I am not mistaken…            I cannot deny that…\n\nThe following sentences express opinions using the opinion-marking signals.\na.   I feel happy about being a Filipino.\nb.   It seems that Filipinos have strong family ties.\nc. From what I know, Filipinos are popular for being hospitable.\nd.  Personally, I think that Filipinos give importance to education.\ne. Maybe Filipinos are resilient because they find ways to survive.\nf.   In my experience, Filipino families go to church and pray together.\ng.   I hope Filipino children will continue to respect their elders by saying\n“po” and “opo”.\nh.   It is a belief of the Filipinos that when you respect others, they will respect\nyou as well.\n\nIn the given sentences, how are the opinion-marking signals used?\n\nSentence A uses the opinion marking signal I feel. It tells about a personal feeling\ntowards being a Filipino.",
+        "text": "In this lesson, you will learn how to express opinions using opinion-marking signals.\n\nOpinions refer to personal beliefs (Donnchaidh, 2020). They tell about how someone feels, thinks, or takes a stand about something. They are influenced by a person’s experiences, background knowledge, emotions, and preferences. Others may agree or disagree with opinions, but they may not prove or disprove them.\n\nThe group of words that introduces opinions are called opinion-marking signals. They are used as signal words that will help express and identify opinions. They are usually written in the beginning part of a sentence.\n\nBelow are examples of opinion-marking signals.\n\nMaybe…   Perhaps…   Probably…  I think…  I believe…   I feel…  I hope…  I should…   I love…  I hate…  The best…  It seems…   My favorite…   For me…   In my opinion…  In my experience…  From my point of view…   It is my belief…  I am convinced that…   I am confident that…   I am certain that…  From what I know…   I must admit that…  I take the view that…  I might be wrong, but…  If I am not mistaken…  I cannot deny that… \n\nThe following sentences express opinions using the opinion-marking signals.\n\na. I feel happy about being a Filipino. b. It seems that Filipinos have strong family ties. c. From what I know, Filipinos are popular for being hospitable. d. Personally, I think that Filipinos give importance to education. e. Maybe Filipinos are resilient because they find ways to survive. f. In my experience, Filipino families go to church and pray together. g. I hope Filipino children will continue to respect their elders by saying “po” and “opo”. h. It is a belief of the Filipinos that when you respect others, they will respect you as well.\n\nIn the given sentences, how are the opinion-marking signals used?\n\nSentence A uses the opinion marking signal I feel. It tells about a personal feeling towards being a Filipino.",
         "kind": "discussion"
       },
       {
         "page": 11,
-        "text": "In sentence B, the opinion-marking signal used is It seems. This phrase gives an\nidea that the opinion is expressed in a less assertive or forceful way.\n\nThe opinion-marking signal used in sentence C is From what I know. This statement\nshows that the speaker is expressing an opinion based on background knowledge.\n\nI think is the opinion-marking signal used in sentence D. This phrase emphasizes\nthe standpoint of a person. The sentence is stated based on one’s personal nature.\n\nSentence E uses the opinion-marking signal Maybe to express a mere possibility.\n\nIn sentence F, the opinion-marking signal used is In my experience. The speaker\nexpresses an opinion that is based on a real and first-hand experience.\n\nThe opinion-marking signal used in sentence G is I hope. This phrase helps show\nthe expectation and desires of the speaker.\n\nIt is the belief (of the Filipinos) is the opinion-marking signal used in sentence H.\nThe sentence expresses a practice that Filipinos accept as true or real.\n\nTake note of the different opinion-marking signals used in the given sentences. These signal\nwords or phrases are used in different manners and for different purposes. However, there\nare certain opinion-marking signals that can be used in the same manner and for the same\npurpose like maybe and probably, based on my experience and in my experience, and I am\ncertain that and I am sure that.\n\nThis time, let us try to share thoughts about the given pictures below.\n\nNaranjo, Dominic S. The Farmer.\nPhoto by Dominic S. Naranjo            2020\nWhat can you say about the farmer?\n•  Maybe, the farmer worked all day in his field.\n\nWhat do you think will happen to his field after a few months?\n•    I think his field will be covered with rice plants after a few months.\n\nWhy is the farmer working alone?\n•  Perhaps, he does not have enough money to pay for other people to plow his field.",
+        "text": "In sentence B, the opinion-marking signal used is It seems. This phrase gives an idea that the opinion is expressed in a less assertive or forceful way.\n\nThe opinion-marking signal used in sentence C is From what I know. This statement shows that the speaker is expressing an opinion based on background knowledge.\n\nI think is the opinion-marking signal used in sentence D. This phrase emphasizes the standpoint of a person. The sentence is stated based on one’s personal nature.\n\nSentence E uses the opinion-marking signal Maybe to express a mere possibility.\n\nIn sentence F, the opinion-marking signal used is In my experience. The speaker expresses an opinion that is based on a real and first-hand experience.\n\nThe opinion-marking signal used in sentence G is I hope. This phrase helps show the expectation and desires of the speaker.\n\nIt is the belief (of the Filipinos) is the opinion-marking signal used in sentence H. The sentence expresses a practice that Filipinos accept as true or real.\n\nTake note of the different opinion-marking signals used in the given sentences. These signal words or phrases are used in different manners and for different purposes. However, there are certain opinion-marking signals that can be used in the same manner and for the same purpose like maybe and probably, based on my experience and in my experience, and I am certain that and I am sure that.\n\nThis time, let us try to share thoughts about the given pictures below.\n\nNaranjo, Dominic S. The Farmer.\n\nPhoto by Dominic S. Naranjo\n\nWhat can you say about the farmer?\n\n• Maybe, the farmer worked all day in his field.\n\nWhat do you think will happen to his field after a few months?\n\n• I think his field will be covered with rice plants after a few months.\n\nWhy is the farmer working alone?\n\n• Perhaps, he does not have enough money to pay for other people to plow his field.",
         "kind": "discussion"
       },
       {
         "page": 12,
-        "text": "What are the opinion-marking signals used in the sentences?\nThe opinion-marking signals used are Maybe, I think, and Perhaps.\n•  Maybe is used to express the opinion that, possibly, the farmer worked all day.\n•    I think is used to express the opinion in a more personal way.\n•   In addition, Perhaps is used to express the opinion in a doubtful way.\n\nLet us try another one.\n\nBeltran, Romar. The Scout. 2020\n\nIn your experience, what activities did you do in a scouting event?\n\n•   In my experience, we did tent-building, nature-hunting, and nighttime hiking.\n•    If I am not mistaken, we did log lifting and played team-building games.\n\nHow do you feel about camping?\n•    I love camping because it is full of fun.\n•    I feel that camping is boring since I am not an adventurous person.\n\nWhat opinion-marking signals are used in the sentences?\n\nThe opinion-marking signals used are In my experience, If I am not mistaken, I love, and I feel.\n\n•   In my  experience  is  used  to  express an  opinion  that  is  based on a\npersonal encounter.\n•  On the other hand, If I am not mistaken is used to express an uncertain opinion.\n•  Furthermore, I love and I feel are used to express opinions that are based on the\nemotions or feelings of a person.\n\nWhere are opinion-marking signals usually written?\nHow are opinions made?\n\nOpinion-marking signals are usually written at the beginning part of the sentence.",
+        "text": "What are the opinion-marking signals used in the sentences? The opinion-marking signals used are Maybe, I think, and Perhaps. •\n\nMaybe is used to express the opinion that, possibly, the farmer worked all day. • I think is used to express the opinion in a more personal way. • In addition, Perhaps is used to express the opinion in a doubtful way.\n\nLet us try another one.\n\nBeltran, Romar. The Scout. 2020\n\nIn your experience, what activities did you do in a scouting event?\n\n• In my experience, we did tent-building, nature-hunting, and nighttime hiking. • If I am not mistaken, we did log lifting and played team-building games.\n\nHow do you feel about camping?\n\n• I love camping because it is full of fun. • I feel that camping is boring since I am not an adventurous person.\n\nWhat opinion-marking signals are used in the sentences?\n\nThe opinion-marking signals used are In my experience, If I am not mistaken, I love, and I feel.\n\n• In my experience is used to express an opinion that is based on a personal encounter. • On the other hand, If I am not mistaken is used to express an uncertain opinion. • Furthermore, I love and I feel are used to express opinions that are based on the emotions or feelings of a person.\n\nWhere are opinion-marking signals usually written? How are opinions made?\n\nOpinion-marking signals are usually written at the beginning part of the sentence.",
         "kind": "discussion"
       },
       {
         "page": 13,
-        "text": "In general, opinions are made with the use of opinion-marking signals. They are based on\npersonal experiences, background knowledge, emotions, and preferences. It is important to\nlearn and use correctly the different opinion-marking signals because it will add information to\npersonal thoughts, perceptions, or judgments about something. It can also be used to help\nsomeone express agreement or assertion in the right way.",
-        "kind": "discussion"
-      },
-      {
-        "page": 14,
-        "text": "Assessment 1: Share about the Philippines\n\nDirections:  Complete the dialogues below using the most appropriate opinion-marking\nsignals. Choose your answers from the cloud of opinion-marking signals. Write\nyour answers on a separate sheet of paper.\n\nI hope…          I love...\nI believe…      I am sure that…\nI think…       In my experience…\n\n(2) _________________  it\nis.  Aside  from  beautiful\nbeaches,  it also has  this\namazing     underground\nriver.\n\n(1)______________\nPalawan is one of the\nbest  places  in  the\nworld.",
-        "kind": "discussion"
-      },
-      {
-        "page": 15,
-        "text": "(4) _______  this  is\nreally   a    perfect(3) ________ Boracay! I\nsummer destination.can do a  lot  of sea\nadventures in here.\n\nBohol   is  fascinating,  indeed!                            That sounds exciting\n(5) _________ we can come                                already!\nback here next year.\n\n•  Do you also like to visit those islands? Why?\n•  What other beautiful places do you know?",
-        "kind": "discussion"
-      },
-      {
-        "page": 16,
-        "text": "Activity 2: Visit Siargao\n\nDirections: Complete the dialogues between two friends about Siargao by using the given\nopinion-marking signals. Write your answers on a separate sheet of paper.\n\nHello, Jessa!                                     Hello, Randy!\nFrom what I know,\nDo  you  know  anything\n(1) ________________\nabout Siargao?  I plan to\nvisit the place next year.\n\nWell, I am sure that      Wow!  That’s so  nice  to\n(2) ________________        know. What are your other\n___________________        thoughts about Siargao?\n\n•  How do you feel about the idea of visiting Siargao?",
-        "kind": "discussion"
-      },
-      {
-        "page": 17,
-        "text": "Assessment 2: Post It\n\nDirections: Below are pictures that show beautiful places and things in the Philippines. Write\nan opinion below each picture using the given opinion-marking signals. Write\nyour answers on a separate sheet of paper.\n\nBeltran, Romar. The Green in Blue. 2020                                                      Beltran, Romar. The Sunflower. 2020\n\nMaybe, ____________                                                                   I cannot deny that _____\n\nBeltran, Romar. Under the Trees at Sunset. 2020\n\nI love ______________\n\nNaranjo, Fanny Andrea B. The Butterfly. 2020                                   Naranjo, Fanny Andrea B. The Water Treasure. 2020\n\nFrom what I know, _____                                                                 I take the view that _____\n\n•  Have you posted something like these in social media?\n•  What did you share about it?",
+        "text": "In general, opinions are made with the use of opinion-marking signals. They are based on personal experiences, background knowledge, emotions, and preferences. It is important to learn and use correctly the different opinion-marking signals because it will add information to personal thoughts, perceptions, or judgments about something. It can also be used to help someone express agreement or assertion in the right way.",
         "kind": "discussion"
       }
     ],
@@ -541,7 +621,106 @@
         "kind": "answer key"
       }
     ],
-    "digitalContentUrl": "/assets/curriculum/content/g8-q2-m2.json"
+    "digitalContentUrl": "/assets/curriculum/content/g8-q2-m2.json",
+    "sourceSections": [
+      {
+        "id": "concepts",
+        "title": "Concepts & Rules",
+        "kind": "discussion",
+        "pages": [
+          10,
+          11,
+          12,
+          13
+        ]
+      },
+      {
+        "id": "need-to-know",
+        "title": "What I Need to Know",
+        "kind": "objectives",
+        "pages": [
+          5
+        ]
+      },
+      {
+        "id": "what-i-know",
+        "title": "What I Know",
+        "kind": "activity",
+        "pages": [
+          5,
+          6,
+          7,
+          8
+        ]
+      },
+      {
+        "id": "whats-in",
+        "title": "What’s In",
+        "kind": "activity",
+        "pages": [
+          8
+        ]
+      },
+      {
+        "id": "whats-new",
+        "title": "What’s New",
+        "kind": "activity",
+        "pages": [
+          9
+        ]
+      },
+      {
+        "id": "whats-more",
+        "title": "What’s More",
+        "kind": "activity",
+        "pages": [
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ]
+      },
+      {
+        "id": "learned",
+        "title": "What I Have Learned",
+        "kind": "review",
+        "pages": [
+          20
+        ]
+      },
+      {
+        "id": "can-do",
+        "title": "What I Can Do",
+        "kind": "activity",
+        "pages": [
+          20,
+          21,
+          22,
+          23
+        ]
+      },
+      {
+        "id": "assessment",
+        "title": "Assessment",
+        "kind": "assessment",
+        "pages": [
+          24,
+          25,
+          26
+        ]
+      },
+      {
+        "id": "answer-key",
+        "title": "Answer Key",
+        "kind": "answers",
+        "pages": [
+          27
+        ]
+      }
+    ]
   },
   {
     "id": "g8-q2-m3",
@@ -563,6 +742,12 @@
         10,
         11,
         12,
+        13
+      ],
+      "verifiedRecallPages": [
+        10,
+        11,
+        12,
         13,
         14
       ]
@@ -575,27 +760,22 @@
     "concepts": [
       {
         "page": 10,
-        "text": "Look at the infographic and print text below.\n\nThe concept of diversity is more\nthan just acknowledging our\ndifferences. It is about\nunderstanding and recogizing that\neveryone is unique and different. By\nvaluing diversity, we can live free\nfrom prejudices and create a\nsuccess-oriented community.\n\nDiversity is more than just a color\n\n●  What is the topic of the infographic and the print text?\n●  How were the information presented in the infographic and the print text?\n\nThe topic diversity was presented using the infographic and the print text. The infographic\ntalks about how we should understand and communicate our differences while in the print text,\ndiversity was defined as understanding and recognizing our differences to create a prejudice-\nfree and success-oriented community.\n\nIn the infographic, diversity was discussed in short phrases while in print text, diversity was\ndiscussed in sentences.\n\nInfographics and print text are examples of multimodal text.\n\nMultimodal Texts are often live, digital text, or paper-based.   It requires the processing of\nmore than one method and the recognition of the interconnections between information.\n\n●  Live multimodal texts are shown through combinations of different modes such as\ngestural, spatial, audio, and oral language. The following are examples of  live\nmultimodal texts:\n\no  Dance – the expression of an idea or emotion through the use of body\nmovements in a rhythmic way, accompanied with music",
+        "text": "Look at the infographic and print text below.\n\nThe concept of diversity is more than just acknowledging our differences. It is about understanding and recogizing that everyone is unique and different. By valuing diversity, we can live free from prejudices and create a success-oriented community.\n\nDiversity is more than just a color\n\n● What is the topic of the infographic and the print text? ● How were the information presented in the infographic and the print text?\n\nThe topic diversity was presented using the infographic and the print text. The infographic talks about how we should understand and communicate our differences while in the print text, diversity was defined as understanding and recognizing our differences to create a prejudice- free and success-oriented community.\n\nIn the infographic, diversity was discussed in short phrases while in print text, diversity was discussed in sentences.\n\nInfographics and print text are examples of multimodal text.\n\nMultimodal Texts are often live, digital text, or paper-based. It requires the processing of more than one method and the recognition of the interconnections between information.\n\n● Live multimodal texts are shown through combinations of different modes such as gestural, spatial, audio, and oral language. The following are examples of live multimodal texts:\n\no Dance – the expression of an idea or emotion through the use of body movements in a rhythmic way, accompanied with music",
         "kind": "discussion"
       },
       {
         "page": 11,
-        "text": "o  Oral presentation - the delivery of an idea in front of a public audience\n\n●   Digital multimodal texts is presented through dynamic combinations of various modes\nacross written and spoken language, still and moving visual image, audio, gesture, and\nspatial communicative resources. The following are examples of digital multimodal\ntexts:\n\no  Films - is a form of storytelling using a series of moving images shown on the\nscreen, usually with sounds\n\no  Animation - is a method of storytelling using figures that are manipulated to\nappear as a series of moving images\n\no  Slideshows - is a presentation that is based on a series of projected images or\nphotographic slides",
+        "text": "o Oral presentation - the delivery of an idea in front of a public audience\n\n● Digital multimodal texts is presented through dynamic combinations of various modes across written and spoken language, still and moving visual image, audio, gesture, and spatial communicative resources. The following are examples of digital multimodal texts:\n\no Films - is a form of storytelling using a series of moving images shown on the screen, usually with sounds\n\no Animation - is a method of storytelling using figures that are manipulated to appear as a series of moving images\n\no Slideshows - is a presentation that is based on a series of projected images or photographic slides",
         "kind": "discussion"
       },
       {
         "page": 12,
-        "text": "o  e-posters - or electronic posters is a digital presentation of a study and can be\naccessed through the use of softwares\n\no   Digital stories - is a multimedia presentation of a narrative structure combining\na variety of digital elements\n\n●  Paper- based  multimodal  texts  are conveyed  to  the  reader  through  varying\ncombinations of written language and  still images. The following are examples of\npaper-based multimodal texts:\n\no  Infographics - is a collection of images, charts, and data to present a quick and\nclear information\n\no  Graphic texts - presents information and data with the use of words in diagrams\nand drawings",
+        "text": "o e-posters - or electronic posters is a digital presentation of a study and can be accessed through the use of softwares\n\no Digital stories - is a multimedia presentation of a narrative structure combining a variety of digital elements\n\n● Paper- based multimodal texts are conveyed to the reader through varying combinations of written language and still images. The following are examples of paper-based multimodal texts:\n\no Infographics - is a collection of images, charts, and data to present a quick and clear information\n\no Graphic texts - presents information and data with the use of words in diagrams and drawings",
         "kind": "discussion"
       },
       {
         "page": 13,
-        "text": "o  Posters - is a large printed picture or a notice that is used for advertising or\ndecoration\n\no  Comics - is a a medium of narration using images combined with text\n\nWow! This is good!\n\no  Picture - is an image or drawing that represent a certain topic\n\nLearning multimodal text is an efficient way for you to become familiar with the different\nmethods of learning, remembering, and studying information. This will enhance your ability to\nretain information at a deeper level and recalling it at a later date will become quicker and\nmore successful.",
-        "kind": "discussion"
-      },
-      {
-        "page": 14,
-        "text": "What’s More\n\nIn this section of the module, you will apply what you have learned in the discussion about\nthe  different  multimodal  texts. Answer  the  different  activities  given  to  solidify  your\nunderstanding and skills of the topic. Use a separate sheet of paper for your answers.\n\nActivity 1. African Traditional Clothing\nThe multimodal texts below show information about Native Africans.\nLook at the picture collage and the word cloud below.\n\n●  Analyze and describe the two multimodal presentations above.\n●  Comparing the two multimodal presentations, what similarities and differences\ndo you see?\n●  Are the information presented in the picture collage and word cloud the same?\n\nAssessment 1.\n\nFill in the graphic organizer below with the similarities and features of the information\npresented in the picture collage and word cloud. Use words or phrases in answering.\n\nSimilarities\n\nPicture Collage            Word Cloud\n\nFeatures                        Features",
+        "text": "o Posters - is a large printed picture or a notice that is used for advertising or decoration\n\no Comics - is a a medium of narration using images combined with text\n\nWow! This is good!\n\no Picture - is an image or drawing that represent a certain topic\n\nLearning multimodal text is an efficient way for you to become familiar with the different methods of learning, remembering, and studying information. This will enhance your ability to retain information at a deeper level and recalling it at a later date will become quicker and more successful.",
         "kind": "discussion"
       }
     ],
@@ -721,7 +901,101 @@
         "kind": "answer key"
       }
     ],
-    "digitalContentUrl": "/assets/curriculum/content/g8-q2-m3.json"
+    "digitalContentUrl": "/assets/curriculum/content/g8-q2-m3.json",
+    "sourceSections": [
+      {
+        "id": "concepts",
+        "title": "Concepts & Rules",
+        "kind": "discussion",
+        "pages": [
+          10,
+          11,
+          12,
+          13
+        ]
+      },
+      {
+        "id": "need-to-know",
+        "title": "What I Need to Know",
+        "kind": "objectives",
+        "pages": [
+          5
+        ]
+      },
+      {
+        "id": "what-i-know",
+        "title": "What I Know",
+        "kind": "activity",
+        "pages": [
+          5,
+          6,
+          7,
+          8
+        ]
+      },
+      {
+        "id": "whats-in",
+        "title": "What’s In",
+        "kind": "activity",
+        "pages": [
+          8
+        ]
+      },
+      {
+        "id": "whats-new",
+        "title": "What’s New",
+        "kind": "activity",
+        "pages": [
+          9
+        ]
+      },
+      {
+        "id": "whats-more",
+        "title": "What’s More",
+        "kind": "activity",
+        "pages": [
+          14,
+          15,
+          16,
+          17
+        ]
+      },
+      {
+        "id": "learned",
+        "title": "What I Have Learned",
+        "kind": "review",
+        "pages": [
+          18
+        ]
+      },
+      {
+        "id": "can-do",
+        "title": "What I Can Do",
+        "kind": "activity",
+        "pages": [
+          18
+        ]
+      },
+      {
+        "id": "assessment",
+        "title": "Assessment",
+        "kind": "assessment",
+        "pages": [
+          19,
+          20,
+          21,
+          22
+        ]
+      },
+      {
+        "id": "answer-key",
+        "title": "Answer Key",
+        "kind": "answers",
+        "pages": [
+          23
+        ]
+      }
+    ]
   },
   {
     "id": "g8-q2-m4",
@@ -742,6 +1016,11 @@
       "discussionPages": [
         11,
         12,
+        13
+      ],
+      "verifiedRecallPages": [
+        11,
+        12,
         13,
         14,
         15
@@ -755,27 +1034,17 @@
     "concepts": [
       {
         "page": 11,
-        "text": "In the last part of the module, you have observed that the concept map is used in the previous\nactivity to identify and present the similarities and differences of different multimodal texts. To\ndo that, comparing and contrasting is necessary to understand the similarities and differences.\n\nThe questions are:\n1. What is comparing and contrasting?\n2. Why do we need to compare and contrast?\n3. How do we make an opinion from the similarities and differences between things or\nideas as guided by evidence?\n\nThis part of the module will help you better understand why and how to compare and contrast\nthrough its discussion.\n\nWhat is comparing and contrasting?\n\n  Comparing is the process of looking at the similarities of two things or ideas with the\nuse of appropriate transition signals.\n  Contrasting is the process of looking at the differences between two things or ideas\nwith the use of appropriate transition signals.\n\nWhy do we need to compare and contrast things and ideas?\n\n  We need to compare and contrast to identify the similarities and differences between\nideas. Comparing and contrasting will help us better comprehend the issues raised or\npoints made in any reading passage. These skills are most especially useful when\nmaking a stand or giving opinions. By identifying the similarities and differences\nbetween ideas, we, as readers, are able to form our own informed and evidence-based\nopinions.\n  There are many ways to note and present similarities and differences of any expository\ntexts using non-linear texts such as graphic organizers. The most commonly used\ngraphic organizer is the Venn Diagram. From there, you can write paragraphs to\ncommunicate similarities and differences, and then your opinion.\n  The story of My Thai Cat presents information based on the history of a particular place\nwhere you can make your opinion based on your observation or reading. In short, it is\nevidence that reflects the Thai culture.\n\nRead and analyze the  following statements about the story  titled\" My Thai Cat\" by\nPratoomratha Zeng found on page 6 of this module. Notice the similarities and differences\nbetween the beliefs and traditions of Thailand and the Philippines.\n\nA.  In the Thai culture, to refuse the will or command of the father is a grave sin. In like\nmanner, Filipinos believe that disobeying and disrespecting parents are great sins.\nB. Thais pray when they ask for something; the same is true for Filipinos.\nC. Thais offer cats as instruments to ask for rain; however, Filipinos do not.\nD. Thai Buddhists worship Buddha while most Filipino Christians worship Jesus Christ.\n\nWhat do you think of the statements above?",
+        "text": "In the last part of the module, you have observed that the concept map is used in the previous activity to identify and present the similarities and differences of different multimodal texts. To do that, comparing and contrasting is necessary to understand the similarities and differences.\n\nThe questions are: 1. What is comparing and contrasting? 2. Why do we need to compare and contrast? 3. How do we make an opinion from the similarities and differences between things or\n\nideas as guided by evidence?\n\nThis part of the module will help you better understand why and how to compare and contrast through its discussion.\n\nWhat is comparing and contrasting?\n\n Comparing is the process of looking at the similarities of two things or ideas with the use of appropriate transition signals.  Contrasting is the process of looking at the differences between two things or ideas with the use of appropriate transition signals.\n\nWhy do we need to compare and contrast things and ideas?\n\n We need to compare and contrast to identify the similarities and differences between ideas. Comparing and contrasting will help us better comprehend the issues raised or points made in any reading passage. These skills are most especially useful when making a stand or giving opinions. By identifying the similarities and differences between ideas, we, as readers, are able to form our own informed and evidence-based opinions.  There are many ways to note and present similarities and differences of any expository texts using non-linear texts such as graphic organizers. The most commonly used graphic organizer is the Venn Diagram. From there, you can write paragraphs to communicate similarities and differences, and then your opinion.  The story of My Thai Cat presents information based on the history of a particular place where you can make your opinion based on your observation or reading. In short, it is evidence that reflects the Thai culture.\n\nRead and analyze the following statements about the story titled\" My Thai Cat\" by Pratoomratha Zeng found on page 6 of this module. Notice the similarities and differences between the beliefs and traditions of Thailand and the Philippines.\n\nA. In the Thai culture, to refuse the will or command of the father is a grave sin. In like manner, Filipinos believe that disobeying and disrespecting parents are great sins. B. Thais pray when they ask for something; the same is true for Filipinos. C. Thais offer cats as instruments to ask for rain; however, Filipinos do not. D. Thai Buddhists worship Buddha while most Filipino Christians worship Jesus Christ.\n\nWhat do you think of the statements above?",
         "kind": "discussion"
       },
       {
         "page": 12,
-        "text": "Which of the statements express comparison? How about contrast?\n\nNow, consider these:\n  Statements A and B show comparison.\n  Statement A compares two similar ideas: Thais' and Filipinos' culture of respect for\nelders.\n  Statement B compares two similar ideas: Thais pray; Filipinos also pray.\n\nNote the word signals used in comparing statements A and B.\n\nWe must remember that when comparing, aside from using in like manner and the same\nwith, we can also use other signal words or phrases such as: also, in the same manner,\nlikewise, and similarly.\n\nHow about in statements C and D?\n\n  Statements C and D show contrast.\n  Statement C shows two contrasting ideas: Thais offer cats to ask for something while\nFilipinos do not.\n  Statement D also shows two contrasting ideas: Thai Buddhists worship Buddha, while\nmost Filipino Christians worship Jesus Christ.\n\nWe must remember that when contrasting, aside from using however and while, we can also\nuse other signal words or phrases such as even though, but, in contrast, nevertheless,\notherwise, yet, though, instead, and on the other hand.\n\nHow do we make an opinion from the similarities and differences between things or\nideas as guided by evidence?\n\nThe first part of the module discussed the purpose of comparing and contrasting. We used the\nstory titled, \"My Thai Cat,\" which is a narrative text, to give a background of the Thai culture.\nWe can use the narrative text as evidence to make your opinion based on what you have read\nabout the Thais’ beliefs and traditions, and compare their culture to our culture as Filipinos.\nThe text that you are going to read next is a Compare-Contrast essay.",
+        "text": "  Which of the statements express comparison? How about contrast?    Now, consider these:    Statements A and B show comparison.   Statement A compares two similar ideas: Thais' and Filipinos' culture of respect for  elders.   Statement B compares two similar ideas: Thais pray; Filipinos also pray.   Note the word signals used in comparing statements A and B.   \n\nWe must remember that when comparing, aside from using in like manner and the same with, we can also use other signal words or phrases such as: also, in the same manner, likewise, and similarly.\n\nHow about in statements C and D?  Statements C and D show contrast.  Statement C shows two contrasting ideas: Thais offer cats to ask for something while\n\nFilipinos do not.  Statement D also shows two contrasting ideas: Thai Buddhists worship Buddha, while most Filipino Christians worship Jesus Christ.\n\nWe must remember that when contrasting, aside from using however and while, we can also use other signal words or phrases such as even though, but, in contrast, nevertheless, otherwise, yet, though, instead, and on the other hand.\n\nHow do we make an opinion from the similarities and differences between things or\n\nideas as guided by evidence?\n\nThe first part of the module discussed the purpose of comparing and contrasting. We used the story titled, \"My Thai Cat,\" which is a narrative text, to give a background of the Thai culture. We can use the narrative text as evidence to make your opinion based on what you have read about the Thais’ beliefs and traditions, and compare their culture to our culture as Filipinos. The text that you are going to read next is a Compare-Contrast essay.",
         "kind": "discussion"
       },
       {
         "page": 13,
-        "text": "Comparing and Contrasting London and Washington, DC\n\nBoth Washington, DC, and London are capital cities of English-speaking countries, and yet\nthey offer vastly different experiences to their residents and visitors. Comparing and\ncontrasting the two cities based on their history, their culture, and their residents show how\ndifferent and similar the two are.\n\nBoth cities are rich in world and national history, though they developed on very different\ntime lines. London, for example, has a history that dates back over two thousand years. It\nwas part of the Roman Empire and known by the similar name, Londinium. It was not only\none of the northernmost points of the Roman Empire but also the epicenter of the British\nEmpire where it held significant global influence from the early sixteenth century on through\nthe early twentieth century. Washington, DC, on the other hand, has only formally existed\nsince the late eighteenth century. Though Native Americans inhabited the land several\nthousand years earlier, and settlers inhabited the land as early as the sixteenth century,\nthe city did not become the capital of the United States until the 1790s. From that point\nonward to today, however, Washington, DC, has increasingly maintained significant global\ninfluence. Even though both cities have different histories, they have both held, and\ncontinue to hold, significant social influence in the economic and cultural global spheres.\n\n(The whole essay can be read at https://open.lib.umn.edu/writingforsuccess/chapter/15-\n8-compare-and-contrast-essay/)\n\nThe text above is an essay that compares and contrasts the capital cities of the United\nStates of America and the United Kingdom. You can extract information from compare-\ncontrast texts such as this to make opinions or to compare and contrast your own opinion with\nthat of the writer’s. One way to tell if a composition is a compare-contrast text is by looking at\nthe transition signals used, which contribute to the coherence of a paragraph.\n\nWhat is an opinion? An opinion refers to a view or judgment formed in the mind about a\nparticular topic or issue. Using opinion-marking signals, as discussed in Module 2, you can\nmake your own opinion about a specific topic, issue, or subject matter where one's position or\nstand is presented. We also compare and contrast our opinion with the texts that we read to\nself-check if our opinion or argument has a basis. The activities and assessments under the\nWhat’s More section of this module will help you develop the skill to make opinions based on\na text presented.\n\nTo sum it up, for you to effectively compare and contrast your own opinion based on a given\nfamiliar text, you have to do the following:\n    first, identify the similarities and differences between objects, persons, or ideas;\n  second, take note of the similarities and differences, as well as the transition signals\nfor comparing and contrasting; and\n   third, express your own opinion by showing comparison and contrast as supported by\nfacts and evidence through the text presented.",
-        "kind": "discussion"
-      },
-      {
-        "page": 14,
-        "text": "What's More\n\nNow that you have learned about comparing, contrasting, and writing your own opinions\nthrough the use of transition signals, it is time to find out whether or not you have understood\nthe lesson. The activities that follow will help you assess your understanding of the topic.\n\nActivity 1: Connecting to Asia\n\nBelow are the traditions and practices of Thais and Filipinos.\n\nDirections: Read closely and find out the similarities and differences.\n\nTraditions/Practices of Thais               Traditions/Practices of Filipinos\n\nThais offer cats when praying for rain.           Filipinos pray for rain without any\noffering.\n\nThais worship Buddha.                    Most Filipinos worship Jesus Christ.\n\nThais believe that obeying their parents         Filipinos believe that obeying their\nis important.                                 parents is an important value.\n\nThai Buddhists use candles when            Most Filipino Christians use candles, not\npraying.                                       only when praying, but also for other\ncelebrations.\n\nMost Filipinos celebrate New Year for  Thais celebrate New Year for more than\njust a day.  two days.",
-        "kind": "discussion"
-      },
-      {
-        "page": 15,
-        "text": "Assessment 1: Tie Up\n\nYou have accomplished Activity 1 on comparing and contrasting the traditional practices of\nThais and Filipinos.\n\nDirections: Compare and contrast the statements in Activity 2 by writing three sentences\nexpressing comparison, and another three sentences expressing contrast. Use\nappropriate transition signals found in the box. Copy the chart below, then write\nyour answers on a separate sheet of paper.\n\nin like manner     in a similar way        in the same manner      likewise   also\notherwise       on the other hand    however      instead    in contrast\n\nCOMPARING\n\n1. _______________________________________________\n\n2. _______________________________________________\n\n3. _______________________________________________\n\nCONTRASTING\nCOMPAARISON\n\n1. _______________________________________________\n\n2. _______________________________________________\n\n3. _______________________________________________",
+        "text": "Comparing and Contrasting London and Washington, DC\n\nBoth Washington, DC, and London are capital cities of English-speaking countries, and yet they offer vastly different experiences to their residents and visitors. Comparing and contrasting the two cities based on their history, their culture, and their residents show how different and similar the two are.\n\nBoth cities are rich in world and national history, though they developed on very different time lines. London, for example, has a history that dates back over two thousand years. It was part of the Roman Empire and known by the similar name, Londinium. It was not only one of the northernmost points of the Roman Empire but also the epicenter of the British Empire where it held significant global influence from the early sixteenth century on through the early twentieth century. Washington, DC, on the other hand, has only formally existed since the late eighteenth century. Though Native Americans inhabited the land several thousand years earlier, and settlers inhabited the land as early as the sixteenth century, the city did not become the capital of the United States until the 1790s. From that point onward to today, however, Washington, DC, has increasingly maintained significant global influence. Even though both cities have different histories, they have both held, and continue to hold, significant social influence in the economic and cultural global spheres.\n\n(The whole essay can be read at https://open.lib.umn.edu/writingforsuccess/chapter/15- 8-compare-and-contrast-essay/)\n\nThe text above is an essay that compares and contrasts the capital cities of the United States of America and the United Kingdom. You can extract information from compare- contrast texts such as this to make opinions or to compare and contrast your own opinion with that of the writer’s. One way to tell if a composition is a compare-contrast text is by looking at the transition signals used, which contribute to the coherence of a paragraph.\n\nWhat is an opinion? An opinion refers to a view or judgment formed in the mind about a particular topic or issue. Using opinion-marking signals, as discussed in Module 2, you can make your own opinion about a specific topic, issue, or subject matter where one's position or stand is presented. We also compare and contrast our opinion with the texts that we read to self-check if our opinion or argument has a basis. The activities and assessments under the What’s More section of this module will help you develop the skill to make opinions based on a text presented.\n\nTo sum it up, for you to effectively compare and contrast your own opinion based on a given familiar text, you have to do the following: \n\nfirst, identify the similarities and differences between objects, persons, or ideas;  second, take note of the similarities and differences, as well as the transition signals for comparing and contrasting; and  third, express your own opinion by showing comparison and contrast as supported by facts and evidence through the text presented.",
         "kind": "discussion"
       }
     ],
@@ -923,7 +1192,109 @@
         "kind": "answer key"
       }
     ],
-    "digitalContentUrl": "/assets/curriculum/content/g8-q2-m4.json"
+    "digitalContentUrl": "/assets/curriculum/content/g8-q2-m4.json",
+    "sourceSections": [
+      {
+        "id": "concepts",
+        "title": "Concepts & Rules",
+        "kind": "discussion",
+        "pages": [
+          11,
+          12,
+          13
+        ]
+      },
+      {
+        "id": "need-to-know",
+        "title": "What I Need to Know",
+        "kind": "objectives",
+        "pages": [
+          5
+        ]
+      },
+      {
+        "id": "what-i-know",
+        "title": "What I Know",
+        "kind": "activity",
+        "pages": [
+          6,
+          7,
+          8
+        ]
+      },
+      {
+        "id": "whats-in",
+        "title": "What’s In",
+        "kind": "activity",
+        "pages": [
+          8,
+          9
+        ]
+      },
+      {
+        "id": "whats-new",
+        "title": "What’s New",
+        "kind": "activity",
+        "pages": [
+          10
+        ]
+      },
+      {
+        "id": "whats-more",
+        "title": "What’s More",
+        "kind": "activity",
+        "pages": [
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ]
+      },
+      {
+        "id": "learned",
+        "title": "What I Have Learned",
+        "kind": "review",
+        "pages": [
+          20
+        ]
+      },
+      {
+        "id": "can-do",
+        "title": "What I Can Do",
+        "kind": "activity",
+        "pages": [
+          21
+        ]
+      },
+      {
+        "id": "assessment",
+        "title": "Assessment",
+        "kind": "assessment",
+        "pages": [
+          22,
+          23
+        ]
+      },
+      {
+        "id": "additional",
+        "title": "Additional Activities",
+        "kind": "activity",
+        "pages": [
+          24,
+          25
+        ]
+      },
+      {
+        "id": "answer-key",
+        "title": "Answer Key",
+        "kind": "answers",
+        "pages": [
+          26
+        ]
+      }
+    ]
   },
   {
     "id": "g8-q2-m5",
@@ -952,6 +1323,19 @@
         19,
         20,
         21,
+        22
+      ],
+      "verifiedRecallPages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
         22,
         23,
         24,
@@ -966,22 +1350,22 @@
     "concepts": [
       {
         "page": 12,
-        "text": "As you go further in this module, you will be guided on how to recognize the positive and\nnegative messages conveyed in a text.\n\nRead the sentences below, and identify whether the sentences carry a positive or negative\nmeaning. Put a check correspondingly. Do it on a separate sheet of paper.\n\nConveyed\nSentences\nPositively  Negatively\n\n1.  That is a very generous offer, Son.\n2. We have never had a good time with friends since the\npandemic.\n3. Your dog is now six feet under.\n\n4.  Aside from your face, what other jokes do you have?\n\n5.   I will try to be nicer if you try to be smarter.\n\nSelf-check:\n\n1. How did you come up with your answer?\n2.  Did any signal word(s) help you identify whether the message is positively or\nnegatively conveyed?\n\nIn this part of the module, you will be learning new concepts on recognizing positive and\nnegative messages conveyed in a text through different activities and exercises.\n\nGenerally, language is divided into two categories, literal and figurative.\n\nThe positivity or negativity of a message in a text can be recognized either through explicit\nmarkers or implicit meanings. When the words or phrases mean exactly what they are\nsupposed to mean, we call them LITERAL. On the other hand, when the message is implicitly\nexpressed and departs from the dictionary meaning, we call the language used FIGURATIVE.",
+        "text": "In this part of the module, you will be learning new concepts on recognizing positive and negative messages conveyed in a text through different activities and exercises.\n\nGenerally, language is divided into two categories, literal and figurative.\n\nThe positivity or negativity of a message in a text can be recognized either through explicit markers or implicit meanings. When the words or phrases mean exactly what they are supposed to mean, we call them LITERAL. On the other hand, when the message is implicitly expressed and departs from the dictionary meaning, we call the language used FIGURATIVE.",
         "kind": "discussion"
       },
       {
         "page": 13,
-        "text": "LITERAL\n(fully-expressed with clarity)\n\nPositive and negative messages in a text can be identified through explicit markers or signal\nwords/phrases/expressions.\n\nBelow are examples of commonly used signal words/phrases/expressions:\nPOSITIVE\nExamples of\nCommonly\nUsed Signal\nWhen to Use                  Sample Sentences\nWords/\nPhrases/\nExpressions\n▪  We are grateful to the frontliners who risk their lives in   grateful\nWhen         these very trying times.\nappreciate\nexpressing     ▪     I appreciate every little thing you do.\ngratitude      ▪  The children thanked their parents for loving and caring for  Thanks!\nthem despite many challenges.\n▪  Mary admires the LGBTQ for being so brave in showing\nadmire                       people who they really are. That takes so much courage.\nbrilliant                            ▪  What you did was brilliant!\namaze       When        ▪  The learners were amazed by the landscapes in the\nsplendid      expressing        school.\nexcellent      motivational/    ▪   Splendid things come unexpectedly.\nawesome     encouraging/    ▪  The principal thinks that the SDRRMC did an excellent job.\nconstructive    ▪     I had an awesome time chit chatting with you.\nWow!        remarks       ▪  Wow! You can draw well.\nGood!                             ▪     I noticed that you do all the household chores without\nGreat!                        being told by your parents. That’s good!\n▪   Great! You have answered all the items correctly.\nWell-done!   When giving\n▪  You made it to the finals. Well-done!Congratulatio   congratulatory\n▪  You made it to the finals! Congratulations!     ns!         remarks\n\naccept                                         ▪  Rudy accepted the challenge entrusted to him.\nsympathize\nWhen        ▪     I sympathize with the bereaved families who lost their\nin favor                expressing       loved ones due to COVID-19.Yes! I am with you on that\nagreement        matter.\nYes!\n▪   Correct! You finally understood my point.   Correct!\nwelcome                           ▪  Everyone is welcome to visit the newly opened animal\nfarm.\nWhen giving  Hi! / Hello!                          ▪   Hi! I am Mike. At your service!\ngreetings /\nBest wishes!                         ▪   Best wishes to both of you. May you be bountifully\nwell-wishes\nGood                         blessed.\nmorning!                         ▪  Good morning, grade 8 learners!\n▪  The lad was fortunate to be saved by the dog from the\nWhen  fortunate                        snatcher.\nexpressing\nglad                              ▪  Jessa is glad that she was able to defeat COVID-19 after a\nhappiness/\nplenty                     month of battle.\nblessedness\n▪  We have plenty of time to be with our loved ones at home.",
+        "text": "LITERAL\n\n(fully-expressed with clarity)\n\nPositive and negative messages in a text can be identified through explicit markers or signal words/phrases/expressions.\n\nBelow are examples of commonly used signal words/phrases/expressions:\n\nPOSITIVE   Examples of Commonly Used Signal Words/ Phrases/ Expressions When to Use Sample Sentences grateful appreciate Thanks! When expressing gratitude ▪ We are grateful to the frontliners who risk their lives in these very trying times. ▪ I appreciate every little thing you do. ▪ The children thanked their parents for loving and caring for them despite many challenges. admire brilliant amaze splendid excellent awesome Wow! Good! Great! When expressing motivational/ encouraging/ constructive remarks ▪ Mary admires the LGBTQ for being so brave in showing people who they really are. That takes so much courage. ▪ What you did was brilliant! ▪ The learners were amazed by the landscapes in the school. ▪ Splendid things come unexpectedly. ▪ The principal thinks that the SDRRMC did an excellent job. ▪ I had an awesome time chit chatting with you. ▪ Wow! You can draw well. ▪ I noticed that you do all the household chores without being told by your parents. That’s good! ▪ Great! You have answered all the items correctly. Well-done! Congratulatio ns! When giving congratulatory remarks ▪ You made it to the finals. Well-done! ▪ You made it to the finals! Congratulations! accept sympathize in favor Yes! Correct! When expressing agreement ▪ Rudy accepted the challenge entrusted to him. ▪ I sympathize with the bereaved families who lost their loved ones due to COVID-19.Yes! I am with you on that matter. ▪ Correct! You finally understood my point. welcome Hi! / Hello! Best wishes! Good morning! When giving greetings / well-wishes ▪ Everyone is welcome to visit the newly opened animal farm. ▪ Hi! I am Mike. At your service! ▪ Best wishes to both of you. May you be bountifully blessed. ▪ Good morning, grade 8 learners! fortunate glad plenty When expressing happiness/ blessedness ▪ The lad was fortunate to be saved by the dog from the snatcher. ▪ Jessa is glad that she was able to defeat COVID-19 after a month of battle. ▪ We have plenty of time to be with our loved ones at home.",
         "kind": "discussion"
       },
       {
         "page": 14,
-        "text": "NEGATIVE\n\nExamples of\nCommonly Used\nSignal Words/   When to Use              Sample Sentences\nPhrases/\nExpressions\nnone                                  ▪  None of you has ever realized my worth.\nnever                                  ▪  Never will I ever talk to you again.\nneither                                 ▪   Neither of them can go out of his house.\nno one                                 ▪  Henry yelled for hours to seek help, but no one\nno way                          heard him.\nnobody                                 ▪  There is no way she can open this phone\nnowhere                            without a password.\nWhen\n▪  Nobody wants to be this lonely.                      expressing       no                                    ▪  My necklace is nowhere to find.                     negation and        not                                   ▪  There is no high school learner allowed to get                        negative\ninside the school campus.\nexpression\nPrefixes like:                                 ▪     I do not want to see you.\nun- in unfriend                             ▪  She unfriended him on FB.\nim- in impossible                          ▪     It is impossible to make Brownie quiet without\nin- in incorrect                           food.\nmis- in mishandle                         ▪  Your answer is incorrect.\ndis- in dislike                               ▪  The owner mishandled the business.\n▪  My classmate dislikes vegetables.\n▪   Patrick’s mom was disgusted by his very bad\ndisgust                            grades.\nWhen      offend                                 ▪  He got offended by his subordinate’s actions.\nexpressing\ndismay                                 ▪  To his dismay, he cried.\ndisappointment\nshock                               ▪  The coach was very shocked by the decision of\nthe referee.\n\nonly       When limiting    ▪  There is only one left for me.",
+        "text": "NEGATIVE   Examples of Commonly Used Signal Words/ Phrases/ Expressions When to Use Sample Sentences none never neither no one no way nobody nowhere no not Prefixes like: un- in unfriend im- in impossible in- in incorrect mis- in mishandle dis- in dislike When expressing negation and negative expression ▪ None of you has ever realized my worth. ▪ Never will I ever talk to you again. ▪ Neither of them can go out of his house. ▪ Henry yelled for hours to seek help, but no one heard him. ▪ There is no way she can open this phone without a password. ▪ Nobody wants to be this lonely. ▪ My necklace is nowhere to find. ▪ There is no high school learner allowed to get inside the school campus. ▪ I do not want to see you. ▪ She unfriended him on FB. ▪ It is impossible to make Brownie quiet without food. ▪ Your answer is incorrect. ▪ The owner mishandled the business. ▪ My classmate dislikes vegetables. disgust offend dismay shock When expressing disappointment ▪ Patrick’s mom was disgusted by his very bad grades. ▪ He got offended by his subordinate’s actions. ▪ To his dismay, he cried. ▪ The coach was very shocked by the decision of the referee. only When limiting ▪ There is only one left for me.",
         "kind": "discussion"
       },
       {
         "page": 15,
-        "text": "Take Note:\n\nMathematical rules can also be applied in recognizing positive and negative messages\nconveyed in a text.\n\nConjunctive adverbs and word connectors for comparison and contrast can also help you\nrecognize whether a message is positive or negative. These word connectors introduce a\nsubordinate clause that makes a sentence a complex sentence.",
+        "text": "Take Note:\n\nMathematical rules can also be applied in recognizing positive and negative messages conveyed in a text.\n\nConjunctive adverbs and word connectors for comparison and contrast can also help you recognize whether a message is positive or negative. These word connectors introduce a subordinate clause that makes a sentence a complex sentence.",
         "kind": "discussion"
       },
       {
@@ -991,47 +1375,32 @@
       },
       {
         "page": 17,
-        "text": "FIGURATIVE\n(not directly expressed)\n\nPositive and negative messages in a text can also be expressed implicitly.\n\nThis is totally different from identifying positive and negative messages with signal words\nbecause figuratively conveyed messages need deeper understanding and processing in one’s\nmind. Messages can be tricky sometimes; that is why relying only on the literal meaning may\nlead to inaccurate interpretations. You should know the figurative meaning of these words or\nexpressions for you to correctly identify the intended message, whether positive or negative.\n\nOne would say something, but mean the other. It is, for this reason, very significant that we\nexamine the meaning of the message by the manner/intention/approach it is said.\n\nREMEMBER: It is not always what one says, but how one says it.\n\nThis time, you will be guided on how to recognize positive and negative messages conveyed\nin a text.\n\nHere are common examples:\n\nHyperbole is the use of exaggeration or overstatement to emphasize a point.\ne.g.\n\nPOSITIVE                        NEGATIVE\n\nLaura reads Florante’s letter a million                                                  I’m so sad that I’m drowning in tears.\ntimes everyday.                                       (It means that I am crying very hard due to sadness.)\n(It means that Laura always reads Florante’s letter\nbecause she’s very much in love with him.)\nHe is very hungry that he could eat a horse.\n(It means that he is very, very hungry.)\nI can wait forever just for you.\n(It means that you are the only one for me.)\n\nSimile is a comparison of two different things using as and like.\ne.g.\n\nPOSITIVE                        NEGATIVE\n\nMichelle’s love is like the sun that lights up\nNorman is like a walking dictionary.                my whole world.\n(It means that Norman has a wide vocabulary.)                      (It means that Michelle’s love brightens up my life.)\n\nHe moves as swiftly as the wind.            Education is as valuable as gold.\n(It means that he moves as quickly as the wind.)                       (It means that education is a treasure like gold.)\n\nMetaphor is a direct comparison of two different things. It does not use as and like.",
+        "text": "FIGURATIVE (not directly expressed)\n\nPositive and negative messages in a text can also be expressed implicitly.\n\nThis is totally different from identifying positive and negative messages with signal words because figuratively conveyed messages need deeper understanding and processing in one’s mind. Messages can be tricky sometimes; that is why relying only on the literal meaning may lead to inaccurate interpretations. You should know the figurative meaning of these words or expressions for you to correctly identify the intended message, whether positive or negative.\n\nOne would say something, but mean the other. It is, for this reason, very significant that we examine the meaning of the message by the manner/intention/approach it is said.\n\nREMEMBER: It is not always what one says, but how one says it.\n\nThis time, you will be guided on how to recognize positive and negative messages conveyed in a text.\n\nHere are common examples:\n\nHyperbole is the use of exaggeration or overstatement to emphasize a point.\n\ne.g.\n\nPOSITIVE NEGATIVE Laura reads Florante’s letter a million times everyday. (It means that Laura always reads Florante’s letter because she’s very much in love with him.) I can wait forever just for you. (It means that you are the only one for me.) I’m so sad that I’m drowning in tears. (It means that I am crying very hard due to sadness.) He is very hungry that he could eat a horse. (It means that he is very, very hungry.)\n\nSimile is a comparison of two different things using as and like.\n\ne.g.\n\nPOSITIVE NEGATIVE Norman is like a walking dictionary. (It means that Norman has a wide vocabulary.) He moves as swiftly as the wind. (It means that he moves as quickly as the wind.) Michelle’s love is like the sun that lights up my whole world. (It means that Michelle’s love brightens up my life.) Education is as valuable as gold. (It means that education is a treasure like gold.)\n\nMetaphor is a direct comparison of two different things. It does not use as and like.",
         "kind": "discussion"
       },
       {
         "page": 18,
-        "text": "e.g.\n\nPOSITIVE                    NEGATIVE\n\nMichelle’s love is the sun that lights\nNorman is a walking dictionary.                                        up my whole world.\n(It means that Norman has a wide vocabulary.)\n(It means that Michelle’s love brightens up my life.)\n\nYou are the apple of my eye.                                              Education is gold.\n(It means that you are most cherished above\n(It means that education is a treasure like gold.)\nanyone else.)\n\nEuphemism is a mild or indirect expression or word that substitutes a crude, blunt,\nvulgar, embarrassing, hurtful, or unpleasant word.\n\ne.g.\n\noffensive, embarrassing,\nEuphemism\nhurtful, unpleasant words\n\nlockdown              -  community quarantine\nprison              -   correctional facility\ndisabled person              -   person with disabilities\noverweight              -   big-boned\nbald              -   thin on top\ndie              -  pass away\nold              -   senior / mature\nrich              -   well-off\nsplit              -   divorce\npoor              -   economically challenged\ncheap              -   low-budget\njanitor              -   maintenance worker\ntorture              -  enhanced interrogation\nsecretary              -   personal assistant\nhomeless              -  on the streets\npre-owned              -  second hand\ntax increase              -   revenue enhancement\nmoney lending              -   financial assistance\nlavatory cleaner              -   sanitary man\nservant in the home              -   domestic\npoor/third-world country              -   developing country",
+        "text": "e.g.\n\nPOSITIVE NEGATIVE Norman is a walking dictionary. (It means that Norman has a wide vocabulary.) You are the apple of my eye. (It means that you are most cherished above anyone else.) Michelle’s love is the sun that lights up my whole world. (It means that Michelle’s love brightens up my life.) Education is gold. (It means that education is a treasure like gold.)\n\nEuphemism is a mild or indirect expression or word that substitutes a crude, blunt, vulgar, embarrassing, hurtful, or unpleasant word.\n\ne.g.\n\noffensive, embarrassing,\n\nEuphemism\n\nhurtful, unpleasant words\n\nlockdown\n\n- community quarantine\n\nprison\n\n- correctional facility\n\ndisabled person\n\n- person with disabilities\n\noverweight\n\n- big-boned\n\nbald\n\n- thin on top\n\ndie\n\n- pass away\n\nold\n\n- senior / mature\n\nrich\n\n- well-off\n\nsplit\n\n- divorce\n\npoor\n\n- economically challenged\n\ncheap\n\n- low-budget\n\njanitor\n\n- maintenance worker\n\ntorture\n\n- enhanced interrogation\n\nsecretary\n\n- personal assistant\n\nhomeless\n\n- on the streets\n\npre-owned\n\n- second hand\n\ntax increase\n\n- revenue enhancement\n\nmoney lending\n\n- financial assistance\n\nlavatory cleaner\n\n- sanitary man\n\nservant in the home\n\n- domestic\n\npoor/third-world country\n\n- developing country",
         "kind": "discussion"
       },
       {
         "page": 19,
-        "text": "Generally, euphemism makes a negative message less offensive. But that does not\nchange the fact that the message is still negative.\n\nBut sometimes, negative messages can be conveyed with positive remarks.\n\nNEGATIVE                      NEGATIVE\n(positively expressed, but the message is still      (a negative message that is not said\nnegative)                              offensively/unpleasantly)\n\n“I think you did well tonight,” said the chair of     The city will be placed under\nthe board of judges to the contestant.      Enhanced Community Quarantine\n(It is politely said but means that the performer did not do as               (ECQ).\nwell as the other contestants.)\n(It means that the city will be placed on\nlockdown.)\n\nIn a meeting:\nThe 18-year-old COVID-19 positive\nNicole: I suggest that Lency be our\npatient did not make it to the                presenter to the client.\nhospital.       Boss : Good idea! But I think we\nneed to find someone else.                                 (It means that the patient died.)\nSheila: How about Rouel, sir?\nBoss : Also a good idea. But how\nabout Charina? Any comments?          Jessie recycled my research.\n\n(It means that both suggestions are not accepted by the boss.)                (It means that Jessie plagiarized.)\n\nSarcasm is used to either annoy or mock someone. The negative message hides in\npositive expressions. Though it is used to inflict pain, it can, on the other hand, be used\nfor humor.\n\nSarcasm is generally negatively conveyed. Its effect can be positive only to the mood of\nthe reader when  it is meant to make people laugh, BUT the message implied is still\nnegative.\n\nSarcasm for humor is best when spoken. In written text,  it is hard to recognize.\nNevertheless, the fact remains that it is negatively conveyed.\ne.g.\n\nPOSITIVE               NEGATIVE\n(For jokes only,\nespecially with\nfriends, but not to      I love waiting forever for the doctor to arrive.\nthe point of                                                                      (It means that I am getting impatient of waiting.)\nhumiliation. It\nbecomes positive\nonly to those who               I don’t have all day watching your\nrecognize the                   performance.\nhumor behind it, but         (It means that your performance does not appeal to me.)\nthe message\nremains negative.)\n\nIf it is bad to use cell phones in class,\nin the same manner,\nit is bad to do classes using cell phones.\n\nHERE: It creates humor, but the fact remains that the message\nis negative.",
+        "text": "Generally, euphemism makes a negative message less offensive. But that does not change the fact that the message is still negative.\n\nBut sometimes, negative messages can be conveyed with positive remarks.\n\nNEGATIVE (positively expressed, but the message is still negative) NEGATIVE (a negative message that is not said offensively/unpleasantly) “I think you did well tonight,” said the chair of the board of judges to the contestant. (It is politely said but means that the performer did not do as well as the other contestants.) In a meeting: Nicole: I suggest that Lency be our presenter to the client. Boss : Good idea! But I think we need to find someone else. Sheila: How about Rouel, sir? Boss : Also a good idea. But how about Charina? Any comments? (It means that both suggestions are not accepted by the boss.) The city will be placed under Enhanced Community Quarantine (ECQ). (It means that the city will be placed on lockdown.) The 18-year-old COVID-19 positive patient did not make it to the hospital. (It means that the patient died.) Jessie recycled my research. (It means that Jessie plagiarized.)\n\nSarcasm is used to either annoy or mock someone. The negative message hides in positive expressions. Though it is used to inflict pain, it can, on the other hand, be used for humor.\n\nSarcasm is generally negatively conveyed. Its effect can be positive only to the mood of the reader when it is meant to make people laugh, BUT the message implied is still negative.\n\nSarcasm for humor is best when spoken. In written text, it is hard to recognize. Nevertheless, the fact remains that it is negatively conveyed. e.g.\n\nPOSITIVE NEGATIVE (For jokes only, especially with friends, but not to the point of humiliation. It becomes positive only to those who recognize the humor behind it, but the message remains negative.) I love waiting forever for the doctor to arrive. (It means that I am getting impatient of waiting.) I don’t have all day watching your performance. (It means that your performance does not appeal to me.) If it is bad to use cell phones in class, in the same manner, it is bad to do classes using cell phones. HERE: It creates humor, but the fact remains that the message is negative. ",
         "kind": "discussion"
       },
       {
         "page": 20,
-        "text": "Proverb is an old but familiar saying that usually gives advice. It contains counsel based\non the general truth. It is usually a sentence and contains morals. The message makes\none think of a good lesson to be applied in life.\n\nPOSITIVE\n\nThere’s a rainbow always after the rain.\n(It means that something better comes after every failure.)\n\nBeauty is in the eye of the beholder.\n(It means that everyone possesses unique beauty.)\n\nDon’t cry over spilled milk.\n(It means that we should not get upset over something that has already been done or\nsomething that has already happened.)\n\nA bird in hand is better than two in the bush.\n(It means that we should value the things that we already have.)\n\nIdiom is a phrase or expression whose meaning is different from the individual words.\nThe meaning depends on the location and user. It is usually a phrase. Unlike proverbs,\nan idiom does not contain morals.\n\nOne should be familiar with idiomatic expressions, usually through memorization or\nfrequent exposure, in order to understand them.\n\ne.g.\n\nIdiomatic Expressions                Meaning\n\nBreak a leg              -  good luck or do your best\nHit the sack              -   to go to bed\nMiss the boat              -   miss his/her chance\nBest of both worlds              -    all the advantage\nOnce in a blue moon              -  happens very rarely\nBeat around the bush              -   avoiding the main topic\nBring home the bacon              -  be successful\nMake a long story short              -  come to the point\nGive the benefit of a doubt              -   believe someone without proof",
+        "text": "Proverb is an old but familiar saying that usually gives advice. It contains counsel based on the general truth. It is usually a sentence and contains morals. The message makes one think of a good lesson to be applied in life.\n\nPOSITIVE  There’s a rainbow always after the rain.  (It means that something better comes after every failure.)  Beauty is in the eye of the beholder.  (It means that everyone possesses unique beauty.)  Don’t cry over spilled milk.  (It means that we should not get upset over something that has already been done or  something that has already happened.)  A bird in hand is better than two in the bush.  (It means that we should value the things that we already have.) \n\nIdiom is a phrase or expression whose meaning is different from the individual words. The meaning depends on the location and user. It is usually a phrase. Unlike proverbs, an idiom does not contain morals.\n\nOne should be familiar with idiomatic expressions, usually through memorization or frequent exposure, in order to understand them.\n\ne.g.\n\nIdiomatic Expressions\n\nMeaning\n\nBreak a leg\n\n- good luck or do your best\n\nHit the sack\n\n- to go to bed\n\nMiss the boat\n\n- miss his/her chance\n\nBest of both worlds\n\n- all the advantage\n\nOnce in a blue moon\n\n- happens very rarely\n\nBeat around the bush\n\n- avoiding the main topic\n\nBring home the bacon\n\n- be successful\n\nMake a long story short\n\n- come to the point\n\nGive the benefit of a doubt\n\n- believe someone without proof",
         "kind": "discussion"
       },
       {
         "page": 21,
-        "text": "POSITIVE                       NEGATIVE\n\nIt’s your turn to perform, Jean. Break a leg.    The learners did not show a spark\n(It means that the speaker wishes               of decency by refusing to greet the                        Jean good luck.)\nschool guests who visited their\nclassroom.\n(It means that the students showed no respect.)\n\nAfter completing the errands simultaneously,\nDid you hear Mary stabbed Lynne in\nLuis said, “I killed two birds with one stone.”\n(It means that Luis has accomplished two tasks at the same            the back last week?\ntime.)                                                    (It means that Mary betrayed Lynne last week.)\n\nDeciphering the polarity of a message at the sentence level may be done using any of the\nstrategies discussed above. But at the paragraph level, identifying whether the message\nconveyed is positive or negative needs analytical comprehension.\n\nTake a look at this excerpt from an essay entitled, “More and more women are now going out\nto work and some women are now the major salary earner in the family. What are the causes\nof this, and what effect is this having on families and society?”:\n\nIn the past, most women stayed at home to take care of domestic chores such as\ncooking or cleaning. Women's liberation and feminism have meant that this\nsituation has been transformed and in contemporary society women are playing\nan almost equal  role  to men  in terms  of work. This has had  significant\nconsequences, both in terms of the family, for example by improving quality of life\nand increasing children's sense of independence, and also for society itself with\ngreater gender equality.\n\nhttps://www.eapfoundation.com/writing/essays/cande/",
+        "text": "POSITIVE NEGATIVE It’s your turn to perform, Jean. Break a leg. (It means that the speaker wishes Jean good luck.) After completing the errands simultaneously, Luis said, “I killed two birds with one stone.” (It means that Luis has accomplished two tasks at the same time.) The learners did not show a spark of decency by refusing to greet the school guests who visited their classroom. (It means that the students showed no respect.) Did you hear Mary stabbed Lynne in the back last week? (It means that Mary betrayed Lynne last week.)\n\nDeciphering the polarity of a message at the sentence level may be done using any of the strategies discussed above. But at the paragraph level, identifying whether the message conveyed is positive or negative needs analytical comprehension.\n\nTake a look at this excerpt from an essay entitled, “More and more women are now going out to work and some women are now the major salary earner in the family. What are the causes of this, and what effect is this having on families and society?”:\n\nIn the past, most women stayed at home to take care of domestic chores such as cooking or cleaning. Women's liberation and feminism have meant that this situation has been transformed and in contemporary society women are playing an almost equal role to men in terms of work. This has had significant consequences, both in terms of the family, for example by improving quality of life and increasing children's sense of independence, and also for society itself with greater gender equality.\n\nhttps://www.eapfoundation.com/writing/essays/cande/",
         "kind": "discussion"
       },
       {
         "page": 22,
-        "text": "The message of the paragraph above cannot be determined by focusing on only one of its\nsentences. The message conveyed as a whole should be evaluated keenly.\n\nAnalysis                     Sentences in the Paragraph\n\nIn the first sentence, we can suppose that   “In the past, most women stayed at home to\nthe message is negative since women’s  take care of domestic chores such as cooking\nrole in the family in the past was limited  or cleaning,”\nonly to household chores; women can do\nmore than that!\n\nThis is why the second sentence states  ”Women's liberation and feminism have meant\nthat women’s liberation and feminism have  that this situation has been transformed and in\nled towards the betterment of women’s  contemporary society women are playing an\nlives.                                   almost equal role to men in terms of work.”\n\nThis  claim  is  supported  by  the  third   “This has had significant consequences, both\nsentence, which shows how the liberation   in  terms  of  the  family,  for  example  by\nof women has improved the quality of life  improving  quality  of   life  and  increasing\nby   increasing   children’s  sense   of  children's sense of independence, and also for\nresponsibility  in the family, and greater  society itself with greater gender equality.”\ngender equality in the society.\n\nThus, as a whole, the message of the paragraph is positive.",
-        "kind": "discussion"
-      },
-      {
-        "page": 23,
-        "text": "What’s More\n\nIn this part of the module, you will be given tasks and sets of questions that can help you\nenrich your skills in expressing positive and negative messages.\n\nActivity 1. Soar High\n\nDirections: I Believe I Can Fly by R. Kelly is a popular song about believing in oneself to\nachieve personal goals. Using the lyrics of this song, fill in the crossword puzzle.\nUse the clues given below. Write your answer on a separate sheet of paper.\n\nHORIZONTAL\n\n1. means “terrible”\n3. an extraordinary event\n6. in no degree\n8. act of being confident\n\nVERTICAL\n\n2. feeling of affection\n4. successfully reach\n5. denotes ability\n7. honest\n\nAssessment 1: Underline Me\n\nDirections: Read the sentences below. On the space provided, write positive if the message\nis good, and negative  if the message is bad. Then, underline the word that\nsignals the positivity or negativity in the message conveyed. Write your answer\non a separate paper.\n\n_________1. The meat in the fridge has a terrible smell.\n\n_________2. My parents always tell me that they love me very much.\n\n_________3. Our neighbor’s little girl is very honest in answering questions\n\n_________4. Nothing is left for the kid to eat.\n\n_________5. Merlinda, the leader of the team, believes in her subordinates.",
-        "kind": "discussion"
-      },
-      {
-        "page": 24,
-        "text": "Activity 2. My Connections\n\nDirections: Identify which sentences are positively or negatively conveyed. Connect the dots\nto the tips of the arrows, respectively. Write your answer on a separate\nsheet of paper.\n\nAssessment 2: Figure It Out\n\nDirections:   In Part 1, all sentences are positively conveyed. In Part 2, all sentences are\nnegatively conveyed. On the space provided, write which of the following is\nused: Hyperbole, Simile, Metaphor, Euphemism, Sarcasm, Proverb, or\nIdiom.\n\nPart 1. Positive Messages\n_________1. She is a superstar.\n_________2. Laughter is the best medicine.\n_________3. This task is just a piece of cake.\n_________4. Don’t judge a book by its cover.\n_________5. My favorite month is December because it rains money and food.",
-        "kind": "discussion"
-      },
-      {
-        "page": 25,
-        "text": "Part 2. Negative Messages\n\n_________1. After all the investigations I’ve done, I realized that you were just telling me\na fairy tale.\n_________2. Unless your name is Google, stop acting like you know everything.\n_________3. I’m afraid that she would spill the beans about the test results.\n_________4. She talks like a broken record.\n_________5. He hits like a girl in the ring.\n\nActivity 3. What Do You Mean\n\nDirections: Draw the corresponding emoticon for each message conveyed in the texts. Draw\nit at the tip of the callout cloud. For positive message, you may draw any of these:\nFor negative message, you may draw any of these:                  Write your answer on\na separate sheet of paper.\n\n1.  Into every life, a                                     2.   I only like you\nlittle rain must fall.                              as a friend.\n\n3. We’re letting you go.                                4. The situation of his\nMaybe this job is not for                             only daughter is\nyou.                                          driving him nuts.\n\n5. You are my                                          6. Your love is as\nsunshine after the                                  cold as ice.\nrain.\n\n7. Light travels quicker than                                                                8. I’d walk a thousand\nsound. This is why some                                                         miles just to be with\npeople look smart until you                                                        you.\nhear them speak.",
+        "text": "The message of the paragraph above cannot be determined by focusing on only one of its sentences. The message conveyed as a whole should be evaluated keenly.\n\nAnalysis Sentences in the Paragraph In the first sentence, we can suppose that the message is negative since women’s role in the family in the past was limited only to household chores; women can do more than that! “In the past, most women stayed at home to take care of domestic chores such as cooking or cleaning,” This is why the second sentence states that women’s liberation and feminism have led towards the betterment of women’s lives. ”Women's liberation and feminism have meant that this situation has been transformed and in contemporary society women are playing an almost equal role to men in terms of work.” This claim is supported by the third sentence, which shows how the liberation of women has improved the quality of life by increasing children’s sense of responsibility in the family, and greater gender equality in the society. “This has had significant consequences, both in terms of the family, for example by improving quality of life and increasing children's sense of independence, and also for society itself with greater gender equality.”\n\nThus, as a whole, the message of the paragraph is positive.",
         "kind": "discussion"
       }
     ],
@@ -1213,6 +1582,119 @@
       }
     ],
     "answerKey": [],
-    "digitalContentUrl": "/assets/curriculum/content/g8-q2-m5.json"
+    "digitalContentUrl": "/assets/curriculum/content/g8-q2-m5.json",
+    "sourceSections": [
+      {
+        "id": "concepts",
+        "title": "Concepts & Rules",
+        "kind": "discussion",
+        "pages": [
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ]
+      },
+      {
+        "id": "need-to-know",
+        "title": "What I Need to Know",
+        "kind": "objectives",
+        "pages": [
+          5
+        ]
+      },
+      {
+        "id": "what-i-know",
+        "title": "What I Know",
+        "kind": "activity",
+        "pages": [
+          5,
+          6,
+          7,
+          8
+        ]
+      },
+      {
+        "id": "whats-in",
+        "title": "What’s In",
+        "kind": "activity",
+        "pages": [
+          8,
+          9,
+          10
+        ]
+      },
+      {
+        "id": "whats-new",
+        "title": "What’s New",
+        "kind": "activity",
+        "pages": [
+          11,
+          12
+        ]
+      },
+      {
+        "id": "whats-more",
+        "title": "What’s More",
+        "kind": "activity",
+        "pages": [
+          23,
+          24,
+          25,
+          26
+        ]
+      },
+      {
+        "id": "learned",
+        "title": "What I Have Learned",
+        "kind": "review",
+        "pages": [
+          27
+        ]
+      },
+      {
+        "id": "can-do",
+        "title": "What I Can Do",
+        "kind": "activity",
+        "pages": [
+          28,
+          29
+        ]
+      },
+      {
+        "id": "assessment",
+        "title": "Assessment",
+        "kind": "assessment",
+        "pages": [
+          30,
+          31,
+          32
+        ]
+      },
+      {
+        "id": "additional",
+        "title": "Additional Activities",
+        "kind": "activity",
+        "pages": [
+          33,
+          34
+        ]
+      },
+      {
+        "id": "answer-key",
+        "title": "Answer Key",
+        "kind": "answers",
+        "pages": [
+          35
+        ]
+      }
+    ]
   }
 ]

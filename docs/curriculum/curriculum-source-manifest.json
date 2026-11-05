@@ -1,631 +1,5 @@
 [
   {
-    "id": "g7-q4-m1",
-    "grade": 7,
-    "quarter": 4,
-    "sourceNumber": "1",
-    "sourceLabel": "Module 1",
-    "moduleNumber": 23,
-    "quarterModuleIndex": 1,
-    "title": "The Features of Academic Writing",
-    "source": {
-      "fileId": "1uo8karug9R3IQ5mwreSUD9sck_qYJUwG",
-      "fileName": "English7_Module1_final.pdf",
-      "url": "https://drive.google.com/file/d/1uo8karug9R3IQ5mwreSUD9sck_qYJUwG/view",
-      "sha256": "92e4a4d82b1b340b08592126441e6498d6318ef441c36e7dc301aeacaec53f4d",
-      "pageCount": 23,
-      "notes": [],
-      "discussionPages": [
-        10,
-        11,
-        12,
-        13
-      ]
-    }
-  },
-  {
-    "id": "g7-q4-m2",
-    "grade": 7,
-    "quarter": 4,
-    "sourceNumber": "2",
-    "sourceLabel": "Module 2",
-    "moduleNumber": 24,
-    "quarterModuleIndex": 2,
-    "title": "Strategies for Effective Interpersonal Communication (Conversation, Dialogue, Interview)",
-    "source": {
-      "fileId": "1m7Up--fA7OBTyn7BN1bEP3mIYadSNEXg",
-      "fileName": "English7_Q4_Mod2_final.pdf",
-      "url": "https://drive.google.com/file/d/1m7Up--fA7OBTyn7BN1bEP3mIYadSNEXg/view",
-      "sha256": "877422b66ffe55f6273fc781257496f4e6c22ed9e20b3f48cbe22b37b077e440",
-      "pageCount": 24,
-      "notes": [],
-      "discussionPages": [
-        9,
-        10,
-        11,
-        12,
-        15,
-        16,
-        17
-      ]
-    }
-  },
-  {
-    "id": "g7-q4-m3",
-    "grade": 7,
-    "quarter": 4,
-    "sourceNumber": "3",
-    "sourceLabel": "Module 3",
-    "moduleNumber": 25,
-    "quarterModuleIndex": 3,
-    "title": "Determine the Worth of Ideas Mentioned in the Text Listened to",
-    "source": {
-      "fileId": "1g8hcn_ImIe-WKcSTeY56w44PGBubpmJG",
-      "fileName": "ENGLISH7_Module3_final.pdf",
-      "url": "https://drive.google.com/file/d/1g8hcn_ImIe-WKcSTeY56w44PGBubpmJG/view",
-      "sha256": "9560512d2680587c4257926f8ed47324dadefd12ae2f2dbcd77e24cf33a0365a",
-      "pageCount": 29,
-      "notes": [
-        "The PDF cover says Module 3; its running footer says Module 2. Mapping follows the cover and file name."
-      ],
-      "discussionPages": [
-        10,
-        11,
-        12
-      ]
-    }
-  },
-  {
-    "id": "g7-q4-m4",
-    "grade": 7,
-    "quarter": 4,
-    "sourceNumber": "4",
-    "sourceLabel": "Module 4",
-    "moduleNumber": 26,
-    "quarterModuleIndex": 4,
-    "title": "Determining the Truthfulness and Accuracy of the Materials Viewed",
-    "source": {
-      "fileId": "1lPBBs8XVkhfK2qkyjyiaMlmoBOewUUYq",
-      "fileName": "ENGLISH7_Module4_final.pdf",
-      "url": "https://drive.google.com/file/d/1lPBBs8XVkhfK2qkyjyiaMlmoBOewUUYq/view",
-      "sha256": "e69507a2530c13b571ee8e94ce38577e67b8236303517ebe5e25993512c35b29",
-      "pageCount": 31,
-      "notes": [],
-      "discussionPages": [
-        8,
-        9,
-        10,
-        11,
-        12,
-        13
-      ]
-    }
-  },
-  {
-    "id": "g7-q4-m5",
-    "grade": 7,
-    "quarter": 4,
-    "sourceNumber": "5",
-    "sourceLabel": "Module 5",
-    "moduleNumber": 27,
-    "quarterModuleIndex": 5,
-    "title": "Discover The Conflicts Presented in Literary Selections And The Need To Resolve This Conflicts In Non-Violent Ways",
-    "source": {
-      "fileId": "1EMDuPKmHSu6jvbn4_QuFePYhRcRRwmOL",
-      "fileName": "English7_Q4_Mod5_DiscoverTheConflictsPresentedInLiterarySelectionsAndTheNeedToResolveThisConflictsInNonViolentWays_V2.pdf",
-      "url": "https://drive.google.com/file/d/1EMDuPKmHSu6jvbn4_QuFePYhRcRRwmOL/view",
-      "sha256": "50beedf34e2512254fee2c0162dc6d8721da89b9b5fc90be23c447b141582902",
-      "pageCount": 22,
-      "notes": [],
-      "discussionPages": [
-        10,
-        11
-      ]
-    }
-  },
-  {
-    "id": "g7-q4-m6",
-    "grade": 7,
-    "quarter": 4,
-    "sourceNumber": "6",
-    "sourceLabel": "Module 6",
-    "moduleNumber": 28,
-    "quarterModuleIndex": 6,
-    "title": "Discover Literature as a Tool to Assert One’s Unique Identity and to Better Understand Other People",
-    "source": {
-      "fileId": "1ghEwNQhrfeTOG31vbl5Xg_4ZmTY21H7Y",
-      "fileName": "English7_Q4_Mod6_DiscoverLiteratureAsAToolToAssertOnesUniqueIdentityAndToBetterUnderstandOtherPeople_V2.pdf",
-      "url": "https://drive.google.com/file/d/1ghEwNQhrfeTOG31vbl5Xg_4ZmTY21H7Y/view",
-      "sha256": "946c6ec75e1d752859db0b02ed450db45aecd39a5b93623f3ce71b04efadd026",
-      "pageCount": 21,
-      "notes": [],
-      "discussionPages": [
-        8,
-        11,
-        12
-      ]
-    }
-  },
-  {
-    "id": "g7-q4-m7",
-    "grade": 7,
-    "quarter": 4,
-    "sourceNumber": "7",
-    "sourceLabel": "Module 7",
-    "moduleNumber": 29,
-    "quarterModuleIndex": 7,
-    "title": "Discover Through Philippine Literature The Need To Work Cooperatively And Responsibly In Today’s Global Village",
-    "source": {
-      "fileId": "1sL4LQ7ZGbflxAgcsMqzQVyKKwBkvnYQb",
-      "fileName": "Q4_English7_Module7 Final.pdf",
-      "url": "https://drive.google.com/file/d/1sL4LQ7ZGbflxAgcsMqzQVyKKwBkvnYQb/view",
-      "sha256": "b5fffc17981d5073acb214c7a4bc9a75d0e50bff388073b836eae5f283223665",
-      "pageCount": 18,
-      "notes": [],
-      "discussionPages": [
-        8
-      ]
-    }
-  },
-  {
-    "id": "g7-q4-m8",
-    "grade": 7,
-    "quarter": 4,
-    "sourceNumber": "8",
-    "sourceLabel": "Module 8",
-    "moduleNumber": 30,
-    "quarterModuleIndex": 8,
-    "title": "Informative Essay",
-    "source": {
-      "fileId": "1TksdIdgLSlBkJNPMWimwIpNIYP0P4QqO",
-      "fileName": "ENGLISH7_Module8_final.pdf",
-      "url": "https://drive.google.com/file/d/1TksdIdgLSlBkJNPMWimwIpNIYP0P4QqO/view",
-      "sha256": "421c92d53da7010f042ab14126e7d03f62ca29228414124133595457b29b4d5b",
-      "pageCount": 21,
-      "notes": [],
-      "discussionPages": [
-        10,
-        11,
-        12
-      ]
-    }
-  },
-  {
-    "id": "g8-q1-m1",
-    "grade": 8,
-    "quarter": 1,
-    "sourceNumber": "1",
-    "sourceLabel": "Module 1",
-    "moduleNumber": 1,
-    "quarterModuleIndex": 1,
-    "title": "Determining Meaning of Words and Expressions",
-    "source": {
-      "fileId": "1KpWtXEc3QWjR4v74FdzWMvkTN86gclDC",
-      "fileName": "english8_q1_mod1_DeterminingMeaningofWordsandExpressions_v2.pdf",
-      "url": "https://drive.google.com/file/d/1KpWtXEc3QWjR4v74FdzWMvkTN86gclDC/view",
-      "sha256": "90c835f4f0cfdb4315d29749fcb5945d75e432f317b9035cde913371d80c9f63",
-      "pageCount": 27,
-      "notes": [],
-      "discussionPages": [
-        10,
-        11,
-        12,
-        13,
-        14,
-        15
-      ]
-    }
-  },
-  {
-    "id": "g8-q1-m2",
-    "grade": 8,
-    "quarter": 1,
-    "sourceNumber": "2",
-    "sourceLabel": "Module 2",
-    "moduleNumber": 2,
-    "quarterModuleIndex": 2,
-    "title": "Using Conventions in Citing Sources",
-    "source": {
-      "fileId": "1klN3fLuIAtlkp29tlUQlBNJhf_AA_Yvx",
-      "fileName": "english8_q1_mod2_UsingConventionsinCitingSources_v2-4.pdf",
-      "url": "https://drive.google.com/file/d/1klN3fLuIAtlkp29tlUQlBNJhf_AA_Yvx/view",
-      "sha256": "050b788edf883e83238a5b32718d018708270813af76c581fbfd1a8326781566",
-      "pageCount": 30,
-      "notes": [],
-      "discussionPages": [
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20,
-        21
-      ]
-    }
-  },
-  {
-    "id": "g8-q1-m3",
-    "grade": 8,
-    "quarter": 1,
-    "sourceNumber": "3",
-    "sourceLabel": "Module 3",
-    "moduleNumber": 3,
-    "quarterModuleIndex": 3,
-    "title": "Use of Modal Verbs, Nouns, and Adverbs",
-    "source": {
-      "fileId": "1ShkzGV028s4rpy9BwCEIn_vtwAZ9mAEz",
-      "fileName": "english8_q1_mod3_UseofModalVerbsNounsandAdverbs_v2-2.pdf",
-      "url": "https://drive.google.com/file/d/1ShkzGV028s4rpy9BwCEIn_vtwAZ9mAEz/view",
-      "sha256": "4545b52ba7eec7d88b6fec2c96c7ca2d64b55d6eece2f6711550439dc5ab20cc",
-      "pageCount": 36,
-      "notes": [],
-      "discussionPages": [
-        9,
-        10,
-        11,
-        17,
-        18,
-        19,
-        26,
-        27
-      ]
-    }
-  },
-  {
-    "id": "g8-q1-m4",
-    "grade": 8,
-    "quarter": 1,
-    "sourceNumber": "4",
-    "sourceLabel": "Module 4",
-    "moduleNumber": 4,
-    "quarterModuleIndex": 4,
-    "title": "Using Transition Signals",
-    "source": {
-      "fileId": "1R5AKCVhlXkNR4fgukMe9OlU-tg6pmKKj",
-      "fileName": "english8_q1_mod4_TransitionSignals_v2.pdf",
-      "url": "https://drive.google.com/file/d/1R5AKCVhlXkNR4fgukMe9OlU-tg6pmKKj/view",
-      "sha256": "4a2f8a0f3bf536c0f85ce5f85abaea1c430d9f5a7c31d7f283e9c0151d623cdc",
-      "pageCount": 25,
-      "notes": [],
-      "discussionPages": [
-        9,
-        10,
-        11,
-        12,
-        13
-      ]
-    }
-  },
-  {
-    "id": "g8-q1-m5",
-    "grade": 8,
-    "quarter": 1,
-    "sourceNumber": "5",
-    "sourceLabel": "Module 5",
-    "moduleNumber": 5,
-    "quarterModuleIndex": 5,
-    "title": "Expressing Emotional Response And Reactions To An Issue To Persuade Using A Range Of Verbs, Adjectives, And Adverbs",
-    "source": {
-      "fileId": "1-OdUX2OwFdLOZnWn7IN7TWZqKnHxBNNi",
-      "fileName": "english8_q1_mod5_ExpressingEmotionalResponseandReactions_v3-2.pdf",
-      "url": "https://drive.google.com/file/d/1-OdUX2OwFdLOZnWn7IN7TWZqKnHxBNNi/view",
-      "sha256": "76bf7e1ae3a8b3a6142eff932f8c4f7c4b6964443658ad9e3fbd53ccbc390fd4",
-      "pageCount": 37,
-      "notes": [],
-      "discussionPages": [
-        10,
-        11,
-        12,
-        18,
-        19,
-        24,
-        25,
-        26,
-        27
-      ]
-    }
-  },
-  {
-    "id": "g9-q4-m1",
-    "grade": 9,
-    "quarter": 4,
-    "sourceNumber": "1",
-    "sourceLabel": "Module 1",
-    "moduleNumber": 18,
-    "quarterModuleIndex": 1,
-    "title": "Modals and Uses of Words to Express Evaluation",
-    "source": {
-      "fileId": "1o60IXjYfDk03sBQQqiq1UbUEKU18GqgT",
-      "fileName": "English 9_Module 1_final.pdf",
-      "url": "https://drive.google.com/file/d/1o60IXjYfDk03sBQQqiq1UbUEKU18GqgT/view",
-      "sha256": "f65181f424a510d50ee3f815a78b78c790536cd4fbbe209c4e59cd0c8bbb8834",
-      "pageCount": 26,
-      "notes": [],
-      "discussionPages": [
-        9,
-        10,
-        11,
-        16,
-        17
-      ]
-    }
-  },
-  {
-    "id": "g9-q4-m2",
-    "grade": 9,
-    "quarter": 4,
-    "sourceNumber": "2",
-    "sourceLabel": "Module 2",
-    "moduleNumber": 19,
-    "quarterModuleIndex": 2,
-    "title": "Relate Text Content to Particular Social Issues, Concerns, or Dispositions in Real-life",
-    "source": {
-      "fileId": "1bnjIhxKaEPEIw0xwaipj8vmognRald7B",
-      "fileName": "English 9_Module 2_final.pdf",
-      "url": "https://drive.google.com/file/d/1bnjIhxKaEPEIw0xwaipj8vmognRald7B/view",
-      "sha256": "9710505c9baf79eb4b2520715fb8ae64a29a3dc057a1c10f7804821430468ca4",
-      "pageCount": 21,
-      "notes": [],
-      "discussionPages": [
-        12,
-        13
-      ]
-    }
-  },
-  {
-    "id": "g9-q4-m3",
-    "grade": 9,
-    "quarter": 4,
-    "sourceNumber": "3",
-    "sourceLabel": "Module 3",
-    "moduleNumber": 20,
-    "quarterModuleIndex": 3,
-    "title": "Analyzing a Story in Terms of its Elements",
-    "source": {
-      "fileId": "1re2qBWhdZIo5d0wnCCSiqu7bO_wps5KJ",
-      "fileName": "English 9_Module 3_final.pdf",
-      "url": "https://drive.google.com/file/d/1re2qBWhdZIo5d0wnCCSiqu7bO_wps5KJ/view",
-      "sha256": "192f90ca5e502c5edcaa9d91d12af4eda0a7e5da9dfac26aef926aeed57168f9",
-      "pageCount": 22,
-      "notes": [],
-      "discussionPages": [
-        10,
-        11,
-        12
-      ]
-    }
-  },
-  {
-    "id": "g9-q4-m4",
-    "grade": 9,
-    "quarter": 4,
-    "sourceNumber": "4",
-    "sourceLabel": "Module 4",
-    "moduleNumber": 21,
-    "quarterModuleIndex": 4,
-    "title": "Judge The Relevance and Worth of Ideas, Soundness of Author’s Reasoning and the Effectiveness of the Presentation",
-    "source": {
-      "fileId": "1-Saa9Cm3HLSdvAxxI027la84hLrLUtdW",
-      "fileName": "English 9_Module 4_final.pdf",
-      "url": "https://drive.google.com/file/d/1-Saa9Cm3HLSdvAxxI027la84hLrLUtdW/view",
-      "sha256": "92abd4ed4a62c626b077a4894feb34436d49aaf79dbb7054c7949f777f4632cf",
-      "pageCount": 16,
-      "notes": [],
-      "discussionPages": [
-        9,
-        10
-      ]
-    }
-  },
-  {
-    "id": "g9-q4-m5",
-    "grade": 9,
-    "quarter": 4,
-    "sourceNumber": "5",
-    "sourceLabel": "Module 5",
-    "moduleNumber": 22,
-    "quarterModuleIndex": 5,
-    "title": "Listen to Create Value Judgment on Critical Issues that Demand Sound Analysis and Call for Prompt Actions",
-    "source": {
-      "fileId": "1oYhuKRyE4ZiUi6Pg9sL70z0k8ZTuM5hB",
-      "fileName": "English 9_Module 5_final.pdf",
-      "url": "https://drive.google.com/file/d/1oYhuKRyE4ZiUi6Pg9sL70z0k8ZTuM5hB/view",
-      "sha256": "e623939935ce69259b85ec33cbba7f6eb593a6fb3dd70806d2695275b3bd8173",
-      "pageCount": 20,
-      "notes": [],
-      "discussionPages": [
-        8,
-        13,
-        14,
-        17
-      ]
-    }
-  },
-  {
-    "id": "g9-q4-m6",
-    "grade": 9,
-    "quarter": 4,
-    "sourceNumber": "6",
-    "sourceLabel": "Module 6",
-    "moduleNumber": 23,
-    "quarterModuleIndex": 6,
-    "title": "Analytical Listening to Make Predictions and Projections",
-    "source": {
-      "fileId": "1Lph4GDZLlXKJ_THF5UzY0woUNU-ANIKv",
-      "fileName": "English 9_Module 6_final.pdf",
-      "url": "https://drive.google.com/file/d/1Lph4GDZLlXKJ_THF5UzY0woUNU-ANIKv/view",
-      "sha256": "b3263f2bb408767895c8499335187eeb78ee13fe1343d25762c34fb78c11c368",
-      "pageCount": 23,
-      "notes": [],
-      "discussionPages": [
-        9,
-        12
-      ]
-    }
-  },
-  {
-    "id": "g9-q4-m7",
-    "grade": 9,
-    "quarter": 4,
-    "sourceNumber": "7",
-    "sourceLabel": "Module 7",
-    "moduleNumber": 24,
-    "quarterModuleIndex": 7,
-    "title": "Differentiating Bias and Prejudice",
-    "source": {
-      "fileId": "1BmfaJ-44rrB3KU9AYeAIGpFm3JuCr0-b",
-      "fileName": "English 9_Module 7_final.pdf",
-      "url": "https://drive.google.com/file/d/1BmfaJ-44rrB3KU9AYeAIGpFm3JuCr0-b/view",
-      "sha256": "b30bbfa408f3804a2a9817117faace0204179be0b2d6a47d95266fb676a2c65b",
-      "pageCount": 12,
-      "notes": [],
-      "discussionPages": [
-        7
-      ]
-    }
-  },
-  {
-    "id": "g9-q4-m8",
-    "grade": 9,
-    "quarter": 4,
-    "sourceNumber": "8",
-    "sourceLabel": "Module 8",
-    "moduleNumber": 25,
-    "quarterModuleIndex": 8,
-    "title": "Making Generalization",
-    "source": {
-      "fileId": "1pwYwKgVnNHnJzPJnwLuhrDh92hsrlBnX",
-      "fileName": "English 9_Module 8_final.pdf",
-      "url": "https://drive.google.com/file/d/1pwYwKgVnNHnJzPJnwLuhrDh92hsrlBnX/view",
-      "sha256": "dbb08d4f5f0858d644d47f1e51517c24ee472883f345bd3551b5ead2767cb424",
-      "pageCount": 18,
-      "notes": [],
-      "discussionPages": [
-        9
-      ]
-    }
-  },
-  {
-    "id": "g9-q4-m9",
-    "grade": 9,
-    "quarter": 4,
-    "sourceNumber": "9",
-    "sourceLabel": "Module 9",
-    "moduleNumber": 26,
-    "quarterModuleIndex": 9,
-    "title": "Determine the Relevance and Truthfulness of the Ideas Presented in the Material Viewed",
-    "source": {
-      "fileId": "1mUzEO3guNWjfhpEoThAafOei3jQCMRnD",
-      "fileName": "English 9_Module 9_final.pdf",
-      "url": "https://drive.google.com/file/d/1mUzEO3guNWjfhpEoThAafOei3jQCMRnD/view",
-      "sha256": "bdc0f02a0a66c630b01b063c097ff01e20a81140ad07c60bf732ee4a7767ba8b",
-      "pageCount": 19,
-      "notes": [],
-      "discussionPages": [
-        9,
-        10
-      ]
-    }
-  },
-  {
-    "id": "g9-q4-m11",
-    "grade": 9,
-    "quarter": 4,
-    "sourceNumber": "11",
-    "sourceLabel": "Module 11",
-    "moduleNumber": 27,
-    "quarterModuleIndex": 11,
-    "title": "Explain How Elements Specific to Full Length Plays Build its Theme",
-    "source": {
-      "fileId": "1VFAQIeGa9-TEqGeaJDLwDWAX9NMmDNSw",
-      "fileName": "English 9_Module 11_final.pdf",
-      "url": "https://drive.google.com/file/d/1VFAQIeGa9-TEqGeaJDLwDWAX9NMmDNSw/view",
-      "sha256": "a6f35101f4d762fbe4a558f26fefaf46cccafcb7edac4f8d364443fd572adee9",
-      "pageCount": 24,
-      "notes": [],
-      "discussionPages": [
-        13,
-        14,
-        16
-      ]
-    }
-  },
-  {
-    "id": "g9-q4-m12",
-    "grade": 9,
-    "quarter": 4,
-    "sourceNumber": "12",
-    "sourceLabel": "Module 12",
-    "moduleNumber": 28,
-    "quarterModuleIndex": 12,
-    "title": "Use Varied Verbal and Non-Verbal Communication Strategies When Performing in a Full Length Play",
-    "source": {
-      "fileId": "1tsV852piu9_iirKpFrlcEPo6zsHigu4v",
-      "fileName": "English 9_Module 12_final.pdf",
-      "url": "https://drive.google.com/file/d/1tsV852piu9_iirKpFrlcEPo6zsHigu4v/view",
-      "sha256": "0b78935b8af032eb2f8ccb5750f8606a1787335bf0c476be030505b27aec1baf",
-      "pageCount": 21,
-      "notes": [],
-      "discussionPages": [
-        8,
-        9,
-        10
-      ]
-    }
-  },
-  {
-    "id": "g9-q4-m13",
-    "grade": 9,
-    "quarter": 4,
-    "sourceNumber": "13",
-    "sourceLabel": "Module 13",
-    "moduleNumber": 29,
-    "quarterModuleIndex": 13,
-    "title": "Produce the Sound of English Effectively When Delivering Lines in a Full-Length Play",
-    "source": {
-      "fileId": "1QmcUJL9dCX3YR0b3kJc0qEODxMCJSy39",
-      "fileName": "English 9_Module 13_final.pdf",
-      "url": "https://drive.google.com/file/d/1QmcUJL9dCX3YR0b3kJc0qEODxMCJSy39/view",
-      "sha256": "2ecd062b8abdca1f5eabbceea7115ed545573e273ea416717135af410d766d4b",
-      "pageCount": 22,
-      "notes": [],
-      "discussionPages": [
-        10,
-        11,
-        12
-      ]
-    }
-  },
-  {
-    "id": "g9-q4-m14",
-    "grade": 9,
-    "quarter": 4,
-    "sourceNumber": "14",
-    "sourceLabel": "Module 14",
-    "moduleNumber": 30,
-    "quarterModuleIndex": 14,
-    "title": "Use Appropriate Suprasegmental: Pitch, Stress, Juncture & Intonation",
-    "source": {
-      "fileId": "1lx6duXiQmM-_G5PeOJWvWIam3maJOS3O",
-      "fileName": "English 9_Module 14_final.pdf",
-      "url": "https://drive.google.com/file/d/1lx6duXiQmM-_G5PeOJWvWIam3maJOS3O/view",
-      "sha256": "b1330475e4ba2d612b040870829bd551552607f22f09aaf671d350116fc0d434",
-      "pageCount": 23,
-      "notes": [],
-      "discussionPages": [
-        8,
-        9,
-        10,
-        11,
-        12
-      ]
-    }
-  },
-  {
     "id": "g10-q1-m1",
     "grade": 10,
     "quarter": 1,
@@ -642,6 +16,10 @@
       "pageCount": 23,
       "notes": [],
       "discussionPages": [
+        10,
+        11
+      ],
+      "verifiedRecallPages": [
         8,
         9,
         10,
@@ -671,6 +49,13 @@
         10,
         11,
         12
+      ],
+      "verifiedRecallPages": [
+        8,
+        9,
+        10,
+        11,
+        12
       ]
     }
   },
@@ -682,7 +67,7 @@
     "sourceLabel": "Module 3",
     "moduleNumber": 3,
     "quarterModuleIndex": 3,
-    "title": "The Writer’s Purpose",
+    "title": "The Writer\u2019s Purpose",
     "source": {
       "fileId": "1f0xPojc78IioO86WRl_R-uN1QcWAzM5I",
       "fileName": "ADM_Eng10_Q1_M3_identifyingthewriterspurpose_final.pdf",
@@ -691,6 +76,13 @@
       "pageCount": 23,
       "notes": [],
       "discussionPages": [
+        5,
+        9,
+        10,
+        11,
+        12
+      ],
+      "verifiedRecallPages": [
         9,
         10,
         11,
@@ -715,6 +107,12 @@
       "pageCount": 25,
       "notes": [],
       "discussionPages": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "verifiedRecallPages": [
         12,
         13,
         14,
@@ -745,6 +143,16 @@
         13,
         14,
         15,
+        16,
+        17
+      ],
+      "verifiedRecallPages": [
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
         16
       ]
     }
@@ -766,6 +174,12 @@
       "pageCount": 27,
       "notes": [],
       "discussionPages": [
+        7,
+        8,
+        11,
+        12
+      ],
+      "verifiedRecallPages": [
         11
       ]
     }
@@ -790,6 +204,11 @@
         10,
         11,
         12
+      ],
+      "verifiedRecallPages": [
+        10,
+        11,
+        12
       ]
     }
   },
@@ -810,7 +229,764 @@
       "pageCount": 21,
       "notes": [],
       "discussionPages": [
+        10,
+        11
+      ],
+      "verifiedRecallPages": [
         10
+      ]
+    }
+  },
+  {
+    "id": "g10-q2-m1",
+    "grade": 10,
+    "quarter": 2,
+    "sourceNumber": "1",
+    "sourceLabel": "Module 1",
+    "moduleNumber": 9,
+    "quarterModuleIndex": 1,
+    "title": "Language of Research, Campaigns and Advocacies",
+    "source": {
+      "fileId": "1Q1shTKIZ4xwqZftk82i61rNel8aENdU0",
+      "fileName": "English10_Q2_Mod1_LanguageofResearchCampaignsandAdvocacies.pdf",
+      "url": "https://drive.google.com/file/d/1Q1shTKIZ4xwqZftk82i61rNel8aENdU0/view",
+      "sha256": "9a455882bfe0c5b5c65553cc6f3b2722c61aacacd9eb304cdeed77c807a73d7d",
+      "pageCount": 19,
+      "notes": [],
+      "discussionPages": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "verifiedRecallPages": [
+        6,
+        7,
+        8,
+        9
+      ]
+    }
+  },
+  {
+    "id": "g10-q2-m2",
+    "grade": 10,
+    "quarter": 2,
+    "sourceNumber": "2",
+    "sourceLabel": "Module 2",
+    "moduleNumber": 10,
+    "quarterModuleIndex": 2,
+    "title": "Connecting Ideas using Conjunctions in an Argumentative Text",
+    "source": {
+      "fileId": "1Fa3s_IRPf8rIsoIA1tj4VgX2XB1jE-U9",
+      "fileName": "English10_Q2_Mod2_ConnectingIdeasUsingConjunctionsinanArgumentativeText.docx .pdf",
+      "url": "https://drive.google.com/file/d/1Fa3s_IRPf8rIsoIA1tj4VgX2XB1jE-U9/view",
+      "sha256": "a1a8597eceae08ec551830f7b8def1e8db68aed609954c181a6815248f0b5df9",
+      "pageCount": 17,
+      "notes": [],
+      "discussionPages": [
+        9
+      ],
+      "verifiedRecallPages": [
+        9
+      ]
+    }
+  },
+  {
+    "id": "g10-q2-m3",
+    "grade": 10,
+    "quarter": 2,
+    "sourceNumber": "3",
+    "sourceLabel": "Module 3",
+    "moduleNumber": 11,
+    "quarterModuleIndex": 3,
+    "title": "Formulating a Statement of Opinion or Assertion",
+    "source": {
+      "fileId": "13TLCt46RngpHY3HvZYwWn_PwYp6uS98-",
+      "fileName": "English10_Q2_Mod3_FormulatingAStatementofOpinionorAssertion.pdf",
+      "url": "https://drive.google.com/file/d/13TLCt46RngpHY3HvZYwWn_PwYp6uS98-/view",
+      "sha256": "5fd4c6b29b69f52089e728062f84fa20239814c83282e36d7973d63343de617d",
+      "pageCount": 20,
+      "notes": [],
+      "discussionPages": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "verifiedRecallPages": [
+        9,
+        10,
+        11,
+        12
+      ]
+    }
+  },
+  {
+    "id": "g10-q2-m4",
+    "grade": 10,
+    "quarter": 2,
+    "sourceNumber": "4",
+    "sourceLabel": "Module 4",
+    "moduleNumber": 12,
+    "quarterModuleIndex": 4,
+    "title": "Argumentative Texts: Modal Verbs and Modal Adverbs",
+    "source": {
+      "fileId": "1X8QA_AwPWA8mUzjrUuU0k6cnSlPj5duw",
+      "fileName": "English10_Q2_Mod4_ArgumentativeTextsModalVerbsandModalAdverbs.pdf",
+      "url": "https://drive.google.com/file/d/1X8QA_AwPWA8mUzjrUuU0k6cnSlPj5duw/view",
+      "sha256": "02460e403250fabdab6fdc4d7e25258aff427c604b08908a96007c30eef8b43e",
+      "pageCount": 30,
+      "notes": [],
+      "discussionPages": [
+        9,
+        15,
+        21,
+        22
+      ],
+      "verifiedRecallPages": [
+        9,
+        15,
+        21,
+        22
+      ]
+    }
+  },
+  {
+    "id": "g10-q2-m5",
+    "grade": 10,
+    "quarter": 2,
+    "sourceNumber": "5",
+    "sourceLabel": "Module 5",
+    "moduleNumber": 13,
+    "quarterModuleIndex": 5,
+    "title": "Formulating Claims of Fact, Policy and Value",
+    "source": {
+      "fileId": "1RiUzPjHIyUjn-H1UFej_TbfzAWUI8wAD",
+      "fileName": "English10_Q2_Mod5_FormulatingClaimsofFactPolicyandValue.pdf",
+      "url": "https://drive.google.com/file/d/1RiUzPjHIyUjn-H1UFej_TbfzAWUI8wAD/view",
+      "sha256": "8b20af3a7d31c130700299b3cc9409e97701c8e6339c80879df495b96c75ca80",
+      "pageCount": 20,
+      "notes": [],
+      "discussionPages": [
+        9,
+        10,
+        11
+      ],
+      "verifiedRecallPages": [
+        7,
+        8,
+        9,
+        10,
+        11
+      ]
+    }
+  },
+  {
+    "id": "g10-q2-m6",
+    "grade": 10,
+    "quarter": 2,
+    "sourceNumber": "6",
+    "sourceLabel": "Module 6",
+    "moduleNumber": 14,
+    "quarterModuleIndex": 6,
+    "title": "Rhetorical Questions",
+    "source": {
+      "fileId": "1MSpaDma0gUZEsvR11iYt3EQWKHkxnGSq",
+      "fileName": "English10_Q2_Mod6__RhetoricalQuestions.pdf",
+      "url": "https://drive.google.com/file/d/1MSpaDma0gUZEsvR11iYt3EQWKHkxnGSq/view",
+      "sha256": "85c490408a3e2797c4cc6f7d2e315cacf47267f928a85619d3a6730272850c78",
+      "pageCount": 21,
+      "notes": [],
+      "discussionPages": [
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "verifiedRecallPages": [
+        8,
+        10,
+        11,
+        12,
+        13
+      ]
+    }
+  },
+  {
+    "id": "g10-q2-m7",
+    "grade": 10,
+    "quarter": 2,
+    "sourceNumber": "7",
+    "sourceLabel": "Module 7",
+    "moduleNumber": 15,
+    "quarterModuleIndex": 7,
+    "title": "Multimodal and Its Elements",
+    "source": {
+      "fileId": "18fBTmhbCONeF7e-DV8QziWE_8s5sO8Me",
+      "fileName": "English10_Q2_Mod7_MultimodalAndItsElements.pdf",
+      "url": "https://drive.google.com/file/d/18fBTmhbCONeF7e-DV8QziWE_8s5sO8Me/view",
+      "sha256": "11f6e04c74ffd31750c4fe6295da01e122872260235b29f24407c513377dbce0",
+      "pageCount": 21,
+      "notes": [],
+      "discussionPages": [
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "verifiedRecallPages": [
+        6,
+        7,
+        9,
+        10
+      ]
+    }
+  },
+  {
+    "id": "g10-q2-m8",
+    "grade": 10,
+    "quarter": 2,
+    "sourceNumber": "8",
+    "sourceLabel": "Module 8",
+    "moduleNumber": 16,
+    "quarterModuleIndex": 8,
+    "title": "Deliver a Prepared or Impromptu on an Issue Employing the Techniques in Public Speaking",
+    "source": {
+      "fileId": "1SQj83gbfpAmdFYHmRUqmqzbdkCbrmLVK",
+      "fileName": "English10_Q2_Mod8_DeliveranImpromtuEmployingTechniquesofPublicSpeaking.pdf",
+      "url": "https://drive.google.com/file/d/1SQj83gbfpAmdFYHmRUqmqzbdkCbrmLVK/view",
+      "sha256": "03485e84834b14adc3948e2ac1e918dac03fc17f6b18f6d5e8a1e6ae912d8d9e",
+      "pageCount": 22,
+      "notes": [],
+      "discussionPages": [
+        9,
+        10,
+        11
+      ],
+      "verifiedRecallPages": [
+        9,
+        10,
+        11
+      ]
+    }
+  },
+  {
+    "id": "g10-q3-m1",
+    "grade": 10,
+    "quarter": 3,
+    "sourceNumber": "1",
+    "sourceLabel": "Module 1",
+    "moduleNumber": 17,
+    "quarterModuleIndex": 1,
+    "title": "Argumentative Essay",
+    "source": {
+      "fileId": "1ZpevlxZOYmtED2IHFcdluF7EI1diYZIU",
+      "fileName": "ENG10 Q3 MODULE1.pdf",
+      "url": "https://drive.google.com/file/d/1ZpevlxZOYmtED2IHFcdluF7EI1diYZIU/view",
+      "sha256": "bd925c1d26b351003283530358998bba522f0e057d6288c3a3f8aae78a141f8b",
+      "pageCount": 29,
+      "notes": [],
+      "discussionPages": [
+        11,
+        12
+      ],
+      "verifiedRecallPages": [
+        8,
+        9,
+        11,
+        16,
+        17,
+        18
+      ]
+    }
+  },
+  {
+    "id": "g10-q3-m2a",
+    "grade": 10,
+    "quarter": 3,
+    "sourceNumber": "2a",
+    "sourceLabel": "Module 2A",
+    "moduleNumber": 18,
+    "quarterModuleIndex": 2,
+    "title": "Using Informative Writing Techniques",
+    "source": {
+      "fileId": "1JVjW6Q9iuj3XY8pXac82dLE12cv4Pt_m",
+      "fileName": "ENG10 Q3 MODULE2A.pdf",
+      "url": "https://drive.google.com/file/d/1JVjW6Q9iuj3XY8pXac82dLE12cv4Pt_m/view",
+      "sha256": "dd302bba100087b93e5d4cdfffc9f31f978a15b01f65cf31e25fecee35eafe19",
+      "pageCount": 19,
+      "notes": [],
+      "discussionPages": [
+        9,
+        10,
+        11
+      ],
+      "verifiedRecallPages": [
+        9,
+        10,
+        11
+      ]
+    }
+  },
+  {
+    "id": "g10-q3-m2b",
+    "grade": 10,
+    "quarter": 3,
+    "sourceNumber": "2b",
+    "sourceLabel": "Module 2B",
+    "moduleNumber": 19,
+    "quarterModuleIndex": 2,
+    "title": "Using a Variety of Persuasive and Argumentative Writing Techniques",
+    "source": {
+      "fileId": "1AQBtvMVTTu3kEOcQS9TlXjWmneZTF01a",
+      "fileName": "ENG10 Q3 MODULE2B.pdf",
+      "url": "https://drive.google.com/file/d/1AQBtvMVTTu3kEOcQS9TlXjWmneZTF01a/view",
+      "sha256": "32f4f6b674ce8a376904db973b918e5154f8f2698970e0a8a2824cc6a01745ab",
+      "pageCount": 23,
+      "notes": [],
+      "discussionPages": [
+        9,
+        10,
+        13,
+        14
+      ],
+      "verifiedRecallPages": [
+        9,
+        10,
+        13,
+        14
+      ]
+    }
+  },
+  {
+    "id": "g10-q3-m3",
+    "grade": 10,
+    "quarter": 3,
+    "sourceNumber": "3",
+    "sourceLabel": "Module 3",
+    "moduleNumber": 20,
+    "quarterModuleIndex": 3,
+    "title": "Compose an Independent Critique",
+    "source": {
+      "fileId": "1InbSlkQUhHDfTwn7eRDxP2DpYJZOOf4w",
+      "fileName": "ENG10 Q3 MODULE3.pdf",
+      "url": "https://drive.google.com/file/d/1InbSlkQUhHDfTwn7eRDxP2DpYJZOOf4w/view",
+      "sha256": "0ea3e99b28a6b207e37ecfe0756d11d3af6020f7c0afbc20e8760b6c0efbe93f",
+      "pageCount": 23,
+      "notes": [],
+      "discussionPages": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "verifiedRecallPages": [
+        9,
+        10,
+        11
+      ]
+    }
+  },
+  {
+    "id": "g10-q3-m4",
+    "grade": 10,
+    "quarter": 3,
+    "sourceNumber": "4",
+    "sourceLabel": "Module 4",
+    "moduleNumber": 21,
+    "quarterModuleIndex": 4,
+    "title": "Critiquing a Literary Selection: Formalist Approach",
+    "source": {
+      "fileId": "19Zd6oLW62Zr4aE4lvJGwyg90l2XbbIY9",
+      "fileName": "ENG10 Q3 MODULE4.pdf",
+      "url": "https://drive.google.com/file/d/19Zd6oLW62Zr4aE4lvJGwyg90l2XbbIY9/view",
+      "sha256": "cac662784326538105877cdab6473a6b2e45669a7c7de1c1f88272097caf7d6e",
+      "pageCount": 23,
+      "notes": [],
+      "discussionPages": [
+        10,
+        11
+      ],
+      "verifiedRecallPages": [
+        10
+      ]
+    }
+  },
+  {
+    "id": "g10-q4-m1",
+    "grade": 10,
+    "quarter": 4,
+    "sourceNumber": "1",
+    "sourceLabel": "Module 1",
+    "moduleNumber": 22,
+    "quarterModuleIndex": 1,
+    "title": "Distinguish Technical Terms Used in Research",
+    "source": {
+      "fileId": "183c4T1iPG97HRpZhwuUjEym9AjL-nhA1",
+      "fileName": "English10_Mod1_Distinguish Technical Terms Used in Research_final.pdf",
+      "url": "https://drive.google.com/file/d/183c4T1iPG97HRpZhwuUjEym9AjL-nhA1/view",
+      "sha256": "9e4912bc2b13652a9274155030b10ad4a1c302dc9e32a64ceb7bc2aebf1c400f",
+      "pageCount": 36,
+      "notes": [],
+      "discussionPages": [
+        11,
+        12,
+        13
+      ],
+      "verifiedRecallPages": [
+        9,
+        11,
+        12,
+        13,
+        17,
+        18,
+        23,
+        24
+      ]
+    }
+  },
+  {
+    "id": "g10-q4-m2",
+    "grade": 10,
+    "quarter": 4,
+    "sourceNumber": "2",
+    "sourceLabel": "Module 2",
+    "moduleNumber": 23,
+    "quarterModuleIndex": 2,
+    "title": "Technical and Operational Definitions",
+    "source": {
+      "fileId": "1jrr9i9bVgVkIdJeXIwOh4u3ZNO7zgw5B",
+      "fileName": "English 10_Module 2_final.pdf",
+      "url": "https://drive.google.com/file/d/1jrr9i9bVgVkIdJeXIwOh4u3ZNO7zgw5B/view",
+      "sha256": "0d26127b057a087ac6701e587c6b23a4df670a7cf97f4510a3bb4d8fb80681f8",
+      "pageCount": 20,
+      "notes": [],
+      "discussionPages": [
+        10
+      ],
+      "verifiedRecallPages": [
+        7,
+        8,
+        10
+      ]
+    }
+  },
+  {
+    "id": "g10-q4-m3",
+    "grade": 10,
+    "quarter": 4,
+    "sourceNumber": "3",
+    "sourceLabel": "Module 3",
+    "moduleNumber": 24,
+    "quarterModuleIndex": 3,
+    "title": "Giving Expanded Definitions of Words",
+    "source": {
+      "fileId": "1DbBZP0Fwfc1YMDEyWdh8EJLlDgHV4oay",
+      "fileName": "English10_Mod3_Giving Expanded Definitions of Words_final.pdf",
+      "url": "https://drive.google.com/file/d/1DbBZP0Fwfc1YMDEyWdh8EJLlDgHV4oay/view",
+      "sha256": "889382cceff0bb8d6419da94eba25852fd55e31da364d3d17f772c6384a57395",
+      "pageCount": 18,
+      "notes": [],
+      "discussionPages": [
+        8,
+        9
+      ],
+      "verifiedRecallPages": [
+        8
+      ]
+    }
+  },
+  {
+    "id": "g7-q1-m1",
+    "grade": 7,
+    "quarter": 1,
+    "sourceNumber": "1",
+    "sourceLabel": "Module 1",
+    "moduleNumber": 1,
+    "quarterModuleIndex": 1,
+    "title": "Analogy",
+    "source": {
+      "fileId": "1apMCFoA_8wiK--6IjOwDJ_3q8WIv8UX8",
+      "fileName": "CO_Q1_ENGLISH 7_MODULE 1 (1).pdf",
+      "url": "https://drive.google.com/file/d/1apMCFoA_8wiK--6IjOwDJ_3q8WIv8UX8/view",
+      "sha256": "90d3d6aa4700af691bdb952c37c12918515f57c39ecc4e351c68839e8d13499d",
+      "pageCount": 20,
+      "notes": [],
+      "discussionPages": [
+        7,
+        10,
+        11,
+        12
+      ],
+      "verifiedRecallPages": [
+        7,
+        10,
+        11,
+        12
+      ]
+    }
+  },
+  {
+    "id": "g7-q1-m2",
+    "grade": 7,
+    "quarter": 1,
+    "sourceNumber": "2",
+    "sourceLabel": "Module 2",
+    "moduleNumber": 2,
+    "quarterModuleIndex": 2,
+    "title": "Genres of Viewing",
+    "source": {
+      "fileId": "1UEs1q6ozrI70Mz9-na4jffSq-B8gdTmu",
+      "fileName": "CO_Q1_ENGLISH 7_MODULE 2.pdf",
+      "url": "https://drive.google.com/file/d/1UEs1q6ozrI70Mz9-na4jffSq-B8gdTmu/view",
+      "sha256": "d2601e49d79cc421d3f6376d299ec9f71a21437747cb17ca0f26abe195f4f2a2",
+      "pageCount": 30,
+      "notes": [],
+      "discussionPages": [
+        14,
+        15,
+        16,
+        17
+      ],
+      "verifiedRecallPages": [
+        14,
+        15,
+        16,
+        17
+      ]
+    }
+  },
+  {
+    "id": "g7-q1-m3",
+    "grade": 7,
+    "quarter": 1,
+    "sourceNumber": "3",
+    "sourceLabel": "Module 3",
+    "moduleNumber": 3,
+    "quarterModuleIndex": 3,
+    "title": "Active and Passive Voices",
+    "source": {
+      "fileId": "1TJzXG88JXkB3ENdig_20ZffPBXMzcqDY",
+      "fileName": "CO_Q1_ENGLISH 7_MODULE 3.pdf",
+      "url": "https://drive.google.com/file/d/1TJzXG88JXkB3ENdig_20ZffPBXMzcqDY/view",
+      "sha256": "288ab033ae500caf19bc6742c34e5f95e1d97696161153df51366b83d997aee0",
+      "pageCount": 21,
+      "notes": [],
+      "discussionPages": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "verifiedRecallPages": [
+        8,
+        9,
+        10,
+        11
+      ]
+    }
+  },
+  {
+    "id": "g7-q1-m4",
+    "grade": 7,
+    "quarter": 1,
+    "sourceNumber": "4",
+    "sourceLabel": "Module 4",
+    "moduleNumber": 4,
+    "quarterModuleIndex": 4,
+    "title": "Simple Past Tense",
+    "source": {
+      "fileId": "1EQ41sCKSPqb8RVeUxAt1sCCb5MD_idrg",
+      "fileName": "CO_Q1_ENGLISH 7_MODULE 4.pdf",
+      "url": "https://drive.google.com/file/d/1EQ41sCKSPqb8RVeUxAt1sCCb5MD_idrg/view",
+      "sha256": "ad559d2da3c00444ec22d66f59e46edffdc7e2217d41f822e51ce628dd02eac3",
+      "pageCount": 21,
+      "notes": [],
+      "discussionPages": [
+        11,
+        12,
+        13
+      ],
+      "verifiedRecallPages": [
+        11,
+        12,
+        13
+      ]
+    }
+  },
+  {
+    "id": "g7-q1-m5",
+    "grade": 7,
+    "quarter": 1,
+    "sourceNumber": "5",
+    "sourceLabel": "Module 5",
+    "moduleNumber": 5,
+    "quarterModuleIndex": 5,
+    "title": "Past Perfect Tense",
+    "source": {
+      "fileId": "1t9TSBjO0G_0irvBwa2XmlKC0dgVDvcnO",
+      "fileName": "CO_Q1_ENGLISH 7_MODULE 5.pdf",
+      "url": "https://drive.google.com/file/d/1t9TSBjO0G_0irvBwa2XmlKC0dgVDvcnO/view",
+      "sha256": "382f13af9946f03dbbffe7ff8f7fa19b8c1f1700f9ca7256ad5ac6c6a472a6cf",
+      "pageCount": 22,
+      "notes": [],
+      "discussionPages": [
+        9,
+        10
+      ],
+      "verifiedRecallPages": [
+        9,
+        10
+      ]
+    }
+  },
+  {
+    "id": "g7-q1-m6",
+    "grade": 7,
+    "quarter": 1,
+    "sourceNumber": "6",
+    "sourceLabel": "Module 6",
+    "moduleNumber": 6,
+    "quarterModuleIndex": 6,
+    "title": "Direct and Reported Speeches",
+    "source": {
+      "fileId": "1gAUO7gcFkglj_RrLAqH4tCBs6N3cgyRR",
+      "fileName": "CO_Q1_ENGLISH 7_MODULE 6.pdf",
+      "url": "https://drive.google.com/file/d/1gAUO7gcFkglj_RrLAqH4tCBs6N3cgyRR/view",
+      "sha256": "543597484daf4d5f9527222d80b068a57e8418b3272e6c82aef0ea4b3c62e3e5",
+      "pageCount": 21,
+      "notes": [],
+      "discussionPages": [
+        10,
+        11,
+        12,
+        13
+      ],
+      "verifiedRecallPages": [
+        10,
+        11,
+        12
+      ]
+    }
+  },
+  {
+    "id": "g7-q1-m7",
+    "grade": 7,
+    "quarter": 1,
+    "sourceNumber": "7",
+    "sourceLabel": "Module 7",
+    "moduleNumber": 7,
+    "quarterModuleIndex": 7,
+    "title": "Using Phrases Appropriately and Meaningfully",
+    "source": {
+      "fileId": "1sWryZ6RZpLH27YGmIIgu4g9vdLHKDM-S",
+      "fileName": "CO_Q1_ENGLISH 7_MODULE 7.pdf",
+      "url": "https://drive.google.com/file/d/1sWryZ6RZpLH27YGmIIgu4g9vdLHKDM-S/view",
+      "sha256": "0b3b25c7e25062ecbc434a56799806ae0fa8815abc360339cf31ed537c98a20b",
+      "pageCount": 20,
+      "notes": [],
+      "discussionPages": [
+        9,
+        10
+      ],
+      "verifiedRecallPages": [
+        7,
+        8,
+        9,
+        10
+      ]
+    }
+  },
+  {
+    "id": "g7-q1-m8",
+    "grade": 7,
+    "quarter": 1,
+    "sourceNumber": "8",
+    "sourceLabel": "Module 8",
+    "moduleNumber": 8,
+    "quarterModuleIndex": 8,
+    "title": "Using Clauses Appropriately and Meaningfully",
+    "source": {
+      "fileId": "1zSm8CYZjywHb7tykQNb-84V2hZsHtfF_",
+      "fileName": "CO_Q1_ENGLISH 7_MODULE 8.pdf",
+      "url": "https://drive.google.com/file/d/1zSm8CYZjywHb7tykQNb-84V2hZsHtfF_/view",
+      "sha256": "7b65f71dea3e87198b25dcb9778fe4856edb0932973b8a2c8ae37fbea9b39003",
+      "pageCount": 21,
+      "notes": [],
+      "discussionPages": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "verifiedRecallPages": [
+        8,
+        9,
+        10,
+        11
+      ]
+    }
+  },
+  {
+    "id": "g7-q1-m9",
+    "grade": 7,
+    "quarter": 1,
+    "sourceNumber": "9",
+    "sourceLabel": "Module 9",
+    "moduleNumber": 9,
+    "quarterModuleIndex": 9,
+    "title": "Using Sentences Appropriately and Meaningfully",
+    "source": {
+      "fileId": "1ZYNSlfcAd5Z7-ULbg8e1hVtX7tkTQlhG",
+      "fileName": "CO_Q1_ENGLISH 7_MODULE 9.pdf",
+      "url": "https://drive.google.com/file/d/1ZYNSlfcAd5Z7-ULbg8e1hVtX7tkTQlhG/view",
+      "sha256": "a1305fac52ab040b4bd70c0a5a658fb6cebd54d66eda9da203a6ee67b28c79db",
+      "pageCount": 21,
+      "notes": [],
+      "discussionPages": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "verifiedRecallPages": [
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    }
+  },
+  {
+    "id": "g7-q1-m10",
+    "grade": 7,
+    "quarter": 1,
+    "sourceNumber": "10",
+    "sourceLabel": "Module 10",
+    "moduleNumber": 10,
+    "quarterModuleIndex": 10,
+    "title": "READING STYLES FOR ONE\u2019S PURPOSE",
+    "source": {
+      "fileId": "1-BTf7lLJxjP7GOtk_J0NW_wA-AqiWSNU",
+      "fileName": "CO_Q1_ENGLISH 7_MODULE 10.pdf",
+      "url": "https://drive.google.com/file/d/1-BTf7lLJxjP7GOtk_J0NW_wA-AqiWSNU/view",
+      "sha256": "b17125ab6ea698927ee37d41e4bbfb6d20f0fd3fba18a888728c961fbff0a6e0",
+      "pageCount": 26,
+      "notes": [],
+      "discussionPages": [
+        9,
+        10,
+        11
+      ],
+      "verifiedRecallPages": [
+        9,
+        10,
+        11
       ]
     }
   },
@@ -831,6 +1007,9 @@
       "pageCount": 31,
       "notes": [],
       "discussionPages": [
+        9
+      ],
+      "verifiedRecallPages": [
         9,
         17,
         19,
@@ -857,6 +1036,10 @@
       "discussionPages": [
         10,
         19
+      ],
+      "verifiedRecallPages": [
+        10,
+        19
       ]
     }
   },
@@ -877,6 +1060,9 @@
       "pageCount": 22,
       "notes": [],
       "discussionPages": [
+        11
+      ],
+      "verifiedRecallPages": [
         10,
         11
       ]
@@ -899,6 +1085,13 @@
       "pageCount": 50,
       "notes": [],
       "discussionPages": [
+        9,
+        10,
+        24,
+        25,
+        38
+      ],
+      "verifiedRecallPages": [
         9,
         10,
         22,
@@ -933,214 +1126,15 @@
         10,
         11,
         12,
+        21,
         22
-      ]
-    }
-  },
-  {
-    "id": "g9-q3-w1",
-    "grade": 9,
-    "quarter": 3,
-    "sourceNumber": "1",
-    "sourceLabel": "Week 1",
-    "moduleNumber": 11,
-    "quarterModuleIndex": 1,
-    "title": "Differentiating Biases From Prejudices",
-    "source": {
-      "fileId": "160mB3bVwZyDz_jV91TupLEv6bwOKCBo9",
-      "fileName": "ENGLISH-USLeM_Grade_9_WEEK-1_Q3-final.pdf",
-      "url": "https://drive.google.com/file/d/160mB3bVwZyDz_jV91TupLEv6bwOKCBo9/view",
-      "sha256": "f8ea24f3b06e3c2743c39afb4cebde606e33e5a23c6a46ce172bb09554dec41b",
-      "pageCount": 10,
-      "notes": [],
-      "discussionPages": [
-        4,
-        5
-      ]
-    }
-  },
-  {
-    "id": "g9-q3-w2",
-    "grade": 9,
-    "quarter": 3,
-    "sourceNumber": "2",
-    "sourceLabel": "Week 2",
-    "moduleNumber": 12,
-    "quarterModuleIndex": 2,
-    "title": "Determining The Relevance And The Truthfulness Of The Ideas Presented In The Material Viewed",
-    "source": {
-      "fileId": "16bBuggxIQ6HE4acIb-afji3KMUh_pnN0",
-      "fileName": "ENGLISH-USLeM_Grade_9_WEEK-2_Q3-final.pdf",
-      "url": "https://drive.google.com/file/d/16bBuggxIQ6HE4acIb-afji3KMUh_pnN0/view",
-      "sha256": "ea781ef3cedebe98e938b7e90ed28ad748ae361a13d7430fcccecb8c004ea070",
-      "pageCount": 10,
-      "notes": [],
-      "discussionPages": [
-        4,
-        5
-      ]
-    }
-  },
-  {
-    "id": "g9-q3-w3",
-    "grade": 9,
-    "quarter": 3,
-    "sourceNumber": "3",
-    "sourceLabel": "Week 3",
-    "moduleNumber": 13,
-    "quarterModuleIndex": 3,
-    "title": "Determining The Relevance And The Truthfulness Of Ideas Presented In The Materials Viewed",
-    "source": {
-      "fileId": "1n8PGQ9cfLkfJ48OPpYx3S7FfsuX_x8zJ",
-      "fileName": "ENGLISH-USLeM_Grade_9_WEEK-3_Q3-final.pdf",
-      "url": "https://drive.google.com/file/d/1n8PGQ9cfLkfJ48OPpYx3S7FfsuX_x8zJ/view",
-      "sha256": "c53db741ac89eaa87bd431bf9f9a9646327bc8a395b0bf7c3a5af6bef8ae7d2d",
-      "pageCount": 10,
-      "notes": [],
-      "discussionPages": [
-        4
-      ]
-    }
-  },
-  {
-    "id": "g9-q3-w4-5",
-    "grade": 9,
-    "quarter": 3,
-    "sourceNumber": "4-5",
-    "sourceLabel": "Weeks 4-5",
-    "moduleNumber": 14,
-    "quarterModuleIndex": 4,
-    "title": "Determining The Relevance And The Truthfulness Of The Ideas Presented In The Materials Viewed",
-    "source": {
-      "fileId": "1ACqJFs-wkRMprc5I7RHhQbdMoyd1dGmM",
-      "fileName": "ENGLISH-USLeM-Grade-9-WEEK-4_5Q3-final.pdf",
-      "url": "https://drive.google.com/file/d/1ACqJFs-wkRMprc5I7RHhQbdMoyd1dGmM/view",
-      "sha256": "f6182600474707560ce97ae52bc71be333f91b64b4c9c34ec280774699451c48",
-      "pageCount": 10,
-      "notes": [],
-      "discussionPages": [
-        3,
-        4
-      ]
-    }
-  },
-  {
-    "id": "g9-q3-w6",
-    "grade": 9,
-    "quarter": 3,
-    "sourceNumber": "6",
-    "sourceLabel": "Week 6",
-    "moduleNumber": 15,
-    "quarterModuleIndex": 6,
-    "title": "Judging The Validity Of The Evidence Listened To",
-    "source": {
-      "fileId": "12Mx6Rn_JDaAp5XpiymMq-yf85MBKSdga",
-      "fileName": "ENGLISH-USLeM_Grade_9_WEEK-6_Q3-final.pdf",
-      "url": "https://drive.google.com/file/d/12Mx6Rn_JDaAp5XpiymMq-yf85MBKSdga/view",
-      "sha256": "bb2576bfb11939fe24a252e128d3a0f9554f464c749605ba88a62b9bfcb01636",
-      "pageCount": 10,
-      "notes": [],
-      "discussionPages": [
-        3,
-        4,
-        5
-      ]
-    }
-  },
-  {
-    "id": "g9-q3-w7",
-    "grade": 9,
-    "quarter": 3,
-    "sourceNumber": "7",
-    "sourceLabel": "Week 7",
-    "moduleNumber": 16,
-    "quarterModuleIndex": 7,
-    "title": "Judging The Validity Of The Evidence Listened To",
-    "source": {
-      "fileId": "120lXzwYBUJfF3EBghqJ9eIi2nV2Mo3nJ",
-      "fileName": "ENGLISH-USLeM_English-9_Week-7_Q3-final.pdf",
-      "url": "https://drive.google.com/file/d/120lXzwYBUJfF3EBghqJ9eIi2nV2Mo3nJ/view",
-      "sha256": "fb1c1050e0d5fb200c64fef09b54618e4be4e69a09a6943ad9f267e572ed0e7e",
-      "pageCount": 10,
-      "notes": [
-        "Filed in Grade 9 / Quarter 3 / Week 7. The PDF cover says “Second Quarter – Week 4.” Folder placement retained at the project owner’s request."
       ],
-      "discussionPages": [
-        4,
-        5
-      ]
-    }
-  },
-  {
-    "id": "g9-q3-w8",
-    "grade": 9,
-    "quarter": 3,
-    "sourceNumber": "8",
-    "sourceLabel": "Week 8",
-    "moduleNumber": 17,
-    "quarterModuleIndex": 8,
-    "title": "Judge The Validity Of The Evidence Listened To",
-    "source": {
-      "fileId": "11KxFfo_5g4zdrASPlXGp7gJv3deyU1Xy",
-      "fileName": "ENGLISH-USLeM_Grade_9_Week-8_Q3-final.pdf",
-      "url": "https://drive.google.com/file/d/11KxFfo_5g4zdrASPlXGp7gJv3deyU1Xy/view",
-      "sha256": "477c3b3257d9508b1e56a6bf350399f903ef70e3e2b72e0549d5f3da31811f83",
-      "pageCount": 10,
-      "notes": [],
-      "discussionPages": [
-        4,
-        5,
-        6
-      ]
-    }
-  },
-  {
-    "id": "g9-q2-m1",
-    "grade": 9,
-    "quarter": 2,
-    "sourceNumber": "1",
-    "sourceLabel": "Module 1",
-    "moduleNumber": 9,
-    "quarterModuleIndex": 1,
-    "title": "Making Connections Between Texts to Particular Social Issues, Concerns, or Dispositions in Real Life",
-    "source": {
-      "fileId": "1fYWEF1s4FpoBt26kxcuCzStIloDlShoz",
-      "fileName": "English9_Q2_Mod1_Making Connections Between Texts to Particular Social Issues, Concerns, or Dispositions in Real Life.pdf",
-      "url": "https://drive.google.com/file/d/1fYWEF1s4FpoBt26kxcuCzStIloDlShoz/view",
-      "sha256": "a6a466de73125b53be57c8eba6222afff8cd493b42086795ab7062f01618ca69",
-      "pageCount": 32,
-      "notes": [],
-      "discussionPages": [
+      "verifiedRecallPages": [
+        9,
+        10,
         11,
         12,
-        13,
-        19,
-        20
-      ]
-    }
-  },
-  {
-    "id": "g9-q2-m2",
-    "grade": 9,
-    "quarter": 2,
-    "sourceNumber": "2",
-    "sourceLabel": "Module 2",
-    "moduleNumber": 10,
-    "quarterModuleIndex": 2,
-    "title": "Analyzing Literature as a Means of Understanding the World",
-    "source": {
-      "fileId": "1sE1_PlqARG59kCtim19js5G9FFvB9x1O",
-      "fileName": "English9_Q2_Mod2_Analyzing Literature as a Means of Understanding the World.pdf",
-      "url": "https://drive.google.com/file/d/1sE1_PlqARG59kCtim19js5G9FFvB9x1O/view",
-      "sha256": "f3025baefca371cb635ee98a031fdf8cf2ddc3cc02918cad8afee16c7292949c",
-      "pageCount": 30,
-      "notes": [],
-      "discussionPages": [
-        13,
-        14,
-        18,
-        19,
-        20
+        22
       ]
     }
   },
@@ -1161,6 +1155,11 @@
       "pageCount": 21,
       "notes": [],
       "discussionPages": [
+        9,
+        10,
+        11
+      ],
+      "verifiedRecallPages": [
         9,
         10,
         11
@@ -1187,6 +1186,11 @@
         8,
         9,
         10
+      ],
+      "verifiedRecallPages": [
+        8,
+        9,
+        10
       ]
     }
   },
@@ -1207,6 +1211,12 @@
       "pageCount": 23,
       "notes": [],
       "discussionPages": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "verifiedRecallPages": [
         8
       ]
     }
@@ -1219,7 +1229,7 @@
     "sourceLabel": "Module 4",
     "moduleNumber": 19,
     "quarterModuleIndex": 4,
-    "title": "Express One’s Beliefs/Convictions Based on a Material Viewed",
+    "title": "Express One\u2019s Beliefs/Convictions Based on a Material Viewed",
     "source": {
       "fileId": "1ZvBNqtLkb62_KqW2_VOHeRM8PXcWv3Uo",
       "fileName": "ENG7 Q3 MODULE4.pdf",
@@ -1228,6 +1238,11 @@
       "pageCount": 22,
       "notes": [],
       "discussionPages": [
+        10,
+        11,
+        12
+      ],
+      "verifiedRecallPages": [
         10,
         11,
         12
@@ -1252,6 +1267,10 @@
       "notes": [],
       "discussionPages": [
         11,
+        18
+      ],
+      "verifiedRecallPages": [
+        11,
         17,
         18
       ]
@@ -1274,6 +1293,10 @@
       "pageCount": 22,
       "notes": [],
       "discussionPages": [
+        10,
+        11
+      ],
+      "verifiedRecallPages": [
         10,
         11,
         12
@@ -1299,347 +1322,44 @@
       "discussionPages": [
         9,
         10,
+        11,
+        12
+      ],
+      "verifiedRecallPages": [
+        9,
+        10,
         11
       ]
     }
   },
   {
-    "id": "g9-q1-w1",
-    "grade": 9,
-    "quarter": 1,
-    "sourceNumber": "1",
-    "sourceLabel": "Week 1",
-    "moduleNumber": 1,
-    "quarterModuleIndex": 1,
-    "title": "Expressing Permission, Obligation, and Prohibition Using Modals",
-    "source": {
-      "fileId": "1XW053aQeCA4ikZO0RhgZrFom57UqD7m0",
-      "fileName": "EDITED-G9-SLEM-Q1-W1.pdf",
-      "url": "https://drive.google.com/file/d/1XW053aQeCA4ikZO0RhgZrFom57UqD7m0/view",
-      "sha256": "2ede6fff852fa7e2d0363be49f58bc9522fac3209e335e6c03b007f916568780",
-      "pageCount": 10,
-      "notes": [],
-      "discussionPages": [
-        4,
-        5
-      ]
-    }
-  },
-  {
-    "id": "g9-q1-w2",
-    "grade": 9,
-    "quarter": 1,
-    "sourceNumber": "2",
-    "sourceLabel": "Week 2",
-    "moduleNumber": 2,
-    "quarterModuleIndex": 2,
-    "title": "Using Conditionals in Expressing Arguments (Zero-Conditional Sentences)",
-    "source": {
-      "fileId": "1ICiJOBXf4bOrbtI69Akv1e0yvX_KdCEG",
-      "fileName": "EDITED-G9-SLEM-Q1-W2.pdf",
-      "url": "https://drive.google.com/file/d/1ICiJOBXf4bOrbtI69Akv1e0yvX_KdCEG/view",
-      "sha256": "43e7f44be32ad21f7f957faadbf2cc6f6d40a56b1c1193bd53074cbcde652a83",
-      "pageCount": 10,
-      "notes": [],
-      "discussionPages": [
-        5,
-        6
-      ]
-    }
-  },
-  {
-    "id": "g9-q1-w3",
-    "grade": 9,
-    "quarter": 1,
-    "sourceNumber": "3",
-    "sourceLabel": "Week 3",
-    "moduleNumber": 3,
-    "quarterModuleIndex": 3,
-    "title": "Using Conditionals in Expressing Arguments (First Conditional Sentences)",
-    "source": {
-      "fileId": "1edVGTweFHZYzGwOe9EUROEvurSnq637I",
-      "fileName": "EDITED-G9-SLEM-Q1-W3.pdf",
-      "url": "https://drive.google.com/file/d/1edVGTweFHZYzGwOe9EUROEvurSnq637I/view",
-      "sha256": "21167ca52ff7c92843125ede4f8568e293c2b31863a3f3a84188bdc58b170198",
-      "pageCount": 10,
-      "notes": [],
-      "discussionPages": [
-        4,
-        5
-      ]
-    }
-  },
-  {
-    "id": "g9-q1-w4",
-    "grade": 9,
-    "quarter": 1,
-    "sourceNumber": "4",
-    "sourceLabel": "Week 4",
-    "moduleNumber": 4,
-    "quarterModuleIndex": 4,
-    "title": "Using Conditionals to Express Arguments (Second Conditional Sentences)",
-    "source": {
-      "fileId": "1gVM2xPQDwPJgo6Iynb-A9sG7ZXdtBOFT",
-      "fileName": "EDITED-G9-SLEM-Q1-W4.pdf",
-      "url": "https://drive.google.com/file/d/1gVM2xPQDwPJgo6Iynb-A9sG7ZXdtBOFT/view",
-      "sha256": "6e9189a12b6170c936871d0605a2def9adbc1fc155c84f6543ee39a0d84d7c55",
-      "pageCount": 10,
-      "notes": [],
-      "discussionPages": [
-        4,
-        5
-      ]
-    }
-  },
-  {
-    "id": "g9-q1-w5",
-    "grade": 9,
-    "quarter": 1,
-    "sourceNumber": "5",
-    "sourceLabel": "Week 5",
-    "moduleNumber": 5,
-    "quarterModuleIndex": 5,
-    "title": "Using Conditionals to Express Arguments (Third Conditional Sentences)",
-    "source": {
-      "fileId": "1w5OjEPvoar4szPJF3PHrOGqC27QaHXK0",
-      "fileName": "EDITED-G9-SLEM-Q1-W5.pdf",
-      "url": "https://drive.google.com/file/d/1w5OjEPvoar4szPJF3PHrOGqC27QaHXK0/view",
-      "sha256": "5a5ca13056c2a6623b71bba0ac4cb806630728b9354fe7c7bc0689b9207be1ef",
-      "pageCount": 10,
-      "notes": [],
-      "discussionPages": [
-        5,
-        6
-      ]
-    }
-  },
-  {
-    "id": "g9-q1-w6",
-    "grade": 9,
-    "quarter": 1,
-    "sourceNumber": "6",
-    "sourceLabel": "Week 6",
-    "moduleNumber": 6,
-    "quarterModuleIndex": 6,
-    "title": "Using Conditionals to Express Arguments (Zero, First, Second and Third Conditionals)",
-    "source": {
-      "fileId": "10n6YQL62o3bc3FyZuz6rKvXZLXB8CYtm",
-      "fileName": "EDITED-G9-SLEM-Q1-W6.pdf",
-      "url": "https://drive.google.com/file/d/10n6YQL62o3bc3FyZuz6rKvXZLXB8CYtm/view",
-      "sha256": "7af0ca9708cd481ae96a4b4fc3109d26bc5daa7836788b7e58636bc7039df8ca",
-      "pageCount": 10,
-      "notes": [],
-      "discussionPages": [
-        3,
-        4,
-        5
-      ]
-    }
-  },
-  {
-    "id": "g9-q1-w7",
-    "grade": 9,
-    "quarter": 1,
-    "sourceNumber": "7",
-    "sourceLabel": "Week 7",
-    "moduleNumber": 7,
-    "quarterModuleIndex": 7,
-    "title": "Employing Appropriate Communicative Styles for Various Situations (Part 1)",
-    "source": {
-      "fileId": "1I8xD1b6ieDRg3_Fk7QuDFNy5ZQZoSciH",
-      "fileName": "EDITED-G9-SLEM-Q1-W7.pdf",
-      "url": "https://drive.google.com/file/d/1I8xD1b6ieDRg3_Fk7QuDFNy5ZQZoSciH/view",
-      "sha256": "2b2a6d4caa7de6d8009f15f8b9e0e024ecc66181aa68f12b560796b53028acb4",
-      "pageCount": 10,
-      "notes": [],
-      "discussionPages": [
-        4,
-        5
-      ]
-    }
-  },
-  {
-    "id": "g9-q1-w8",
-    "grade": 9,
-    "quarter": 1,
-    "sourceNumber": "8",
-    "sourceLabel": "Week 8",
-    "moduleNumber": 8,
-    "quarterModuleIndex": 8,
-    "title": "Employing Appropriate Communicative Styles for Various Situations (Part 2)",
-    "source": {
-      "fileId": "1kfz311Nhr4MKQsY0xqWAIq2XIqn0kgx_",
-      "fileName": "EDITED-G9-SLEM-Q1-W8.pdf",
-      "url": "https://drive.google.com/file/d/1kfz311Nhr4MKQsY0xqWAIq2XIqn0kgx_/view",
-      "sha256": "c6e2fce5886d5407dcd25dc0b3ce87025441e75433c107c1580464b85a3710f3",
-      "pageCount": 10,
-      "notes": [],
-      "discussionPages": [
-        4
-      ]
-    }
-  },
-  {
-    "id": "g10-q4-m1",
-    "grade": 10,
+    "id": "g7-q4-m1",
+    "grade": 7,
     "quarter": 4,
     "sourceNumber": "1",
     "sourceLabel": "Module 1",
-    "moduleNumber": 22,
+    "moduleNumber": 23,
     "quarterModuleIndex": 1,
-    "title": "Distinguish Technical Terms Used in Research",
+    "title": "The Features of Academic Writing",
     "source": {
-      "fileId": "183c4T1iPG97HRpZhwuUjEym9AjL-nhA1",
-      "fileName": "English10_Mod1_Distinguish Technical Terms Used in Research_final.pdf",
-      "url": "https://drive.google.com/file/d/183c4T1iPG97HRpZhwuUjEym9AjL-nhA1/view",
-      "sha256": "9e4912bc2b13652a9274155030b10ad4a1c302dc9e32a64ceb7bc2aebf1c400f",
-      "pageCount": 36,
+      "fileId": "1uo8karug9R3IQ5mwreSUD9sck_qYJUwG",
+      "fileName": "English7_Module1_final.pdf",
+      "url": "https://drive.google.com/file/d/1uo8karug9R3IQ5mwreSUD9sck_qYJUwG/view",
+      "sha256": "92e4a4d82b1b340b08592126441e6498d6318ef441c36e7dc301aeacaec53f4d",
+      "pageCount": 23,
       "notes": [],
       "discussionPages": [
-        9,
+        6,
+        7,
+        8,
+        10,
         11,
         12,
         13,
-        17,
-        18,
-        23,
-        24
-      ]
-    }
-  },
-  {
-    "id": "g10-q4-m2",
-    "grade": 10,
-    "quarter": 4,
-    "sourceNumber": "2",
-    "sourceLabel": "Module 2",
-    "moduleNumber": 23,
-    "quarterModuleIndex": 2,
-    "title": "Technical and Operational Definitions",
-    "source": {
-      "fileId": "1jrr9i9bVgVkIdJeXIwOh4u3ZNO7zgw5B",
-      "fileName": "English 10_Module 2_final.pdf",
-      "url": "https://drive.google.com/file/d/1jrr9i9bVgVkIdJeXIwOh4u3ZNO7zgw5B/view",
-      "sha256": "0d26127b057a087ac6701e587c6b23a4df670a7cf97f4510a3bb4d8fb80681f8",
-      "pageCount": 20,
-      "notes": [],
-      "discussionPages": [
-        7,
-        8,
-        10
-      ]
-    }
-  },
-  {
-    "id": "g10-q4-m3",
-    "grade": 10,
-    "quarter": 4,
-    "sourceNumber": "3",
-    "sourceLabel": "Module 3",
-    "moduleNumber": 24,
-    "quarterModuleIndex": 3,
-    "title": "Giving Expanded Definitions of Words",
-    "source": {
-      "fileId": "1DbBZP0Fwfc1YMDEyWdh8EJLlDgHV4oay",
-      "fileName": "English10_Mod3_Giving Expanded Definitions of Words_final.pdf",
-      "url": "https://drive.google.com/file/d/1DbBZP0Fwfc1YMDEyWdh8EJLlDgHV4oay/view",
-      "sha256": "889382cceff0bb8d6419da94eba25852fd55e31da364d3d17f772c6384a57395",
-      "pageCount": 18,
-      "notes": [],
-      "discussionPages": [
-        8
-      ]
-    }
-  },
-  {
-    "id": "g7-q1-m1",
-    "grade": 7,
-    "quarter": 1,
-    "sourceNumber": "1",
-    "sourceLabel": "Module 1",
-    "moduleNumber": 1,
-    "quarterModuleIndex": 1,
-    "title": "Analogy",
-    "source": {
-      "fileId": "1apMCFoA_8wiK--6IjOwDJ_3q8WIv8UX8",
-      "fileName": "CO_Q1_ENGLISH 7_MODULE 1 (1).pdf",
-      "url": "https://drive.google.com/file/d/1apMCFoA_8wiK--6IjOwDJ_3q8WIv8UX8/view",
-      "sha256": "90d3d6aa4700af691bdb952c37c12918515f57c39ecc4e351c68839e8d13499d",
-      "pageCount": 20,
-      "notes": [],
-      "discussionPages": [
-        7,
+        14
+      ],
+      "verifiedRecallPages": [
         10,
-        11,
-        12
-      ]
-    }
-  },
-  {
-    "id": "g7-q1-m2",
-    "grade": 7,
-    "quarter": 1,
-    "sourceNumber": "2",
-    "sourceLabel": "Module 2",
-    "moduleNumber": 2,
-    "quarterModuleIndex": 2,
-    "title": "Genres of Viewing",
-    "source": {
-      "fileId": "1UEs1q6ozrI70Mz9-na4jffSq-B8gdTmu",
-      "fileName": "CO_Q1_ENGLISH 7_MODULE 2.pdf",
-      "url": "https://drive.google.com/file/d/1UEs1q6ozrI70Mz9-na4jffSq-B8gdTmu/view",
-      "sha256": "d2601e49d79cc421d3f6376d299ec9f71a21437747cb17ca0f26abe195f4f2a2",
-      "pageCount": 30,
-      "notes": [],
-      "discussionPages": [
-        14,
-        15,
-        16,
-        17
-      ]
-    }
-  },
-  {
-    "id": "g7-q1-m3",
-    "grade": 7,
-    "quarter": 1,
-    "sourceNumber": "3",
-    "sourceLabel": "Module 3",
-    "moduleNumber": 3,
-    "quarterModuleIndex": 3,
-    "title": "Active and Passive Voices",
-    "source": {
-      "fileId": "1TJzXG88JXkB3ENdig_20ZffPBXMzcqDY",
-      "fileName": "CO_Q1_ENGLISH 7_MODULE 3.pdf",
-      "url": "https://drive.google.com/file/d/1TJzXG88JXkB3ENdig_20ZffPBXMzcqDY/view",
-      "sha256": "288ab033ae500caf19bc6742c34e5f95e1d97696161153df51366b83d997aee0",
-      "pageCount": 21,
-      "notes": [],
-      "discussionPages": [
-        8,
-        9,
-        10,
-        11
-      ]
-    }
-  },
-  {
-    "id": "g7-q1-m4",
-    "grade": 7,
-    "quarter": 1,
-    "sourceNumber": "4",
-    "sourceLabel": "Module 4",
-    "moduleNumber": 4,
-    "quarterModuleIndex": 4,
-    "title": "Simple Past Tense",
-    "source": {
-      "fileId": "1EQ41sCKSPqb8RVeUxAt1sCCb5MD_idrg",
-      "fileName": "CO_Q1_ENGLISH 7_MODULE 4.pdf",
-      "url": "https://drive.google.com/file/d/1EQ41sCKSPqb8RVeUxAt1sCCb5MD_idrg/view",
-      "sha256": "ad559d2da3c00444ec22d66f59e46edffdc7e2217d41f822e51ce628dd02eac3",
-      "pageCount": 21,
-      "notes": [],
-      "discussionPages": [
         11,
         12,
         13
@@ -1647,117 +1367,204 @@
     }
   },
   {
-    "id": "g7-q1-m5",
+    "id": "g7-q4-m2",
     "grade": 7,
-    "quarter": 1,
+    "quarter": 4,
+    "sourceNumber": "2",
+    "sourceLabel": "Module 2",
+    "moduleNumber": 24,
+    "quarterModuleIndex": 2,
+    "title": "Strategies for Effective Interpersonal Communication (Conversation, Dialogue, Interview)",
+    "source": {
+      "fileId": "1m7Up--fA7OBTyn7BN1bEP3mIYadSNEXg",
+      "fileName": "English7_Q4_Mod2_final.pdf",
+      "url": "https://drive.google.com/file/d/1m7Up--fA7OBTyn7BN1bEP3mIYadSNEXg/view",
+      "sha256": "877422b66ffe55f6273fc781257496f4e6c22ed9e20b3f48cbe22b37b077e440",
+      "pageCount": 24,
+      "notes": [],
+      "discussionPages": [
+        9,
+        10,
+        15,
+        16,
+        17
+      ],
+      "verifiedRecallPages": [
+        9,
+        10,
+        11,
+        12,
+        15,
+        16,
+        17
+      ]
+    }
+  },
+  {
+    "id": "g7-q4-m3",
+    "grade": 7,
+    "quarter": 4,
+    "sourceNumber": "3",
+    "sourceLabel": "Module 3",
+    "moduleNumber": 25,
+    "quarterModuleIndex": 3,
+    "title": "Determine the Worth of Ideas Mentioned in the Text Listened to",
+    "source": {
+      "fileId": "1g8hcn_ImIe-WKcSTeY56w44PGBubpmJG",
+      "fileName": "ENGLISH7_Module3_final.pdf",
+      "url": "https://drive.google.com/file/d/1g8hcn_ImIe-WKcSTeY56w44PGBubpmJG/view",
+      "sha256": "9560512d2680587c4257926f8ed47324dadefd12ae2f2dbcd77e24cf33a0365a",
+      "pageCount": 29,
+      "notes": [
+        "The PDF cover says Module 3; its running footer says Module 2. Mapping follows the cover and file name."
+      ],
+      "discussionPages": [
+        10,
+        11,
+        12,
+        13
+      ],
+      "verifiedRecallPages": [
+        10,
+        11,
+        12
+      ]
+    }
+  },
+  {
+    "id": "g7-q4-m4",
+    "grade": 7,
+    "quarter": 4,
+    "sourceNumber": "4",
+    "sourceLabel": "Module 4",
+    "moduleNumber": 26,
+    "quarterModuleIndex": 4,
+    "title": "Determining the Truthfulness and Accuracy of the Materials Viewed",
+    "source": {
+      "fileId": "1lPBBs8XVkhfK2qkyjyiaMlmoBOewUUYq",
+      "fileName": "ENGLISH7_Module4_final.pdf",
+      "url": "https://drive.google.com/file/d/1lPBBs8XVkhfK2qkyjyiaMlmoBOewUUYq/view",
+      "sha256": "e69507a2530c13b571ee8e94ce38577e67b8236303517ebe5e25993512c35b29",
+      "pageCount": 31,
+      "notes": [],
+      "discussionPages": [
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "verifiedRecallPages": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ]
+    }
+  },
+  {
+    "id": "g7-q4-m5",
+    "grade": 7,
+    "quarter": 4,
     "sourceNumber": "5",
     "sourceLabel": "Module 5",
-    "moduleNumber": 5,
+    "moduleNumber": 27,
     "quarterModuleIndex": 5,
-    "title": "Past Perfect Tense",
+    "title": "Discover The Conflicts Presented in Literary Selections And The Need To Resolve This Conflicts In Non-Violent Ways",
     "source": {
-      "fileId": "1t9TSBjO0G_0irvBwa2XmlKC0dgVDvcnO",
-      "fileName": "CO_Q1_ENGLISH 7_MODULE 5.pdf",
-      "url": "https://drive.google.com/file/d/1t9TSBjO0G_0irvBwa2XmlKC0dgVDvcnO/view",
-      "sha256": "382f13af9946f03dbbffe7ff8f7fa19b8c1f1700f9ca7256ad5ac6c6a472a6cf",
+      "fileId": "1EMDuPKmHSu6jvbn4_QuFePYhRcRRwmOL",
+      "fileName": "English7_Q4_Mod5_DiscoverTheConflictsPresentedInLiterarySelectionsAndTheNeedToResolveThisConflictsInNonViolentWays_V2.pdf",
+      "url": "https://drive.google.com/file/d/1EMDuPKmHSu6jvbn4_QuFePYhRcRRwmOL/view",
+      "sha256": "50beedf34e2512254fee2c0162dc6d8721da89b9b5fc90be23c447b141582902",
       "pageCount": 22,
       "notes": [],
       "discussionPages": [
-        9,
-        10
+        10,
+        11
+      ],
+      "verifiedRecallPages": [
+        10,
+        11
       ]
     }
   },
   {
-    "id": "g7-q1-m6",
+    "id": "g7-q4-m6",
     "grade": 7,
-    "quarter": 1,
+    "quarter": 4,
     "sourceNumber": "6",
     "sourceLabel": "Module 6",
-    "moduleNumber": 6,
+    "moduleNumber": 28,
     "quarterModuleIndex": 6,
-    "title": "Direct and Reported Speeches",
+    "title": "Discover Literature as a Tool to Assert One\u2019s Unique Identity and to Better Understand Other People",
     "source": {
-      "fileId": "1gAUO7gcFkglj_RrLAqH4tCBs6N3cgyRR",
-      "fileName": "CO_Q1_ENGLISH 7_MODULE 6.pdf",
-      "url": "https://drive.google.com/file/d/1gAUO7gcFkglj_RrLAqH4tCBs6N3cgyRR/view",
-      "sha256": "543597484daf4d5f9527222d80b068a57e8418b3272e6c82aef0ea4b3c62e3e5",
+      "fileId": "1ghEwNQhrfeTOG31vbl5Xg_4ZmTY21H7Y",
+      "fileName": "English7_Q4_Mod6_DiscoverLiteratureAsAToolToAssertOnesUniqueIdentityAndToBetterUnderstandOtherPeople_V2.pdf",
+      "url": "https://drive.google.com/file/d/1ghEwNQhrfeTOG31vbl5Xg_4ZmTY21H7Y/view",
+      "sha256": "946c6ec75e1d752859db0b02ed450db45aecd39a5b93623f3ce71b04efadd026",
       "pageCount": 21,
       "notes": [],
       "discussionPages": [
+        9,
         10,
+        14
+      ],
+      "verifiedRecallPages": [
+        8,
         11,
         12
       ]
     }
   },
   {
-    "id": "g7-q1-m7",
+    "id": "g7-q4-m7",
     "grade": 7,
-    "quarter": 1,
+    "quarter": 4,
     "sourceNumber": "7",
     "sourceLabel": "Module 7",
-    "moduleNumber": 7,
+    "moduleNumber": 29,
     "quarterModuleIndex": 7,
-    "title": "Using Phrases Appropriately and Meaningfully",
+    "title": "Discover Through Philippine Literature The Need To Work Cooperatively And Responsibly In Today\u2019s Global Village",
     "source": {
-      "fileId": "1sWryZ6RZpLH27YGmIIgu4g9vdLHKDM-S",
-      "fileName": "CO_Q1_ENGLISH 7_MODULE 7.pdf",
-      "url": "https://drive.google.com/file/d/1sWryZ6RZpLH27YGmIIgu4g9vdLHKDM-S/view",
-      "sha256": "0b3b25c7e25062ecbc434a56799806ae0fa8815abc360339cf31ed537c98a20b",
-      "pageCount": 20,
+      "fileId": "1sL4LQ7ZGbflxAgcsMqzQVyKKwBkvnYQb",
+      "fileName": "Q4_English7_Module7 Final.pdf",
+      "url": "https://drive.google.com/file/d/1sL4LQ7ZGbflxAgcsMqzQVyKKwBkvnYQb/view",
+      "sha256": "b5fffc17981d5073acb214c7a4bc9a75d0e50bff388073b836eae5f283223665",
+      "pageCount": 18,
       "notes": [],
       "discussionPages": [
-        7,
         8,
-        9,
-        10
+        9
+      ],
+      "verifiedRecallPages": [
+        8
       ]
     }
   },
   {
-    "id": "g7-q1-m8",
+    "id": "g7-q4-m8",
     "grade": 7,
-    "quarter": 1,
+    "quarter": 4,
     "sourceNumber": "8",
     "sourceLabel": "Module 8",
-    "moduleNumber": 8,
+    "moduleNumber": 30,
     "quarterModuleIndex": 8,
-    "title": "Using Clauses Appropriately and Meaningfully",
+    "title": "Informative Essay",
     "source": {
-      "fileId": "1zSm8CYZjywHb7tykQNb-84V2hZsHtfF_",
-      "fileName": "CO_Q1_ENGLISH 7_MODULE 8.pdf",
-      "url": "https://drive.google.com/file/d/1zSm8CYZjywHb7tykQNb-84V2hZsHtfF_/view",
-      "sha256": "7b65f71dea3e87198b25dcb9778fe4856edb0932973b8a2c8ae37fbea9b39003",
+      "fileId": "1TksdIdgLSlBkJNPMWimwIpNIYP0P4QqO",
+      "fileName": "ENGLISH7_Module8_final.pdf",
+      "url": "https://drive.google.com/file/d/1TksdIdgLSlBkJNPMWimwIpNIYP0P4QqO/view",
+      "sha256": "421c92d53da7010f042ab14126e7d03f62ca29228414124133595457b29b4d5b",
       "pageCount": 21,
       "notes": [],
       "discussionPages": [
-        8,
-        9,
         10,
-        11
-      ]
-    }
-  },
-  {
-    "id": "g7-q1-m9",
-    "grade": 7,
-    "quarter": 1,
-    "sourceNumber": "9",
-    "sourceLabel": "Module 9",
-    "moduleNumber": 9,
-    "quarterModuleIndex": 9,
-    "title": "Using Sentences Appropriately and Meaningfully",
-    "source": {
-      "fileId": "1ZYNSlfcAd5Z7-ULbg8e1hVtX7tkTQlhG",
-      "fileName": "CO_Q1_ENGLISH 7_MODULE 9.pdf",
-      "url": "https://drive.google.com/file/d/1ZYNSlfcAd5Z7-ULbg8e1hVtX7tkTQlhG/view",
-      "sha256": "a1305fac52ab040b4bd70c0a5a658fb6cebd54d66eda9da203a6ee67b28c79db",
-      "pageCount": 21,
-      "notes": [],
-      "discussionPages": [
-        8,
-        9,
+        11,
+        12
+      ],
+      "verifiedRecallPages": [
         10,
         11,
         12
@@ -1765,43 +1572,51 @@
     }
   },
   {
-    "id": "g7-q1-m10",
-    "grade": 7,
+    "id": "g8-q1-m1",
+    "grade": 8,
     "quarter": 1,
-    "sourceNumber": "10",
-    "sourceLabel": "Module 10",
-    "moduleNumber": 10,
-    "quarterModuleIndex": 10,
-    "title": "READING STYLES FOR ONE’S PURPOSE",
+    "sourceNumber": "1",
+    "sourceLabel": "Module 1",
+    "moduleNumber": 1,
+    "quarterModuleIndex": 1,
+    "title": "Determining Meaning of Words and Expressions",
     "source": {
-      "fileId": "1-BTf7lLJxjP7GOtk_J0NW_wA-AqiWSNU",
-      "fileName": "CO_Q1_ENGLISH 7_MODULE 10.pdf",
-      "url": "https://drive.google.com/file/d/1-BTf7lLJxjP7GOtk_J0NW_wA-AqiWSNU/view",
-      "sha256": "b17125ab6ea698927ee37d41e4bbfb6d20f0fd3fba18a888728c961fbff0a6e0",
-      "pageCount": 26,
+      "fileId": "1KpWtXEc3QWjR4v74FdzWMvkTN86gclDC",
+      "fileName": "english8_q1_mod1_DeterminingMeaningofWordsandExpressions_v2.pdf",
+      "url": "https://drive.google.com/file/d/1KpWtXEc3QWjR4v74FdzWMvkTN86gclDC/view",
+      "sha256": "90c835f4f0cfdb4315d29749fcb5945d75e432f317b9035cde913371d80c9f63",
+      "pageCount": 27,
       "notes": [],
       "discussionPages": [
-        9,
         10,
-        11
+        11,
+        12
+      ],
+      "verifiedRecallPages": [
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
       ]
     }
   },
   {
-    "id": "g8-q4-m1",
+    "id": "g8-q1-m2",
     "grade": 8,
-    "quarter": 4,
-    "sourceNumber": "1",
-    "sourceLabel": "Module 1",
-    "moduleNumber": 17,
-    "quarterModuleIndex": 1,
-    "title": "Using Appropriate Grammatical Signals or Expressions to Each Pattern of Idea Development",
+    "quarter": 1,
+    "sourceNumber": "2",
+    "sourceLabel": "Module 2",
+    "moduleNumber": 2,
+    "quarterModuleIndex": 2,
+    "title": "Using Conventions in Citing Sources",
     "source": {
-      "fileId": "1eAL4NkVXLLqTzBlTmpiUrnb9-ahMRnHP",
-      "fileName": "Q4_ENGLISH8_Module1.pdf",
-      "url": "https://drive.google.com/file/d/1eAL4NkVXLLqTzBlTmpiUrnb9-ahMRnHP/view",
-      "sha256": "4a2804fa585107dc99cff3f837202a643369038e90b894ec2cabe1912e6e9d5a",
-      "pageCount": 33,
+      "fileId": "1klN3fLuIAtlkp29tlUQlBNJhf_AA_Yvx",
+      "fileName": "english8_q1_mod2_UsingConventionsinCitingSources_v2-4.pdf",
+      "url": "https://drive.google.com/file/d/1klN3fLuIAtlkp29tlUQlBNJhf_AA_Yvx/view",
+      "sha256": "050b788edf883e83238a5b32718d018708270813af76c581fbfd1a8326781566",
+      "pageCount": 30,
       "notes": [],
       "discussionPages": [
         11,
@@ -1810,33 +1625,9 @@
         14,
         15,
         16,
-        17,
-        18,
-        19,
-        20,
-        21,
-        22,
-        23
-      ]
-    }
-  },
-  {
-    "id": "g8-q4-m2",
-    "grade": 8,
-    "quarter": 4,
-    "sourceNumber": "2",
-    "sourceLabel": "Module 2",
-    "moduleNumber": 18,
-    "quarterModuleIndex": 2,
-    "title": "Expanding the Content of an Outline Using Notes from Primary and Secondary Sources",
-    "source": {
-      "fileId": "1UwbpVm8X7puuqzUOewpR7Aet8_xhog0S",
-      "fileName": "English8_Q4_Module 2_Expanding the Content of an Outline Using Notes from Primary and Secondary Sources_V2.pdf",
-      "url": "https://drive.google.com/file/d/1UwbpVm8X7puuqzUOewpR7Aet8_xhog0S/view",
-      "sha256": "eed2eacbc6a82e16cbb8b84860c2e5ef89eeca2a437a365f2e6ded33a64af7c5",
-      "pageCount": 31,
-      "notes": [],
-      "discussionPages": [
+        17
+      ],
+      "verifiedRecallPages": [
         11,
         12,
         13,
@@ -1852,51 +1643,133 @@
     }
   },
   {
-    "id": "g8-q4-m3",
+    "id": "g8-q1-m3",
     "grade": 8,
-    "quarter": 4,
+    "quarter": 1,
     "sourceNumber": "3",
     "sourceLabel": "Module 3",
-    "moduleNumber": 19,
+    "moduleNumber": 3,
     "quarterModuleIndex": 3,
-    "title": "Synthesizing Information",
+    "title": "Use of Modal Verbs, Nouns, and Adverbs",
     "source": {
-      "fileId": "13eeDpbAAC6M_17Ju8dnHyunYs86ZcfUs",
-      "fileName": "ENGLISH 8_Module 3_final.pdf",
-      "url": "https://drive.google.com/file/d/13eeDpbAAC6M_17Ju8dnHyunYs86ZcfUs/view",
-      "sha256": "1a4ab9640bea06a5e4d6012ae16fe17ab745cab1d5b8c2438d794c59a2312855",
-      "pageCount": 26,
+      "fileId": "1ShkzGV028s4rpy9BwCEIn_vtwAZ9mAEz",
+      "fileName": "english8_q1_mod3_UseofModalVerbsNounsandAdverbs_v2-2.pdf",
+      "url": "https://drive.google.com/file/d/1ShkzGV028s4rpy9BwCEIn_vtwAZ9mAEz/view",
+      "sha256": "4545b52ba7eec7d88b6fec2c96c7ca2d64b55d6eece2f6711550439dc5ab20cc",
+      "pageCount": 36,
       "notes": [],
       "discussionPages": [
+        9,
+        10,
+        17,
+        18,
+        26,
+        27
+      ],
+      "verifiedRecallPages": [
+        9,
         10,
         11,
-        12,
-        13,
-        14,
-        15
+        17,
+        18,
+        19,
+        26,
+        27
       ]
     }
   },
   {
-    "id": "g8-q4-m4",
+    "id": "g8-q1-m4",
     "grade": 8,
-    "quarter": 4,
+    "quarter": 1,
     "sourceNumber": "4",
     "sourceLabel": "Module 4",
-    "moduleNumber": 20,
+    "moduleNumber": 4,
     "quarterModuleIndex": 4,
-    "title": "Composing an Effective Paragraph",
+    "title": "Using Transition Signals",
     "source": {
-      "fileId": "1LgwsCPEIfrKJinfj6toRLACoF6mO8Wo-",
-      "fileName": "ENGLISH 8_Module 4_final.pdf",
-      "url": "https://drive.google.com/file/d/1LgwsCPEIfrKJinfj6toRLACoF6mO8Wo-/view",
-      "sha256": "4fc02356c51ab5766891ee8c09c032c8fed3c18227ab21d6bffea2a5c3ca9dcd",
-      "pageCount": 33,
+      "fileId": "1R5AKCVhlXkNR4fgukMe9OlU-tg6pmKKj",
+      "fileName": "english8_q1_mod4_TransitionSignals_v2.pdf",
+      "url": "https://drive.google.com/file/d/1R5AKCVhlXkNR4fgukMe9OlU-tg6pmKKj/view",
+      "sha256": "4a2f8a0f3bf536c0f85ce5f85abaea1c430d9f5a7c31d7f283e9c0151d623cdc",
+      "pageCount": 25,
+      "notes": [],
+      "discussionPages": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "verifiedRecallPages": [
+        9,
+        10,
+        11,
+        12,
+        13
+      ]
+    }
+  },
+  {
+    "id": "g8-q1-m5",
+    "grade": 8,
+    "quarter": 1,
+    "sourceNumber": "5",
+    "sourceLabel": "Module 5",
+    "moduleNumber": 5,
+    "quarterModuleIndex": 5,
+    "title": "Expressing Emotional Response And Reactions To An Issue To Persuade Using A Range Of Verbs, Adjectives, And Adverbs",
+    "source": {
+      "fileId": "1-OdUX2OwFdLOZnWn7IN7TWZqKnHxBNNi",
+      "fileName": "english8_q1_mod5_ExpressingEmotionalResponseandReactions_v3-2.pdf",
+      "url": "https://drive.google.com/file/d/1-OdUX2OwFdLOZnWn7IN7TWZqKnHxBNNi/view",
+      "sha256": "76bf7e1ae3a8b3a6142eff932f8c4f7c4b6964443658ad9e3fbd53ccbc390fd4",
+      "pageCount": 37,
       "notes": [],
       "discussionPages": [
         10,
         11,
         12,
+        18,
+        19,
+        24,
+        25
+      ],
+      "verifiedRecallPages": [
+        10,
+        11,
+        12,
+        18,
+        19,
+        24,
+        25,
+        26,
+        27
+      ]
+    }
+  },
+  {
+    "id": "g8-q2-m1",
+    "grade": 8,
+    "quarter": 2,
+    "sourceNumber": "1",
+    "sourceLabel": "Module 1",
+    "moduleNumber": 6,
+    "quarterModuleIndex": 1,
+    "title": "Explaining Visual-Verbal Relationships",
+    "source": {
+      "fileId": "1oWjNKD0cguMcot0EFP49EO3EmG93p0a_",
+      "fileName": "English8_Q2_Mod1_Explaining_Visual_Verbal_Relationships_V8.pdf",
+      "url": "https://drive.google.com/file/d/1oWjNKD0cguMcot0EFP49EO3EmG93p0a_/view",
+      "sha256": "065ba5dbc6dd315752a64580f213ad07e10d8a3f68932057092385c7f97e8756",
+      "pageCount": 33,
+      "notes": [],
+      "discussionPages": [
+        13,
+        14,
+        15,
+        16
+      ],
+      "verifiedRecallPages": [
         13,
         14,
         15,
@@ -1909,246 +1782,144 @@
     }
   },
   {
-    "id": "g8-q4-m5",
+    "id": "g8-q2-m2",
     "grade": 8,
-    "quarter": 4,
-    "sourceNumber": "5",
-    "sourceLabel": "Module 5",
-    "moduleNumber": 21,
-    "quarterModuleIndex": 5,
-    "title": "Developing Paragraphs that Illustrate Text Types",
-    "source": {
-      "fileId": "1oXJl0BpCaV0CV6o8di7e1vrE0wCJoJj1",
-      "fileName": "ENGLISH8_Module5_final.pdf",
-      "url": "https://drive.google.com/file/d/1oXJl0BpCaV0CV6o8di7e1vrE0wCJoJj1/view",
-      "sha256": "4f8d674b556db1efa21e0de8174b9e8bb079e6824e3c13ab2c3d6a3b96e5b0b5",
-      "pageCount": 27,
-      "notes": [],
-      "discussionPages": [
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18
-      ]
-    }
-  },
-  {
-    "id": "g8-q4-m6",
-    "grade": 8,
-    "quarter": 4,
-    "sourceNumber": "6",
-    "sourceLabel": "Module 6",
-    "moduleNumber": 22,
-    "quarterModuleIndex": 6,
-    "title": "Delivering A Self-Composed Speech",
-    "source": {
-      "fileId": "1TSJZC97CJI9uTgJtWpbbMbkFVNqYqjYX",
-      "fileName": "ENGLISH 8_Module 6_final.pdf",
-      "url": "https://drive.google.com/file/d/1TSJZC97CJI9uTgJtWpbbMbkFVNqYqjYX/view",
-      "sha256": "529b6bcb416751e31a813f3c26cbbc6154583a7e0d18331c315ddb01a4dbcb08",
-      "pageCount": 31,
-      "notes": [],
-      "discussionPages": [
-        13,
-        14,
-        15,
-        16,
-        17,
-        18
-      ]
-    }
-  },
-  {
-    "id": "g10-q2-m1",
-    "grade": 10,
-    "quarter": 2,
-    "sourceNumber": "1",
-    "sourceLabel": "Module 1",
-    "moduleNumber": 9,
-    "quarterModuleIndex": 1,
-    "title": "Language of Research, Campaigns and Advocacies",
-    "source": {
-      "fileId": "1Q1shTKIZ4xwqZftk82i61rNel8aENdU0",
-      "fileName": "English10_Q2_Mod1_LanguageofResearchCampaignsandAdvocacies.pdf",
-      "url": "https://drive.google.com/file/d/1Q1shTKIZ4xwqZftk82i61rNel8aENdU0/view",
-      "sha256": "9a455882bfe0c5b5c65553cc6f3b2722c61aacacd9eb304cdeed77c807a73d7d",
-      "pageCount": 19,
-      "notes": [],
-      "discussionPages": [
-        6,
-        7,
-        8,
-        9
-      ]
-    }
-  },
-  {
-    "id": "g10-q2-m2",
-    "grade": 10,
     "quarter": 2,
     "sourceNumber": "2",
     "sourceLabel": "Module 2",
-    "moduleNumber": 10,
+    "moduleNumber": 7,
     "quarterModuleIndex": 2,
-    "title": "Connecting Ideas using Conjunctions in an Argumentative Text",
+    "title": "Opinion-Marking Signals",
     "source": {
-      "fileId": "1Fa3s_IRPf8rIsoIA1tj4VgX2XB1jE-U9",
-      "fileName": "English10_Q2_Mod2_ConnectingIdeasUsingConjunctionsinanArgumentativeText.docx .pdf",
-      "url": "https://drive.google.com/file/d/1Fa3s_IRPf8rIsoIA1tj4VgX2XB1jE-U9/view",
-      "sha256": "a1a8597eceae08ec551830f7b8def1e8db68aed609954c181a6815248f0b5df9",
-      "pageCount": 17,
+      "fileId": "1zVgUbckMgAclELyG9qWmGDZ9sP-oKAaC",
+      "fileName": "English8_Q2_Mod2_OpinionMarkingSignals_V1.pdf",
+      "url": "https://drive.google.com/file/d/1zVgUbckMgAclELyG9qWmGDZ9sP-oKAaC/view",
+      "sha256": "365ef892fbaa44169607a5dbc929a16ce5d06b5f0f68624db1d9f85f47fdc953",
+      "pageCount": 29,
       "notes": [],
       "discussionPages": [
-        9
-      ]
-    }
-  },
-  {
-    "id": "g10-q2-m3",
-    "grade": 10,
-    "quarter": 2,
-    "sourceNumber": "3",
-    "sourceLabel": "Module 3",
-    "moduleNumber": 11,
-    "quarterModuleIndex": 3,
-    "title": "Formulating a Statement of Opinion or Assertion",
-    "source": {
-      "fileId": "13TLCt46RngpHY3HvZYwWn_PwYp6uS98-",
-      "fileName": "English10_Q2_Mod3_FormulatingAStatementofOpinionorAssertion.pdf",
-      "url": "https://drive.google.com/file/d/13TLCt46RngpHY3HvZYwWn_PwYp6uS98-/view",
-      "sha256": "5fd4c6b29b69f52089e728062f84fa20239814c83282e36d7973d63343de617d",
-      "pageCount": 20,
-      "notes": [],
-      "discussionPages": [
-        9,
-        10,
-        11,
-        12
-      ]
-    }
-  },
-  {
-    "id": "g10-q2-m4",
-    "grade": 10,
-    "quarter": 2,
-    "sourceNumber": "4",
-    "sourceLabel": "Module 4",
-    "moduleNumber": 12,
-    "quarterModuleIndex": 4,
-    "title": "Argumentative Texts: Modal Verbs and Modal Adverbs",
-    "source": {
-      "fileId": "1X8QA_AwPWA8mUzjrUuU0k6cnSlPj5duw",
-      "fileName": "English10_Q2_Mod4_ArgumentativeTextsModalVerbsandModalAdverbs.pdf",
-      "url": "https://drive.google.com/file/d/1X8QA_AwPWA8mUzjrUuU0k6cnSlPj5duw/view",
-      "sha256": "02460e403250fabdab6fdc4d7e25258aff427c604b08908a96007c30eef8b43e",
-      "pageCount": 30,
-      "notes": [],
-      "discussionPages": [
-        9,
-        15,
-        21,
-        22
-      ]
-    }
-  },
-  {
-    "id": "g10-q2-m5",
-    "grade": 10,
-    "quarter": 2,
-    "sourceNumber": "5",
-    "sourceLabel": "Module 5",
-    "moduleNumber": 13,
-    "quarterModuleIndex": 5,
-    "title": "Formulating Claims of Fact, Policy and Value",
-    "source": {
-      "fileId": "1RiUzPjHIyUjn-H1UFej_TbfzAWUI8wAD",
-      "fileName": "English10_Q2_Mod5_FormulatingClaimsofFactPolicyandValue.pdf",
-      "url": "https://drive.google.com/file/d/1RiUzPjHIyUjn-H1UFej_TbfzAWUI8wAD/view",
-      "sha256": "8b20af3a7d31c130700299b3cc9409e97701c8e6339c80879df495b96c75ca80",
-      "pageCount": 20,
-      "notes": [],
-      "discussionPages": [
-        7,
-        8,
-        9,
-        10,
-        11
-      ]
-    }
-  },
-  {
-    "id": "g10-q2-m6",
-    "grade": 10,
-    "quarter": 2,
-    "sourceNumber": "6",
-    "sourceLabel": "Module 6",
-    "moduleNumber": 14,
-    "quarterModuleIndex": 6,
-    "title": "Rhetorical Questions",
-    "source": {
-      "fileId": "1MSpaDma0gUZEsvR11iYt3EQWKHkxnGSq",
-      "fileName": "English10_Q2_Mod6__RhetoricalQuestions.pdf",
-      "url": "https://drive.google.com/file/d/1MSpaDma0gUZEsvR11iYt3EQWKHkxnGSq/view",
-      "sha256": "85c490408a3e2797c4cc6f7d2e315cacf47267f928a85619d3a6730272850c78",
-      "pageCount": 21,
-      "notes": [],
-      "discussionPages": [
-        8,
         10,
         11,
         12,
         13
-      ]
-    }
-  },
-  {
-    "id": "g10-q2-m7",
-    "grade": 10,
-    "quarter": 2,
-    "sourceNumber": "7",
-    "sourceLabel": "Module 7",
-    "moduleNumber": 15,
-    "quarterModuleIndex": 7,
-    "title": "Multimodal and Its Elements",
-    "source": {
-      "fileId": "18fBTmhbCONeF7e-DV8QziWE_8s5sO8Me",
-      "fileName": "English10_Q2_Mod7_MultimodalAndItsElements.pdf",
-      "url": "https://drive.google.com/file/d/18fBTmhbCONeF7e-DV8QziWE_8s5sO8Me/view",
-      "sha256": "11f6e04c74ffd31750c4fe6295da01e122872260235b29f24407c513377dbce0",
-      "pageCount": 21,
-      "notes": [],
-      "discussionPages": [
-        6,
-        7,
-        9,
-        10
-      ]
-    }
-  },
-  {
-    "id": "g10-q2-m8",
-    "grade": 10,
-    "quarter": 2,
-    "sourceNumber": "8",
-    "sourceLabel": "Module 8",
-    "moduleNumber": 16,
-    "quarterModuleIndex": 8,
-    "title": "Deliver a Prepared or Impromptu on an Issue Employing the Techniques in Public Speaking",
-    "source": {
-      "fileId": "1SQj83gbfpAmdFYHmRUqmqzbdkCbrmLVK",
-      "fileName": "English10_Q2_Mod8_DeliveranImpromtuEmployingTechniquesofPublicSpeaking.pdf",
-      "url": "https://drive.google.com/file/d/1SQj83gbfpAmdFYHmRUqmqzbdkCbrmLVK/view",
-      "sha256": "03485e84834b14adc3948e2ac1e918dac03fc17f6b18f6d5e8a1e6ae912d8d9e",
-      "pageCount": 22,
-      "notes": [],
-      "discussionPages": [
-        9,
+      ],
+      "verifiedRecallPages": [
         10,
-        11
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ]
+    }
+  },
+  {
+    "id": "g8-q2-m3",
+    "grade": 8,
+    "quarter": 2,
+    "sourceNumber": "3",
+    "sourceLabel": "Module 3",
+    "moduleNumber": 8,
+    "quarterModuleIndex": 3,
+    "title": "Compare and Contrast Same Topic in Different Multimodal Texts",
+    "source": {
+      "fileId": "1I4ESAlBAY81uH6HCLh6kj2uWJcHMVKig",
+      "fileName": "English8_Q2_Mod3_Compare_and_Contrast_Same_Topic_in_Different_Multimodal_Texts_V8.pdf",
+      "url": "https://drive.google.com/file/d/1I4ESAlBAY81uH6HCLh6kj2uWJcHMVKig/view",
+      "sha256": "9d6dce2bfb794732ab1d532469bb0ad95936a93f811c504c3bda1fc328569928",
+      "pageCount": 25,
+      "notes": [],
+      "discussionPages": [
+        10,
+        11,
+        12,
+        13
+      ],
+      "verifiedRecallPages": [
+        10,
+        11,
+        12,
+        13,
+        14
+      ]
+    }
+  },
+  {
+    "id": "g8-q2-m4",
+    "grade": 8,
+    "quarter": 2,
+    "sourceNumber": "4",
+    "sourceLabel": "Module 4",
+    "moduleNumber": 9,
+    "quarterModuleIndex": 4,
+    "title": "Comparing and Contrasting Own Opinions",
+    "source": {
+      "fileId": "1wCe9PW_bnf77A_Nzyc-5r_GAl5xtpKGC",
+      "fileName": "english8_q2_mod4_Comparing-and-Contrasting_v13.pdf",
+      "url": "https://drive.google.com/file/d/1wCe9PW_bnf77A_Nzyc-5r_GAl5xtpKGC/view",
+      "sha256": "324e9c24cb9265c1d602388a193adeaca559e3b44417247224fa54f890d5c33e",
+      "pageCount": 28,
+      "notes": [],
+      "discussionPages": [
+        11,
+        12,
+        13
+      ],
+      "verifiedRecallPages": [
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    }
+  },
+  {
+    "id": "g8-q2-m5",
+    "grade": 8,
+    "quarter": 2,
+    "sourceNumber": "5",
+    "sourceLabel": "Module 5",
+    "moduleNumber": 10,
+    "quarterModuleIndex": 5,
+    "title": "Analyzing Messages Conveyed in a Text",
+    "source": {
+      "fileId": "1YLsi3vwmUaqkpjuBUnBaao-gKzaDr_xs",
+      "fileName": "English8_Q2_Mod5_AnalyzingMessagesConveyedInAText_V1.pdf",
+      "url": "https://drive.google.com/file/d/1YLsi3vwmUaqkpjuBUnBaao-gKzaDr_xs/view",
+      "sha256": "cc9346ca0a44b78c16cc03e719cfb711674ccd5d5dd2a054384a5ff89e8cffb1",
+      "pageCount": 37,
+      "notes": [],
+      "discussionPages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "verifiedRecallPages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
       ]
     }
   },
@@ -2169,6 +1940,12 @@
       "pageCount": 25,
       "notes": [],
       "discussionPages": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "verifiedRecallPages": [
         9,
         10,
         11,
@@ -2195,6 +1972,14 @@
       "pageCount": 32,
       "notes": [],
       "discussionPages": [
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "verifiedRecallPages": [
         11,
         12,
         13,
@@ -2228,6 +2013,10 @@
       "notes": [],
       "discussionPages": [
         12,
+        13
+      ],
+      "verifiedRecallPages": [
+        12,
         13,
         14,
         15,
@@ -2256,6 +2045,13 @@
       "pageCount": 32,
       "notes": [],
       "discussionPages": [
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "verifiedRecallPages": [
         12,
         13,
         14,
@@ -2294,6 +2090,17 @@
         16,
         17,
         18,
+        19
+      ],
+      "verifiedRecallPages": [
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
         19,
         20,
         21
@@ -2319,6 +2126,11 @@
       "discussionPages": [
         10,
         11,
+        12
+      ],
+      "verifiedRecallPages": [
+        10,
+        11,
         12,
         13,
         14,
@@ -2327,22 +2139,146 @@
     }
   },
   {
-    "id": "g8-q2-m1",
+    "id": "g8-q4-m1",
     "grade": 8,
-    "quarter": 2,
+    "quarter": 4,
     "sourceNumber": "1",
     "sourceLabel": "Module 1",
-    "moduleNumber": 6,
+    "moduleNumber": 17,
     "quarterModuleIndex": 1,
-    "title": "Explaining Visual-Verbal Relationships",
+    "title": "Using Appropriate Grammatical Signals or Expressions to Each Pattern of Idea Development",
     "source": {
-      "fileId": "1oWjNKD0cguMcot0EFP49EO3EmG93p0a_",
-      "fileName": "English8_Q2_Mod1_Explaining_Visual_Verbal_Relationships_V8.pdf",
-      "url": "https://drive.google.com/file/d/1oWjNKD0cguMcot0EFP49EO3EmG93p0a_/view",
-      "sha256": "065ba5dbc6dd315752a64580f213ad07e10d8a3f68932057092385c7f97e8756",
+      "fileId": "1eAL4NkVXLLqTzBlTmpiUrnb9-ahMRnHP",
+      "fileName": "Q4_ENGLISH8_Module1.pdf",
+      "url": "https://drive.google.com/file/d/1eAL4NkVXLLqTzBlTmpiUrnb9-ahMRnHP/view",
+      "sha256": "4a2804fa585107dc99cff3f837202a643369038e90b894ec2cabe1912e6e9d5a",
       "pageCount": 33,
       "notes": [],
       "discussionPages": [
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "verifiedRecallPages": [
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ]
+    }
+  },
+  {
+    "id": "g8-q4-m2",
+    "grade": 8,
+    "quarter": 4,
+    "sourceNumber": "2",
+    "sourceLabel": "Module 2",
+    "moduleNumber": 18,
+    "quarterModuleIndex": 2,
+    "title": "Expanding the Content of an Outline Using Notes from Primary and Secondary Sources",
+    "source": {
+      "fileId": "1UwbpVm8X7puuqzUOewpR7Aet8_xhog0S",
+      "fileName": "English8_Q4_Module 2_Expanding the Content of an Outline Using Notes from Primary and Secondary Sources_V2.pdf",
+      "url": "https://drive.google.com/file/d/1UwbpVm8X7puuqzUOewpR7Aet8_xhog0S/view",
+      "sha256": "eed2eacbc6a82e16cbb8b84860c2e5ef89eeca2a437a365f2e6ded33a64af7c5",
+      "pageCount": 31,
+      "notes": [],
+      "discussionPages": [
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "verifiedRecallPages": [
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ]
+    }
+  },
+  {
+    "id": "g8-q4-m3",
+    "grade": 8,
+    "quarter": 4,
+    "sourceNumber": "3",
+    "sourceLabel": "Module 3",
+    "moduleNumber": 19,
+    "quarterModuleIndex": 3,
+    "title": "Synthesizing Information",
+    "source": {
+      "fileId": "13eeDpbAAC6M_17Ju8dnHyunYs86ZcfUs",
+      "fileName": "ENGLISH 8_Module 3_final.pdf",
+      "url": "https://drive.google.com/file/d/13eeDpbAAC6M_17Ju8dnHyunYs86ZcfUs/view",
+      "sha256": "1a4ab9640bea06a5e4d6012ae16fe17ab745cab1d5b8c2438d794c59a2312855",
+      "pageCount": 26,
+      "notes": [],
+      "discussionPages": [
+        10,
+        11,
+        12,
+        13
+      ],
+      "verifiedRecallPages": [
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    }
+  },
+  {
+    "id": "g8-q4-m4",
+    "grade": 8,
+    "quarter": 4,
+    "sourceNumber": "4",
+    "sourceLabel": "Module 4",
+    "moduleNumber": 20,
+    "quarterModuleIndex": 4,
+    "title": "Composing an Effective Paragraph",
+    "source": {
+      "fileId": "1LgwsCPEIfrKJinfj6toRLACoF6mO8Wo-",
+      "fileName": "ENGLISH 8_Module 4_final.pdf",
+      "url": "https://drive.google.com/file/d/1LgwsCPEIfrKJinfj6toRLACoF6mO8Wo-/view",
+      "sha256": "4fc02356c51ab5766891ee8c09c032c8fed3c18227ab21d6bffea2a5c3ca9dcd",
+      "pageCount": 33,
+      "notes": [],
+      "discussionPages": [
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "verifiedRecallPages": [
+        10,
+        11,
+        12,
         13,
         14,
         15,
@@ -2355,137 +2291,30 @@
     }
   },
   {
-    "id": "g8-q2-m2",
+    "id": "g8-q4-m5",
     "grade": 8,
-    "quarter": 2,
-    "sourceNumber": "2",
-    "sourceLabel": "Module 2",
-    "moduleNumber": 7,
-    "quarterModuleIndex": 2,
-    "title": "Opinion-Marking Signals",
-    "source": {
-      "fileId": "1zVgUbckMgAclELyG9qWmGDZ9sP-oKAaC",
-      "fileName": "English8_Q2_Mod2_OpinionMarkingSignals_V1.pdf",
-      "url": "https://drive.google.com/file/d/1zVgUbckMgAclELyG9qWmGDZ9sP-oKAaC/view",
-      "sha256": "365ef892fbaa44169607a5dbc929a16ce5d06b5f0f68624db1d9f85f47fdc953",
-      "pageCount": 29,
-      "notes": [],
-      "discussionPages": [
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17
-      ]
-    }
-  },
-  {
-    "id": "g8-q2-m3",
-    "grade": 8,
-    "quarter": 2,
-    "sourceNumber": "3",
-    "sourceLabel": "Module 3",
-    "moduleNumber": 8,
-    "quarterModuleIndex": 3,
-    "title": "Compare and Contrast Same Topic in Different Multimodal Texts",
-    "source": {
-      "fileId": "1I4ESAlBAY81uH6HCLh6kj2uWJcHMVKig",
-      "fileName": "English8_Q2_Mod3_Compare_and_Contrast_Same_Topic_in_Different_Multimodal_Texts_V8.pdf",
-      "url": "https://drive.google.com/file/d/1I4ESAlBAY81uH6HCLh6kj2uWJcHMVKig/view",
-      "sha256": "9d6dce2bfb794732ab1d532469bb0ad95936a93f811c504c3bda1fc328569928",
-      "pageCount": 25,
-      "notes": [],
-      "discussionPages": [
-        10,
-        11,
-        12,
-        13,
-        14
-      ]
-    }
-  },
-  {
-    "id": "g8-q2-m4",
-    "grade": 8,
-    "quarter": 2,
-    "sourceNumber": "4",
-    "sourceLabel": "Module 4",
-    "moduleNumber": 9,
-    "quarterModuleIndex": 4,
-    "title": "Comparing and Contrasting Own Opinions",
-    "source": {
-      "fileId": "1wCe9PW_bnf77A_Nzyc-5r_GAl5xtpKGC",
-      "fileName": "english8_q2_mod4_Comparing-and-Contrasting_v13.pdf",
-      "url": "https://drive.google.com/file/d/1wCe9PW_bnf77A_Nzyc-5r_GAl5xtpKGC/view",
-      "sha256": "324e9c24cb9265c1d602388a193adeaca559e3b44417247224fa54f890d5c33e",
-      "pageCount": 28,
-      "notes": [],
-      "discussionPages": [
-        11,
-        12,
-        13,
-        14,
-        15
-      ]
-    }
-  },
-  {
-    "id": "g8-q2-m5",
-    "grade": 8,
-    "quarter": 2,
+    "quarter": 4,
     "sourceNumber": "5",
     "sourceLabel": "Module 5",
-    "moduleNumber": 10,
+    "moduleNumber": 21,
     "quarterModuleIndex": 5,
-    "title": "Analyzing Messages Conveyed in a Text",
+    "title": "Developing Paragraphs that Illustrate Text Types",
     "source": {
-      "fileId": "1YLsi3vwmUaqkpjuBUnBaao-gKzaDr_xs",
-      "fileName": "English8_Q2_Mod5_AnalyzingMessagesConveyedInAText_V1.pdf",
-      "url": "https://drive.google.com/file/d/1YLsi3vwmUaqkpjuBUnBaao-gKzaDr_xs/view",
-      "sha256": "cc9346ca0a44b78c16cc03e719cfb711674ccd5d5dd2a054384a5ff89e8cffb1",
-      "pageCount": 37,
+      "fileId": "1oXJl0BpCaV0CV6o8di7e1vrE0wCJoJj1",
+      "fileName": "ENGLISH8_Module5_final.pdf",
+      "url": "https://drive.google.com/file/d/1oXJl0BpCaV0CV6o8di7e1vrE0wCJoJj1/view",
+      "sha256": "4f8d674b556db1efa21e0de8174b9e8bb079e6824e3c13ab2c3d6a3b96e5b0b5",
+      "pageCount": 27,
       "notes": [],
       "discussionPages": [
+        11
+      ],
+      "verifiedRecallPages": [
+        11,
         12,
         13,
         14,
         15,
-        16,
-        17,
-        18,
-        19,
-        20,
-        21,
-        22,
-        23,
-        24,
-        25
-      ]
-    }
-  },
-  {
-    "id": "g10-q3-m1",
-    "grade": 10,
-    "quarter": 3,
-    "sourceNumber": "1",
-    "sourceLabel": "Module 1",
-    "moduleNumber": 17,
-    "quarterModuleIndex": 1,
-    "title": "Argumentative Essay",
-    "source": {
-      "fileId": "1ZpevlxZOYmtED2IHFcdluF7EI1diYZIU",
-      "fileName": "ENG10 Q3 MODULE1.pdf",
-      "url": "https://drive.google.com/file/d/1ZpevlxZOYmtED2IHFcdluF7EI1diYZIU/view",
-      "sha256": "bd925c1d26b351003283530358998bba522f0e057d6288c3a3f8aae78a141f8b",
-      "pageCount": 29,
-      "notes": [],
-      "discussionPages": [
-        8,
-        9,
-        11,
         16,
         17,
         18
@@ -2493,93 +2322,837 @@
     }
   },
   {
-    "id": "g10-q3-m2a",
-    "grade": 10,
-    "quarter": 3,
-    "sourceNumber": "2a",
-    "sourceLabel": "Module 2A",
-    "moduleNumber": 18,
-    "quarterModuleIndex": 2,
-    "title": "Using Informative Writing Techniques",
+    "id": "g8-q4-m6",
+    "grade": 8,
+    "quarter": 4,
+    "sourceNumber": "6",
+    "sourceLabel": "Module 6",
+    "moduleNumber": 22,
+    "quarterModuleIndex": 6,
+    "title": "Delivering A Self-Composed Speech",
     "source": {
-      "fileId": "1JVjW6Q9iuj3XY8pXac82dLE12cv4Pt_m",
-      "fileName": "ENG10 Q3 MODULE2A.pdf",
-      "url": "https://drive.google.com/file/d/1JVjW6Q9iuj3XY8pXac82dLE12cv4Pt_m/view",
-      "sha256": "dd302bba100087b93e5d4cdfffc9f31f978a15b01f65cf31e25fecee35eafe19",
-      "pageCount": 19,
+      "fileId": "1TSJZC97CJI9uTgJtWpbbMbkFVNqYqjYX",
+      "fileName": "ENGLISH 8_Module 6_final.pdf",
+      "url": "https://drive.google.com/file/d/1TSJZC97CJI9uTgJtWpbbMbkFVNqYqjYX/view",
+      "sha256": "529b6bcb416751e31a813f3c26cbbc6154583a7e0d18331c315ddb01a4dbcb08",
+      "pageCount": 31,
       "notes": [],
       "discussionPages": [
-        9,
-        10,
-        11
+        13,
+        14,
+        15,
+        16
+      ],
+      "verifiedRecallPages": [
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
       ]
     }
   },
   {
-    "id": "g10-q3-m2b",
-    "grade": 10,
+    "id": "g9-q1-w1",
+    "grade": 9,
+    "quarter": 1,
+    "sourceNumber": "1",
+    "sourceLabel": "Week 1",
+    "moduleNumber": 1,
+    "quarterModuleIndex": 1,
+    "title": "Expressing Permission, Obligation, and Prohibition Using Modals",
+    "source": {
+      "fileId": "1XW053aQeCA4ikZO0RhgZrFom57UqD7m0",
+      "fileName": "EDITED-G9-SLEM-Q1-W1.pdf",
+      "url": "https://drive.google.com/file/d/1XW053aQeCA4ikZO0RhgZrFom57UqD7m0/view",
+      "sha256": "2ede6fff852fa7e2d0363be49f58bc9522fac3209e335e6c03b007f916568780",
+      "pageCount": 10,
+      "notes": [],
+      "discussionPages": [
+        4,
+        5
+      ],
+      "verifiedRecallPages": [
+        4,
+        5
+      ]
+    }
+  },
+  {
+    "id": "g9-q1-w2",
+    "grade": 9,
+    "quarter": 1,
+    "sourceNumber": "2",
+    "sourceLabel": "Week 2",
+    "moduleNumber": 2,
+    "quarterModuleIndex": 2,
+    "title": "Using Conditionals in Expressing Arguments (Zero-Conditional Sentences)",
+    "source": {
+      "fileId": "1ICiJOBXf4bOrbtI69Akv1e0yvX_KdCEG",
+      "fileName": "EDITED-G9-SLEM-Q1-W2.pdf",
+      "url": "https://drive.google.com/file/d/1ICiJOBXf4bOrbtI69Akv1e0yvX_KdCEG/view",
+      "sha256": "43e7f44be32ad21f7f957faadbf2cc6f6d40a56b1c1193bd53074cbcde652a83",
+      "pageCount": 10,
+      "notes": [],
+      "discussionPages": [
+        4,
+        5,
+        6
+      ],
+      "verifiedRecallPages": [
+        5,
+        6
+      ]
+    }
+  },
+  {
+    "id": "g9-q1-w3",
+    "grade": 9,
+    "quarter": 1,
+    "sourceNumber": "3",
+    "sourceLabel": "Week 3",
+    "moduleNumber": 3,
+    "quarterModuleIndex": 3,
+    "title": "Using Conditionals in Expressing Arguments (First Conditional Sentences)",
+    "source": {
+      "fileId": "1edVGTweFHZYzGwOe9EUROEvurSnq637I",
+      "fileName": "EDITED-G9-SLEM-Q1-W3.pdf",
+      "url": "https://drive.google.com/file/d/1edVGTweFHZYzGwOe9EUROEvurSnq637I/view",
+      "sha256": "21167ca52ff7c92843125ede4f8568e293c2b31863a3f3a84188bdc58b170198",
+      "pageCount": 10,
+      "notes": [],
+      "discussionPages": [
+        4,
+        5
+      ],
+      "verifiedRecallPages": [
+        4,
+        5
+      ]
+    }
+  },
+  {
+    "id": "g9-q1-w4",
+    "grade": 9,
+    "quarter": 1,
+    "sourceNumber": "4",
+    "sourceLabel": "Week 4",
+    "moduleNumber": 4,
+    "quarterModuleIndex": 4,
+    "title": "Using Conditionals to Express Arguments (Second Conditional Sentences)",
+    "source": {
+      "fileId": "1gVM2xPQDwPJgo6Iynb-A9sG7ZXdtBOFT",
+      "fileName": "EDITED-G9-SLEM-Q1-W4.pdf",
+      "url": "https://drive.google.com/file/d/1gVM2xPQDwPJgo6Iynb-A9sG7ZXdtBOFT/view",
+      "sha256": "6e9189a12b6170c936871d0605a2def9adbc1fc155c84f6543ee39a0d84d7c55",
+      "pageCount": 10,
+      "notes": [],
+      "discussionPages": [
+        4,
+        5
+      ],
+      "verifiedRecallPages": [
+        4,
+        5
+      ]
+    }
+  },
+  {
+    "id": "g9-q1-w5",
+    "grade": 9,
+    "quarter": 1,
+    "sourceNumber": "5",
+    "sourceLabel": "Week 5",
+    "moduleNumber": 5,
+    "quarterModuleIndex": 5,
+    "title": "Using Conditionals to Express Arguments (Third Conditional Sentences)",
+    "source": {
+      "fileId": "1w5OjEPvoar4szPJF3PHrOGqC27QaHXK0",
+      "fileName": "EDITED-G9-SLEM-Q1-W5.pdf",
+      "url": "https://drive.google.com/file/d/1w5OjEPvoar4szPJF3PHrOGqC27QaHXK0/view",
+      "sha256": "5a5ca13056c2a6623b71bba0ac4cb806630728b9354fe7c7bc0689b9207be1ef",
+      "pageCount": 10,
+      "notes": [],
+      "discussionPages": [
+        5,
+        6
+      ],
+      "verifiedRecallPages": [
+        5,
+        6
+      ]
+    }
+  },
+  {
+    "id": "g9-q1-w6",
+    "grade": 9,
+    "quarter": 1,
+    "sourceNumber": "6",
+    "sourceLabel": "Week 6",
+    "moduleNumber": 6,
+    "quarterModuleIndex": 6,
+    "title": "Using Conditionals to Express Arguments (Zero, First, Second and Third Conditionals)",
+    "source": {
+      "fileId": "10n6YQL62o3bc3FyZuz6rKvXZLXB8CYtm",
+      "fileName": "EDITED-G9-SLEM-Q1-W6.pdf",
+      "url": "https://drive.google.com/file/d/10n6YQL62o3bc3FyZuz6rKvXZLXB8CYtm/view",
+      "sha256": "7af0ca9708cd481ae96a4b4fc3109d26bc5daa7836788b7e58636bc7039df8ca",
+      "pageCount": 10,
+      "notes": [],
+      "discussionPages": [
+        3,
+        4,
+        5
+      ],
+      "verifiedRecallPages": [
+        3,
+        4,
+        5
+      ]
+    }
+  },
+  {
+    "id": "g9-q1-w7",
+    "grade": 9,
+    "quarter": 1,
+    "sourceNumber": "7",
+    "sourceLabel": "Week 7",
+    "moduleNumber": 7,
+    "quarterModuleIndex": 7,
+    "title": "Employing Appropriate Communicative Styles for Various Situations (Part 1)",
+    "source": {
+      "fileId": "1I8xD1b6ieDRg3_Fk7QuDFNy5ZQZoSciH",
+      "fileName": "EDITED-G9-SLEM-Q1-W7.pdf",
+      "url": "https://drive.google.com/file/d/1I8xD1b6ieDRg3_Fk7QuDFNy5ZQZoSciH/view",
+      "sha256": "2b2a6d4caa7de6d8009f15f8b9e0e024ecc66181aa68f12b560796b53028acb4",
+      "pageCount": 10,
+      "notes": [],
+      "discussionPages": [
+        4
+      ],
+      "verifiedRecallPages": [
+        4,
+        5
+      ]
+    }
+  },
+  {
+    "id": "g9-q1-w8",
+    "grade": 9,
+    "quarter": 1,
+    "sourceNumber": "8",
+    "sourceLabel": "Week 8",
+    "moduleNumber": 8,
+    "quarterModuleIndex": 8,
+    "title": "Employing Appropriate Communicative Styles for Various Situations (Part 2)",
+    "source": {
+      "fileId": "1kfz311Nhr4MKQsY0xqWAIq2XIqn0kgx_",
+      "fileName": "EDITED-G9-SLEM-Q1-W8.pdf",
+      "url": "https://drive.google.com/file/d/1kfz311Nhr4MKQsY0xqWAIq2XIqn0kgx_/view",
+      "sha256": "c6e2fce5886d5407dcd25dc0b3ce87025441e75433c107c1580464b85a3710f3",
+      "pageCount": 10,
+      "notes": [],
+      "discussionPages": [
+        4
+      ],
+      "verifiedRecallPages": [
+        4
+      ]
+    }
+  },
+  {
+    "id": "g9-q2-m1",
+    "grade": 9,
+    "quarter": 2,
+    "sourceNumber": "1",
+    "sourceLabel": "Module 1",
+    "moduleNumber": 9,
+    "quarterModuleIndex": 1,
+    "title": "Making Connections Between Texts to Particular Social Issues, Concerns, or Dispositions in Real Life",
+    "source": {
+      "fileId": "1fYWEF1s4FpoBt26kxcuCzStIloDlShoz",
+      "fileName": "English9_Q2_Mod1_Making Connections Between Texts to Particular Social Issues, Concerns, or Dispositions in Real Life.pdf",
+      "url": "https://drive.google.com/file/d/1fYWEF1s4FpoBt26kxcuCzStIloDlShoz/view",
+      "sha256": "a6a466de73125b53be57c8eba6222afff8cd493b42086795ab7062f01618ca69",
+      "pageCount": 32,
+      "notes": [],
+      "discussionPages": [
+        11,
+        12,
+        19
+      ],
+      "verifiedRecallPages": [
+        11,
+        12,
+        13,
+        19,
+        20
+      ]
+    }
+  },
+  {
+    "id": "g9-q2-m2",
+    "grade": 9,
+    "quarter": 2,
+    "sourceNumber": "2",
+    "sourceLabel": "Module 2",
+    "moduleNumber": 10,
+    "quarterModuleIndex": 2,
+    "title": "Analyzing Literature as a Means of Understanding the World",
+    "source": {
+      "fileId": "1sE1_PlqARG59kCtim19js5G9FFvB9x1O",
+      "fileName": "English9_Q2_Mod2_Analyzing Literature as a Means of Understanding the World.pdf",
+      "url": "https://drive.google.com/file/d/1sE1_PlqARG59kCtim19js5G9FFvB9x1O/view",
+      "sha256": "f3025baefca371cb635ee98a031fdf8cf2ddc3cc02918cad8afee16c7292949c",
+      "pageCount": 30,
+      "notes": [],
+      "discussionPages": [
+        13,
+        14,
+        18,
+        19
+      ],
+      "verifiedRecallPages": [
+        13,
+        14,
+        18,
+        19,
+        20
+      ]
+    }
+  },
+  {
+    "id": "g9-q3-w1",
+    "grade": 9,
     "quarter": 3,
-    "sourceNumber": "2b",
-    "sourceLabel": "Module 2B",
+    "sourceNumber": "1",
+    "sourceLabel": "Week 1",
+    "moduleNumber": 11,
+    "quarterModuleIndex": 1,
+    "title": "Differentiating Biases From Prejudices",
+    "source": {
+      "fileId": "160mB3bVwZyDz_jV91TupLEv6bwOKCBo9",
+      "fileName": "ENGLISH-USLeM_Grade_9_WEEK-1_Q3-final.pdf",
+      "url": "https://drive.google.com/file/d/160mB3bVwZyDz_jV91TupLEv6bwOKCBo9/view",
+      "sha256": "f8ea24f3b06e3c2743c39afb4cebde606e33e5a23c6a46ce172bb09554dec41b",
+      "pageCount": 10,
+      "notes": [],
+      "discussionPages": [
+        4,
+        5
+      ],
+      "verifiedRecallPages": [
+        4,
+        5
+      ]
+    }
+  },
+  {
+    "id": "g9-q3-w2",
+    "grade": 9,
+    "quarter": 3,
+    "sourceNumber": "2",
+    "sourceLabel": "Week 2",
+    "moduleNumber": 12,
+    "quarterModuleIndex": 2,
+    "title": "Determining The Relevance And The Truthfulness Of The Ideas Presented In The Material Viewed",
+    "source": {
+      "fileId": "16bBuggxIQ6HE4acIb-afji3KMUh_pnN0",
+      "fileName": "ENGLISH-USLeM_Grade_9_WEEK-2_Q3-final.pdf",
+      "url": "https://drive.google.com/file/d/16bBuggxIQ6HE4acIb-afji3KMUh_pnN0/view",
+      "sha256": "ea781ef3cedebe98e938b7e90ed28ad748ae361a13d7430fcccecb8c004ea070",
+      "pageCount": 10,
+      "notes": [],
+      "discussionPages": [
+        4,
+        5
+      ],
+      "verifiedRecallPages": [
+        4,
+        5
+      ]
+    }
+  },
+  {
+    "id": "g9-q3-w3",
+    "grade": 9,
+    "quarter": 3,
+    "sourceNumber": "3",
+    "sourceLabel": "Week 3",
+    "moduleNumber": 13,
+    "quarterModuleIndex": 3,
+    "title": "Determining The Relevance And The Truthfulness Of Ideas Presented In The Materials Viewed",
+    "source": {
+      "fileId": "1n8PGQ9cfLkfJ48OPpYx3S7FfsuX_x8zJ",
+      "fileName": "ENGLISH-USLeM_Grade_9_WEEK-3_Q3-final.pdf",
+      "url": "https://drive.google.com/file/d/1n8PGQ9cfLkfJ48OPpYx3S7FfsuX_x8zJ/view",
+      "sha256": "c53db741ac89eaa87bd431bf9f9a9646327bc8a395b0bf7c3a5af6bef8ae7d2d",
+      "pageCount": 10,
+      "notes": [],
+      "discussionPages": [
+        4
+      ],
+      "verifiedRecallPages": [
+        4
+      ]
+    }
+  },
+  {
+    "id": "g9-q3-w4-5",
+    "grade": 9,
+    "quarter": 3,
+    "sourceNumber": "4-5",
+    "sourceLabel": "Weeks 4-5",
+    "moduleNumber": 14,
+    "quarterModuleIndex": 4,
+    "title": "Determining The Relevance And The Truthfulness Of The Ideas Presented In The Materials Viewed",
+    "source": {
+      "fileId": "1ACqJFs-wkRMprc5I7RHhQbdMoyd1dGmM",
+      "fileName": "ENGLISH-USLeM-Grade-9-WEEK-4_5Q3-final.pdf",
+      "url": "https://drive.google.com/file/d/1ACqJFs-wkRMprc5I7RHhQbdMoyd1dGmM/view",
+      "sha256": "f6182600474707560ce97ae52bc71be333f91b64b4c9c34ec280774699451c48",
+      "pageCount": 10,
+      "notes": [],
+      "discussionPages": [
+        3,
+        4
+      ],
+      "verifiedRecallPages": [
+        3,
+        4
+      ]
+    }
+  },
+  {
+    "id": "g9-q3-w6",
+    "grade": 9,
+    "quarter": 3,
+    "sourceNumber": "6",
+    "sourceLabel": "Week 6",
+    "moduleNumber": 15,
+    "quarterModuleIndex": 6,
+    "title": "Judging The Validity Of The Evidence Listened To",
+    "source": {
+      "fileId": "12Mx6Rn_JDaAp5XpiymMq-yf85MBKSdga",
+      "fileName": "ENGLISH-USLeM_Grade_9_WEEK-6_Q3-final.pdf",
+      "url": "https://drive.google.com/file/d/12Mx6Rn_JDaAp5XpiymMq-yf85MBKSdga/view",
+      "sha256": "bb2576bfb11939fe24a252e128d3a0f9554f464c749605ba88a62b9bfcb01636",
+      "pageCount": 10,
+      "notes": [],
+      "discussionPages": [
+        3,
+        4,
+        5
+      ],
+      "verifiedRecallPages": [
+        3,
+        4,
+        5
+      ]
+    }
+  },
+  {
+    "id": "g9-q3-w7",
+    "grade": 9,
+    "quarter": 3,
+    "sourceNumber": "7",
+    "sourceLabel": "Week 7",
+    "moduleNumber": 16,
+    "quarterModuleIndex": 7,
+    "title": "Judging The Validity Of The Evidence Listened To",
+    "source": {
+      "fileId": "120lXzwYBUJfF3EBghqJ9eIi2nV2Mo3nJ",
+      "fileName": "ENGLISH-USLeM_English-9_Week-7_Q3-final.pdf",
+      "url": "https://drive.google.com/file/d/120lXzwYBUJfF3EBghqJ9eIi2nV2Mo3nJ/view",
+      "sha256": "fb1c1050e0d5fb200c64fef09b54618e4be4e69a09a6943ad9f267e572ed0e7e",
+      "pageCount": 10,
+      "notes": [
+        "Filed in Grade 9 / Quarter 3 / Week 7. The PDF cover says \u201cSecond Quarter \u2013 Week 4.\u201d Folder placement retained at the project owner\u2019s request."
+      ],
+      "discussionPages": [
+        4,
+        5,
+        6
+      ],
+      "verifiedRecallPages": [
+        4,
+        5
+      ]
+    }
+  },
+  {
+    "id": "g9-q3-w8",
+    "grade": 9,
+    "quarter": 3,
+    "sourceNumber": "8",
+    "sourceLabel": "Week 8",
+    "moduleNumber": 17,
+    "quarterModuleIndex": 8,
+    "title": "Judge The Validity Of The Evidence Listened To",
+    "source": {
+      "fileId": "11KxFfo_5g4zdrASPlXGp7gJv3deyU1Xy",
+      "fileName": "ENGLISH-USLeM_Grade_9_Week-8_Q3-final.pdf",
+      "url": "https://drive.google.com/file/d/11KxFfo_5g4zdrASPlXGp7gJv3deyU1Xy/view",
+      "sha256": "477c3b3257d9508b1e56a6bf350399f903ef70e3e2b72e0549d5f3da31811f83",
+      "pageCount": 10,
+      "notes": [],
+      "discussionPages": [
+        4,
+        5,
+        6
+      ],
+      "verifiedRecallPages": [
+        4,
+        5,
+        6
+      ]
+    }
+  },
+  {
+    "id": "g9-q4-m1",
+    "grade": 9,
+    "quarter": 4,
+    "sourceNumber": "1",
+    "sourceLabel": "Module 1",
+    "moduleNumber": 18,
+    "quarterModuleIndex": 1,
+    "title": "Modals and Uses of Words to Express Evaluation",
+    "source": {
+      "fileId": "1o60IXjYfDk03sBQQqiq1UbUEKU18GqgT",
+      "fileName": "English 9_Module 1_final.pdf",
+      "url": "https://drive.google.com/file/d/1o60IXjYfDk03sBQQqiq1UbUEKU18GqgT/view",
+      "sha256": "f65181f424a510d50ee3f815a78b78c790536cd4fbbe209c4e59cd0c8bbb8834",
+      "pageCount": 26,
+      "notes": [],
+      "discussionPages": [
+        9,
+        16,
+        17
+      ],
+      "verifiedRecallPages": [
+        9,
+        10,
+        11,
+        16,
+        17
+      ]
+    }
+  },
+  {
+    "id": "g9-q4-m2",
+    "grade": 9,
+    "quarter": 4,
+    "sourceNumber": "2",
+    "sourceLabel": "Module 2",
     "moduleNumber": 19,
     "quarterModuleIndex": 2,
-    "title": "Using a Variety of Persuasive and Argumentative Writing Techniques",
+    "title": "Relate Text Content to Particular Social Issues, Concerns, or Dispositions in Real-life",
     "source": {
-      "fileId": "1AQBtvMVTTu3kEOcQS9TlXjWmneZTF01a",
-      "fileName": "ENG10 Q3 MODULE2B.pdf",
-      "url": "https://drive.google.com/file/d/1AQBtvMVTTu3kEOcQS9TlXjWmneZTF01a/view",
-      "sha256": "32f4f6b674ce8a376904db973b918e5154f8f2698970e0a8a2824cc6a01745ab",
-      "pageCount": 23,
+      "fileId": "1bnjIhxKaEPEIw0xwaipj8vmognRald7B",
+      "fileName": "English 9_Module 2_final.pdf",
+      "url": "https://drive.google.com/file/d/1bnjIhxKaEPEIw0xwaipj8vmognRald7B/view",
+      "sha256": "9710505c9baf79eb4b2520715fb8ae64a29a3dc057a1c10f7804821430468ca4",
+      "pageCount": 21,
       "notes": [],
       "discussionPages": [
-        9,
-        10,
-        13,
-        14
+        12
+      ],
+      "verifiedRecallPages": [
+        12,
+        13
       ]
     }
   },
   {
-    "id": "g10-q3-m3",
-    "grade": 10,
-    "quarter": 3,
+    "id": "g9-q4-m3",
+    "grade": 9,
+    "quarter": 4,
     "sourceNumber": "3",
     "sourceLabel": "Module 3",
     "moduleNumber": 20,
     "quarterModuleIndex": 3,
-    "title": "Compose an Independent Critique",
+    "title": "Analyzing a Story in Terms of its Elements",
     "source": {
-      "fileId": "1InbSlkQUhHDfTwn7eRDxP2DpYJZOOf4w",
-      "fileName": "ENG10 Q3 MODULE3.pdf",
-      "url": "https://drive.google.com/file/d/1InbSlkQUhHDfTwn7eRDxP2DpYJZOOf4w/view",
-      "sha256": "0ea3e99b28a6b207e37ecfe0756d11d3af6020f7c0afbc20e8760b6c0efbe93f",
-      "pageCount": 23,
+      "fileId": "1re2qBWhdZIo5d0wnCCSiqu7bO_wps5KJ",
+      "fileName": "English 9_Module 3_final.pdf",
+      "url": "https://drive.google.com/file/d/1re2qBWhdZIo5d0wnCCSiqu7bO_wps5KJ/view",
+      "sha256": "192f90ca5e502c5edcaa9d91d12af4eda0a7e5da9dfac26aef926aeed57168f9",
+      "pageCount": 22,
       "notes": [],
       "discussionPages": [
-        9,
         10,
         11
+      ],
+      "verifiedRecallPages": [
+        10,
+        11,
+        12
       ]
     }
   },
   {
-    "id": "g10-q3-m4",
-    "grade": 10,
-    "quarter": 3,
+    "id": "g9-q4-m4",
+    "grade": 9,
+    "quarter": 4,
     "sourceNumber": "4",
     "sourceLabel": "Module 4",
     "moduleNumber": 21,
     "quarterModuleIndex": 4,
-    "title": "Critiquing a Literary Selection: Formalist Approach",
+    "title": "Judge The Relevance and Worth of Ideas, Soundness of Author\u2019s Reasoning and the Effectiveness of the Presentation",
     "source": {
-      "fileId": "19Zd6oLW62Zr4aE4lvJGwyg90l2XbbIY9",
-      "fileName": "ENG10 Q3 MODULE4.pdf",
-      "url": "https://drive.google.com/file/d/19Zd6oLW62Zr4aE4lvJGwyg90l2XbbIY9/view",
-      "sha256": "cac662784326538105877cdab6473a6b2e45669a7c7de1c1f88272097caf7d6e",
+      "fileId": "1-Saa9Cm3HLSdvAxxI027la84hLrLUtdW",
+      "fileName": "English 9_Module 4_final.pdf",
+      "url": "https://drive.google.com/file/d/1-Saa9Cm3HLSdvAxxI027la84hLrLUtdW/view",
+      "sha256": "92abd4ed4a62c626b077a4894feb34436d49aaf79dbb7054c7949f777f4632cf",
+      "pageCount": 16,
+      "notes": [],
+      "discussionPages": [
+        9,
+        10
+      ],
+      "verifiedRecallPages": [
+        9,
+        10
+      ]
+    }
+  },
+  {
+    "id": "g9-q4-m5",
+    "grade": 9,
+    "quarter": 4,
+    "sourceNumber": "5",
+    "sourceLabel": "Module 5",
+    "moduleNumber": 22,
+    "quarterModuleIndex": 5,
+    "title": "Listen to Create Value Judgment on Critical Issues that Demand Sound Analysis and Call for Prompt Actions",
+    "source": {
+      "fileId": "1oYhuKRyE4ZiUi6Pg9sL70z0k8ZTuM5hB",
+      "fileName": "English 9_Module 5_final.pdf",
+      "url": "https://drive.google.com/file/d/1oYhuKRyE4ZiUi6Pg9sL70z0k8ZTuM5hB/view",
+      "sha256": "e623939935ce69259b85ec33cbba7f6eb593a6fb3dd70806d2695275b3bd8173",
+      "pageCount": 20,
+      "notes": [],
+      "discussionPages": [
+        8,
+        10
+      ],
+      "verifiedRecallPages": [
+        8,
+        13,
+        14,
+        17
+      ]
+    }
+  },
+  {
+    "id": "g9-q4-m6",
+    "grade": 9,
+    "quarter": 4,
+    "sourceNumber": "6",
+    "sourceLabel": "Module 6",
+    "moduleNumber": 23,
+    "quarterModuleIndex": 6,
+    "title": "Analytical Listening to Make Predictions and Projections",
+    "source": {
+      "fileId": "1Lph4GDZLlXKJ_THF5UzY0woUNU-ANIKv",
+      "fileName": "English 9_Module 6_final.pdf",
+      "url": "https://drive.google.com/file/d/1Lph4GDZLlXKJ_THF5UzY0woUNU-ANIKv/view",
+      "sha256": "b3263f2bb408767895c8499335187eeb78ee13fe1343d25762c34fb78c11c368",
       "pageCount": 23,
       "notes": [],
       "discussionPages": [
+        9
+      ],
+      "verifiedRecallPages": [
+        9,
+        12
+      ]
+    }
+  },
+  {
+    "id": "g9-q4-m7",
+    "grade": 9,
+    "quarter": 4,
+    "sourceNumber": "7",
+    "sourceLabel": "Module 7",
+    "moduleNumber": 24,
+    "quarterModuleIndex": 7,
+    "title": "Differentiating Bias and Prejudice",
+    "source": {
+      "fileId": "1BmfaJ-44rrB3KU9AYeAIGpFm3JuCr0-b",
+      "fileName": "English 9_Module 7_final.pdf",
+      "url": "https://drive.google.com/file/d/1BmfaJ-44rrB3KU9AYeAIGpFm3JuCr0-b/view",
+      "sha256": "b30bbfa408f3804a2a9817117faace0204179be0b2d6a47d95266fb676a2c65b",
+      "pageCount": 12,
+      "notes": [],
+      "discussionPages": [
+        6,
+        7
+      ],
+      "verifiedRecallPages": [
+        7
+      ]
+    }
+  },
+  {
+    "id": "g9-q4-m8",
+    "grade": 9,
+    "quarter": 4,
+    "sourceNumber": "8",
+    "sourceLabel": "Module 8",
+    "moduleNumber": 25,
+    "quarterModuleIndex": 8,
+    "title": "Making Generalization",
+    "source": {
+      "fileId": "1pwYwKgVnNHnJzPJnwLuhrDh92hsrlBnX",
+      "fileName": "English 9_Module 8_final.pdf",
+      "url": "https://drive.google.com/file/d/1pwYwKgVnNHnJzPJnwLuhrDh92hsrlBnX/view",
+      "sha256": "dbb08d4f5f0858d644d47f1e51517c24ee472883f345bd3551b5ead2767cb424",
+      "pageCount": 18,
+      "notes": [],
+      "discussionPages": [
+        9
+      ],
+      "verifiedRecallPages": [
+        9
+      ]
+    }
+  },
+  {
+    "id": "g9-q4-m9",
+    "grade": 9,
+    "quarter": 4,
+    "sourceNumber": "9",
+    "sourceLabel": "Module 9",
+    "moduleNumber": 26,
+    "quarterModuleIndex": 9,
+    "title": "Determine the Relevance and Truthfulness of the Ideas Presented in the Material Viewed",
+    "source": {
+      "fileId": "1mUzEO3guNWjfhpEoThAafOei3jQCMRnD",
+      "fileName": "English 9_Module 9_final.pdf",
+      "url": "https://drive.google.com/file/d/1mUzEO3guNWjfhpEoThAafOei3jQCMRnD/view",
+      "sha256": "bdc0f02a0a66c630b01b063c097ff01e20a81140ad07c60bf732ee4a7767ba8b",
+      "pageCount": 19,
+      "notes": [],
+      "discussionPages": [
+        9
+      ],
+      "verifiedRecallPages": [
+        9,
         10
+      ]
+    }
+  },
+  {
+    "id": "g9-q4-m11",
+    "grade": 9,
+    "quarter": 4,
+    "sourceNumber": "11",
+    "sourceLabel": "Module 11",
+    "moduleNumber": 27,
+    "quarterModuleIndex": 11,
+    "title": "Explain How Elements Specific to Full Length Plays Build its Theme",
+    "source": {
+      "fileId": "1VFAQIeGa9-TEqGeaJDLwDWAX9NMmDNSw",
+      "fileName": "English 9_Module 11_final.pdf",
+      "url": "https://drive.google.com/file/d/1VFAQIeGa9-TEqGeaJDLwDWAX9NMmDNSw/view",
+      "sha256": "a6f35101f4d762fbe4a558f26fefaf46cccafcb7edac4f8d364443fd572adee9",
+      "pageCount": 24,
+      "notes": [],
+      "discussionPages": [
+        13
+      ],
+      "verifiedRecallPages": [
+        13,
+        14,
+        16
+      ]
+    }
+  },
+  {
+    "id": "g9-q4-m12",
+    "grade": 9,
+    "quarter": 4,
+    "sourceNumber": "12",
+    "sourceLabel": "Module 12",
+    "moduleNumber": 28,
+    "quarterModuleIndex": 12,
+    "title": "Use Varied Verbal and Non-Verbal Communication Strategies When Performing in a Full Length Play",
+    "source": {
+      "fileId": "1tsV852piu9_iirKpFrlcEPo6zsHigu4v",
+      "fileName": "English 9_Module 12_final.pdf",
+      "url": "https://drive.google.com/file/d/1tsV852piu9_iirKpFrlcEPo6zsHigu4v/view",
+      "sha256": "0b78935b8af032eb2f8ccb5750f8606a1787335bf0c476be030505b27aec1baf",
+      "pageCount": 21,
+      "notes": [],
+      "discussionPages": [
+        8,
+        9,
+        10,
+        11,
+        13
+      ],
+      "verifiedRecallPages": [
+        8,
+        9,
+        10
+      ]
+    }
+  },
+  {
+    "id": "g9-q4-m13",
+    "grade": 9,
+    "quarter": 4,
+    "sourceNumber": "13",
+    "sourceLabel": "Module 13",
+    "moduleNumber": 29,
+    "quarterModuleIndex": 13,
+    "title": "Produce the Sound of English Effectively When Delivering Lines in a Full-Length Play",
+    "source": {
+      "fileId": "1QmcUJL9dCX3YR0b3kJc0qEODxMCJSy39",
+      "fileName": "English 9_Module 13_final.pdf",
+      "url": "https://drive.google.com/file/d/1QmcUJL9dCX3YR0b3kJc0qEODxMCJSy39/view",
+      "sha256": "2ecd062b8abdca1f5eabbceea7115ed545573e273ea416717135af410d766d4b",
+      "pageCount": 22,
+      "notes": [],
+      "discussionPages": [
+        10,
+        11,
+        12
+      ],
+      "verifiedRecallPages": [
+        10,
+        11,
+        12
+      ]
+    }
+  },
+  {
+    "id": "g9-q4-m14",
+    "grade": 9,
+    "quarter": 4,
+    "sourceNumber": "14",
+    "sourceLabel": "Module 14",
+    "moduleNumber": 30,
+    "quarterModuleIndex": 14,
+    "title": "Use Appropriate Suprasegmental: Pitch, Stress, Juncture & Intonation",
+    "source": {
+      "fileId": "1lx6duXiQmM-_G5PeOJWvWIam3maJOS3O",
+      "fileName": "English 9_Module 14_final.pdf",
+      "url": "https://drive.google.com/file/d/1lx6duXiQmM-_G5PeOJWvWIam3maJOS3O/view",
+      "sha256": "b1330475e4ba2d612b040870829bd551552607f22f09aaf671d350116fc0d434",
+      "pageCount": 23,
+      "notes": [],
+      "discussionPages": [
+        13
+      ],
+      "verifiedRecallPages": [
+        8,
+        9,
+        10,
+        11,
+        12
       ]
     }
   }

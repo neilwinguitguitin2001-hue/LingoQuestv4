@@ -1,6 +1,6 @@
 {
   "baseCommit": "26238ba2148e0ac97a708984a56dfc69ff139320",
-  "protectedFilesUnchanged": 45,
+  "protectedFilesUnchanged": 44,
   "protectedFiles": [
     {
       "path": "package-lock.json",
@@ -159,10 +159,6 @@
       "sha": "9adfc419e1b2da1af532ff9d06080c9c7d1284c9"
     },
     {
-      "path": "src/index.css",
-      "sha": "be7cc34b2d79458e2fb95a485eab909b10e89e0a"
-    },
-    {
       "path": "src/lib/supabase.ts",
       "sha": "8dd28e1a8553534240827ba53338f55a1394faf9"
     },
@@ -182,5 +178,6 @@
       "path": "vite.config.ts",
       "sha": "fa50b7f024eb8a23098e34d4ea5e1fb21477d212"
     }
-  ]
+  ],
+  "lessonStyleRevision": "Scoped PDF source tabs and animated source illustrations authorized by the owner; original site CSS rules precede the appended PDF-only rules."
 }

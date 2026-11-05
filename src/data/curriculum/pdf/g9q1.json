@@ -18,6 +18,10 @@
       "discussionPages": [
         4,
         5
+      ],
+      "verifiedRecallPages": [
+        4,
+        5
       ]
     },
     "overview": {
@@ -28,12 +32,12 @@
     "concepts": [
       {
         "page": 4,
-        "text": "FUNCTION          SENTENCE                           WORD CLUE\nEXPRESSED\nYou must protect yourself and those\npeople around you from CoVID-19.\nFirst, you must not touch your face, es-\npecially    your   eyes,  mouth  and\nnose.\nYou have to wash your hands with soap\noften.\nIn case you miss your friends or loved\nones, you may still connect with them\nthrough calls or any\nsocial media platform.\n\nModal Verbs\n\nA modal  is a  type  of  auxiliary  (helping) verb that is used to ex-\npress: permission, prohibition or obligation.\n➢ Permission – can, may, could\n'Can' is most often used to ask for or give permission but 'may' and\n'could' are also possible even though they are not used as often as\n'can'.\n•  Can I wash my hands?\n•  You can use this hand sanitizer if you don’t have soap\nwith you.\n•  Could I use the computer to research more about CoVID-19?\n•  May I get some updates about CoVID-19 cases here in\nMuntinlupa?\n➢ Prohibition\n'Can't' and 'mustn't' (must not) are used to show that some-\nthing is prohibited (not allowed)\n•  You can't go outside the house without your mask on.\n•  You mustn't touch your face especially your eyes, mouth and\nnose.\n➢ Obligation\n'Have to' and 'must' are both used to express obligation. There is\na slight difference   in   the  way   that   they   are   both\nused.   'Have to' shows that the obligation comes from someone\nelse, not the speaker. This is usually referring to a rule or law.",
+        "text": "Modal Verbs\n\nA modal is a type of auxiliary (helping) verb that is used to ex- press: permission, prohibition or obligation. ➢ Permission – can, may, could\n\n'Can' is most often used to ask for or give permission but 'may' and 'could' are also possible even though they are not used as often as 'can'. • Can I wash my hands? • You can use this hand sanitizer if you don’t have soap\n\nwith you. • Could I use the computer to research more about CoVID-19? • May I get some updates about CoVID-19 cases here in Muntinlupa?\n\n➢ Prohibition 'Can't' and 'mustn't' (must not) are used to show that some- thing is prohibited (not allowed)\n\n• You can't go outside the house without your mask on. • You mustn't touch your face especially your eyes, mouth and nose.\n\n➢ Obligation 'Have to' and 'must' are both used to express obligation. There is a slight difference in the way that they are both used. 'Have to' shows that the obligation comes from someone else, not the speaker. This is usually referring to a rule or law.",
         "kind": "discussion"
       },
       {
         "page": 5,
-        "text": "• We have to stay at home to prevent getting exposed to the\nvirus. People have to maintain physical distance to prevent\nthe spread of CoVID-19.\n•  The frontliners have to wear personal protective equip-\nment to protect themselves from getting infected.\n\n➢ Here is an example of the difference between 'have to' and 'must':\n\n• My doctor said that I have to get myself tested for\nCoVID-19 or I'll risk serious problems. (I have no choice)\n•   I must get myself tested for CoVID-19 so that I’d be\nsure. (it’s my decision)\n\n➢ We use 'don't have to' to show that there is no obligation. You can do\nsomething if you want but it is not an obligation.\n\n•  You don't have to help everyone but it would be nice to help a person\nand show our support with each other in the midst of this pandemic.\n•  Students don't have to be at risk to acquire education, teachers are\ndoing their best to equip themselves to deliver education in their stu-\ndents’ homes.\n\nReferences:      https://www.gingersoftware.com/content/grammar- rules/verbs/modal-verbs/\nhttps://www.ecenglish.com/learnenglish/lessons/modal-verbs- 1-permission-prohibition-obligation-\nno-obligation)\n\n✓ With the use of modals in expressing permission, obligation, and\nprohibition, it made expressing argument in certain situations\neasier. Modals enable arguments or views to be stated clearly and\neffectively.\n\nSample Topic: Should apartment rentals be waived during pandemic?\n\nThe coronavirus pandemic resulted to a lot of serious problems.\nCoVID-19 does not only threaten our health but our lives as a whole as\nwell. Everyone is affected, from normal employees to business owners.\nAmong these people, those who are renting their current homes are per-\nturbed by this. Since the pandemic affected our livelihood, tenants are\ntroubled financially because they have to pay their rents. Some can’t\npay their rents because since the outbreak they are compelled to stay\nat home which resulted to job loss. With this, the question,\n“should apartment rentals be waived during this time”, arises. This\nhas been a major concern not only by the tenants but the landlords as\nwell because some landlords are only dependent on the rents they re-\nceive from their tenants. Therefore, some are thorn between helping\nother people (tenants) and helping themselves survive.\n\nSince CoVID-19 affected everyone, it is only natural for us to think\nof the well-being of everybody. We have to help one another to surpass",
+        "text": "• We have to stay at home to prevent getting exposed to the virus. People have to maintain physical distance to prevent the spread of CoVID-19. • The frontliners have to wear personal protective equip- ment to protect themselves from getting infected.\n\n➢ Here is an example of the difference between 'have to' and 'must':\n\n• My doctor said that I have to get myself tested for CoVID-19 or I'll risk serious problems. (I have no choice) • I must get myself tested for CoVID-19 so that I’d be sure. (it’s my decision)\n\n➢ We use 'don't have to' to show that there is no obligation. You can do something if you want but it is not an obligation.\n\n• You don't have to help everyone but it would be nice to help a person and show our support with each other in the midst of this pandemic. • Students don't have to be at risk to acquire education, teachers are doing their best to equip themselves to deliver education in their stu- dents’ homes.",
         "kind": "discussion"
       }
     ],
@@ -99,7 +103,79 @@
       }
     ],
     "answerKey": [],
-    "digitalContentUrl": "/assets/curriculum/content/g9-q1-w1.json"
+    "digitalContentUrl": "/assets/curriculum/content/g9-q1-w1.json",
+    "sourceSections": [
+      {
+        "id": "concepts",
+        "title": "Concepts & Rules",
+        "kind": "discussion",
+        "pages": [
+          4,
+          5
+        ]
+      },
+      {
+        "id": "expectations",
+        "title": "Expectations",
+        "kind": "objectives",
+        "pages": [
+          2
+        ]
+      },
+      {
+        "id": "what-i-know",
+        "title": "Pre-Test",
+        "kind": "assessment",
+        "pages": [
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "id": "activities",
+        "title": "Activities",
+        "kind": "activity",
+        "pages": [
+          6,
+          7
+        ]
+      },
+      {
+        "id": "remember",
+        "title": "Remember",
+        "kind": "review",
+        "pages": [
+          7
+        ]
+      },
+      {
+        "id": "understanding",
+        "title": "Check Your Understanding",
+        "kind": "activity",
+        "pages": [
+          7,
+          8
+        ]
+      },
+      {
+        "id": "assessment",
+        "title": "Post-Test",
+        "kind": "assessment",
+        "pages": [
+          8,
+          9
+        ]
+      },
+      {
+        "id": "answer-key",
+        "title": "Answer Key",
+        "kind": "answers",
+        "pages": [
+          10
+        ]
+      }
+    ]
   },
   {
     "id": "g9-q1-w2",
@@ -118,6 +194,11 @@
       "pageCount": 10,
       "notes": [],
       "discussionPages": [
+        4,
+        5,
+        6
+      ],
+      "verifiedRecallPages": [
         5,
         6
       ]
@@ -129,13 +210,18 @@
     },
     "concepts": [
       {
+        "page": 4,
+        "text": "Understanding conditional sentences might be a bit confusing to you, but this lesson will help you ease the discomfort of learning it. Together, let us learn the easy way, this module will help you to understand it better.\n\nWe often use these sentences in our daily conversations; we have to be\n\naware of its importance and the proper way of using it in sentences. This way, we can build confidence not just in writing but also in speaking.\n\nIn this lesson, discover the fun and easy way of learning conditional sen-\n\ntences.\n\nCLAUSES is a group of words that consist of a subject and a predicate; it may and may not stand alone. ✓ INDEPENDENT CLAUSE (also known as MAIN CLAUSE)\n\na group of words that has a subject and a predicate and can stand alone, it can act as a complete sentence because it has a complete thought\n\n✓ DEPENDENT CLAUSE (also known as SUBORDINATE CLAUSE)\n\na group of words that has a subject and a predicate but it does not\n\nexpresses a complete thought and it cannot stand alone",
+        "kind": "discussion"
+      },
+      {
         "page": 5,
-        "text": "And which column is the DEPENDENT CLAUSE? Why?\n\nZERO CONDITIONAL SENTENCES or PRESENT REAL CONDITIONAL\nIn a Conditional sentence, we follow TWO PARTS of the sentence,\n\nIF CLAUSE             MAIN CLAUSE\n+\nCONDITION               RESULT\n\nOR\n\nMAIN CLAUSE                 IF CLAUSE\n+\nRESULT                CONDITION\n\n*note: the If Clause is also known as the Dependent Clause and the Main\nClause is the Independent Clause.\nWhat are the USES of ZERO CONDITIONAL SENTENCES?\n✓is used to make statements about the real world\n✓refers to general truths, like scientific facts\n✓the time is now or always\n\nHow do we FORM ZERO CONDITIONAL SENTENCES?\n\nIF CLAUSE (CONDITION)       MAIN CLAUSE or RESULT\nIF + simple present tense of the\nSimple present tense of the VERB\nVERB\nor\nMAIN CLAUSE or RESULT          IF CLAUSE (CONDITION)\nIF + simple present tense of the\nSimple present tense of the VERB\nVERB\nExamples:\n\nIf you heat ice,                         It melts.\nIF CLAUSE (Condition)         MAIN CLAUSE (result)\nVerb in the Simple Present\nVerb in the Simple Present Tense\nTense\nor we can also do this…\nIce melts                              if you heat it.\nMAIN CLAUSE (result             IF CLAUSE (Condition\nVerb in the Simple Present\nVerb in the Simple Present Tense\nTense\n\n*discussion source:https://www.ef.com/wwen/english-resources/english-grammar/zero-conditional/",
+        "text": "ZERO CONDITIONAL SENTENCES or PRESENT REAL CONDITIONAL\n\nIn a Conditional sentence, we follow TWO PARTS of the sentence,\n\nIF CLAUSE + MAIN CLAUSE CONDITION  RESULT OR   MAIN CLAUSE + IF CLAUSE RESULT  CONDITION\n\n*note: the If Clause is also known as the Dependent Clause and the Main Clause is the Independent Clause.\n\nWhat are the USES of ZERO CONDITIONAL SENTENCES?\n\n✓is used to make statements about the real world ✓refers to general truths, like scientific facts ✓the time is now or always\n\nHow do we FORM ZERO CONDITIONAL SENTENCES?\n\nIF CLAUSE (CONDITION) MAIN CLAUSE or RESULT IF + simple present tense of the VERB Simple present tense of the VERB or  MAIN CLAUSE or RESULT IF CLAUSE (CONDITION) Simple present tense of the VERB IF + simple present tense of the VERB\n\nExamples:\n\nIf you heat ice,\n\nIt melts.\n\nIF CLAUSE (Condition)\n\nMAIN CLAUSE (result) Verb in the Simple Present\n\nVerb in the Simple Present Tense\n\nTense\n\nor we can also do this…\n\nIce melts\n\nif you heat it.\n\nMAIN CLAUSE (result\n\nIF CLAUSE (Condition Verb in the Simple Present\n\nVerb in the Simple Present Tense\n\nTense\n\n*discussion source:https://www.ef.com/wwen/english-resources/english-grammar/zero-conditional/",
         "kind": "discussion"
       },
       {
         "page": 6,
-        "text": "Quick Review: (Subject-Verb Agreement)\nRemember:\n\nIf your SUBJECT is SINGULAR,        your VERB is SINGULAR\nIf your SUBJECT is PLURAL,          your VERB is PLURAL.\n\nExample:\nMy classmate  walks to school.\nSUBJECT - SINGULAR VERB – SINGULAR\n\nThe trees grow fast in the meadow.\nSUBJECT – PLURAL VERB – PLURAL\n\nWe can also form Zero Conditional Sentences in NEGATIVE Sentences.\n\nIf you do not exercise,          You gain weight.\nIF CLAUSE (Condition)         MAIN CLAUSE (result)\nVerb in the Simple Present\nVerb in the Simple Present Tense\nTense\nor we can also do this…\nYou gain weight,                  if you do not exercise.\nMAIN CLAUSE (result             IF CLAUSE (Condition\nVerb in the Simple Present\nVerb in the Simple Present Tense\nTense\n\nThere are also QUESTION FORMS.\n\nIf we separate,              met me here.\nIF CLAUSE (Condition)         MAIN CLAUSE (result)\nVerb in the Simple Present\nVerb in the Simple Present Tense\nTense\nor we can also do this…\nMeet me here,                         if we separate.\nMAIN CLAUSE (result             IF CLAUSE (Condition\nVerb in the Simple Present\nVerb in the Simple Present Tense\nTense",
+        "text": "Quick Review: (Subject-Verb Agreement)",
         "kind": "discussion"
       }
     ],
@@ -199,7 +285,89 @@
       }
     ],
     "answerKey": [],
-    "digitalContentUrl": "/assets/curriculum/content/g9-q1-w2.json"
+    "digitalContentUrl": "/assets/curriculum/content/g9-q1-w2.json",
+    "sourceSections": [
+      {
+        "id": "concepts",
+        "title": "Concepts & Rules",
+        "kind": "discussion",
+        "pages": [
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "id": "expectations",
+        "title": "Expectations",
+        "kind": "objectives",
+        "pages": [
+          2
+        ]
+      },
+      {
+        "id": "what-i-know",
+        "title": "Pre-Test",
+        "kind": "assessment",
+        "pages": [
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "id": "practice",
+        "title": "Activities & Assessment",
+        "kind": "activity",
+        "pages": [
+          4,
+          5
+        ]
+      },
+      {
+        "id": "remember",
+        "title": "Remember",
+        "kind": "review",
+        "pages": [
+          6,
+          7,
+          8
+        ]
+      },
+      {
+        "id": "activities",
+        "title": "Activities",
+        "kind": "activity",
+        "pages": [
+          7
+        ]
+      },
+      {
+        "id": "understanding",
+        "title": "Check Your Understanding",
+        "kind": "activity",
+        "pages": [
+          8
+        ]
+      },
+      {
+        "id": "assessment",
+        "title": "Post-Test",
+        "kind": "assessment",
+        "pages": [
+          8,
+          9
+        ]
+      },
+      {
+        "id": "answer-key",
+        "title": "Answer Key",
+        "kind": "answers",
+        "pages": [
+          10
+        ]
+      }
+    ]
   },
   {
     "id": "g9-q1-w3",
@@ -220,6 +388,10 @@
       "discussionPages": [
         4,
         5
+      ],
+      "verifiedRecallPages": [
+        4,
+        5
       ]
     },
     "overview": {
@@ -230,12 +402,12 @@
     "concepts": [
       {
         "page": 4,
-        "text": "1. Pick out all the “If statements” you can find in the conversation.\n2. Group the “If statements” into the following:\n\nIF CLAUSES               MAIN CLAUSES\n\n3. Let us examine the sentences you have written, what do think is the\npurpose of writing these sentences?\n\nFrom the previous lesson, we understand the first type of Conditional Sen-\ntences. This time, our task is to continue our learning by being familiar with\nthe First Conditional Sentence.\nThis lesson will be easier because you are already familiar with the Zero\nConditional Sentences, we are only here to find out how First Conditional Sen-\ntences are used and how do we form its structure to express a general or ha-\nbitual fact.\n\nFIRST CONDITIONAL SENTENCES or FUTURE REAL CONDITIONAL\nWhat are the USES of FIRST CONDITIONAL SENTENCES?\n✓ a possible situation in the future\n✓ predicting a likely result in the future (if condition happens)\nHow do we FORM FIRST CONDITIONAL SENTENCES?\n\nIF CLAUSE (CONDITION)          MAIN CLAUSE or RESULT\nIF + simple present tense of the VERB     Simple Future tense of the VERB\nOr\nMAIN CLAUSE or RESULT             IF CLAUSE (CONDITION)\nSimple Future Tense of the VERB     IF + simple present tense of the VERB",
+        "text": "From the previous lesson, we understand the first type of Conditional Sen- tences. This time, our task is to continue our learning by being familiar with the First Conditional Sentence.\n\nThis lesson will be easier because you are already familiar with the Zero\n\nConditional Sentences, we are only here to find out how First Conditional Sen- tences are used and how do we form its structure to express a general or ha- bitual fact.\n\nFIRST CONDITIONAL SENTENCES or FUTURE REAL CONDITIONAL\n\nWhat are the USES of FIRST CONDITIONAL SENTENCES?\n\n✓ a possible situation in the future ✓ predicting a likely result in the future (if condition happens)\n\nHow do we FORM FIRST CONDITIONAL SENTENCES?\n\nIF CLAUSE (CONDITION) MAIN CLAUSE or RESULT IF + simple present tense of the VERB Simple Future tense of the VERB Or  MAIN CLAUSE or RESULT IF CLAUSE (CONDITION) Simple Future Tense of the VERB IF + simple present tense of the VERB",
         "kind": "discussion"
       },
       {
         "page": 5,
-        "text": "Examples:\nIf it rains,                      you will get wet.\nIF CLAUSE (Condition)               MAIN CLAUSE (result)\nVerb in the Simple Present Tense        Verb in the Simple Future Tense\nor we can also do this…\nYou will get wet,                                      if it rains.\nMAIN CLAUSE (result                     IF CLAUSE (Condition\nVerb in the Simple Future Tense        Verb in the Simple\\ Present Tense\nWe can also form Negative statements in the First Conditional Sentences\nIf you don’t hurry,                you will miss the bus.\nIF CLAUSE (Condition)               MAIN CLAUSE (result)\nVerb in the Simple Present Tense        Verb in the Simple Future Tense\nor we can also do this…\nYou will miss the bus,                            if you don’t hurry.\nMAIN CLAUSE (result                     IF CLAUSE (Condition\nVerb in the Simple Future Tense        Verb in the Simple\\ Present Tense\nQuestions can also be formed in the First Conditional Sentences.\nIf he studies,                       Will he pass his exams?\nIF CLAUSE (Condition)               MAIN CLAUSE (result)\nVerb in the Simple Present Tense        Verb in the Simple Future Tense\nor we can also do this…\nWill he pass his exams,                              if he studies?\nMAIN CLAUSE (result                     IF CLAUSE (Condition\nVerb in the Simple\\ Present Tense\nVerb in the Simple Future Tense\n\nDiscussion source: https://www.ef.com/wwen/english-resources/english-grammar/type-1-\nconditional/\n\nA. Directions: Complete the following sentences by supplying the correct verbs.\n1.  I _______ (take) a taxi, if it ________ (rain).\n2. We ______ (go) to Pangasinan, if we _______ (have) time for vacation.\n3.  If my sister ________ (clean) the room, I ______ (cook) our lunch.\n4.  If the sun ______ (shine), I ______ (do) the laundry.\n5. The students ________ (not, pass) their subjects, if teachers _____ (not,\nteach).\n6.  If we ____ (not watch) the movie, we _______ (not, finish) our paper review.\n7.  If we _______ (not cook) food, we ______ (be) hungry.",
+        "text": "Examples:\n\nIf it rains,\n\nyou will get wet.\n\nIF CLAUSE (Condition)\n\nMAIN CLAUSE (result)\n\nVerb in the Simple Present Tense\n\nVerb in the Simple Future Tense\n\nor we can also do this…\n\nYou will get wet,\n\nif it rains.\n\nMAIN CLAUSE (result\n\nIF CLAUSE (Condition\n\nVerb in the Simple Future Tense\n\nVerb in the Simple\\ Present Tense\n\nWe can also form Negative statements in the First Conditional Sentences\n\nIf you don’t hurry,\n\nyou will miss the bus.\n\nIF CLAUSE (Condition)\n\nMAIN CLAUSE (result)\n\nVerb in the Simple Present Tense\n\nVerb in the Simple Future Tense\n\nor we can also do this…\n\nYou will miss the bus,\n\nif you don’t hurry.\n\nMAIN CLAUSE (result\n\nIF CLAUSE (Condition\n\nVerb in the Simple Future Tense\n\nVerb in the Simple\\ Present Tense\n\nQuestions can also be formed in the First Conditional Sentences.\n\nIf he studies,\n\nWill he pass his exams?\n\nIF CLAUSE (Condition)\n\nMAIN CLAUSE (result)\n\nVerb in the Simple Present Tense\n\nVerb in the Simple Future Tense\n\nor we can also do this…\n\nWill he pass his exams,\n\nif he studies?\n\nMAIN CLAUSE (result\n\nIF CLAUSE (Condition\n\nVerb in the Simple\\ Present Tense\n\nVerb in the Simple Future Tense\n\nDiscussion source: https://www.ef.com/wwen/english-resources/english-grammar/type-1- conditional/",
         "kind": "discussion"
       }
     ],
@@ -288,7 +460,79 @@
       }
     ],
     "answerKey": [],
-    "digitalContentUrl": "/assets/curriculum/content/g9-q1-w3.json"
+    "digitalContentUrl": "/assets/curriculum/content/g9-q1-w3.json",
+    "sourceSections": [
+      {
+        "id": "concepts",
+        "title": "Concepts & Rules",
+        "kind": "discussion",
+        "pages": [
+          4,
+          5
+        ]
+      },
+      {
+        "id": "expectations",
+        "title": "Expectations",
+        "kind": "objectives",
+        "pages": [
+          2
+        ]
+      },
+      {
+        "id": "what-i-know",
+        "title": "Pre-Test",
+        "kind": "assessment",
+        "pages": [
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "id": "activities",
+        "title": "Activities",
+        "kind": "activity",
+        "pages": [
+          5,
+          6
+        ]
+      },
+      {
+        "id": "remember",
+        "title": "Remember",
+        "kind": "review",
+        "pages": [
+          6
+        ]
+      },
+      {
+        "id": "understanding",
+        "title": "Check Your Understanding",
+        "kind": "activity",
+        "pages": [
+          7
+        ]
+      },
+      {
+        "id": "assessment",
+        "title": "Post-Test",
+        "kind": "assessment",
+        "pages": [
+          7,
+          8,
+          9
+        ]
+      },
+      {
+        "id": "answer-key",
+        "title": "Answer Key",
+        "kind": "answers",
+        "pages": [
+          10
+        ]
+      }
+    ]
   },
   {
     "id": "g9-q1-w4",
@@ -309,6 +553,10 @@
       "discussionPages": [
         4,
         5
+      ],
+      "verifiedRecallPages": [
+        4,
+        5
       ]
     },
     "overview": {
@@ -319,12 +567,12 @@
     "concepts": [
       {
         "page": 4,
-        "text": "Directions: Express your thoughts by filling each box with your responses\nusing Type 1 conditional sentences.\n\nIf the weather is sunny, ….          I will buy a new bike if ….\n\nYou will be safe from COVID-19    If the pandemic ends, ….\nvirus if ….\n\nThe  previous  lesson  discussed  the  zero and  the  first  conditional\nsentences. We will surely have a lot of learnings in the succeeding lesson, let us\nnow be familiar with the next type of Conditional Sentences, its second type.\n\nWhat is a Conditional Sentence?\n\nA conditional sentence is a type of sentence that tells a condition and\nits  result.  It  is composed  of a main clause (independent clause) and a\nsubordinate clause (dependent clause) which is also known as the if-clause.\n\nWhat is the function of Conditional Sentence Type 2?\n\nThe second type of conditional sentence expresses dreams or unreal\nsituations in the present or in the future. It is used in the following situations:\n\n1) for an occurrence or result of a condition that is impossible to\nfulfill;",
+        "text": "The previous lesson discussed the zero and the first conditional\n\nsentences. We will surely have a lot of learnings in the succeeding lesson, let us now be familiar with the next type of Conditional Sentences, its second type.\n\nWhat is a Conditional Sentence?\n\nA conditional sentence is a type of sentence that tells a condition and\n\nits result. It is composed of a main clause (independent clause) and a subordinate clause (dependent clause) which is also known as the if-clause.\n\nWhat is the function of Conditional Sentence Type 2?\n\nThe second type of conditional sentence expresses dreams or unreal\n\nsituations in the present or in the future. It is used in the following situations:\n\n1) for an occurrence or result of a condition that is impossible to fulfill;",
         "kind": "discussion"
       },
       {
         "page": 5,
-        "text": "•   If I had a superpower, I could go anywhere in just a second.\n(The condition “had a superpower”  is  fictional and cannot be\nfulfilled.)\n•  Would you invite me for a cruise If you owned a private yacht?\n(The condition is contrary to the fact and unlikely to happen)\n•  You are just a student. If you were a doctor, you could help\nto treat the COVID-19 patients.\n(The condition could be met but not possible to achieve.)\n\n2) to give advice\n•   I would not stop studying if I were you.\n•   If I were you, I would accept the challenge.\n\nWhat is the structure of Conditional Sentence Type 2?\n\nIf-Clause                         Result-Clause\nIf + subject + V2 (past form)       Subject + (would, could, might + V1\n(base/present form)\nAffirmative\nIf I noticed the kidnappers,               I would call the policemen.\nIf we submitted our project on time,  our teacher could give us a good grade.\nNegative\nIf she attended webinars,           she might not be left behind.\nIf you reminded me earlier,               I wouldn’t attend the party.\nInterrogative\nIf you were a millionaire,           would you share your wealth to others?\nIf you were forgiven,                wouldn’t you forgive other too?\n\nNote:\nConditional sentences can be written in two ways:\n\n•   If it did not rain, the children would play outside.\n(use a comma {,} after the if-clause)\nOR\n•  The children would play outside if it did not rain.\n(no need to use a comma if the main clause comes first)\n\nB. Directions: Match column A with column B. Write the letter only.\n\nCOLUMN A                  COLUMN B\n1. If we took good care of our\nenvironment,                        A. you would pass the exam.\n2. If you listened carefully,          B. you would appreciate the lecture.",
+        "text": "• If I had a superpower, I could go anywhere in just a second. (The condition “had a superpower” is fictional and cannot be fulfilled.) • Would you invite me for a cruise If you owned a private yacht? (The condition is contrary to the fact and unlikely to happen) • You are just a student. If you were a doctor, you could help to treat the COVID-19 patients. (The condition could be met but not possible to achieve.)\n\n2) to give advice • I would not stop studying if I were you. • If I were you, I would accept the challenge.\n\nWhat is the structure of Conditional Sentence Type 2?\n\nIf-Clause Result-Clause If + subject + V2 (past form) Subject + (would, could, might + V1 (base/present form) Affirmative If I noticed the kidnappers, If we submitted our project on time, Negative If she attended webinars, If you reminded me earlier, Interrogative If you were a millionaire, If you were forgiven, I would call the policemen. our teacher could give us a good grade. she might not be left behind. I wouldn’t attend the party. would you share your wealth to others? wouldn’t you forgive other too?\n\nNote:\n\nConditional sentences can be written in two ways:\n\n• If it did not rain, the children would play outside. (use a comma {,} after the if-clause)\n\nOR\n\n• The children would play outside if it did not rain.\n\n(no need to use a comma if the main clause comes first)",
         "kind": "discussion"
       }
     ],
@@ -390,7 +638,80 @@
       }
     ],
     "answerKey": [],
-    "digitalContentUrl": "/assets/curriculum/content/g9-q1-w4.json"
+    "digitalContentUrl": "/assets/curriculum/content/g9-q1-w4.json",
+    "sourceSections": [
+      {
+        "id": "concepts",
+        "title": "Concepts & Rules",
+        "kind": "discussion",
+        "pages": [
+          4,
+          5
+        ]
+      },
+      {
+        "id": "expectations",
+        "title": "Expectations",
+        "kind": "objectives",
+        "pages": [
+          2
+        ]
+      },
+      {
+        "id": "what-i-know",
+        "title": "Pre-Test",
+        "kind": "assessment",
+        "pages": [
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "id": "activities",
+        "title": "Activities",
+        "kind": "activity",
+        "pages": [
+          5,
+          6
+        ]
+      },
+      {
+        "id": "remember",
+        "title": "Remember",
+        "kind": "review",
+        "pages": [
+          6,
+          7
+        ]
+      },
+      {
+        "id": "understanding",
+        "title": "Check Your Understanding",
+        "kind": "activity",
+        "pages": [
+          7,
+          8
+        ]
+      },
+      {
+        "id": "assessment",
+        "title": "Post-Test",
+        "kind": "assessment",
+        "pages": [
+          9,
+          10
+        ]
+      },
+      {
+        "id": "answer-key",
+        "title": "Key to Correction",
+        "kind": "answers",
+        "pages": [
+          10
+        ]
+      }
+    ]
   },
   {
     "id": "g9-q1-w5",
@@ -411,6 +732,10 @@
       "discussionPages": [
         5,
         6
+      ],
+      "verifiedRecallPages": [
+        5,
+        6
       ]
     },
     "overview": {
@@ -421,12 +746,12 @@
     "concepts": [
       {
         "page": 5,
-        "text": "Comprehension Questions:\n\n1. What was the young man’s complaint?\n\n2. What was the answer of the firefighter?\n\n3. What conditions do they say?\n\n4. What would have happened if the fire fighters had come earlier?\n\n5. What could have done by the people in the nearby place if they had noticed the\n\nfire? _______________________________________________________________________\n\nSource: Functional English for Today Textbook in English, de Vera, Caridad et, al, 2000, Dane Publishing\nHouse Inc., pages 289-291\n\nA sentence expressing condition and its result is called conditional sentence.\nBasically, it is composed of two clauses. The subordinate clause also known as the “if”-\nclause and the main clause or result clause.\n\nConditional sentence type 3 talks about unreal situation in the past. It is\ncontrary to the fact; things which did not happen in the past and impossible to be\nfulfilled. This type of conditional sentence is used to express regret or criticism.\n\nIF-CLAUSE                    RESULT-CLAUSE\n\n1. If I had phoned you last night,               I would have reminded you to stay.\n\n2. If it had rained hard,                            I might have not visited your place.\n\n3. If she had taken her medicine,         she could have felt better.\n\nIf the “if”-clause comes first, a comma (,) is usually used. However, if it comes\nafter the main clause, no need for a comma.\n\n   If you had listened to my advice, you would have finished your\nhomework.\n You would have finished your homework if you had listened to my advice.",
+        "text": "A sentence expressing condition and its result is called conditional sentence.\n\nBasically, it is composed of two clauses. The subordinate clause also known as the “if”- clause and the main clause or result clause.\n\nConditional sentence type 3 talks about unreal situation in the past. It is\n\ncontrary to the fact; things which did not happen in the past and impossible to be fulfilled. This type of conditional sentence is used to express regret or criticism.\n\nIF-CLAUSE RESULT-CLAUSE 1. If I had phoned you last night, I would have reminded you to stay. 2. If it had rained hard, I might have not visited your place. 3. If she had taken her medicine, she could have felt better.\n\nIf the “if”-clause comes first, a comma (,) is usually used. However, if it comes\n\nafter the main clause, no need for a comma.\n\n If you had listened to my advice, you would have finished your homework.  You would have finished your homework if you had listened to my advice.",
         "kind": "discussion"
       },
       {
         "page": 6,
-        "text": "The third type of conditional sentence is structured this way:\n\nIF-CLAUSE                    RESULT-CLAUSE\n\nIf + Past Perfect            subject +would have + past participle\n(If + had + past participle)                could have\nmight have\nshould have\n1. If I had phoned you last night,      I would have reminded you to stay.\n\n2. If it had rained hard,                    I might have not visited your place.\n\n3. If she had taken her medicine,    she could have felt better.\n\nA. Directions: Match column A with column B. Write the letter only.\n\nColumn A                        Column B\n_____1. I should have watched the news   A. we could have prepared for the\nreports                               pandemic.\n_____2. If the DOH had warned us earlier  B. usual business could have operated\nnormally.\n_____3. Unless the government had       C. if our TV set had functioned well.\nstopped the lockdown\n_____4. People might haven’t complained  D. more people would have recovered.\n_____5. If vaccine for COVID-19 had       E. if they had received subsidy from the\ndiscovered earlier                       government.\n\nB. Directions: Complete the following sentences to express past conditionals.\n\n6.  I never joined activities in school when I was in elementary. If I had joined extra-\ncurricular activities in school, ________________________________________________\n\n7.  I did not see you in the party yesterday. I should have given you my gift  if\n\n8.  I saw a front liner walking on her way to the hospital. If I had had an extra\nbicycle,\n\n9.  I was sad because I was not able to give my share in our community pantry. If I\nhad earned enough money,",
+        "text": "The third type of conditional sentence is structured this way:\n\nIF-CLAUSE RESULT-CLAUSE If + Past Perfect (If + had + past participle) subject +would have + past participle could have might have should have 1. If I had phoned you last night, 2. If it had rained hard, 3. If she had taken her medicine, I would have reminded you to stay. I might have not visited your place. she could have felt better.",
         "kind": "discussion"
       }
     ],
@@ -492,7 +817,81 @@
       }
     ],
     "answerKey": [],
-    "digitalContentUrl": "/assets/curriculum/content/g9-q1-w5.json"
+    "digitalContentUrl": "/assets/curriculum/content/g9-q1-w5.json",
+    "sourceSections": [
+      {
+        "id": "concepts",
+        "title": "Concepts & Rules",
+        "kind": "discussion",
+        "pages": [
+          5,
+          6
+        ]
+      },
+      {
+        "id": "expectations",
+        "title": "Expectations",
+        "kind": "objectives",
+        "pages": [
+          2
+        ]
+      },
+      {
+        "id": "what-i-know",
+        "title": "Pre-Test",
+        "kind": "assessment",
+        "pages": [
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "id": "activities",
+        "title": "Activities",
+        "kind": "activity",
+        "pages": [
+          6,
+          7
+        ]
+      },
+      {
+        "id": "remember",
+        "title": "Remember",
+        "kind": "review",
+        "pages": [
+          7
+        ]
+      },
+      {
+        "id": "understanding",
+        "title": "Check Your Understanding",
+        "kind": "activity",
+        "pages": [
+          7,
+          8
+        ]
+      },
+      {
+        "id": "assessment",
+        "title": "Post-Test",
+        "kind": "assessment",
+        "pages": [
+          8,
+          9,
+          10
+        ]
+      },
+      {
+        "id": "answer-key",
+        "title": "Key to Correction",
+        "kind": "answers",
+        "pages": [
+          10
+        ]
+      }
+    ]
   },
   {
     "id": "g9-q1-w6",
@@ -514,6 +913,11 @@
         3,
         4,
         5
+      ],
+      "verifiedRecallPages": [
+        3,
+        4,
+        5
       ]
     },
     "overview": {
@@ -524,17 +928,17 @@
     "concepts": [
       {
         "page": 3,
-        "text": "9.    If we had left earlier, we _____________ on time.\na.    arrive                        c. would arrive\nb.    will arrive                  d. would have arrived\n\n10.  If you wash your hands often, you _____________ colds.\na.   cannot catch        c. would not catch\nb.    will not catch              d. would have caught\n\nDirections: Match the type of conditionals in column\nA with its correct definition in Column B.\n\nA                          B\n\nThis conditional sentence is used to\n1.  Zero Conditional         A    explain that present circumstances\nwould  be  different   if  something\ndifferent had happened in the past.\n\nThis conditional sentence is used to\n2.  First Conditional         B    express  situations  in  which  the\noutcome is likely (but not guaranteed)\nto happen in the future.\n\nThis conditional sentence expresses\n3.  Second Conditional       C                                        general truths or situations in which\none thing always causes another.\n\nThis conditional sentence is useful for\n4.  Third Conditional        D    expressing   outcomes   that   are\ncompletely  unrealistic  or  will  not\nlikely happen in the future.\n\nUsing Conditionals (Zero, First, Second and Third\nConditionals) in Expressing Arguments\n\nIn your previous lessons, you have learned about conditionals and its type\nand usage. As a review, a Conditional sentence is a type of sentence that expresses\na condition and the outcome or the result of that condition. A condition is something\nthat can occur IF something else happens.\nA Conditional sentence is of a dependent clause and an independent clause\nthat are put together to express the condition and the result.",
+        "text": "Using Conditionals (Zero, First, Second and Third\n\nConditionals) in Expressing Arguments\n\nIn your previous lessons, you have learned about conditionals and its type\n\nand usage. As a review, a Conditional sentence is a type of sentence that expresses a condition and the outcome or the result of that condition. A condition is something that can occur IF something else happens.\n\nA Conditional sentence is of a dependent clause and an independent clause\n\nthat are put together to express the condition and the result.",
         "kind": "discussion"
       },
       {
         "page": 4,
-        "text": "Dependent Clause = IF-clause\nIndependent Clause = Main-clause\n\nExample:\nIf you stay at home, you will be safer from the threat of the pandemic.\nThe if-clause tells you the condition (If you stay at home) and the main clause tells\nyou the result (you will be safer from the threat of the pandemic).\n\nTypes of Conditional Sentences\n1. Zero conditional\nWe use the zero conditional to talk about things about general truth,\nespecially for laws and rules.\n2. First Conditional\nWe use the first conditional when we talk about the future situation that is\npossible to happen or can happen in reality.\n3. Second Conditional\nThe second conditional is used to express the present or future situation\nthat is impossible or unlikely to happen in reality.\n4. Third Conditional\nThe third conditional is used to refer to a time that is in the pastor unreal\npast condition and express its probable past result.\n\nSentence Form and Structure\n\nConditional sentences are also used to express arguments. Arguments are\nstatements expressing a reason or set of reasons given to persuade others that a\ncertain action or given idea is right or wrong. It is also used to deliver or to present a\nreason or reasons why you support or oppose an idea or suggestion.\nIn expressing arguments using conditional sentences, you are going to present\nyour response as the result from a given condition (if-clause) and/or you will tell the\npossible or the probable cause of a certain situation or result (main-clause).\n\nVERB FORM   TYPE OF                    USAGE\nCONDITIONAL                               IF-CLAUSE       MAIN-CLAUSE\nreal condition +\n0                                      present simple     present simple\nreal result\npossible condition +\n1                                      present simple      will + base verb                       possible result\n\nhypothetical condition +\n2                                       past simple     would + base verb                     probable result\nunreal past condition +\nwould have + past     3           probable result in the        past perfect\nparticiple                          past\nExample:\nSituation: Mary’s teacher sent a reminder in their  class’ group chat that the\nsubmission of their module would be on the day after next. John, one of\nher classmates, asked her to send him her answer because he forgot to\nwork on his module. If you were Mary, would you help John finish his\nmodule by sending him your answers? Why or why not?",
+        "text": "Dependent Clause = IF-clause\n\nIndependent Clause = Main-clause\n\nExample:\n\nIf you stay at home, you will be safer from the threat of the pandemic.\n\nThe if-clause tells you the condition (If you stay at home) and the main clause tells you the result (you will be safer from the threat of the pandemic).\n\nTypes of Conditional Sentences\n\n1. Zero conditional\n\nWe use the zero conditional to talk about things about general truth, especially for laws and rules.\n\n2. First Conditional\n\nWe use the first conditional when we talk about the future situation that is possible to happen or can happen in reality.\n\n3. Second Conditional\n\nThe second conditional is used to express the present or future situation that is impossible or unlikely to happen in reality.\n\n4. Third Conditional\n\nThe third conditional is used to refer to a time that is in the pastor unreal past condition and express its probable past result.\n\nSentence Form and Structure\n\nConditional sentences are also used to express arguments. Arguments are\n\nstatements expressing a reason or set of reasons given to persuade others that a certain action or given idea is right or wrong. It is also used to deliver or to present a reason or reasons why you support or oppose an idea or suggestion.\n\nIn expressing arguments using conditional sentences, you are going to present\n\nyour response as the result from a given condition (if-clause) and/or you will tell the possible or the probable cause of a certain situation or result (main-clause).\n\nVERB FORM\n\nTYPE OF\n\nUSAGE\n\nCONDITIONAL\n\nIF-CLAUSE\n\nMAIN-CLAUSE\n\nreal condition +\n\npresent simple\n\npresent simple\n\nreal result\n\npossible condition +\n\npresent simple\n\nwill + base verb\n\npossible result\n\nhypothetical condition +\n\npast simple\n\nwould + base verb\n\nprobable result unreal past condition +\n\nwould have + past\n\nprobable result in the\n\npast perfect\n\nparticiple\n\npast\n\nExample:\n\nSituation: Mary’s teacher sent a reminder in their class’ group chat that the\n\nsubmission of their module would be on the day after next. John, one of her classmates, asked her to send him her answer because he forgot to work on his module. If you were Mary, would you help John finish his module by sending him your answers? Why or why not?",
         "kind": "discussion"
       },
       {
         "page": 5,
-        "text": "Possible Answer: If I were Mary, I would help John finish his module, but I would not\nsend him my answers. I would tell him to start doing his module now and\nhelp him out in understanding the lesson.  I would also motivate him to\nanswer his module ahead of time so he would not cram the night before the\nsubmission.\n\nMake sure to use the correct type of conditional based on the form/tense of\nthe verb given on the question/situation.\n\nA. Directions: Read the text below entitled “Thank you Ma’am” by Langston Hughes\nand reflect on the questions that you will encounter as you read.\n\nThank You, Ma’am\nLangston Hughes\n\nShe was a large woman with a large purse that had everything in  it but\nhammer and nails. It had a long strap, and she carried it slung across her shoulder.\nIt was about eleven o’clock at night, and she was walking alone, when a boy ran up\nbehind her and tried to snatch her purse. The strap broke with the single tug the boy\ngave it from behind. But the boy’s weight and the weight of the purse combined\ncaused him to lose his balance so, instead of taking off full blast as he had hoped,\nthe boy fell on his back on the sidewalk, and his legs flew up. The large woman simply\nturned around and kicked him right square in his blue-jeaned sitter. Then she\nreached down, picked the boy up by his shirt front, and shook him until his teeth\nrattled.\nAfter that the woman said, “Pick up my pocketbook, boy, and give it here.”\nShe still held him. But she bent down enough to permit him to stoop and pick up\nher purse.\nThen she said, “Now ain’t you ashamed of yourself?”\nFirmly gripped by his shirt front, the boy said, “Yes’m.”\nThe woman said, “What did you want to do it for?”\nThe boy said, “I didn’t aim to.” She said, “You a lie!”\nBy that time two or three people passed, stopped, turned to look, and some\nstood watching.\n“If I turn you loose, will you run?” asked the woman. “Yes’m,” said the boy.\n“Then I won’t turn you loose,” said the woman. She did not release him. “I’m\nvery sorry, lady, I’m sorry,” whispered the boy.\n“Um-hum! And your face is dirty. I got a great mind to wash your face for you.\nAin’t you got nobody home to tell you to wash your face?” “No’m,” said the boy.\n“Then it will get washed this evening,” said the large woman starting  up the\nstreet, dragging the frightened boy behind her.\nHe looked as if he were fourteen or fifteen, frail and willow-wild, in tennis\nshoes and blue jeans. The woman said, “You ought to be my son. I would teach you\nright from wrong. Least I can do right now is to wash your face. Are you hungry?”\nIf you were Roger, would you trust Mrs. Jones right away?",
+        "text": "Possible Answer: If I were Mary, I would help John finish his module, but I would not\n\nsend him my answers. I would tell him to start doing his module now and help him out in understanding the lesson. I would also motivate him to answer his module ahead of time so he would not cram the night before the submission.\n\nMake sure to use the correct type of conditional based on the form/tense of\n\nthe verb given on the question/situation.",
         "kind": "discussion"
       }
     ],
@@ -624,7 +1028,80 @@
       }
     ],
     "answerKey": [],
-    "digitalContentUrl": "/assets/curriculum/content/g9-q1-w6.json"
+    "digitalContentUrl": "/assets/curriculum/content/g9-q1-w6.json",
+    "sourceSections": [
+      {
+        "id": "concepts",
+        "title": "Concepts & Rules",
+        "kind": "discussion",
+        "pages": [
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "id": "expectations",
+        "title": "Expectations",
+        "kind": "objectives",
+        "pages": [
+          2
+        ]
+      },
+      {
+        "id": "what-i-know",
+        "title": "Pre-Test",
+        "kind": "assessment",
+        "pages": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "activities",
+        "title": "Activities",
+        "kind": "activity",
+        "pages": [
+          5,
+          6,
+          7,
+          8
+        ]
+      },
+      {
+        "id": "remember",
+        "title": "Remember",
+        "kind": "review",
+        "pages": [
+          8
+        ]
+      },
+      {
+        "id": "understanding",
+        "title": "Check Your Understanding",
+        "kind": "activity",
+        "pages": [
+          8
+        ]
+      },
+      {
+        "id": "assessment",
+        "title": "Post-Test",
+        "kind": "assessment",
+        "pages": [
+          9,
+          10
+        ]
+      },
+      {
+        "id": "answer-key",
+        "title": "Answer Key",
+        "kind": "answers",
+        "pages": [
+          10
+        ]
+      }
+    ]
   },
   {
     "id": "g9-q1-w7",
@@ -643,6 +1120,9 @@
       "pageCount": 10,
       "notes": [],
       "discussionPages": [
+        4
+      ],
+      "verifiedRecallPages": [
         4,
         5
       ]
@@ -655,12 +1135,7 @@
     "concepts": [
       {
         "page": 4,
-        "text": "In this lesson, you will discover the Communicative Styles and how,\nwhen, and where they are used.\nCommunication helps us to express our thoughts and feelings.\nHaving your own styles in conveying messages and knowing these styles\nlead to a better understanding and successful transfer of ideas.\n\nThe purpose of the different styles of speech is to help people know\nthe specific approach they should use in every situation, person, and place.\n\nCommunicative styles are patterns of speaking characterized by distinctive\npronunciation, vocabulary, intent, participants, and grammatical structures.\n\nA communicative style, according to Martin Joos (1976), a linguist and\nGerman professor, it refers to the form of language that the speaker utilized, which\nis characterized by the level of formality. Still, according to Joos, speech style is\nidentified into five types: frozen, formal, consultative, casual, and intimate.\n\nCommunicative styles (first 2 styles)\n\n1.    Frozen style\n\nAlso known as fixed speech, it is the highest form of communicative style, which is\noften used in respectful situations or formal ceremonies like Shakespearean plays,\nweddings, funerals, and more. It uses the complex grammatical sentence structure\nand vocabulary that is only known by experts in that field\n\nExamples:\n\nNational pledge, anthem, school creeds, marriage ceremonies, speech for a state\nceremony\n\n2. Conversational Style\n\nConversational style breaks most of the grammatical rules. It is aimed at the target\naudience and addresses them as such. It's informal in form. Uses language that\nresembles conversation. It is warm and natural, easy to understand. The objective of\nthis style is to engage the listener or readers.\n\nExample:\n\n•      Most people prefer having a conversation on how to change a light bulb than\nhaving to read an instruction manual.\n\n•          If you are a marketer on social media, selling some products.\n\n•     A conversation with a group of people on a threaded discussion forum.",
-        "kind": "discussion"
-      },
-      {
-        "page": 5,
-        "text": "A. Directions: Complete the table by writing the Communicative Style\nused in each line. (Frozen or Conversational)\nLine                     Communicative Style\n1. How are you, Marissa? Nice to see\nyou.\n2. My beloved Filipinos, I would like\nto ask for your cooperation on the\nPandemic that we are facing right\nnow. Please stay at home.\n3. I am Filipino\nI pledge my allegiance\nTo the flag of the Philippines\nAnd to the country it represents\nWith honor, justice, and freedom\nPut in motion by one Nation\nfor God,\nPeople,\nNature and\nCountry.\n4.Are you busy right now? Can I talk\nto you for a while...\n5.The Lord’s Prayer\nOur Father who art in heaven,\nhallowed be thy name.\nThy kingdom come.\nThy will be done\non earth as it is in heaven.\nGive us this day our daily bread,\nand forgive us our trespasses,\nas we forgive those, who trespass against\nus….\n\nB. Directions: Make your Own Comic Strip\n\nScenario: You have a neighbor who is a front liner, a nurse in a\nhospital. Create a conversation to appreciate her and encourage\nher to continue her service to every Filipino. Observe a\nparticular communicative style (conversational style) that you\nwould use. Use speech bubbles and simple drawings inside the\nbox.",
+        "text": "In this lesson, you will discover the Communicative Styles and how,\n\nwhen, and where they are used.\n\nCommunication helps us to express our thoughts and feelings.\n\nHaving your own styles in conveying messages and knowing these styles lead to a better understanding and successful transfer of ideas.\n\nThe purpose of the different styles of speech is to help people know\n\nthe specific approach they should use in every situation, person, and place.\n\nCommunicative styles are patterns of speaking characterized by distinctive\n\npronunciation, vocabulary, intent, participants, and grammatical structures.\n\nA communicative style, according to Martin Joos (1976), a linguist and\n\nGerman professor, it refers to the form of language that the speaker utilized, which is characterized by the level of formality. Still, according to Joos, speech style is identified into five types: frozen, formal, consultative, casual, and intimate.\n\nCommunicative styles (first 2 styles)\n\nFrozen style\n\nAlso known as fixed speech, it is the highest form of communicative style, which is often used in respectful situations or formal ceremonies like Shakespearean plays, weddings, funerals, and more. It uses the complex grammatical sentence structure and vocabulary that is only known by experts in that field Examples: National pledge, anthem, school creeds, marriage ceremonies, speech for a state ceremony\n\n2. Conversational Style\n\nConversational style breaks most of the grammatical rules. It is aimed at the target audience and addresses them as such. It's informal in form. Uses language that resembles conversation. It is warm and natural, easy to understand. The objective of this style is to engage the listener or readers.\n\nExample: •\n\nMost people prefer having a conversation on how to change a light bulb than\n\nhaving to read an instruction manual. •\n\nIf you are a marketer on social media, selling some products.\n\n•\n\nA conversation with a group of people on a threaded discussion forum.",
         "kind": "discussion"
       }
     ],
@@ -726,7 +1201,76 @@
         "kind": "answer key"
       }
     ],
-    "digitalContentUrl": "/assets/curriculum/content/g9-q1-w7.json"
+    "digitalContentUrl": "/assets/curriculum/content/g9-q1-w7.json",
+    "sourceSections": [
+      {
+        "id": "concepts",
+        "title": "Concepts & Rules",
+        "kind": "discussion",
+        "pages": [
+          4
+        ]
+      },
+      {
+        "id": "expectations",
+        "title": "Expectations",
+        "kind": "objectives",
+        "pages": [
+          2
+        ]
+      },
+      {
+        "id": "what-i-know",
+        "title": "Pre-Test",
+        "kind": "assessment",
+        "pages": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "activities",
+        "title": "Activities",
+        "kind": "activity",
+        "pages": [
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "id": "remember",
+        "title": "Remember",
+        "kind": "review",
+        "pages": [
+          8
+        ]
+      },
+      {
+        "id": "understanding",
+        "title": "Check Your Understanding",
+        "kind": "activity",
+        "pages": [
+          8
+        ]
+      },
+      {
+        "id": "assessment",
+        "title": "Post-Test",
+        "kind": "assessment",
+        "pages": [
+          9
+        ]
+      },
+      {
+        "id": "answer-key",
+        "title": "Answer Key",
+        "kind": "answers",
+        "pages": [
+          10
+        ]
+      }
+    ]
   },
   {
     "id": "g9-q1-w8",
@@ -746,6 +1290,9 @@
       "notes": [],
       "discussionPages": [
         4
+      ],
+      "verifiedRecallPages": [
+        4
       ]
     },
     "overview": {
@@ -756,7 +1303,7 @@
     "concepts": [
       {
         "page": 4,
-        "text": "Every person has a unique communication style, a way in which they\ninteract and exchange information with others. According to Martin Joos\n(1976:156), such communicative styles are levels of formality in using\nlanguage which are determined by the situational context and degree of\nfamiliarity, or intimacy between the interlocutors. Each level determines\nwhat kind of language is appropriate to use in a specific context.\n\nIn this lesson, you will discover the remaining Communicative Styles and\nhow, when, and where they are used.\n\nCommunicative Styles continuation…\n\n3.  Consultative  Style  - the  third level of language.  It  is  basically\nunplanned speech since  the speaker uses  the  participation and\nfeedback  of  the  listener.  The  speaker  will  supply  background\ninformation, while again, the listener participates continuously.\n\nExamples:\nregular conversation at schools, companies, group discussion, teacher-\nstudent, doctor-patient, expert-apprentice\n\n4. Casual Style  - Also known as informal style,  it  is usually used\nbetween, friends, or even insiders who have things to share. In this\ntype, there is a free and easy participation of both speaker and listener.\n\nExamples:\ncasual conversations with friends, family members, chats, phone calls\nand messages\n\n5. Intimate Style - The last type is used in talks between two very close\nindividuals. It is described by an economy of words, with a high chance\nof nonverbal communication. Like casual, there is also a free and easy\nparticipation of both speaker and listener\n\nExample:\nHusband and wife planning the family vacation\nBoyfriend and girlfriend expressing their feelings\nSiblings discussion at home\nParent and children intimate talk",
+        "text": "Every person has a unique communication style, a way in which they interact and exchange information with others. According to Martin Joos (1976:156), such communicative styles are levels of formality in using language which are determined by the situational context and degree of familiarity, or intimacy between the interlocutors. Each level determines what kind of language is appropriate to use in a specific context. In this lesson, you will discover the remaining Communicative Styles and how, when, and where they are used.\n\nCommunicative Styles continuation…  3. Consultative Style  -  the  third level of language . It is basically  unplanned speech since the speaker uses the participation and  feedback of the listener. The speaker will supply background  information, while again, the listener participates continuously.  Examples: regular conversation at schools, companies, group discussion, teacher- student, doctor-patient, expert-apprentice  4. Casual Style  -  Also known as informal style, it is usually used  between, friends, or even insiders who have things to share. In this  type, there is a free and easy participation of both speaker and listener. Examples: casual conversations with friends, family members, chats, phone calls  and messages  5. Intimate Style  -  The last type is used in talks between two very close  individuals. It is described by an economy of words, with a high chance  of nonverbal communication. Like casual, there is also a free and easy  participation of both speaker and listener Example: Husband and wife planning the family vacation   Boyfriend and girlfriend expressing their feelings   Siblings discussion at home Parent and children intimate talk",
         "kind": "discussion"
       }
     ],
@@ -822,6 +1369,76 @@
       }
     ],
     "answerKey": [],
-    "digitalContentUrl": "/assets/curriculum/content/g9-q1-w8.json"
+    "digitalContentUrl": "/assets/curriculum/content/g9-q1-w8.json",
+    "sourceSections": [
+      {
+        "id": "concepts",
+        "title": "Concepts & Rules",
+        "kind": "discussion",
+        "pages": [
+          4
+        ]
+      },
+      {
+        "id": "expectations",
+        "title": "Expectations",
+        "kind": "objectives",
+        "pages": [
+          2
+        ]
+      },
+      {
+        "id": "what-i-know",
+        "title": "Pre-Test",
+        "kind": "assessment",
+        "pages": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "activities",
+        "title": "Activities",
+        "kind": "activity",
+        "pages": [
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "id": "remember",
+        "title": "Remember",
+        "kind": "review",
+        "pages": [
+          7
+        ]
+      },
+      {
+        "id": "understanding",
+        "title": "Check Your Understanding",
+        "kind": "activity",
+        "pages": [
+          7,
+          8
+        ]
+      },
+      {
+        "id": "assessment",
+        "title": "Post-Test",
+        "kind": "assessment",
+        "pages": [
+          9
+        ]
+      },
+      {
+        "id": "answer-key",
+        "title": "Answer Key",
+        "kind": "answers",
+        "pages": [
+          10
+        ]
+      }
+    ]
   }
 ]

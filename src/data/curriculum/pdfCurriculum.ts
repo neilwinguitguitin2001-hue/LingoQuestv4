@@ -27,6 +27,7 @@ export interface PdfExcerpt {
 }
 
 export interface PdfLesson {
+  sourceSections?: {id:string;title:string;kind:'discussion'|'objectives'|'activity'|'assessment'|'review'|'answers';pages:number[]}[];
   digitalContentUrl?: string;
   id: string;
   grade: 7 | 8 | 9 | 10;
@@ -43,6 +44,7 @@ export interface PdfLesson {
     sha256: string;
     pageCount: number;
     discussionPages: number[];
+    verifiedRecallPages?: number[];
     notes: string[];
   };
   overview: PdfExcerpt;
