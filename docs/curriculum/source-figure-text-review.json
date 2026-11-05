@@ -1,0 +1,2885 @@
+{
+  "corroboratedTranscripts": 158,
+  "needsReview": [
+    {
+      "fileId": "1MSpaDma0gUZEsvR11iYt3EQWKHkxnGSq",
+      "page": 8,
+      "figure": "/assets/curriculum/figures/2fa45e42eb768210ee852d54.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "11KxFfo_5g4zdrASPlXGp7gJv3deyU1Xy",
+      "page": 4,
+      "figure": "/assets/curriculum/figures/9c724351983a6b3fb728c2f9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "11KxFfo_5g4zdrASPlXGp7gJv3deyU1Xy",
+      "page": 5,
+      "figure": "/assets/curriculum/figures/9c724351983a6b3fb728c2f9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "11KxFfo_5g4zdrASPlXGp7gJv3deyU1Xy",
+      "page": 6,
+      "figure": "/assets/curriculum/figures/9c724351983a6b3fb728c2f9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "11KxFfo_5g4zdrASPlXGp7gJv3deyU1Xy",
+      "page": 2,
+      "figure": "/assets/curriculum/figures/9c724351983a6b3fb728c2f9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "11KxFfo_5g4zdrASPlXGp7gJv3deyU1Xy",
+      "page": 7,
+      "figure": "/assets/curriculum/figures/9c724351983a6b3fb728c2f9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "11KxFfo_5g4zdrASPlXGp7gJv3deyU1Xy",
+      "page": 8,
+      "figure": "/assets/curriculum/figures/9c724351983a6b3fb728c2f9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "11KxFfo_5g4zdrASPlXGp7gJv3deyU1Xy",
+      "page": 9,
+      "figure": "/assets/curriculum/figures/9c724351983a6b3fb728c2f9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "11KxFfo_5g4zdrASPlXGp7gJv3deyU1Xy",
+      "page": 10,
+      "figure": "/assets/curriculum/figures/9c724351983a6b3fb728c2f9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1XGFVqCY1K4-gtPN3YwEqxKb9Z0b73sfQ",
+      "page": 14,
+      "figure": "/assets/curriculum/figures/311961dc3f9e01fc838a5619.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1edVGTweFHZYzGwOe9EUROEvurSnq637I",
+      "page": 4,
+      "figure": "/assets/curriculum/figures/ee89372e261a1c32d8df2371.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1edVGTweFHZYzGwOe9EUROEvurSnq637I",
+      "page": 5,
+      "figure": "/assets/curriculum/figures/77fba9929ed4029171b5dc58.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1edVGTweFHZYzGwOe9EUROEvurSnq637I",
+      "page": 6,
+      "figure": "/assets/curriculum/figures/7d65adcbaee81d1d37fefacd.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1edVGTweFHZYzGwOe9EUROEvurSnq637I",
+      "page": 7,
+      "figure": "/assets/curriculum/figures/113922156abfe3fe2433a559.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1edVGTweFHZYzGwOe9EUROEvurSnq637I",
+      "page": 7,
+      "figure": "/assets/curriculum/figures/a704878e45e42edd451147f0.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1edVGTweFHZYzGwOe9EUROEvurSnq637I",
+      "page": 2,
+      "figure": "/assets/curriculum/figures/f66839b2e03b6d3e157f5328.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1edVGTweFHZYzGwOe9EUROEvurSnq637I",
+      "page": 2,
+      "figure": "/assets/curriculum/figures/9fe89ddd032e99de0ff56744.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1edVGTweFHZYzGwOe9EUROEvurSnq637I",
+      "page": 3,
+      "figure": "/assets/curriculum/figures/329cf4ac05a4e7f255a4c3d7.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1Lph4GDZLlXKJ_THF5UzY0woUNU-ANIKv",
+      "page": 9,
+      "figure": "/assets/curriculum/figures/60fe9612f5d6f983823e5cfe.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1Lph4GDZLlXKJ_THF5UzY0woUNU-ANIKv",
+      "page": 12,
+      "figure": "/assets/curriculum/figures/8c59c20a740d2ce8d7233d60.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1Lph4GDZLlXKJ_THF5UzY0woUNU-ANIKv",
+      "page": 12,
+      "figure": "/assets/curriculum/figures/30775f978bcf98e388161558.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1Lph4GDZLlXKJ_THF5UzY0woUNU-ANIKv",
+      "page": 18,
+      "figure": "/assets/curriculum/figures/ac9f11568831294473ecd51b.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1VxdAmC0tNrHn-UqycoT0XPK8IqZ1Gdu0",
+      "page": 10,
+      "figure": "/assets/curriculum/figures/65dde048f04eb7cb05b4936b.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1VxdAmC0tNrHn-UqycoT0XPK8IqZ1Gdu0",
+      "page": 10,
+      "figure": "/assets/curriculum/figures/82b7a07b9df3c7b4278eabca.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1VxdAmC0tNrHn-UqycoT0XPK8IqZ1Gdu0",
+      "page": 10,
+      "figure": "/assets/curriculum/figures/46dad987a5b441a4c84279d6.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1VxdAmC0tNrHn-UqycoT0XPK8IqZ1Gdu0",
+      "page": 20,
+      "figure": "/assets/curriculum/figures/ec1a0db44f5a6f10372814a9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1bs_SOxJUfyQ0mu0aR8XncjnvGTH8MBU9",
+      "page": 9,
+      "figure": "/assets/curriculum/figures/bc9a98a23f4fe2468270ca6e.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1sWryZ6RZpLH27YGmIIgu4g9vdLHKDM-S",
+      "page": 14,
+      "figure": "/assets/curriculum/figures/7d6148fa3a7652d7d77a4687.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ICiJOBXf4bOrbtI69Akv1e0yvX_KdCEG",
+      "page": 7,
+      "figure": "/assets/curriculum/figures/77fba9929ed4029171b5dc58.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ICiJOBXf4bOrbtI69Akv1e0yvX_KdCEG",
+      "page": 7,
+      "figure": "/assets/curriculum/figures/7d65adcbaee81d1d37fefacd.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ICiJOBXf4bOrbtI69Akv1e0yvX_KdCEG",
+      "page": 2,
+      "figure": "/assets/curriculum/figures/f66839b2e03b6d3e157f5328.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ICiJOBXf4bOrbtI69Akv1e0yvX_KdCEG",
+      "page": 2,
+      "figure": "/assets/curriculum/figures/9fe89ddd032e99de0ff56744.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ICiJOBXf4bOrbtI69Akv1e0yvX_KdCEG",
+      "page": 3,
+      "figure": "/assets/curriculum/figures/329cf4ac05a4e7f255a4c3d7.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ICiJOBXf4bOrbtI69Akv1e0yvX_KdCEG",
+      "page": 8,
+      "figure": "/assets/curriculum/figures/113922156abfe3fe2433a559.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ICiJOBXf4bOrbtI69Akv1e0yvX_KdCEG",
+      "page": 8,
+      "figure": "/assets/curriculum/figures/a704878e45e42edd451147f0.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1sE1_PlqARG59kCtim19js5G9FFvB9x1O",
+      "page": 8,
+      "figure": "/assets/curriculum/figures/9aa2d8bd479130e228f1f543.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1lPBBs8XVkhfK2qkyjyiaMlmoBOewUUYq",
+      "page": 13,
+      "figure": "/assets/curriculum/figures/828b7dd9122d72dccb902cfe.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1lPBBs8XVkhfK2qkyjyiaMlmoBOewUUYq",
+      "page": 14,
+      "figure": "/assets/curriculum/figures/9ee05fdf1cfdad2040829544.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1lx6duXiQmM-_G5PeOJWvWIam3maJOS3O",
+      "page": 11,
+      "figure": "/assets/curriculum/figures/a52e88694b814af5e770eb6b.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1lx6duXiQmM-_G5PeOJWvWIam3maJOS3O",
+      "page": 11,
+      "figure": "/assets/curriculum/figures/187b08c846dbebe98e489fa2.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1lx6duXiQmM-_G5PeOJWvWIam3maJOS3O",
+      "page": 12,
+      "figure": "/assets/curriculum/figures/f48e09634f424ea05a90f556.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1lx6duXiQmM-_G5PeOJWvWIam3maJOS3O",
+      "page": 12,
+      "figure": "/assets/curriculum/figures/4b084d111fee622e6d3d9bbb.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1lx6duXiQmM-_G5PeOJWvWIam3maJOS3O",
+      "page": 13,
+      "figure": "/assets/curriculum/figures/346cf6ee34db7628881eae3a.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "18fBTmhbCONeF7e-DV8QziWE_8s5sO8Me",
+      "page": 7,
+      "figure": "/assets/curriculum/figures/d323826d6635b4a2e0beeb9e.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "18fBTmhbCONeF7e-DV8QziWE_8s5sO8Me",
+      "page": 8,
+      "figure": "/assets/curriculum/figures/04e34180a45bf5ed50f95147.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "18fBTmhbCONeF7e-DV8QziWE_8s5sO8Me",
+      "page": 12,
+      "figure": "/assets/curriculum/figures/d094670f62ce856841e9d1f9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "18fBTmhbCONeF7e-DV8QziWE_8s5sO8Me",
+      "page": 15,
+      "figure": "/assets/curriculum/figures/7107c7a05ba7b3f2685fe8b0.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "18fBTmhbCONeF7e-DV8QziWE_8s5sO8Me",
+      "page": 14,
+      "figure": "/assets/curriculum/figures/0c8c25be5e848e61a1855196.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "18fBTmhbCONeF7e-DV8QziWE_8s5sO8Me",
+      "page": 17,
+      "figure": "/assets/curriculum/figures/f0be3a84e4dac9f62b08cac7.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1JVjW6Q9iuj3XY8pXac82dLE12cv4Pt_m",
+      "page": 8,
+      "figure": "/assets/curriculum/figures/d79806ea9cf144cc978f5d5d.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1JVjW6Q9iuj3XY8pXac82dLE12cv4Pt_m",
+      "page": 15,
+      "figure": "/assets/curriculum/figures/7205311299df0e1810a6ed22.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1jrr9i9bVgVkIdJeXIwOh4u3ZNO7zgw5B",
+      "page": 7,
+      "figure": "/assets/curriculum/figures/9704e8bed9f4801f26916e32.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1jrr9i9bVgVkIdJeXIwOh4u3ZNO7zgw5B",
+      "page": 11,
+      "figure": "/assets/curriculum/figures/4ca1eeebf029df12aa830fe8.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1jrr9i9bVgVkIdJeXIwOh4u3ZNO7zgw5B",
+      "page": 11,
+      "figure": "/assets/curriculum/figures/a1a2b097e4a840a7858dbd7e.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1jrr9i9bVgVkIdJeXIwOh4u3ZNO7zgw5B",
+      "page": 11,
+      "figure": "/assets/curriculum/figures/4ab196af79e5385ceba660d0.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1jrr9i9bVgVkIdJeXIwOh4u3ZNO7zgw5B",
+      "page": 11,
+      "figure": "/assets/curriculum/figures/a89ee29d785106e7f10a9eee.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1jrr9i9bVgVkIdJeXIwOh4u3ZNO7zgw5B",
+      "page": 12,
+      "figure": "/assets/curriculum/figures/09aa85046529882d2af30514.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1jrr9i9bVgVkIdJeXIwOh4u3ZNO7zgw5B",
+      "page": 12,
+      "figure": "/assets/curriculum/figures/fbcaf6575228d87d84e9a69c.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1jrr9i9bVgVkIdJeXIwOh4u3ZNO7zgw5B",
+      "page": 12,
+      "figure": "/assets/curriculum/figures/1f0af968d9c793bb03d72f1f.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1jrr9i9bVgVkIdJeXIwOh4u3ZNO7zgw5B",
+      "page": 13,
+      "figure": "/assets/curriculum/figures/fbcaf6575228d87d84e9a69c.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1jrr9i9bVgVkIdJeXIwOh4u3ZNO7zgw5B",
+      "page": 13,
+      "figure": "/assets/curriculum/figures/1f0af968d9c793bb03d72f1f.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1jrr9i9bVgVkIdJeXIwOh4u3ZNO7zgw5B",
+      "page": 15,
+      "figure": "/assets/curriculum/figures/efac02dc1c63e3c7c4e53769.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1jrr9i9bVgVkIdJeXIwOh4u3ZNO7zgw5B",
+      "page": 15,
+      "figure": "/assets/curriculum/figures/3fad8c9980be49898d573297.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1jrr9i9bVgVkIdJeXIwOh4u3ZNO7zgw5B",
+      "page": 15,
+      "figure": "/assets/curriculum/figures/446727f9b4ce2c47a29d47ba.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1jrr9i9bVgVkIdJeXIwOh4u3ZNO7zgw5B",
+      "page": 15,
+      "figure": "/assets/curriculum/figures/d0a9d13f9f4a958eb93f672a.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1jrr9i9bVgVkIdJeXIwOh4u3ZNO7zgw5B",
+      "page": 15,
+      "figure": "/assets/curriculum/figures/ff51591ee4f6435e687ce3bc.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1TksdIdgLSlBkJNPMWimwIpNIYP0P4QqO",
+      "page": 12,
+      "figure": "/assets/curriculum/figures/b2698863d68bbbba9db36829.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1TksdIdgLSlBkJNPMWimwIpNIYP0P4QqO",
+      "page": 8,
+      "figure": "/assets/curriculum/figures/697a78fcbb24371f14ee60c1.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1TksdIdgLSlBkJNPMWimwIpNIYP0P4QqO",
+      "page": 8,
+      "figure": "/assets/curriculum/figures/6d7ced8bc6b2756da8372efb.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1TksdIdgLSlBkJNPMWimwIpNIYP0P4QqO",
+      "page": 19,
+      "figure": "/assets/curriculum/figures/062e4ac6cd490e67cd9ed15a.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1g8hcn_ImIe-WKcSTeY56w44PGBubpmJG",
+      "page": 10,
+      "figure": "/assets/curriculum/figures/fc531e31dfee6c0c53cb6c23.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1g8hcn_ImIe-WKcSTeY56w44PGBubpmJG",
+      "page": 9,
+      "figure": "/assets/curriculum/figures/2d025ea15d18b1d6c548ed68.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1g8hcn_ImIe-WKcSTeY56w44PGBubpmJG",
+      "page": 17,
+      "figure": "/assets/curriculum/figures/fc5cb296ebbd40f83b2009cb.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1KMLSCYJfYvlZ9AK9xaZzqAg_4gKVYyTV",
+      "page": 8,
+      "figure": "/assets/curriculum/figures/9212940befe33f34d236ee5d.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1w5OjEPvoar4szPJF3PHrOGqC27QaHXK0",
+      "page": 5,
+      "figure": "/assets/curriculum/figures/ee89372e261a1c32d8df2371.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1w5OjEPvoar4szPJF3PHrOGqC27QaHXK0",
+      "page": 7,
+      "figure": "/assets/curriculum/figures/7d65adcbaee81d1d37fefacd.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1w5OjEPvoar4szPJF3PHrOGqC27QaHXK0",
+      "page": 7,
+      "figure": "/assets/curriculum/figures/113922156abfe3fe2433a559.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1w5OjEPvoar4szPJF3PHrOGqC27QaHXK0",
+      "page": 2,
+      "figure": "/assets/curriculum/figures/f66839b2e03b6d3e157f5328.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1w5OjEPvoar4szPJF3PHrOGqC27QaHXK0",
+      "page": 2,
+      "figure": "/assets/curriculum/figures/9fe89ddd032e99de0ff56744.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1w5OjEPvoar4szPJF3PHrOGqC27QaHXK0",
+      "page": 8,
+      "figure": "/assets/curriculum/figures/a704878e45e42edd451147f0.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "16bBuggxIQ6HE4acIb-afji3KMUh_pnN0",
+      "page": 4,
+      "figure": "/assets/curriculum/figures/9c724351983a6b3fb728c2f9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "16bBuggxIQ6HE4acIb-afji3KMUh_pnN0",
+      "page": 5,
+      "figure": "/assets/curriculum/figures/9c724351983a6b3fb728c2f9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "16bBuggxIQ6HE4acIb-afji3KMUh_pnN0",
+      "page": 5,
+      "figure": "/assets/curriculum/figures/8c4e830a84b24a070de97521.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "16bBuggxIQ6HE4acIb-afji3KMUh_pnN0",
+      "page": 6,
+      "figure": "/assets/curriculum/figures/9c724351983a6b3fb728c2f9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "16bBuggxIQ6HE4acIb-afji3KMUh_pnN0",
+      "page": 7,
+      "figure": "/assets/curriculum/figures/9c724351983a6b3fb728c2f9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "16bBuggxIQ6HE4acIb-afji3KMUh_pnN0",
+      "page": 7,
+      "figure": "/assets/curriculum/figures/d046352bb179ecc57a8c0d7e.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "16bBuggxIQ6HE4acIb-afji3KMUh_pnN0",
+      "page": 8,
+      "figure": "/assets/curriculum/figures/9c724351983a6b3fb728c2f9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "16bBuggxIQ6HE4acIb-afji3KMUh_pnN0",
+      "page": 9,
+      "figure": "/assets/curriculum/figures/9c724351983a6b3fb728c2f9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "16bBuggxIQ6HE4acIb-afji3KMUh_pnN0",
+      "page": 10,
+      "figure": "/assets/curriculum/figures/9c724351983a6b3fb728c2f9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1oXJl0BpCaV0CV6o8di7e1vrE0wCJoJj1",
+      "page": 12,
+      "figure": "/assets/curriculum/figures/f6c62ae6eb799b178abfab83.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1oXJl0BpCaV0CV6o8di7e1vrE0wCJoJj1",
+      "page": 14,
+      "figure": "/assets/curriculum/figures/2fdf2cc9432a0f528fae9016.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1oXJl0BpCaV0CV6o8di7e1vrE0wCJoJj1",
+      "page": 17,
+      "figure": "/assets/curriculum/figures/2607f5c5e6268faf634da786.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ZpevlxZOYmtED2IHFcdluF7EI1diYZIU",
+      "page": 26,
+      "figure": "/assets/curriculum/figures/1d69812360dac6fb35f8b293.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ZpevlxZOYmtED2IHFcdluF7EI1diYZIU",
+      "page": 27,
+      "figure": "/assets/curriculum/figures/4f38fe707312e35dd5f1c01f.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1rvWuAPBFH0x7Lm3-xYKaHDv9VuyQcjUG",
+      "page": 9,
+      "figure": "/assets/curriculum/figures/c2fc044d4451ca4e7048c285.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1rvWuAPBFH0x7Lm3-xYKaHDv9VuyQcjUG",
+      "page": 12,
+      "figure": "/assets/curriculum/figures/63940b15e554658bed29f6ef.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1rvWuAPBFH0x7Lm3-xYKaHDv9VuyQcjUG",
+      "page": 17,
+      "figure": "/assets/curriculum/figures/fc9252acd5f45a501e8e2f65.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1QmcUJL9dCX3YR0b3kJc0qEODxMCJSy39",
+      "page": 7,
+      "figure": "/assets/curriculum/figures/396430a9c5334679f592f222.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1QmcUJL9dCX3YR0b3kJc0qEODxMCJSy39",
+      "page": 19,
+      "figure": "/assets/curriculum/figures/5f9fef346ea8552a25308220.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1QmcUJL9dCX3YR0b3kJc0qEODxMCJSy39",
+      "page": 19,
+      "figure": "/assets/curriculum/figures/644203951ed606b7ad547408.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1QmcUJL9dCX3YR0b3kJc0qEODxMCJSy39",
+      "page": 20,
+      "figure": "/assets/curriculum/figures/9c44e8e1c4dd75c4e7e3434f.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1tsV852piu9_iirKpFrlcEPo6zsHigu4v",
+      "page": 8,
+      "figure": "/assets/curriculum/figures/452ebd348501240cee439d7c.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1tsV852piu9_iirKpFrlcEPo6zsHigu4v",
+      "page": 9,
+      "figure": "/assets/curriculum/figures/7a3f370dff2c0cc6cbe7f6f7.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1tsV852piu9_iirKpFrlcEPo6zsHigu4v",
+      "page": 10,
+      "figure": "/assets/curriculum/figures/2a9ed721c1f784d05bf37268.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1tsV852piu9_iirKpFrlcEPo6zsHigu4v",
+      "page": 10,
+      "figure": "/assets/curriculum/figures/9322203330c938f2df3c31de.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1tsV852piu9_iirKpFrlcEPo6zsHigu4v",
+      "page": 7,
+      "figure": "/assets/curriculum/figures/b2e0e0543ff731a95ebc6fc8.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1tsV852piu9_iirKpFrlcEPo6zsHigu4v",
+      "page": 7,
+      "figure": "/assets/curriculum/figures/9f891352b2cbf7393307c5c1.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1tsV852piu9_iirKpFrlcEPo6zsHigu4v",
+      "page": 11,
+      "figure": "/assets/curriculum/figures/0d8fdb090a26aee6126f2d55.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1Q1shTKIZ4xwqZftk82i61rNel8aENdU0",
+      "page": 8,
+      "figure": "/assets/curriculum/figures/b183831e6f44ff56691d789f.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1Q1shTKIZ4xwqZftk82i61rNel8aENdU0",
+      "page": 12,
+      "figure": "/assets/curriculum/figures/a3f283145979fc7086eefda7.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1Q1shTKIZ4xwqZftk82i61rNel8aENdU0",
+      "page": 14,
+      "figure": "/assets/curriculum/figures/05157b297e3f69fd47a0d3d5.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ACqJFs-wkRMprc5I7RHhQbdMoyd1dGmM",
+      "page": 3,
+      "figure": "/assets/curriculum/figures/9c724351983a6b3fb728c2f9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ACqJFs-wkRMprc5I7RHhQbdMoyd1dGmM",
+      "page": 4,
+      "figure": "/assets/curriculum/figures/9c724351983a6b3fb728c2f9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ACqJFs-wkRMprc5I7RHhQbdMoyd1dGmM",
+      "page": 5,
+      "figure": "/assets/curriculum/figures/95b3a0ca1748fc9214d65988.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ACqJFs-wkRMprc5I7RHhQbdMoyd1dGmM",
+      "page": 5,
+      "figure": "/assets/curriculum/figures/9c724351983a6b3fb728c2f9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ACqJFs-wkRMprc5I7RHhQbdMoyd1dGmM",
+      "page": 2,
+      "figure": "/assets/curriculum/figures/9c724351983a6b3fb728c2f9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ACqJFs-wkRMprc5I7RHhQbdMoyd1dGmM",
+      "page": 6,
+      "figure": "/assets/curriculum/figures/07d10274aa472d826a8cf59c.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ACqJFs-wkRMprc5I7RHhQbdMoyd1dGmM",
+      "page": 6,
+      "figure": "/assets/curriculum/figures/9c724351983a6b3fb728c2f9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ACqJFs-wkRMprc5I7RHhQbdMoyd1dGmM",
+      "page": 7,
+      "figure": "/assets/curriculum/figures/9c724351983a6b3fb728c2f9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ACqJFs-wkRMprc5I7RHhQbdMoyd1dGmM",
+      "page": 8,
+      "figure": "/assets/curriculum/figures/9c724351983a6b3fb728c2f9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ACqJFs-wkRMprc5I7RHhQbdMoyd1dGmM",
+      "page": 8,
+      "figure": "/assets/curriculum/figures/8ebbbd2cb5df0086ba090a89.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ACqJFs-wkRMprc5I7RHhQbdMoyd1dGmM",
+      "page": 9,
+      "figure": "/assets/curriculum/figures/9c724351983a6b3fb728c2f9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ACqJFs-wkRMprc5I7RHhQbdMoyd1dGmM",
+      "page": 10,
+      "figure": "/assets/curriculum/figures/9c724351983a6b3fb728c2f9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1kfz311Nhr4MKQsY0xqWAIq2XIqn0kgx_",
+      "page": 4,
+      "figure": "/assets/curriculum/figures/ee89372e261a1c32d8df2371.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1kfz311Nhr4MKQsY0xqWAIq2XIqn0kgx_",
+      "page": 7,
+      "figure": "/assets/curriculum/figures/7d65adcbaee81d1d37fefacd.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1kfz311Nhr4MKQsY0xqWAIq2XIqn0kgx_",
+      "page": 7,
+      "figure": "/assets/curriculum/figures/ec6aaa82c6a456979dec805b.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1kfz311Nhr4MKQsY0xqWAIq2XIqn0kgx_",
+      "page": 2,
+      "figure": "/assets/curriculum/figures/0b4a151f505d613e5d8d5327.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1kfz311Nhr4MKQsY0xqWAIq2XIqn0kgx_",
+      "page": 2,
+      "figure": "/assets/curriculum/figures/9fe89ddd032e99de0ff56744.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1kfz311Nhr4MKQsY0xqWAIq2XIqn0kgx_",
+      "page": 3,
+      "figure": "/assets/curriculum/figures/329cf4ac05a4e7f255a4c3d7.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1kfz311Nhr4MKQsY0xqWAIq2XIqn0kgx_",
+      "page": 9,
+      "figure": "/assets/curriculum/figures/811260db2751ee1dccb6f392.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "16sSkMj9xRyjcGBPwG99biDzCWlwBXnZ0",
+      "page": 10,
+      "figure": "/assets/curriculum/figures/521dcddcac3435d88298c5fd.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "16sSkMj9xRyjcGBPwG99biDzCWlwBXnZ0",
+      "page": 10,
+      "figure": "/assets/curriculum/figures/6f9a0a103231984c498b255a.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "16sSkMj9xRyjcGBPwG99biDzCWlwBXnZ0",
+      "page": 11,
+      "figure": "/assets/curriculum/figures/fe4f2f93cd84c2176fcaf2d8.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "16sSkMj9xRyjcGBPwG99biDzCWlwBXnZ0",
+      "page": 11,
+      "figure": "/assets/curriculum/figures/6c7a998996fa1cc85099003d.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "16sSkMj9xRyjcGBPwG99biDzCWlwBXnZ0",
+      "page": 22,
+      "figure": "/assets/curriculum/figures/84d19119156fb4b266adc376.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "16sSkMj9xRyjcGBPwG99biDzCWlwBXnZ0",
+      "page": 20,
+      "figure": "/assets/curriculum/figures/9ebc7b5754f4ffa2bc3c81c4.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "16sSkMj9xRyjcGBPwG99biDzCWlwBXnZ0",
+      "page": 15,
+      "figure": "/assets/curriculum/figures/304c2d04c6e314adf9667004.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "16sSkMj9xRyjcGBPwG99biDzCWlwBXnZ0",
+      "page": 26,
+      "figure": "/assets/curriculum/figures/e18e7e94f6825903161fdbc2.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "16sSkMj9xRyjcGBPwG99biDzCWlwBXnZ0",
+      "page": 29,
+      "figure": "/assets/curriculum/figures/9f69a26879c82c0285569055.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "16sSkMj9xRyjcGBPwG99biDzCWlwBXnZ0",
+      "page": 29,
+      "figure": "/assets/curriculum/figures/27361b0d44cb6ec6424083b5.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "16sSkMj9xRyjcGBPwG99biDzCWlwBXnZ0",
+      "page": 29,
+      "figure": "/assets/curriculum/figures/b6b1ae7149f50b9c3af43dba.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1n8PGQ9cfLkfJ48OPpYx3S7FfsuX_x8zJ",
+      "page": 4,
+      "figure": "/assets/curriculum/figures/9c724351983a6b3fb728c2f9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1n8PGQ9cfLkfJ48OPpYx3S7FfsuX_x8zJ",
+      "page": 5,
+      "figure": "/assets/curriculum/figures/f36d5fefd4050d957d452365.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1n8PGQ9cfLkfJ48OPpYx3S7FfsuX_x8zJ",
+      "page": 5,
+      "figure": "/assets/curriculum/figures/9c724351983a6b3fb728c2f9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1n8PGQ9cfLkfJ48OPpYx3S7FfsuX_x8zJ",
+      "page": 6,
+      "figure": "/assets/curriculum/figures/9c724351983a6b3fb728c2f9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1n8PGQ9cfLkfJ48OPpYx3S7FfsuX_x8zJ",
+      "page": 2,
+      "figure": "/assets/curriculum/figures/9c724351983a6b3fb728c2f9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1n8PGQ9cfLkfJ48OPpYx3S7FfsuX_x8zJ",
+      "page": 7,
+      "figure": "/assets/curriculum/figures/9c724351983a6b3fb728c2f9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1n8PGQ9cfLkfJ48OPpYx3S7FfsuX_x8zJ",
+      "page": 8,
+      "figure": "/assets/curriculum/figures/d739fd2f452b84861d8495f7.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1n8PGQ9cfLkfJ48OPpYx3S7FfsuX_x8zJ",
+      "page": 8,
+      "figure": "/assets/curriculum/figures/9c724351983a6b3fb728c2f9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1n8PGQ9cfLkfJ48OPpYx3S7FfsuX_x8zJ",
+      "page": 9,
+      "figure": "/assets/curriculum/figures/9c724351983a6b3fb728c2f9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1n8PGQ9cfLkfJ48OPpYx3S7FfsuX_x8zJ",
+      "page": 10,
+      "figure": "/assets/curriculum/figures/9c724351983a6b3fb728c2f9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1o60IXjYfDk03sBQQqiq1UbUEKU18GqgT",
+      "page": 17,
+      "figure": "/assets/curriculum/figures/560fba73ed1a243f71ec30a4.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1o60IXjYfDk03sBQQqiq1UbUEKU18GqgT",
+      "page": 13,
+      "figure": "/assets/curriculum/figures/1e4b3e496e8f9c8d33225689.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1o60IXjYfDk03sBQQqiq1UbUEKU18GqgT",
+      "page": 15,
+      "figure": "/assets/curriculum/figures/66e5beac05eba375b017e80c.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1o60IXjYfDk03sBQQqiq1UbUEKU18GqgT",
+      "page": 18,
+      "figure": "/assets/curriculum/figures/99a4bc38c226cd98d340d098.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1o60IXjYfDk03sBQQqiq1UbUEKU18GqgT",
+      "page": 20,
+      "figure": "/assets/curriculum/figures/5e82486dc5df1df6a04acb30.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1o60IXjYfDk03sBQQqiq1UbUEKU18GqgT",
+      "page": 21,
+      "figure": "/assets/curriculum/figures/b15ab84a9b9b41acfaaee382.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1o60IXjYfDk03sBQQqiq1UbUEKU18GqgT",
+      "page": 21,
+      "figure": "/assets/curriculum/figures/cf2894c21925642668484b82.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1o60IXjYfDk03sBQQqiq1UbUEKU18GqgT",
+      "page": 12,
+      "figure": "/assets/curriculum/figures/7725a8b39c0478ce9e5762da.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1apMCFoA_8wiK--6IjOwDJ_3q8WIv8UX8",
+      "page": 7,
+      "figure": "/assets/curriculum/figures/2b88cbfa3d98f927981fa8f1.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1apMCFoA_8wiK--6IjOwDJ_3q8WIv8UX8",
+      "page": 5,
+      "figure": "/assets/curriculum/figures/099b7520ac67fb8a19e68d2a.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1apMCFoA_8wiK--6IjOwDJ_3q8WIv8UX8",
+      "page": 6,
+      "figure": "/assets/curriculum/figures/7cd91ae9481a3bbdbb53852b.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1apMCFoA_8wiK--6IjOwDJ_3q8WIv8UX8",
+      "page": 6,
+      "figure": "/assets/curriculum/figures/ce28c43321ae06179d20f31c.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1apMCFoA_8wiK--6IjOwDJ_3q8WIv8UX8",
+      "page": 6,
+      "figure": "/assets/curriculum/figures/5dd1a343cf61f426ebd56c01.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1gVM2xPQDwPJgo6Iynb-A9sG7ZXdtBOFT",
+      "page": 4,
+      "figure": "/assets/curriculum/figures/329cf4ac05a4e7f255a4c3d7.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1gVM2xPQDwPJgo6Iynb-A9sG7ZXdtBOFT",
+      "page": 4,
+      "figure": "/assets/curriculum/figures/ee89372e261a1c32d8df2371.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1gVM2xPQDwPJgo6Iynb-A9sG7ZXdtBOFT",
+      "page": 5,
+      "figure": "/assets/curriculum/figures/77fba9929ed4029171b5dc58.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1gVM2xPQDwPJgo6Iynb-A9sG7ZXdtBOFT",
+      "page": 6,
+      "figure": "/assets/curriculum/figures/7d65adcbaee81d1d37fefacd.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1gVM2xPQDwPJgo6Iynb-A9sG7ZXdtBOFT",
+      "page": 7,
+      "figure": "/assets/curriculum/figures/113922156abfe3fe2433a559.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1gVM2xPQDwPJgo6Iynb-A9sG7ZXdtBOFT",
+      "page": 2,
+      "figure": "/assets/curriculum/figures/f66839b2e03b6d3e157f5328.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1gVM2xPQDwPJgo6Iynb-A9sG7ZXdtBOFT",
+      "page": 2,
+      "figure": "/assets/curriculum/figures/9fe89ddd032e99de0ff56744.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1gVM2xPQDwPJgo6Iynb-A9sG7ZXdtBOFT",
+      "page": 9,
+      "figure": "/assets/curriculum/figures/a704878e45e42edd451147f0.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1oWjNKD0cguMcot0EFP49EO3EmG93p0a_",
+      "page": 16,
+      "figure": "/assets/curriculum/figures/e4759069e88069388e8ad571.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1oWjNKD0cguMcot0EFP49EO3EmG93p0a_",
+      "page": 6,
+      "figure": "/assets/curriculum/figures/d18903ae079d61dfad2b4969.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1oWjNKD0cguMcot0EFP49EO3EmG93p0a_",
+      "page": 10,
+      "figure": "/assets/curriculum/figures/319b7b9d816e81fc638d9123.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1oWjNKD0cguMcot0EFP49EO3EmG93p0a_",
+      "page": 25,
+      "figure": "/assets/curriculum/figures/d18903ae079d61dfad2b4969.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1oWjNKD0cguMcot0EFP49EO3EmG93p0a_",
+      "page": 28,
+      "figure": "/assets/curriculum/figures/ac27eaafff1b17e75ac1d0b1.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1m7Up--fA7OBTyn7BN1bEP3mIYadSNEXg",
+      "page": 11,
+      "figure": "/assets/curriculum/figures/6f10e28c6c8f79ffc2743046.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1m7Up--fA7OBTyn7BN1bEP3mIYadSNEXg",
+      "page": 14,
+      "figure": "/assets/curriculum/figures/5cb233448d060b43da10e25b.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1RUjib0EJWOA5fGzU2SG_eq14EO417G_N",
+      "page": 13,
+      "figure": "/assets/curriculum/figures/a598f9efb082c2f25d3035a7.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1RUjib0EJWOA5fGzU2SG_eq14EO417G_N",
+      "page": 13,
+      "figure": "/assets/curriculum/figures/74d26dd4606f47ad06750ebd.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1RUjib0EJWOA5fGzU2SG_eq14EO417G_N",
+      "page": 29,
+      "figure": "/assets/curriculum/figures/eee5a42d37cd09bfaf1d9e7a.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1RUjib0EJWOA5fGzU2SG_eq14EO417G_N",
+      "page": 29,
+      "figure": "/assets/curriculum/figures/40294c038928eb5ae3aa6f42.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1OLsb1l_RIYEM-c2IJFdshKFfl1NF3x--",
+      "page": 12,
+      "figure": "/assets/curriculum/figures/f43d02ca446749e7776da4e3.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1OLsb1l_RIYEM-c2IJFdshKFfl1NF3x--",
+      "page": 13,
+      "figure": "/assets/curriculum/figures/9c5e75e4d1c663096fe1cd7a.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1OLsb1l_RIYEM-c2IJFdshKFfl1NF3x--",
+      "page": 14,
+      "figure": "/assets/curriculum/figures/04f6c293f703dd2196d872f9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1OLsb1l_RIYEM-c2IJFdshKFfl1NF3x--",
+      "page": 16,
+      "figure": "/assets/curriculum/figures/616b55879a1c7bcdbe717a4f.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1OLsb1l_RIYEM-c2IJFdshKFfl1NF3x--",
+      "page": 16,
+      "figure": "/assets/curriculum/figures/a945f7d6a4c8fa2d2ed003a1.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1bnjIhxKaEPEIw0xwaipj8vmognRald7B",
+      "page": 13,
+      "figure": "/assets/curriculum/figures/c3da700a512fe274b62516f8.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1bnjIhxKaEPEIw0xwaipj8vmognRald7B",
+      "page": 7,
+      "figure": "/assets/curriculum/figures/720cf6e28caaa7a3b7425976.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1bnjIhxKaEPEIw0xwaipj8vmognRald7B",
+      "page": 7,
+      "figure": "/assets/curriculum/figures/a651ef06347a0fdd92b07edc.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1bnjIhxKaEPEIw0xwaipj8vmognRald7B",
+      "page": 10,
+      "figure": "/assets/curriculum/figures/a37be2cfda033846af9f4efe.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1bnjIhxKaEPEIw0xwaipj8vmognRald7B",
+      "page": 16,
+      "figure": "/assets/curriculum/figures/5318b90771d770ea12a75e58.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "18UpnBAmymds0HOOk6NAZ0m0dqaeZv4IA",
+      "page": 9,
+      "figure": "/assets/curriculum/figures/b30afe5d1d8253aa8aba5058.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1UEs1q6ozrI70Mz9-na4jffSq-B8gdTmu",
+      "page": 9,
+      "figure": "/assets/curriculum/figures/946a06a92901dde5d5035c34.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1UEs1q6ozrI70Mz9-na4jffSq-B8gdTmu",
+      "page": 9,
+      "figure": "/assets/curriculum/figures/9859547d8dd654281d2a8fd3.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1UEs1q6ozrI70Mz9-na4jffSq-B8gdTmu",
+      "page": 10,
+      "figure": "/assets/curriculum/figures/e0dd5f1e58d20bb0c67d1054.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1UEs1q6ozrI70Mz9-na4jffSq-B8gdTmu",
+      "page": 11,
+      "figure": "/assets/curriculum/figures/d1647a51dcaf752340e259fa.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1UEs1q6ozrI70Mz9-na4jffSq-B8gdTmu",
+      "page": 12,
+      "figure": "/assets/curriculum/figures/47fc1bd6712065c1f4acc14c.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1UEs1q6ozrI70Mz9-na4jffSq-B8gdTmu",
+      "page": 7,
+      "figure": "/assets/curriculum/figures/df561f4d83ab14b62bcda3ba.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1I8xD1b6ieDRg3_Fk7QuDFNy5ZQZoSciH",
+      "page": 4,
+      "figure": "/assets/curriculum/figures/ee89372e261a1c32d8df2371.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1I8xD1b6ieDRg3_Fk7QuDFNy5ZQZoSciH",
+      "page": 5,
+      "figure": "/assets/curriculum/figures/8f2dba04988b57785446d0b6.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1I8xD1b6ieDRg3_Fk7QuDFNy5ZQZoSciH",
+      "page": 6,
+      "figure": "/assets/curriculum/figures/7e36ba100e0a9213b6627648.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1I8xD1b6ieDRg3_Fk7QuDFNy5ZQZoSciH",
+      "page": 2,
+      "figure": "/assets/curriculum/figures/0b4a151f505d613e5d8d5327.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1I8xD1b6ieDRg3_Fk7QuDFNy5ZQZoSciH",
+      "page": 2,
+      "figure": "/assets/curriculum/figures/9fe89ddd032e99de0ff56744.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1I8xD1b6ieDRg3_Fk7QuDFNy5ZQZoSciH",
+      "page": 3,
+      "figure": "/assets/curriculum/figures/329cf4ac05a4e7f255a4c3d7.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1I8xD1b6ieDRg3_Fk7QuDFNy5ZQZoSciH",
+      "page": 8,
+      "figure": "/assets/curriculum/figures/7d65adcbaee81d1d37fefacd.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1I8xD1b6ieDRg3_Fk7QuDFNy5ZQZoSciH",
+      "page": 8,
+      "figure": "/assets/curriculum/figures/ec6aaa82c6a456979dec805b.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1I8xD1b6ieDRg3_Fk7QuDFNy5ZQZoSciH",
+      "page": 9,
+      "figure": "/assets/curriculum/figures/811260db2751ee1dccb6f392.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1O7Uz5PO8R7RBLJpxEIXqBY-YGV9sO-m1",
+      "page": 11,
+      "figure": "/assets/curriculum/figures/89bc0a1f45bcb03408583744.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1uo8karug9R3IQ5mwreSUD9sck_qYJUwG",
+      "page": 10,
+      "figure": "/assets/curriculum/figures/71f32a6b7f417bc296207cc5.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1uo8karug9R3IQ5mwreSUD9sck_qYJUwG",
+      "page": 9,
+      "figure": "/assets/curriculum/figures/d204eb12dd815ce2d442c701.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1zVgUbckMgAclELyG9qWmGDZ9sP-oKAaC",
+      "page": 15,
+      "figure": "/assets/curriculum/figures/118cfdc2fc139040819a55af.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1Fa3s_IRPf8rIsoIA1tj4VgX2XB1jE-U9",
+      "page": 5,
+      "figure": "/assets/curriculum/figures/6b6bf4f9aff4dc40f88bc4e8.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1Fa3s_IRPf8rIsoIA1tj4VgX2XB1jE-U9",
+      "page": 7,
+      "figure": "/assets/curriculum/figures/1de8d3d81c964a2a9dbb6212.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1wF0G81YTWsqw_R-2H2vW9UHCHkv35Qjt",
+      "page": 10,
+      "figure": "/assets/curriculum/figures/6640dcff64530d56a999fb52.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1wF0G81YTWsqw_R-2H2vW9UHCHkv35Qjt",
+      "page": 11,
+      "figure": "/assets/curriculum/figures/5c0e8e29607ef799861d7c0e.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1wF0G81YTWsqw_R-2H2vW9UHCHkv35Qjt",
+      "page": 11,
+      "figure": "/assets/curriculum/figures/dc1782eb049e8956e0024843.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1wF0G81YTWsqw_R-2H2vW9UHCHkv35Qjt",
+      "page": 11,
+      "figure": "/assets/curriculum/figures/9e895131e8691897749fbe99.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1wF0G81YTWsqw_R-2H2vW9UHCHkv35Qjt",
+      "page": 11,
+      "figure": "/assets/curriculum/figures/ae0eaffeca18517e57225e03.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1wF0G81YTWsqw_R-2H2vW9UHCHkv35Qjt",
+      "page": 6,
+      "figure": "/assets/curriculum/figures/c47ed86242e0fd7b3df3b83b.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1wF0G81YTWsqw_R-2H2vW9UHCHkv35Qjt",
+      "page": 6,
+      "figure": "/assets/curriculum/figures/b8951ecc5ec2ede585e54879.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1wF0G81YTWsqw_R-2H2vW9UHCHkv35Qjt",
+      "page": 6,
+      "figure": "/assets/curriculum/figures/5e3b4b4b4a77920c739cf53a.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1wF0G81YTWsqw_R-2H2vW9UHCHkv35Qjt",
+      "page": 6,
+      "figure": "/assets/curriculum/figures/2cf8424cf8ab8523639224f6.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1wF0G81YTWsqw_R-2H2vW9UHCHkv35Qjt",
+      "page": 6,
+      "figure": "/assets/curriculum/figures/6b680b6b737e1508d89d6b04.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1wF0G81YTWsqw_R-2H2vW9UHCHkv35Qjt",
+      "page": 6,
+      "figure": "/assets/curriculum/figures/6b3c3f4a9050a2d3d72ae3ed.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1wF0G81YTWsqw_R-2H2vW9UHCHkv35Qjt",
+      "page": 6,
+      "figure": "/assets/curriculum/figures/c912f7b7366ce89d41534e05.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1wF0G81YTWsqw_R-2H2vW9UHCHkv35Qjt",
+      "page": 6,
+      "figure": "/assets/curriculum/figures/1b351eca6c07c8e078811699.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1wF0G81YTWsqw_R-2H2vW9UHCHkv35Qjt",
+      "page": 8,
+      "figure": "/assets/curriculum/figures/06304f664f610eac9d3ec505.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1wF0G81YTWsqw_R-2H2vW9UHCHkv35Qjt",
+      "page": 20,
+      "figure": "/assets/curriculum/figures/c47ed86242e0fd7b3df3b83b.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1wF0G81YTWsqw_R-2H2vW9UHCHkv35Qjt",
+      "page": 20,
+      "figure": "/assets/curriculum/figures/b8951ecc5ec2ede585e54879.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1wF0G81YTWsqw_R-2H2vW9UHCHkv35Qjt",
+      "page": 20,
+      "figure": "/assets/curriculum/figures/5e3b4b4b4a77920c739cf53a.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1wF0G81YTWsqw_R-2H2vW9UHCHkv35Qjt",
+      "page": 20,
+      "figure": "/assets/curriculum/figures/2cf8424cf8ab8523639224f6.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1wF0G81YTWsqw_R-2H2vW9UHCHkv35Qjt",
+      "page": 20,
+      "figure": "/assets/curriculum/figures/6b680b6b737e1508d89d6b04.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1wF0G81YTWsqw_R-2H2vW9UHCHkv35Qjt",
+      "page": 20,
+      "figure": "/assets/curriculum/figures/6b3c3f4a9050a2d3d72ae3ed.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1wF0G81YTWsqw_R-2H2vW9UHCHkv35Qjt",
+      "page": 20,
+      "figure": "/assets/curriculum/figures/c912f7b7366ce89d41534e05.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1wF0G81YTWsqw_R-2H2vW9UHCHkv35Qjt",
+      "page": 20,
+      "figure": "/assets/curriculum/figures/1b351eca6c07c8e078811699.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1-BTf7lLJxjP7GOtk_J0NW_wA-AqiWSNU",
+      "page": 8,
+      "figure": "/assets/curriculum/figures/2f01f8c80d77e78b44077da2.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1NwK6_sDCc542ZmsLobfhMa33EylYGAIb",
+      "page": 14,
+      "figure": "/assets/curriculum/figures/76adacb5698d1e7655b2357e.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1NwK6_sDCc542ZmsLobfhMa33EylYGAIb",
+      "page": 14,
+      "figure": "/assets/curriculum/figures/9748f02920b0fb68b5d96fc0.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1NwK6_sDCc542ZmsLobfhMa33EylYGAIb",
+      "page": 15,
+      "figure": "/assets/curriculum/figures/8d4dcf8080afa368aa9b2e7d.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1NwK6_sDCc542ZmsLobfhMa33EylYGAIb",
+      "page": 15,
+      "figure": "/assets/curriculum/figures/2d95d4a680329150c3c98e08.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1NwK6_sDCc542ZmsLobfhMa33EylYGAIb",
+      "page": 18,
+      "figure": "/assets/curriculum/figures/fb83f9744ab0befa3fb34678.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1NwK6_sDCc542ZmsLobfhMa33EylYGAIb",
+      "page": 19,
+      "figure": "/assets/curriculum/figures/9d0440b1d6f257cae62cb2c5.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "13TLCt46RngpHY3HvZYwWn_PwYp6uS98-",
+      "page": 12,
+      "figure": "/assets/curriculum/figures/b39bb43f9599edb3a127d4ac.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "13TLCt46RngpHY3HvZYwWn_PwYp6uS98-",
+      "page": 13,
+      "figure": "/assets/curriculum/figures/5cf434992409d39cc29722a2.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1I4ESAlBAY81uH6HCLh6kj2uWJcHMVKig",
+      "page": 10,
+      "figure": "/assets/curriculum/figures/8f7883fd892fcfb226c14330.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1I4ESAlBAY81uH6HCLh6kj2uWJcHMVKig",
+      "page": 11,
+      "figure": "/assets/curriculum/figures/b592690c68cd94e8fdf67ca2.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1I4ESAlBAY81uH6HCLh6kj2uWJcHMVKig",
+      "page": 12,
+      "figure": "/assets/curriculum/figures/d27670a02db5bb3f4ac35726.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1I4ESAlBAY81uH6HCLh6kj2uWJcHMVKig",
+      "page": 12,
+      "figure": "/assets/curriculum/figures/898fb6e1b2135b6ab500a084.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1I4ESAlBAY81uH6HCLh6kj2uWJcHMVKig",
+      "page": 12,
+      "figure": "/assets/curriculum/figures/5b4b01e5c157dda96a03acd9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1I4ESAlBAY81uH6HCLh6kj2uWJcHMVKig",
+      "page": 13,
+      "figure": "/assets/curriculum/figures/447f1c31181d6abf4b625f9a.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1I4ESAlBAY81uH6HCLh6kj2uWJcHMVKig",
+      "page": 13,
+      "figure": "/assets/curriculum/figures/fba12350658ee0f03bb6baff.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1I4ESAlBAY81uH6HCLh6kj2uWJcHMVKig",
+      "page": 14,
+      "figure": "/assets/curriculum/figures/e2a2c8b0d04ad56a2ceb9030.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1I4ESAlBAY81uH6HCLh6kj2uWJcHMVKig",
+      "page": 15,
+      "figure": "/assets/curriculum/figures/9ba6583967ccc49d70477575.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1I4ESAlBAY81uH6HCLh6kj2uWJcHMVKig",
+      "page": 15,
+      "figure": "/assets/curriculum/figures/65143df0d0c9681be7821d52.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1I4ESAlBAY81uH6HCLh6kj2uWJcHMVKig",
+      "page": 6,
+      "figure": "/assets/curriculum/figures/9059912957039b9a00f3efe3.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1I4ESAlBAY81uH6HCLh6kj2uWJcHMVKig",
+      "page": 6,
+      "figure": "/assets/curriculum/figures/471a38659ef463c3ec297c50.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1I4ESAlBAY81uH6HCLh6kj2uWJcHMVKig",
+      "page": 6,
+      "figure": "/assets/curriculum/figures/20530f94f7c8a147e67e1127.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1I4ESAlBAY81uH6HCLh6kj2uWJcHMVKig",
+      "page": 6,
+      "figure": "/assets/curriculum/figures/3ad48498868e30e9b2127a5c.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1I4ESAlBAY81uH6HCLh6kj2uWJcHMVKig",
+      "page": 6,
+      "figure": "/assets/curriculum/figures/215cec35b9c3d74e132d6d70.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1I4ESAlBAY81uH6HCLh6kj2uWJcHMVKig",
+      "page": 6,
+      "figure": "/assets/curriculum/figures/cb209e4586f24af01d6f8d3e.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1I4ESAlBAY81uH6HCLh6kj2uWJcHMVKig",
+      "page": 6,
+      "figure": "/assets/curriculum/figures/0ffadb5aec5e79a575228154.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1I4ESAlBAY81uH6HCLh6kj2uWJcHMVKig",
+      "page": 6,
+      "figure": "/assets/curriculum/figures/af71af2a739411d8940fa827.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1I4ESAlBAY81uH6HCLh6kj2uWJcHMVKig",
+      "page": 6,
+      "figure": "/assets/curriculum/figures/105c56e6544f0367c80a45ee.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1I4ESAlBAY81uH6HCLh6kj2uWJcHMVKig",
+      "page": 6,
+      "figure": "/assets/curriculum/figures/3db3cdd05b20eeeeceb864f7.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1I4ESAlBAY81uH6HCLh6kj2uWJcHMVKig",
+      "page": 7,
+      "figure": "/assets/curriculum/figures/e1f666094d27022f2c3aa62d.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1I4ESAlBAY81uH6HCLh6kj2uWJcHMVKig",
+      "page": 8,
+      "figure": "/assets/curriculum/figures/17a446f93ea429b0ed952150.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1I4ESAlBAY81uH6HCLh6kj2uWJcHMVKig",
+      "page": 19,
+      "figure": "/assets/curriculum/figures/67d85680d47783cc7da45eaf.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1I4ESAlBAY81uH6HCLh6kj2uWJcHMVKig",
+      "page": 20,
+      "figure": "/assets/curriculum/figures/cb209e4586f24af01d6f8d3e.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1I4ESAlBAY81uH6HCLh6kj2uWJcHMVKig",
+      "page": 20,
+      "figure": "/assets/curriculum/figures/0ffadb5aec5e79a575228154.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1I4ESAlBAY81uH6HCLh6kj2uWJcHMVKig",
+      "page": 20,
+      "figure": "/assets/curriculum/figures/af71af2a739411d8940fa827.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1I4ESAlBAY81uH6HCLh6kj2uWJcHMVKig",
+      "page": 20,
+      "figure": "/assets/curriculum/figures/471a38659ef463c3ec297c50.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1I4ESAlBAY81uH6HCLh6kj2uWJcHMVKig",
+      "page": 20,
+      "figure": "/assets/curriculum/figures/3ad48498868e30e9b2127a5c.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1I4ESAlBAY81uH6HCLh6kj2uWJcHMVKig",
+      "page": 20,
+      "figure": "/assets/curriculum/figures/215cec35b9c3d74e132d6d70.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1I4ESAlBAY81uH6HCLh6kj2uWJcHMVKig",
+      "page": 20,
+      "figure": "/assets/curriculum/figures/20530f94f7c8a147e67e1127.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1I4ESAlBAY81uH6HCLh6kj2uWJcHMVKig",
+      "page": 20,
+      "figure": "/assets/curriculum/figures/105c56e6544f0367c80a45ee.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1I4ESAlBAY81uH6HCLh6kj2uWJcHMVKig",
+      "page": 20,
+      "figure": "/assets/curriculum/figures/8be2655924dd36603c607e98.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1I4ESAlBAY81uH6HCLh6kj2uWJcHMVKig",
+      "page": 21,
+      "figure": "/assets/curriculum/figures/e1f666094d27022f2c3aa62d.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ZvBNqtLkb62_KqW2_VOHeRM8PXcWv3Uo",
+      "page": 9,
+      "figure": "/assets/curriculum/figures/04224753ab644099fed01355.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ZvBNqtLkb62_KqW2_VOHeRM8PXcWv3Uo",
+      "page": 13,
+      "figure": "/assets/curriculum/figures/8347f1912194f14ed7e5aa61.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ZvBNqtLkb62_KqW2_VOHeRM8PXcWv3Uo",
+      "page": 13,
+      "figure": "/assets/curriculum/figures/82b8fb85af7019a11a7cbd18.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ZvBNqtLkb62_KqW2_VOHeRM8PXcWv3Uo",
+      "page": 13,
+      "figure": "/assets/curriculum/figures/89819813bf7512d7ab457c46.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ZvBNqtLkb62_KqW2_VOHeRM8PXcWv3Uo",
+      "page": 17,
+      "figure": "/assets/curriculum/figures/ebe451b8809125847adef4c9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ZvBNqtLkb62_KqW2_VOHeRM8PXcWv3Uo",
+      "page": 17,
+      "figure": "/assets/curriculum/figures/53c635260a85f98cdee6014c.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "10n6YQL62o3bc3FyZuz6rKvXZLXB8CYtm",
+      "page": 3,
+      "figure": "/assets/curriculum/figures/329cf4ac05a4e7f255a4c3d7.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "10n6YQL62o3bc3FyZuz6rKvXZLXB8CYtm",
+      "page": 3,
+      "figure": "/assets/curriculum/figures/ee89372e261a1c32d8df2371.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "10n6YQL62o3bc3FyZuz6rKvXZLXB8CYtm",
+      "page": 5,
+      "figure": "/assets/curriculum/figures/77fba9929ed4029171b5dc58.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "10n6YQL62o3bc3FyZuz6rKvXZLXB8CYtm",
+      "page": 2,
+      "figure": "/assets/curriculum/figures/f66839b2e03b6d3e157f5328.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "10n6YQL62o3bc3FyZuz6rKvXZLXB8CYtm",
+      "page": 2,
+      "figure": "/assets/curriculum/figures/8070ce3091e7683e9736d232.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "10n6YQL62o3bc3FyZuz6rKvXZLXB8CYtm",
+      "page": 8,
+      "figure": "/assets/curriculum/figures/a68d9d9cf577ded2da71bbf2.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "10n6YQL62o3bc3FyZuz6rKvXZLXB8CYtm",
+      "page": 8,
+      "figure": "/assets/curriculum/figures/113922156abfe3fe2433a559.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "10n6YQL62o3bc3FyZuz6rKvXZLXB8CYtm",
+      "page": 9,
+      "figure": "/assets/curriculum/figures/4a9e7b097ab5e260524fe7b5.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1-OdUX2OwFdLOZnWn7IN7TWZqKnHxBNNi",
+      "page": 10,
+      "figure": "/assets/curriculum/figures/40a4006c230b95efec3609b3.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1-OdUX2OwFdLOZnWn7IN7TWZqKnHxBNNi",
+      "page": 28,
+      "figure": "/assets/curriculum/figures/2647129d01c0289698e63b31.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1TJzXG88JXkB3ENdig_20ZffPBXMzcqDY",
+      "page": 7,
+      "figure": "/assets/curriculum/figures/b1fef9ab7f2a5278af66a4cf.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1re2qBWhdZIo5d0wnCCSiqu7bO_wps5KJ",
+      "page": 10,
+      "figure": "/assets/curriculum/figures/e9d5d54c713716f3a151a524.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1re2qBWhdZIo5d0wnCCSiqu7bO_wps5KJ",
+      "page": 12,
+      "figure": "/assets/curriculum/figures/f014f0a5054bf7ffe3810211.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1re2qBWhdZIo5d0wnCCSiqu7bO_wps5KJ",
+      "page": 12,
+      "figure": "/assets/curriculum/figures/df44025645cb24d0a8052339.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1re2qBWhdZIo5d0wnCCSiqu7bO_wps5KJ",
+      "page": 9,
+      "figure": "/assets/curriculum/figures/22f539f9fb57f5b814d8b29c.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1re2qBWhdZIo5d0wnCCSiqu7bO_wps5KJ",
+      "page": 9,
+      "figure": "/assets/curriculum/figures/d1d10d9c5e579dc8fb6dfb65.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1re2qBWhdZIo5d0wnCCSiqu7bO_wps5KJ",
+      "page": 9,
+      "figure": "/assets/curriculum/figures/78ed993f0b99c0c6c745091d.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1re2qBWhdZIo5d0wnCCSiqu7bO_wps5KJ",
+      "page": 15,
+      "figure": "/assets/curriculum/figures/067e6057c5556ad96fe15aac.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1re2qBWhdZIo5d0wnCCSiqu7bO_wps5KJ",
+      "page": 15,
+      "figure": "/assets/curriculum/figures/66c869bac608e477077b6095.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1re2qBWhdZIo5d0wnCCSiqu7bO_wps5KJ",
+      "page": 15,
+      "figure": "/assets/curriculum/figures/fa5f33a21b25f64c99bb83aa.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1re2qBWhdZIo5d0wnCCSiqu7bO_wps5KJ",
+      "page": 8,
+      "figure": "/assets/curriculum/figures/0d6702b2641f1c507d802347.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1re2qBWhdZIo5d0wnCCSiqu7bO_wps5KJ",
+      "page": 14,
+      "figure": "/assets/curriculum/figures/2c388dd9a57564ccf98fda74.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1re2qBWhdZIo5d0wnCCSiqu7bO_wps5KJ",
+      "page": 20,
+      "figure": "/assets/curriculum/figures/8d53c54d9ea89fdeb24fd54a.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "160mB3bVwZyDz_jV91TupLEv6bwOKCBo9",
+      "page": 4,
+      "figure": "/assets/curriculum/figures/799623f03a93178d95c1fa66.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "160mB3bVwZyDz_jV91TupLEv6bwOKCBo9",
+      "page": 4,
+      "figure": "/assets/curriculum/figures/9c724351983a6b3fb728c2f9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "160mB3bVwZyDz_jV91TupLEv6bwOKCBo9",
+      "page": 5,
+      "figure": "/assets/curriculum/figures/9c724351983a6b3fb728c2f9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "160mB3bVwZyDz_jV91TupLEv6bwOKCBo9",
+      "page": 6,
+      "figure": "/assets/curriculum/figures/9c724351983a6b3fb728c2f9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "160mB3bVwZyDz_jV91TupLEv6bwOKCBo9",
+      "page": 2,
+      "figure": "/assets/curriculum/figures/9c724351983a6b3fb728c2f9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "160mB3bVwZyDz_jV91TupLEv6bwOKCBo9",
+      "page": 7,
+      "figure": "/assets/curriculum/figures/9c724351983a6b3fb728c2f9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "160mB3bVwZyDz_jV91TupLEv6bwOKCBo9",
+      "page": 8,
+      "figure": "/assets/curriculum/figures/9c724351983a6b3fb728c2f9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "160mB3bVwZyDz_jV91TupLEv6bwOKCBo9",
+      "page": 9,
+      "figure": "/assets/curriculum/figures/9c724351983a6b3fb728c2f9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "160mB3bVwZyDz_jV91TupLEv6bwOKCBo9",
+      "page": 10,
+      "figure": "/assets/curriculum/figures/9c724351983a6b3fb728c2f9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1NsuF8UwNC_AsKYqFuq1pEGgGUPoHQTb6",
+      "page": 11,
+      "figure": "/assets/curriculum/figures/3dc207fe14f2cf5949451b7d.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1NsuF8UwNC_AsKYqFuq1pEGgGUPoHQTb6",
+      "page": 12,
+      "figure": "/assets/curriculum/figures/aa9d0c246510c673deab5ab8.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1NsuF8UwNC_AsKYqFuq1pEGgGUPoHQTb6",
+      "page": 12,
+      "figure": "/assets/curriculum/figures/43c00f7347ec9e4f870f1bd3.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1NsuF8UwNC_AsKYqFuq1pEGgGUPoHQTb6",
+      "page": 13,
+      "figure": "/assets/curriculum/figures/2eeb83777bb09c5107480b02.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1NsuF8UwNC_AsKYqFuq1pEGgGUPoHQTb6",
+      "page": 13,
+      "figure": "/assets/curriculum/figures/7d07f56dd916c156cda8f5dd.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1NsuF8UwNC_AsKYqFuq1pEGgGUPoHQTb6",
+      "page": 14,
+      "figure": "/assets/curriculum/figures/05b9a8c92f35dd4cde7e1285.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1NsuF8UwNC_AsKYqFuq1pEGgGUPoHQTb6",
+      "page": 15,
+      "figure": "/assets/curriculum/figures/0550b38b61be080367a16f1f.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1NsuF8UwNC_AsKYqFuq1pEGgGUPoHQTb6",
+      "page": 16,
+      "figure": "/assets/curriculum/figures/9e579322cd6591d2b00ead40.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1NsuF8UwNC_AsKYqFuq1pEGgGUPoHQTb6",
+      "page": 18,
+      "figure": "/assets/curriculum/figures/aaa0840f2f8c509cd85be263.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1NsuF8UwNC_AsKYqFuq1pEGgGUPoHQTb6",
+      "page": 19,
+      "figure": "/assets/curriculum/figures/714bd63b0fb0761a94ab31d4.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1NsuF8UwNC_AsKYqFuq1pEGgGUPoHQTb6",
+      "page": 10,
+      "figure": "/assets/curriculum/figures/da6f62da4e9bb5962ce8bd1b.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1NsuF8UwNC_AsKYqFuq1pEGgGUPoHQTb6",
+      "page": 9,
+      "figure": "/assets/curriculum/figures/eacd7e9944cded883084a96f.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1TSJZC97CJI9uTgJtWpbbMbkFVNqYqjYX",
+      "page": 15,
+      "figure": "/assets/curriculum/figures/5dea68f7032e0787f75f1c8e.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1X8QA_AwPWA8mUzjrUuU0k6cnSlPj5duw",
+      "page": 9,
+      "figure": "/assets/curriculum/figures/0a3832cbaade42ec654f9ff4.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1X8QA_AwPWA8mUzjrUuU0k6cnSlPj5duw",
+      "page": 15,
+      "figure": "/assets/curriculum/figures/e9cf5fb82632365a1048966c.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1X8QA_AwPWA8mUzjrUuU0k6cnSlPj5duw",
+      "page": 22,
+      "figure": "/assets/curriculum/figures/5c066727781f044075abe49a.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1X8QA_AwPWA8mUzjrUuU0k6cnSlPj5duw",
+      "page": 22,
+      "figure": "/assets/curriculum/figures/0eb6ab5a214e8ab3a70eb23f.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1X8QA_AwPWA8mUzjrUuU0k6cnSlPj5duw",
+      "page": 12,
+      "figure": "/assets/curriculum/figures/5fb47a434e6adf24bfea8141.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1AQBtvMVTTu3kEOcQS9TlXjWmneZTF01a",
+      "page": 9,
+      "figure": "/assets/curriculum/figures/a187b41456b534eef4cd6d91.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1AQBtvMVTTu3kEOcQS9TlXjWmneZTF01a",
+      "page": 17,
+      "figure": "/assets/curriculum/figures/ed166a035a750e5a54ba066a.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ZHngPMQOU09_NC6UYqOF2xqUXh06p8pz",
+      "page": 9,
+      "figure": "/assets/curriculum/figures/11bebe0e425c636f61e6fb63.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ZHngPMQOU09_NC6UYqOF2xqUXh06p8pz",
+      "page": 10,
+      "figure": "/assets/curriculum/figures/7cbc405831cf812fba1268b8.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ZHngPMQOU09_NC6UYqOF2xqUXh06p8pz",
+      "page": 10,
+      "figure": "/assets/curriculum/figures/c1cb1d2ca2deb7b0c2a80a25.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ZHngPMQOU09_NC6UYqOF2xqUXh06p8pz",
+      "page": 10,
+      "figure": "/assets/curriculum/figures/364451492278159e20d96d5c.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ZHngPMQOU09_NC6UYqOF2xqUXh06p8pz",
+      "page": 11,
+      "figure": "/assets/curriculum/figures/6a5ab7530d97de59a81c6020.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ZHngPMQOU09_NC6UYqOF2xqUXh06p8pz",
+      "page": 11,
+      "figure": "/assets/curriculum/figures/80ffe40c058a6ae20624839a.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ZHngPMQOU09_NC6UYqOF2xqUXh06p8pz",
+      "page": 12,
+      "figure": "/assets/curriculum/figures/5c1016f5d8cb2d5fc50bb95b.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ZHngPMQOU09_NC6UYqOF2xqUXh06p8pz",
+      "page": 12,
+      "figure": "/assets/curriculum/figures/5107183e7afe07ba799cf840.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ZHngPMQOU09_NC6UYqOF2xqUXh06p8pz",
+      "page": 15,
+      "figure": "/assets/curriculum/figures/0c16f180d39d36bd86ddac90.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ZHngPMQOU09_NC6UYqOF2xqUXh06p8pz",
+      "page": 20,
+      "figure": "/assets/curriculum/figures/40d6875333f5fe6d11cb32bd.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ZHngPMQOU09_NC6UYqOF2xqUXh06p8pz",
+      "page": 20,
+      "figure": "/assets/curriculum/figures/e06d23d8e61cc30db2714212.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ZHngPMQOU09_NC6UYqOF2xqUXh06p8pz",
+      "page": 21,
+      "figure": "/assets/curriculum/figures/455e3e61b1ff5afb2e7f9ea3.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ZHngPMQOU09_NC6UYqOF2xqUXh06p8pz",
+      "page": 21,
+      "figure": "/assets/curriculum/figures/2b2fe890c5c59481304181e6.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ZHngPMQOU09_NC6UYqOF2xqUXh06p8pz",
+      "page": 22,
+      "figure": "/assets/curriculum/figures/397f9acad42df1f2bcd3a9b5.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1pwYwKgVnNHnJzPJnwLuhrDh92hsrlBnX",
+      "page": 8,
+      "figure": "/assets/curriculum/figures/d83500fa8de478b22d831cfa.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "183c4T1iPG97HRpZhwuUjEym9AjL-nhA1",
+      "page": 23,
+      "figure": "/assets/curriculum/figures/caac133e2ff44efff26fddca.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "183c4T1iPG97HRpZhwuUjEym9AjL-nhA1",
+      "page": 14,
+      "figure": "/assets/curriculum/figures/785d33a80b4a95ce3a556225.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "183c4T1iPG97HRpZhwuUjEym9AjL-nhA1",
+      "page": 14,
+      "figure": "/assets/curriculum/figures/0df6fe61294baa3a1b3c827a.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "183c4T1iPG97HRpZhwuUjEym9AjL-nhA1",
+      "page": 14,
+      "figure": "/assets/curriculum/figures/5255898218e782c728a70c64.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "183c4T1iPG97HRpZhwuUjEym9AjL-nhA1",
+      "page": 14,
+      "figure": "/assets/curriculum/figures/a73e4e6b197635bdc80f8793.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "183c4T1iPG97HRpZhwuUjEym9AjL-nhA1",
+      "page": 14,
+      "figure": "/assets/curriculum/figures/d4cb9679af30eb4ef90b145b.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "183c4T1iPG97HRpZhwuUjEym9AjL-nhA1",
+      "page": 33,
+      "figure": "/assets/curriculum/figures/abade0f5320a0360de4ffb4d.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "183c4T1iPG97HRpZhwuUjEym9AjL-nhA1",
+      "page": 33,
+      "figure": "/assets/curriculum/figures/13f5ba298cb33e20035762c6.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "183c4T1iPG97HRpZhwuUjEym9AjL-nhA1",
+      "page": 33,
+      "figure": "/assets/curriculum/figures/6de0bc8744c85ff0f86d4aaa.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "183c4T1iPG97HRpZhwuUjEym9AjL-nhA1",
+      "page": 34,
+      "figure": "/assets/curriculum/figures/6c7bf32fad647770042b026a.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "183c4T1iPG97HRpZhwuUjEym9AjL-nhA1",
+      "page": 34,
+      "figure": "/assets/curriculum/figures/bc206564bf9a7c06d80df12b.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1SWUwUhtn1gVNoxSA9RfNrPapdxifkKPn",
+      "page": 10,
+      "figure": "/assets/curriculum/figures/61cf082c794ffd11603ac98a.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1SWUwUhtn1gVNoxSA9RfNrPapdxifkKPn",
+      "page": 9,
+      "figure": "/assets/curriculum/figures/2743ba52c5d1706462e4177a.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1SWUwUhtn1gVNoxSA9RfNrPapdxifkKPn",
+      "page": 18,
+      "figure": "/assets/curriculum/figures/4137bf3381425cab9054ad8c.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1exjrqFhpwJGvh0q9o8GKbJlwu-DvcNN1",
+      "page": 25,
+      "figure": "/assets/curriculum/figures/f68fa41fc7914f86331d0dce.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "12Mx6Rn_JDaAp5XpiymMq-yf85MBKSdga",
+      "page": 3,
+      "figure": "/assets/curriculum/figures/9c724351983a6b3fb728c2f9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "12Mx6Rn_JDaAp5XpiymMq-yf85MBKSdga",
+      "page": 4,
+      "figure": "/assets/curriculum/figures/9c724351983a6b3fb728c2f9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "12Mx6Rn_JDaAp5XpiymMq-yf85MBKSdga",
+      "page": 5,
+      "figure": "/assets/curriculum/figures/9c724351983a6b3fb728c2f9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "12Mx6Rn_JDaAp5XpiymMq-yf85MBKSdga",
+      "page": 6,
+      "figure": "/assets/curriculum/figures/9c724351983a6b3fb728c2f9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "12Mx6Rn_JDaAp5XpiymMq-yf85MBKSdga",
+      "page": 2,
+      "figure": "/assets/curriculum/figures/9c724351983a6b3fb728c2f9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "12Mx6Rn_JDaAp5XpiymMq-yf85MBKSdga",
+      "page": 7,
+      "figure": "/assets/curriculum/figures/9c724351983a6b3fb728c2f9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "12Mx6Rn_JDaAp5XpiymMq-yf85MBKSdga",
+      "page": 8,
+      "figure": "/assets/curriculum/figures/9c724351983a6b3fb728c2f9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "12Mx6Rn_JDaAp5XpiymMq-yf85MBKSdga",
+      "page": 9,
+      "figure": "/assets/curriculum/figures/9c724351983a6b3fb728c2f9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "12Mx6Rn_JDaAp5XpiymMq-yf85MBKSdga",
+      "page": 10,
+      "figure": "/assets/curriculum/figures/9c724351983a6b3fb728c2f9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1-Saa9Cm3HLSdvAxxI027la84hLrLUtdW",
+      "page": 9,
+      "figure": "/assets/curriculum/figures/3314c1eeb6486ca64db981a2.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1-Saa9Cm3HLSdvAxxI027la84hLrLUtdW",
+      "page": 7,
+      "figure": "/assets/curriculum/figures/058d6cfae292f0c3e358b02c.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1EQ41sCKSPqb8RVeUxAt1sCCb5MD_idrg",
+      "page": 10,
+      "figure": "/assets/curriculum/figures/eae8778a8a198f5304dbfcec.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1EQ41sCKSPqb8RVeUxAt1sCCb5MD_idrg",
+      "page": 5,
+      "figure": "/assets/curriculum/figures/2d4e8f144a13789827b5a7f3.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1klN3fLuIAtlkp29tlUQlBNJhf_AA_Yvx",
+      "page": 12,
+      "figure": "/assets/curriculum/figures/8bbaaada1030722442d3c0fa.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1klN3fLuIAtlkp29tlUQlBNJhf_AA_Yvx",
+      "page": 13,
+      "figure": "/assets/curriculum/figures/5249b6a7d88cfc27b203ec48.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1klN3fLuIAtlkp29tlUQlBNJhf_AA_Yvx",
+      "page": 14,
+      "figure": "/assets/curriculum/figures/f03b6db45035800c9124facf.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1klN3fLuIAtlkp29tlUQlBNJhf_AA_Yvx",
+      "page": 14,
+      "figure": "/assets/curriculum/figures/3b188bee8a35c682241d96e5.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1klN3fLuIAtlkp29tlUQlBNJhf_AA_Yvx",
+      "page": 14,
+      "figure": "/assets/curriculum/figures/87727ea850657d41eae76956.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1klN3fLuIAtlkp29tlUQlBNJhf_AA_Yvx",
+      "page": 15,
+      "figure": "/assets/curriculum/figures/46df6b2e22635b916b1d56bf.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1klN3fLuIAtlkp29tlUQlBNJhf_AA_Yvx",
+      "page": 15,
+      "figure": "/assets/curriculum/figures/8413160fa42e86493308b59b.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1klN3fLuIAtlkp29tlUQlBNJhf_AA_Yvx",
+      "page": 16,
+      "figure": "/assets/curriculum/figures/f87e627d788816ac2a4c0594.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1klN3fLuIAtlkp29tlUQlBNJhf_AA_Yvx",
+      "page": 16,
+      "figure": "/assets/curriculum/figures/b3517fe9964675b05a20698b.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1klN3fLuIAtlkp29tlUQlBNJhf_AA_Yvx",
+      "page": 16,
+      "figure": "/assets/curriculum/figures/391e4e01bc22479aa5c34393.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1klN3fLuIAtlkp29tlUQlBNJhf_AA_Yvx",
+      "page": 17,
+      "figure": "/assets/curriculum/figures/bcb3435a2c7c2fcb21d0c1f8.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1klN3fLuIAtlkp29tlUQlBNJhf_AA_Yvx",
+      "page": 17,
+      "figure": "/assets/curriculum/figures/a94d8f3cf3b9f6ecf4495192.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1klN3fLuIAtlkp29tlUQlBNJhf_AA_Yvx",
+      "page": 18,
+      "figure": "/assets/curriculum/figures/177b7d8708927b10e20853e7.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1klN3fLuIAtlkp29tlUQlBNJhf_AA_Yvx",
+      "page": 18,
+      "figure": "/assets/curriculum/figures/478253a95f80d77c8643809d.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1klN3fLuIAtlkp29tlUQlBNJhf_AA_Yvx",
+      "page": 19,
+      "figure": "/assets/curriculum/figures/6c443571125c61d856a13676.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1klN3fLuIAtlkp29tlUQlBNJhf_AA_Yvx",
+      "page": 19,
+      "figure": "/assets/curriculum/figures/a0a0cdd761b7c1b502021558.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1klN3fLuIAtlkp29tlUQlBNJhf_AA_Yvx",
+      "page": 10,
+      "figure": "/assets/curriculum/figures/f47bd7428e607ffe694e0b9a.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1XW053aQeCA4ikZO0RhgZrFom57UqD7m0",
+      "page": 4,
+      "figure": "/assets/curriculum/figures/ee89372e261a1c32d8df2371.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1XW053aQeCA4ikZO0RhgZrFom57UqD7m0",
+      "page": 6,
+      "figure": "/assets/curriculum/figures/77fba9929ed4029171b5dc58.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1XW053aQeCA4ikZO0RhgZrFom57UqD7m0",
+      "page": 7,
+      "figure": "/assets/curriculum/figures/7d65adcbaee81d1d37fefacd.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1XW053aQeCA4ikZO0RhgZrFom57UqD7m0",
+      "page": 7,
+      "figure": "/assets/curriculum/figures/113922156abfe3fe2433a559.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1XW053aQeCA4ikZO0RhgZrFom57UqD7m0",
+      "page": 2,
+      "figure": "/assets/curriculum/figures/f66839b2e03b6d3e157f5328.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1XW053aQeCA4ikZO0RhgZrFom57UqD7m0",
+      "page": 2,
+      "figure": "/assets/curriculum/figures/9fe89ddd032e99de0ff56744.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1XW053aQeCA4ikZO0RhgZrFom57UqD7m0",
+      "page": 3,
+      "figure": "/assets/curriculum/figures/329cf4ac05a4e7f255a4c3d7.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1XW053aQeCA4ikZO0RhgZrFom57UqD7m0",
+      "page": 8,
+      "figure": "/assets/curriculum/figures/a704878e45e42edd451147f0.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1fYWEF1s4FpoBt26kxcuCzStIloDlShoz",
+      "page": 9,
+      "figure": "/assets/curriculum/figures/120dc76b63de3be72ea6f706.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1wCe9PW_bnf77A_Nzyc-5r_GAl5xtpKGC",
+      "page": 18,
+      "figure": "/assets/curriculum/figures/53ce678e120a94dc4faa5371.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1wCe9PW_bnf77A_Nzyc-5r_GAl5xtpKGC",
+      "page": 8,
+      "figure": "/assets/curriculum/figures/0dea20ab371207071088ada4.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1wCe9PW_bnf77A_Nzyc-5r_GAl5xtpKGC",
+      "page": 8,
+      "figure": "/assets/curriculum/figures/c2e3c4377f8ee09330c769a7.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1wCe9PW_bnf77A_Nzyc-5r_GAl5xtpKGC",
+      "page": 9,
+      "figure": "/assets/curriculum/figures/79c429db3fa145dc506d7aac.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1sL4LQ7ZGbflxAgcsMqzQVyKKwBkvnYQb",
+      "page": 7,
+      "figure": "/assets/curriculum/figures/33f93c7114480a230d6cb84d.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1sL4LQ7ZGbflxAgcsMqzQVyKKwBkvnYQb",
+      "page": 11,
+      "figure": "/assets/curriculum/figures/25772a0879d1f381eea55e36.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1sL4LQ7ZGbflxAgcsMqzQVyKKwBkvnYQb",
+      "page": 11,
+      "figure": "/assets/curriculum/figures/fe5c233174c34c4c2dc1b289.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1YLsi3vwmUaqkpjuBUnBaao-gKzaDr_xs",
+      "page": 15,
+      "figure": "/assets/curriculum/figures/8627ded79962d9088d9f971f.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1YLsi3vwmUaqkpjuBUnBaao-gKzaDr_xs",
+      "page": 15,
+      "figure": "/assets/curriculum/figures/818eac85d17ed57c586b750a.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1YLsi3vwmUaqkpjuBUnBaao-gKzaDr_xs",
+      "page": 16,
+      "figure": "/assets/curriculum/figures/961c6f0e32c39bab54c2451b.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1YLsi3vwmUaqkpjuBUnBaao-gKzaDr_xs",
+      "page": 16,
+      "figure": "/assets/curriculum/figures/2ac9c2a672e10827bd452df9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1YLsi3vwmUaqkpjuBUnBaao-gKzaDr_xs",
+      "page": 21,
+      "figure": "/assets/curriculum/figures/e657695473adf742119b3791.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1YLsi3vwmUaqkpjuBUnBaao-gKzaDr_xs",
+      "page": 24,
+      "figure": "/assets/curriculum/figures/28795e3223d509b90820c30d.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ghEwNQhrfeTOG31vbl5Xg_4ZmTY21H7Y",
+      "page": 7,
+      "figure": "/assets/curriculum/figures/1afde65e51991245d09aa066.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ghEwNQhrfeTOG31vbl5Xg_4ZmTY21H7Y",
+      "page": 14,
+      "figure": "/assets/curriculum/figures/7d4c9bdb77c84430b958011a.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1tbAVr7c312GCn6KDd7MDQWaMRpXAuavk",
+      "page": 11,
+      "figure": "/assets/curriculum/figures/8dedaa6498b2cc09bfafe775.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ShkzGV028s4rpy9BwCEIn_vtwAZ9mAEz",
+      "page": 10,
+      "figure": "/assets/curriculum/figures/390cfabb0bfe4109bc577e71.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ShkzGV028s4rpy9BwCEIn_vtwAZ9mAEz",
+      "page": 20,
+      "figure": "/assets/curriculum/figures/f584ca27e2e28f1a99afffa6.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ShkzGV028s4rpy9BwCEIn_vtwAZ9mAEz",
+      "page": 20,
+      "figure": "/assets/curriculum/figures/f14379fa5293b147cc2165c7.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ShkzGV028s4rpy9BwCEIn_vtwAZ9mAEz",
+      "page": 21,
+      "figure": "/assets/curriculum/figures/301d985efcf7d4ed3ea93028.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ShkzGV028s4rpy9BwCEIn_vtwAZ9mAEz",
+      "page": 21,
+      "figure": "/assets/curriculum/figures/c449ba347db950b9cf42399b.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ShkzGV028s4rpy9BwCEIn_vtwAZ9mAEz",
+      "page": 22,
+      "figure": "/assets/curriculum/figures/84244b8934f522ce4b09d583.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ShkzGV028s4rpy9BwCEIn_vtwAZ9mAEz",
+      "page": 22,
+      "figure": "/assets/curriculum/figures/e3813d67bccfca9fee382712.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ShkzGV028s4rpy9BwCEIn_vtwAZ9mAEz",
+      "page": 22,
+      "figure": "/assets/curriculum/figures/dea6a19072660557a17a506d.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ShkzGV028s4rpy9BwCEIn_vtwAZ9mAEz",
+      "page": 22,
+      "figure": "/assets/curriculum/figures/728925d8d154795187b313f3.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ShkzGV028s4rpy9BwCEIn_vtwAZ9mAEz",
+      "page": 23,
+      "figure": "/assets/curriculum/figures/4934d745be67de50993f784f.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ShkzGV028s4rpy9BwCEIn_vtwAZ9mAEz",
+      "page": 23,
+      "figure": "/assets/curriculum/figures/92b1378f3d1ab4f5f2ae1baa.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ShkzGV028s4rpy9BwCEIn_vtwAZ9mAEz",
+      "page": 23,
+      "figure": "/assets/curriculum/figures/5bf1c429bef20b354bba7dbd.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ShkzGV028s4rpy9BwCEIn_vtwAZ9mAEz",
+      "page": 23,
+      "figure": "/assets/curriculum/figures/e9f2ffb294b8c38eb90789ca.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ShkzGV028s4rpy9BwCEIn_vtwAZ9mAEz",
+      "page": 23,
+      "figure": "/assets/curriculum/figures/e071fc6cf5ba93e3c00f15c1.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ShkzGV028s4rpy9BwCEIn_vtwAZ9mAEz",
+      "page": 29,
+      "figure": "/assets/curriculum/figures/5a687fd17e3500c21461f0bc.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1ShkzGV028s4rpy9BwCEIn_vtwAZ9mAEz",
+      "page": 31,
+      "figure": "/assets/curriculum/figures/a3c6f8f27de82965a6de5408.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1t9TSBjO0G_0irvBwa2XmlKC0dgVDvcnO",
+      "page": 13,
+      "figure": "/assets/curriculum/figures/8993faf25fbdc92bf8f0d136.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1t9TSBjO0G_0irvBwa2XmlKC0dgVDvcnO",
+      "page": 20,
+      "figure": "/assets/curriculum/figures/4274aa4abef28c0045be79d6.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1oYhuKRyE4ZiUi6Pg9sL70z0k8ZTuM5hB",
+      "page": 14,
+      "figure": "/assets/curriculum/figures/69f07b9ea93626d766a67c35.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1oYhuKRyE4ZiUi6Pg9sL70z0k8ZTuM5hB",
+      "page": 14,
+      "figure": "/assets/curriculum/figures/0ecf823c51af58a50a7a097b.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1oYhuKRyE4ZiUi6Pg9sL70z0k8ZTuM5hB",
+      "page": 9,
+      "figure": "/assets/curriculum/figures/3feb6b68a77f251ecdab1ee1.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1oYhuKRyE4ZiUi6Pg9sL70z0k8ZTuM5hB",
+      "page": 9,
+      "figure": "/assets/curriculum/figures/79adc5668d00316f2c764ae3.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1oYhuKRyE4ZiUi6Pg9sL70z0k8ZTuM5hB",
+      "page": 6,
+      "figure": "/assets/curriculum/figures/00d60ea6e78bdc7c0e83e902.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1oYhuKRyE4ZiUi6Pg9sL70z0k8ZTuM5hB",
+      "page": 6,
+      "figure": "/assets/curriculum/figures/36dd78760075ffdaa009063c.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1oYhuKRyE4ZiUi6Pg9sL70z0k8ZTuM5hB",
+      "page": 6,
+      "figure": "/assets/curriculum/figures/d67fd0947ea1a4f0d436d039.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "120lXzwYBUJfF3EBghqJ9eIi2nV2Mo3nJ",
+      "page": 4,
+      "figure": "/assets/curriculum/figures/9c724351983a6b3fb728c2f9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "120lXzwYBUJfF3EBghqJ9eIi2nV2Mo3nJ",
+      "page": 5,
+      "figure": "/assets/curriculum/figures/9c724351983a6b3fb728c2f9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "120lXzwYBUJfF3EBghqJ9eIi2nV2Mo3nJ",
+      "page": 6,
+      "figure": "/assets/curriculum/figures/9c724351983a6b3fb728c2f9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "120lXzwYBUJfF3EBghqJ9eIi2nV2Mo3nJ",
+      "page": 2,
+      "figure": "/assets/curriculum/figures/9c724351983a6b3fb728c2f9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "120lXzwYBUJfF3EBghqJ9eIi2nV2Mo3nJ",
+      "page": 7,
+      "figure": "/assets/curriculum/figures/9c724351983a6b3fb728c2f9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "120lXzwYBUJfF3EBghqJ9eIi2nV2Mo3nJ",
+      "page": 8,
+      "figure": "/assets/curriculum/figures/9c724351983a6b3fb728c2f9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "120lXzwYBUJfF3EBghqJ9eIi2nV2Mo3nJ",
+      "page": 9,
+      "figure": "/assets/curriculum/figures/9c724351983a6b3fb728c2f9.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1H9rlu6XLKaNU-g2dVpjwDBj5UYwRBbZ_",
+      "page": 19,
+      "figure": "/assets/curriculum/figures/1eb12f392122548b998f48e2.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1JdjukGGll0z4pk8b3YErLRFr9yC5OB9Q",
+      "page": 8,
+      "figure": "/assets/curriculum/figures/dca3efdbe802851c432ee5ba.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1f0xPojc78IioO86WRl_R-uN1QcWAzM5I",
+      "page": 11,
+      "figure": "/assets/curriculum/figures/5c088b1a24678ac572040f74.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1f0xPojc78IioO86WRl_R-uN1QcWAzM5I",
+      "page": 8,
+      "figure": "/assets/curriculum/figures/ac1ce45adcc56770338b90b0.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1f0xPojc78IioO86WRl_R-uN1QcWAzM5I",
+      "page": 8,
+      "figure": "/assets/curriculum/figures/824f914f8c5db5799dd33182.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1f0xPojc78IioO86WRl_R-uN1QcWAzM5I",
+      "page": 13,
+      "figure": "/assets/curriculum/figures/6e5e29e0ff79afb560a13286.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1f0xPojc78IioO86WRl_R-uN1QcWAzM5I",
+      "page": 13,
+      "figure": "/assets/curriculum/figures/c8297d78e81653afe78e7470.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1f0xPojc78IioO86WRl_R-uN1QcWAzM5I",
+      "page": 13,
+      "figure": "/assets/curriculum/figures/84aa5fd2902661a81ac33ff1.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1f0xPojc78IioO86WRl_R-uN1QcWAzM5I",
+      "page": 13,
+      "figure": "/assets/curriculum/figures/65b3489cc87a10c902c67382.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1f0xPojc78IioO86WRl_R-uN1QcWAzM5I",
+      "page": 13,
+      "figure": "/assets/curriculum/figures/f920e7daa52709f786f1b5c5.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1f0xPojc78IioO86WRl_R-uN1QcWAzM5I",
+      "page": 13,
+      "figure": "/assets/curriculum/figures/05d618fe5bf0b888651cfe8c.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1f0xPojc78IioO86WRl_R-uN1QcWAzM5I",
+      "page": 14,
+      "figure": "/assets/curriculum/figures/a57f11c6ffc429161240ad39.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1f0xPojc78IioO86WRl_R-uN1QcWAzM5I",
+      "page": 16,
+      "figure": "/assets/curriculum/figures/21f8506fff13ac7c3b7fda36.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1mUzEO3guNWjfhpEoThAafOei3jQCMRnD",
+      "page": 10,
+      "figure": "/assets/curriculum/figures/6a3387f863d86edfba6e6b37.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1mUzEO3guNWjfhpEoThAafOei3jQCMRnD",
+      "page": 13,
+      "figure": "/assets/curriculum/figures/9fa93048f290a2e9c5d23cf2.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1mUzEO3guNWjfhpEoThAafOei3jQCMRnD",
+      "page": 13,
+      "figure": "/assets/curriculum/figures/778dbc83bc0605469fd9d0de.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1RiUzPjHIyUjn-H1UFej_TbfzAWUI8wAD",
+      "page": 9,
+      "figure": "/assets/curriculum/figures/7e6c7beee1c903a4da0a2693.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1RiUzPjHIyUjn-H1UFej_TbfzAWUI8wAD",
+      "page": 9,
+      "figure": "/assets/curriculum/figures/4e300ca8d5d77dc2fed4c84a.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1RiUzPjHIyUjn-H1UFej_TbfzAWUI8wAD",
+      "page": 10,
+      "figure": "/assets/curriculum/figures/f75aaeb600801400b0117b9b.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1RiUzPjHIyUjn-H1UFej_TbfzAWUI8wAD",
+      "page": 10,
+      "figure": "/assets/curriculum/figures/2d6348d38e7608759e7cc9ba.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1RiUzPjHIyUjn-H1UFej_TbfzAWUI8wAD",
+      "page": 11,
+      "figure": "/assets/curriculum/figures/e00ed9766d39a7bb36762613.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1RiUzPjHIyUjn-H1UFej_TbfzAWUI8wAD",
+      "page": 12,
+      "figure": "/assets/curriculum/figures/1f4bbee3b3f4b484536c0c48.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1RiUzPjHIyUjn-H1UFej_TbfzAWUI8wAD",
+      "page": 12,
+      "figure": "/assets/curriculum/figures/a82ca5ab846c08a6c7effe2b.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1RiUzPjHIyUjn-H1UFej_TbfzAWUI8wAD",
+      "page": 13,
+      "figure": "/assets/curriculum/figures/42dd532dccb580337ffc6d64.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1RiUzPjHIyUjn-H1UFej_TbfzAWUI8wAD",
+      "page": 15,
+      "figure": "/assets/curriculum/figures/30df435e4006a769a99c450f.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    },
+    {
+      "fileId": "1RiUzPjHIyUjn-H1UFej_TbfzAWUI8wAD",
+      "page": 17,
+      "figure": "/assets/curriculum/figures/0e55208e54b120637182c59f.webp",
+      "reason": "Image-only labels need source review; uncorroborated OCR is not published."
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+import g7q1 from './bundled/g7q1.json';
+import g7q2 from './bundled/g7q2.json';
+import g7q3 from './bundled/g7q3.json';
+import g7q4 from './bundled/g7q4.json';
+import g8q1 from './bundled/g8q1.json';
+import g8q2 from './bundled/g8q2.json';
+import g8q3 from './bundled/g8q3.json';
+import g8q4 from './bundled/g8q4.json';
+import g9q1 from './bundled/g9q1.json';
+import g9q2 from './bundled/g9q2.json';
+import g9q3 from './bundled/g9q3.json';
+import g9q4 from './bundled/g9q4.json';
+import g10q1 from './bundled/g10q1.json';
+import g10q2 from './bundled/g10q2.json';
+import g10q3 from './bundled/g10q3.json';
+import g10q4 from './bundled/g10q4.json';
+export default Object.assign({},g7q1,g7q2,g7q3,g7q4,g8q1,g8q2,g8q3,g8q4,g9q1,g9q2,g9q3,g9q4,g10q1,g10q2,g10q3,g10q4);

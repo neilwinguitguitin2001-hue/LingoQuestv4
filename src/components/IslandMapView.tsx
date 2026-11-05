@@ -87,6 +87,12 @@ export const IslandMapView: React.FC<IslandMapViewProps> = ({
   const gradeModules = modules
     .filter((m) => m.gradeLevel === activeGrade)
     .sort((a, b) => a.moduleNumber - b.moduleNumber);
+  const sourceLabel = (m: Module) => m.pdfLesson?.sourceLabel || `Module ${m.moduleNumber}`;
+  const sequenceLabel = (number: number) => {
+    const target = gradeModules.find(m => m.moduleNumber === number);
+    return target ? sourceLabel(target) : `Module ${number}`;
+  };
+
 
   const isModuleUnlocked = (mod: Module): boolean => {
     if (isPreviewMode) return true;
@@ -187,7 +193,7 @@ export const IslandMapView: React.FC<IslandMapViewProps> = ({
                 DepEd Davao Oriental Archipelago Map & Quiz Explorer
               </h2>
               <p className="text-xs text-slate-200 leading-relaxed max-w-3xl">
-                You can preview and test all lessons, view island bridges, and check all 25-question quiz sets across all four grade levels (7, 8, 9, and 10). Sequential progression locks are bypassed.
+                You can preview and test all lessons, view island bridges, and check all five-question quiz sets across all four grade levels (7, 8, 9, and 10). Sequential progression locks are bypassed.
               </p>
             </div>
           </div>
@@ -223,7 +229,7 @@ export const IslandMapView: React.FC<IslandMapViewProps> = ({
               </span>
             </div>
             <span className="text-xs text-slate-500 font-medium">
-              Click any grade level to inspect island modules, lessons, and 25-question quiz suites
+              Click any grade level to inspect island modules, lessons, and five-question quiz suites
             </span>
           </div>
 
@@ -300,7 +306,7 @@ export const IslandMapView: React.FC<IslandMapViewProps> = ({
             </h1>
             <p className="text-sm text-slate-600 mt-1 max-w-2xl">
               {isPreviewMode
-                ? `Exploring all modules and 25-question quizzes for Grade ${activeGrade} aligned with DepEd MELCs. Select any module to preview the interactive lesson or launch the quiz simulation.`
+                ? `Exploring all modules and five-question quizzes for Grade ${activeGrade} aligned with DepEd MELCs. Select any module to preview the interactive lesson or launch the quiz simulation.`
                 : `Complete each module’s interactive lesson and pass the gamified quiz (75%+) to restore the broken bridge and unlock the next destination on your Grade ${activeGrade} journey.`}
             </p>
           </div>
@@ -327,7 +333,7 @@ export const IslandMapView: React.FC<IslandMapViewProps> = ({
                   Next Recommended Quest · Quarter {currentQuestModule.quarter} ({getDavaoOrientalIsland(currentQuestModule.quarter)?.name || currentQuestModule.islandName})
                 </div>
                 <div className="text-sm font-semibold text-slate-900">
-                  Module {currentQuestModule.moduleNumber}: {currentQuestModule.title}
+                  {sourceLabel(currentQuestModule)}: {currentQuestModule.title}
                 </div>
               </div>
               <button
@@ -443,11 +449,11 @@ export const IslandMapView: React.FC<IslandMapViewProps> = ({
             <Lock className="w-5 h-5 text-amber-400 shrink-0" />
             <div className="text-xs sm:text-sm">
               <span className="font-semibold text-amber-300">
-                Module {lockedNoticeModule.moduleNumber} ({lockedNoticeModule.title}) is currently locked!
+                {sourceLabel(lockedNoticeModule)} ({lockedNoticeModule.title}) is currently locked!
               </span>{' '}
               To restore the bridge and unlock this module, finish the interactive lesson and pass the quiz (75%+) for{' '}
               <span className="underline font-bold">
-                Module {lockedNoticeModule.moduleNumber - 1}
+                {sequenceLabel(lockedNoticeModule.moduleNumber - 1)}
               </span>{' '}
               first.
             </div>
@@ -459,7 +465,7 @@ export const IslandMapView: React.FC<IslandMapViewProps> = ({
                 onClick={() => handleModuleClick(currentQuestModule, false)}
                 className="px-3 py-1.5 bg-amber-400 text-slate-950 text-xs font-semibold rounded-lg hover:bg-amber-300 transition-colors whitespace-nowrap cursor-pointer"
               >
-                Go to Module {currentQuestModule.moduleNumber}
+                Go to {sourceLabel(currentQuestModule)}
               </button>
             )}
             <button
@@ -482,7 +488,7 @@ export const IslandMapView: React.FC<IslandMapViewProps> = ({
             searchQuery.trim()
               ? m.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
                 m.lessonContent.melcCompetency.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                String(m.moduleNumber).includes(searchQuery.trim())
+                String(m.pdfLesson?.sourceNumber || m.moduleNumber).toLowerCase().includes(searchQuery.trim().toLowerCase())
               : true
           );
           if (quarterModules.length === 0 && searchQuery.trim()) return null;
@@ -606,14 +612,14 @@ export const IslandMapView: React.FC<IslandMapViewProps> = ({
                                 ? 'royal'
                                 : 'dark'
                             }
-                            label={`Module ${mod.moduleNumber} • ${mod.topicType.replace('-', ' ')}`}
+                            label={`${mod.pdfLesson?.sourceLabel || `Module ${mod.moduleNumber}`} • ${mod.topicType.replace('-', ' ')}`}
                             rightText={bridgeRestored ? `${bestScore}%` : `Pass ${mod.requiredPassingScore}%`}
                           />
                           <div className="p-5 flex-1 flex flex-col justify-between">
                           <div>
                             <div className="flex items-center justify-between text-xs mb-2">
                               <span className="font-mono font-semibold text-slate-600">
-                                MODULE {mod.moduleNumber}
+                                {(mod.pdfLesson?.sourceLabel || `Module ${mod.moduleNumber}`).toUpperCase()}
                               </span>
                               <span
                                 className={`font-semibold flex items-center gap-1 ${
@@ -679,7 +685,7 @@ export const IslandMapView: React.FC<IslandMapViewProps> = ({
                             <div className="flex items-center justify-between text-xs mb-1.5">
                               <span className="text-slate-500 font-medium">
                                 {idx < quarterModules.length - 1
-                                  ? `Bridge to Module ${mod.moduleNumber + 1}`
+                                  ? `Bridge to ${sequenceLabel(mod.moduleNumber + 1)}`
                                   : quarterNum < 4
                                   ? `Strait Bridge to Q${quarterNum + 1}`
                                   : 'Archipelago Summit Bridge'}
@@ -817,10 +823,10 @@ export const IslandMapView: React.FC<IslandMapViewProps> = ({
                                 setInspectingGameFilter('all');
                               }}
                               className="mt-2.5 w-full py-2 px-3 rounded-xl text-xs font-bold bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-300 transition-colors flex items-center justify-center gap-1.5 cursor-pointer shadow-xs"
-                              title="Quick inspect all 25 questions, answers, and MELC competency"
+                              title="Quick inspect all verified source questions, answers, and MELC competency"
                             >
                               <Eye className="w-3.5 h-3.5 text-amber-700" />
-                              <span>Quick Check Answers & Questions ({mod.quizQuestions?.length || 25} Qs)</span>
+                              <span>Quick Check Answers & Questions ({mod.quizQuestions?.length || 0} Qs)</span>
                             </button>
                           )}
                           </div>
@@ -841,15 +847,15 @@ export const IslandMapView: React.FC<IslandMapViewProps> = ({
           <div className="bg-white rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-hidden linocut-card border-2 border-[#231F20] flex flex-col animate-scale-up">
             <InabelStrip
               variant="amber"
-              label={`Curriculum Inspector • Grade ${inspectingModule.gradeLevel} Module ${inspectingModule.moduleNumber}`}
-              rightText={`${inspectingModule.quizQuestions?.length || 25} Questions`}
+              label={`Curriculum Inspector • Grade ${inspectingModule.gradeLevel} ${sourceLabel(inspectingModule)}`}
+              rightText={`${inspectingModule.quizQuestions?.length || 0} Questions`}
             />
             {/* Modal Header */}
             <div className="p-6 bg-gradient-to-r from-[#0A192F] via-[#0F3460] to-[#1E3E62] text-white flex items-start justify-between gap-4">
               <div className="space-y-1">
                 <div className="flex flex-wrap items-center gap-2">
                   <span className="px-2.5 py-0.5 rounded-full text-[11px] font-black uppercase tracking-wider bg-amber-400 text-slate-950">
-                    Grade {inspectingModule.gradeLevel} · Quarter {inspectingModule.quarter} Module {inspectingModule.moduleNumber}
+                    Grade {inspectingModule.gradeLevel} · Quarter {inspectingModule.quarter} {sourceLabel(inspectingModule)}
                   </span>
                   <span className="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-white/10 text-sky-200 border border-white/20">
                     {inspectingModule.islandName || getDavaoOrientalIsland(inspectingModule.quarter)?.name}
@@ -880,12 +886,12 @@ export const IslandMapView: React.FC<IslandMapViewProps> = ({
               <div className="flex flex-wrap items-center gap-1.5">
                 {(
                   [
-                    { id: 'all', label: `All Questions (${inspectingModule.quizQuestions?.length || 25})` },
-                    { id: 'analogyMaster', label: 'Analogy Master (5)' },
-                    { id: 'missingPiece', label: 'Missing Piece (5)' },
-                    { id: 'crosswordGame', label: 'Crossword Game (5)' },
-                    { id: 'pictureHunt', label: 'Picture Hunt (5)' },
-                    { id: 'typeHunter', label: 'Word Hunter (5)' },
+                    { id: 'all', label: `All Questions (${inspectingModule.quizQuestions?.length || 0})` },
+                    { id: 'analogyMaster', label: 'Master Quiz (15)' },
+                    { id: 'missingPiece', label: 'Missing Piece (15)' },
+                    { id: 'crosswordGame', label: 'Crossword Game (15)' },
+                    { id: 'pictureHunt', label: 'Picture Hunt (15)' },
+                    { id: 'typeHunter', label: 'Word Hunter (15)' },
                   ] as const
                 ).map((f) => (
                   <button
@@ -1017,7 +1023,7 @@ export const IslandMapView: React.FC<IslandMapViewProps> = ({
             {/* Modal Footer */}
             <div className="p-4 bg-slate-50 border-t border-slate-200 flex items-center justify-between">
               <span className="text-xs text-slate-500">
-                DepEd Davao Oriental Curriculum Inspector · All 25 Questions Tested
+                DepEd Davao Oriental Curriculum Inspector · Verified PDF Question Bank
               </span>
               <button
                 type="button"

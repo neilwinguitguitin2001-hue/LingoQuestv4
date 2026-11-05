@@ -683,3 +683,18 @@ div.rounded-3xl.border.bg-white {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='14' viewBox='0 0 48 14'%3E%3Crect width='48' height='14' fill='%2307192F'/%3E%3Cpolygon points='0,7 7,1 11,1 4,7 11,13 7,13' fill='%2338BDF8'/%3E%3Cpolygon points='48,7 41,1 37,1 44,7 37,13 41,13' fill='%2338BDF8'/%3E%3Cpolygon points='24,1 32,7 24,13 16,7' fill='%2322C55E'/%3E%3Cpolygon points='24,3.5 28.5,7 24,10.5 19.5,7' fill='%2307192F'/%3E%3Crect x='22.5' y='5.5' width='3' height='3' fill='%23DBEAFE'/%3E%3Cpolygon points='12,5 15,7 12,9 9,7' fill='%23DBEAFE'/%3E%3Cpolygon points='36,5 39,7 36,9 33,7' fill='%23DBEAFE'/%3E%3C/svg%3E");
   background-repeat: repeat-x;
 }
+
+/* PDF source presentation only; the website palette and woven module motifs stay intact. */
+.pdf-source-module [role=tab]:focus-visible,.pdf-source-module button:focus-visible{outline:3px solid #38bdf8;outline-offset:3px}
+.pdf-source-module [role=tabpanel]{animation:pdf-source-enter .22s ease-out}
+.pdf-source-visual-stage{padding:1rem;border:1px solid #bae6fd;border-radius:1rem;background:linear-gradient(135deg,#f0f9ff,#ecfdf5);overflow:hidden;box-shadow:inset 0 0 0 4px #ffffff80}
+.pdf-source-illustration[data-playing=true] .pdf-source-ink-reveal{animation:pdf-source-reveal 4s ease-in-out both}
+.pdf-printed-example.is-replaying .pdf-example-word{animation:pdf-source-emphasis 1.3s ease-out both}
+.pdf-source-module table th{background:linear-gradient(110deg,#e0f2fe,#d1fae5);color:#0c4a6e}
+.pdf-source-module table tr:nth-child(even) td{background:#f8fcff}
+@keyframes pdf-source-enter{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+@keyframes pdf-source-reveal{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+@keyframes pdf-source-emphasis{0%{opacity:.4;transform:translateY(4px)}50%{box-shadow:0 0 0 3px #38bdf844}100%{opacity:1;transform:none;box-shadow:none}}
+@media(prefers-reduced-motion:reduce){.pdf-source-module *{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+.pdf-source-module[data-static=true] *{animation:none!important}

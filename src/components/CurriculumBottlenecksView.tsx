@@ -59,124 +59,6 @@ export interface ModuleBottleneckMetric {
 }
 
 // Curriculum bottleneck baseline heuristics for DepEd Davao Oriental English
-const CURRICULUM_BOTTLENECK_KNOWLEDGE: Record<
-  string,
-  { passRate: number; issue: string; intervention: string }
-> = {
-  // Grade 7
-  'g7-q1-m1': {
-    passRate: 84,
-    issue: 'High proficiency in basic analogies; slight confusion on part-to-whole relationships.',
-    intervention: 'Provide contextual paired examples and visual analogy bridge cards.',
-  },
-  'g7-q1-m2': {
-    passRate: 72,
-    issue: 'Active and passive voice transformation creates cognitive overload in past tense.',
-    intervention: 'Deploy 5-minute daily sentence transformations with color-coded actor/receiver frames.',
-  },
-  'g7-q2-m1': {
-    passRate: 68,
-    issue: 'Students confuse literal and figurative idioms in Davao regional context.',
-    intervention: 'Integrate Mandaya & Mansaka localized idiom comparisons in the lesson bridge.',
-  },
-  'g7-q2-m2': {
-    passRate: 59,
-    issue: 'Subject-Verb agreement with indefinite pronouns (everybody, neither) is a critical error hotspot.',
-    intervention: 'Mandatory remedial flashcards on singular indefinite pronouns before quiz unlock.',
-  },
-  'g7-q3-m1': {
-    passRate: 77,
-    issue: 'Chronological vs spatial transition signals often swapped in narrative paragraphs.',
-    intervention: 'Use graphic timeline organizers in guided writing exercises.',
-  },
-  'g7-q4-m1': {
-    passRate: 64,
-    issue: 'Distinguishing fact from authorial opinion in editorial texts.',
-    intervention: 'Anchor lessons on Davao Oriental provincial news articles and community editorials.',
-  },
-
-  // Grade 8
-  'g8-q1-m1': {
-    passRate: 82,
-    issue: 'Strong context clues recognition; difficulties with archaic idiomatic expressions.',
-    intervention: 'Incorporate modern pop-culture and local folklore synonyms in warm-up tasks.',
-  },
-  'g8-q1-m2': {
-    passRate: 76,
-    issue: 'Bibliography citation formatting errors (APA author date punctuation).',
-    intervention: 'Provide interactive drag-and-drop citation puzzle builders.',
-  },
-  'g8-q2-m1': {
-    passRate: 58,
-    issue: 'Visual-verbal relationships in complex bar charts and infographics trigger comprehension drops.',
-    intervention: 'Step-by-step chart interpretation scaffolding with guided question prompts.',
-  },
-  'g8-q2-m2': {
-    passRate: 71,
-    issue: 'Opinion-marking signals ("in my perspective") confused with factual assertion verbs.',
-    intervention: 'Debate flashcards with signal word highlighting drills.',
-  },
-  'g8-q3-m1': {
-    passRate: 62,
-    issue: 'Identifying propaganda techniques (bandwagon, testimonial, plain folks).',
-    intervention: 'Analyze local municipal election and health campaign posters.',
-  },
-  'g8-q4-m1': {
-    passRate: 54,
-    issue: 'Grammatical signals in idea development; faulty parallelism in compound sentences.',
-    intervention: 'Intensive sentence surgery worksheets focusing on parallel verb conjugations.',
-  },
-
-  // Grade 9
-  'g9-q1-m1': {
-    passRate: 69,
-    issue: 'Modal verbs (must vs should vs ought to) indicating varying degrees of obligation.',
-    intervention: 'Role-playing scenarios with clear legal vs moral duty distinction prompts.',
-  },
-  'g9-q1-m2': {
-    passRate: 57,
-    issue: 'Conditionals (Zero, First, Second, Third) tense consistency across clauses.',
-    intervention: 'Flowchart decision trees for "if-clause" vs "main clause" verb pairings.',
-  },
-  'g9-q2-m1': {
-    passRate: 61,
-    issue: 'Uncommunicative prose vs communicative dialogue conventions in Anglo-American drama.',
-    intervention: 'Choral reading and dramatic script transcription exercises.',
-  },
-  'g9-q3-m1': {
-    passRate: 73,
-    issue: 'Biases vs prejudices distinction in news and digital media reports.',
-    intervention: 'Media literacy audit checklist applied to social media post examples.',
-  },
-  'g9-q4-m1': {
-    passRate: 52,
-    issue: 'Analyzing literature as a vehicle for resolving personal and social conflicts.',
-    intervention: 'Structured reflective essay frames with guided thesis sentence starters.',
-  },
-
-  // Grade 10
-  'g10-q1-m1': {
-    passRate: 63,
-    issue: 'Information sources evaluation (relevance, accuracy, currency, authority).',
-    intervention: 'CRAAP test rubric checklist applied to local environmental case studies.',
-  },
-  'g10-q2-m1': {
-    passRate: 56,
-    issue: 'Argumentative text claim types (fact, value, policy) regularly conflated.',
-    intervention: 'Claim classification sorting games with instant formative feedback.',
-  },
-  'g10-q3-m1': {
-    passRate: 70,
-    issue: 'Critiquing literary selections with structuralist and historical approaches.',
-    intervention: 'Comparative analytical dual-entry journal templates.',
-  },
-  'g10-q4-m1': {
-    passRate: 51,
-    issue: 'Research report technical terminology and synthesis of related literature.',
-    intervention: 'Scaffolded mini-research capstone with peer-review checkpoints.',
-  },
-};
-
 const PIE_COLORS: Record<string, string> = {
   mastered: '#10b981', // Emerald
   proficient: '#0ea5e9', // Sky
@@ -242,7 +124,7 @@ export const CurriculumBottlenecksView: React.FC<CurriculumBottlenecksViewProps>
       });
 
       // Check if we need to supplement with division baseline diagnostics
-      const knowledge = CURRICULUM_BOTTLENECK_KNOWLEDGE[mod.id];
+      
       let passRate: number;
       let failRate: number;
       let avgScore: number;
@@ -272,17 +154,9 @@ export const CurriculumBottlenecksView: React.FC<CurriculumBottlenecksViewProps>
         status = 'critical_bottleneck';
       }
 
-      const issue = knowledge?.issue || (
-        passRate < 75
-          ? 'Identified cognitive friction in complex sentence parsing and nuanced reading comprehension.'
-          : 'Competency benchmarks met; minor reinforcement recommended for advanced vocabulary.'
-      );
-
-      const intervention = knowledge?.intervention || (
-        passRate < 75
-          ? 'Deploy contextual flashcard bridge drills and scaffolded guided writing exercises.'
-          : 'Provide enrichment extension activities and peer-mentoring opportunities.'
-      );
+      const issue = 'Review the recorded learner attempts for this PDF module.';
+      const review = mod.pdfLesson?.guidedAnalysis[0];
+      const intervention = review ? `PDF p. ${review.page}: ${review.text}` : 'Source review needed.';
 
       return {
         moduleId: mod.id,

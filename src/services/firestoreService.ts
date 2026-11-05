@@ -161,20 +161,7 @@ function setCachedUsers(users: UserAccount[]) {
 }
 
 function getCachedModules(): Module[] {
-  try {
-    const raw = localStorage.getItem(CACHE_KEY_CUSTOM_MODULES);
-    if (raw) {
-      const custom: Module[] = JSON.parse(raw);
-      if (Array.isArray(custom) && custom.length > 0) {
-        const moduleMap = new Map<string, Module>();
-        ALL_MODULES.forEach((m) => moduleMap.set(m.id, m));
-        custom.forEach((m) => moduleMap.set(m.id, m));
-        return Array.from(moduleMap.values());
-      }
-    }
-  } catch (e) {
-    console.warn('Failed reading cached modules', e);
-  }
+  // Curriculum content comes from the reviewed PDF repository data, never stale generated cache entries.
   return ALL_MODULES;
 }
 
@@ -1657,20 +1644,7 @@ export function verifyClassCode(
 // Module Manager (Admins Only)
 // ----------------------------------------------------
 export async function getAllModules(): Promise<Module[]> {
-  try {
-    const fetched = await cloudSqlFetch<Module[]>('/api/modules');
-    if (Array.isArray(fetched) && fetched.length > 0) {
-      const moduleMap = new Map<string, Module>();
-      ALL_MODULES.forEach((m) => moduleMap.set(m.id, m));
-      fetched.forEach((m) => moduleMap.set(m.id, m));
-      const combined = Array.from(moduleMap.values());
-      setCachedModules(combined);
-      return combined;
-    }
-  } catch (error) {
-    console.warn('getAllModules fallback to cache:', error);
-  }
-  return getCachedModules();
+  return ALL_MODULES;
 }
 
 export async function createNewModule(
