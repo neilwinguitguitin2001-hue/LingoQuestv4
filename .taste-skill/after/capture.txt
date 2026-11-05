@@ -1,0 +1,1 @@
+Screenshots and browser measurements remain unavailable because headless Chrome could not launch for the baseline. No before/after screenshots or completed interaction checks are claimed.

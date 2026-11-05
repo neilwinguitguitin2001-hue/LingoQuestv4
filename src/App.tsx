@@ -1717,7 +1717,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FAF7F2] text-[#231F20] flex flex-col font-sans selection:bg-[#22C55E]/25 selection:text-[#231F20]">
+    <div className="taste-restyle min-h-screen bg-[#FAF7F2] text-[#231F20] flex flex-col font-sans selection:bg-[#22C55E]/25 selection:text-[#231F20]">
       {/* Persistent Offline / Online Connection Status Toast */}
       <NetworkStatusToast />
 

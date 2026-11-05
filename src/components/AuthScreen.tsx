@@ -715,7 +715,7 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#06162B] via-[#091F3C] to-[#0D2A4F] text-slate-100 flex flex-col justify-between selection:bg-amber-400 selection:text-slate-950 relative overflow-hidden">
+    <div className="taste-auth min-h-screen bg-gradient-to-b from-[#06162B] via-[#091F3C] to-[#0D2A4F] text-slate-100 flex flex-col justify-between selection:bg-amber-400 selection:text-slate-950 relative overflow-hidden">
       {/* Ambient Tropical Glow Accents */}
       <div className="absolute top-0 left-1/4 -translate-x-1/2 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/3 right-10 w-[500px] h-[500px] bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
