@@ -2,6 +2,12 @@ import { supabase } from '../lib/supabase';
 import type { QuizQuestion } from '../types/lingoquest';
 
 export type QuestPowerUp = 'smart_hint' | 'time_freeze' | 'fifty_fifty' | 'extra_time' | 'second_chance' | 'lesson_peek';
+export interface QuestMarketState {
+  balance: number;
+  inventory: Array<{ kind: QuestPowerUp; quantity: number }>;
+  transactions: Array<{ event_key: string; amount: number; balance_after: number; created_at: string }>;
+}
+export interface QuestBuyResponse { balance: number; kind: QuestPowerUp; quantity: number; purchaseId: string }
 export interface QuestQuestionResponse {
   sessionId: string;
   index: number;

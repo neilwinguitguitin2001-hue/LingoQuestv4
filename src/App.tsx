@@ -40,6 +40,7 @@ import { LessonAndQuizView, QuizCompletionPayload } from './components/LessonAnd
 import { LingoQuestEmblem, LingoQuestLogo, LogoTransitionOverlay } from './components/LingoQuestLogo';
 import { PendingApprovalScreen } from './components/PendingApprovalScreen';
 import { ProfileBadgesView } from './components/ProfileBadgesView';
+import { QuestMarketView } from './components/QuestMarketView';
 import { StudentDashboardView } from './components/StudentDashboardView';
 import { StudentProgressView } from './components/StudentProgressView';
 import { TeacherDashboardView } from './components/TeacherDashboardView';
@@ -137,6 +138,7 @@ type AppView =
   | 'PROGRESS'
   | 'LEADERBOARD'
   | 'PROFILE'
+  | 'MARKET'
   | 'STUDENT_DASHBOARD'
   | 'TEACHER'
   | 'ADMIN'
@@ -510,6 +512,10 @@ export default function App() {
       PROFILE: {
         title: 'Loading Badges & Trophy Case...',
         subtitle: 'Retrieving Learner Achievement Medals',
+      },
+      MARKET: {
+        title: 'Opening Quest Market...',
+        subtitle: 'Loading Quest Coins, inventory, and exchange history',
       },
       STUDENT_DASHBOARD: {
         title: 'Opening Student Dashboard...',
@@ -1837,6 +1843,10 @@ export default function App() {
                     >
                       Badges
                     </button>
+                    <button
+                      onClick={() => { soundFX.playClick(); setCurrentView('MARKET'); }}
+                      className={`px-3 py-1.5 rounded-lg transition cursor-pointer ${currentView === 'MARKET' ? 'bg-[#0F766E] text-[#FFFDFB] border border-[#22C55E] shadow-[2px_2px_0px_#22C55E] font-extrabold' : 'hover:text-[#22C55E] hover:bg-white/5'}`}
+                    >Quest Market</button>
                   </>
                 )}
 
@@ -2104,6 +2114,10 @@ export default function App() {
                   >
                     Badges
                   </button>
+                  <button
+                    onClick={() => { setCurrentView('MARKET'); setIsMobileMenuOpen(false); }}
+                    className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold text-slate-200 hover:bg-white/5"
+                  >Quest Market</button>
                 </>
               )}
 
@@ -2389,6 +2403,8 @@ export default function App() {
             allStudents={students.filter((s) => s.status === 'approved')}
           />
         )}
+
+        {currentView === 'MARKET' && currentStudent && <QuestMarketView />}
 
         {/* Student Dashboard View (Edit credentials, upload picture, view achievements) */}
         {currentView === 'STUDENT_DASHBOARD' && currentStudent && (
