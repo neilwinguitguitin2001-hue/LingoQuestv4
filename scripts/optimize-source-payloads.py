@@ -18,3 +18,6 @@ for p in (base/'content').glob('*.json'):
 for p in (base/'figures').glob('*.webp'):
  if '/assets/curriculum/figures/'+p.name not in external:p.unlink()
 print('Current source blocks',dict(counts),'external figures',len(external))
+
+import subprocess,sys
+subprocess.run([sys.executable,str(r/'scripts/build-bundled-lessons.py')],check=True)

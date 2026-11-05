@@ -14,5 +14,9 @@
   "targetExpressions": 530,
   "seededSessionChecks": 38160,
   "readyDifficultyCombinations": 1908,
-  "blockedDifficultyCombinations": 0
+  "blockedDifficultyCombinations": 0,
+  "bundledLessonPackages": 106,
+  "perModuleJsonRequests": 0,
+  "reconstructedQuestionChecks": 7950,
+  "repairedMissingSecondGapTasks": 12
 }

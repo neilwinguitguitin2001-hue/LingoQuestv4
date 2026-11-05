@@ -1,3 +1,6 @@
+import {CrosswordLetters} from './CrosswordLetters';
+import {QuizCloze} from './QuizCloze';
+import {isQuizAnswerCorrect} from '../utils/quizResponses';
 import { QuizConceptCard } from './QuizConceptCard';
 import { SourceLessonSections } from './SourceLessonSections';
 import { SourceActivity, SourceExcerpt, SourceGraphic } from './SourceContent';
@@ -233,6 +236,9 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
   };
 
   const timerRef = useRef<number | null>(null);
+  const submittedQuestionRef = useRef<string | null>(null);
+  const activeQuestionIdRef = useRef<string | null>(null);
+  const completedSessionRef = useRef(false);
   const currentIslandName = getDavaoOrientalIsland(module.quarter)?.name || module.islandName;
 
   const handleGoToStudentDashboard = () => {
@@ -269,19 +275,16 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
       return;
     }
 
-    timerRef.current = window.setInterval(() => {
-      setTimeLeft((prev) => {
-        if (prev <= 1) {
-          if (timerRef.current) {
-            window.clearInterval(timerRef.current);
-            timerRef.current = null;
-          }
-          handleLockQuestionAnswer('', true);
-          return 0;
-        }
-        return prev - 1;
-      });
-    }, 1000);
+    const deadline=Date.now()+timeLeft*1000;
+    timerRef.current=window.setInterval(()=>{
+      const remaining=Math.max(0,Math.ceil((deadline-Date.now())/1000));
+      setTimeLeft(remaining);
+      if(remaining===0){
+        if(timerRef.current)window.clearInterval(timerRef.current);
+        timerRef.current=null;
+        handleLockQuestionAnswer('',true);
+      }
+    },250);
 
     return () => {
       if (timerRef.current) {
@@ -294,12 +297,15 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
   const startQuizSession = (requestedMode: QuizGameType | 'all' = gameModeFilter) => {
     soundFX.playClick();
     stopAllVoicePlayback();
-    const finalPool = sourceContent.data && createSourceGameSession(module, module.quizQuestions, requestedMode, difficulty);
+    const finalPool = createSourceGameSession(module, module.quizQuestions, requestedMode, difficulty);
     if (!finalPool) {
       setSourceReviewMessage('The question bank could not be loaded. Please retry.');
       return;
     }
     setSourceReviewMessage('');
+    submittedQuestionRef.current=null;
+    activeQuestionIdRef.current=finalPool[0]?.id||null;
+    completedSessionRef.current=false;
     setGameModeFilter(requestedMode);
     setActiveQuestions(finalPool);
     setCurrentQIndex(0);
@@ -312,19 +318,14 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
     setStage('PLAYING_QUIZ');
   };
 
-  const evaluateAnswer = (q: QuizQuestion, rawResponse: string): boolean => {
-    const cleanUser = rawResponse.trim().toLowerCase();
-    const cleanExpected = q.answer.trim().toLowerCase();
-    if (!cleanUser) return false;
-    return cleanUser === cleanExpected;
-  };
 
   const handleLockQuestionAnswer = (submittedValue: string, timedOut = false) => {
     if (questionLocked) return;
     const currentQ = activeQuestions[currentQIndex];
-    if (!currentQ) return;
+    if (!currentQ || activeQuestionIdRef.current!==currentQ.id || submittedQuestionRef.current===currentQ.id) return;
+    submittedQuestionRef.current=currentQ.id;
 
-    const isCorrect = !timedOut && evaluateAnswer(currentQ, submittedValue);
+    const isCorrect = !timedOut && isQuizAnswerCorrect(currentQ, submittedValue);
     if (isCorrect) {
       soundFX.playCorrect();
     } else {
@@ -347,13 +348,16 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
     soundFX.playClick();
     if (currentQIndex + 1 < activeQuestions.length) {
       const nextIdx = currentQIndex + 1;
+      activeQuestionIdRef.current=activeQuestions[nextIdx].id;
       setCurrentQIndex(nextIdx);
       setTimeLeft(activeQuestions[nextIdx].timeLimitSeconds);
       setTypedInput('');
       setSelectedOption('');
       setQuestionLocked(false);
     } else {
-      if (activeQuestions.length !== getSessionQuestionCount(gameModeFilter) || answerLogs.length !== activeQuestions.length) return;
+      if (completedSessionRef.current || activeQuestions.length !== getSessionQuestionCount(gameModeFilter) || answerLogs.length !== activeQuestions.length) return;
+      completedSessionRef.current=true;
+      activeQuestionIdRef.current=null;
       const total = activeQuestions.length;
       const score = answerLogs.filter((a) => a.isCorrect).length;
       const percentage = Math.round((score / total) * 100);
@@ -628,7 +632,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
   }
 
   if (stage === 'QUIZ_SETUP') {
-    const canStart = !!sourceContent.data && !!createSourceGameSession(module,module.quizQuestions,gameModeFilter,difficulty,()=>.5);
+    const canStart = !!createSourceGameSession(module,module.quizQuestions,gameModeFilter,difficulty,()=>.5);
     const difficultyConfigs: Array<{
       id: DifficultyLevel;
       label: string;
@@ -1130,7 +1134,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
             </div>
           </div>
 
-          {(!canStart || sourceReviewMessage) && <p role="status">{sourceContent.error || sourceReviewMessage || (sourceContent.data ? 'Question bank unavailable. Please reload or retry.' : 'Loading the verified source question bank…')}</p>}
+          {(!canStart || sourceReviewMessage) && <p role="status">{sourceReviewMessage || 'The bundled question bank is unavailable. Please reload the app.'}</p>}
           <div className="pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="text-xs text-slate-600">
               Score at least <span className="font-mono font-bold text-slate-900">{module.requiredPassingScore}%</span> to restore the bridge for {sourceModuleLabel} and unlock the next destination!
@@ -1291,7 +1295,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                 type="button"
                 onClick={() => {
                   soundFX.playClick();
-                  if (currentQ.type === 'typeHunter' || currentQ.type === 'crosswordGame') {
+                  if (currentQ.type === 'typeHunter' || (currentQ.type === 'crosswordGame' && !currentQ.options?.length)) {
                     setTypedInput(currentQ.answer);
                   } else {
                     setSelectedOption(currentQ.answer);
@@ -1442,7 +1446,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                     autoFocus
                     value={typedInput}
                     onChange={(e) => setTypedInput(e.target.value)}
-                    placeholder={`Type the ${currentQ.answer.length}-letter answer here...`}
+                    placeholder={`Type the missing word or expressions here...`}
                     className="flex-1 px-4 py-3 text-base font-mono rounded-xl border border-slate-300 focus:border-sky-600 focus:outline-none disabled:bg-slate-100"
                   />
                   {!questionLocked && (
@@ -1506,16 +1510,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
             <div className="space-y-5">
               {currentQ.contextSentence && (
                 <div className="p-5 rounded-xl bg-amber-50/70 border border-amber-200 text-base sm:text-lg font-medium text-slate-900 leading-relaxed">
-                  {currentQ.contextSentence.split('________').map((part, i, arr) => (
-                    <React.Fragment key={i}>
-                      <span>{part}</span>
-                      {i < arr.length - 1 && (
-                        <span className="inline-block mx-1.5 px-3 py-0.5 rounded-lg bg-white border-2 border-dashed border-amber-500 font-mono text-sm font-bold text-amber-900">
-                          {selectedOption || typedInput || '? MISSING PIECE ?'}
-                        </span>
-                      )}
-                    </React.Fragment>
-                  ))}
+                  <QuizCloze text={currentQ.contextSentence} response={selectedOption||typedInput}/>
                 </div>
               )}
 
@@ -1642,7 +1637,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                         : '1 ACROSS'}
                     </span>
                     <span className="text-xs text-slate-300">
-                      Length: <strong className="text-amber-300 font-mono">{currentQ.answer.length} letters</strong>
+                      Length: <strong className="text-amber-300 font-mono">{currentQ.answer.length} characters</strong>
                     </span>
                   </div>
                 </div>
@@ -1658,35 +1653,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                     Crossword Letter Cells:
                   </div>
                   <div className="flex flex-wrap gap-2 items-center">
-                    {Array.from({ length: currentQ.answer.length }).map((_, letterIdx) => {
-                      const givenObj = currentQ.crosswordClue?.letterGrid?.find((g) => g.index === letterIdx);
-                      const isGiven = !!givenObj?.isGiven;
-                      const activeChar =
-                        typedInput[letterIdx] ||
-                        (selectedOption ? selectedOption[letterIdx] : '') ||
-                        (questionLocked ? currentQ.answer[letterIdx] : '') ||
-                        (isGiven ? givenObj.letter : '');
-
-                      return (
-                        <div
-                          key={letterIdx}
-                          className={`w-10 h-12 rounded-xl border-2 flex flex-col items-center justify-between p-1 font-mono font-black transition-all ${
-                            isGiven
-                              ? 'border-amber-400 bg-amber-500/20 text-amber-300'
-                              : activeChar
-                              ? 'border-indigo-400 bg-indigo-600/30 text-white shadow-inner'
-                              : 'border-slate-700 bg-slate-800/80 text-slate-500'
-                          }`}
-                        >
-                          <span className="text-[9px] text-slate-400 self-start leading-none font-sans">
-                            {letterIdx === 0 && currentQ.crosswordClue ? currentQ.crosswordClue.clueNumber : ''}
-                          </span>
-                          <span className="text-base uppercase leading-none mb-1">
-                            {activeChar || '·'}
-                          </span>
-                        </div>
-                      );
-                    })}
+                    <CrosswordLetters key={currentQ.id} question={currentQ} value={typedInput} onChange={setTypedInput} onSubmit={()=>{if(!questionLocked&&typedInput.trim())handleLockQuestionAnswer(typedInput);}} locked={questionLocked}/>
                   </div>
                 </div>
               </div>
@@ -1753,7 +1720,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                     autoFocus
                     value={typedInput}
                     onChange={(e) => setTypedInput(e.target.value)}
-                    placeholder={`Type ${currentQ.answer.length}-letter crossword word...`}
+                    placeholder="Type the complete crossword word or phrase..."
                     className="flex-1 px-4 py-3 text-base font-mono rounded-xl border border-slate-300 focus:border-indigo-600 focus:outline-none disabled:bg-slate-100 uppercase"
                   />
                   {!questionLocked && (
@@ -2144,7 +2111,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                 const resolveLabel = (val: string) => {
                   if (!isPic || !log.question.pictureOptions) return val;
                   const match = log.question.pictureOptions.find((p) => p.id === val);
-                  return match ? `${match.label} (${match.caption})` : val;
+                  return match ? `${match.label}${match.caption ? ` (${match.caption})` : ''}` : val;
                 };
 
                 return (

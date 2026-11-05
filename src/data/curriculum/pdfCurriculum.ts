@@ -1,6 +1,4 @@
-import targets from './quizLearningTargets.json';
-import {compileModuleQuestions, type ModuleTargets} from './tieredQuestions';
-const questionBank = Object.fromEntries((targets as ModuleTargets[]).map(m=>[m.moduleId,compileModuleQuestions(m)]));
+import {QUIZ_CATALOGUE} from './quizCatalogue';
 import { getDavaoOrientalIsland } from '../../types/lingoquest';
 import type { QuizQuestion, TopicType, Module } from '../../types/lingoquest';
 import g7q1 from './pdf/g7q1.json';
@@ -78,7 +76,7 @@ function sourceTopic(title: string): TopicType {
  return 'reading';
 }
 export const PDF_MODULES: Module[] = PDF_LESSONS.map((pdf) => {
- const questions = (questionBank[pdf.id as keyof typeof questionBank] || []) as QuizQuestion[];
+ const questions = (QUIZ_CATALOGUE[pdf.id]?.questions || []) as QuizQuestion[];
  const warmup = questions.find(q=>q.type==='missingPiece' && q.options?.length);
  const writing = pdf.guidedAnalysis.find(e=>/\b(write|compose|draft|essay)\b/i.test(e.text));
  const objective = pdf.selfCheck.find(e=>e.kind==='objective');

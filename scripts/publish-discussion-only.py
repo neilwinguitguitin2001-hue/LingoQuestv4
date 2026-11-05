@@ -57,3 +57,6 @@ for path in sorted((R/'src/data/curriculum/pdf').glob('*.json')):
  path.write_text(json.dumps(modules,ensure_ascii=False,indent=2)+'\n')
 (R/'docs/curriculum/discussion-only-review.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
 print('Discussion-only modules:',len(report))
+
+import subprocess,sys
+subprocess.run([sys.executable,str(R/'scripts/build-bundled-lessons.py')],check=True)

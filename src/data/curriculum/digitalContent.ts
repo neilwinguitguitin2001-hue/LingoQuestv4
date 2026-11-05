@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import payloads from './bundledLessons';
+import {QUIZ_CATALOGUE} from './quizCatalogue';
 import type { QuizQuestion } from '../../types/lingoquest';
 import type { PdfLesson } from './pdfCurriculum';
 
@@ -27,31 +29,27 @@ export interface DigitalContent {
   games: QuizQuestion[];
   assets?: Record<string, string>;
 }
-const cache = new Map<string, Promise<DigitalContent>>();
+const cache = new Map<string, DigitalContent>();
 export function loadDigitalContent(lesson: PdfLesson): Promise<DigitalContent> {
-  const url = lesson.digitalContentUrl;
-  if (!url || !url.startsWith('/assets/curriculum/content/')) return Promise.reject(new Error('Source content needs review.'));
-  let promise = cache.get(url);
-  if (!promise) {
-    promise = fetch(url).then(async (response) => {
-      if (!response.ok) throw new Error('The source lesson could not be loaded. Please retry.');
-      const value = await response.json() as DigitalContent;
-      if (value.fileId !== lesson.source.fileId || value.sourceSha256 !== lesson.source.sha256) {
-        throw new Error('Source mapping mismatch. This lesson needs review.');
-      }
-      const assets = value.assets || {};
-      function resolve(node: unknown): unknown {
-        if (typeof node === 'string') return assets[node] || node;
-        if (Array.isArray(node)) return node.map(resolve);
-        if (node && typeof node === 'object') return Object.fromEntries(Object.entries(node).filter(([key]) => key !== 'assets').map(([key, child]) => [key, resolve(child)]));
-        return node;
-      }
-      return resolve(value) as DigitalContent;
-    }).catch((error) => { cache.delete(url); throw error; });
-    if (cache.size >= 12) cache.delete(cache.keys().next().value!);
-    cache.set(url, promise);
+ try {
+  // Lesson text and diagrams ship in the verified app build. A protected/missing JSON
+  // request must not disable an otherwise available lesson or its bundled quizzes.
+  const value=(payloads as unknown as Record<string,Omit<DigitalContent,'games'>>)[lesson.id];
+  const catalogue=QUIZ_CATALOGUE[lesson.id];
+  if(!value||!catalogue||value.fileId!==lesson.source.fileId||value.sourceSha256!==lesson.source.sha256||catalogue.fileId!==lesson.source.fileId||catalogue.sha256!==lesson.source.sha256)throw new Error('This lesson package could not be verified. Please reload the app.');
+  const key=`${lesson.id}:${lesson.source.sha256}`;
+  const cached=cache.get(key);if(cached)return Promise.resolve(cached);
+  const assets=value.assets||{};
+  function resolve(node:unknown):unknown {
+   if(typeof node==='string')return assets[node]||node;
+   if(Array.isArray(node))return node.map(resolve);
+   if(node&&typeof node==='object')return Object.fromEntries(Object.entries(node).filter(([key])=>key!=='assets').map(([key,child])=>[key,resolve(child)]));
+   return node;
   }
-  return promise;
+  const data={...resolve(value) as Omit<DigitalContent,'games'>,games:catalogue.questions};
+  if(cache.size>=12)cache.delete(cache.keys().next().value!);
+  cache.set(key,data);return Promise.resolve(data);
+ } catch(error){return Promise.reject(error);}
 }
 export function useDigitalContent(lesson?: PdfLesson) {
   const [state, setState] = useState<{ key?: string; data?: DigitalContent; error?: string }>({});
@@ -64,5 +62,5 @@ export function useDigitalContent(lesson?: PdfLesson) {
     );
     return () => { cancelled = true; };
   }, [lesson?.id, lesson?.source.sha256, lesson?.digitalContentUrl, revision]);
-  return { ...(state.key === lesson?.id ? state : {}), retry: () => setRevision((n) => n + 1) };
+  return { ...(state.key === lesson?.id ? state : {}), retry: () => { setState({key:lesson?.id}); setRevision((n) => n + 1); } };
 }

@@ -132,7 +132,7 @@ export interface QuizQuestion {
   assessmentKey?: string;
   sourceGraphic?: DigitalBlock;
   sourceImageUrl?: string;
-  source?: { fileId: string; page: number; quote: string; answerQuote: string; sourceId: string; kind: string; answerSpans?: string[]; instructionPage?: number; answerKeyPage?: number; answerKeyQuote?: string };
+  source?: { pdfSha256?: string; fileId: string; page: number; quote: string; answerQuote: string; sourceId: string; kind: string; answerSpans?: string[]; instructionPage?: number; answerKeyPage?: number; answerKeyQuote?: string };
   id: string;
   type: QuizGameType;
   difficulty: DifficultyLevel;

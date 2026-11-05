@@ -22,7 +22,7 @@ Hard two-gap answers use the ordered format `first expression / second expressio
 
 ## Runtime and preservation
 
-A compact target catalogue and deterministic factory produce the full bank; the app does not embed thousands of duplicated source quotations in its JavaScript. Per-module payloads contain the compiled questions and are fetched through the existing source loader. Difficulty filters use actual authored tiers and never relabel Easy questions as Hard. Fisher–Yates shuffling randomizes questions, text alternatives and concept cards without mutating stored banks. The same five targets are deliberately practiced across different modes in a mix.
+A compact target catalogue and deterministic factory produce the full bank; the app does not embed thousands of duplicated source quotations in its JavaScript. Lesson text, tables, diagrams and inline artwork are bundled in 16 grade/quarter batches and verified by source file ID and PDF SHA-256. There is no per-module JSON request at runtime. Larger external figure files remain image assets. Quiz launch uses its own verified compiled bank and does not wait for illustration downloads. Difficulty filters use actual authored tiers and never relabel Easy questions as Hard. Fisher–Yates shuffling randomizes questions, text alternatives and concept cards without mutating stored banks. The same five targets are deliberately practiced across different modes in a mix.
 
 Completion guards accept exactly five answers for a single mode and exactly fifteen for a mix. The existing scoring formula, capped speed bonus, passing threshold, XP/badge callbacks and progress handlers remain. Auth, accounts, database schema, environment variables, deployment settings and lesson-only content remain unchanged. The setup's old source-review placeholder is removed; genuine loading failures produce a retry message and prevent incomplete sessions.
 
@@ -37,3 +37,13 @@ Completion guards accept exactly five answers for a single mode and exactly fift
 Rebuild: `python3 scripts/build-tiered-game-banks.py`, `node --import tsx scripts/compile-tiered-games.ts`. Validate with `node --import tsx scripts/check-pdf-bindings.tsx` and `node --import tsx scripts/check-tiered-games.ts`.
 
 Preview branch only. No main merge or production promotion without owner approval.
+
+## Loading and gameplay recovery revision
+
+Reproduced Grade 9 Q1 Week 2 displaying Failed to fetch while its Vercel file returned HTTP 200 through the authenticated connector. The app made a separate content request and unnecessarily gated an already-bundled quiz bank on it. The browser rejection itself supplied no more diagnostic detail. Bundling the verified native curriculum removes this failure path without changing Vercel protection, authentication or deployment settings. It adds approximately 1.2 MB compressed to the initial JavaScript package in exchange for eliminating per-module JSON requests.
+
+Fixed 12 Hard tasks whose secondary term was only part of a hyphenated word, leaving an expected second answer without a second visible gap. Secondary terms now use the same whole-expression boundaries as the cloze builder. Every task reconstructs its exact source wording in regression tests. Missing Piece fills numbered gaps individually, typed answers normalize ordinary spacing/case, and crossword words accept letters with or without spaces. Crossword grids provide editable letter cells, arrow/backspace/Enter navigation, protected given letters, and a complete-word input.
+
+Timeout submission now runs outside React state updater callbacks and uses an immediate question-ID latch to prevent duplicate answer logging. The existing score, XP, pass threshold and progress callbacks remain unchanged. Genuine source identity mismatches remain blocked.
+
+Validation: all 106 lesson packages load when fetch throws Failed to fetch; all 7,950 clozes reconstruct their original source quotations; all correct typed-answer variations pass; wrong module/hash metadata is rejected; editable crossword cells are checked at every level. Existing 38,160 seeded session checks and discussion-only regressions pass.
