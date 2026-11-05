@@ -686,7 +686,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
       {
         id: 'analogyMaster',
         title: 'Master Quiz (5 Questions per Level)',
-        desc: 'Choose the correct source-based expression. Three difficulty banks contain 5 tasks each.',
+        desc: 'Match each expression to its source excerpt. Three difficulty banks contain 5 tasks each.',
         icon: <Scale className="w-4 h-4 text-rose-600" />,
       },
       {
@@ -783,7 +783,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
               }`}
             >
               <Play className="w-4 h-4 text-sky-600" />
-              <span>Interactive Quiz Simulation (Play 5 Items)</span>
+              <span>Interactive Quiz Simulation (5 or 15 Items)</span>
             </button>
             <button
               type="button"
