@@ -2,6 +2,12 @@ import { supabase } from '../lib/supabase';
 import type { QuizQuestion } from '../types/lingoquest';
 
 export type QuestPowerUp = 'smart_hint' | 'time_freeze' | 'fifty_fifty' | 'extra_time' | 'second_chance' | 'lesson_peek';
+export interface QuestMarketState {
+  balance: number;
+  inventory: Array<{ kind: QuestPowerUp; quantity: number }>;
+  transactions: Array<{ event_key: string; amount: number; balance_after: number; created_at: string }>;
+}
+export interface QuestBuyResponse { balance: number; kind: QuestPowerUp; quantity: number; purchaseId: string }
 export interface QuestQuestionResponse {
   sessionId: string;
   index: number;
@@ -35,6 +41,10 @@ export async function questGame<T>(action: string, fields: Record<string, unknow
       try { message = (await context.json()).error || message; } catch { /* network response */ }
     }
     throw new Error(message);
+  }
+  const balance = (data as { balance?: unknown } | null)?.balance;
+  if (typeof balance === 'number' && Number.isFinite(balance)) {
+    window.dispatchEvent(new CustomEvent('lingoquest:quest-balance', { detail: { balance } }));
   }
   return data as T;
 }

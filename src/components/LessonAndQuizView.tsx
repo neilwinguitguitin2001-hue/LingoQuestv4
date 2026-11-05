@@ -75,7 +75,8 @@ import {
 } from './visuals/LessonVisuals';
 import { stopAllVoicePlayback } from '../utils/voiceEngineClient';
 import { supabase } from '../lib/supabase';
-import { questGame, type QuestGradeResponse, type QuestPowerUp, type QuestPurchaseResponse, type QuestQuestionResponse } from '../services/questGameService';
+import { QUEST_MARKET_ITEMS } from '../data/questMarket';
+import { questGame, type QuestBuyResponse, type QuestGradeResponse, type QuestMarketState, type QuestPowerUp, type QuestPurchaseResponse, type QuestQuestionResponse } from '../services/questGameService';
 
 export interface QuizCompletionPayload {
   moduleId: string;
@@ -123,15 +124,6 @@ interface QuestionAnswerLog {
   timeRemaining: number;
 }
 
-const QUEST_POWER_UPS: Array<{ kind: QuestPowerUp; label: string; cost: number }> = [
-  { kind: 'smart_hint', label: 'Smart Hint', cost: 30 },
-  { kind: 'time_freeze', label: 'Time Freeze', cost: 50 },
-  { kind: 'fifty_fifty', label: '50/50', cost: 60 },
-  { kind: 'extra_time', label: 'Extra Time', cost: 40 },
-  { kind: 'second_chance', label: 'Second Chance', cost: 80 },
-  { kind: 'lesson_peek', label: 'Lesson Peek', cost: 20 },
-];
-
 export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
   module: sourceModule,
   nextModule,
@@ -175,6 +167,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
   const [answerLogs, setAnswerLogs] = useState<QuestionAnswerLog[]>([]);
   const [serverSessionId, setServerSessionId] = useState<string | null>(null);
   const [questBalance, setQuestBalance] = useState(0);
+  const [questInventory, setQuestInventory] = useState<Partial<Record<QuestPowerUp, number>>>({});
   const [questBusy, setQuestBusy] = useState(false);
   const [questMessage, setQuestMessage] = useState('');
   const [showPowerShop, setShowPowerShop] = useState(false);
@@ -295,7 +288,10 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
 
   useEffect(() => {
     if (!useServerGame) return;
-    questGame<{ balance: number }>('wallet').then(data => setQuestBalance(data.balance)).catch(() => {});
+    questGame<QuestMarketState>('market').then(data => {
+      setQuestBalance(data.balance);
+      setQuestInventory(Object.fromEntries(data.inventory.map(item => [item.kind, item.quantity])));
+    }).catch(() => {});
   }, [useServerGame]);
 
   useEffect(() => {
@@ -381,17 +377,31 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
     setStage('PLAYING_QUIZ');
   };
 
-  const purchasePowerUp = async (kind: QuestPowerUp) => {
-    if (!serverSessionId || questBusy || usedPowerUps.includes(kind)) return;
-    const item=QUEST_POWER_UPS.find(power=>power.kind===kind)!;
-    if (questBalance<item.cost) {setQuestMessage('Insufficient Quest Coins');setShowPowerShop(true);return;}
-    if (!window.confirm(`Spend ${item.cost} Quest Coins on ${item.label}?`)) return;
+  const buyPowerUp = async (kind: QuestPowerUp) => {
+    if (questBusy) return;
+    const item=QUEST_MARKET_ITEMS.find(power=>power.kind===kind)!;
+    if (questBalance<item.cost) {setQuestMessage('Insufficient Quest Coins');return;}
+    if (!window.confirm(`Exchange ${item.cost} Quest Coins for 1 ${item.label}? Purchases are final.`)) return;
     setQuestBusy(true);
     try {
-      const purchase=await questGame<QuestPurchaseResponse>('purchase',{sessionId:serverSessionId,kind});
-      setQuestBalance(purchase.balance);
+      const bought=await questGame<QuestBuyResponse>('buy',{kind});
+      setQuestBalance(bought.balance);
+      setQuestInventory(previous=>({...previous,[kind]:bought.quantity}));
+      setQuestMessage(`${item.label} added to inventory.`);
+    } catch(error) {setQuestMessage(error instanceof Error?error.message:'Purchase failed. Coins were not deducted.');}
+    finally {setQuestBusy(false);}
+  };
+
+  const activatePowerUp = async (kind: QuestPowerUp) => {
+    if (!serverSessionId || questBusy || usedPowerUps.includes(kind)) return;
+    if (!(questInventory[kind] || 0)) {setQuestMessage('Buy this power-up in the Quest Market first.');setShowPowerShop(true);return;}
+    setQuestBusy(true);
+    try {
+      const purchase=await questGame<QuestPurchaseResponse>('activate',{sessionId:serverSessionId,kind});
+      setQuestInventory(previous=>({...previous,[kind]:Math.max(0,(previous[kind] || 0)-1)}));
       setUsedPowerUps(previous=>[...previous,kind]);
       setQuestMessage('');
+      setShowPowerShop(false);
       if (purchase.hint) setPurchasedClue(purchase.hint);
       if (purchase.reminder) setPurchasedClue(purchase.reminder);
       if (purchase.remove) setRemovedChoices(purchase.remove);
@@ -405,27 +415,27 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
         setTimeLeft(response.question.timeLimitSeconds||60);
         submittedQuestionRef.current=null;activeQuestionIdRef.current=response.question.id;
       }
-    } catch(error) {setQuestMessage(error instanceof Error?error.message:'Power-up could not be purchased.');}
+    } catch(error) {setQuestMessage(error instanceof Error?error.message:'Power-up could not be activated.');}
     finally {setQuestBusy(false);}
   };
 
   const questShopPanel=useServerGame&&showPowerShop&&(
-    <div className="fixed inset-0 z-50 bg-slate-950/70 flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-label="Power-Up Shop">
-      <div className="w-full max-w-lg rounded-2xl border-2 border-sky-600 bg-white p-5 shadow-2xl space-y-4">
-        <div className="flex items-center justify-between"><h2 className="text-lg font-bold text-slate-950">Power-Up Shop</h2><button type="button" onClick={()=>setShowPowerShop(false)} aria-label="Close shop" className="rounded-lg p-2 hover:bg-slate-100"><X className="h-4 w-4"/></button></div>
+    <div className="fixed inset-0 z-50 bg-slate-950/70 flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-label="Quest Market">
+      <div className="w-full max-w-lg max-h-[90vh] overflow-y-auto rounded-2xl border-2 border-sky-600 bg-white p-5 shadow-2xl space-y-4">
+        <div className="flex items-center justify-between"><h2 className="text-lg font-bold text-slate-950">Quest Market</h2><button type="button" onClick={()=>setShowPowerShop(false)} aria-label="Close shop" className="rounded-lg p-2 hover:bg-slate-100"><X className="h-4 w-4"/></button></div>
         <p className="text-sm font-semibold text-sky-800">Quest Coins: {questBalance}</p>
         {questMessage&&<p role="status" className="text-sm text-amber-800">{questMessage}</p>}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-          {QUEST_POWER_UPS.map(power=>{
+          {QUEST_MARKET_ITEMS.map(power=>{
             const question=activeQuestions[currentQIndex];
             const incompatible=(questionLocked&&power.kind!=='second_chance')
               ||power.kind==='fifty_fifty'&&((question?.options?.length||question?.pictureOptions?.length||0)<4)
               ||power.kind==='second_chance'&&(!questionLocked||answerLogs.at(-1)?.isCorrect)
               ||!serverSessionId;
-            return <button key={power.kind} type="button" onClick={()=>purchasePowerUp(power.kind)} disabled={questBusy||usedPowerUps.includes(power.kind)||incompatible} className="rounded-xl border border-sky-200 bg-sky-50 px-3 py-3 text-left text-sm font-semibold text-slate-900 hover:bg-sky-100 disabled:opacity-45 disabled:cursor-not-allowed">{power.label} <span className="float-right text-sky-800">{power.cost} coins</span></button>;
+            return <div key={power.kind} className="rounded-xl border border-sky-200 bg-sky-50 px-3 py-3 text-sm text-slate-900"><div className="font-bold">{power.label} <span className="float-right text-sky-800">{power.cost} coins</span></div><p className="mt-1 text-xs text-slate-600">Owned: {questInventory[power.kind] || 0}</p><div className="mt-2 flex gap-2"><button type="button" onClick={()=>buyPowerUp(power.kind)} disabled={questBusy||questBalance<power.cost} className="rounded-lg bg-sky-700 px-2 py-1 text-xs font-bold text-white disabled:opacity-45">Buy 1</button><button type="button" onClick={()=>activatePowerUp(power.kind)} disabled={questBusy||usedPowerUps.includes(power.kind)||incompatible||!(questInventory[power.kind] || 0)} className="rounded-lg border border-emerald-700 px-2 py-1 text-xs font-bold text-emerald-900 disabled:opacity-45">Use 1</button></div></div>;
           })}
         </div>
-        <p className="text-xs text-slate-600">Each power-up can be used once per game. Coins are deducted after confirmation.</p>
+        <p className="text-xs text-slate-600">Buying deducts coins immediately and adds inventory. Using consumes one item. Each type can be activated once per game.</p>
       </div>
     </div>
   );
@@ -870,7 +880,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
 
     return (
       <div className="max-w-4xl mx-auto space-y-6">
-        {useServerGame&&<div className="flex justify-end gap-2 text-sm font-semibold text-sky-900"><span className="rounded-lg border border-sky-200 bg-sky-50 px-3 py-2">Quest Coins: {questBalance}</span><button type="button" onClick={()=>setShowPowerShop(true)} className="rounded-lg border border-sky-300 px-3 py-2 hover:bg-sky-50">Power-Up Shop</button></div>}
+        {useServerGame&&<div className="flex justify-end gap-2 text-sm font-semibold text-sky-900"><span className="rounded-lg border border-sky-200 bg-sky-50 px-3 py-2">Quest Coins: {questBalance}</span><button type="button" onClick={()=>setShowPowerShop(true)} className="rounded-lg border border-sky-300 px-3 py-2 hover:bg-sky-50">Quest Market</button></div>}
         {questShopPanel}
         {/* Faculty / Admin Preview Bar */}
         {isPreviewMode && (
@@ -1319,7 +1329,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
     return (
       <div className="max-w-4xl mx-auto space-y-6">
         {questShopPanel}
-        {useServerGame&&<div className="flex flex-wrap items-center justify-end gap-2 text-xs font-bold text-sky-900"><span className="rounded-lg border border-sky-200 bg-sky-50 px-3 py-2">Quest Coins: {questBalance}</span><button type="button" onClick={()=>setShowPowerShop(true)} className="rounded-lg border border-sky-300 px-3 py-2 hover:bg-sky-50">Power-Up Shop</button></div>}
+        {useServerGame&&<div className="flex flex-wrap items-center justify-end gap-2 text-xs font-bold text-sky-900"><span className="rounded-lg border border-sky-200 bg-sky-50 px-3 py-2">Quest Coins: {questBalance}</span><button type="button" onClick={()=>setShowPowerShop(true)} className="rounded-lg border border-sky-300 px-3 py-2 hover:bg-sky-50">Quest Market</button></div>}
         {questMessage&&<div role="status" className="rounded-lg border border-amber-300 bg-amber-50 p-3 text-sm text-amber-950">{questMessage}{questMessage==='Insufficient Quest Coins'&&<button type="button" onClick={()=>setShowPowerShop(true)} className="ml-2 underline">Open shop</button>}</div>}
         {/* Faculty / Admin Preview Bar */}
         {isPreviewMode && (
@@ -1550,7 +1560,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
             <h2 className="text-lg sm:text-xl font-bold text-slate-900 leading-snug">
               {currentQ.prompt}
             </h2>
-            {serverSessionId&&!questionLocked&&<button type="button" disabled={questBusy||usedPowerUps.includes('smart_hint')} onClick={()=>purchasePowerUp('smart_hint')} className="rounded-lg border border-sky-300 bg-sky-50 px-3 py-2 text-xs font-bold text-sky-900 hover:bg-sky-100 disabled:opacity-50">Smart Hint · 30 Quest Coins</button>}
+            {serverSessionId&&!questionLocked&&<button type="button" disabled={questBusy||usedPowerUps.includes('smart_hint')} onClick={()=>questInventory.smart_hint?activatePowerUp('smart_hint'):setShowPowerShop(true)} className="rounded-lg border border-sky-300 bg-sky-50 px-3 py-2 text-xs font-bold text-sky-900 hover:bg-sky-100 disabled:opacity-50">{questInventory.smart_hint ? 'Use Smart Hint · 1 item' : 'Smart Hint · 30 Quest Coins'}</button>}
             {purchasedClue&&<p role="status" className="rounded-lg border border-sky-200 bg-sky-50 p-3 text-sm text-sky-950">{purchasedClue}</p>}
           </div>
 

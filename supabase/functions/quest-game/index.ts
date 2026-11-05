@@ -28,6 +28,18 @@ Deno.serve(async (request) => {
   if (action === 'wallet') {
     const wallet = await admin.from('quest_wallets').select('balance').eq('user_id', userId).maybeSingle();
     result = { data: { balance: wallet.data?.balance ?? 0 }, error: wallet.error };
+  } else if (action === 'market') {
+    const [wallet, inventory, transactions] = await Promise.all([
+      admin.from('quest_wallets').select('balance').eq('user_id', userId).maybeSingle(),
+      admin.from('quest_inventory').select('kind,quantity').eq('user_id', userId),
+      admin.from('quest_ledger').select('event_key,amount,balance_after,created_at').eq('user_id', userId).order('created_at', { ascending: false }).limit(30),
+    ]);
+    result = {
+      data: { balance: wallet.data?.balance ?? 0, inventory: inventory.data ?? [], transactions: transactions.data ?? [] },
+      error: wallet.error || inventory.error || transactions.error,
+    };
+  } else if (action === 'buy') {
+    result = await admin.rpc('quest_buy', { p_user: userId, p_kind: body.kind });
   } else if (action === 'start') {
     result = await admin.rpc('quest_start', { p_user: userId, p_module: body.moduleId, p_mode: body.mode, p_difficulty: body.difficulty });
   } else if (action === 'current') {
@@ -36,7 +48,10 @@ Deno.serve(async (request) => {
     result = await admin.rpc('quest_submit', { p_user: userId, p_session: body.sessionId, p_answer: String(body.answer ?? '') });
   } else if (action === 'finish') {
     result = await admin.rpc('quest_finish', { p_user: userId, p_session: body.sessionId });
+  } else if (action === 'activate') {
+    result = await admin.rpc('quest_activate', { p_user: userId, p_session: body.sessionId, p_kind: body.kind });
   } else if (action === 'purchase') {
+    // Compatibility for existing preview deployments until their client updates.
     result = await admin.rpc('quest_purchase', { p_user: userId, p_session: body.sessionId, p_kind: body.kind });
   } else {
     return new Response(JSON.stringify({ error: 'Unknown action' }), { status: 400, headers: cors });

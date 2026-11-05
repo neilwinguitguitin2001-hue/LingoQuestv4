@@ -40,6 +40,7 @@ import { LessonAndQuizView, QuizCompletionPayload } from './components/LessonAnd
 import { LingoQuestEmblem, LingoQuestLogo, LogoTransitionOverlay } from './components/LingoQuestLogo';
 import { PendingApprovalScreen } from './components/PendingApprovalScreen';
 import { ProfileBadgesView } from './components/ProfileBadgesView';
+import { QuestMarketView } from './components/QuestMarketView';
 import { StudentDashboardView } from './components/StudentDashboardView';
 import { StudentProgressView } from './components/StudentProgressView';
 import { TeacherDashboardView } from './components/TeacherDashboardView';
@@ -48,9 +49,9 @@ import { NetworkStatusToast } from './components/NetworkStatusToast';
 import { EmailNotificationCenter } from './components/EmailNotificationCenter';
 import { FloatingFeedbackWidget } from './components/FloatingFeedbackWidget';
 import { supabase } from './lib/supabase';
+import { questGame } from './services/questGameService';
 import {
   InabelWovenStrip,
-  MayonStreakBadge,
   PhilippineSunMedallion,
 } from './components/FilipinianaMotifs';
 
@@ -107,6 +108,7 @@ import {
   AlertTriangle,
   Award,
   BookOpen,
+  Coins,
   Clock,
   Compass,
   Feather,
@@ -137,6 +139,7 @@ type AppView =
   | 'PROGRESS'
   | 'LEADERBOARD'
   | 'PROFILE'
+  | 'MARKET'
   | 'STUDENT_DASHBOARD'
   | 'TEACHER'
   | 'ADMIN'
@@ -401,6 +404,7 @@ export default function App() {
   // Sound & Mobile menu
   const [isMuted, setIsMuted] = useState<boolean>(() => soundFX.isMuted());
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [questCoinBalance, setQuestCoinBalance] = useState<number | null>(null);
 
   // Session Timeout State
   const [isSessionTimeoutOpen, setIsSessionTimeoutOpen] = useState(false);
@@ -510,6 +514,10 @@ export default function App() {
       PROFILE: {
         title: 'Loading Badges & Trophy Case...',
         subtitle: 'Retrieving Learner Achievement Medals',
+      },
+      MARKET: {
+        title: 'Opening Quest Market...',
+        subtitle: 'Loading Quest Coins, inventory, and exchange history',
       },
       STUDENT_DASHBOARD: {
         title: 'Opening Student Dashboard...',
@@ -646,6 +654,27 @@ export default function App() {
   const currentTeacher = teachers.find((t) => t.id === currentUserId) || null;
   const currentAdmin = admins.find((a) => a.id === currentUserId) || null;
   const currentUser: UserAccount | null = currentStudent || currentTeacher || currentAdmin;
+
+  useEffect(() => {
+    let active = true;
+    const handleBalance = (event: Event) => {
+      const balance = (event as CustomEvent<{ balance: number }>).detail?.balance;
+      if (active && Number.isFinite(balance)) setQuestCoinBalance(balance);
+    };
+    window.addEventListener('lingoquest:quest-balance', handleBalance);
+    if (currentStudent && supabase) {
+      setQuestCoinBalance(null);
+      questGame<{ balance: number }>('wallet')
+        .then(({ balance }) => { if (active) setQuestCoinBalance(balance); })
+        .catch(() => { if (active) setQuestCoinBalance(null); });
+    } else {
+      setQuestCoinBalance(null);
+    }
+    return () => {
+      active = false;
+      window.removeEventListener('lingoquest:quest-balance', handleBalance);
+    };
+  }, [currentStudent?.id]);
 
   // Always lock student to their enrolled grade level
   useEffect(() => {
@@ -1837,6 +1866,10 @@ export default function App() {
                     >
                       Badges
                     </button>
+                    <button
+                      onClick={() => { soundFX.playClick(); setCurrentView('MARKET'); }}
+                      className={`px-3 py-1.5 rounded-lg transition cursor-pointer ${currentView === 'MARKET' ? 'bg-[#0F766E] text-[#FFFDFB] border border-[#22C55E] shadow-[2px_2px_0px_#22C55E] font-extrabold' : 'hover:text-[#22C55E] hover:bg-white/5'}`}
+                    >Quest Market</button>
                   </>
                 )}
 
@@ -1904,31 +1937,31 @@ export default function App() {
               </nav>
             )}
 
-            {/* Right Header Controls: Cultural Gamification Counters (Mayon Streak + 8-Rayed Sun XP) */}
+            {/* Right Header Controls: separate permanent XP and spendable Quest Coins */}
             <div className="flex items-center gap-2">
               {currentStudent && (
                 <div className="hidden xl:flex items-center gap-2 mr-1">
-                  {/* Glowing Mayon Volcano Streak Pill */}
+                  {/* Permanent learning progress */}
                   <div
-                    className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#FFF3E0] text-[#231F20] border-2 border-[#D84315] shadow-[2px_2px_0px_#D84315]"
-                    title="Active Island Bridge Streak · Glowing Mayon Summit"
-                  >
-                    <MayonStreakBadge size={20} />
-                    <span className="text-[11px] font-black font-mono text-[#0F766E]">
-                      {Math.max(1, currentStudent.completedModules.length)}🔥
-                    </span>
-                  </div>
-
-                  {/* 8-Rayed Golden Philippine Sun XP Medallion */}
-                  <div
-                    className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#FFF8E1] text-[#231F20] border-2 border-[#22C55E] shadow-[2px_2px_0px_#22C55E]"
-                    title="Total Sunburst XP Earned"
+                    className="flex items-center gap-2 rounded-xl border border-sky-400/70 bg-gradient-to-br from-[#123B63] to-[#07192F] px-2.5 py-1 text-white shadow-[2px_2px_0px_#0284C7]"
+                    title="Permanent XP for levels and achievements"
+                    aria-label={`${currentStudent.points} permanent XP`}
                   >
                     <PhilippineSunMedallion size={20} />
-                    <span className="text-[11px] font-black font-mono text-[#231F20]">
-                      {currentStudent.points} XP
-                    </span>
+                    <span className="flex flex-col leading-tight"><span className="text-[9px] font-black uppercase tracking-wide text-sky-200">Permanent XP</span><span className="font-mono text-sm font-black tabular-nums">{currentStudent.points.toLocaleString()}</span></span>
                   </div>
+
+                  {/* Spendable wallet balance opens the Quest Market */}
+                  <button
+                    type="button"
+                    onClick={() => { soundFX.playClick(); setCurrentView('MARKET'); }}
+                    className="flex items-center gap-2 rounded-xl border border-emerald-300/80 bg-gradient-to-br from-[#0F766E] to-[#0A4262] px-2.5 py-1 text-white shadow-[2px_2px_0px_#22C55E] transition hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300"
+                    title="Open Quest Market"
+                    aria-label={`${questCoinBalance ?? 'Loading'} Quest Coins. Open Quest Market`}
+                  >
+                    <Coins className="h-5 w-5 shrink-0 text-amber-200" aria-hidden="true" />
+                    <span className="flex flex-col text-left leading-tight"><span className="text-[9px] font-black uppercase tracking-wide text-emerald-100">Quest Coins</span><span className="font-mono text-sm font-black tabular-nums">{questCoinBalance === null ? '—' : questCoinBalance.toLocaleString()}</span></span>
+                  </button>
                 </div>
               )}
 
@@ -2104,6 +2137,10 @@ export default function App() {
                   >
                     Badges
                   </button>
+                  <button
+                    onClick={() => { setCurrentView('MARKET'); setIsMobileMenuOpen(false); }}
+                    className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold text-slate-200 hover:bg-white/5"
+                  >Quest Market</button>
                 </>
               )}
 
@@ -2389,6 +2426,8 @@ export default function App() {
             allStudents={students.filter((s) => s.status === 'approved')}
           />
         )}
+
+        {currentView === 'MARKET' && currentStudent && <QuestMarketView />}
 
         {/* Student Dashboard View (Edit credentials, upload picture, view achievements) */}
         {currentView === 'STUDENT_DASHBOARD' && currentStudent && (
