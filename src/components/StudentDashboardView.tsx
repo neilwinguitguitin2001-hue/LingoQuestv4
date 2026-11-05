@@ -23,7 +23,6 @@ import {
   School,
   Shield,
   ShieldCheck,
-  Sparkles,
   Trash2,
   Trophy,
   Upload,
@@ -31,7 +30,6 @@ import {
   Volume2,
   VolumeX,
   X,
-  Zap,
 } from 'lucide-react';
 import { BADGE_DEFINITIONS } from '../data/seedData';
 import { BadgeDefinition, StudentAccount, TeacherAccount } from '../types/lingoquest';
@@ -335,32 +333,6 @@ export const StudentDashboardView: React.FC<StudentDashboardViewProps> = ({
       // ignore localStorage errors
     }
   }, [student.id, badgesKey, student.points, currentLevelInfo.level]);
-
-  // Manual tester/user preview triggers
-  const handleTriggerTestBadgeCelebration = (targetBadge?: BadgeDefinition) => {
-    soundFX.playClick();
-    const badge =
-      targetBadge ||
-      BADGE_DEFINITIONS.find((b) => student.badges.includes(b.id)) ||
-      BADGE_DEFINITIONS[0];
-    setCelebrationEvents([{ type: 'badge', badge }]);
-    setShowCelebrationOverlay(true);
-  };
-
-  const handleTriggerTestLevelUpCelebration = () => {
-    soundFX.playClick();
-    const prev = Math.max(1, currentLevelInfo.level - 1);
-    setCelebrationEvents([
-      {
-        type: 'level_up',
-        previousLevel: prev,
-        newLevel: currentLevelInfo.level,
-        levelInfo: currentLevelInfo,
-        totalPoints: student.points,
-      },
-    ]);
-    setShowCelebrationOverlay(true);
-  };
 
   // Find linked teacher if available
   const linkedTeacher = teachers.find(
@@ -700,15 +672,6 @@ export const StudentDashboardView: React.FC<StudentDashboardViewProps> = ({
                 {currentLevelInfo.title}
               </span>
             </div>
-            <button
-              type="button"
-              onClick={handleTriggerTestLevelUpCelebration}
-              className="mt-1.5 px-2 py-1 rounded-lg bg-white/10 hover:bg-white/20 text-sky-200 text-[10px] font-bold transition flex items-center justify-center gap-1 cursor-pointer border border-white/15"
-              title="Preview Level Up Celebration Animation"
-            >
-              <Zap className="w-3 h-3 text-amber-300" />
-              <span>Level Up Animation</span>
-            </button>
           </div>
 
           <div className="bg-white/5 rounded-2xl p-3 border border-white/10 flex flex-col justify-between">
@@ -730,15 +693,6 @@ export const StudentDashboardView: React.FC<StudentDashboardViewProps> = ({
                 {unlockedBadgeCount} <span className="text-xs font-normal text-purple-200">/ {BADGE_DEFINITIONS.length}</span>
               </span>
             </div>
-            <button
-              type="button"
-              onClick={() => handleTriggerTestBadgeCelebration()}
-              className="mt-1.5 px-2 py-1 rounded-lg bg-white/10 hover:bg-white/20 text-purple-200 text-[10px] font-bold transition flex items-center justify-center gap-1 cursor-pointer border border-white/15"
-              title="Preview Badge Earned Celebration Animation"
-            >
-              <Sparkles className="w-3 h-3 text-purple-300" />
-              <span>Badge Animation</span>
-            </button>
           </div>
 
           <div className="bg-white/5 rounded-2xl p-3 border border-white/10 flex flex-col justify-between col-span-2 sm:col-span-1">
@@ -1385,26 +1339,6 @@ export const StudentDashboardView: React.FC<StudentDashboardViewProps> = ({
                 Learner Badge Cabinet ({unlockedBadgeCount} / {BADGE_DEFINITIONS.length} Collected)
               </h2>
             </div>
-            <div className="flex flex-wrap items-center gap-2">
-              <button
-                type="button"
-                onClick={() => handleTriggerTestBadgeCelebration()}
-                className="px-3.5 py-1.5 rounded-xl bg-purple-50 hover:bg-purple-100 text-purple-700 font-bold text-xs border border-purple-200 transition flex items-center gap-1.5 shadow-xs cursor-pointer"
-                title="Trigger full-screen badge unlock celebration animation"
-              >
-                <Sparkles className="w-3.5 h-3.5 text-purple-600" />
-                <span>Test Badge Animation</span>
-              </button>
-              <button
-                type="button"
-                onClick={handleTriggerTestLevelUpCelebration}
-                className="px-3.5 py-1.5 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-900 font-bold text-xs border border-amber-200 transition flex items-center gap-1.5 shadow-xs cursor-pointer"
-                title="Trigger full-screen points level up celebration animation"
-              >
-                <Zap className="w-3.5 h-3.5 text-amber-600" />
-                <span>Test Level Up Animation</span>
-              </button>
-            </div>
           </div>
 
           {/* Badge Grid */}
@@ -1484,15 +1418,6 @@ export const StudentDashboardView: React.FC<StudentDashboardViewProps> = ({
               </div>
 
               <div className="flex items-center gap-2">
-                <button
-                  type="button"
-                  onClick={() => handleTriggerTestBadgeCelebration(selectedBadge)}
-                  className="px-3 py-1.5 text-xs font-bold text-purple-700 bg-purple-100 hover:bg-purple-200 rounded-xl transition cursor-pointer flex items-center gap-1 shadow-xs"
-                  title="Trigger celebration animation for this badge"
-                >
-                  <Sparkles className="w-3.5 h-3.5" />
-                  <span>Animate Badge</span>
-                </button>
                 <button
                   onClick={() => setSelectedBadge(null)}
                   className="px-4 py-2 text-xs font-semibold text-purple-700 bg-white rounded-xl shadow-xs hover:bg-purple-100 transition cursor-pointer"
