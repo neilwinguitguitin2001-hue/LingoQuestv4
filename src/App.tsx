@@ -47,6 +47,7 @@ import { WritingLabView } from './components/WritingLabView';
 import { NetworkStatusToast } from './components/NetworkStatusToast';
 import { EmailNotificationCenter } from './components/EmailNotificationCenter';
 import { FloatingFeedbackWidget } from './components/FloatingFeedbackWidget';
+import { supabase } from './lib/supabase';
 import {
   InabelWovenStrip,
   MayonStreakBadge,
@@ -61,6 +62,7 @@ import {
   getAuditLogs as apiGetAuditLogs,
   initializeFirestoreSeed,
   persistStudentProgress as apiPersistStudentProgress,
+  hydrateStudentProgressFromSupabase,
   reactivateUser as apiReactivateUser,
   recoverUserPassword as apiRecoverUserPassword,
   registerNewStudent as apiRegisterNewStudent,
@@ -763,16 +765,24 @@ export default function App() {
           : [account as StudentAccount, ...prev]
       );
 
-      // Sync with Firestore `users/{uid}` and `progress/{uid}`
-      const targetUid = firebaseUser?.uid || account.id;
-      syncUserProfileToFirestore(targetUid, account, false).catch(() => {});
-      mergeLocalGuestProgressIntoStudent(targetUid, account as StudentAccount)
-        .then((merged) => {
+      if (supabase) {
+        hydrateStudentProgressFromSupabase(account as StudentAccount)
+          .then((merged) => {
+            setStudents((prev) => prev.map((s) => s.id === account.id ? merged : s));
+          })
+          .catch((error) => console.warn('Supabase progress hydration failed:', error));
+      } else {
+        // Preserve the existing Firebase path for deployments without Supabase.
+        const targetUid = firebaseUser?.uid || account.id;
+        syncUserProfileToFirestore(targetUid, account, false).catch(() => {});
+        mergeLocalGuestProgressIntoStudent(targetUid, account as StudentAccount)
+          .then((merged) => {
           setStudents((prev) =>
             prev.map((s) => (s.id === account.id ? merged : s))
           );
-        })
-        .catch(() => {});
+          })
+          .catch(() => {});
+      }
     } else if (account.role === 'teacher') {
       setTeachers((prev) =>
         prev.some((t) => t.id === account.id)
@@ -1089,7 +1099,7 @@ export default function App() {
 
         apiPersistStudentProgress(updatedStudent, moduleId, updatedProg);
         const targetUid = firebaseUser?.uid || updatedStudent.id;
-        syncStudentProgressToFirestore(targetUid, updatedStudent).catch(() => {});
+        if (!supabase) syncStudentProgressToFirestore(targetUid, updatedStudent).catch(() => {});
         return updatedStudent;
       })
     );
@@ -1176,7 +1186,7 @@ export default function App() {
 
         apiPersistStudentProgress(updatedStudent, moduleId, updatedProg);
         const targetUid = firebaseUser?.uid || updatedStudent.id;
-        syncStudentProgressToFirestore(targetUid, updatedStudent).catch(() => {});
+        if (!supabase) syncStudentProgressToFirestore(targetUid, updatedStudent).catch(() => {});
         return updatedStudent;
       })
     );
@@ -1284,7 +1294,7 @@ export default function App() {
 
         apiPersistStudentProgress(updatedStudent, payload.moduleId, updatedProg);
         const targetUid = firebaseUser?.uid || updatedStudent.id;
-        syncStudentProgressToFirestore(targetUid, updatedStudent).catch(() => {});
+        if (!supabase) syncStudentProgressToFirestore(targetUid, updatedStudent).catch(() => {});
         recordQuizResultToFirestore({
           uid: firebaseUser?.uid || updatedStudent.id,
           questId: payload.moduleId,
