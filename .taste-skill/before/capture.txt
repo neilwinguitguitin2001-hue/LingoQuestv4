@@ -1,0 +1,3 @@
+Attempted production capture: https://lingoquest-v4.vercel.app/ at 1440x900.
+Tool: taste-skill/scripts/shoot.mjs.
+Result: Chrome did not start. Retried with a /private/tmp profile after network permission was granted; same result. Diagnostic Chrome process exited 134 before DevToolsActivePort was created.

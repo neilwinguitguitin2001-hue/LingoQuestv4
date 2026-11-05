@@ -1,0 +1,16 @@
+
+> lingoquest@0.0.0 lint
+> tsc --noEmit
+
+src/components/PictureHuntIllustration.tsx(28,369): error TS2367: This comparison appears to be unintentional because the types '"action" | "active" | "barGraph" | "calendarFuture" | "calendarPast" | "character" | "cinema" | "citation" | "collage" | "community" | "conditional" | "conflict" | "connecting" | ... 53 more ... | "writing"' and '"parallel"' have no overlap.
+src/context/AuthContext.tsx(385,9): error TS2322: Type 'FirestoreUserDoc | { uid: string; id: string; displayName: string; name: string; email: string; role: "student"; status: "approved"; gradeLevel: 8; school: string | undefined; schoolName: string | undefined; createdAt: string; lastLoginAt: string; }' is not assignable to type 'FirestoreUserDoc | null'.
+  Type '{ uid: string; id: string; displayName: string; name: string; email: string; role: "student"; status: "approved"; gradeLevel: 8; school: string | undefined; schoolName: string | undefined; createdAt: string; lastLoginAt: string; }' is not assignable to type 'FirestoreUserDoc'.
+    Types of property 'school' are incompatible.
+      Type 'string | undefined' is not assignable to type 'string'.
+        Type 'undefined' is not assignable to type 'string'.
+src/context/AuthContext.tsx(447,61): error TS2322: Type '() => Promise<{ firebaseUser: { uid: string; id: string; email: string | undefined; displayName: string | undefined; photoURL: string | undefined; }; profile: FirestoreUserDoc | null; }>' is not assignable to type '() => Promise<{ firebaseUser: AuthUser; profile: FirestoreUserDoc; }>'.
+  Type 'Promise<{ firebaseUser: { uid: string; id: string; email: string | undefined; displayName: string | undefined; photoURL: string | undefined; }; profile: FirestoreUserDoc | null; }>' is not assignable to type 'Promise<{ firebaseUser: AuthUser; profile: FirestoreUserDoc; }>'.
+    Type '{ firebaseUser: { uid: string; id: string; email: string | undefined; displayName: string | undefined; photoURL: string | undefined; }; profile: FirestoreUserDoc | null; }' is not assignable to type '{ firebaseUser: AuthUser; profile: FirestoreUserDoc; }'.
+      Types of property 'profile' are incompatible.
+        Type 'FirestoreUserDoc | null' is not assignable to type 'FirestoreUserDoc'.
+          Type 'null' is not assignable to type 'FirestoreUserDoc'.

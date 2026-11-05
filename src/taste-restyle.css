@@ -1,0 +1,166 @@
+/* LingoQuest restyle: Sora/Figtree, ocean blue, quiet surfaces, existing artwork.
+   This layer changes presentation only; React owns all routes and form behavior. */
+.taste-restyle {
+  --font-display: 'Sora', sans-serif;
+  --font-sans: 'Figtree', sans-serif;
+  --lq-ink: #142c45;
+  --lq-muted: #52677d;
+  --lq-line: #d6e2ec;
+  --lq-action: #1264bd;
+  --lq-green: #0f766e;
+  background: #f3f7fa;
+  color: var(--lq-ink);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+}
+.taste-restyle h1,
+.taste-restyle h2,
+.taste-restyle h3,
+.taste-restyle .font-display {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -.035em;
+  line-height: 1.25;
+}
+.taste-restyle h1 { text-wrap: balance; }
+.taste-restyle p { line-height: 1.65; }
+.taste-restyle .font-black { font-weight: 700; }
+.taste-restyle .text-xs { font-size: .8125rem; line-height: 1.5; }
+.taste-restyle .text-sm { font-size: .9375rem; line-height: 1.6; }
+.taste-restyle :is(.bg-white,.bg-slate-50) :is(.text-slate-400,.text-slate-500) { color: var(--lq-muted); }
+.taste-restyle :is(.bg-white,.bg-slate-50) { color: var(--lq-ink); }
+.taste-restyle :is(button,a,input,select,textarea) { -webkit-tap-highlight-color: transparent; }
+.taste-restyle button {
+  cursor: pointer;
+  font-family: var(--font-sans);
+  transition: background-color .18s ease, color .18s ease, border-color .18s ease, transform .18s ease, box-shadow .18s ease;
+}
+.taste-restyle button:not(:disabled):hover { transform: translateY(-2px); }
+.taste-restyle button:not(:disabled):active { transform: translateY(1px); }
+.taste-restyle button:disabled { cursor: not-allowed; }
+.taste-restyle :is(button,a,input,select,textarea):focus-visible {
+  outline: 3px solid #38bdf8;
+  outline-offset: 3px;
+}
+.taste-restyle :is(input:not([type=checkbox]):not([type=radio]),select,textarea) {
+  min-height: 44px;
+  border-radius: 10px;
+  border-width: 1px;
+  font-size: 16px;
+  line-height: 1.5;
+  box-shadow: none;
+}
+.taste-restyle :is(input,textarea)::placeholder { opacity: 1; }
+
+/* Cards are visually grouped by a single hairline, not repeated heavy outlines. */
+.taste-restyle .linocut-card,
+.taste-restyle .linocut-card-sm,
+.taste-restyle :is(div,section,article,aside)[class*="shadow"],
+.taste-restyle section.rounded-2xl,
+.taste-restyle section.rounded-3xl,
+.taste-restyle div.rounded-2xl.border.bg-white,
+.taste-restyle div.rounded-3xl.border.bg-white {
+  border: 1px solid var(--lq-line) !important;
+  box-shadow: 0 4px 16px #193b6210 !important;
+}
+.taste-restyle :is(.rounded-2xl,.rounded-3xl) { border-radius: 18px; }
+.taste-restyle :is(.rounded-xl,.linocut-card-sm) { border-radius: 12px; }
+.taste-restyle .linocut-btn {
+  border: 1px solid #ffffff25 !important;
+  box-shadow: none !important;
+}
+.taste-restyle .linocut-btn:hover { box-shadow: 0 4px 12px #123b6320 !important; }
+.taste-restyle [class*="border-[#231F20]"] { border-color: var(--lq-line); border-width: 1px; }
+.taste-restyle [class*="bg-[#231F20]"] { background-color: #133b60; }
+.taste-restyle [class*="text-[#231F20]"] { color: var(--lq-ink); }
+.taste-restyle .inabel-header-strip { height: 6px; border-bottom-width: 0; }
+
+/* The established brand stays visible, with a quieter navigation frame. */
+.taste-restyle header[data-dashboard-theme] {
+  background: #082b4b !important;
+  border-bottom: 1px solid #29516f !important;
+  box-shadow: none !important;
+}
+.taste-restyle header[data-dashboard-theme] > svg { height: 4px; }
+.taste-restyle header[data-dashboard-theme] nav {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  gap: 2px;
+}
+.taste-restyle header[data-dashboard-theme] nav button {
+  min-height: 40px;
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 1.2;
+  box-shadow: none !important;
+}
+.taste-restyle header[data-dashboard-theme] nav button[class*="bg-[#0F766E]"] {
+  background: #144b6b;
+  border: 1px solid #5aa8be;
+  color: #fff;
+}
+.taste-restyle header[data-dashboard-theme] button { box-shadow: none !important; }
+.taste-restyle header[data-dashboard-theme] [class*="bg-gradient"] { background-image: none; }
+.taste-restyle footer[data-dashboard-theme] { background: #082b4b !important; border-top-width: 1px !important; }
+.taste-restyle > main > .animate-lq-page-enter { padding-top: 16px; }
+.taste-restyle .pdf-source-module :is(p,li,td) { font-size: 16px; line-height: 1.8; }
+.taste-restyle .pdf-source-module h3 { margin-block: 24px 12px; }
+.taste-restyle table { border-collapse: collapse; }
+.taste-restyle th { font-weight: 600; }
+.taste-restyle :is(th,td) { padding: 12px 16px; }
+
+/* The sign-in portal keeps its fields and events, with calmer contrast. */
+.taste-auth {
+  background: #082b4b;
+  background-image: none;
+  color: #f1f7fb;
+}
+.taste-auth > .absolute { display: none; }
+.taste-auth > header {
+  background: #082b4b;
+  border-color: #31516e;
+  backdrop-filter: none;
+}
+.taste-auth > main { padding-block: 56px; }
+.taste-auth > main > .text-center { max-width: 800px; }
+.taste-auth h1 { font-size: clamp(32px,4.5vw,56px); line-height: 1.15; font-weight: 500; }
+.taste-auth h1 span { color: #7dd3c8; background: none; -webkit-text-fill-color: currentColor; }
+.taste-auth > main > .text-center > p { max-width: 620px; font-size: 17px; color: #d1e0eb; }
+.taste-auth > main > .text-center > div { border: 0; background: transparent; font-size: 13px; letter-spacing: 0; text-transform: none; color: #b8d6ea; }
+.taste-auth > main > .max-w-xl > div {
+  background: #103754;
+  border: 1px solid #3d607d !important;
+  box-shadow: 0 16px 48px #00182c30 !important;
+  backdrop-filter: none;
+}
+.taste-auth :is(.text-slate-400,.text-slate-500) { color: #b5cadb; }
+.taste-auth :is(input,select,textarea) { background: #082b46; border-color: #5c7d99; color: #fff; }
+.taste-auth :is(input,textarea)::placeholder { color: #a8c1d5; }
+.taste-auth form button[type=submit] { min-height: 48px; font-size: 15px; }
+.taste-auth > footer { background: #06233d; border-color: #31516e; font-size: 13px; }
+.taste-restyle .animate-lq-page-enter { animation: none; }
+
+@media (max-width: 1023px) {
+  .taste-restyle header[data-dashboard-theme] > .max-w-7xl { padding-inline: 20px; }
+  .taste-restyle header[data-dashboard-theme] > .lg\:hidden button { min-height: 48px; font-size: 15px; }
+}
+@media (max-width: 639px) {
+  .taste-auth > main { padding: 32px 20px; }
+  .taste-auth h1 { font-size: 34px; }
+  .taste-auth > main > .text-center > p { font-size: 16px; }
+  .taste-auth > main > .max-w-xl > div { padding: 24px 20px; }
+  .taste-restyle :is(button,input,select) { min-height: 44px; }
+  .taste-restyle header[data-dashboard-theme] .max-w-7xl { gap: 8px; padding-inline: 16px; }
+  .taste-restyle main { overflow-wrap: anywhere; }
+  .taste-restyle main .grid > * { min-width: 0; }
+  .taste-restyle .pdf-source-module :is(p,li,td) { line-height: 1.7; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .taste-restyle *, .taste-restyle *::before, .taste-restyle *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
