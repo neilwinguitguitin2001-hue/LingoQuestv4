@@ -109,6 +109,7 @@ export type PictureSceneId =
   | 'coastal_horizon';
 
 export interface PictureOption {
+  conceptVisual?: {tokens:string[];variant:number};
   sourceImageUrl?: string;
   sourceGraphic?: DigitalBlock;
   id: string;
@@ -126,9 +127,12 @@ export interface CrosswordClueInfo {
 }
 
 export interface QuizQuestion {
+  assessmentStyle?: 'restore-excerpt';
+  learningTargetId?: string;
+  assessmentKey?: string;
   sourceGraphic?: DigitalBlock;
   sourceImageUrl?: string;
-  source?: { fileId: string; page: number; quote: string; answerQuote: string; sourceId: string; kind: string; instructionPage?: number; answerKeyPage?: number; answerKeyQuote?: string };
+  source?: { fileId: string; page: number; quote: string; answerQuote: string; sourceId: string; kind: string; answerSpans?: string[]; instructionPage?: number; answerKeyPage?: number; answerKeyQuote?: string };
   id: string;
   type: QuizGameType;
   difficulty: DifficultyLevel;

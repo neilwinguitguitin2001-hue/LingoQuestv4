@@ -887,11 +887,11 @@ export const IslandMapView: React.FC<IslandMapViewProps> = ({
                 {(
                   [
                     { id: 'all', label: `All Questions (${inspectingModule.quizQuestions?.length || 0})` },
-                    { id: 'analogyMaster', label: 'Analogy Master (5)' },
-                    { id: 'missingPiece', label: 'Missing Piece (5)' },
-                    { id: 'crosswordGame', label: 'Crossword Game (5)' },
-                    { id: 'pictureHunt', label: 'Picture Hunt (5)' },
-                    { id: 'typeHunter', label: 'Word Hunter (5)' },
+                    { id: 'analogyMaster', label: 'Master Quiz (15)' },
+                    { id: 'missingPiece', label: 'Missing Piece (15)' },
+                    { id: 'crosswordGame', label: 'Crossword Game (15)' },
+                    { id: 'pictureHunt', label: 'Picture Hunt (15)' },
+                    { id: 'typeHunter', label: 'Word Hunter (15)' },
                   ] as const
                 ).map((f) => (
                   <button

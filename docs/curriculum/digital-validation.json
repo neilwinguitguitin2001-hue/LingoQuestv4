@@ -7,8 +7,12 @@
     "table": 94,
     "diagram": 87
   },
-  "sourceBackedQuestions": 407,
+  "sourceBackedQuestions": 7950,
   "fullPageLessonImages": 0,
   "sourceSections": 106,
-  "referenceClarifications": 3
+  "referenceClarifications": 3,
+  "targetExpressions": 530,
+  "seededSessionChecks": 38160,
+  "readyDifficultyCombinations": 1908,
+  "blockedDifficultyCombinations": 0
 }

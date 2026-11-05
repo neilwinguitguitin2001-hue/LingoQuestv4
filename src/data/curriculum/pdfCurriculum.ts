@@ -1,4 +1,6 @@
-import questionBank from './pdfQuestionBank.json';
+import targets from './quizLearningTargets.json';
+import {compileModuleQuestions, type ModuleTargets} from './tieredQuestions';
+const questionBank = Object.fromEntries((targets as ModuleTargets[]).map(m=>[m.moduleId,compileModuleQuestions(m)]));
 import { getDavaoOrientalIsland } from '../../types/lingoquest';
 import type { QuizQuestion, TopicType, Module } from '../../types/lingoquest';
 import g7q1 from './pdf/g7q1.json';

@@ -179,5 +179,6 @@
       "sha": "fa50b7f024eb8a23098e34d4ea5e1fb21477d212"
     }
   ],
-  "lessonStyleRevision": "Scoped PDF source tabs and animated source illustrations authorized by the owner; original site CSS rules precede the appended PDF-only rules."
+  "lessonStyleRevision": "Scoped PDF source tabs and animated source illustrations authorized by the owner; original site CSS rules precede the appended PDF-only rules.",
+  "quizRevision": "Owner requested tiered banks and 15-question mixes. Types add source/visual metadata; island-map quiz filter counts update to 15 per mode. Authentication, database, navigation behavior and deployment settings remain unchanged."
 }

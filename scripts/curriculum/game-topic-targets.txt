@@ -1,0 +1,106 @@
+g10-q1-m1|information gathering,listening,mind mapping,notes,outline,mapping,record,ideas
+g10-q1-m2|textual aids,graphs,charts,tables,pictograph,illustrations,labels
+g10-q1-m3|purpose,inform,persuade,entertain,explain,writer,subtext
+g10-q1-m4|synopsis,movies,texts,similarities,differences,characters,plot
+g10-q1-m5|print source,scholarly articles,timeliness,accuracy,relevance,authority,sources
+g10-q1-m6|analytical listening,problem,solving,evidence,information,judgment,analysis
+g10-q1-m7|myth,persuasive essay,plot,flashback,cliffhanger,judgment
+g10-q1-m8|accuracy,reading rate,prosody,fluency,speech rate,tone,cohesion
+g10-q2-m1|research,campaign,advocacy,observation,conclusion,significance,treatment
+g10-q2-m2|conjunctions,transitions,argumentative,ideas,connecting,coordinating,subordinating
+g10-q2-m3|opinion,assertion,fact,commonplace,prejudice,statement,stereotypes
+g10-q2-m4|modal verbs,modal adverbs,argumentative essay,possibility,certainty,necessity,probability
+g10-q2-m5|claim of fact,claim of policy,claim of value,claims,policy,value,fact
+g10-q2-m6|rhetorical questions,questions,audience,speech,answer,persuade,effect
+g10-q2-m7|multimodal,linguistic,visual,aural,gestural,spatial,semiotic
+g10-q2-m8|public speaking,prepared,impromptu,audience,practice,confidence,speech
+g10-q3-m1|argumentative essay,claim,evidence,counterclaim,thesis,argumentative,essay
+g10-q3-m2a|informative,thesis sentence,introduction,body,conclusion,techniques,educates
+g10-q3-m2b|persuasive writing,argumentative,persuasive,techniques,audience,evidence,argument
+g10-q3-m3|critique,setting,characterization,conflict,plot,theme,style
+g10-q3-m4|literary criticism,critic,tone,second person,formalist,structure,point of view
+g10-q4-m1|variables,research,terms,theory,hypothesis,respondents,scope
+g10-q4-m2|technical definition,operational,technical,machine,wheels,definition,purposes
+g10-q4-m3|expanded definition,definition,examples,visuals,technical terms,explanation,expanded
+g7-q1-m1|analogy,antonyms,synonyms,location,metaphor,relationship
+g7-q1-m2|viewing genre,opera,documentary,news,trailer,cartoon,genre
+g7-q1-m3|voice,passive verb,passive,active,transitive,subject,object
+g7-q1-m4|simple past,tense,past,simple,verb,regular,irregular
+g7-q1-m5|past perfect,conditional perfect,reported speech,tense,perfect,past,participle
+g7-q1-m6|reported,direct,speech,reporting,tense,pronoun,verb
+g7-q1-m7|phrase,prepositional,adjective,adverb,noun,verb
+g7-q1-m8|clauses,independent,dependent,subject,predicate,subordinate,clause
+g7-q1-m9|dependent clause,sentence,subject,predicate,independent,simple,compound
+g7-q1-m10|skimming,scanning,intensive,extensive,purpose,styles,reading
+g7-q2-m1|listening,leadership,attention,judgment,feedback,understanding,respond
+g7-q2-m2|search engine,search,engine,keywords,sites,information,results
+g7-q2-m3|information source,primary,secondary,database,documents,observation,speeches
+g7-q2-m4|summary,summarize,precis,paraphrase,main ideas,keywords,shortened
+g7-q2-m7|linear text,non-linear,linear,label,graphs,charts,tables,sequential
+g7-q3-m1|multimedia,oral,resources,communication,audio,video,animation
+g7-q3-m2|delivery,verbal communication,extemporaneous speech,impromptu,manuscript,memorized,factors
+g7-q3-m3|folk epic,epic,strength,values,experiences,wisdom,civilization
+g7-q3-m4|belief,conviction,drawing,sculpture,convictions,viewed,material
+g7-q3-m5|general statement,supporting details,evidence,source,plagiarism,cite
+g7-q3-m6|fact,opinion,prove,evidence,statement,verifiable,judgment
+g7-q3-m7|questions,what,when,where,why,who,how,formulating
+g7-q4-m1|academic writing,objectivity,complexity,accuracy,formality,precision,features
+g7-q4-m2|communication,verbal communication,conversation,interpersonal,dialogue,interview
+g7-q4-m3|filtering,worth,ideas,concentrate,meaning,learning,listening
+g7-q4-m4|truth,accuracy,misleading content,imposter content,fabricated content,information
+g7-q4-m5|internal conflict,external conflict,conflict,literary,characters,resolve,desires
+g7-q4-m6|characters,plot,conflict,resolution,setting,identity,literature
+g7-q4-m7|short story,characterization,plot,tension,theme,conflict,cooperatively
+g7-q4-m8|essay,thesis statement,informative,informational,outline,introduction,conclusion
+g8-q1-m1|context clues,definition,synonym,antonym,comparison,inference,explanation
+g8-q1-m2|bibliography,citing,sources,author,publication,conventions,listing
+g8-q1-m3|modal verbs,modal adverbs,modal nouns,permission,obligation,possibility,certainty
+g8-q1-m4|transition signals,transition,signals,comparison,contrast,sequence,cause
+g8-q1-m5|reactions,adjectives,adverbs,emotional,verbs,persuade,expressing
+g8-q2-m1|graph,line graph,bar graph,table,map,concept map,pie chart
+g8-q2-m2|opinion,signals,marking,disagree,agree,believe,think
+g8-q2-m3|multimodal texts,multimodal,topic,slideshows,visual,audio,gestural
+g8-q2-m4|opinion,contrasting,comparing,opinions,text,arguments,basis
+g8-q2-m5|proverb,messages,positivity,negativity,conveyed,interpret,context
+g8-q3-m1|bias,diction,biases,prejudice,unfair,favor,choice
+g8-q3-m2|propaganda,techniques,glittering,bandwagon,testimonial,transfer,plain folks
+g8-q3-m3|crime,poverty,moral issues,stealing,economic issues,social issues
+g8-q3-m4|literature,ramayana,rama,ravana,heritage,culture,traditions
+g8-q3-m5|synonyms,cohesive devices,cohesive,devices,connects,transitions,pronouns
+g8-q3-m6|parallel structure,parallel,structures,words,phrases,clauses,grammatical
+g8-q4-m1|grammatical signals,pattern,development,grammatical,signals,cause,contrast
+g8-q4-m2|outline,sentence outline,topic outline,supporting details,primary,secondary
+g8-q4-m3|synthesizing,synthesis,synthesize,retells,sources,information,ideas
+g8-q4-m4|paragraph,unity,coherence,development,topic sentence,supporting,concluding
+g8-q4-m5|text types,narrative,explanation,expository,procedural,recount,persuasive,purpose,structure
+g8-q4-m6|speech,good speech,delivering,composed,audience,opinion,structure
+g9-q1-w1|modal,prohibition,obligation,permission,must,can,may
+g9-q1-w2|zero conditional,simple present,condition,result,facts,habits
+g9-q1-w3|first conditional,simple present,simple future,condition,result,future,predicting
+g9-q1-w4|conditional sentence,second conditional,simple past,would,condition,result,occurrence
+g9-q1-w5|third conditional,past perfect,unreal,condition,result,third
+g9-q1-w6|condition,second conditional,arguments,zero,conditionals,first,third
+g9-q1-w7|communicative styles,communicative,styles,formal,consultative,casual,intimate,frozen
+g9-q1-w8|intimate style,communicative,styles,appropriate,situational,casual,formal
+g9-q2-m1|prose,poetry,adverb,connections,social issues,dispositions,real life
+g9-q2-m2|rhetorical device,literary device,tone,venn diagram,literature,world
+g9-q3-w1|bias,prejudice,biases,lean,disposition,judgment,favor
+g9-q3-w2|evaluation,topic,main idea,supporting details,information,explicit,implicit
+g9-q3-w3|agreeing,disagreeing,agreement,disagreement,viewed,idea,presented
+g9-q3-w4-5|relevance,reliability,materials,presented,extent,truthfulness,validity
+g9-q3-w6|argument,evidence,validity,judging,skewed,listening,statistics
+g9-q3-w7|main idea,claim,evidence,argument,convincing,point
+g9-q3-w8|evidence,claim,sufficient,relevant,point,accurate,statistics,reliable
+g9-q4-m1|modifier,modals,evaluation,express,adjective,adverb,opinion
+g9-q4-m2|social issues,problems,society,discrimination,overpopulation,bullying,homelessness
+g9-q4-m3|metaphor,allegory,story,characters,plot,setting,elements
+g9-q4-m4|infographic,visual representation,information,data,imagery,charts,minimal texts,overview
+g9-q4-m5|nonfiction,judgment,issues,analysis,critical,value,actions
+g9-q4-m6|listening,mental,focus,video,sound,audio
+g9-q4-m7|prejudice,bias,favoritism,scenarios,tendency,discrimination
+g9-q4-m8|generalization,generalizations,faulty,valid,invalid,samples,conclusion
+g9-q4-m9|fallacy,fact,opinion,bias,context clues,reasoning,feelings
+g9-q4-m11|figurative language,figurative,literal,characters,simile,Juliet,metaphor
+g9-q4-m12|verbal,non-verbal,communication,play,strategies,gestures,facial
+g9-q4-m13|voiced consonants,minimal pairs,sound,voiceless,consonants,vowels,pronunciation
+g9-q4-m14|pitch,falling intonation,rising intonation,stress,primary stress,juncture,intonation

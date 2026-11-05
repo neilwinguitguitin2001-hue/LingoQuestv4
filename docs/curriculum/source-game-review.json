@@ -1,2758 +1,5196 @@
 [
   {
     "moduleId": "g10-q1-m1",
-    "fileId": "1_PMZ3YJJiF0QFny24HFoIRZoMSRfekQj",
+    "sourceFileId": "1_PMZ3YJJiF0QFny24HFoIRZoMSRfekQj",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 3,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 3,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g10-q1-m2",
-    "fileId": "1ZHngPMQOU09_NC6UYqOF2xqUXh06p8pz",
+    "sourceFileId": "1ZHngPMQOU09_NC6UYqOF2xqUXh06p8pz",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g10-q1-m3",
-    "fileId": "1f0xPojc78IioO86WRl_R-uN1QcWAzM5I",
+    "sourceFileId": "1f0xPojc78IioO86WRl_R-uN1QcWAzM5I",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 3,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 3,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g10-q1-m4",
-    "fileId": "1wF0G81YTWsqw_R-2H2vW9UHCHkv35Qjt",
+    "sourceFileId": "1wF0G81YTWsqw_R-2H2vW9UHCHkv35Qjt",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g10-q1-m5",
-    "fileId": "1NwK6_sDCc542ZmsLobfhMa33EylYGAIb",
+    "sourceFileId": "1NwK6_sDCc542ZmsLobfhMa33EylYGAIb",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 2,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g10-q1-m6",
-    "fileId": "1rvWuAPBFH0x7Lm3-xYKaHDv9VuyQcjUG",
+    "sourceFileId": "1rvWuAPBFH0x7Lm3-xYKaHDv9VuyQcjUG",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 2,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g10-q1-m7",
-    "fileId": "1UlPDPaBBf-IffkqJnpoN8E-UF6G07mcu",
+    "sourceFileId": "1UlPDPaBBf-IffkqJnpoN8E-UF6G07mcu",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 2,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g10-q1-m8",
-    "fileId": "18UpnBAmymds0HOOk6NAZ0m0dqaeZv4IA",
+    "sourceFileId": "18UpnBAmymds0HOOk6NAZ0m0dqaeZv4IA",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 6,
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "pictureHunt": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
         "status": "ready"
       },
       "crosswordGame": {
-        "verified": 4,
-        "status": "needs-source-review"
-      },
-      "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 6,
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
         "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g10-q2-m1",
-    "fileId": "1Q1shTKIZ4xwqZftk82i61rNel8aENdU0",
+    "sourceFileId": "1Q1shTKIZ4xwqZftk82i61rNel8aENdU0",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "missingPiece": {
-        "verified": 5,
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
         "status": "ready"
       },
-      "crosswordGame": {
-        "verified": 5,
+      "missingPiece": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
         "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 5,
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
         "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g10-q2-m2",
-    "fileId": "1Fa3s_IRPf8rIsoIA1tj4VgX2XB1jE-U9",
+    "sourceFileId": "1Fa3s_IRPf8rIsoIA1tj4VgX2XB1jE-U9",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g10-q2-m3",
-    "fileId": "13TLCt46RngpHY3HvZYwWn_PwYp6uS98-",
+    "sourceFileId": "13TLCt46RngpHY3HvZYwWn_PwYp6uS98-",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g10-q2-m4",
-    "fileId": "1X8QA_AwPWA8mUzjrUuU0k6cnSlPj5duw",
+    "sourceFileId": "1X8QA_AwPWA8mUzjrUuU0k6cnSlPj5duw",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 3,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 3,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g10-q2-m5",
-    "fileId": "1RiUzPjHIyUjn-H1UFej_TbfzAWUI8wAD",
+    "sourceFileId": "1RiUzPjHIyUjn-H1UFej_TbfzAWUI8wAD",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g10-q2-m6",
-    "fileId": "1MSpaDma0gUZEsvR11iYt3EQWKHkxnGSq",
+    "sourceFileId": "1MSpaDma0gUZEsvR11iYt3EQWKHkxnGSq",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g10-q2-m7",
-    "fileId": "18fBTmhbCONeF7e-DV8QziWE_8s5sO8Me",
+    "sourceFileId": "18fBTmhbCONeF7e-DV8QziWE_8s5sO8Me",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g10-q2-m8",
-    "fileId": "1SQj83gbfpAmdFYHmRUqmqzbdkCbrmLVK",
+    "sourceFileId": "1SQj83gbfpAmdFYHmRUqmqzbdkCbrmLVK",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g10-q3-m1",
-    "fileId": "1ZpevlxZOYmtED2IHFcdluF7EI1diYZIU",
+    "sourceFileId": "1ZpevlxZOYmtED2IHFcdluF7EI1diYZIU",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 2,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g10-q3-m2a",
-    "fileId": "1JVjW6Q9iuj3XY8pXac82dLE12cv4Pt_m",
+    "sourceFileId": "1JVjW6Q9iuj3XY8pXac82dLE12cv4Pt_m",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g10-q3-m2b",
-    "fileId": "1AQBtvMVTTu3kEOcQS9TlXjWmneZTF01a",
+    "sourceFileId": "1AQBtvMVTTu3kEOcQS9TlXjWmneZTF01a",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g10-q3-m3",
-    "fileId": "1InbSlkQUhHDfTwn7eRDxP2DpYJZOOf4w",
+    "sourceFileId": "1InbSlkQUhHDfTwn7eRDxP2DpYJZOOf4w",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g10-q3-m4",
-    "fileId": "19Zd6oLW62Zr4aE4lvJGwyg90l2XbbIY9",
+    "sourceFileId": "19Zd6oLW62Zr4aE4lvJGwyg90l2XbbIY9",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 4,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 2,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 4,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g10-q4-m1",
-    "fileId": "183c4T1iPG97HRpZhwuUjEym9AjL-nhA1",
+    "sourceFileId": "183c4T1iPG97HRpZhwuUjEym9AjL-nhA1",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 1,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g10-q4-m2",
-    "fileId": "1jrr9i9bVgVkIdJeXIwOh4u3ZNO7zgw5B",
+    "sourceFileId": "1jrr9i9bVgVkIdJeXIwOh4u3ZNO7zgw5B",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g10-q4-m3",
-    "fileId": "1DbBZP0Fwfc1YMDEyWdh8EJLlDgHV4oay",
+    "sourceFileId": "1DbBZP0Fwfc1YMDEyWdh8EJLlDgHV4oay",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g7-q1-m1",
-    "fileId": "1apMCFoA_8wiK--6IjOwDJ_3q8WIv8UX8",
+    "sourceFileId": "1apMCFoA_8wiK--6IjOwDJ_3q8WIv8UX8",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 15,
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
         "status": "ready"
       },
       "missingPiece": {
-        "verified": 6,
-        "status": "ready"
-      },
-      "crosswordGame": {
-        "verified": 6,
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
         "status": "ready"
       },
       "pictureHunt": {
-        "verified": 5,
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
         "status": "ready"
-      },
-      "typeHunter": {
-        "verified": 6,
-        "status": "ready"
-      }
-    }
-  },
-  {
-    "moduleId": "g7-q1-m10",
-    "fileId": "1-BTf7lLJxjP7GOtk_J0NW_wA-AqiWSNU",
-    "modes": {
-      "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
       },
       "crosswordGame": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g7-q1-m2",
-    "fileId": "1UEs1q6ozrI70Mz9-na4jffSq-B8gdTmu",
+    "sourceFileId": "1UEs1q6ozrI70Mz9-na4jffSq-B8gdTmu",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g7-q1-m3",
-    "fileId": "1TJzXG88JXkB3ENdig_20ZffPBXMzcqDY",
+    "sourceFileId": "1TJzXG88JXkB3ENdig_20ZffPBXMzcqDY",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 2,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g7-q1-m4",
-    "fileId": "1EQ41sCKSPqb8RVeUxAt1sCCb5MD_idrg",
+    "sourceFileId": "1EQ41sCKSPqb8RVeUxAt1sCCb5MD_idrg",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g7-q1-m5",
-    "fileId": "1t9TSBjO0G_0irvBwa2XmlKC0dgVDvcnO",
+    "sourceFileId": "1t9TSBjO0G_0irvBwa2XmlKC0dgVDvcnO",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 2,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g7-q1-m6",
-    "fileId": "1gAUO7gcFkglj_RrLAqH4tCBs6N3cgyRR",
+    "sourceFileId": "1gAUO7gcFkglj_RrLAqH4tCBs6N3cgyRR",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g7-q1-m7",
-    "fileId": "1sWryZ6RZpLH27YGmIIgu4g9vdLHKDM-S",
+    "sourceFileId": "1sWryZ6RZpLH27YGmIIgu4g9vdLHKDM-S",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g7-q1-m8",
-    "fileId": "1zSm8CYZjywHb7tykQNb-84V2hZsHtfF_",
+    "sourceFileId": "1zSm8CYZjywHb7tykQNb-84V2hZsHtfF_",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g7-q1-m9",
-    "fileId": "1ZYNSlfcAd5Z7-ULbg8e1hVtX7tkTQlhG",
+    "sourceFileId": "1ZYNSlfcAd5Z7-ULbg8e1hVtX7tkTQlhG",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
+    }
+  },
+  {
+    "moduleId": "g7-q1-m10",
+    "sourceFileId": "1-BTf7lLJxjP7GOtk_J0NW_wA-AqiWSNU",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
+    "modes": {
+      "analogyMaster": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "missingPiece": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "pictureHunt": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "typeHunter": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g7-q2-m1",
-    "fileId": "1VxdAmC0tNrHn-UqycoT0XPK8IqZ1Gdu0",
+    "sourceFileId": "1VxdAmC0tNrHn-UqycoT0XPK8IqZ1Gdu0",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g7-q2-m2",
-    "fileId": "1SWUwUhtn1gVNoxSA9RfNrPapdxifkKPn",
+    "sourceFileId": "1SWUwUhtn1gVNoxSA9RfNrPapdxifkKPn",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g7-q2-m3",
-    "fileId": "1JdjukGGll0z4pk8b3YErLRFr9yC5OB9Q",
+    "sourceFileId": "1JdjukGGll0z4pk8b3YErLRFr9yC5OB9Q",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g7-q2-m4",
-    "fileId": "1RUjib0EJWOA5fGzU2SG_eq14EO417G_N",
+    "sourceFileId": "1RUjib0EJWOA5fGzU2SG_eq14EO417G_N",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 3,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 3,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g7-q2-m7",
-    "fileId": "16sSkMj9xRyjcGBPwG99biDzCWlwBXnZ0",
+    "sourceFileId": "16sSkMj9xRyjcGBPwG99biDzCWlwBXnZ0",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 2,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g7-q3-m1",
-    "fileId": "1XGFVqCY1K4-gtPN3YwEqxKb9Z0b73sfQ",
+    "sourceFileId": "1XGFVqCY1K4-gtPN3YwEqxKb9Z0b73sfQ",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g7-q3-m2",
-    "fileId": "1tbAVr7c312GCn6KDd7MDQWaMRpXAuavk",
+    "sourceFileId": "1tbAVr7c312GCn6KDd7MDQWaMRpXAuavk",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 3,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 3,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g7-q3-m3",
-    "fileId": "167TTGYfS88AeEOraMBJera8zJay12oL5",
+    "sourceFileId": "167TTGYfS88AeEOraMBJera8zJay12oL5",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g7-q3-m4",
-    "fileId": "1ZvBNqtLkb62_KqW2_VOHeRM8PXcWv3Uo",
+    "sourceFileId": "1ZvBNqtLkb62_KqW2_VOHeRM8PXcWv3Uo",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 4,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 4,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 4,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g7-q3-m5",
-    "fileId": "1O7Uz5PO8R7RBLJpxEIXqBY-YGV9sO-m1",
+    "sourceFileId": "1O7Uz5PO8R7RBLJpxEIXqBY-YGV9sO-m1",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 2,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g7-q3-m6",
-    "fileId": "1288t5OrgK5v2GD3tPes_lZYA9Stb9eTl",
+    "sourceFileId": "1288t5OrgK5v2GD3tPes_lZYA9Stb9eTl",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 2,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 2,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g7-q3-m7",
-    "fileId": "1KMLSCYJfYvlZ9AK9xaZzqAg_4gKVYyTV",
+    "sourceFileId": "1KMLSCYJfYvlZ9AK9xaZzqAg_4gKVYyTV",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g7-q4-m1",
-    "fileId": "1uo8karug9R3IQ5mwreSUD9sck_qYJUwG",
+    "sourceFileId": "1uo8karug9R3IQ5mwreSUD9sck_qYJUwG",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 2,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g7-q4-m2",
-    "fileId": "1m7Up--fA7OBTyn7BN1bEP3mIYadSNEXg",
+    "sourceFileId": "1m7Up--fA7OBTyn7BN1bEP3mIYadSNEXg",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 6,
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "pictureHunt": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
         "status": "ready"
       },
       "crosswordGame": {
-        "verified": 2,
-        "status": "needs-source-review"
-      },
-      "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 6,
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
         "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g7-q4-m3",
-    "fileId": "1g8hcn_ImIe-WKcSTeY56w44PGBubpmJG",
+    "sourceFileId": "1g8hcn_ImIe-WKcSTeY56w44PGBubpmJG",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g7-q4-m4",
-    "fileId": "1lPBBs8XVkhfK2qkyjyiaMlmoBOewUUYq",
+    "sourceFileId": "1lPBBs8XVkhfK2qkyjyiaMlmoBOewUUYq",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 5,
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "pictureHunt": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
         "status": "ready"
       },
       "crosswordGame": {
-        "verified": 2,
-        "status": "needs-source-review"
-      },
-      "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 5,
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
         "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g7-q4-m5",
-    "fileId": "1EMDuPKmHSu6jvbn4_QuFePYhRcRRwmOL",
+    "sourceFileId": "1EMDuPKmHSu6jvbn4_QuFePYhRcRRwmOL",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 1,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g7-q4-m6",
-    "fileId": "1ghEwNQhrfeTOG31vbl5Xg_4ZmTY21H7Y",
+    "sourceFileId": "1ghEwNQhrfeTOG31vbl5Xg_4ZmTY21H7Y",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "missingPiece": {
-        "verified": 6,
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
         "status": "ready"
       },
-      "crosswordGame": {
-        "verified": 6,
+      "missingPiece": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
         "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 6,
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
         "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g7-q4-m7",
-    "fileId": "1sL4LQ7ZGbflxAgcsMqzQVyKKwBkvnYQb",
+    "sourceFileId": "1sL4LQ7ZGbflxAgcsMqzQVyKKwBkvnYQb",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 2,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 3,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g7-q4-m8",
-    "fileId": "1TksdIdgLSlBkJNPMWimwIpNIYP0P4QqO",
+    "sourceFileId": "1TksdIdgLSlBkJNPMWimwIpNIYP0P4QqO",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 2,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g8-q1-m1",
-    "fileId": "1KpWtXEc3QWjR4v74FdzWMvkTN86gclDC",
+    "sourceFileId": "1KpWtXEc3QWjR4v74FdzWMvkTN86gclDC",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 1,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g8-q1-m2",
-    "fileId": "1klN3fLuIAtlkp29tlUQlBNJhf_AA_Yvx",
+    "sourceFileId": "1klN3fLuIAtlkp29tlUQlBNJhf_AA_Yvx",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g8-q1-m3",
-    "fileId": "1ShkzGV028s4rpy9BwCEIn_vtwAZ9mAEz",
+    "sourceFileId": "1ShkzGV028s4rpy9BwCEIn_vtwAZ9mAEz",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 2,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g8-q1-m4",
-    "fileId": "1R5AKCVhlXkNR4fgukMe9OlU-tg6pmKKj",
+    "sourceFileId": "1R5AKCVhlXkNR4fgukMe9OlU-tg6pmKKj",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g8-q1-m5",
-    "fileId": "1-OdUX2OwFdLOZnWn7IN7TWZqKnHxBNNi",
+    "sourceFileId": "1-OdUX2OwFdLOZnWn7IN7TWZqKnHxBNNi",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g8-q2-m1",
-    "fileId": "1oWjNKD0cguMcot0EFP49EO3EmG93p0a_",
+    "sourceFileId": "1oWjNKD0cguMcot0EFP49EO3EmG93p0a_",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "missingPiece": {
-        "verified": 10,
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
         "status": "ready"
       },
-      "crosswordGame": {
-        "verified": 6,
+      "missingPiece": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
         "status": "ready"
       },
       "pictureHunt": {
-        "verified": 5,
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
         "status": "ready"
       },
       "typeHunter": {
-        "verified": 10,
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
         "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g8-q2-m2",
-    "fileId": "1zVgUbckMgAclELyG9qWmGDZ9sP-oKAaC",
+    "sourceFileId": "1zVgUbckMgAclELyG9qWmGDZ9sP-oKAaC",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g8-q2-m3",
-    "fileId": "1I4ESAlBAY81uH6HCLh6kj2uWJcHMVKig",
+    "sourceFileId": "1I4ESAlBAY81uH6HCLh6kj2uWJcHMVKig",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g8-q2-m4",
-    "fileId": "1wCe9PW_bnf77A_Nzyc-5r_GAl5xtpKGC",
+    "sourceFileId": "1wCe9PW_bnf77A_Nzyc-5r_GAl5xtpKGC",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g8-q2-m5",
-    "fileId": "1YLsi3vwmUaqkpjuBUnBaao-gKzaDr_xs",
+    "sourceFileId": "1YLsi3vwmUaqkpjuBUnBaao-gKzaDr_xs",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g8-q3-m1",
-    "fileId": "1EI3Ec8xFWb_YgecUk35TMZqXSa1CA_9m",
+    "sourceFileId": "1EI3Ec8xFWb_YgecUk35TMZqXSa1CA_9m",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 2,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 2,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g8-q3-m2",
-    "fileId": "1NsuF8UwNC_AsKYqFuq1pEGgGUPoHQTb6",
+    "sourceFileId": "1NsuF8UwNC_AsKYqFuq1pEGgGUPoHQTb6",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g8-q3-m3",
-    "fileId": "1OLsb1l_RIYEM-c2IJFdshKFfl1NF3x--",
+    "sourceFileId": "1OLsb1l_RIYEM-c2IJFdshKFfl1NF3x--",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 5,
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "pictureHunt": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
         "status": "ready"
       },
       "crosswordGame": {
-        "verified": 3,
-        "status": "needs-source-review"
-      },
-      "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 5,
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
         "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g8-q3-m4",
-    "fileId": "1H9rlu6XLKaNU-g2dVpjwDBj5UYwRBbZ_",
+    "sourceFileId": "1H9rlu6XLKaNU-g2dVpjwDBj5UYwRBbZ_",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g8-q3-m5",
-    "fileId": "1exjrqFhpwJGvh0q9o8GKbJlwu-DvcNN1",
+    "sourceFileId": "1exjrqFhpwJGvh0q9o8GKbJlwu-DvcNN1",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 1,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g8-q3-m6",
-    "fileId": "1bs_SOxJUfyQ0mu0aR8XncjnvGTH8MBU9",
+    "sourceFileId": "1bs_SOxJUfyQ0mu0aR8XncjnvGTH8MBU9",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g8-q4-m1",
-    "fileId": "1eAL4NkVXLLqTzBlTmpiUrnb9-ahMRnHP",
+    "sourceFileId": "1eAL4NkVXLLqTzBlTmpiUrnb9-ahMRnHP",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 2,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 2,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g8-q4-m2",
-    "fileId": "1UwbpVm8X7puuqzUOewpR7Aet8_xhog0S",
+    "sourceFileId": "1UwbpVm8X7puuqzUOewpR7Aet8_xhog0S",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 4,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 4,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g8-q4-m3",
-    "fileId": "13eeDpbAAC6M_17Ju8dnHyunYs86ZcfUs",
+    "sourceFileId": "13eeDpbAAC6M_17Ju8dnHyunYs86ZcfUs",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g8-q4-m4",
-    "fileId": "1LgwsCPEIfrKJinfj6toRLACoF6mO8Wo-",
+    "sourceFileId": "1LgwsCPEIfrKJinfj6toRLACoF6mO8Wo-",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 4,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 4,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 4,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g8-q4-m5",
-    "fileId": "1oXJl0BpCaV0CV6o8di7e1vrE0wCJoJj1",
+    "sourceFileId": "1oXJl0BpCaV0CV6o8di7e1vrE0wCJoJj1",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g8-q4-m6",
-    "fileId": "1TSJZC97CJI9uTgJtWpbbMbkFVNqYqjYX",
+    "sourceFileId": "1TSJZC97CJI9uTgJtWpbbMbkFVNqYqjYX",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 2,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g9-q1-w1",
-    "fileId": "1XW053aQeCA4ikZO0RhgZrFom57UqD7m0",
+    "sourceFileId": "1XW053aQeCA4ikZO0RhgZrFom57UqD7m0",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g9-q1-w2",
-    "fileId": "1ICiJOBXf4bOrbtI69Akv1e0yvX_KdCEG",
+    "sourceFileId": "1ICiJOBXf4bOrbtI69Akv1e0yvX_KdCEG",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g9-q1-w3",
-    "fileId": "1edVGTweFHZYzGwOe9EUROEvurSnq637I",
+    "sourceFileId": "1edVGTweFHZYzGwOe9EUROEvurSnq637I",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g9-q1-w4",
-    "fileId": "1gVM2xPQDwPJgo6Iynb-A9sG7ZXdtBOFT",
+    "sourceFileId": "1gVM2xPQDwPJgo6Iynb-A9sG7ZXdtBOFT",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g9-q1-w5",
-    "fileId": "1w5OjEPvoar4szPJF3PHrOGqC27QaHXK0",
+    "sourceFileId": "1w5OjEPvoar4szPJF3PHrOGqC27QaHXK0",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g9-q1-w6",
-    "fileId": "10n6YQL62o3bc3FyZuz6rKvXZLXB8CYtm",
+    "sourceFileId": "10n6YQL62o3bc3FyZuz6rKvXZLXB8CYtm",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 3,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 2,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 3,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g9-q1-w7",
-    "fileId": "1I8xD1b6ieDRg3_Fk7QuDFNy5ZQZoSciH",
+    "sourceFileId": "1I8xD1b6ieDRg3_Fk7QuDFNy5ZQZoSciH",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g9-q1-w8",
-    "fileId": "1kfz311Nhr4MKQsY0xqWAIq2XIqn0kgx_",
+    "sourceFileId": "1kfz311Nhr4MKQsY0xqWAIq2XIqn0kgx_",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g9-q2-m1",
-    "fileId": "1fYWEF1s4FpoBt26kxcuCzStIloDlShoz",
+    "sourceFileId": "1fYWEF1s4FpoBt26kxcuCzStIloDlShoz",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 3,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 3,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 3,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g9-q2-m2",
-    "fileId": "1sE1_PlqARG59kCtim19js5G9FFvB9x1O",
+    "sourceFileId": "1sE1_PlqARG59kCtim19js5G9FFvB9x1O",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 4,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 4,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g9-q3-w1",
-    "fileId": "160mB3bVwZyDz_jV91TupLEv6bwOKCBo9",
+    "sourceFileId": "160mB3bVwZyDz_jV91TupLEv6bwOKCBo9",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 2,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 2,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g9-q3-w2",
-    "fileId": "16bBuggxIQ6HE4acIb-afji3KMUh_pnN0",
+    "sourceFileId": "16bBuggxIQ6HE4acIb-afji3KMUh_pnN0",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g9-q3-w3",
-    "fileId": "1n8PGQ9cfLkfJ48OPpYx3S7FfsuX_x8zJ",
+    "sourceFileId": "1n8PGQ9cfLkfJ48OPpYx3S7FfsuX_x8zJ",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g9-q3-w4-5",
-    "fileId": "1ACqJFs-wkRMprc5I7RHhQbdMoyd1dGmM",
+    "sourceFileId": "1ACqJFs-wkRMprc5I7RHhQbdMoyd1dGmM",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g9-q3-w6",
-    "fileId": "12Mx6Rn_JDaAp5XpiymMq-yf85MBKSdga",
+    "sourceFileId": "12Mx6Rn_JDaAp5XpiymMq-yf85MBKSdga",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g9-q3-w7",
-    "fileId": "120lXzwYBUJfF3EBghqJ9eIi2nV2Mo3nJ",
+    "sourceFileId": "120lXzwYBUJfF3EBghqJ9eIi2nV2Mo3nJ",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g9-q3-w8",
-    "fileId": "11KxFfo_5g4zdrASPlXGp7gJv3deyU1Xy",
+    "sourceFileId": "11KxFfo_5g4zdrASPlXGp7gJv3deyU1Xy",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g9-q4-m1",
-    "fileId": "1o60IXjYfDk03sBQQqiq1UbUEKU18GqgT",
+    "sourceFileId": "1o60IXjYfDk03sBQQqiq1UbUEKU18GqgT",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "typeHunter": {
-        "verified": 2,
-        "status": "needs-source-review"
-      }
-    }
-  },
-  {
-    "moduleId": "g9-q4-m11",
-    "fileId": "1VFAQIeGa9-TEqGeaJDLwDWAX9NMmDNSw",
-    "modes": {
-      "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "typeHunter": {
-        "verified": 0,
-        "status": "needs-source-review"
-      }
-    }
-  },
-  {
-    "moduleId": "g9-q4-m12",
-    "fileId": "1tsV852piu9_iirKpFrlcEPo6zsHigu4v",
-    "modes": {
-      "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "typeHunter": {
-        "verified": 0,
-        "status": "needs-source-review"
-      }
-    }
-  },
-  {
-    "moduleId": "g9-q4-m13",
-    "fileId": "1QmcUJL9dCX3YR0b3kJc0qEODxMCJSy39",
-    "modes": {
-      "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "typeHunter": {
-        "verified": 2,
-        "status": "needs-source-review"
-      }
-    }
-  },
-  {
-    "moduleId": "g9-q4-m14",
-    "fileId": "1lx6duXiQmM-_G5PeOJWvWIam3maJOS3O",
-    "modes": {
-      "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "missingPiece": {
-        "verified": 8,
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
         "status": "ready"
       },
       "crosswordGame": {
-        "verified": 3,
-        "status": "needs-source-review"
-      },
-      "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 8,
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
         "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g9-q4-m2",
-    "fileId": "1bnjIhxKaEPEIw0xwaipj8vmognRald7B",
+    "sourceFileId": "1bnjIhxKaEPEIw0xwaipj8vmognRald7B",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g9-q4-m3",
-    "fileId": "1re2qBWhdZIo5d0wnCCSiqu7bO_wps5KJ",
+    "sourceFileId": "1re2qBWhdZIo5d0wnCCSiqu7bO_wps5KJ",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 2,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 2,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g9-q4-m4",
-    "fileId": "1-Saa9Cm3HLSdvAxxI027la84hLrLUtdW",
+    "sourceFileId": "1-Saa9Cm3HLSdvAxxI027la84hLrLUtdW",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g9-q4-m5",
-    "fileId": "1oYhuKRyE4ZiUi6Pg9sL70z0k8ZTuM5hB",
+    "sourceFileId": "1oYhuKRyE4ZiUi6Pg9sL70z0k8ZTuM5hB",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g9-q4-m6",
-    "fileId": "1Lph4GDZLlXKJ_THF5UzY0woUNU-ANIKv",
+    "sourceFileId": "1Lph4GDZLlXKJ_THF5UzY0woUNU-ANIKv",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g9-q4-m7",
-    "fileId": "1BmfaJ-44rrB3KU9AYeAIGpFm3JuCr0-b",
+    "sourceFileId": "1BmfaJ-44rrB3KU9AYeAIGpFm3JuCr0-b",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g9-q4-m8",
-    "fileId": "1pwYwKgVnNHnJzPJnwLuhrDh92hsrlBnX",
+    "sourceFileId": "1pwYwKgVnNHnJzPJnwLuhrDh92hsrlBnX",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 0,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 1,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 2,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   },
   {
     "moduleId": "g9-q4-m9",
-    "fileId": "1mUzEO3guNWjfhpEoThAafOei3jQCMRnD",
+    "sourceFileId": "1mUzEO3guNWjfhpEoThAafOei3jQCMRnD",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
     "modes": {
       "analogyMaster": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "missingPiece": {
-        "verified": 4,
-        "status": "needs-source-review"
-      },
-      "crosswordGame": {
-        "verified": 3,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "pictureHunt": {
-        "verified": 0,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       },
       "typeHunter": {
-        "verified": 4,
-        "status": "needs-source-review"
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
       }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
+    }
+  },
+  {
+    "moduleId": "g9-q4-m11",
+    "sourceFileId": "1VFAQIeGa9-TEqGeaJDLwDWAX9NMmDNSw",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
+    "modes": {
+      "analogyMaster": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "missingPiece": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "pictureHunt": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "typeHunter": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
+    }
+  },
+  {
+    "moduleId": "g9-q4-m12",
+    "sourceFileId": "1tsV852piu9_iirKpFrlcEPo6zsHigu4v",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
+    "modes": {
+      "analogyMaster": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "missingPiece": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "pictureHunt": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "typeHunter": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
+    }
+  },
+  {
+    "moduleId": "g9-q4-m13",
+    "sourceFileId": "1QmcUJL9dCX3YR0b3kJc0qEODxMCJSy39",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
+    "modes": {
+      "analogyMaster": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "missingPiece": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "pictureHunt": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "typeHunter": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
+    }
+  },
+  {
+    "moduleId": "g9-q4-m14",
+    "sourceFileId": "1lx6duXiQmM-_G5PeOJWvWIam3maJOS3O",
+    "targetExpressions": 5,
+    "totalQuestions": 75,
+    "modes": {
+      "analogyMaster": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "missingPiece": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "pictureHunt": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "crosswordGame": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      },
+      "typeHunter": {
+        "easy": 5,
+        "moderate": 5,
+        "hard": 5,
+        "total": 15,
+        "status": "ready"
+      }
+    },
+    "fullQuestMix": {
+      "count": 15,
+      "perMode": 3,
+      "difficulty": "selected",
+      "uniqueQuestionIds": true
     }
   }
 ]

@@ -8,7 +8,7 @@ import {LessonAndQuizView} from '../src/components/LessonAndQuizView';
 import {SourceLessonSections} from '../src/components/SourceLessonSections';
 import {SourceExcerpt} from '../src/components/SourceContent';
 import {loadDigitalContent} from '../src/data/curriculum/digitalContent';
-import {createSourceGameSession,SOURCE_GAME_MODES} from '../src/utils/sourceGameSession';
+import {createSourceGameSession,SOURCE_GAME_MODES,getSessionQuestionCount} from '../src/utils/sourceGameSession';
 import {getModuleVisualConfig} from '../src/data/moduleVisualConfigs';
 assert.equal(ALL_MODULES,PDF_MODULES);
 assert.equal(PDF_MODULES.length,106);
@@ -23,6 +23,16 @@ for(let grade=7;grade<=10;grade++)for(let quarter=1;quarter<=4;quarter++){
   for (const entry of pdf.vocabularyBank) { assert.ok(!/_{2,}|\.{5,}/.test(entry.text), `${pdf.id}: unanswered vocabulary prompt`); assert.ok((pdf.source.verifiedRecallPages||pdf.source.discussionPages).includes(entry.page), `${pdf.id}: unreviewed definition page`); }
   const content=await loadDigitalContent(pdf);
   assert.equal(content.fileId,pdf.source.fileId);
+  assert.equal(content.games.length,75);
+  for(const type of SOURCE_GAME_MODES)for(const level of ['easy','moderate','hard'])assert.equal(content.games.filter(q=>q.type===type&&q.difficulty===level).length,5);
+  for(const q of content.games){
+   assert.ok(q.source?.answerSpans?.every(span=>q.source!.quote.toLowerCase().includes(span.toLowerCase())));
+   if(q.type==='pictureHunt')assert.equal(q.pictureOptions?.find(p=>p.id===q.answer)?.label,q.source!.answerSpans!.join(' / '));
+   else if(q.assessmentStyle!=='restore-excerpt')assert.equal(q.answer,q.source!.answerSpans!.join(' / '));
+   if(q.options){assert.equal(new Set(q.options.map(s=>s.toLowerCase())).size,q.options.length);assert.ok(q.options.includes(q.answer));}
+   assert.ok(q.assessmentStyle==='restore-excerpt'?q.answer.includes('________'):q.contextSentence?.includes('________'));
+  }
+  assert.equal(createSourceGameSession(module,content.games.filter(q=>q.difficulty==='easy'),'missingPiece','hard'),null);
   assert.ok(content.games.every(q=>q.source?.kind !== 'definition-recall' || (!/_{2,}|\.{5,}/.test(q.source.quote) && (pdf.source.verifiedRecallPages||pdf.source.discussionPages).includes(q.source.page))), `${pdf.id}: invalid definition-derived game`);
   assert.equal(content.sourceSha256,pdf.source.sha256);
   const html=renderToStaticMarkup(<LessonAndQuizView module={module} nextModule={null} isPersonalization={false} isPreviewMode previewRole="admin" onBackToMap={()=>{}} onCompleteLesson={()=>{}} onSubmitQuizResult={()=>({totalPointsAwarded:0,newlyUnlockedBadges:[],bridgeNewlyRestored:false})} onAdvanceToNextModule={()=>{}} onOpenWritingLabWithPrompt={()=>{}}/>);
@@ -51,7 +61,7 @@ for(let grade=7;grade<=10;grade++)for(let quarter=1;quarter<=4;quarter++){
   }
   for(const mode of [...SOURCE_GAME_MODES,'all'] as const)for(const difficulty of ['easy','moderate','hard'] as const){
    const game=createSourceGameSession(module,content.games,mode,difficulty,()=>.4);
-   if(game){ready++;assert.equal(game.length,5);assert.equal(new Set(game.map(q=>q.source!.sourceId)).size,5);assert.ok(game.every(q=>q.source!.fileId===pdf.source.fileId&&q.difficulty===difficulty));}
+   if(game){ready++;assert.equal(game.length,getSessionQuestionCount(mode));assert.equal(new Set(game.map(q=>q.id)).size,game.length);if(mode==='all')for(const type of SOURCE_GAME_MODES)assert.equal(game.filter(q=>q.type===type).length,3);assert.ok(game.every(q=>q.source!.fileId===pdf.source.fileId&&q.difficulty===difficulty));}
    else blocked++;
   }
   assert.equal(createSourceGameSession(module,[],'all','easy'),null);
@@ -63,6 +73,6 @@ for(let grade=7;grade<=10;grade++)for(let quarter=1;quarter<=4;quarter++){
  console.log(`PASS batch Grade ${grade} Quarter ${quarter}: ${batch.length} modules`);
 }
 globalThis.fetch=originalFetch;
-assert.equal(ready+blocked,1908);
+assert.equal(ready,1908);assert.equal(blocked,0);
 console.log(JSON.stringify({modules:106,sourceSelectionsRendered:rendered,readyDifficultyCombinations:ready,blockedDifficultyCombinations:blocked}));
 fs.writeFileSync('docs/curriculum/binding-validation.json',JSON.stringify({modules:106,sourceSelectionsRendered:rendered,readyDifficultyCombinations:ready,blockedDifficultyCombinations:blocked},null,2)+'\n');
