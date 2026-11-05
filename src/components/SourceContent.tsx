@@ -29,7 +29,7 @@ export function SourceBlock({block}:{block:DigitalBlock}) {
 }
 export function SourceExcerpt({lesson,excerpt,content,section,index}:{lesson:PdfLesson;excerpt:PdfExcerpt;content?:DigitalContent;section:string;index:number}) {
  const blocks=content?.excerptBlocks[`${section}:${index}`]?.map(id=>content.blocks[id]).filter(Boolean);
- return <div className="space-y-3"><a href={`${lesson.source.url}#page=${excerpt.page}`} target="_blank" rel="noreferrer" className="text-xs font-semibold text-sky-700 underline">{lesson.sourceLabel} · PDF p. {excerpt.page}</a>{blocks?.length?blocks.map((b,i)=><SourceBlock key={i} block={b}/>):<p className="text-xs sm:text-sm text-slate-700 leading-relaxed whitespace-pre-line">{excerpt.text}</p>}</div>;
+ return <div className="space-y-3"><span className="text-xs text-slate-500">{lesson.sourceLabel} · PDF p. {excerpt.page}</span>{blocks?.length?blocks.map((b,i)=><SourceBlock key={i} block={b}/>):<p className="text-xs sm:text-sm text-slate-700 leading-relaxed whitespace-pre-line">{excerpt.text}</p>}</div>;
 }
 export function SourceActivity({ready,title,children}:{ready:boolean;title:string;children:React.ReactNode}) {
  if(ready)return <>{children}</>;

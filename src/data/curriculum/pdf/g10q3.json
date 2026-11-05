@@ -235,97 +235,6 @@
           11,
           12
         ]
-      },
-      {
-        "id": "need-to-know",
-        "title": "What I Need to Know",
-        "kind": "objectives",
-        "pages": [
-          5
-        ]
-      },
-      {
-        "id": "what-i-know",
-        "title": "What I Know",
-        "kind": "activity",
-        "pages": [
-          6,
-          7,
-          8
-        ]
-      },
-      {
-        "id": "whats-in",
-        "title": "What’s In",
-        "kind": "activity",
-        "pages": [
-          8,
-          9,
-          16,
-          17
-        ]
-      },
-      {
-        "id": "whats-new",
-        "title": "What’s New",
-        "kind": "activity",
-        "pages": [
-          10,
-          18
-        ]
-      },
-      {
-        "id": "whats-more",
-        "title": "What’s More",
-        "kind": "activity",
-        "pages": [
-          12,
-          13,
-          14,
-          19
-        ]
-      },
-      {
-        "id": "learned",
-        "title": "What I Have Learned",
-        "kind": "review",
-        "pages": [
-          14,
-          15,
-          20
-        ]
-      },
-      {
-        "id": "can-do",
-        "title": "What I Can Do",
-        "kind": "activity",
-        "pages": [
-          15,
-          16,
-          20,
-          21
-        ]
-      },
-      {
-        "id": "assessment",
-        "title": "Assessment",
-        "kind": "assessment",
-        "pages": [
-          21,
-          22,
-          23,
-          24,
-          25
-        ]
-      },
-      {
-        "id": "answer-key",
-        "title": "Answer Key",
-        "kind": "answers",
-        "pages": [
-          26,
-          27
-        ]
       }
     ]
   },
@@ -375,6 +284,11 @@
       {
         "page": 11,
         "text": "After these preliminaries state your concern, preferably by starting\n\nwith an overview sentence. Keep it short and simple, and remind yourself to use appropriate language; jokes, sarcasm, and emojis are not necessary.\n\nLastly, thank your teacher and close out the email or chat. Remember\n\nnot to demand an immediate reply.\n\nThese tips and rules send a message that you only mean business;\n\nhence you are likely to get the answers you are seeking. This is not just a school-skill; this will be applicable even when you will be applying for a job or when you are emailing or sending chats to your boss.\n\nEmails and chats are indeed an effective and efficient forms of\n\ncommunication, especially if done correctly, simply, and respectfully.\n\nThis essay is probably way shorter than most informative essays, but does it\n\ncomply to the prescribed structure and conventions in informative writing? Does it comply to the guidelines and techniques?\n\n It started with a relatable scenario and ended with a repeat of the thesis statement.  It utilized transitional words such as ‘however, first, second, next, after, lastly.’  The tone is generally formal, but it becomes conversational in parts where the essay shifts to a second person point of view.  The language used is simple and appropriate for the target audience – students.  There aren’t any graphics or visuals, but they are not really necessary considering the length of the essay and the topic. However, in online platforms, this essay could be presented in a bullet list with and with other nonlinear texts.\n\nInformative writing plays a vital role not only in the academic world but also\n\nin the real world. It is a skill so essential that it can affect your grades and future job opportunities. Becoming an effective writer is not easy, but it pays to be one.",
+        "kind": "discussion"
+      },
+      {
+        "page": 9,
+        "text": "Informative writing explains a topic with balanced factual information. Persuasive writing aims to gain agreement with a viewpoint, supporting that viewpoint with facts.",
         "kind": "discussion"
       }
     ],
@@ -481,74 +395,6 @@
           9,
           10,
           11
-        ]
-      },
-      {
-        "id": "need-to-know",
-        "title": "What I Need to Know",
-        "kind": "objectives",
-        "pages": [
-          5
-        ]
-      },
-      {
-        "id": "what-i-know",
-        "title": "What I Know",
-        "kind": "activity",
-        "pages": [
-          5,
-          6,
-          7
-        ]
-      },
-      {
-        "id": "whats-in",
-        "title": "What’s In",
-        "kind": "activity",
-        "pages": [
-          7
-        ]
-      },
-      {
-        "id": "whats-new",
-        "title": "What’s New",
-        "kind": "activity",
-        "pages": [
-          8
-        ]
-      },
-      {
-        "id": "whats-more",
-        "title": "What’s More",
-        "kind": "activity",
-        "pages": [
-          12
-        ]
-      },
-      {
-        "id": "learned",
-        "title": "What I Have Learned",
-        "kind": "review",
-        "pages": [
-          13
-        ]
-      },
-      {
-        "id": "can-do",
-        "title": "What I Can Do",
-        "kind": "activity",
-        "pages": [
-          14,
-          15,
-          16
-        ]
-      },
-      {
-        "id": "answer-key",
-        "title": "Answer Key",
-        "kind": "answers",
-        "pages": [
-          17
         ]
       }
     ]
@@ -733,92 +579,6 @@
           13,
           14
         ]
-      },
-      {
-        "id": "need-to-know",
-        "title": "What I Need to Know",
-        "kind": "objectives",
-        "pages": [
-          5
-        ]
-      },
-      {
-        "id": "what-i-know",
-        "title": "What I Know",
-        "kind": "activity",
-        "pages": [
-          5,
-          6,
-          7,
-          8
-        ]
-      },
-      {
-        "id": "whats-in",
-        "title": "What’s In",
-        "kind": "activity",
-        "pages": [
-          5,
-          8
-        ]
-      },
-      {
-        "id": "whats-new",
-        "title": "What’s New",
-        "kind": "activity",
-        "pages": [
-          5,
-          9,
-          13
-        ]
-      },
-      {
-        "id": "whats-more",
-        "title": "What’s More",
-        "kind": "activity",
-        "pages": [
-          5,
-          11,
-          12,
-          13,
-          15
-        ]
-      },
-      {
-        "id": "can-do",
-        "title": "What I Can Do",
-        "kind": "activity",
-        "pages": [
-          5,
-          17,
-          18,
-          19,
-          20
-        ]
-      },
-      {
-        "id": "summary",
-        "title": "Summary",
-        "kind": "review",
-        "pages": [
-          13
-        ]
-      },
-      {
-        "id": "learned",
-        "title": "What I Have Learned",
-        "kind": "review",
-        "pages": [
-          16
-        ]
-      },
-      {
-        "id": "answer-key",
-        "title": "Answer Key",
-        "kind": "answers",
-        "pages": [
-          21
-        ]
       }
     ]
   },
@@ -863,12 +623,12 @@
       },
       {
         "page": 10,
-        "text": "Having the answer to all these questions does not mean that the critique is\n\ncomplete. There are other minor yet necessary details to include, and everything must be properly organized into a cohesive essay. Structure is equally important. Now, try organizing the following steps to develop a coherent and cohesive critique. Copy the statements and write them in the correct box.\n\n1. State your overall assessment of the story’s value, worth, and significance (both positive and negative). 2. Mention the name of the author and the title of the work. 3. Give a systematic and detailed assessment of the different elements of the work, but make sure that your discussion and judgement will be supported by specific details such as quotes or examples from the work itself. (This is the main bulk of the critical essay, and it may run for more than three paragraphs.) 4. Give recommendations for improvement if necessary. 5. Give a brief summary, including a description, background or context of the work. 6. Indicate the elements you want to examine and state the purpose of your critique.\n\nIntroduct -ion Body Conclu- sion\n\nAre you confident with your answers? To check, refer to the following: Introduction (2,5,6), Body (3), and Conclusion (1,4). Finally, here are some additional reminders that budding critics need to take note of when writing a critique:\n\n Avoid introducing your ideas by stating “I think” or “In my opinion” because this weakens the analysis.  Always introduce the work. Do not assume that the readers know what you are writing about and that you don’t need to mention some details anymore.  To be able to write a good critique and help readers understand the story, you yourself should know well what you are writing about.",
+        "text": "Having the answer to all these questions does not mean that the critique is\n\ncomplete. There are other minor yet necessary details to include, and everything must be properly organized into a cohesive essay. Structure is equally important.\n\nFinally, here are some additional reminders that budding critics need to take note of when writing a critique:\n\n Avoid introducing your ideas by stating “I think” or “In my opinion” because this weakens the analysis.  Always introduce the work. Do not assume that the readers know what you are writing about and that you don’t need to mention some details anymore.  To be able to write a good critique and help readers understand the story, you yourself should know well what you are writing about.",
         "kind": "discussion"
       },
       {
         "page": 11,
-        "text": "Now, go over this sample critique which is part of your English 10 Learner’s Material “Celebrating Diversity through World Literature.” Read the essay, and reflect if it is informative, in-depth, and comprehensive enough to be a critique. Let’s try to ‘critique’ this sample critique based on the concepts previously presented.\n\nSAMPLE CRITIQUE “Lee” published by Crime Factory (Posted by Abdulat 8/10/2008 12:46:00PM)\n\nI recently finished a fiction anthology called “Lee.” The book features seventeen short stories, all written by crime writers and inspired by Lee Marvin — his life, his movies. The stories flow in chronological order with the first taking place in 1944 and the last in 1987, just after Lee died. Frankly, I thought the concept was a little goofy, and I didn’t really expect the book to be that good. I bought it only because its publisher, Crime Factory, had published two of my short stories. I liked what they’d done in their journal, and figured I’d check out what else they’ve brought to the world. I am happy to admit that I was very wrong. Not only is every story in the collection really good, but it turns out that the concept really worked. In a word, the book rocks! It was fun to see how the different authors tackled the task of writing a Lee Marvin-inspired story. I particularly liked the stories: “1966: Just Swell,” “Cameron Ashley,” “1967: The Gun Hunter.” Eric Beetner’s novel The Devil Doesn’t Want Me has now moved up to number three on my reading list, which hopefully means I’ll get to it in June. I feel good that in my own little way I’m associated with these writers tangentially. Finishing “Lee” has also made me more interested in Lee Marvin’s movies. I watched The Man who Shot Liberty Valence during a film class in college and was blown away by his performance, but I don’t think I’d seen another one of his movies. And I consider myself something of an old film buff, but I took a step forward correcting this oversight last night by watching The Dirty Dozen — awesome!\n\n1. Where does the writer present some background and summary of the text? 2. Would you say the background information about the text is enough? Why? 3. What does the writer say about the different narrative elements? 4. Is the evaluation exhaustive? Why yes? Why not?\n\nConsider these:\n\n Notice that the writer presents the background and the summary in the first paragraph.  However, the background is not enough to inform the readers what “Lee” is all about, making them unable to relate to the critic’s impressions about it.",
+        "text": "SAMPLE CRITIQUE “Lee” published by Crime Factory (Posted by Abdulat 8/10/2008 12:46:00PM)\n\nI recently finished a fiction anthology called “Lee.” The book features seventeen short stories, all written by crime writers and inspired by Lee Marvin — his life, his movies. The stories flow in chronological order with the first taking place in 1944 and the last in 1987, just after Lee died. Frankly, I thought the concept was a little goofy, and I didn’t really expect the book to be that good. I bought it only because its publisher, Crime Factory, had published two of my short stories. I liked what they’d done in their journal, and figured I’d check out what else they’ve brought to the world. I am happy to admit that I was very wrong. Not only is every story in the collection really good, but it turns out that the concept really worked. In a word, the book rocks! It was fun to see how the different authors tackled the task of writing a Lee Marvin-inspired story. I particularly liked the stories: “1966: Just Swell,” “Cameron Ashley,” “1967: The Gun Hunter.” Eric Beetner’s novel The Devil Doesn’t Want Me has now moved up to number three on my reading list, which hopefully means I’ll get to it in June. I feel good that in my own little way I’m associated with these writers tangentially. Finishing “Lee” has also made me more interested in Lee Marvin’s movies. I watched The Man who Shot Liberty Valence during a film class in college and was blown away by his performance, but I don’t think I’d seen another one of his movies. And I consider myself something of an old film buff, but I took a step forward correcting this oversight last night by watching The Dirty Dozen — awesome!\n\nConsider these:\n\n Notice that the writer presents the background and the summary in the first paragraph.  However, the background is not enough to inform the readers what “Lee” is all about, making them unable to relate to the critic’s impressions about it.",
         "kind": "discussion"
       },
       {
@@ -1001,84 +761,6 @@
           10,
           11,
           12
-        ]
-      },
-      {
-        "id": "need-to-know",
-        "title": "What I Need to Know",
-        "kind": "objectives",
-        "pages": [
-          5
-        ]
-      },
-      {
-        "id": "what-i-know",
-        "title": "What I Know",
-        "kind": "activity",
-        "pages": [
-          5,
-          6,
-          7
-        ]
-      },
-      {
-        "id": "whats-in",
-        "title": "What’s In",
-        "kind": "activity",
-        "pages": [
-          7
-        ]
-      },
-      {
-        "id": "whats-new",
-        "title": "What’s New",
-        "kind": "activity",
-        "pages": [
-          8
-        ]
-      },
-      {
-        "id": "whats-more",
-        "title": "What’s More",
-        "kind": "activity",
-        "pages": [
-          12,
-          13,
-          14,
-          15
-        ]
-      },
-      {
-        "id": "learned",
-        "title": "What I Have Learned",
-        "kind": "review",
-        "pages": [
-          15
-        ]
-      },
-      {
-        "id": "can-do",
-        "title": "What I Can Do",
-        "kind": "activity",
-        "pages": [
-          16
-        ]
-      },
-      {
-        "id": "assessment",
-        "title": "Assessment",
-        "kind": "assessment",
-        "pages": [
-          17,
-          18
-        ]
-      },
-      {
-        "id": "answer-key",
-        "title": "Answer Key",
-        "kind": "answers",
-        "pages": [
-          19
         ]
       }
     ]
@@ -1274,88 +956,6 @@
         "pages": [
           10,
           11
-        ]
-      },
-      {
-        "id": "need-to-know",
-        "title": "What I Need to Know",
-        "kind": "objectives",
-        "pages": [
-          5
-        ]
-      },
-      {
-        "id": "what-i-know",
-        "title": "What I Know",
-        "kind": "activity",
-        "pages": [
-          5,
-          6,
-          7,
-          8
-        ]
-      },
-      {
-        "id": "whats-in",
-        "title": "What’s In",
-        "kind": "activity",
-        "pages": [
-          8
-        ]
-      },
-      {
-        "id": "whats-new",
-        "title": "What’s New",
-        "kind": "activity",
-        "pages": [
-          9
-        ]
-      },
-      {
-        "id": "whats-more",
-        "title": "What’s More",
-        "kind": "activity",
-        "pages": [
-          11
-        ]
-      },
-      {
-        "id": "learned",
-        "title": "What I Have Learned",
-        "kind": "review",
-        "pages": [
-          12
-        ]
-      },
-      {
-        "id": "can-do",
-        "title": "What I Can Do",
-        "kind": "activity",
-        "pages": [
-          12,
-          13,
-          14
-        ]
-      },
-      {
-        "id": "assessment",
-        "title": "Assessment",
-        "kind": "assessment",
-        "pages": [
-          15,
-          16,
-          17,
-          18,
-          19,
-          20
-        ]
-      },
-      {
-        "id": "answer-key",
-        "title": "Answer Key",
-        "kind": "answers",
-        "pages": [
-          21
         ]
       }
     ]

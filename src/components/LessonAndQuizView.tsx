@@ -439,7 +439,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
 
     const handleCopyStudyNotes = () => {
       soundFX.playClick();
-      const textToCopy = [module.title, module.pdfLesson?.source.url || '',
+      const textToCopy = [module.title,
         ...(sourceContent.data?.sourceSections || []).flatMap(section=>[
           `[${section.title}]`, ...section.entries.flatMap(entry=>[
             `PDF p. ${entry.page}`, ...entry.blockIds.map(id=>sourceContent.data!.blocks[id]).filter(Boolean).map(block=>block.text || block.rows?.map(row=>row.join(' | ')).join('\n') || block.labels?.map(label=>label.text).join(' ') || '')

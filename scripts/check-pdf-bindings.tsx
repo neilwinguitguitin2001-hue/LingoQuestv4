@@ -26,10 +26,16 @@ for(let grade=7;grade<=10;grade++)for(let quarter=1;quarter<=4;quarter++){
   assert.ok(content.games.every(q=>q.source?.kind !== 'definition-recall' || (!/_{2,}|\.{5,}/.test(q.source.quote) && (pdf.source.verifiedRecallPages||pdf.source.discussionPages).includes(q.source.page))), `${pdf.id}: invalid definition-derived game`);
   assert.equal(content.sourceSha256,pdf.source.sha256);
   const html=renderToStaticMarkup(<LessonAndQuizView module={module} nextModule={null} isPersonalization={false} isPreviewMode previewRole="admin" onBackToMap={()=>{}} onCompleteLesson={()=>{}} onSubmitQuizResult={()=>({totalPointsAwarded:0,newlyUnlockedBadges:[],bridgeNewlyRestored:false})} onAdvanceToNextModule={()=>{}} onOpenWritingLabWithPrompt={()=>{}}/>);
-  assert.ok(html.includes('Sections from this PDF module'));
+  assert.ok(html.includes('Module discussion'));
   assert.ok(html.includes('Concepts &amp; Rules'));
-  for (const removed of ['Interactive Concept Bridge','Mini Sorting Game','Davao Oriental Context','Vocabulary Bank','Self-Check (']) assert.ok(!html.includes(removed), `${pdf.id}: retired lesson panel/tab`);
+  for (const removed of ['Interactive Concept Bridge','Mini Sorting Game','Davao Oriental Context','Vocabulary Bank','Self-Check (','Additional Activities','Answer Key','What I Know','What’s More','What I Can Do']) assert.ok(!html.includes(removed), `${pdf.id}: retired lesson panel/tab`);
   assert.ok(pdf.sourceSections && pdf.sourceSections.length > 0);
+  assert.ok(content.sourceSections?.every(s=>s.kind==='discussion'));
+  assert.equal(content.sourceSections?.length,1);
+  const discussionHtml=renderToStaticMarkup(<SourceLessonSections module={module} content={content} dataSaver retry={()=>{}}/>);
+  assert.ok(!/href="https?:/.test(discussionHtml),`${pdf.id}: external source link exposed`);
+  assert.ok(!discussionHtml.includes('Open the original PDF'));
+  assert.ok(!discussionHtml.includes('View original'));
   assert.ok(content.sourceSections?.every(section=>section.entries.every(entry=>entry.blockIds.every(id=>content.blocks[id]?.page===entry.page))));
   for(const sourceSection of content.sourceSections!){const view=renderToStaticMarkup(<SourceLessonSections module={module} content={content} initialSection={sourceSection.id} dataSaver retry={()=>{}}/>);assert.ok(view.includes('role="tabpanel"'));assert.ok(!view.includes('Interactive Concept Bridge'));assert.ok(!view.includes('Mini Sorting Game'));}
   const discussion=content.sourceSections!.find(s=>s.id==='concepts')!;
@@ -37,7 +43,7 @@ for(let grade=7;grade<=10;grade++)for(let quarter=1;quarter<=4;quarter++){
   for(const entry of discussion.entries)for(const id of entry.blockIds){const text=content.blocks[id]?.text||'';assert.ok(!/^(?:Directions?\s*:|(?:Activity|Assessment)\s*\d+[.:]|What[’']?s More|What I Can Do|What I Know)/i.test(text), `${pdf.id}: activity in discussion: ${text.slice(0,80)}`);}
   assert.ok(html.includes('linocut-card'));
   assert.ok(!html.includes('digital-learning'));
-  for(const section of ['concepts','guidedAnalysis','pitfallsAndTips','vocabularyBank','selfCheck','studyCheatsheet','answerKey'] as const)for(const [i,excerpt] of pdf[section].entries()){
+  for(const section of ['concepts'] as const)for(const [i,excerpt] of pdf[section].entries()){
    const sourceHtml=renderToStaticMarkup(<SourceExcerpt lesson={pdf} excerpt={excerpt} content={content} section={section} index={i}/>);
    assert.ok(sourceHtml.includes(`PDF p. ${excerpt.page}`));
    assert.ok(!sourceHtml.includes(`${pdf.source.fileId}-p`));

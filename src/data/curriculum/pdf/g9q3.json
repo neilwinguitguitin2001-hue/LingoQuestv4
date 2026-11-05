@@ -131,50 +131,6 @@
           4,
           5
         ]
-      },
-      {
-        "id": "what-i-know",
-        "title": "Pre-Test",
-        "kind": "assessment",
-        "pages": [
-          2,
-          3,
-          4
-        ]
-      },
-      {
-        "id": "activities",
-        "title": "Activities",
-        "kind": "activity",
-        "pages": [
-          5,
-          6
-        ]
-      },
-      {
-        "id": "remember",
-        "title": "Remember",
-        "kind": "review",
-        "pages": [
-          7
-        ]
-      },
-      {
-        "id": "assessment",
-        "title": "Post-Test",
-        "kind": "assessment",
-        "pages": [
-          8,
-          9
-        ]
-      },
-      {
-        "id": "answer-key",
-        "title": "Answer Key",
-        "kind": "answers",
-        "pages": [
-          10
-        ]
       }
     ]
   },
@@ -292,57 +248,6 @@
           4,
           5
         ]
-      },
-      {
-        "id": "expectations",
-        "title": "Expectations",
-        "kind": "objectives",
-        "pages": [
-          2
-        ]
-      },
-      {
-        "id": "what-i-know",
-        "title": "Pre-Test",
-        "kind": "assessment",
-        "pages": [
-          2,
-          3
-        ]
-      },
-      {
-        "id": "activities",
-        "title": "Activities",
-        "kind": "activity",
-        "pages": [
-          5,
-          6
-        ]
-      },
-      {
-        "id": "remember",
-        "title": "Remember",
-        "kind": "review",
-        "pages": [
-          7,
-          8
-        ]
-      },
-      {
-        "id": "assessment",
-        "title": "Post-Test",
-        "kind": "assessment",
-        "pages": [
-          9
-        ]
-      },
-      {
-        "id": "answer-key",
-        "title": "Answer Key",
-        "kind": "answers",
-        "pages": [
-          10
-        ]
       }
     ]
   },
@@ -444,50 +349,6 @@
         "kind": "discussion",
         "pages": [
           4
-        ]
-      },
-      {
-        "id": "what-i-know",
-        "title": "Pre-Test",
-        "kind": "assessment",
-        "pages": [
-          2,
-          3
-        ]
-      },
-      {
-        "id": "activities",
-        "title": "Activities",
-        "kind": "activity",
-        "pages": [
-          5,
-          6
-        ]
-      },
-      {
-        "id": "remember",
-        "title": "Remember",
-        "kind": "review",
-        "pages": [
-          7,
-          8,
-          9
-        ]
-      },
-      {
-        "id": "assessment",
-        "title": "Post-Test",
-        "kind": "assessment",
-        "pages": [
-          9
-        ]
-      },
-      {
-        "id": "answer-key",
-        "title": "Answer Key",
-        "kind": "answers",
-        "pages": [
-          10
         ]
       }
     ]
@@ -599,58 +460,6 @@
           3,
           4
         ]
-      },
-      {
-        "id": "what-i-know",
-        "title": "Pre-Test",
-        "kind": "assessment",
-        "pages": [
-          2,
-          3
-        ]
-      },
-      {
-        "id": "activities",
-        "title": "Activities",
-        "kind": "activity",
-        "pages": [
-          4,
-          5
-        ]
-      },
-      {
-        "id": "remember",
-        "title": "Remember",
-        "kind": "review",
-        "pages": [
-          6
-        ]
-      },
-      {
-        "id": "understanding",
-        "title": "Check Your Understanding",
-        "kind": "activity",
-        "pages": [
-          6
-        ]
-      },
-      {
-        "id": "assessment",
-        "title": "Post-Test",
-        "kind": "assessment",
-        "pages": [
-          7,
-          8,
-          9
-        ]
-      },
-      {
-        "id": "answer-key",
-        "title": "Answer Key",
-        "kind": "answers",
-        "pages": [
-          10
-        ]
       }
     ]
   },
@@ -699,7 +508,7 @@
       },
       {
         "page": 5,
-        "text": " After living in Iceland for a decade, I can honestly say that the people there are kind and warm.\n\nHowever, for personal experience to be convincing, it must also be\n\napplicable, present reasonable background understanding, show a universal or general situation, and be related to the thesis somehow.\n\nHow are pieces of evidence evaluated?\n\nThe following are guide questions in understanding evidence.\n\n1. In what ways does this evidence support the assertion?\n\n2. How does the evidence relate to the original author's main idea? 3. Is there anything about the original author's main idea that can be applied to the assertion? 4. Is there anything about this quote or example that wouldn't be obvious to all readers? Is there anything unique or confusing about it?\n\nSource: https://tinyurl.com/yyp3x8yu https://tinyurl.com/y2qqfznm",
+        "text": " After living in Iceland for a decade, I can honestly say that the people there are kind and warm.\n\nHowever, for personal experience to be convincing, it must also be\n\napplicable, present reasonable background understanding, show a universal or general situation, and be related to the thesis somehow.\n\nHow are pieces of evidence evaluated?\n\nThe following are guide questions in understanding evidence.\n\n1. In what ways does this evidence support the assertion?\n\n2. How does the evidence relate to the original author's main idea? 3. Is there anything about the original author's main idea that can be applied to the assertion? 4. Is there anything about this quote or example that wouldn't be obvious to all readers? Is there anything unique or confusing about it?",
         "kind": "discussion"
       }
     ],
@@ -787,49 +596,6 @@
           3,
           4,
           5
-        ]
-      },
-      {
-        "id": "what-i-know",
-        "title": "Pre-Test",
-        "kind": "assessment",
-        "pages": [
-          2,
-          3
-        ]
-      },
-      {
-        "id": "activities",
-        "title": "Activities",
-        "kind": "activity",
-        "pages": [
-          5,
-          6
-        ]
-      },
-      {
-        "id": "remember",
-        "title": "Remember",
-        "kind": "review",
-        "pages": [
-          7
-        ]
-      },
-      {
-        "id": "assessment",
-        "title": "Post-Test",
-        "kind": "assessment",
-        "pages": [
-          8,
-          9
-        ]
-      },
-      {
-        "id": "answer-key",
-        "title": "Answer Key",
-        "kind": "answers",
-        "pages": [
-          10
         ]
       }
     ]
@@ -950,50 +716,6 @@
           5,
           6
         ]
-      },
-      {
-        "id": "what-i-know",
-        "title": "Pre-Test",
-        "kind": "assessment",
-        "pages": [
-          2,
-          3
-        ]
-      },
-      {
-        "id": "practice",
-        "title": "Activities & Assessment",
-        "kind": "activity",
-        "pages": [
-          6
-        ]
-      },
-      {
-        "id": "remember",
-        "title": "Remember",
-        "kind": "review",
-        "pages": [
-          6,
-          7
-        ]
-      },
-      {
-        "id": "assessment",
-        "title": "Post-Test",
-        "kind": "assessment",
-        "pages": [
-          7,
-          8,
-          9
-        ]
-      },
-      {
-        "id": "answer-key",
-        "title": "Answer Key",
-        "kind": "answers",
-        "pages": [
-          9
-        ]
       }
     ]
   },
@@ -1106,50 +828,6 @@
           4,
           5,
           6
-        ]
-      },
-      {
-        "id": "what-i-know",
-        "title": "Pre-Test",
-        "kind": "assessment",
-        "pages": [
-          2,
-          3,
-          4
-        ]
-      },
-      {
-        "id": "practice",
-        "title": "Activities & Assessment",
-        "kind": "activity",
-        "pages": [
-          6,
-          7
-        ]
-      },
-      {
-        "id": "remember",
-        "title": "Remember",
-        "kind": "review",
-        "pages": [
-          7
-        ]
-      },
-      {
-        "id": "assessment",
-        "title": "Post-Test",
-        "kind": "assessment",
-        "pages": [
-          8,
-          9
-        ]
-      },
-      {
-        "id": "answer-key",
-        "title": "Answer Key",
-        "kind": "answers",
-        "pages": [
-          10
         ]
       }
     ]

@@ -1126,7 +1126,6 @@
         10,
         11,
         12,
-        21,
         22
       ],
       "verifiedRecallPages": [
@@ -1349,8 +1348,6 @@
       "pageCount": 23,
       "notes": [],
       "discussionPages": [
-        6,
-        7,
         8,
         10,
         11,
@@ -2908,8 +2905,7 @@
       "pageCount": 16,
       "notes": [],
       "discussionPages": [
-        9,
-        10
+        9
       ],
       "verifiedRecallPages": [
         9,

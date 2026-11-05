@@ -172,101 +172,6 @@
           10,
           11
         ]
-      },
-      {
-        "id": "need-to-know",
-        "title": "What I Need to Know",
-        "kind": "objectives",
-        "pages": [
-          5
-        ]
-      },
-      {
-        "id": "what-i-know",
-        "title": "What I Know",
-        "kind": "activity",
-        "pages": [
-          6,
-          7
-        ]
-      },
-      {
-        "id": "whats-in",
-        "title": "What’s In",
-        "kind": "activity",
-        "pages": [
-          7,
-          8
-        ]
-      },
-      {
-        "id": "whats-new",
-        "title": "What’s New",
-        "kind": "activity",
-        "pages": [
-          8
-        ]
-      },
-      {
-        "id": "whats-more",
-        "title": "What’s More",
-        "kind": "activity",
-        "pages": [
-          11,
-          12
-        ]
-      },
-      {
-        "id": "expectations",
-        "title": "Expectations",
-        "kind": "objectives",
-        "pages": [
-          12,
-          13,
-          14,
-          16,
-          17
-        ]
-      },
-      {
-        "id": "learned",
-        "title": "What I Have Learned",
-        "kind": "review",
-        "pages": [
-          15
-        ]
-      },
-      {
-        "id": "can-do",
-        "title": "What I Can Do",
-        "kind": "activity",
-        "pages": [
-          16
-        ]
-      },
-      {
-        "id": "assessment",
-        "title": "Assessment",
-        "kind": "assessment",
-        "pages": [
-          17
-        ]
-      },
-      {
-        "id": "additional",
-        "title": "Additional Activities",
-        "kind": "activity",
-        "pages": [
-          18
-        ]
-      },
-      {
-        "id": "answer-key",
-        "title": "Answer Key",
-        "kind": "answers",
-        "pages": [
-          19
-        ]
       }
     ]
   },
@@ -315,7 +220,7 @@
       },
       {
         "page": 10,
-        "text": "4. Clarity. Speak clearly. Speech must be delivered relatively slower than in an ordinary conversation. 5. Pronunciation. Use correct pronunciation. When in doubt about the pronunciation of a word, consult a modern dictionary. 6. Grammar. Use correct grammar. Expose oneself to language through practice.\n\nTips for Better Body Language and Stance\n\nby 1Gail Zack Anderson\n\n1. Stand tall from the ribcage; this looks confident–strong yet relaxed. Keep your head straight but not rigid. 2. Plant your feet, weight distributed evenly between both feet and place your feet just a little apart for balance. 3. Don’t rock, sway, or shift from foot to foot. Instead, try to balance on both feet for a position that signals confidence and control without rigidity. 4. Stand in the center of the front of the room for your opening, move every 2-3 minutes or at the start of each new topic, then return to center for a strong close. 5. Like to move around? Try this: move from point A to point B deliberately, then stop and plant your feet again. 6. Stand still or move? Standing frozen in place; not good. Pacing; not good. Try to achieve a balance between stillness and movement 7. Still not sure? Ask someone to video record your presentation (or a rehearsal) and then watch it to see if you move too much or too little.\n\nFor further understanding of the lesson, you may watch the videos about the methods of delivery and sample of extemporaneous speech. Access the links below:\n\nhttps://www.youtube.com/watch?v=XfedtBlYau8m%2Fwatch%3Fv%3DxGfukDMu hdQ&t=30s. https://www.youtube.com/watch?v=xGfukDMuhdQ&t=30s.\n\nDid you understand the lesson already? If yes, then you will apply what have you learned in the next activity.\n\nNote: In every speech activity that you are going to perform, you need to record it using your cellphone’s video camera and send your output to your teacher.",
+        "text": "4. Clarity. Speak clearly. Speech must be delivered relatively slower than in an ordinary conversation. 5. Pronunciation. Use correct pronunciation. When in doubt about the pronunciation of a word, consult a modern dictionary. 6. Grammar. Use correct grammar. Expose oneself to language through practice.\n\nTips for Better Body Language and Stance\n\nby 1Gail Zack Anderson\n\n1. Stand tall from the ribcage; this looks confident–strong yet relaxed. Keep your head straight but not rigid. 2. Plant your feet, weight distributed evenly between both feet and place your feet just a little apart for balance. 3. Don’t rock, sway, or shift from foot to foot. Instead, try to balance on both feet for a position that signals confidence and control without rigidity. 4. Stand in the center of the front of the room for your opening, move every 2-3 minutes or at the start of each new topic, then return to center for a strong close. 5. Like to move around? Try this: move from point A to point B deliberately, then stop and plant your feet again. 6. Stand still or move? Standing frozen in place; not good. Pacing; not good. Try to achieve a balance between stillness and movement 7. Still not sure? Ask someone to video record your presentation (or a rehearsal) and then watch it to see if you move too much or too little.\n\nFor further understanding of the lesson, you may watch the videos about the methods of delivery and sample of extemporaneous speech. Access the links below:\n\nDid you understand the lesson already? If yes, then you will apply what have you learned in the next activity.\n\nNote: In every speech activity that you are going to perform, you need to record it using your cellphone’s video camera and send your output to your teacher.",
         "kind": "discussion"
       }
     ],
@@ -461,101 +366,6 @@
           8,
           9,
           10
-        ]
-      },
-      {
-        "id": "need-to-know",
-        "title": "What I Need to Know",
-        "kind": "objectives",
-        "pages": [
-          5
-        ]
-      },
-      {
-        "id": "what-i-know",
-        "title": "What I Know",
-        "kind": "activity",
-        "pages": [
-          6,
-          7
-        ]
-      },
-      {
-        "id": "whats-in",
-        "title": "What’s In",
-        "kind": "activity",
-        "pages": [
-          7
-        ]
-      },
-      {
-        "id": "whats-new",
-        "title": "What’s New",
-        "kind": "activity",
-        "pages": [
-          8
-        ]
-      },
-      {
-        "id": "practice",
-        "title": "Activities & Assessment",
-        "kind": "activity",
-        "pages": [
-          10,
-          11
-        ]
-      },
-      {
-        "id": "whats-more",
-        "title": "What’s More",
-        "kind": "activity",
-        "pages": [
-          12,
-          13
-        ]
-      },
-      {
-        "id": "learned",
-        "title": "What I Have Learned",
-        "kind": "review",
-        "pages": [
-          13,
-          14
-        ]
-      },
-      {
-        "id": "can-do",
-        "title": "What I Can Do",
-        "kind": "activity",
-        "pages": [
-          14
-        ]
-      },
-      {
-        "id": "assessment",
-        "title": "Assessment",
-        "kind": "assessment",
-        "pages": [
-          15,
-          16,
-          17
-        ]
-      },
-      {
-        "id": "additional",
-        "title": "Additional Activities",
-        "kind": "activity",
-        "pages": [
-          17,
-          18
-        ]
-      },
-      {
-        "id": "answer-key",
-        "title": "Answer Key",
-        "kind": "answers",
-        "pages": [
-          19
         ]
       }
     ]
@@ -731,107 +541,6 @@
           9,
           10,
           11
-        ]
-      },
-      {
-        "id": "need-to-know",
-        "title": "What I Need to Know",
-        "kind": "objectives",
-        "pages": [
-          5
-        ]
-      },
-      {
-        "id": "what-i-know",
-        "title": "What I Know",
-        "kind": "activity",
-        "pages": [
-          6,
-          7
-        ]
-      },
-      {
-        "id": "whats-in",
-        "title": "What’s In",
-        "kind": "activity",
-        "pages": [
-          7
-        ]
-      },
-      {
-        "id": "whats-new",
-        "title": "What’s New",
-        "kind": "activity",
-        "pages": [
-          7,
-          8
-        ]
-      },
-      {
-        "id": "practice",
-        "title": "Activities & Assessment",
-        "kind": "activity",
-        "pages": [
-          12,
-          13,
-          14
-        ]
-      },
-      {
-        "id": "whats-more",
-        "title": "What’s More",
-        "kind": "activity",
-        "pages": [
-          15
-        ]
-      },
-      {
-        "id": "learned",
-        "title": "What I Have Learned",
-        "kind": "review",
-        "pages": [
-          16
-        ]
-      },
-      {
-        "id": "can-do",
-        "title": "What I Can Do",
-        "kind": "activity",
-        "pages": [
-          17
-        ]
-      },
-      {
-        "id": "assessment",
-        "title": "Assessment",
-        "kind": "assessment",
-        "pages": [
-          17,
-          18
-        ]
-      },
-      {
-        "id": "summary",
-        "title": "Summary",
-        "kind": "review",
-        "pages": [
-          18
-        ]
-      },
-      {
-        "id": "additional",
-        "title": "Additional Activities",
-        "kind": "activity",
-        "pages": [
-          18
-        ]
-      },
-      {
-        "id": "answer-key",
-        "title": "Answer Key",
-        "kind": "answers",
-        "pages": [
-          19
         ]
       }
     ]
@@ -1017,93 +726,6 @@
           10,
           11,
           12
-        ]
-      },
-      {
-        "id": "need-to-know",
-        "title": "What I Need to Know",
-        "kind": "objectives",
-        "pages": [
-          5
-        ]
-      },
-      {
-        "id": "what-i-know",
-        "title": "Pre-Test",
-        "kind": "assessment",
-        "pages": [
-          6,
-          7
-        ]
-      },
-      {
-        "id": "whats-in",
-        "title": "What’s In",
-        "kind": "activity",
-        "pages": [
-          7,
-          8,
-          9
-        ]
-      },
-      {
-        "id": "whats-new",
-        "title": "What’s New",
-        "kind": "activity",
-        "pages": [
-          9,
-          10
-        ]
-      },
-      {
-        "id": "whats-more",
-        "title": "What’s More",
-        "kind": "activity",
-        "pages": [
-          13
-        ]
-      },
-      {
-        "id": "learned",
-        "title": "What I Have Learned",
-        "kind": "review",
-        "pages": [
-          14,
-          15,
-          16
-        ]
-      },
-      {
-        "id": "summary",
-        "title": "Summary",
-        "kind": "review",
-        "pages": [
-          16
-        ]
-      },
-      {
-        "id": "can-do",
-        "title": "What I Can Do",
-        "kind": "activity",
-        "pages": [
-          17
-        ]
-      },
-      {
-        "id": "assessment",
-        "title": "Assessment",
-        "kind": "assessment",
-        "pages": [
-          18,
-          19
-        ]
-      },
-      {
-        "id": "answer-key",
-        "title": "Answer Key",
-        "kind": "answers",
-        "pages": [
-          20
         ]
       }
     ]
@@ -1300,101 +922,6 @@
           11,
           18
         ]
-      },
-      {
-        "id": "need-to-know",
-        "title": "What I Need to Know",
-        "kind": "objectives",
-        "pages": [
-          5
-        ]
-      },
-      {
-        "id": "what-i-know",
-        "title": "What I Know",
-        "kind": "activity",
-        "pages": [
-          6,
-          7,
-          8,
-          16
-        ]
-      },
-      {
-        "id": "whats-in",
-        "title": "What’s In",
-        "kind": "activity",
-        "pages": [
-          8,
-          17
-        ]
-      },
-      {
-        "id": "whats-new",
-        "title": "What’s New",
-        "kind": "activity",
-        "pages": [
-          9,
-          10,
-          17
-        ]
-      },
-      {
-        "id": "whats-more",
-        "title": "What’s More",
-        "kind": "activity",
-        "pages": [
-          12,
-          19
-        ]
-      },
-      {
-        "id": "learned",
-        "title": "What I Have Learned",
-        "kind": "review",
-        "pages": [
-          12,
-          20
-        ]
-      },
-      {
-        "id": "can-do",
-        "title": "What I Can Do",
-        "kind": "activity",
-        "pages": [
-          13,
-          20,
-          21
-        ]
-      },
-      {
-        "id": "assessment",
-        "title": "Assessment",
-        "kind": "assessment",
-        "pages": [
-          14,
-          21,
-          22
-        ]
-      },
-      {
-        "id": "additional",
-        "title": "Additional Activities",
-        "kind": "activity",
-        "pages": [
-          15,
-          16,
-          22
-        ]
-      },
-      {
-        "id": "answer-key",
-        "title": "Answer Key",
-        "kind": "answers",
-        "pages": [
-          23,
-          24
-        ]
       }
     ]
   },
@@ -1556,100 +1083,6 @@
           10,
           11
         ]
-      },
-      {
-        "id": "need-to-know",
-        "title": "What I Need to Know",
-        "kind": "objectives",
-        "pages": [
-          5
-        ]
-      },
-      {
-        "id": "what-i-know",
-        "title": "What I Know",
-        "kind": "activity",
-        "pages": [
-          6,
-          7,
-          8
-        ]
-      },
-      {
-        "id": "whats-in",
-        "title": "What’s In",
-        "kind": "activity",
-        "pages": [
-          8
-        ]
-      },
-      {
-        "id": "whats-new",
-        "title": "What’s New",
-        "kind": "activity",
-        "pages": [
-          9
-        ]
-      },
-      {
-        "id": "practice",
-        "title": "Activities & Assessment",
-        "kind": "activity",
-        "pages": [
-          11
-        ]
-      },
-      {
-        "id": "whats-more",
-        "title": "What’s More",
-        "kind": "activity",
-        "pages": [
-          12,
-          13
-        ]
-      },
-      {
-        "id": "learned",
-        "title": "What I Have Learned",
-        "kind": "review",
-        "pages": [
-          14,
-          15
-        ]
-      },
-      {
-        "id": "can-do",
-        "title": "What I Can Do",
-        "kind": "activity",
-        "pages": [
-          15
-        ]
-      },
-      {
-        "id": "assessment",
-        "title": "Assessment",
-        "kind": "assessment",
-        "pages": [
-          16,
-          17
-        ]
-      },
-      {
-        "id": "additional",
-        "title": "Additional Activities",
-        "kind": "activity",
-        "pages": [
-          18,
-          19
-        ]
-      },
-      {
-        "id": "answer-key",
-        "title": "Answer Key",
-        "kind": "answers",
-        "pages": [
-          20
-        ]
       }
     ]
   },
@@ -1694,7 +1127,7 @@
       },
       {
         "page": 10,
-        "text": "Compare\n\nWho owns this bag? Who is the subject of the sentence and this bag is the object. We use no auxiliary verb. Who do you love most? Who is the object of the sentence and you is the subject. We use the auxiliary verb do.\n\nNegative Wh-Questions\n\nWhen we ask negative wh-questions, we use the auxiliary verb do when there is no other auxiliary or modal verb, even when the wh-word is the subject of the clause:\n\nAffirmative with no auxiliary Negative with auxiliary do Who wants an ice cream? Who doesn’t want an ice cream? Which door opened? Which door didn’t open?\n\nSource: https://dictionary.cambridge.org/us/grammar/\n\nbritish-grammar/questions-wh-questions\n\nSimple vs. Thought-Provoking Questions\n\nSimple questions\n\n- are questions which are plainly stated and does not require active participation. They are also easily understand and not complicated or complex.\n\nThought-provoking questions\n\n- are questions that stir or cause a person to think introspectively about matters, topics or subjects which were not previously pondered about. - questions asked when you want to spark a fascinating discussion about heavy topics.\n\nFor better understanding, here are some examples of simple and thought-provoking questions. Study the examples carefully and see how they differ from each other.",
+        "text": "Compare\n\nWho owns this bag? Who is the subject of the sentence and this bag is the object. We use no auxiliary verb. Who do you love most? Who is the object of the sentence and you is the subject. We use the auxiliary verb do.\n\nNegative Wh-Questions\n\nWhen we ask negative wh-questions, we use the auxiliary verb do when there is no other auxiliary or modal verb, even when the wh-word is the subject of the clause:\n\nAffirmative with no auxiliary Negative with auxiliary do Who wants an ice cream? Who doesn’t want an ice cream? Which door opened? Which door didn’t open?\n\nbritish-grammar/questions-wh-questions\n\nSimple vs. Thought-Provoking Questions\n\nSimple questions\n\n- are questions which are plainly stated and does not require active participation. They are also easily understand and not complicated or complex.\n\nThought-provoking questions\n\n- are questions that stir or cause a person to think introspectively about matters, topics or subjects which were not previously pondered about. - questions asked when you want to spark a fascinating discussion about heavy topics.\n\nFor better understanding, here are some examples of simple and thought-provoking questions. Study the examples carefully and see how they differ from each other.",
         "kind": "discussion"
       },
       {
@@ -1704,7 +1137,7 @@
       },
       {
         "page": 12,
-        "text": " Look for points of misunderstanding. Examine what you know about the topic and what you’re confused about. Are you sure about the things that you do know? Oftentimes what we think we know creates questions that don’t really have answers because our initial information was wrong. It may be a good idea to do some basic fact checking, if you can.  Try looking at the issue from all sides. It may be possible to answer your own questions, by looking at the problem from all sides. A new approach may help you see something you couldn’t see before, resolving any problems you had on the issue.\n\nhttps://www.wikihow.com/Ask-a-Question-Intelligently",
+        "text": " Look for points of misunderstanding. Examine what you know about the topic and what you’re confused about. Are you sure about the things that you do know? Oftentimes what we think we know creates questions that don’t really have answers because our initial information was wrong. It may be a good idea to do some basic fact checking, if you can.  Try looking at the issue from all sides. It may be possible to answer your own questions, by looking at the problem from all sides. A new approach may help you see something you couldn’t see before, resolving any problems you had on the issue.",
         "kind": "discussion"
       }
     ],
@@ -1830,92 +1263,6 @@
           10,
           11,
           12
-        ]
-      },
-      {
-        "id": "need-to-know",
-        "title": "What I Need to Know",
-        "kind": "objectives",
-        "pages": [
-          5
-        ]
-      },
-      {
-        "id": "what-i-know",
-        "title": "What I Know",
-        "kind": "activity",
-        "pages": [
-          6,
-          7
-        ]
-      },
-      {
-        "id": "whats-in",
-        "title": "What’s In",
-        "kind": "activity",
-        "pages": [
-          7,
-          8
-        ]
-      },
-      {
-        "id": "whats-new",
-        "title": "What’s New",
-        "kind": "activity",
-        "pages": [
-          8
-        ]
-      },
-      {
-        "id": "whats-more",
-        "title": "What’s More",
-        "kind": "activity",
-        "pages": [
-          12,
-          13,
-          14,
-          15
-        ]
-      },
-      {
-        "id": "learned",
-        "title": "What I Have Learned",
-        "kind": "review",
-        "pages": [
-          15,
-          16
-        ]
-      },
-      {
-        "id": "can-do",
-        "title": "What I Can Do",
-        "kind": "activity",
-        "pages": [
-          16
-        ]
-      },
-      {
-        "id": "assessment",
-        "title": "Assessment",
-        "kind": "assessment",
-        "pages": [
-          17
-        ]
-      },
-      {
-        "id": "additional",
-        "title": "Additional Activities",
-        "kind": "activity",
-        "pages": [
-          18
-        ]
-      },
-      {
-        "id": "answer-key",
-        "title": "Answer Key",
-        "kind": "answers",
-        "pages": [
-          19
         ]
       }
     ]

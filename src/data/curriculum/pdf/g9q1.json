@@ -113,67 +113,6 @@
           4,
           5
         ]
-      },
-      {
-        "id": "expectations",
-        "title": "Expectations",
-        "kind": "objectives",
-        "pages": [
-          2
-        ]
-      },
-      {
-        "id": "what-i-know",
-        "title": "Pre-Test",
-        "kind": "assessment",
-        "pages": [
-          2,
-          3,
-          4
-        ]
-      },
-      {
-        "id": "activities",
-        "title": "Activities",
-        "kind": "activity",
-        "pages": [
-          6,
-          7
-        ]
-      },
-      {
-        "id": "remember",
-        "title": "Remember",
-        "kind": "review",
-        "pages": [
-          7
-        ]
-      },
-      {
-        "id": "understanding",
-        "title": "Check Your Understanding",
-        "kind": "activity",
-        "pages": [
-          7,
-          8
-        ]
-      },
-      {
-        "id": "assessment",
-        "title": "Post-Test",
-        "kind": "assessment",
-        "pages": [
-          8,
-          9
-        ]
-      },
-      {
-        "id": "answer-key",
-        "title": "Answer Key",
-        "kind": "answers",
-        "pages": [
-          10
-        ]
       }
     ]
   },
@@ -296,76 +235,6 @@
           5,
           6
         ]
-      },
-      {
-        "id": "expectations",
-        "title": "Expectations",
-        "kind": "objectives",
-        "pages": [
-          2
-        ]
-      },
-      {
-        "id": "what-i-know",
-        "title": "Pre-Test",
-        "kind": "assessment",
-        "pages": [
-          2,
-          3,
-          4
-        ]
-      },
-      {
-        "id": "practice",
-        "title": "Activities & Assessment",
-        "kind": "activity",
-        "pages": [
-          4,
-          5
-        ]
-      },
-      {
-        "id": "remember",
-        "title": "Remember",
-        "kind": "review",
-        "pages": [
-          6,
-          7,
-          8
-        ]
-      },
-      {
-        "id": "activities",
-        "title": "Activities",
-        "kind": "activity",
-        "pages": [
-          7
-        ]
-      },
-      {
-        "id": "understanding",
-        "title": "Check Your Understanding",
-        "kind": "activity",
-        "pages": [
-          8
-        ]
-      },
-      {
-        "id": "assessment",
-        "title": "Post-Test",
-        "kind": "assessment",
-        "pages": [
-          8,
-          9
-        ]
-      },
-      {
-        "id": "answer-key",
-        "title": "Answer Key",
-        "kind": "answers",
-        "pages": [
-          10
-        ]
       }
     ]
   },
@@ -469,67 +338,6 @@
         "pages": [
           4,
           5
-        ]
-      },
-      {
-        "id": "expectations",
-        "title": "Expectations",
-        "kind": "objectives",
-        "pages": [
-          2
-        ]
-      },
-      {
-        "id": "what-i-know",
-        "title": "Pre-Test",
-        "kind": "assessment",
-        "pages": [
-          2,
-          3,
-          4
-        ]
-      },
-      {
-        "id": "activities",
-        "title": "Activities",
-        "kind": "activity",
-        "pages": [
-          5,
-          6
-        ]
-      },
-      {
-        "id": "remember",
-        "title": "Remember",
-        "kind": "review",
-        "pages": [
-          6
-        ]
-      },
-      {
-        "id": "understanding",
-        "title": "Check Your Understanding",
-        "kind": "activity",
-        "pages": [
-          7
-        ]
-      },
-      {
-        "id": "assessment",
-        "title": "Post-Test",
-        "kind": "assessment",
-        "pages": [
-          7,
-          8,
-          9
-        ]
-      },
-      {
-        "id": "answer-key",
-        "title": "Answer Key",
-        "kind": "answers",
-        "pages": [
-          10
         ]
       }
     ]
@@ -648,68 +456,6 @@
           4,
           5
         ]
-      },
-      {
-        "id": "expectations",
-        "title": "Expectations",
-        "kind": "objectives",
-        "pages": [
-          2
-        ]
-      },
-      {
-        "id": "what-i-know",
-        "title": "Pre-Test",
-        "kind": "assessment",
-        "pages": [
-          2,
-          3,
-          4
-        ]
-      },
-      {
-        "id": "activities",
-        "title": "Activities",
-        "kind": "activity",
-        "pages": [
-          5,
-          6
-        ]
-      },
-      {
-        "id": "remember",
-        "title": "Remember",
-        "kind": "review",
-        "pages": [
-          6,
-          7
-        ]
-      },
-      {
-        "id": "understanding",
-        "title": "Check Your Understanding",
-        "kind": "activity",
-        "pages": [
-          7,
-          8
-        ]
-      },
-      {
-        "id": "assessment",
-        "title": "Post-Test",
-        "kind": "assessment",
-        "pages": [
-          9,
-          10
-        ]
-      },
-      {
-        "id": "answer-key",
-        "title": "Key to Correction",
-        "kind": "answers",
-        "pages": [
-          10
-        ]
       }
     ]
   },
@@ -826,69 +572,6 @@
         "pages": [
           5,
           6
-        ]
-      },
-      {
-        "id": "expectations",
-        "title": "Expectations",
-        "kind": "objectives",
-        "pages": [
-          2
-        ]
-      },
-      {
-        "id": "what-i-know",
-        "title": "Pre-Test",
-        "kind": "assessment",
-        "pages": [
-          2,
-          3,
-          4,
-          5
-        ]
-      },
-      {
-        "id": "activities",
-        "title": "Activities",
-        "kind": "activity",
-        "pages": [
-          6,
-          7
-        ]
-      },
-      {
-        "id": "remember",
-        "title": "Remember",
-        "kind": "review",
-        "pages": [
-          7
-        ]
-      },
-      {
-        "id": "understanding",
-        "title": "Check Your Understanding",
-        "kind": "activity",
-        "pages": [
-          7,
-          8
-        ]
-      },
-      {
-        "id": "assessment",
-        "title": "Post-Test",
-        "kind": "assessment",
-        "pages": [
-          8,
-          9,
-          10
-        ]
-      },
-      {
-        "id": "answer-key",
-        "title": "Key to Correction",
-        "kind": "answers",
-        "pages": [
-          10
         ]
       }
     ]
@@ -1039,67 +722,6 @@
           4,
           5
         ]
-      },
-      {
-        "id": "expectations",
-        "title": "Expectations",
-        "kind": "objectives",
-        "pages": [
-          2
-        ]
-      },
-      {
-        "id": "what-i-know",
-        "title": "Pre-Test",
-        "kind": "assessment",
-        "pages": [
-          2,
-          3
-        ]
-      },
-      {
-        "id": "activities",
-        "title": "Activities",
-        "kind": "activity",
-        "pages": [
-          5,
-          6,
-          7,
-          8
-        ]
-      },
-      {
-        "id": "remember",
-        "title": "Remember",
-        "kind": "review",
-        "pages": [
-          8
-        ]
-      },
-      {
-        "id": "understanding",
-        "title": "Check Your Understanding",
-        "kind": "activity",
-        "pages": [
-          8
-        ]
-      },
-      {
-        "id": "assessment",
-        "title": "Post-Test",
-        "kind": "assessment",
-        "pages": [
-          9,
-          10
-        ]
-      },
-      {
-        "id": "answer-key",
-        "title": "Answer Key",
-        "kind": "answers",
-        "pages": [
-          10
-        ]
       }
     ]
   },
@@ -1210,65 +832,6 @@
         "pages": [
           4
         ]
-      },
-      {
-        "id": "expectations",
-        "title": "Expectations",
-        "kind": "objectives",
-        "pages": [
-          2
-        ]
-      },
-      {
-        "id": "what-i-know",
-        "title": "Pre-Test",
-        "kind": "assessment",
-        "pages": [
-          2,
-          3
-        ]
-      },
-      {
-        "id": "activities",
-        "title": "Activities",
-        "kind": "activity",
-        "pages": [
-          5,
-          6,
-          7
-        ]
-      },
-      {
-        "id": "remember",
-        "title": "Remember",
-        "kind": "review",
-        "pages": [
-          8
-        ]
-      },
-      {
-        "id": "understanding",
-        "title": "Check Your Understanding",
-        "kind": "activity",
-        "pages": [
-          8
-        ]
-      },
-      {
-        "id": "assessment",
-        "title": "Post-Test",
-        "kind": "assessment",
-        "pages": [
-          9
-        ]
-      },
-      {
-        "id": "answer-key",
-        "title": "Answer Key",
-        "kind": "answers",
-        "pages": [
-          10
-        ]
       }
     ]
   },
@@ -1377,66 +940,6 @@
         "kind": "discussion",
         "pages": [
           4
-        ]
-      },
-      {
-        "id": "expectations",
-        "title": "Expectations",
-        "kind": "objectives",
-        "pages": [
-          2
-        ]
-      },
-      {
-        "id": "what-i-know",
-        "title": "Pre-Test",
-        "kind": "assessment",
-        "pages": [
-          2,
-          3
-        ]
-      },
-      {
-        "id": "activities",
-        "title": "Activities",
-        "kind": "activity",
-        "pages": [
-          5,
-          6,
-          7
-        ]
-      },
-      {
-        "id": "remember",
-        "title": "Remember",
-        "kind": "review",
-        "pages": [
-          7
-        ]
-      },
-      {
-        "id": "understanding",
-        "title": "Check Your Understanding",
-        "kind": "activity",
-        "pages": [
-          7,
-          8
-        ]
-      },
-      {
-        "id": "assessment",
-        "title": "Post-Test",
-        "kind": "assessment",
-        "pages": [
-          9
-        ]
-      },
-      {
-        "id": "answer-key",
-        "title": "Answer Key",
-        "kind": "answers",
-        "pages": [
-          10
         ]
       }
     ]

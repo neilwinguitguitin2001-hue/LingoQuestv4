@@ -179,3 +179,7 @@ for meta in sorted((R/'src/data/curriculum/pdf').glob('*.json')):
  print(meta.stem,'completed',len(modules),'modules',flush=True)
 (R/'docs/curriculum/source-section-review.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
 print('Source sections built for',len(report),'PDFs',flush=True)
+
+# The owner requires discussion-only publication; full sections above are extraction intermediates.
+import subprocess,sys
+subprocess.run([sys.executable,str(R/'scripts/publish-discussion-only.py')],check=True)

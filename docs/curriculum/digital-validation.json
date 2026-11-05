@@ -1,13 +1,14 @@
 {
   "modules": 106,
   "blocks": {
-    "paragraph": 26035,
-    "heading": 3557,
-    "diagram": 405,
-    "figure": 2094,
-    "table": 311
+    "paragraph": 3003,
+    "heading": 458,
+    "figure": 284,
+    "table": 94,
+    "diagram": 87
   },
   "sourceBackedQuestions": 407,
   "fullPageLessonImages": 0,
-  "sourceSections": 1098
+  "sourceSections": 106,
+  "referenceClarifications": 3
 }
