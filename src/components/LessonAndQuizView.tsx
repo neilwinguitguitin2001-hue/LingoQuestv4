@@ -1,6 +1,6 @@
 import {CrosswordLetters} from './CrosswordLetters';
 import {QuizCloze} from './QuizCloze';
-import {isQuizAnswerCorrect} from '../utils/quizResponses';
+import {isQuizAnswerCorrect,formatCrosswordResponse} from '../utils/quizResponses';
 import { QuizConceptCard } from './QuizConceptCard';
 import { SourceLessonSections } from './SourceLessonSections';
 import { SourceActivity, SourceExcerpt, SourceGraphic } from './SourceContent';
@@ -1719,7 +1719,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                     disabled={questionLocked}
                     autoFocus
                     value={typedInput}
-                    onChange={(e) => setTypedInput(e.target.value)}
+                    onChange={(e) => setTypedInput(formatCrosswordResponse(currentQ.answer,e.target.value))}
                     placeholder="Type the complete crossword word or phrase..."
                     className="flex-1 px-4 py-3 text-base font-mono rounded-xl border border-slate-300 focus:border-indigo-600 focus:outline-none disabled:bg-slate-100 uppercase"
                   />

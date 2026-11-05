@@ -3,7 +3,7 @@ import React from 'react';
 import {renderToStaticMarkup} from 'react-dom/server';
 import {PDF_LESSONS,PDF_MODULES} from '../src/data/curriculum/pdfCurriculum';
 import {loadDigitalContent} from '../src/data/curriculum/digitalContent';
-import {isQuizAnswerCorrect,normalizeQuizResponse,clozeSegments} from '../src/utils/quizResponses';
+import {isQuizAnswerCorrect,normalizeQuizResponse,clozeSegments,formatCrosswordResponse} from '../src/utils/quizResponses';
 import {LessonAndQuizView} from '../src/components/LessonAndQuizView';
 import {CrosswordLetters} from '../src/components/CrosswordLetters';
 const fetchBefore=globalThis.fetch;let networkCalls=0;
@@ -21,15 +21,19 @@ for(const pdf of PDF_LESSONS){
   assert.ok(isQuizAnswerCorrect(q,`  ${q.answer.toUpperCase().replace(/ \/ /g,'/')}  `),q.id);
   assert.ok(!isQuizAnswerCorrect(q,'definitely not an answer'),q.id);
   if(q.type==='crosswordGame'){
-   assert.ok(isQuizAnswerCorrect(q,q.answer.replace(/ /g,'')));
+   assert.ok(isQuizAnswerCorrect(q,q.answer.replace(/[ -]/g,'')));
+   assert.equal(normalizeQuizResponse(formatCrosswordResponse(q.answer,q.answer.replace(/[^A-Za-z]/g,''))),normalizeQuizResponse(q.answer));
    const grid=renderToStaticMarkup(<CrosswordLetters question={q} value="" onChange={()=>{}} onSubmit={()=>{}} locked={false}/>);
    const given=new Set(q.crosswordClue?.letterGrid?.filter(l=>l.isGiven).map(l=>l.index));
-   const free=[...q.answer].filter((c,i)=>c!==' '&&!given.has(i)).length;
+   const free=[...q.answer].filter((c,i)=>/[A-Za-z]/.test(c)&&!given.has(i)).length;
    assert.equal((grid.match(/aria-label="Crossword letter /g)||[]).length,free,q.id);
   }
   questions++;
  }
 }
+assert.equal(formatCrosswordResponse('non-linear','NONLINEAR'),'NON-LINEAR');
+assert.equal(formatCrosswordResponse('zero conditional','zeroc'),'zero c');
+assert.equal(formatCrosswordResponse('main clause','mainclauseEXTRA'),'main clauseEXTRA');
 assert.equal(networkCalls,0);assert.equal(questions,7950);
 assert.deepEqual(clozeSegments('[2] ________ before [1] ________','first / second').filter(p=>p.gap).map(p=>p.value),['second','first']);
 for(const m of PDF_MODULES){
