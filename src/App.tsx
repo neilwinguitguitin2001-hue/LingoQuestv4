@@ -52,7 +52,6 @@ import { supabase } from './lib/supabase';
 import { questGame } from './services/questGameService';
 import {
   InabelWovenStrip,
-  MayonStreakBadge,
   PhilippineSunMedallion,
 } from './components/FilipinianaMotifs';
 
@@ -1942,17 +1941,6 @@ export default function App() {
             <div className="flex items-center gap-2">
               {currentStudent && (
                 <div className="hidden xl:flex items-center gap-2 mr-1">
-                  {/* Glowing Mayon Volcano Streak Pill */}
-                  <div
-                    className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#FFF3E0] text-[#231F20] border-2 border-[#D84315] shadow-[2px_2px_0px_#D84315]"
-                    title="Active Island Bridge Streak · Glowing Mayon Summit"
-                  >
-                    <MayonStreakBadge size={20} />
-                    <span className="text-[11px] font-black font-mono text-[#0F766E]">
-                      {Math.max(1, currentStudent.completedModules.length)}🔥
-                    </span>
-                  </div>
-
                   {/* Permanent learning progress */}
                   <div
                     className="flex items-center gap-2 rounded-xl border border-sky-400/70 bg-gradient-to-br from-[#123B63] to-[#07192F] px-2.5 py-1 text-white shadow-[2px_2px_0px_#0284C7]"
