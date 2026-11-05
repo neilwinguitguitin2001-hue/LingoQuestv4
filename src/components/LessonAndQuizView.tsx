@@ -687,38 +687,38 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
     }> = [
       {
         id: 'all',
-        title: 'Full Quest Mix (15 Random Questions)',
-        desc: '15 questions at your selected difficulty: 3 random tasks from each of the 5 modes. Concepts repeat through different mechanics for reinforcement.',
+        title: 'Full Quest Mix (10 Random Questions)',
+        desc: '10 unique questions at your selected difficulty, sampled across the five game modes for varied practice.',
         icon: <Sparkles className="w-4 h-4 text-sky-600" />,
       },
       {
         id: 'analogyMaster',
-        title: 'Master Quiz (5 Questions per Level)',
-        desc: 'Match each expression to its source excerpt. Three difficulty banks contain 5 tasks each.',
+        title: 'Master Quiz (10 Questions)',
+        desc: 'Match each expression to its source excerpt across 10 randomized tasks at the selected difficulty.',
         icon: <Scale className="w-4 h-4 text-rose-600" />,
       },
       {
         id: 'missingPiece',
-        title: 'Missing Piece Quiz (5 Questions)',
-        desc: 'Plays all 5 questions for Missing Piece mode (sentence structure, grammatical connectors, and rule terms).',
+        title: 'Missing Piece Quiz (10 Questions)',
+        desc: 'Play 10 randomized sentence-structure, connector, and rule-term challenges.',
         icon: <Puzzle className="w-4 h-4 text-purple-600" />,
       },
       {
         id: 'pictureHunt',
-        title: 'Picture Hunt Quiz (5 Questions)',
-        desc: 'Plays all 5 questions for Picture Hunt mode (matching topic-specific visual concept cards).',
+        title: 'Picture Hunt Quiz (10 Questions)',
+        desc: 'Play 10 randomized visual concept-card matching challenges.',
         icon: <ImageIcon className="w-4 h-4 text-amber-600" />,
       },
       {
         id: 'crosswordGame',
-        title: 'Crossword Game (5 Questions)',
-        desc: 'Plays all 5 questions for Crossword Game mode (solving across and down letter clues).',
+        title: 'Crossword Game (10 Questions)',
+        desc: 'Play 10 randomized across-and-down letter clue challenges.',
         icon: <Grid3X3 className="w-4 h-4 text-indigo-600" />,
       },
       {
         id: 'typeHunter',
-        title: 'Hunter Quiz (Word Hunter · 5 per Level)',
-        desc: 'Plays all 5 questions for Word Hunter mode (typing target vocabulary and master concepts).',
+        title: 'Hunter Quiz (Word Hunter · 10 Questions)',
+        desc: 'Type target vocabulary and key concepts across 10 randomized challenges.',
         icon: <Keyboard className="w-4 h-4 text-emerald-600" />,
       },
     ];
@@ -742,7 +742,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                   </span>
                 </div>
                 <p className="text-xs text-slate-200">
-                  Previewing quizzes for <strong>{module.title}</strong> · {module.quizQuestions.length} verified questions (5 per selected level · 15 per mode)
+                  Previewing quizzes for <strong>{module.title}</strong> · {module.quizQuestions.length} verified questions · 10-question sessions
                 </p>
               </div>
             </div>
@@ -850,7 +850,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
             <div className="flex flex-wrap items-center gap-1.5 p-1 bg-slate-100 rounded-xl">
               {(
                 [
-                  { id: 'all', label: `All Questions (${module.quizQuestions.length})` },
+                  { id: 'all', label: `Quest Mix · 10 questions` },
                   { id: 'analogyMaster', label: 'Master Quiz (15)' },
                   { id: 'missingPiece', label: 'Missing Piece (15)' },
                   { id: 'crosswordGame', label: 'Crossword Game (15)' },
