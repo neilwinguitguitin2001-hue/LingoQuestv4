@@ -40,7 +40,7 @@ export interface AuthContextValue {
   loading: boolean
   login: (email: string, password: string) => Promise<FirestoreUserDoc | null>
   signup: (data: StudentSignupInput) => Promise<{ firebaseUser: AuthUser; studentAccount: StudentAccount }>
-  loginWithGoogle: () => Promise<{ firebaseUser: AuthUser; profile: FirestoreUserDoc | null }>
+  loginWithGoogle: () => Promise<{ firebaseUser: AuthUser; profile: FirestoreUserDoc }>
   logout: () => Promise<void>
   resetPassword: (email: string) => Promise<void>
 }
@@ -392,8 +392,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
             role: 'student',
             status: 'approved',
             gradeLevel: 8,
-            school: fallbackAccount.schoolName || '',
-            schoolName: fallbackAccount.schoolName || '',
+            school: fallbackAccount.schoolName,
+            schoolName: fallbackAccount.schoolName,
             createdAt: nowIso,
             lastLoginAt: nowIso,
           }
