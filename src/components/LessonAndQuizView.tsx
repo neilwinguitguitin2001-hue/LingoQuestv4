@@ -1,3 +1,4 @@
+import {PictureHuntIllustration} from './PictureHuntIllustration';
 import {CrosswordLetters} from './CrosswordLetters';
 import {QuizCloze} from './QuizCloze';
 import {isQuizAnswerCorrect,formatCrosswordResponse} from '../utils/quizResponses';
@@ -936,8 +937,8 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                                     : 'border-slate-200 bg-white'
                                 }`}
                               >
-                                <div className="h-20 w-full mb-1 rounded-lg overflow-hidden border border-slate-200">
-                                  <>{opt.conceptVisual ? <QuizConceptCard {...opt.conceptVisual}/> : opt.sourceGraphic ? <SourceGraphic block={opt.sourceGraphic}/> : opt.sourceImageUrl ? <img src={opt.sourceImageUrl} alt={opt.caption} className="w-full h-auto object-contain"/> : <PictureHuntArtwork sceneId={opt.sceneId}/>}</>
+                                <div className="h-28 w-full mb-1 rounded-lg overflow-hidden border border-slate-200">
+                                  <>{opt.conceptVisual ? <QuizConceptCard {...opt.conceptVisual} topic={module.title} compact/> : opt.sourceGraphic ? <SourceGraphic block={opt.sourceGraphic}/> : opt.sourceImageUrl ? <img src={opt.sourceImageUrl} alt={opt.caption} className="w-full h-auto object-contain"/> : <PictureHuntArtwork sceneId={opt.sceneId}/>}</>
                                 </div>
                                 <div className="text-[11px] font-bold text-slate-800 flex items-center justify-center gap-1">
                                   {isCorrectOpt && <Check className="w-3 h-3 text-emerald-600" />}
@@ -1463,46 +1464,27 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
             </div>
           )}
 
-          {currentQ.type === 'pictureHunt' && <p className="p-4 rounded-xl bg-sky-50 text-slate-800 text-sm leading-relaxed">{currentQ.contextSentence}</p>}
           {currentQ.type === 'pictureHunt' && currentQ.pictureOptions && (
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {currentQ.pictureOptions.map((pic) => {
-                const isSelected = selectedOption === pic.id;
-                const isCorrectPic = pic.id === currentQ.answer;
-                return (
-                  <button
-                    key={pic.id}
-                    type="button"
-                    disabled={questionLocked}
-                    onClick={() => {
-                      setSelectedOption(pic.id);
-                      handleLockQuestionAnswer(pic.id);
-                    }}
-                    className={`text-left rounded-xl border-2 p-3 transition-all cursor-pointer ${
-                      questionLocked
-                        ? isCorrectPic
-                          ? 'border-emerald-500 bg-emerald-50/60'
-                          : isSelected
-                          ? 'border-red-500 bg-red-50/60'
-                          : 'border-slate-200 opacity-65'
-                        : isSelected
-                        ? 'border-sky-600 bg-sky-50'
-                        : 'border-slate-200 hover:border-sky-500 bg-white'
-                    }`}
-                  >
-                    <>{pic.conceptVisual ? <QuizConceptCard {...pic.conceptVisual}/> : pic.sourceGraphic ? <SourceGraphic block={pic.sourceGraphic}/> : pic.sourceImageUrl ? <img src={pic.sourceImageUrl} alt={pic.caption} className="w-full h-36 object-contain"/> : <PictureHuntArtwork sceneId={pic.sceneId} className="w-full h-36"/>}</>
-                    <div className="mt-3 flex items-center justify-between">
-                      <span className="text-sm font-bold text-slate-900">{pic.label}</span>
-                      {questionLocked && isCorrectPic && (
-                        <span className="text-xs font-mono font-bold text-emerald-700">
-                          ✓ MATCH
-                        </span>
-                      )}
-                    </div>
-                    <p className="text-xs text-slate-600 mt-0.5">{pic.caption}</p>
-                  </button>
-                );
-              })}
+            <div className="picture-hunt-board grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-7">
+              <section className="rounded-2xl border border-sky-100 bg-gradient-to-br from-sky-50 to-emerald-50 p-4 sm:p-5 space-y-4" aria-label="Illustrated lesson clue">
+                <span className="inline-flex rounded-full bg-sky-800 px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-white">Study the pictures</span>
+                <PictureHuntIllustration term={module.title} topic={module.title} className="w-full h-44 sm:h-52"/>
+                <p className="rounded-xl border border-sky-100 bg-white p-4 text-sm leading-relaxed text-slate-800">{currentQ.contextSentence}</p>
+              </section>
+              <section className="space-y-3" aria-label="Picture answer choices">
+                <h3 className="text-sm font-bold text-slate-900">Choose the picture that completes the clue.</h3>
+                <div className="grid grid-cols-2 gap-3">
+                {currentQ.pictureOptions.map((pic,index)=>{
+                  const selected=selectedOption===pic.id;const correct=pic.id===currentQ.answer;
+                  return <button key={pic.id} type="button" disabled={questionLocked} aria-pressed={selected} aria-label={`${String.fromCharCode(65+index)}. ${pic.label}`} onClick={()=>{setSelectedOption(pic.id);handleLockQuestionAnswer(pic.id);}}
+                    className={`group relative rounded-2xl border-2 p-2.5 text-left transition-colors cursor-pointer focus-visible:outline-4 focus-visible:outline-sky-400 disabled:cursor-default ${questionLocked?(correct?'border-emerald-500 bg-emerald-50':selected?'border-red-500 bg-red-50':'border-slate-200 opacity-60'):'border-slate-200 bg-white hover:border-sky-500 hover:bg-sky-50'}`}>
+                    <span className="absolute left-3 top-3 z-10 grid h-6 w-6 place-items-center rounded-full border-2 border-white bg-sky-700 text-xs font-bold text-white shadow-sm">{String.fromCharCode(65+index)}</span>
+                    {pic.conceptVisual?<QuizConceptCard {...pic.conceptVisual} topic={module.title}/>:pic.sourceGraphic?<SourceGraphic block={pic.sourceGraphic}/>:pic.sourceImageUrl?<img src={pic.sourceImageUrl} alt={pic.caption} className="h-40 w-full object-contain"/>:<PictureHuntArtwork sceneId={pic.sceneId} className="h-40 w-full"/>}
+                    <div className="px-1 pb-1 pt-2 text-center"><span className="text-xs sm:text-sm font-bold text-slate-900">{pic.label}</span>{questionLocked&&correct&&<span className="mt-1 block text-xs font-bold text-emerald-700">✓ MATCH</span>}{pic.caption&&<p className="mt-1 text-xs text-slate-600">{pic.caption}</p>}</div>
+                  </button>;
+                })}
+                </div>
+              </section>
             </div>
           )}
 
