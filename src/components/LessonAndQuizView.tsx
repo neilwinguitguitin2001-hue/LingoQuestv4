@@ -74,6 +74,8 @@ import {
   type XPToastPayload,
 } from './visuals/LessonVisuals';
 import { stopAllVoicePlayback } from '../utils/voiceEngineClient';
+import { supabase } from '../lib/supabase';
+import { questGame, type QuestGradeResponse, type QuestPowerUp, type QuestPurchaseResponse, type QuestQuestionResponse } from '../services/questGameService';
 
 export interface QuizCompletionPayload {
   moduleId: string;
@@ -121,6 +123,15 @@ interface QuestionAnswerLog {
   timeRemaining: number;
 }
 
+const QUEST_POWER_UPS: Array<{ kind: QuestPowerUp; label: string; cost: number }> = [
+  { kind: 'smart_hint', label: 'Smart Hint', cost: 30 },
+  { kind: 'time_freeze', label: 'Time Freeze', cost: 50 },
+  { kind: 'fifty_fifty', label: '50/50', cost: 60 },
+  { kind: 'extra_time', label: 'Extra Time', cost: 40 },
+  { kind: 'second_chance', label: 'Second Chance', cost: 80 },
+  { kind: 'lesson_peek', label: 'Lesson Peek', cost: 20 },
+];
+
 export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
   module: sourceModule,
   nextModule,
@@ -162,6 +173,17 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
   const [selectedOption, setSelectedOption] = useState<string>('');
   const [questionLocked, setQuestionLocked] = useState<boolean>(false);
   const [answerLogs, setAnswerLogs] = useState<QuestionAnswerLog[]>([]);
+  const [serverSessionId, setServerSessionId] = useState<string | null>(null);
+  const [questBalance, setQuestBalance] = useState(0);
+  const [questBusy, setQuestBusy] = useState(false);
+  const [questMessage, setQuestMessage] = useState('');
+  const [showPowerShop, setShowPowerShop] = useState(false);
+  const [usedPowerUps, setUsedPowerUps] = useState<QuestPowerUp[]>([]);
+  const [removedChoices, setRemovedChoices] = useState<string[]>([]);
+  const [purchasedClue, setPurchasedClue] = useState('');
+  const [freezeUntilMs, setFreezeUntilMs] = useState(0);
+  const [timerRevision, setTimerRevision] = useState(0);
+  const useServerGame = Boolean(supabase && !isPreviewMode);
 
   const [finalOutcome, setFinalOutcome] = useState<{
     score: number;
@@ -265,7 +287,16 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
     setShowExitModal(false);
     setLocalCompletedVisuals(completedVisualItems);
     setFlippedVocabMap({});
+    setServerSessionId(null);
+    setPurchasedClue('');
+    setRemovedChoices([]);
+    setUsedPowerUps([]);
   }, [module.id, initialStage]);
+
+  useEffect(() => {
+    if (!useServerGame) return;
+    questGame<{ balance: number }>('wallet').then(data => setQuestBalance(data.balance)).catch(() => {});
+  }, [useServerGame]);
 
   useEffect(() => {
     if (stage !== 'PLAYING_QUIZ' || questionLocked || activeQuestions.length === 0 || showExitModal) {
@@ -276,8 +307,9 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
       return;
     }
 
-    const deadline=Date.now()+timeLeft*1000;
+    const deadline=Date.now()+timeLeft*1000+(freezeUntilMs>Date.now()?10000:0);
     timerRef.current=window.setInterval(()=>{
+      if (freezeUntilMs>Date.now()) return;
       const remaining=Math.max(0,Math.ceil((deadline-Date.now())/1000));
       setTimeLeft(remaining);
       if(remaining===0){
@@ -293,16 +325,46 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
         timerRef.current = null;
       }
     };
-  }, [stage, currentQIndex, questionLocked, activeQuestions, showExitModal]);
+  }, [stage, currentQIndex, questionLocked, activeQuestions, showExitModal, freezeUntilMs, timerRevision]);
 
-  const startQuizSession = (requestedMode: QuizGameType | 'all' = gameModeFilter) => {
+  const startQuizSession = async (requestedMode: QuizGameType | 'all' = gameModeFilter) => {
     soundFX.playClick();
     stopAllVoicePlayback();
-    const finalPool = createSourceGameSession(module, module.quizQuestions, requestedMode, difficulty);
-    if (!finalPool) {
-      setSourceReviewMessage('The question bank could not be loaded. Please retry.');
+    if (useServerGame) {
+      if (questBusy) return;
+      setQuestBusy(true);
+      try {
+        const response = await questGame<QuestQuestionResponse>('start', { moduleId: module.id, mode: requestedMode, difficulty });
+        setServerSessionId(response.sessionId);
+        setActiveQuestions(Array.from({ length: 10 }, (_, index) => index === 0 ? response.question : null) as QuizQuestion[]);
+        setCurrentQIndex(0);
+        setTimeLeft(response.question.timeLimitSeconds || 60);
+        setGameModeFilter(requestedMode);
+        setQuestionLocked(false);
+        setAnswerLogs([]);
+        setFinalOutcome(null);
+        setUsedPowerUps([]);
+        setRemovedChoices([]);
+        setPurchasedClue('');
+        setQuestMessage('');
+        setSourceReviewMessage('');
+        completedSessionRef.current = false;
+        submittedQuestionRef.current = null;
+        activeQuestionIdRef.current = response.question.id;
+        setStage('PLAYING_QUIZ');
+      } catch (error) { setSourceReviewMessage(error instanceof Error ? error.message : 'The PDF question bank is unavailable.'); }
+      finally { setQuestBusy(false); }
       return;
     }
+    const historyKey = `lingoquest:question-history:${module.id}:${requestedMode}:${difficulty}`;
+    let previousIds = new Set<string>();
+    try { previousIds = new Set(JSON.parse(localStorage.getItem(historyKey) || '[]') as string[]); } catch { /* private browsing */ }
+    const finalPool = createSourceGameSession(module, module.quizQuestions, requestedMode, difficulty, Math.random, previousIds);
+    if (!finalPool) {
+      setSourceReviewMessage('This module needs at least 10 verified PDF questions for this game and level. The game is unavailable until its source bank is complete.');
+      return;
+    }
+    try { localStorage.setItem(historyKey, JSON.stringify([...previousIds,...finalPool.map(q=>q.id)].slice(-120))); } catch { /* private browsing */ }
     setSourceReviewMessage('');
     submittedQuestionRef.current=null;
     activeQuestionIdRef.current=finalPool[0]?.id||null;
@@ -319,14 +381,78 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
     setStage('PLAYING_QUIZ');
   };
 
+  const purchasePowerUp = async (kind: QuestPowerUp) => {
+    if (!serverSessionId || questBusy || usedPowerUps.includes(kind)) return;
+    const item=QUEST_POWER_UPS.find(power=>power.kind===kind)!;
+    if (questBalance<item.cost) {setQuestMessage('Insufficient Quest Coins');setShowPowerShop(true);return;}
+    if (!window.confirm(`Spend ${item.cost} Quest Coins on ${item.label}?`)) return;
+    setQuestBusy(true);
+    try {
+      const purchase=await questGame<QuestPurchaseResponse>('purchase',{sessionId:serverSessionId,kind});
+      setQuestBalance(purchase.balance);
+      setUsedPowerUps(previous=>[...previous,kind]);
+      setQuestMessage('');
+      if (purchase.hint) setPurchasedClue(purchase.hint);
+      if (purchase.reminder) setPurchasedClue(purchase.reminder);
+      if (purchase.remove) setRemovedChoices(purchase.remove);
+      if (kind==='time_freeze') {setFreezeUntilMs(Date.now()+10000);setTimerRevision(value=>value+1);}
+      if (kind==='extra_time') {setTimeLeft(value=>value+15);setTimerRevision(value=>value+1);}
+      if (purchase.retry) {
+        const response=await questGame<QuestQuestionResponse>('current',{sessionId:serverSessionId});
+        setActiveQuestions(previous=>previous.map((question,index)=>index===currentQIndex?response.question:question));
+        setAnswerLogs(previous=>previous.slice(0,-1));
+        setQuestionLocked(false);setSelectedOption('');setTypedInput('');setPurchasedClue('');
+        setTimeLeft(response.question.timeLimitSeconds||60);
+        submittedQuestionRef.current=null;activeQuestionIdRef.current=response.question.id;
+      }
+    } catch(error) {setQuestMessage(error instanceof Error?error.message:'Power-up could not be purchased.');}
+    finally {setQuestBusy(false);}
+  };
 
-  const handleLockQuestionAnswer = (submittedValue: string, timedOut = false) => {
-    if (questionLocked) return;
+  const questShopPanel=useServerGame&&showPowerShop&&(
+    <div className="fixed inset-0 z-50 bg-slate-950/70 flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-label="Power-Up Shop">
+      <div className="w-full max-w-lg rounded-2xl border-2 border-sky-600 bg-white p-5 shadow-2xl space-y-4">
+        <div className="flex items-center justify-between"><h2 className="text-lg font-bold text-slate-950">Power-Up Shop</h2><button type="button" onClick={()=>setShowPowerShop(false)} aria-label="Close shop" className="rounded-lg p-2 hover:bg-slate-100"><X className="h-4 w-4"/></button></div>
+        <p className="text-sm font-semibold text-sky-800">Quest Coins: {questBalance}</p>
+        {questMessage&&<p role="status" className="text-sm text-amber-800">{questMessage}</p>}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+          {QUEST_POWER_UPS.map(power=>{
+            const question=activeQuestions[currentQIndex];
+            const incompatible=power.kind==='fifty_fifty'&&((question?.options?.length||question?.pictureOptions?.length||0)<4)
+              ||power.kind==='second_chance'&&(!questionLocked||answerLogs.at(-1)?.isCorrect)
+              ||!serverSessionId;
+            return <button key={power.kind} type="button" onClick={()=>purchasePowerUp(power.kind)} disabled={questBusy||usedPowerUps.includes(power.kind)||incompatible} className="rounded-xl border border-sky-200 bg-sky-50 px-3 py-3 text-left text-sm font-semibold text-slate-900 hover:bg-sky-100 disabled:opacity-45 disabled:cursor-not-allowed">{power.label} <span className="float-right text-sky-800">{power.cost} coins</span></button>;
+          })}
+        </div>
+        <p className="text-xs text-slate-600">Each power-up can be used once per game. Coins are deducted after confirmation.</p>
+      </div>
+    </div>
+  );
+
+
+  const handleLockQuestionAnswer = async (submittedValue: string, timedOut = false) => {
+    if (questionLocked || questBusy) return;
     const currentQ = activeQuestions[currentQIndex];
     if (!currentQ || activeQuestionIdRef.current!==currentQ.id || submittedQuestionRef.current===currentQ.id) return;
     submittedQuestionRef.current=currentQ.id;
-
-    const isCorrect = !timedOut && isQuizAnswerCorrect(currentQ, submittedValue);
+    let gradedQuestion=currentQ;
+    let isCorrect = !timedOut && isQuizAnswerCorrect(currentQ, submittedValue);
+    if (serverSessionId) {
+      setQuestBusy(true);
+      try {
+        const grade=await questGame<QuestGradeResponse>('submit',{sessionId:serverSessionId,answer:timedOut?'':submittedValue});
+        isCorrect=grade.correct;
+        gradedQuestion={...currentQ,answer:grade.answer,explanation:grade.explanation,source:{fileId:module.pdfLesson?.source.fileId||'',pdfSha256:module.pdfLesson?.source.sha256,page:Number(grade.sourcePage)||1,quote:'',answerQuote:'',sourceId:currentQ.id,kind:'pdf-topic-completion'}};
+        setActiveQuestions(prev=>prev.map((question,index)=>index===currentQIndex?gradedQuestion:question));
+        if (grade.balance!==null) setQuestBalance(grade.balance);
+      } catch (error) {
+        submittedQuestionRef.current=null;
+        setQuestMessage(error instanceof Error ? error.message : 'Answer could not be saved. Retry.');
+        setQuestBusy(false);
+        return;
+      }
+      setQuestBusy(false);
+    }
     if (isCorrect) {
       soundFX.playCorrect();
     } else {
@@ -335,7 +461,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
 
     setQuestionLocked(true);
     const newEntry: QuestionAnswerLog = {
-      question: currentQ,
+      question: gradedQuestion,
       studentAnswer: timedOut ? '(Time Expired)' : submittedValue.trim() || '(Blank)',
       isCorrect,
       timedOut,
@@ -345,13 +471,26 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
     setAnswerLogs((prev) => [...prev, newEntry]);
   };
 
-  const handleNextOrFinishQuestion = () => {
+  const handleNextOrFinishQuestion = async () => {
     soundFX.playClick();
+    if (questBusy) return;
     if (currentQIndex + 1 < activeQuestions.length) {
       const nextIdx = currentQIndex + 1;
-      activeQuestionIdRef.current=activeQuestions[nextIdx].id;
+      if (serverSessionId) {
+        setQuestBusy(true);
+        try {
+          const response=await questGame<QuestQuestionResponse>('current',{sessionId:serverSessionId});
+          if (response.index!==nextIdx) throw new Error('Game session is out of sync.');
+          setActiveQuestions(prev=>prev.map((question,index)=>index===nextIdx?response.question:question));
+          activeQuestionIdRef.current=response.question.id;
+          setTimeLeft(response.question.timeLimitSeconds||60);
+          setPurchasedClue('');setRemovedChoices([]);setQuestMessage('');setFreezeUntilMs(0);
+        } catch(error) {setQuestMessage(error instanceof Error?error.message:'Next question could not load.');setQuestBusy(false);return;}
+        setQuestBusy(false);
+      }
+      if (!serverSessionId) activeQuestionIdRef.current=activeQuestions[nextIdx].id;
       setCurrentQIndex(nextIdx);
-      setTimeLeft(activeQuestions[nextIdx].timeLimitSeconds);
+      if (!serverSessionId) setTimeLeft(activeQuestions[nextIdx].timeLimitSeconds);
       setTypedInput('');
       setSelectedOption('');
       setQuestionLocked(false);
@@ -360,7 +499,15 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
       completedSessionRef.current=true;
       activeQuestionIdRef.current=null;
       const total = activeQuestions.length;
-      const score = answerLogs.filter((a) => a.isCorrect).length;
+      let score = answerLogs.filter((a) => a.isCorrect).length;
+      if (serverSessionId) {
+        setQuestBusy(true);
+        try {
+          const finish=await questGame<{score:number;total:number;balance:number}>('finish',{sessionId:serverSessionId});
+          score=finish.score;setQuestBalance(finish.balance);
+        } catch(error) {completedSessionRef.current=false;setQuestMessage(error instanceof Error?error.message:'Results could not be saved.');setQuestBusy(false);return;}
+        setQuestBusy(false);
+      }
       const percentage = Math.round((score / total) * 100);
       const passed = percentage >= module.requiredPassingScore;
 
@@ -649,7 +796,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
         label: 'Easy Level',
         timePerQ: 60,
         pointsPerQ: 100,
-        complexityDesc: 'Recognition with first-letter hints, word choices and supported letter grids.',
+        complexityDesc: 'Recognition with word choices and source-supported letter grids.',
         borderColor: 'border-emerald-500',
         activeBg: 'bg-emerald-50/70',
         badgeText: '● EASY · 60s / QUESTION',
@@ -684,44 +831,46 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
     }> = [
       {
         id: 'all',
-        title: 'Full Quest Mix (15 Random Questions)',
-        desc: '15 questions at your selected difficulty: 3 random tasks from each of the 5 modes. Concepts repeat through different mechanics for reinforcement.',
+        title: 'Full Quest Mix (10 Random Questions)',
+        desc: '10 questions at your selected difficulty: 2 random tasks from each of the 5 modes.',
         icon: <Sparkles className="w-4 h-4 text-sky-600" />,
       },
       {
         id: 'analogyMaster',
-        title: 'Master Quiz (5 Questions per Level)',
-        desc: 'Match each expression to its source excerpt. Three difficulty banks contain 5 tasks each.',
+        title: 'Master Quiz (10 Questions per Level)',
+        desc: 'Match each expression to its source excerpt. Each difficulty draws 10 unique tasks.',
         icon: <Scale className="w-4 h-4 text-rose-600" />,
       },
       {
         id: 'missingPiece',
-        title: 'Missing Piece Quiz (5 Questions)',
-        desc: 'Plays all 5 questions for Missing Piece mode (sentence structure, grammatical connectors, and rule terms).',
+        title: 'Missing Piece Quiz (10 Questions)',
+        desc: 'Plays 10 randomized questions for Missing Piece mode (sentence structure, grammatical connectors, and rule terms).',
         icon: <Puzzle className="w-4 h-4 text-purple-600" />,
       },
       {
         id: 'pictureHunt',
-        title: 'Picture Hunt Quiz (5 Questions)',
-        desc: 'Plays all 5 questions for Picture Hunt mode (matching topic-specific visual concept cards).',
+        title: 'Picture Hunt Quiz (10 Questions)',
+        desc: 'Plays 10 randomized questions for Picture Hunt mode (matching topic-specific visual concept cards).',
         icon: <ImageIcon className="w-4 h-4 text-amber-600" />,
       },
       {
         id: 'crosswordGame',
-        title: 'Crossword Game (5 Questions)',
-        desc: 'Plays all 5 questions for Crossword Game mode (solving across and down letter clues).',
+        title: 'Crossword Game (10 Questions)',
+        desc: 'Plays 10 randomized questions for Crossword Game mode (solving across and down letter clues).',
         icon: <Grid3X3 className="w-4 h-4 text-indigo-600" />,
       },
       {
         id: 'typeHunter',
-        title: 'Hunter Quiz (Word Hunter · 5 per Level)',
-        desc: 'Plays all 5 questions for Word Hunter mode (typing target vocabulary and master concepts).',
+        title: 'Hunter Quiz (Word Hunter · 10 per Level)',
+        desc: 'Plays 10 randomized questions for Word Hunter mode (typing target vocabulary and master concepts).',
         icon: <Keyboard className="w-4 h-4 text-emerald-600" />,
       },
     ];
 
     return (
       <div className="max-w-4xl mx-auto space-y-6">
+        {useServerGame&&<div className="flex justify-end gap-2 text-sm font-semibold text-sky-900"><span className="rounded-lg border border-sky-200 bg-sky-50 px-3 py-2">Quest Coins: {questBalance}</span><button type="button" onClick={()=>setShowPowerShop(true)} className="rounded-lg border border-sky-300 px-3 py-2 hover:bg-sky-50">Power-Up Shop</button></div>}
+        {questShopPanel}
         {/* Faculty / Admin Preview Bar */}
         {isPreviewMode && (
           <div className="bg-gradient-to-r from-[#0A192F] via-[#0F3460] to-[#1E3E62] text-white p-4 rounded-2xl border border-sky-500/30 shadow-md flex flex-col sm:flex-row sm:items-center justify-between gap-3 animate-fade-in">
@@ -739,7 +888,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                   </span>
                 </div>
                 <p className="text-xs text-slate-200">
-                  Previewing quizzes for <strong>{module.title}</strong> · {module.quizQuestions.length} verified questions (5 per selected level · 15 per mode)
+                  Previewing quizzes for <strong>{module.title}</strong> · {module.quizQuestions.length} PDF-linked questions (10 per session)
                 </p>
               </div>
             </div>
@@ -1143,7 +1292,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
             <button
               type="button"
               onClick={() => startQuizSession()}
-              disabled={!canStart}
+              disabled={!canStart||questBusy}
               className="w-full sm:w-auto px-6 py-3 bg-sky-600 hover:bg-sky-700 text-white text-sm font-bold rounded-xl transition-colors flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer"
             >
               <span>Launch Gamified Quiz Now</span>
@@ -1168,6 +1317,9 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
 
     return (
       <div className="max-w-4xl mx-auto space-y-6">
+        {questShopPanel}
+        {useServerGame&&<div className="flex flex-wrap items-center justify-end gap-2 text-xs font-bold text-sky-900"><span className="rounded-lg border border-sky-200 bg-sky-50 px-3 py-2">Quest Coins: {questBalance}</span><button type="button" onClick={()=>setShowPowerShop(true)} className="rounded-lg border border-sky-300 px-3 py-2 hover:bg-sky-50">Power-Up Shop</button></div>}
+        {questMessage&&<div role="status" className="rounded-lg border border-amber-300 bg-amber-50 p-3 text-sm text-amber-950">{questMessage}{questMessage==='Insufficient Quest Coins'&&<button type="button" onClick={()=>setShowPowerShop(true)} className="ml-2 underline">Open shop</button>}</div>}
         {/* Faculty / Admin Preview Bar */}
         {isPreviewMode && (
           <div className="bg-gradient-to-r from-[#0A192F] via-[#0F3460] to-[#1E3E62] text-white p-4 rounded-2xl border border-sky-500/30 shadow-md flex flex-col sm:flex-row sm:items-center justify-between gap-3 animate-fade-in">
@@ -1397,9 +1549,10 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
             <h2 className="text-lg sm:text-xl font-bold text-slate-900 leading-snug">
               {currentQ.prompt}
             </h2>
+            {serverSessionId&&!questionLocked&&<button type="button" disabled={questBusy||usedPowerUps.includes('smart_hint')} onClick={()=>purchasePowerUp('smart_hint')} className="rounded-lg border border-sky-300 bg-sky-50 px-3 py-2 text-xs font-bold text-sky-900 hover:bg-sky-100 disabled:opacity-50">Smart Hint · 30 Quest Coins</button>}
+            {purchasedClue&&<p role="status" className="rounded-lg border border-sky-200 bg-sky-50 p-3 text-sm text-sky-950">{purchasedClue}</p>}
           </div>
 
-          {currentQ.hint && <p className="rounded-lg bg-sky-50 px-4 py-2 text-xs font-semibold text-sky-800">{currentQ.hint}</p>}
           {currentQ.sourceGraphic && <SourceGraphic block={currentQ.sourceGraphic}/>}
           {currentQ.type === 'typeHunter' && (
             <div className="space-y-5">
@@ -1475,8 +1628,9 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                 <h3 className="text-sm font-bold text-slate-900">Choose the picture that completes the clue.</h3>
                 <div className="grid grid-cols-2 gap-3">
                 {currentQ.pictureOptions.map((pic,index)=>{
+                  if (removedChoices.includes(pic.id)) return null;
                   const selected=selectedOption===pic.id;const correct=pic.id===currentQ.answer;
-                  return <button key={pic.id} type="button" disabled={questionLocked} aria-pressed={selected} aria-label={`${String.fromCharCode(65+index)}. ${pic.label}`} onClick={()=>{setSelectedOption(pic.id);handleLockQuestionAnswer(pic.id);}}
+                  return <button key={pic.id} type="button" disabled={questionLocked||questBusy} aria-pressed={selected} aria-label={`${String.fromCharCode(65+index)}. ${pic.label}`} onClick={()=>{setSelectedOption(pic.id);handleLockQuestionAnswer(pic.id);}}
                     className={`group relative rounded-2xl border-2 p-2.5 text-left transition-colors cursor-pointer focus-visible:outline-4 focus-visible:outline-sky-400 disabled:cursor-default ${questionLocked?(correct?'border-emerald-500 bg-emerald-50':selected?'border-red-500 bg-red-50':'border-slate-200 opacity-60'):'border-slate-200 bg-white hover:border-sky-500 hover:bg-sky-50'}`}>
                     <span className="absolute left-3 top-3 z-10 grid h-6 w-6 place-items-center rounded-full border-2 border-white bg-sky-700 text-xs font-bold text-white shadow-sm">{String.fromCharCode(65+index)}</span>
                     {pic.conceptVisual?<QuizConceptCard {...pic.conceptVisual} topic={module.title}/>:pic.sourceGraphic?<SourceGraphic block={pic.sourceGraphic}/>:pic.sourceImageUrl?<img src={pic.sourceImageUrl} alt={pic.caption} className="h-40 w-full object-contain"/>:<PictureHuntArtwork sceneId={pic.sceneId} className="h-40 w-full"/>}
@@ -1499,13 +1653,14 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
               {currentQ.options && (
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {currentQ.options.map((opt) => {
+                    if (removedChoices.includes(opt)) return null;
                     const isSelected = selectedOption === opt;
                     const isRight = opt.toLowerCase() === currentQ.answer.toLowerCase();
                     return (
                       <button
                         key={opt}
                         type="button"
-                        disabled={questionLocked}
+                        disabled={questionLocked||questBusy}
                         onClick={() => {
                           setSelectedOption(opt);
                           handleLockQuestionAnswer(opt);
@@ -1571,13 +1726,14 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
               {currentQ.options && (
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {currentQ.options.map((opt) => {
+                    if (removedChoices.includes(opt)) return null;
                     const isSelected = selectedOption === opt;
                     const isRight = opt.toLowerCase() === currentQ.answer.toLowerCase();
                     return (
                       <button
                         key={opt}
                         type="button"
-                        disabled={questionLocked}
+                        disabled={questionLocked||questBusy}
                         onClick={() => {
                           setSelectedOption(opt);
                           handleLockQuestionAnswer(opt);
@@ -1648,13 +1804,14 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {currentQ.options.map((opt) => {
+                      if (removedChoices.includes(opt)) return null;
                       const isSelected = selectedOption === opt || typedInput.toLowerCase() === opt.toLowerCase();
                       const isRight = opt.toLowerCase() === currentQ.answer.toLowerCase();
                       return (
                         <button
                           key={opt}
                           type="button"
-                          disabled={questionLocked}
+                          disabled={questionLocked||questBusy}
                           onClick={() => {
                             setSelectedOption(opt);
                             setTypedInput(opt);
@@ -1701,7 +1858,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                     disabled={questionLocked}
                     autoFocus
                     value={typedInput}
-                    onChange={(e) => setTypedInput(formatCrosswordResponse(currentQ.answer,e.target.value))}
+                    onChange={(e) => setTypedInput(formatCrosswordResponse(currentQ.answer.replace(/[•?]/g,'A'),e.target.value))}
                     placeholder="Type the complete crossword word or phrase..."
                     className="flex-1 px-4 py-3 text-base font-mono rounded-xl border border-slate-300 focus:border-indigo-600 focus:outline-none disabled:bg-slate-100 uppercase"
                   />
