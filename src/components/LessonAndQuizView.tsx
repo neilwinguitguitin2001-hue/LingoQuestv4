@@ -161,6 +161,8 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
   const [selectedOption, setSelectedOption] = useState<string>('');
   const [questionLocked, setQuestionLocked] = useState<boolean>(false);
   const [answerLogs, setAnswerLogs] = useState<QuestionAnswerLog[]>([]);
+  const [questCoins, setQuestCoins] = useState(100);
+  const [smartHintUnlocked, setSmartHintUnlocked] = useState(false);
 
   const [finalOutcome, setFinalOutcome] = useState<{
     score: number;
@@ -314,6 +316,8 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
     setSelectedOption('');
     setQuestionLocked(false);
     setAnswerLogs([]);
+    setQuestCoins(100);
+    setSmartHintUnlocked(false);
     setFinalOutcome(null);
     setStage('PLAYING_QUIZ');
   };
@@ -1398,7 +1402,19 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
             </h2>
           </div>
 
-          {currentQ.hint && <p className="rounded-lg bg-sky-50 px-4 py-2 text-xs font-semibold text-sky-800">{currentQ.hint}</p>}
+          <div className="flex items-center justify-between gap-3 rounded-lg border border-amber-200 bg-amber-50 px-4 py-3">
+            <div>
+              <p className="text-xs font-black uppercase tracking-wide text-amber-900">Smart Hint · 30 Quest Coins</p>
+              {smartHintUnlocked && currentQ.hint ? (
+                <p className="mt-1 text-sm font-semibold text-amber-950">{currentQ.hint}</p>
+              ) : (
+                <p className="mt-1 text-xs font-medium text-amber-800">Unlock a question-specific clue without revealing the answer.</p>
+              )}
+            </div>
+            {!smartHintUnlocked && (
+              <button type="button" disabled={questCoins < 30 || questionLocked} onClick={() => { setQuestCoins((coins) => coins - 30); setSmartHintUnlocked(true); }} className="shrink-0 rounded-lg bg-amber-500 px-3 py-2 text-xs font-black text-slate-950 transition hover:bg-amber-400 disabled:cursor-not-allowed disabled:bg-slate-300 disabled:text-slate-500">Unlock · {questCoins}</button>
+            )}
+          </div>
           {currentQ.sourceGraphic && <SourceGraphic block={currentQ.sourceGraphic}/>}
           {currentQ.type === 'typeHunter' && (
             <div className="space-y-5">
