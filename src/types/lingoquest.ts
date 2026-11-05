@@ -321,6 +321,7 @@ export interface StudentAccount {
   password?: string;
   photoUrl?: string; // Base64 or image URL for profile picture
   points: number;
+  questCoins?: number;
   badges: string[]; // array of BadgeDefinition IDs
   completedModules: string[]; // array of Module IDs
   progressByModule: Record<string, ModuleProgress>;

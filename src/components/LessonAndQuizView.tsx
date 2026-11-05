@@ -110,6 +110,8 @@ interface LessonAndQuizViewProps {
     xpAmount: number,
     label: string
   ) => { newlyAwarded: boolean; unlockedBadgeName?: string };
+  questCoins?: number;
+  onSpendQuestCoins?: (amount: number) => boolean;
 }
 
 interface QuestionAnswerLog {
@@ -136,6 +138,8 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
   onBackToStudentDashboard,
   completedVisualItems = [],
   onAwardVisualXP,
+  questCoins: persistedQuestCoins,
+  onSpendQuestCoins,
 }) => {
   const sourceContent = useDigitalContent(sourceModule.pdfLesson);
   const module = React.useMemo(() => ({ ...sourceModule, quizQuestions: sourceContent.data?.games || sourceModule.quizQuestions }), [sourceModule, sourceContent.data]);
@@ -161,7 +165,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
   const [selectedOption, setSelectedOption] = useState<string>('');
   const [questionLocked, setQuestionLocked] = useState<boolean>(false);
   const [answerLogs, setAnswerLogs] = useState<QuestionAnswerLog[]>([]);
-  const [questCoins, setQuestCoins] = useState(100);
+  const [questCoins, setQuestCoins] = useState(persistedQuestCoins ?? 100);
   const [smartHintUnlocked, setSmartHintUnlocked] = useState(false);
 
   const [finalOutcome, setFinalOutcome] = useState<{
@@ -316,7 +320,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
     setSelectedOption('');
     setQuestionLocked(false);
     setAnswerLogs([]);
-    setQuestCoins(100);
+    setQuestCoins(persistedQuestCoins ?? 100);
     setSmartHintUnlocked(false);
     setFinalOutcome(null);
     setStage('PLAYING_QUIZ');
@@ -1412,7 +1416,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
               )}
             </div>
             {!smartHintUnlocked && (
-              <button type="button" disabled={questCoins < 30 || questionLocked} onClick={() => { setQuestCoins((coins) => coins - 30); setSmartHintUnlocked(true); }} className="shrink-0 rounded-lg bg-amber-500 px-3 py-2 text-xs font-black text-slate-950 transition hover:bg-amber-400 disabled:cursor-not-allowed disabled:bg-slate-300 disabled:text-slate-500">Unlock · {questCoins}</button>
+              <button type="button" disabled={questCoins < 30 || questionLocked} onClick={() => { const spent = onSpendQuestCoins ? onSpendQuestCoins(30) : true; if (spent) { setQuestCoins((coins) => coins - 30); setSmartHintUnlocked(true); } }} className="shrink-0 rounded-lg bg-amber-500 px-3 py-2 text-xs font-black text-slate-950 transition hover:bg-amber-400 disabled:cursor-not-allowed disabled:bg-slate-300 disabled:text-slate-500">Unlock · {questCoins}</button>
             )}
           </div>
           {currentQ.sourceGraphic && <SourceGraphic block={currentQ.sourceGraphic}/>}

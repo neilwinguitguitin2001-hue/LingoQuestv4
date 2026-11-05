@@ -641,6 +641,15 @@ export default function App() {
 
   // Determine current active user
   const currentStudent = students.find((s) => s.id === currentUserId) || null;
+  const spendQuestCoins = (amount: number) => {
+    if (!currentStudent || amount <= 0 || (currentStudent.questCoins ?? 0) < amount) return false;
+    setStudents((prev) => prev.map((student) =>
+      student.id === currentStudent.id
+        ? { ...student, questCoins: Math.max(0, (student.questCoins ?? 0) - amount) }
+        : student
+    ));
+    return true;
+  };
   const currentTeacher = teachers.find((t) => t.id === currentUserId) || null;
   const currentAdmin = admins.find((a) => a.id === currentUserId) || null;
   const currentUser: UserAccount | null = currentStudent || currentTeacher || currentAdmin;
@@ -2334,8 +2343,10 @@ export default function App() {
               setCurrentView(currentUser?.role === 'teacher' ? 'TEACHER' : 'ADMIN');
             }}
             onCompleteLesson={handleCompleteLesson}
-            onSubmitQuizResult={handleSubmitQuizResult}
-            onAdvanceToNextModule={handleAdvanceToNextModule}
+  onSubmitQuizResult={handleSubmitQuizResult}
+  questCoins={currentStudent?.questCoins}
+  onSpendQuestCoins={spendQuestCoins}
+  onAdvanceToNextModule={handleAdvanceToNextModule}
             onOpenWritingLabWithPrompt={handleOpenWritingLabWithPrompt}
             completedVisualItems={
               currentStudent?.progressByModule[selectedModule.id]?.visualInteractionsCompleted || []

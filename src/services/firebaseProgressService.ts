@@ -116,6 +116,7 @@ export interface FirestoreProgressDoc {
   xp: number;
   level: number;
   coins: number;
+  questCoins: number;
   gems: number;
   streak: number;
   currentIsland: string;
@@ -284,6 +285,7 @@ export async function syncStudentProgressToFirestore(
     (p) => p.isBridgeRestored
   ).length;
   const coins = xp * 2 + bridgesRestoredCount * 25;
+  const questCoins = Math.max(0, Number(student.questCoins ?? coins) || 0);
   const gems = (student.badges?.length || 0) * 5 + bridgesRestoredCount * 2;
   const streak = Math.max(1, completedQuests.length);
   const { currentIsland, unlockedIslands } = deriveIslandsFromStudent(student);
@@ -294,6 +296,7 @@ export async function syncStudentProgressToFirestore(
     xp,
     level,
     coins,
+    questCoins,
     gems,
     streak,
     currentIsland: currentIsland.slice(0, 120),
@@ -405,6 +408,10 @@ export async function mergeLocalGuestProgressIntoStudent(
   const mergedStudent: StudentAccount = {
     ...student,
     points: mergedPoints,
+    questCoins: Math.max(
+      Number(student.questCoins ?? 0),
+      Number(remoteProgress?.questCoins ?? 0)
+    ),
     badges: Array.from(mergedBadges),
     completedModules: Array.from(mergedCompleted),
     progressByModule: mergedProgressByModule,

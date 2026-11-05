@@ -136,6 +136,10 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
           if (mounted) setLoading(false)
         })
 
+      const loadingTimeout = window.setTimeout(() => {
+        if (mounted) setLoading(false)
+      }, 3500)
+
       const { data: listener } = supabase.auth.onAuthStateChange(async (_event, session) => {
         if (!mounted) return
         const authUser = session?.user
@@ -161,6 +165,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       })
       return () => {
         mounted = false
+        window.clearTimeout(loadingTimeout)
         listener.subscription.unsubscribe()
       }
     }
