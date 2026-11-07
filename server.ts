@@ -475,93 +475,48 @@ async function startServer() {
       const contextTitle = promptTitle || 'General Sentence Construction & English Writing';
       const contextTopic = topicType || 'sentence-construction';
 
-      const ai = getAiClient();
-      const response = await ai.models.generateContent({
-        model: 'gemini-3.8-flash',
-        contents: `Evaluate the following English writing submission from a Grade ${targetGrade} Filipino public school student in DepEd Davao Oriental.
+      const prompt = `Evaluate the following English writing submission from a Grade ${targetGrade} Filipino public school student in DepEd Davao Oriental.
 Writing Activity / Prompt: "${contextTitle}" (Topic Focus: ${contextTopic})
 Student's Written Submission:
 """
 ${studentText.trim()}
 """
 
-Provide encouraging, age-appropriate formative feedback for a Grade ${targetGrade} learner. Identify specific grammar, spelling, or punctuation issues (if any), offer actionable sentence construction and vocabulary improvements, provide a polished suggested revision, and give an encouraging overall clarity comment.`,
-        config: {
-          systemInstruction:
-            'You are a warm, encouraging English Coach for Grade 7–10 students in DepEd Davao Oriental, Philippines. Your goal is to provide constructive, easy-to-understand grammar and sentence construction feedback. Never grade harshly; celebrate strengths while clearly explaining how to improve grammar, parallelism, modal verbs, cohesive devices, and clarity.',
-          responseMimeType: 'application/json',
-          responseSchema: {
-            type: Type.OBJECT,
-            properties: {
-              overallClarityComment: {
-                type: Type.STRING,
-                description: 'Encouraging, age-appropriate overall feedback on clarity, tone, and message for a Grade 7-10 student.',
-              },
-              clarityScore: {
-                type: Type.INTEGER,
-                description: 'Formative self-check clarity score from 60 to 100.',
-              },
-              correctedVersion: {
-                type: Type.STRING,
-                description: 'A polished, grammatically sound version of the student text that preserves their original meaning.',
-              },
-              strengthsHighlighted: {
-                type: Type.ARRAY,
-                items: { type: Type.STRING },
-                description: '2 to 3 specific positive points about what the student did well.',
-              },
-              grammarIssues: {
-                type: Type.ARRAY,
-                items: {
-                  type: Type.OBJECT,
-                  properties: {
-                    originalPhrase: {
-                      type: Type.STRING,
-                      description: 'The exact word or phrase from the student text that has an issue.',
-                    },
-                    suggestion: {
-                      type: Type.STRING,
-                      description: 'The corrected word or phrase.',
-                    },
-                    explanation: {
-                      type: Type.STRING,
-                      description: 'Simple, student-friendly explanation of the grammar or spelling rule.',
-                    },
-                    ruleCategory: {
-                      type: Type.STRING,
-                      description: 'Category such as Subject-Verb Agreement, Tense Consistency, Modal Usage, Parallelism, Punctuation, or Spelling.',
-                    },
-                  },
-                  required: ['originalPhrase', 'suggestion', 'explanation', 'ruleCategory'],
-                },
-                description: 'List of specific grammar, spelling, or mechanics issues found. Empty array if none.',
-              },
-              constructionSuggestions: {
-                type: Type.ARRAY,
-                items: { type: Type.STRING },
-                description: '2 to 3 actionable tips to improve sentence construction, transition words, or vocabulary richness.',
-              },
-            },
-            required: [
-              'overallClarityComment',
-              'clarityScore',
-              'correctedVersion',
-              'strengthsHighlighted',
-              'grammarIssues',
-              'constructionSuggestions',
-            ],
-          },
-        },
-      });
+Provide encouraging, age-appropriate formative feedback for a Grade ${targetGrade} learner. Identify specific grammar, spelling, or punctuation issues (if any), offer actionable sentence construction and vocabulary improvements, provide a polished suggested revision, and give an encouraging overall clarity comment.`;
+      const systemInstruction = 'You are a warm, encouraging English Coach for Grade 7–10 students in DepEd Davao Oriental, Philippines. Return only valid JSON with keys overallClarityComment, clarityScore, correctedVersion, strengthsHighlighted, grammarIssues, and constructionSuggestions. Never grade harshly; celebrate strengths while clearly explaining how to improve grammar, parallelism, modal verbs, cohesive devices, and clarity.';
+      const groqKey = process.env.GROQ_API_KEY;
+      let rawText: string | undefined;
 
-      const rawText = response.text;
+      if (groqKey) {
+        const groqResponse = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+          method: 'POST',
+          headers: { Authorization: `Bearer ${groqKey}`, 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            model: 'llama-3.3-70b-versatile',
+            temperature: 0.2,
+            response_format: { type: 'json_object' },
+            messages: [{ role: 'system', content: systemInstruction }, { role: 'user', content: prompt }],
+          }),
+        });
+        const groqData = await groqResponse.json() as { choices?: Array<{ message?: { content?: string } }>; error?: { message?: string } };
+        if (!groqResponse.ok) throw new Error(groqData.error?.message || `Groq request failed with status ${groqResponse.status}.`);
+        rawText = groqData.choices?.[0]?.message?.content;
+      } else if (process.env.GEMINI_API_KEY) {
+        const ai = getAiClient();
+        const response = await ai.models.generateContent({ model: 'gemini-3.8-flash', contents: prompt, config: { systemInstruction, responseMimeType: 'application/json' } });
+        rawText = response.text;
+      } else {
+        res.status(503).json({ error: 'No grammar AI provider is configured on the server.' });
+        return;
+      }
+
       if (!rawText) {
         res.status(502).json({ error: 'Received an empty response from the language coach service.' });
         return;
       }
 
       const parsed = JSON.parse(rawText.trim());
-      res.json(parsed);
+      res.json({ ...parsed, checker: groqKey ? 'groq-ai' : 'gemini-ai' });
     } catch (error: unknown) {
       const message = error instanceof Error ? error.message : 'Failed to generate grammar feedback.';
       console.error('Gemini API error:', message);

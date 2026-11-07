@@ -106,7 +106,20 @@ export const WritingLabView: React.FC<WritingLabViewProps> = ({
     const titleToUse = writingTitle;
 
     try {
-      const data = generateLocalGrammarAnalysis(studentText, student.gradeLevel);
+      const response = await fetch('/api/grammar-feedback', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          studentText: studentText.trim(),
+          promptTitle: titleToUse,
+          gradeLevel: student.gradeLevel,
+          topicType: initialModule?.title,
+        }),
+      });
+      const payload = await response.json() as WritingFeedbackResult & { error?: string };
+      if (!response.ok) throw new Error(payload.error || 'The AI grammar checker could not finish.');
+      const data: WritingFeedbackResult = payload;
+      setFeedbackSource(data.checker === 'groq-ai' ? 'Groq AI' : data.checker === 'gemini-ai' ? 'Gemini AI' : 'Basic local rules');
       setFeedback(data);
       soundFX.playPass();
       onSaveSubmission({
@@ -117,8 +130,8 @@ export const WritingLabView: React.FC<WritingLabViewProps> = ({
         feedback: data,
         timestamp: new Date().toLocaleString(),
       });
-    } catch {
-      setErrorMessage('The local check could not finish. Please try again.');
+    } catch (error) {
+      setErrorMessage(error instanceof Error ? error.message : 'The AI grammar checker could not finish.');
     } finally {
       setIsAnalyzing(false);
     }
@@ -169,7 +182,7 @@ export const WritingLabView: React.FC<WritingLabViewProps> = ({
                 LingoQuest Writing Lab
               </h1>
               <p className="text-sky-100 text-sm mt-0.5">
-                Check basic grammar patterns for free in your browser. This checker has limited coverage and does not replace teacher feedback. No text is sent to an AI provider.
+                Check your writing with Groq AI when configured, with a local fallback for offline use. This is formative feedback and does not replace teacher feedback.
               </p>
             </div>
           </div>
@@ -233,7 +246,7 @@ export const WritingLabView: React.FC<WritingLabViewProps> = ({
                     <span className="font-bold text-slate-800 text-sm">{sub.promptTitle}</span>
                     <div className="flex items-center gap-3">
                       <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800">
-                        {sub.feedback?.checker === 'browser-ai' ? 'Browser AI suggestion' : sub.feedback?.checker === 'local-rules' ? 'Basic local check' : 'Saved feedback'}
+                        {sub.feedback?.checker === 'groq-ai' ? 'Groq AI feedback' : sub.feedback?.checker === 'gemini-ai' ? 'Gemini AI feedback' : sub.feedback?.checker === 'browser-ai' ? 'Browser AI suggestion' : sub.feedback?.checker === 'local-rules' ? 'Basic local check' : 'Saved feedback'}
                       </span>
                       <span className="text-xs text-slate-400">{sub.timestamp}</span>
                     </div>
