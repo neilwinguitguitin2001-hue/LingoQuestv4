@@ -181,7 +181,7 @@ export const WritingLabView: React.FC<WritingLabViewProps> = ({
                     <span className="font-bold text-slate-800 text-sm">{sub.promptTitle}</span>
                     <div className="flex items-center gap-3">
                       <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800">
-                        {sub.feedback?.checker === 'groq-ai' ? 'Groq AI check' : sub.feedback?.checker === 'openquill' ? 'OpenQuill local check' : sub.feedback?.checker === 'browser-ai' ? 'Browser AI suggestion' : sub.feedback?.checker === 'local-rules' ? 'Basic local check' : 'Saved feedback'}
+                        {sub.feedback?.checker === 'groq-ai' ? 'AI Grammar Checker' : sub.feedback?.checker === 'openquill' ? 'OpenQuill local check' : sub.feedback?.checker === 'browser-ai' ? 'Browser AI suggestion' : sub.feedback?.checker === 'local-rules' ? 'Basic local check' : 'Saved feedback'}
                       </span>
                       <span className="text-xs text-slate-400">{sub.timestamp}</span>
                     </div>
@@ -202,7 +202,7 @@ export const WritingLabView: React.FC<WritingLabViewProps> = ({
                   )}
                   {sub.feedback?.overallClarityComment && (
                     <p className="text-xs text-slate-600 bg-amber-50/60 p-2.5 rounded-lg border border-amber-100">
-                      💡 {sub.feedback.overallClarityComment}
+                      💡 {sub.feedback.overallClarityComment.replace(/Groq/g, 'The AI service')}
                     </p>
                   )}
                 </div>
@@ -241,7 +241,7 @@ export const WritingLabView: React.FC<WritingLabViewProps> = ({
                 className="w-full p-4 rounded-2xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:bg-white text-sm text-slate-800 font-normal leading-relaxed resize-y transition"
               />
 
-              <p id="writing-check-limit" className="text-xs text-slate-500">10–5,000 characters per check. Clicking Check grammar sends your draft to Groq for AI checking. Avoid personal information. If AI is unavailable, local rules run on your device.</p>
+              <p id="writing-check-limit" className="text-xs text-slate-500">10–5,000 characters per check. Clicking Check grammar sends your draft to the AI Grammar Checker. Avoid personal information. If AI is unavailable, local rules run on your device.</p>
 
               {errorMessage && (
                 <div role="alert" className="flex items-center gap-2 p-3 rounded-xl bg-rose-50 border border-rose-200 text-rose-800 text-xs font-semibold">
@@ -365,7 +365,7 @@ export const WritingLabView: React.FC<WritingLabViewProps> = ({
                     <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
                     Overall Feedback
                   </div>
-                  <p className="mb-2 font-bold">Checked by: {feedback.checker === 'groq-ai' ? 'Groq AI' : feedback.checker === 'openquill' ? 'OpenQuill local fallback' : 'Saved feedback'}</p>{feedback.overallClarityComment}
+                  <p className="mb-2 font-bold">Checked by: {feedback.checker === 'groq-ai' ? 'AI Grammar Checker' : feedback.checker === 'openquill' ? 'OpenQuill local fallback' : 'Saved feedback'}</p>{feedback.overallClarityComment}
                 </div>
 
                 {/* Corrected / Suggested Revision */}
