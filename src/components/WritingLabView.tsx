@@ -140,50 +140,19 @@ export const WritingLabView: React.FC<WritingLabViewProps> = ({
     const titleToUse = customTitle || currentPrompt.title;
 
     try {
-      const response = await fetch('/api/grammar-feedback', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          studentText: studentText.trim(),
-          promptTitle: titleToUse,
-          gradeLevel: student.gradeLevel,
-          topicType: initialModule?.topicType || 'sentence-construction',
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error(`Server returned ${response.status}`);
-      }
-
-      const data: WritingFeedbackResult = await response.json();
+      const data = generateLocalGrammarAnalysis(studentText, student.gradeLevel);
       setFeedback(data);
       soundFX.playPass();
-
-      // Record submission
-      const newRecord: WritingSubmissionRecord = {
+      onSaveSubmission({
         id: `ws-${Date.now()}`,
         moduleId: initialModule?.id,
         promptTitle: titleToUse,
         studentText: studentText.trim(),
         feedback: data,
         timestamp: new Date().toLocaleString(),
-      };
-      onSaveSubmission(newRecord);
+      });
     } catch {
-      // Offline fallback rule-based analysis
-      const fallbackResult = generateLocalGrammarAnalysis(studentText, student.gradeLevel);
-      setFeedback(fallbackResult);
-      soundFX.playPass();
-
-      const newRecord: WritingSubmissionRecord = {
-        id: `ws-${Date.now()}`,
-        moduleId: initialModule?.id,
-        promptTitle: titleToUse,
-        studentText: studentText.trim(),
-        feedback: fallbackResult,
-        timestamp: new Date().toLocaleString(),
-      };
-      onSaveSubmission(newRecord);
+      setErrorMessage('The local check could not finish. Please try again.');
     } finally {
       setIsAnalyzing(false);
     }
@@ -201,7 +170,7 @@ export const WritingLabView: React.FC<WritingLabViewProps> = ({
     <div className="max-w-5xl mx-auto px-4 py-8 space-y-6">
       {/* Top Banner with Deep Navy Theme */}
       <div className="bg-gradient-to-r from-[#0A192F] via-[#0F3460] to-[#1E3E62] rounded-3xl text-white relative overflow-hidden border-2 border-[#231F20] linocut-card">
-        <InabelHeaderStrip variant="emerald" label="AI-Assisted Writing Studio • Davao Oriental" />
+        <InabelHeaderStrip variant="emerald" label="Writing Studio • Davao Oriental" />
         <div className="p-6 sm:p-8 relative">
         <div className="absolute right-0 top-0 w-80 h-80 bg-sky-500/10 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none" />
         <div className="flex flex-wrap items-center justify-between gap-4 relative z-10">
@@ -212,7 +181,7 @@ export const WritingLabView: React.FC<WritingLabViewProps> = ({
             <div>
               <div className="flex items-center gap-2">
                 <span className="text-xs font-bold uppercase tracking-wider bg-blue-950/60 px-2.5 py-0.5 rounded-full text-sky-200 border border-blue-800/60">
-                  AI-Assisted Writing Studio
+                  Writing Studio
                 </span>
                 <span className="text-xs font-semibold text-sky-300">
                   Grade {student.gradeLevel} Curriculum
@@ -222,7 +191,7 @@ export const WritingLabView: React.FC<WritingLabViewProps> = ({
                 LingoQuest Writing Lab
               </h1>
               <p className="text-sky-100 text-sm mt-0.5">
-                Draft your English responses, receive smart grammar corrections, and level up your composition skills.
+                Check basic grammar patterns for free in your browser. This checker has limited coverage and does not replace teacher feedback. No text is sent to an AI provider.
               </p>
             </div>
           </div>
@@ -272,7 +241,7 @@ export const WritingLabView: React.FC<WritingLabViewProps> = ({
               <Feather className="w-12 h-12 mx-auto text-slate-300" />
               <p className="font-medium text-slate-600">No writing submissions recorded yet.</p>
               <p className="text-xs text-slate-400">
-                Choose a prompt, write a response, and click "Evaluate with AI" to record your first entry!
+                Choose a prompt, write a response, and click "Check grammar" to record your first entry!
               </p>
             </div>
           ) : (
@@ -286,7 +255,7 @@ export const WritingLabView: React.FC<WritingLabViewProps> = ({
                     <span className="font-bold text-slate-800 text-sm">{sub.promptTitle}</span>
                     <div className="flex items-center gap-3">
                       <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800">
-                        Score: {sub.feedback?.clarityScore ?? 85}/100
+                        Local rule check
                       </span>
                       <span className="text-xs text-slate-400">{sub.timestamp}</span>
                     </div>
@@ -417,12 +386,12 @@ export const WritingLabView: React.FC<WritingLabViewProps> = ({
                   {isAnalyzing ? (
                     <>
                       <Loader2 className="w-4 h-4 animate-spin" />
-                      Analyzing with AI...
+                      Checking grammar...
                     </>
                   ) : (
                     <>
                       <Sparkles className="w-4 h-4 text-amber-300" />
-                      Evaluate with AI
+                      Check grammar
                     </>
                   )}
                 </button>
@@ -431,33 +400,33 @@ export const WritingLabView: React.FC<WritingLabViewProps> = ({
             </div>
           </div>
 
-          {/* Right Column: AI Feedback Panel (5 cols) */}
+          {/* Right Column: Local Feedback Panel (5 cols) */}
           <div className="lg:col-span-5 space-y-6">
             {!feedback && !isAnalyzing ? (
               <div className="bg-white rounded-3xl overflow-hidden border-2 border-[#231F20] linocut-card">
-                <InabelHeaderStrip variant="amber" label="AI Evaluation Engine" />
+                <InabelHeaderStrip variant="amber" label="Local Grammar Checker" />
                 <div className="p-8 text-center space-y-4">
                 <div className="w-16 h-16 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto border-2 border-[#231F20] shadow-[3px_3px_0px_#231F20]">
                   <Sparkles className="w-8 h-8" />
                 </div>
                 <h3 className="text-lg font-bold font-display text-slate-800">
-                  Ready for AI Writing Feedback
+                  Check your writing
                 </h3>
                 <p className="text-xs text-slate-500 leading-relaxed">
-                  Type or paste your response in the editor and click "Evaluate with AI". You will receive:
+                  Type or paste your response in the editor and click "Check grammar". You will receive:
                 </p>
                 <div className="text-left space-y-2.5 pt-2 text-xs text-slate-600">
                   <div className="flex items-start gap-2">
                     <span className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-[10px] font-bold shrink-0 mt-0.5">
                       1
                     </span>
-                    <span><strong>Overall Clarity Score</strong> (0–100) aligned with DepEd Grade {student.gradeLevel} standards.</span>
+                    <span><strong>Basic rule checks</strong> for supported grammar patterns. This is not a grade or a complete grammar review.</span>
                   </div>
                   <div className="flex items-start gap-2">
                     <span className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-[10px] font-bold shrink-0 mt-0.5">
                       2
                     </span>
-                    <span><strong>Polished Version</strong> showing exemplary sentence structure.</span>
+                    <span><strong>Suggested revision</strong> with supported corrections. Review each change before using it.</span>
                   </div>
                   <div className="flex items-start gap-2">
                     <span className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-[10px] font-bold shrink-0 mt-0.5">
@@ -476,20 +445,20 @@ export const WritingLabView: React.FC<WritingLabViewProps> = ({
               </div>
             ) : isAnalyzing ? (
               <div className="bg-white rounded-3xl overflow-hidden border-2 border-[#231F20] linocut-card">
-                <InabelHeaderStrip variant="amber" label="AI Evaluation in Progress" />
+                <InabelHeaderStrip variant="amber" label="Grammar Check in Progress" />
                 <div className="p-12 text-center space-y-4">
                 <Loader2 className="w-12 h-12 text-emerald-600 animate-spin mx-auto" />
                 <h3 className="text-lg font-bold font-display text-slate-800">
                   Evaluating Your Writing...
                 </h3>
                 <p className="text-xs text-slate-500">
-                  Examining subject-verb agreement, punctuation, lexical choice, and clarity.
+                  Checking supported grammar patterns and sentence punctuation.
                 </p>
                 </div>
               </div>
             ) : feedback ? (
               <div className="bg-white rounded-3xl overflow-hidden border-2 border-[#231F20] linocut-card">
-                <InabelHeaderStrip variant="emerald" label="Teacher & AI Assessment" />
+                <InabelHeaderStrip variant="emerald" label="Local Grammar Feedback" />
                 <div className="p-6 space-y-5">
                 {/* Score & Header */}
                 <div className="flex items-center justify-between pb-3 border-b border-slate-100">
@@ -498,17 +467,10 @@ export const WritingLabView: React.FC<WritingLabViewProps> = ({
                       Evaluation Result
                     </span>
                     <h3 className="text-base font-bold text-slate-800 font-display">
-                      Teacher & AI Assessment
+                      Local Grammar Feedback
                     </h3>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <div className="text-right">
-                      <span className="text-2xl font-black font-mono text-emerald-600">
-                        {feedback.clarityScore}
-                      </span>
-                      <span className="text-xs text-slate-400 font-bold">/100</span>
-                    </div>
-                  </div>
+
                 </div>
 
                 {/* Overall Comment */}
@@ -619,9 +581,9 @@ export const WritingLabView: React.FC<WritingLabViewProps> = ({
 };
 
 /**
- * Resilient offline fallback grammar analyzer if API is unreachable.
+ * Free local grammar checker. Limited rules; no external AI requests.
  */
-function generateLocalGrammarAnalysis(text: string, grade: number): WritingFeedbackResult {
+function generateLocalGrammarAnalysis(text: string, _grade: number): WritingFeedbackResult {
   const issues = [];
   let corrected = text;
 
@@ -681,20 +643,16 @@ function generateLocalGrammarAnalysis(text: string, grade: number): WritingFeedb
     corrected = corrected.trim() + '.';
   }
 
-  const score = Math.max(70, 95 - issues.length * 10);
+  const score = 0; // Legacy record field; not a writing grade and not displayed.
 
   return {
     overallClarityComment:
       issues.length === 0
-        ? `Impressive English expression! Your sentence demonstrates clear organization and appropriate Grade ${grade} vocabulary.`
-        : `Good effort! Your ideas are clearly communicated. Review the highlighted corrections to sharpen your grammar and tense consistency.`,
+        ? 'No supported grammar patterns were flagged. This does not mean the writing is error-free; review it with your teacher.'
+        : 'Review the suggested corrections below. This basic checker cannot assess meaning, vocabulary quality, or overall clarity.',
     clarityScore: score,
     correctedVersion: corrected,
-    strengthsHighlighted: [
-      'Meaningful ideas relevant to the assigned topic',
-      'Good vocabulary choices suitable for Junior High School level',
-      'Clear sentence intention and thematic focus',
-    ],
+    strengthsHighlighted: [],
     grammarIssues: issues,
     constructionSuggestions: [
       'Practice varying your sentence openers using prepositional phrases or dependent clauses.',
