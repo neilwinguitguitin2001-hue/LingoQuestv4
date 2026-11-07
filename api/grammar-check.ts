@@ -17,8 +17,8 @@ export default async function handler(req: Request, res: ServerResponse) {
   if (req.method !== 'POST') { res.setHeader('Allow', 'POST'); return send(405, { error: 'Method not allowed.' }); }
   const token = /^Bearer (\S+)$/i.exec(req.headers.authorization ?? '')?.[1];
   if (!token) return send(401, { error: 'Please sign in to use AI checking.' });
-  const url = process.env.VITE_SUPABASE_URL;
-  const anon = process.env.VITE_SUPABASE_ANON_KEY;
+  const url = process.env.SUPABASE_URL || process.env.VITE_SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const anon = process.env.SUPABASE_ANON_KEY || process.env.VITE_SUPABASE_ANON_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || process.env.SUPABASE_PUBLISHABLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY;
   if (!url || !anon) return send(503, { error: 'AI checking is unavailable.' });
   try {
     if (!req.headers['content-type']?.includes('application/json')) return send(415, { error: 'JSON required.' });
