@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {
   AlertCircle,
-  BookOpen,
   CheckCircle2,
   Copy,
   Feather,
@@ -19,6 +18,7 @@ import {
   WritingFeedbackResult,
   WritingSubmissionRecord,
 } from '../types/lingoquest';
+import { generateOpenQuillFeedback } from '../utils/openquillFeedback';
 import { soundFX } from '../utils/soundEffects';
 import { InabelHeaderStrip } from './InabelHeaderStrip';
 
@@ -30,102 +30,19 @@ interface WritingLabViewProps {
   onBackToMap: () => void;
 }
 
-const SAMPLE_WRITING_PROMPTS = [
-  {
-    id: 'p-pujada',
-    title: 'The Wonders of Pujada Bay (Context Clues & Descriptive)',
-    instructions:
-      'Write 2-3 sentences describing the crystal waters and rich marine life of Pujada Bay in Mati, Davao Oriental. Use at least one definition or synonym context clue.',
-    starter:
-      'The coastal waters of Pujada Bay remain pristine—completely spotless and pure—because...',
-    badSample:
-      'The waters of pujada bay is very clean and many fish swims in the coral reef yesterday.',
-    goodSample:
-      'The coastal waters of Pujada Bay remain pristine—completely unpolluted and crystal clear—because the local fisherfolk and students actively protect the marine sanctuary.',
-  },
-  {
-    id: 'p-hamiguitan',
-    title: 'Mount Hamiguitan Bonsai Forest (Modal Verbs & Modifiers)',
-    instructions:
-      'Write 2-3 sentences explaining why travelers must respect the UNESCO World Heritage Mount Hamiguitan Range Wildlife Sanctuary. Incorporate modal verbs like "must", "should", or "can".',
-    starter:
-      'Every trekker climbing Mount Hamiguitan must follow strict conservation rules so that...',
-    badSample:
-      'Visitors must to protect the pygmy trees because they does not grow fast in high mountains.',
-    goodSample:
-      'Every trekker climbing Mount Hamiguitan must respect the century-old pygmy bonsai trees, and hikers should never pick rare pitcher plants along the misty trail.',
-  },
-  {
-    id: 'p-culture',
-    title: 'Mandaya Heritage & Indigenous Crafts (Active Voice & Vivid Verbs)',
-    instructions:
-      'Write 2-3 sentences about the Mandaya weavers creating Dagmay cloth from abaca fibers in Davao Oriental. Use active voice and vivid sensory verbs.',
-    starter:
-      'Skilled Mandaya artisans meticulously weave sacred patterns into Dagmay cloth...',
-    badSample:
-      'The dagmay cloth was weave by the old woman who use natural dyes from bark and roots.',
-    goodSample:
-      'Skilled Mandaya artisans meticulously weave sacred geometric patterns into Dagmay cloth, honoring ancient ancestors with every strand of organic abaca fiber.',
-  },
-  {
-    id: 'p-custom',
-    title: 'Free Writing & English Composition',
-    instructions:
-      'Write your own English paragraph on any topic (your favorite hobby, community event, or environmental issue). Focus on subject-verb agreement and clear punctuation.',
-    starter: 'In our school community, students can collaborate on...',
-    badSample:
-      'Each of the students have their own project, but neither the teacher or the principal were absent.',
-    goodSample:
-      'In our school community, students actively collaborate on coastal cleanups to ensure our beaches remain safe for marine turtles.',
-  },
-];
-
 export const WritingLabView: React.FC<WritingLabViewProps> = ({
   student,
   initialModule,
-  allModules,
   onSaveSubmission,
   onBackToMap,
 }) => {
-  const [selectedPromptIndex, setSelectedPromptIndex] = useState(0);
-  const [customTitle, setCustomTitle] = useState('');
+  const writingTitle = initialModule?.title ? `${initialModule.title} — Writing` : 'Free Writing';
   const [studentText, setStudentText] = useState('');
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [feedback, setFeedback] = useState<WritingFeedbackResult | null>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [showHistory, setShowHistory] = useState(false);
   const [copied, setCopied] = useState(false);
-
-  // If initial module was passed with a writing prompt, set it up
-  useEffect(() => {
-    if (initialModule?.lessonContent?.writingPrompt) {
-      setCustomTitle(initialModule.lessonContent.writingPrompt.title);
-      setStudentText(initialModule.lessonContent.writingPrompt.sampleStarter || '');
-    } else {
-      setStudentText(SAMPLE_WRITING_PROMPTS[0].starter);
-    }
-  }, [initialModule]);
-
-  const currentPrompt =
-    initialModule?.lessonContent?.writingPrompt && customTitle === initialModule.lessonContent.writingPrompt.title
-      ? {
-          title: initialModule.lessonContent.writingPrompt.title,
-          instructions: initialModule.lessonContent.writingPrompt.instructions,
-          starter: initialModule.lessonContent.writingPrompt.sampleStarter,
-          badSample: '',
-          goodSample: '',
-        }
-      : SAMPLE_WRITING_PROMPTS[selectedPromptIndex];
-
-  const handleSelectPrompt = (idx: number) => {
-    soundFX.playClick();
-    setSelectedPromptIndex(idx);
-    setCustomTitle('');
-    setStudentText(SAMPLE_WRITING_PROMPTS[idx].starter);
-    setFeedback(null);
-    setErrorMessage(null);
-  };
-
   const handleAnalyze = async () => {
     if (!studentText.trim() || studentText.trim().length < 10) {
       setErrorMessage('Please write at least one complete sentence (minimum 10 characters) to analyze.');
@@ -133,57 +50,31 @@ export const WritingLabView: React.FC<WritingLabViewProps> = ({
       return;
     }
 
+    if (isAnalyzing) return;
+    if (studentText.length > 5000) {
+      setErrorMessage('Use up to 5,000 characters per check.');
+      return;
+    }
     setIsAnalyzing(true);
     setErrorMessage(null);
     soundFX.playClick();
 
-    const titleToUse = customTitle || currentPrompt.title;
+    const titleToUse = writingTitle;
 
     try {
-      const response = await fetch('/api/grammar-feedback', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          studentText: studentText.trim(),
-          promptTitle: titleToUse,
-          gradeLevel: student.gradeLevel,
-          topicType: initialModule?.topicType || 'sentence-construction',
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error(`Server returned ${response.status}`);
-      }
-
-      const data: WritingFeedbackResult = await response.json();
+      const data = generateOpenQuillFeedback(studentText);
       setFeedback(data);
       soundFX.playPass();
-
-      // Record submission
-      const newRecord: WritingSubmissionRecord = {
+      onSaveSubmission({
         id: `ws-${Date.now()}`,
         moduleId: initialModule?.id,
         promptTitle: titleToUse,
         studentText: studentText.trim(),
         feedback: data,
         timestamp: new Date().toLocaleString(),
-      };
-      onSaveSubmission(newRecord);
+      });
     } catch {
-      // Offline fallback rule-based analysis
-      const fallbackResult = generateLocalGrammarAnalysis(studentText, student.gradeLevel);
-      setFeedback(fallbackResult);
-      soundFX.playPass();
-
-      const newRecord: WritingSubmissionRecord = {
-        id: `ws-${Date.now()}`,
-        moduleId: initialModule?.id,
-        promptTitle: titleToUse,
-        studentText: studentText.trim(),
-        feedback: fallbackResult,
-        timestamp: new Date().toLocaleString(),
-      };
-      onSaveSubmission(newRecord);
+      setErrorMessage('The local check could not finish. Please try again.');
     } finally {
       setIsAnalyzing(false);
     }
@@ -201,7 +92,7 @@ export const WritingLabView: React.FC<WritingLabViewProps> = ({
     <div className="max-w-5xl mx-auto px-4 py-8 space-y-6">
       {/* Top Banner with Deep Navy Theme */}
       <div className="bg-gradient-to-r from-[#0A192F] via-[#0F3460] to-[#1E3E62] rounded-3xl text-white relative overflow-hidden border-2 border-[#231F20] linocut-card">
-        <InabelHeaderStrip variant="emerald" label="AI-Assisted Writing Studio • Davao Oriental" />
+        <InabelHeaderStrip variant="emerald" label="Writing Studio • Davao Oriental" />
         <div className="p-6 sm:p-8 relative">
         <div className="absolute right-0 top-0 w-80 h-80 bg-sky-500/10 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none" />
         <div className="flex flex-wrap items-center justify-between gap-4 relative z-10">
@@ -212,7 +103,7 @@ export const WritingLabView: React.FC<WritingLabViewProps> = ({
             <div>
               <div className="flex items-center gap-2">
                 <span className="text-xs font-bold uppercase tracking-wider bg-blue-950/60 px-2.5 py-0.5 rounded-full text-sky-200 border border-blue-800/60">
-                  AI-Assisted Writing Studio
+                  Writing Studio
                 </span>
                 <span className="text-xs font-semibold text-sky-300">
                   Grade {student.gradeLevel} Curriculum
@@ -222,7 +113,7 @@ export const WritingLabView: React.FC<WritingLabViewProps> = ({
                 LingoQuest Writing Lab
               </h1>
               <p className="text-sky-100 text-sm mt-0.5">
-                Draft your English responses, receive smart grammar corrections, and level up your composition skills.
+                OpenQuill checks supported spelling and grammar patterns on your device, for free. Review every suggestion with your teacher. Saved submissions still use your LingoQuest account.
               </p>
             </div>
           </div>
@@ -272,7 +163,7 @@ export const WritingLabView: React.FC<WritingLabViewProps> = ({
               <Feather className="w-12 h-12 mx-auto text-slate-300" />
               <p className="font-medium text-slate-600">No writing submissions recorded yet.</p>
               <p className="text-xs text-slate-400">
-                Choose a prompt, write a response, and click "Evaluate with AI" to record your first entry!
+                Choose a prompt, write a response, and click "Check grammar" to record your first entry!
               </p>
             </div>
           ) : (
@@ -286,7 +177,7 @@ export const WritingLabView: React.FC<WritingLabViewProps> = ({
                     <span className="font-bold text-slate-800 text-sm">{sub.promptTitle}</span>
                     <div className="flex items-center gap-3">
                       <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800">
-                        Score: {sub.feedback?.clarityScore ?? 85}/100
+                        {sub.feedback?.checker === 'openquill' ? 'OpenQuill local check' : sub.feedback?.checker === 'browser-ai' ? 'Browser AI suggestion' : sub.feedback?.checker === 'local-rules' ? 'Basic local check' : 'Saved feedback'}
                       </span>
                       <span className="text-xs text-slate-400">{sub.timestamp}</span>
                     </div>
@@ -319,69 +210,26 @@ export const WritingLabView: React.FC<WritingLabViewProps> = ({
       ) : (
         /* Main Writing & Feedback Screen */
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-          {/* Left Column: Prompts & Input (7 cols) */}
+          {/* Left Column: Writing Input (7 cols) */}
           <div className="lg:col-span-7 space-y-6">
-            {/* Prompt Selector */}
-            <div className="bg-white rounded-3xl overflow-hidden border-2 border-[#231F20] linocut-card space-y-4">
-              <InabelHeaderStrip variant="royal" label="Select Writing Prompt" />
-              <div className="px-6 pb-6 space-y-4">
-              <div className="flex items-center justify-between">
-                <label className="text-xs font-bold text-slate-500 uppercase tracking-wider flex items-center gap-1.5">
-                  <BookOpen className="w-4 h-4 text-emerald-600" />
-                  Select Writing Prompt
-                </label>
-                {initialModule && (
-                  <span className="text-xs bg-emerald-50 text-emerald-700 px-2.5 py-0.5 rounded-full font-semibold border border-emerald-200">
-                    Linked to: {initialModule.title}
-                  </span>
-                )}
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                {SAMPLE_WRITING_PROMPTS.map((prompt, idx) => (
-                  <button
-                    key={prompt.id}
-                    onClick={() => handleSelectPrompt(idx)}
-                    className={`text-left p-3 rounded-2xl border text-xs font-semibold transition ${
-                      selectedPromptIndex === idx && !customTitle
-                        ? 'border-emerald-500 bg-emerald-50/80 text-emerald-900 shadow-xs'
-                        : 'border-slate-200 bg-slate-50/60 hover:bg-slate-100 text-slate-700'
-                    }`}
-                  >
-                    <div className="font-bold truncate">{prompt.title}</div>
-                    <div className="text-[11px] text-slate-500 font-normal line-clamp-1 mt-0.5">
-                      {prompt.instructions}
-                    </div>
-                  </button>
-                ))}
-              </div>
-
-              {/* Active Prompt Details Card */}
-              <div className="p-4 rounded-2xl bg-gradient-to-br from-emerald-50/70 to-teal-50/50 border border-emerald-100 space-y-2">
-                <div className="flex items-center gap-2 text-emerald-900 font-bold text-sm">
-                  <Lightbulb className="w-4 h-4 text-amber-500 shrink-0" />
-                  {currentPrompt.title}
-                </div>
-                <p className="text-xs text-slate-700 leading-relaxed">{currentPrompt.instructions}</p>
-              </div>
-              </div>
-            </div>
-
             {/* Writing Input Card */}
             <div className="bg-white rounded-3xl overflow-hidden border-2 border-[#231F20] linocut-card space-y-4">
               <InabelHeaderStrip variant="emerald" label="Your English Composition" />
               <div className="px-6 pb-6 space-y-4">
               <div className="flex items-center justify-between">
-                <label className="text-xs font-bold text-slate-500 uppercase tracking-wider flex items-center gap-1.5">
+                <label htmlFor="writing-composition" className="text-xs font-bold text-slate-500 uppercase tracking-wider flex items-center gap-1.5">
                   <Feather className="w-4 h-4 text-emerald-600" />
                   Your English Composition
                 </label>
                 <span className="text-xs text-slate-400 font-mono">
-                  {studentText.trim().split(/\s+/).filter(Boolean).length} words | {studentText.length} chars
+                  {studentText.trim().split(/\s+/).filter(Boolean).length} words | {studentText.length}/5000 chars
                 </span>
               </div>
 
               <textarea
+                id="writing-composition"
+                aria-describedby="writing-check-limit"
+                disabled={isAnalyzing}
                 value={studentText}
                 onChange={(e) => setStudentText(e.target.value)}
                 placeholder="Write your response here using complete sentences..."
@@ -389,8 +237,10 @@ export const WritingLabView: React.FC<WritingLabViewProps> = ({
                 className="w-full p-4 rounded-2xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:bg-white text-sm text-slate-800 font-normal leading-relaxed resize-y transition"
               />
 
+              <p id="writing-check-limit" className="text-xs text-slate-500">10–5,000 characters per check. Powered by OpenQuill local rules (MIT).</p>
+
               {errorMessage && (
-                <div className="flex items-center gap-2 p-3 rounded-xl bg-rose-50 border border-rose-200 text-rose-800 text-xs font-semibold">
+                <div role="alert" className="flex items-center gap-2 p-3 rounded-xl bg-rose-50 border border-rose-200 text-rose-800 text-xs font-semibold">
                   <AlertCircle className="w-4 h-4 shrink-0 text-rose-500" />
                   {errorMessage}
                 </div>
@@ -410,19 +260,19 @@ export const WritingLabView: React.FC<WritingLabViewProps> = ({
 
                 <button
                   type="button"
-                  onClick={handleAnalyze}
+                  onClick={() => void handleAnalyze()}
                   disabled={isAnalyzing || !studentText.trim()}
                   className="flex items-center gap-2 px-6 py-3 rounded-2xl bg-emerald-600 hover:bg-emerald-700 disabled:opacity-50 disabled:cursor-not-allowed text-white font-bold text-sm shadow-md shadow-emerald-600/20 transition cursor-pointer"
                 >
                   {isAnalyzing ? (
                     <>
                       <Loader2 className="w-4 h-4 animate-spin" />
-                      Analyzing with AI...
+                      Checking grammar...
                     </>
                   ) : (
                     <>
                       <Sparkles className="w-4 h-4 text-amber-300" />
-                      Evaluate with AI
+                      Check grammar
                     </>
                   )}
                 </button>
@@ -431,33 +281,33 @@ export const WritingLabView: React.FC<WritingLabViewProps> = ({
             </div>
           </div>
 
-          {/* Right Column: AI Feedback Panel (5 cols) */}
+          {/* Right Column: Local Feedback Panel (5 cols) */}
           <div className="lg:col-span-5 space-y-6">
             {!feedback && !isAnalyzing ? (
               <div className="bg-white rounded-3xl overflow-hidden border-2 border-[#231F20] linocut-card">
-                <InabelHeaderStrip variant="amber" label="AI Evaluation Engine" />
+                <InabelHeaderStrip variant="amber" label="OpenQuill Grammar Checker" />
                 <div className="p-8 text-center space-y-4">
                 <div className="w-16 h-16 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto border-2 border-[#231F20] shadow-[3px_3px_0px_#231F20]">
                   <Sparkles className="w-8 h-8" />
                 </div>
                 <h3 className="text-lg font-bold font-display text-slate-800">
-                  Ready for AI Writing Feedback
+                  Check your writing
                 </h3>
                 <p className="text-xs text-slate-500 leading-relaxed">
-                  Type or paste your response in the editor and click "Evaluate with AI". You will receive:
+                  Type or paste your response in the editor and click "Check grammar". You will receive:
                 </p>
                 <div className="text-left space-y-2.5 pt-2 text-xs text-slate-600">
                   <div className="flex items-start gap-2">
                     <span className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-[10px] font-bold shrink-0 mt-0.5">
                       1
                     </span>
-                    <span><strong>Overall Clarity Score</strong> (0–100) aligned with DepEd Grade {student.gradeLevel} standards.</span>
+                    <span><strong>Local rule checks</strong> for supported grammar patterns. This is not a grade or a complete grammar review.</span>
                   </div>
                   <div className="flex items-start gap-2">
                     <span className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-[10px] font-bold shrink-0 mt-0.5">
                       2
                     </span>
-                    <span><strong>Polished Version</strong> showing exemplary sentence structure.</span>
+                    <span><strong>Suggested revision</strong> with supported corrections. Review each change before using it.</span>
                   </div>
                   <div className="flex items-start gap-2">
                     <span className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-[10px] font-bold shrink-0 mt-0.5">
@@ -476,20 +326,20 @@ export const WritingLabView: React.FC<WritingLabViewProps> = ({
               </div>
             ) : isAnalyzing ? (
               <div className="bg-white rounded-3xl overflow-hidden border-2 border-[#231F20] linocut-card">
-                <InabelHeaderStrip variant="amber" label="AI Evaluation in Progress" />
+                <InabelHeaderStrip variant="amber" label="Grammar Check in Progress" />
                 <div className="p-12 text-center space-y-4">
                 <Loader2 className="w-12 h-12 text-emerald-600 animate-spin mx-auto" />
                 <h3 className="text-lg font-bold font-display text-slate-800">
                   Evaluating Your Writing...
                 </h3>
                 <p className="text-xs text-slate-500">
-                  Examining subject-verb agreement, punctuation, lexical choice, and clarity.
+                  Checking supported spelling and grammar patterns.
                 </p>
                 </div>
               </div>
             ) : feedback ? (
               <div className="bg-white rounded-3xl overflow-hidden border-2 border-[#231F20] linocut-card">
-                <InabelHeaderStrip variant="emerald" label="Teacher & AI Assessment" />
+                <InabelHeaderStrip variant="emerald" label="Local Grammar Feedback" />
                 <div className="p-6 space-y-5">
                 {/* Score & Header */}
                 <div className="flex items-center justify-between pb-3 border-b border-slate-100">
@@ -498,17 +348,10 @@ export const WritingLabView: React.FC<WritingLabViewProps> = ({
                       Evaluation Result
                     </span>
                     <h3 className="text-base font-bold text-slate-800 font-display">
-                      Teacher & AI Assessment
+                      Local Grammar Feedback
                     </h3>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <div className="text-right">
-                      <span className="text-2xl font-black font-mono text-emerald-600">
-                        {feedback.clarityScore}
-                      </span>
-                      <span className="text-xs text-slate-400 font-bold">/100</span>
-                    </div>
-                  </div>
+
                 </div>
 
                 {/* Overall Comment */}
@@ -517,15 +360,15 @@ export const WritingLabView: React.FC<WritingLabViewProps> = ({
                     <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
                     Overall Feedback
                   </div>
-                  {feedback.overallClarityComment}
+                  <p className="mb-2 font-bold">Checked by: {feedback.checker === 'openquill' ? 'OpenQuill local rules' : 'Saved feedback'}</p>{feedback.overallClarityComment}
                 </div>
 
-                {/* Corrected / Polished Version */}
+                {/* Corrected / Suggested Revision */}
                 <div className="space-y-2">
                   <div className="flex items-center justify-between">
                     <span className="text-xs font-bold text-slate-600 uppercase tracking-wider flex items-center gap-1.5">
                       <Sparkles className="w-3.5 h-3.5 text-amber-500" />
-                      Polished Version
+                      Suggested Revision
                     </span>
                     <button
                       onClick={handleCopyCorrected}
@@ -618,87 +461,3 @@ export const WritingLabView: React.FC<WritingLabViewProps> = ({
   );
 };
 
-/**
- * Resilient offline fallback grammar analyzer if API is unreachable.
- */
-function generateLocalGrammarAnalysis(text: string, grade: number): WritingFeedbackResult {
-  const issues = [];
-  let corrected = text;
-
-  // Rule 1: Subject-Verb Agreement checks
-  if (/\bthe waters of .* is\b/i.test(text)) {
-    issues.push({
-      originalPhrase: 'waters ... is',
-      suggestion: 'waters ... are',
-      explanation: 'Plural subject "waters" requires the plural verb "are".',
-      ruleCategory: 'Subject-Verb Agreement',
-    });
-    corrected = corrected.replace(/\bthe waters of (.*?) is\b/gi, 'the waters of $1 are');
-  }
-  if (/\bmany fish swims\b/i.test(text)) {
-    issues.push({
-      originalPhrase: 'many fish swims',
-      suggestion: 'many fish swim',
-      explanation: 'When "fish" refers to multiple individuals, use the plural verb "swim".',
-      ruleCategory: 'Subject-Verb Agreement',
-    });
-    corrected = corrected.replace(/\bmany fish swims\b/gi, 'many fish swim');
-  }
-  if (/\bmust to protect\b/i.test(text)) {
-    issues.push({
-      originalPhrase: 'must to protect',
-      suggestion: 'must protect',
-      explanation: 'Modal auxiliary verbs like "must", "should", and "can" are followed by the base form without "to".',
-      ruleCategory: 'Modal Verbs',
-    });
-    corrected = corrected.replace(/\bmust to protect\b/gi, 'must protect');
-  }
-  if (/\bthey does not\b/i.test(text)) {
-    issues.push({
-      originalPhrase: 'they does not',
-      suggestion: 'they do not',
-      explanation: 'The plural pronoun "they" requires "do not", not "does not".',
-      ruleCategory: 'Subject-Verb Agreement',
-    });
-    corrected = corrected.replace(/\bthey does not\b/gi, 'they do not');
-  }
-  if (/\bwas weave\b/i.test(text)) {
-    issues.push({
-      originalPhrase: 'was weave',
-      suggestion: 'was woven',
-      explanation: 'Passive voice with "was" requires the past participle "woven".',
-      ruleCategory: 'Passive Voice & Irregular Verbs',
-    });
-    corrected = corrected.replace(/\bwas weave\b/gi, 'was woven');
-  }
-
-  // Capitalize sentence start
-  if (corrected.length > 0 && corrected[0] === corrected[0].toLowerCase()) {
-    corrected = corrected[0].toUpperCase() + corrected.slice(1);
-  }
-  // Ensure ending punctuation
-  if (!/[.!?]$/.test(corrected.trim())) {
-    corrected = corrected.trim() + '.';
-  }
-
-  const score = Math.max(70, 95 - issues.length * 10);
-
-  return {
-    overallClarityComment:
-      issues.length === 0
-        ? `Impressive English expression! Your sentence demonstrates clear organization and appropriate Grade ${grade} vocabulary.`
-        : `Good effort! Your ideas are clearly communicated. Review the highlighted corrections to sharpen your grammar and tense consistency.`,
-    clarityScore: score,
-    correctedVersion: corrected,
-    strengthsHighlighted: [
-      'Meaningful ideas relevant to the assigned topic',
-      'Good vocabulary choices suitable for Junior High School level',
-      'Clear sentence intention and thematic focus',
-    ],
-    grammarIssues: issues,
-    constructionSuggestions: [
-      'Practice varying your sentence openers using prepositional phrases or dependent clauses.',
-      'Always proofread your work aloud to catch subject-verb agreement slips before final submission.',
-    ],
-  };
-}
