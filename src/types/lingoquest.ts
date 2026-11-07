@@ -265,6 +265,7 @@ export interface GrammarIssue {
 }
 
 export interface WritingFeedbackResult {
+  checker?: 'local-rules' | 'browser-ai';
   overallClarityComment: string;
   clarityScore: number;
   correctedVersion: string;
