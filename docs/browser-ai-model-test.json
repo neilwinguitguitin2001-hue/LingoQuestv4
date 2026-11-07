@@ -1,0 +1,21 @@
+{
+  "runtime": "Node native CPU on this development Mac; not browser or mobile measurements",
+  "loadSeconds": 7.85,
+  "cases": [
+    {
+      "input": "They goes to school every day.",
+      "output": "They go to school every day.",
+      "seconds": 0.09
+    },
+    {
+      "input": "She have two books.",
+      "output": "She has two books.",
+      "seconds": 0.04
+    },
+    {
+      "input": "The students are reading their books.",
+      "output": "The students are reading their books.",
+      "seconds": 0.05
+    }
+  ]
+}
