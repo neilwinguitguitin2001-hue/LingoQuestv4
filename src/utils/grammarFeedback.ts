@@ -15,8 +15,10 @@ export async function runGrammarCheck(text: string, request: () => Promise<unkno
       grammarIssues: edits.map(e => ({ originalPhrase: e.original, suggestion: e.replacement, explanation: e.reason, ruleCategory: 'AI grammar suggestion' })),
       constructionSuggestions: ['Your original draft has not been changed. Review the suggested revision before copying it.'],
     };
-  } catch {
+  } catch (error) {
     const local = generateOpenQuillFeedback(text);
-    return { ...local, overallClarityComment: 'AI is unavailable or not configured, so this result uses limited local rules. ' + local.overallClarityComment };
+    const reasons: Record<string, string> = { SIGN_IN_REQUIRED: 'A valid sign-in session is required for AI.', AI_NOT_CONFIGURED: 'The AI key is missing on this deployment.', AUTH_FAILED: 'Your login session could not be verified. Sign out and sign in again.', PROVIDER_AUTH: 'Groq rejected the configured API key.', PROVIDER_LIMIT: 'Groq has reached its usage limit. Please try later.', PROVIDER_REQUEST: 'Groq rejected the model request.', PROVIDER_TIMEOUT: 'The AI request timed out.', PROVIDER_OUTPUT: 'The AI response could not be validated.', HTTP_401: 'The request was blocked by authentication.', HTTP_403: 'The request was blocked by deployment access protection.' };
+    const reason = error instanceof Error ? reasons[error.message] : undefined;
+    return { ...local, overallClarityComment: (reason ? reason + ' ' : 'AI is unavailable or not configured. ') + 'This result uses limited local rules. ' + local.overallClarityComment };
   }
 }

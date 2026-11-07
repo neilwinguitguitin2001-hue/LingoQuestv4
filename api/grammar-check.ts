@@ -40,8 +40,8 @@ export default async function handler(req: Request, res: ServerResponse) {
     if (typeof text !== 'string' || text.trim().length < 10 || text.length > 5000) return send(400, { error: 'Enter 10–5,000 characters.' });
     const auth = createClient(url, anon, { auth: { persistSession: false, autoRefreshToken: false }, global: { fetch: (input, init) => fetch(input, { ...init, signal: AbortSignal.timeout(5000) }) } });
     const { data, error } = await auth.auth.getUser(token);
-    if (error || !data.user) return send(401, { error: 'Please sign in again to use AI checking.' });
-    if (!process.env.GROQ_API_KEY) return send(503, { error: 'AI checking is not configured. Local checking is available.' });
+    if (error || !data.user) return send(401, { code: 'AUTH_FAILED', error: 'Please sign in again to use AI checking.' });
+    if (!process.env.GROQ_API_KEY) return send(503, { code: 'AI_NOT_CONFIGURED', error: 'AI checking is not configured. Local checking is available.' });
     const now = Date.now();
     for (const [key, value] of bursts) if (value.until <= now) bursts.delete(key);
     const uid = data.user.id;
@@ -60,13 +60,19 @@ export default async function handler(req: Request, res: ServerResponse) {
         response_format: { type: 'json_schema', json_schema: { name: 'grammar_edits', strict: true, schema: GRAMMAR_SCHEMA } },
       }),
     });
-    if (!response.ok) return send(response.status === 429 ? 429 : 503, { error: 'AI is unavailable. Local checking is available.' });
+    if (!response.ok) {
+      const code = response.status === 401 || response.status === 403 ? 'PROVIDER_AUTH' : response.status === 429 ? 'PROVIDER_LIMIT' : 'PROVIDER_REQUEST';
+      console.warn('grammar-check', { code, status: response.status });
+      return send(response.status === 429 ? 429 : 503, { code, error: 'AI is unavailable. Local checking is available.' });
+    }
     const output = await response.json();
-    if (output.choices?.[0]?.finish_reason !== 'stop') return send(503, { error: 'AI response was incomplete. Local checking is available.' });
+    if (output.choices?.[0]?.finish_reason !== 'stop') return send(503, { code: 'PROVIDER_OUTPUT', error: 'AI response was incomplete. Local checking is available.' });
     const edits = validateGrammarEdits(text, JSON.parse(output.choices[0].message.content));
     return send(200, { edits });
-  } catch {
+  } catch (error) {
+    const code = error instanceof Error && (error.name === 'TimeoutError' || error.name === 'AbortError') ? 'PROVIDER_TIMEOUT' : 'PROVIDER_OUTPUT';
+    console.warn('grammar-check', { code });
     // Do not log drafts, tokens, raw provider output or credentials.
-    return send(503, { error: 'AI checking could not finish. Local checking is available.' });
+    return send(503, { code, error: 'AI checking could not finish. Local checking is available.' });
   }
 }

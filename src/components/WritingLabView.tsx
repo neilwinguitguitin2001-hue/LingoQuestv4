@@ -64,7 +64,7 @@ export const WritingLabView: React.FC<WritingLabViewProps> = ({
     const titleToUse = writingTitle;
 
     try {
-      const data = await checkWriting(studentText);
+      const data = await checkWriting(studentText, student);
       if (!mounted.current) return;
       setFeedback(data);
       soundFX.playPass();
