@@ -16,8 +16,13 @@ export function validateGrammarEdits(text: string, value: unknown): GrammarEdit[
         typeof edit.replacement !== 'string' || edit.replacement.length > 1500 ||
         typeof edit.reason !== 'string' || !edit.reason.length || edit.reason.length > 500 ||
         !Number.isInteger(edit.occurrence) || edit.occurrence < 0 || edit.occurrence > 5000) throw new Error('Invalid edit');
+    // Some models number the edit list rather than repeated substrings.
+    // A unique exact match is unambiguous regardless of that ordinal.
+    const first = text.indexOf(edit.original);
+    const unique = first >= 0 && text.indexOf(edit.original, first + 1) < 0;
+    const occurrence = unique ? 0 : edit.occurrence;
     let index = -1;
-    for (let i = 0; i <= edit.occurrence; i++) {
+    for (let i = 0; i <= occurrence; i++) {
       index = text.indexOf(edit.original, index + 1);
       if (index < 0) throw new Error('Unanchored edit');
     }

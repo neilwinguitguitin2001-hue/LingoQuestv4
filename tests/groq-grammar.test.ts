@@ -59,3 +59,10 @@ test('API verifies identity, handles missing key, validates output, and throttle
     assert.equal((await invoke('POST','fake')).status,429);assert.equal(calls,5);
   } finally { globalThis.fetch=savedFetch; if(savedKey) process.env.GROQ_API_KEY=savedKey;else delete process.env.GROQ_API_KEY; }
 });
+
+test('unique spans tolerate edit-list ordinals without guessing ambiguous repeats', () => {
+  const text = 'Your going to love there new house because its very big.';
+  const edits = validateGrammarEdits(text, {edits:[edit('Your', "You're", 0),edit('there','their',1),edit('its',"it's",2)]});
+  assert.equal(applyGrammarEdits(text,edits), "You're going to love their new house because it's very big.");
+  assert.throws(() => validateGrammarEdits('go go', {edits:[edit('go','goes',2)]}));
+});
