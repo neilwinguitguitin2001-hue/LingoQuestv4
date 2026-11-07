@@ -1717,7 +1717,9 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FAF7F2] text-[#231F20] flex flex-col font-sans selection:bg-[#22C55E]/25 selection:text-[#231F20]">
+    <div className="lq-app-shell min-h-screen bg-[#FAF7F2] text-[#231F20] flex flex-col font-sans selection:bg-[#22C55E]/25 selection:text-[#231F20]">
+      <div className="lq-ambient lq-ambient-one" aria-hidden="true" />
+      <div className="lq-ambient lq-ambient-two" aria-hidden="true" />
       {/* Persistent Offline / Online Connection Status Toast */}
       <NetworkStatusToast />
 
@@ -1764,11 +1766,11 @@ export default function App() {
 
       {/* Top Universal App Navigation Bar (Neo-Filipiniana & Folk-Mural Edition) */}
       {currentView !== 'AUTH' && currentView !== 'WAITING_APPROVAL' && (
-        <header data-dashboard-theme className="sticky top-0 z-40 bg-[#231F20] text-[#FAF7F2] border-b-[3px] border-[#2563EB] shadow-[0_4px_0_#231F20]">
+        <header data-dashboard-theme className="lq-topbar sticky top-0 z-40 text-[#FAF7F2]">
           {/* Traditional Handwoven Inabel & Yakan Geometric Top Strip */}
           <InabelWovenStrip variant="crimson" height={8} />
 
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
+          <div className="lq-topbar-inner max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
             {/* Brand Logo & Tagline */}
             <div
               onClick={() => {
@@ -1784,7 +1786,7 @@ export default function App() {
 
             {/* Navigation Links based on Active Role */}
             {currentUser && (
-              <nav className="hidden lg:flex items-center gap-1 bg-[#FFFDFB]/10 border-2 border-[#2563EB] px-2 py-1 rounded-xl text-xs font-bold text-[#FAF7F2]">
+              <nav className="lq-nav hidden lg:flex items-center gap-1 px-2 py-1 rounded-xl text-xs font-bold text-[#FAF7F2]">
                 {currentUser.role === 'student' && (
                   <>
                     <button
@@ -2208,7 +2210,7 @@ export default function App() {
 
       {/* Main Content View Switcher */}
       <main className={`flex-1 ${currentView === 'AUTH' || currentView === 'WAITING_APPROVAL' ? '' : 'pb-16'}`}>
-        <div key={currentView} className="animate-lq-page-enter">
+        <div key={currentView} className="lq-page-frame animate-lq-page-enter">
         {/* Authentication View */}
         {currentView === 'AUTH' && (
           <AuthScreen
