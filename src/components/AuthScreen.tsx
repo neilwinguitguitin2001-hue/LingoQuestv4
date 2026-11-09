@@ -842,7 +842,7 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
                       <LogIn className="w-4 h-4" />
                       <span>
                         {loginRole === 'student'
-                          ? 'Enter Student Island Map'
+                          ? 'Enter Learning Home'
                           : loginRole === 'teacher'
                           ? 'Access Faculty Dashboard'
                           : 'Access Division Administration'}

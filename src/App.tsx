@@ -1,3 +1,4 @@
+import {StudentHomeView} from './components/StudentHomeView';
 import {LegalCenter,LegalLinks} from './components/LegalCenter';
 import React, { useEffect, useRef, useState } from 'react';
 import {
@@ -144,9 +145,12 @@ type AppView =
   | 'PROFILE'
   | 'MARKET'
   | 'STUDENT_DASHBOARD'
+  | 'ACCOUNT'
   | 'TEACHER'
   | 'ADMIN'
   | 'WAITING_APPROVAL';
+
+const STUDENT_NAVIGATION: {view:AppView;label:string}[]=[{view:'STUDENT_DASHBOARD',label:'Home'},{view:'MAP',label:'Island Quests'},{view:'WRITING',label:'Writing Lab'},{view:'PROGRESS',label:'My Progress'},{view:'MARKET',label:'Quest Market'}];
 
 const STORAGE_KEY_STUDENTS = 'lingoquest_students_v3';
 const STORAGE_KEY_TEACHERS = 'lingoquest_teachers_v3';
@@ -299,7 +303,7 @@ export default function App() {
   const [currentView, setCurrentView] = useState<AppView>(() => {
     try {
       const saved = localStorage.getItem(STORAGE_KEY_CURRENT_USER);
-      if (saved && saved.trim() !== '' && saved !== 'guest-explorer') return 'MAP';
+      if (saved && saved.trim() !== '' && saved !== 'guest-explorer') return 'STUDENT_DASHBOARD';
     } catch {}
     return 'AUTH';
   });
@@ -317,6 +321,12 @@ export default function App() {
   // Sound & Mobile menu
   const [isMuted, setIsMuted] = useState<boolean>(() => soundFX.isMuted());
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isAccountMenuOpen,setIsAccountMenuOpen]=useState(false);
+  const accountMenuRef=useRef<HTMLDivElement>(null);
+  const navigateStudent=(view:AppView)=>{soundFX.playClick();setIsAccountMenuOpen(false);setIsMobileMenuOpen(false);setCurrentView(view)};
+  const activeStudentView=(view:AppView)=>view==='PROGRESS'?['PROGRESS','PROFILE','LEADERBOARD'].includes(currentView):view===currentView;
+  useEffect(()=>{setIsAccountMenuOpen(false)},[currentView,currentUserId]);
+  useEffect(()=>{if(!isAccountMenuOpen)return;const close=(e:PointerEvent)=>{if(!accountMenuRef.current?.contains(e.target as Node))setIsAccountMenuOpen(false)};const escape=(e:KeyboardEvent)=>{if(e.key==='Escape'){setIsAccountMenuOpen(false);accountMenuRef.current?.querySelector('button')?.focus()}};document.addEventListener('pointerdown',close);document.addEventListener('keydown',escape);return()=>{document.removeEventListener('pointerdown',close);document.removeEventListener('keydown',escape)}},[isAccountMenuOpen]);
   const [questCoinBalance, setQuestCoinBalance] = useState<number | null>(null);
 
   // Session Timeout State
@@ -433,9 +443,10 @@ export default function App() {
         subtitle: 'Loading Quest Coins, inventory, and exchange history',
       },
       STUDENT_DASHBOARD: {
-        title: 'Opening Student Dashboard...',
-        subtitle: 'Loading Learner Profile & Credentials',
+        title: 'Opening Home...',
+        subtitle: 'Preparing your next learning step',
       },
+      ACCOUNT: {title:'Opening Account Settings...',subtitle:'Your profile, credentials and photo'},
       TEACHER: {
         title: 'Opening Classroom Portal...',
         subtitle: 'Loading Faculty Roster & Performance Analytics',
@@ -654,7 +665,7 @@ export default function App() {
         setCurrentView('TEACHER');
       }
     } else if (currentUser.role === 'admin') {
-      if (currentView === 'WAITING_APPROVAL') {
+      if (currentView === 'WAITING_APPROVAL' || currentView === 'STUDENT_DASHBOARD' || currentView === 'ACCOUNT') {
         setCurrentView('ADMIN');
       }
     } else if (currentUser.role === 'student') {
@@ -763,7 +774,7 @@ export default function App() {
       ) {
         setCurrentView('WAITING_APPROVAL');
       } else {
-        setCurrentView('MAP');
+        setCurrentView('STUDENT_DASHBOARD');
       }
     }
   };
@@ -1690,7 +1701,7 @@ export default function App() {
                 soundFX.playClick();
                 if (currentUser?.role === 'admin') setCurrentView('ADMIN');
                 else if (currentUser?.role === 'teacher') setCurrentView('TEACHER');
-                else setCurrentView('MAP');
+                else setCurrentView('STUDENT_DASHBOARD');
               }}
               className="cursor-pointer shrink-0 rounded-lg text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-300"
             >
@@ -1700,93 +1711,7 @@ export default function App() {
             {/* Navigation Links based on Active Role */}
             {currentUser && (
               <nav aria-label="Primary navigation" className="hidden lg:flex order-3 basis-full items-center justify-center gap-1 border-t border-sky-400/20 pt-2 pb-1 text-xs font-bold text-[#FAF7F2] whitespace-nowrap [&>button]:min-h-11 [&>button]:shrink-0 [&>button]:px-4">
-                {currentUser.role === 'student' && (
-                  <>
-                    <button
-                      onClick={() => {
-                        soundFX.playClick();
-                        setCurrentView('STUDENT_DASHBOARD');
-                      }}
-                      className={`px-3 py-1.5 rounded-lg transition flex items-center gap-1.5 cursor-pointer ${
-                        currentView === 'STUDENT_DASHBOARD'
-                          ? 'bg-[#0F766E] text-[#FFFDFB] border border-[#22C55E] shadow-[2px_2px_0px_#22C55E] font-extrabold'
-                          : 'hover:text-[#22C55E] hover:bg-white/5'
-                      }`}
-                    >
-                      <User className="w-3.5 h-3.5 text-[#22C55E]" />
-                      <span>Student Dashboard</span>
-                    </button>
-                    <button
-                      onClick={() => {
-                        soundFX.playClick();
-                        setCurrentView('MAP');
-                      }}
-                      className={`px-3 py-1.5 rounded-lg transition cursor-pointer ${
-                        currentView === 'MAP'
-                          ? 'bg-[#0F766E] text-[#FFFDFB] border border-[#22C55E] shadow-[2px_2px_0px_#22C55E] font-extrabold'
-                          : 'hover:text-[#22C55E] hover:bg-white/5'
-                      }`}
-                    >
-                      Island Quests
-                    </button>
-                    <button
-                      onClick={() => {
-                        soundFX.playClick();
-                        setCurrentView('WRITING');
-                      }}
-                      className={`px-3 py-1.5 rounded-lg transition cursor-pointer ${
-                        currentView === 'WRITING'
-                          ? 'bg-[#0F766E] text-[#FFFDFB] border border-[#22C55E] shadow-[2px_2px_0px_#22C55E] font-extrabold'
-                          : 'hover:text-[#22C55E] hover:bg-white/5'
-                      }`}
-                    >
-                      Writing Lab
-                    </button>
-                    <button
-                      onClick={() => {
-                        soundFX.playClick();
-                        setCurrentView('PROGRESS');
-                      }}
-                      className={`px-3 py-1.5 rounded-lg transition cursor-pointer ${
-                        currentView === 'PROGRESS'
-                          ? 'bg-[#0F766E] text-[#FFFDFB] border border-[#22C55E] shadow-[2px_2px_0px_#22C55E] font-extrabold'
-                          : 'hover:text-[#22C55E] hover:bg-white/5'
-                      }`}
-                    >
-                      My Progress
-                    </button>
-                    <button
-                      onClick={() => {
-                        soundFX.playClick();
-                        setCurrentView('LEADERBOARD');
-                      }}
-                      className={`px-3 py-1.5 rounded-lg transition cursor-pointer ${
-                        currentView === 'LEADERBOARD'
-                          ? 'bg-[#0F766E] text-[#FFFDFB] border border-[#22C55E] shadow-[2px_2px_0px_#22C55E] font-extrabold'
-                          : 'hover:text-[#22C55E] hover:bg-white/5'
-                      }`}
-                    >
-                      Grade Activity Board
-                    </button>
-                    <button
-                      onClick={() => {
-                        soundFX.playClick();
-                        setCurrentView('PROFILE');
-                      }}
-                      className={`px-3 py-1.5 rounded-lg transition cursor-pointer ${
-                        currentView === 'PROFILE'
-                          ? 'bg-[#0F766E] text-[#FFFDFB] border border-[#22C55E] shadow-[2px_2px_0px_#22C55E] font-extrabold'
-                          : 'hover:text-[#22C55E] hover:bg-white/5'
-                      }`}
-                    >
-                      Badges
-                    </button>
-                    <button
-                      onClick={() => { soundFX.playClick(); setCurrentView('MARKET'); }}
-                      className={`px-3 py-1.5 rounded-lg transition cursor-pointer ${currentView === 'MARKET' ? 'bg-[#0F766E] text-[#FFFDFB] border border-[#22C55E] shadow-[2px_2px_0px_#22C55E] font-extrabold' : 'hover:text-[#22C55E] hover:bg-white/5'}`}
-                    >Quest Market</button>
-                  </>
-                )}
+                {currentUser.role === 'student' && STUDENT_NAVIGATION.map(item=><button key={item.view} onClick={()=>navigateStudent(item.view)} aria-current={activeStudentView(item.view)?'page':undefined} className={`px-3 py-1.5 rounded-lg transition cursor-pointer ${activeStudentView(item.view)?'bg-[#0F766E] text-white border border-[#22C55E] font-extrabold':'hover:text-[#22C55E] hover:bg-white/5'}`}>{item.label}</button>)}
 
                 {currentUser.role === 'teacher' && (
                   <>
@@ -1913,16 +1838,19 @@ export default function App() {
 
               {/* User Account / Role Pill */}
               {currentUser ? (
-                <div className="flex items-center gap-2 pl-2 border-l border-[#2563EB]/50">
+                <div ref={accountMenuRef} className="relative flex items-center gap-2 pl-2 border-l border-[#2563EB]/50">
                   {currentUser.role === 'student' ? (
-                    <button
+                    <><button
                       type="button"
                       onClick={() => {
                         soundFX.playClick();
-                        setCurrentView('STUDENT_DASHBOARD');
+                        setIsAccountMenuOpen(open=>!open);
                       }}
                       className="flex items-center gap-2 px-2.5 py-1 rounded-xl hover:bg-white/10 transition text-left cursor-pointer group"
-                      title="Open Student Dashboard (Edit Credentials & Photo)"
+                      title="Open account menu"
+                      aria-label="Account menu"
+                      aria-expanded={isAccountMenuOpen}
+                      aria-controls="student-account-menu"
                     >
                       {currentStudent?.photoUrl ? (
                         <img
@@ -1930,7 +1858,8 @@ export default function App() {
                           alt={currentUser.name}
                           className="w-8 h-8 rounded-lg object-cover border-2 border-[#22C55E] shadow-sm shrink-0 group-hover:scale-105 transition-transform"
                         />
-                      ) : (
+
+                  ) : (
                         <div className="w-8 h-8 rounded-lg bg-[#0F766E] border-2 border-[#22C55E] flex items-center justify-center text-xs font-bold text-[#FFFDFB] shadow-sm shrink-0 group-hover:scale-105 transition-transform">
                           {currentUser.name
                             .split(' ')
@@ -1950,6 +1879,7 @@ export default function App() {
                         </div>
                       </div>
                     </button>
+                    {isAccountMenuOpen&&<nav id="student-account-menu" aria-label="Account actions" className="absolute right-0 top-full mt-3 z-50 w-64 max-w-[85vw] overflow-hidden rounded-2xl border border-sky-400/40 bg-[#07192F] text-white shadow-xl"><InabelWovenStrip variant="azure" height={8}/><div className="p-2 space-y-1"><button className="min-h-11 w-full rounded-lg px-3 py-2 text-left text-sm hover:bg-white/10" onClick={()=>navigateStudent('ACCOUNT')}>Account Settings</button><button className="min-h-11 w-full rounded-lg px-3 py-2 text-left text-sm hover:bg-white/10" onClick={()=>{setIsAccountMenuOpen(false);window.location.hash='legal/privacy'}}>Privacy &amp; Help</button><button className="min-h-11 w-full rounded-lg px-3 py-2 text-left text-sm hover:bg-white/10" onClick={()=>{setIsAccountMenuOpen(false);handleLogOut()}}>Sign Out</button></div></nav>}</>
                   ) : (
                     <div className="text-left hidden sm:block">
                       <div className="text-xs font-bold text-[#FAF7F2] truncate max-w-[150px]">
@@ -1963,13 +1893,13 @@ export default function App() {
                     </div>
                   )}
 
-                  <button
+                  {currentUser.role!=='student' && (                  <button
                     onClick={handleLogOut}
                     className="h-10 w-10 flex items-center justify-center rounded-xl text-[#FAF7F2]/80 hover:text-[#22C55E] hover:bg-[#0F766E]/40 transition cursor-pointer"
                     title="Sign In with Another Account / Sign Out"
                   >
                     <LogOut className="w-4 h-4" />
-                  </button>
+                  </button>)}
                 </div>
               ) : (
                 <button
@@ -1996,71 +1926,7 @@ export default function App() {
           {/* Mobile Dropdown */}
           {isMobileMenuOpen && currentUser && (
             <div id="lq-compact-navigation" className="lg:hidden px-4 py-3 border-t border-white/10 bg-[#07172C] space-y-1 [&>button]:min-h-11">
-              {currentUser.role === 'student' && (
-                <>
-                  <button
-                    onClick={() => {
-                      soundFX.playClick();
-                      setCurrentView('STUDENT_DASHBOARD');
-                      setIsMobileMenuOpen(false);
-                    }}
-                    className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold text-sky-300 hover:bg-white/5 flex items-center gap-2"
-                  >
-                    <User className="w-4 h-4 text-sky-400" />
-                    <span>Student Dashboard (Credentials & Photo)</span>
-                  </button>
-                  <button
-                    onClick={() => {
-                      soundFX.playClick();
-                      setCurrentView('MAP');
-                      setIsMobileMenuOpen(false);
-                    }}
-                    className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold text-slate-200 hover:bg-white/5"
-                  >
-                    Island Quests
-                  </button>
-                  <button
-                    onClick={() => {
-                      setCurrentView('WRITING');
-                      setIsMobileMenuOpen(false);
-                    }}
-                    className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold text-slate-200 hover:bg-white/5"
-                  >
-                    Writing Lab
-                  </button>
-                  <button
-                    onClick={() => {
-                      setCurrentView('PROGRESS');
-                      setIsMobileMenuOpen(false);
-                    }}
-                    className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold text-slate-200 hover:bg-white/5"
-                  >
-                    My Progress
-                  </button>
-                  <button
-                    onClick={() => {
-                      setCurrentView('LEADERBOARD');
-                      setIsMobileMenuOpen(false);
-                    }}
-                    className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold text-slate-200 hover:bg-white/5"
-                  >
-                    Grade Activity Board
-                  </button>
-                  <button
-                    onClick={() => {
-                      setCurrentView('PROFILE');
-                      setIsMobileMenuOpen(false);
-                    }}
-                    className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold text-slate-200 hover:bg-white/5"
-                  >
-                    Badges
-                  </button>
-                  <button
-                    onClick={() => { setCurrentView('MARKET'); setIsMobileMenuOpen(false); }}
-                    className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold text-slate-200 hover:bg-white/5"
-                  >Quest Market</button>
-                </>
-              )}
+              {currentUser.role === 'student' && STUDENT_NAVIGATION.map(item=><button key={item.view} onClick={()=>navigateStudent(item.view)} aria-current={activeStudentView(item.view)?'page':undefined} className={`w-full text-left px-3 py-2 rounded-xl text-sm font-bold ${activeStudentView(item.view)?'bg-sky-900 text-white':'text-slate-200 hover:bg-white/5'}`}>{item.label}</button>)}
 
               {currentUser.role === 'teacher' && (
                 <>
@@ -2275,7 +2141,7 @@ export default function App() {
             }}
             onReturnToDashboard={() => {
               soundFX.playClick();
-              setCurrentView(currentUser?.role === 'teacher' ? 'TEACHER' : 'ADMIN');
+              setCurrentView(currentUser?.role === 'student' ? 'STUDENT_DASHBOARD' : currentUser?.role === 'teacher' ? 'TEACHER' : 'ADMIN');
             }}
             onTogglePersonalization={handleTogglePersonalization}
             onSelectModule={handleSelectModule}
@@ -2296,7 +2162,7 @@ export default function App() {
             }}
             onReturnToDashboard={() => {
               soundFX.playClick();
-              setCurrentView(currentUser?.role === 'teacher' ? 'TEACHER' : 'ADMIN');
+              setCurrentView(currentUser?.role === 'student' ? 'STUDENT_DASHBOARD' : currentUser?.role === 'teacher' ? 'TEACHER' : 'ADMIN');
             }}
             onCompleteLesson={handleCompleteLesson}
             onSubmitQuizResult={handleSubmitQuizResult}
@@ -2321,6 +2187,8 @@ export default function App() {
             }}
           />
         )}
+
+        {currentStudent&&['PROGRESS','PROFILE','LEADERBOARD'].includes(currentView)&&<nav aria-label="My Progress sections" className="max-w-6xl mx-auto px-4 pt-6 flex flex-wrap items-center gap-3"><button onClick={()=>navigateStudent('PROGRESS')} aria-current={currentView==='PROGRESS'?'page':undefined} className={`min-h-11 rounded-xl px-4 py-2 font-semibold ${currentView==='PROGRESS'?'bg-sky-700 text-white':'border border-sky-300 text-sky-900'}`}>Learning Progress</button><button onClick={()=>navigateStudent('PROFILE')} aria-current={currentView==='PROFILE'?'page':undefined} className={`min-h-11 rounded-xl px-4 py-2 font-semibold ${currentView==='PROFILE'?'bg-sky-700 text-white':'border border-sky-300 text-sky-900'}`}>Badges</button><button onClick={()=>navigateStudent('LEADERBOARD')} aria-current={currentView==='LEADERBOARD'?'page':undefined} className="min-h-11 ml-auto text-sm font-semibold text-sky-800 underline underline-offset-4">Optional Grade Activity Board</button></nav>}
 
         {currentView === 'PROGRESS' && currentStudent && (
           <StudentProgressView
@@ -2348,14 +2216,17 @@ export default function App() {
         {currentView === 'MARKET' && currentStudent && <QuestMarketView />}
 
         {/* Student Dashboard View (Edit credentials, upload picture, view achievements) */}
-        {currentView === 'STUDENT_DASHBOARD' && currentStudent && (
+        {currentView === 'STUDENT_DASHBOARD' && currentStudent && <StudentHomeView student={currentStudent} modules={modules} onContinue={m=>handleSelectModule(m)} onIslands={()=>navigateStudent('MAP')} onProgress={()=>navigateStudent('PROGRESS')} onWriting={()=>navigateStudent('WRITING')}/>}
+
+        {currentView === 'ACCOUNT' && currentStudent && (
           <StudentDashboardView
+            settingsOnly
             student={currentStudent}
             teachers={teachers}
             onUpdateStudent={handleUpdateStudentProfile}
             onBackToMap={() => {
               soundFX.playClick();
-              setCurrentView('MAP');
+              setCurrentView('STUDENT_DASHBOARD');
             }}
             onNavigateToLeaderboard={() => {
               soundFX.playClick();
@@ -2370,6 +2241,7 @@ export default function App() {
 
         {currentView === 'PROFILE' && currentStudent && (
           <ProfileBadgesView
+            badgesOnly
             student={currentStudent}
             onBackToMap={() => {
               soundFX.playClick();

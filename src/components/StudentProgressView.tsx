@@ -147,7 +147,7 @@ export const StudentProgressView: React.FC<StudentProgressViewProps> = ({
               className="flex items-center gap-2 px-4 py-3 rounded-2xl bg-amber-400 text-slate-950 font-bold text-sm shadow hover:bg-amber-300 transition cursor-pointer"
             >
               <Key className="w-4 h-4" />
-              <span>Student Dashboard</span>
+              <span>Home</span>
             </button>
             <button
               onClick={() => {
