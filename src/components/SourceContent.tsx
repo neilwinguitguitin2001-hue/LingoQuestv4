@@ -14,11 +14,21 @@ function themeInk(colour:string,fill=false) {
 }
 export function SourceGraphic({block,interactive=false,themed=false}:{block:DigitalBlock;interactive?:boolean;themed?:boolean}) {
  const [label,setLabel]=useState('');
- return <div className="space-y-2"><svg viewBox={`-6 -6 ${(block.width||400)+12} ${(block.height||180)+12}`} className="w-full h-auto max-h-96" role="img" aria-label="Lesson illustration">
+ const width = block.width || 400;
+ const height = block.height || 180;
+ const minimumLabelSize = Math.min(14, ...(block.labels || []).filter(item => item.size > 0).map(item => item.size));
+ const readingWidth = block.labels?.length ? Math.min(1200, Math.ceil((width + 12) * 13 / minimumLabelSize)) : 0;
+ const scrollable = themed && readingWidth > 0;
+
+ return <div className="min-w-0 space-y-2">
+  <div className={scrollable ? 'lq-diagram-scroll' : undefined} tabIndex={scrollable ? 0 : undefined} role={scrollable ? 'region' : undefined} aria-label={scrollable ? 'Scrollable lesson diagram' : undefined}>
+  <svg viewBox={`-6 -6 ${width + 12} ${height + 12}`} preserveAspectRatio="xMidYMid meet"
+   style={scrollable ? { minWidth: readingWidth } : undefined}
+   className={themed ? 'block h-auto w-full' : 'w-full h-auto max-h-96'} role={interactive ? 'group' : 'img'} aria-label="Lesson illustration">
   {block.shapes?.map((s,i)=><path key={i} d={s.d} stroke={themed?themeInk(s.stroke):s.stroke} fill={themed?themeInk(s.fill,true):s.fill} strokeWidth={s.width}/>)}
   {block.images?.map((s,i)=><image key={i} href={s.src} x={s.x} y={s.y} width={s.width} height={s.height} role="img" aria-label={s.alt||'Lesson illustration'}/>)}
   {block.labels?.map((s,i)=><text key={i} x={s.x} y={s.y} fontSize={s.size} fill="#0f172a" {...(interactive?{tabIndex:0,role:'button','aria-label':s.text,onClick:()=>setLabel(s.text),onKeyDown:(e:React.KeyboardEvent)=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();setLabel(s.text);}}}:{})}>{s.text}</text>)}
- </svg>{interactive&&label&&<p className="p-3 bg-sky-50 border border-sky-100 rounded-lg text-xs text-slate-700" aria-live="polite">{label}</p>}</div>;
+ </svg></div>{interactive&&label&&<p className="p-3 bg-sky-50 border border-sky-100 rounded-lg text-sm text-slate-700" aria-live="polite">{label}</p>}</div>;
 }
 export function SourceBlock({block}:{block:DigitalBlock}) {
  if(block.type==='table')return <div className="overflow-x-auto" role="region" aria-label="Lesson table" tabIndex={0}><table className="w-full text-xs text-left border-collapse"><tbody>{block.rows?.map((row,i)=><tr key={i}>{row.map((cell,j)=>i===0?<th key={j} scope="col" className="border border-slate-200 bg-sky-50 p-2 font-semibold">{cell}</th>:<td key={j} className="border border-slate-200 p-2 align-top">{cell}</td>)}</tr>)}</tbody></table></div>;
