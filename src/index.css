@@ -743,3 +743,47 @@ div.rounded-3xl.border.bg-white {
 @keyframes lq-home-shimmer { 0%,100% { transform: translate(0,0) scaleY(1); opacity: .32; } 50% { transform: translate(8px,-2px) scaleY(1.05); opacity: .52; } }
 @keyframes lq-home-swell { 0%,100% { transform: translate(0,0); } 25% { transform: translate(18px,-2.5px); } 50% { transform: translate(36px,0); } 75% { transform: translate(18px,2px); } }
 @media (prefers-reduced-motion: reduce) { .lq-home-caustics, .lq-home-waves { animation: none; } }
+
+@keyframes lq-home-cirrus_drift {
+          0% {
+            transform: translateX(-24px);
+          }
+          50% {
+            transform: translateX(36px);
+          }
+          100% {
+            transform: translateX(-24px);
+          }
+        }
+@keyframes lq-home-cloud_billow_1 {
+          0% {
+            transform: translate(-18px, 0px) scale(1, 1);
+          }
+          33% {
+            transform: translate(14px, -1.8px) scale(1.025, 1.018);
+          }
+          66% {
+            transform: translate(36px, 0.8px) scale(0.99, 1.01);
+          }
+          100% {
+            transform: translate(-18px, 0px) scale(1, 1);
+          }
+        }
+@keyframes lq-home-cloud_billow_2 {
+          0% {
+            transform: translate(24px, 0px) scale(1, 1);
+          }
+          33% {
+            transform: translate(-8px, -2px) scale(1.02, 1.02);
+          }
+          66% {
+            transform: translate(-32px, 1.2px) scale(1.01, 0.995);
+          }
+          100% {
+            transform: translate(24px, 0px) scale(1, 1);
+          }
+        }
+.lq-home-cirrus { animation: lq-home-cirrus_drift 75s ease-in-out infinite; }
+.lq-home-cloud-1 { animation: lq-home-cloud_billow_1 60s ease-in-out infinite; }
+.lq-home-cloud-2 { animation: lq-home-cloud_billow_2 45s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) { .lq-home-cirrus, .lq-home-cloud-1, .lq-home-cloud-2 { animation: none; } }

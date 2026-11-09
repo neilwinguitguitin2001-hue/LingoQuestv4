@@ -90,12 +90,101 @@ strokeLinecap="round"
 <path d="M4 -30 C16 -28 24 -22 26 -14" />
 </g>
 </g>
+
+<linearGradient id={`${id}-cloudBaseGradient`} x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stopColor="#FFFFFF" stopOpacity="0" />
+<stop offset="50%" stopColor="#FED7AA" stopOpacity="0.45" />
+<stop offset="100%" stopColor="#CBD5E1" stopOpacity="0.65" />
+</linearGradient>
+<linearGradient id={`${id}-cirrusWispGrad`} x1="0" y1="0" x2="1" y2="0">
+<stop offset="0%" stopColor="#FFFFFF" stopOpacity="0" />
+<stop offset="18%" stopColor="#FFFFFF" stopOpacity="0.45" />
+<stop offset="48%" stopColor="#FEF08A" stopOpacity="0.65" />
+<stop offset="82%" stopColor="#FFFFFF" stopOpacity="0.4" />
+<stop offset="100%" stopColor="#FFFFFF" stopOpacity="0" />
+</linearGradient>
+<filter id={`${id}-cloudBlur`} x="-20%" y="-40%" width="140%" height="180%">
+<feGaussianBlur stdDeviation="4.5" />
+</filter>
+<filter id={`${id}-cirrusBlur`} x="-10%" y="-30%" width="120%" height="160%">
+<feGaussianBlur stdDeviation="1.8" />
+</filter>
  </defs>
  <rect width="480" height="110" fill={`url(#${id}-davaoSkyGrad)`}/>
  <rect y="100" width="480" height="220" fill={`url(#${id}-sea)`}/>
  <defs><clipPath id={`${id}-waterClip`}><rect y="103" width="480" height="217"/></clipPath></defs>
  <g clipPath={`url(#${id}-waterClip)`}><rect className="lq-home-caustics" x="-48" y="100" width="576" height="240" fill={`url(#${id}-causticPattern)`} opacity=".6"/></g>
- <g fill={`url(#${id}-cloudPuffGrad)`}><ellipse cx="75" cy="47" rx="55" ry="21"/><ellipse cx="116" cy="41" rx="62" ry="24"/><ellipse cx="162" cy="49" rx="55" ry="21"/></g>
+ <g transform="scale(.4 .9)"><g className="lq-home-cirrus" filter={`url(#${id}-cirrusBlur)`} pointerEvents="none">
+<path
+d="M 60,18 Q 180,12 310,17 Q 440,22 560,15"
+fill="none"
+stroke={`url(#${id}-cirrusWispGrad)`}
+strokeWidth="3.2"
+strokeLinecap="round"
+opacity="0.6"
+/>
+<path
+d="M 220,24 Q 340,19 460,25 Q 580,31 700,22"
+fill="none"
+stroke={`url(#${id}-cirrusWispGrad)`}
+strokeWidth="2.4"
+strokeLinecap="round"
+opacity="0.5"
+/>
+<path
+d="M 680,16 Q 800,10 930,15 Q 1060,20 1160,14"
+fill="none"
+stroke={`url(#${id}-cirrusWispGrad)`}
+strokeWidth="3.0"
+strokeLinecap="round"
+opacity="0.65"
+/>
+</g>
+<g className="lq-home-cloud-1" filter={`url(#${id}-cloudBlur)`} pointerEvents="none">
+<g>
+<path
+d="M 30,62 C 45,64 120,65 240,62 C 260,54 270,44 260,36 C 240,22 210,24 195,32 C 180,18 145,16 125,28 C 105,22 80,26 65,38 C 45,36 30,46 30,62 Z"
+fill={`url(#${id}-cloudBaseGradient)`}
+/>
+<ellipse cx="75" cy="46" rx="42" ry="18" fill={`url(#${id}-cloudPuffGrad)`} />
+<ellipse cx="120" cy="36" rx="52" ry="22" fill={`url(#${id}-cloudPuffGrad)`} />
+<ellipse cx="170" cy="40" rx="48" ry="20" fill={`url(#${id}-cloudPuffGrad)`} />
+<ellipse cx="215" cy="48" rx="40" ry="17" fill={`url(#${id}-cloudPuffGrad)`} />
+<ellipse cx="128" cy="30" rx="36" ry="14" fill="#FFFFFF" opacity="0.6" />
+</g>
+<g>
+<path
+d="M 520,60 C 560,63 680,63 760,59 C 775,50 780,40 765,32 C 745,20 715,22 700,30 C 680,16 645,14 625,26 C 605,18 575,22 560,34 C 540,32 525,42 520,60 Z"
+fill={`url(#${id}-cloudBaseGradient)`}
+/>
+<ellipse cx="565" cy="44" rx="45" ry="18" fill={`url(#${id}-cloudPuffGrad)`} />
+<ellipse cx="625" cy="34" rx="55" ry="22" fill={`url(#${id}-cloudPuffGrad)`} />
+<ellipse cx="685" cy="38" rx="50" ry="20" fill={`url(#${id}-cloudPuffGrad)`} />
+<ellipse cx="735" cy="46" rx="38" ry="16" fill={`url(#${id}-cloudPuffGrad)`} />
+<ellipse cx="632" cy="28" rx="38" ry="14" fill="#FFFFFF" opacity="0.6" />
+</g>
+<g opacity="0.85">
+<path
+d="M 1040,60 C 1070,62 1150,62 1195,58 C 1200,48 1195,38 1180,32 C 1160,20 1130,22 1115,28 C 1095,16 1065,18 1050,30 C 1035,36 1030,48 1040,60 Z"
+fill={`url(#${id}-cloudBaseGradient)`}
+/>
+<ellipse cx="1080" cy="42" rx="46" ry="18" fill={`url(#${id}-cloudPuffGrad)`} />
+<ellipse cx="1135" cy="34" rx="52" ry="20" fill={`url(#${id}-cloudPuffGrad)`} />
+<ellipse cx="1175" cy="42" rx="36" ry="16" fill={`url(#${id}-cloudPuffGrad)`} />
+</g>
+</g>
+<g className="lq-home-cloud-2" filter={`url(#${id}-cloudBlur)`} opacity="0.68" pointerEvents="none">
+<g>
+<ellipse cx="360" cy="56" rx="65" ry="18" fill={`url(#${id}-cloudPuffGrad)`} />
+<ellipse cx="410" cy="48" rx="50" ry="16" fill={`url(#${id}-cloudPuffGrad)`} />
+<ellipse cx="460" cy="54" rx="58" ry="17" fill={`url(#${id}-cloudPuffGrad)`} />
+</g>
+<g>
+<ellipse cx="880" cy="52" rx="72" ry="19" fill={`url(#${id}-cloudPuffGrad)`} />
+<ellipse cx="935" cy="45" rx="55" ry="17" fill={`url(#${id}-cloudPuffGrad)`} />
+<ellipse cx="985" cy="53" rx="48" ry="16" fill={`url(#${id}-cloudPuffGrad)`} />
+</g>
+</g></g>
  <circle cx="402" cy="49" r="48" fill={`url(#${id}-morningSunGlow)`}/><circle cx="402" cy="49" r="10" fill="#fffbeb"/>
  <path d="M0 100h480" stroke="#fef08a" strokeWidth="3" opacity=".3"/>
  <g clipPath={`url(#${id}-waterClip)`}><g className="lq-home-waves" fill="none" stroke="#7dd3fc" strokeWidth="1.2" opacity=".38"><path d="M0 130q40-12 80 0t80 0 80 0 80 0 80 0 80 0M0 180q40-12 80 0t80 0 80 0 80 0 80 0 80 0M0 232q40-12 80 0t80 0 80 0 80 0 80 0 80 0M0 284q40-12 80 0t80 0 80 0 80 0 80 0 80 0"/></g></g>
