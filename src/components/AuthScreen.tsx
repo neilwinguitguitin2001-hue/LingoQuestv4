@@ -1,3 +1,5 @@
+import {InabelStrip} from './InabelStrip';
+import {InabelWovenStrip} from './FilipinianaMotifs';
 import {LegalLinks,RegistrationNotices} from './LegalCenter';
 import React, { useEffect, useState } from 'react';
 import {
@@ -568,14 +570,15 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
     <div className="min-h-screen bg-gradient-to-b from-[#06162B] via-[#091F3C] to-[#0D2A4F] text-slate-100 flex flex-col justify-between selection:bg-amber-400 selection:text-slate-950 relative overflow-hidden">
       {/* Ambient Tropical Glow Accents */}
       <div className="absolute top-0 left-1/4 -translate-x-1/2 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/3 right-10 w-[500px] h-[500px] bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/3 right-10 w-[500px] h-[500px] bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute top-1/2 left-10 w-80 h-80 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
 
       {/* Top Header */}
-      <header className="relative z-20 w-full border-b border-[#143257]/80 bg-[#071930]/90 backdrop-blur-md px-6 py-4">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
+      <header className="relative z-20 w-full border-b border-[#143257]/80 bg-[#071930]/90 backdrop-blur-md px-4 sm:px-6 pt-6 pb-4">
+        <div className="absolute inset-x-0 top-0 pointer-events-none" aria-hidden="true"><InabelWovenStrip variant="azure" height={8}/></div>
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-3">
           {/* Official Brand Logo */}
-          <LingoQuestLogo size="md" textColor="light" animated={true} />
+          <span className="sm:hidden"><LingoQuestLogo size="sm" textColor="light" animated={true}/></span><span className="hidden sm:block"><LingoQuestLogo size="md" textColor="light" animated={true}/></span>
 
           {/* Action on Header */}
           <div className="flex items-center gap-3">
@@ -615,7 +618,7 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
 
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black font-display text-white tracking-tight leading-[1.15] text-balance">
             Journey through the Islands of{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-teal-300 to-amber-300">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-teal-300 to-sky-200">
               English Mastery
             </span>
             .
@@ -628,8 +631,9 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
 
         {/* Top First: Catchy, Interactive Auth Card (Sign In & Registration) */}
         <div className="max-w-xl mx-auto w-full">
-          <div className="bg-[#0B1E36]/95 border border-[#1B3F6D] backdrop-blur-md rounded-3xl p-6 sm:p-8 shadow-2xl shadow-black/40 space-y-5">
+          <div className="relative overflow-hidden bg-[#0B1E36]/95 border border-[#2378A6] backdrop-blur-md rounded-3xl p-6 sm:p-8 shadow-2xl shadow-black/40 space-y-5">
               
+              <div className="absolute inset-x-0 top-0 pointer-events-none" aria-hidden="true"><InabelStrip variant="royal" height={10}/></div>
               {/* Card Header: Mode & Switcher */}
               <div className="flex items-center justify-between border-b border-[#1A385E] pb-4">
                 <div>
@@ -1250,11 +1254,14 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
             </span>
           </div>
 
-          <InteractiveIslandMap
-            mode="signin"
-            activeIslandId={selectedMapIslandId}
-            onSelectIsland={(island) => setSelectedMapIslandId(island.id)}
-          />
+          <div className="overflow-hidden rounded-3xl border-2 border-[#123B63] bg-[#07192F] shadow-[0_4px_0_#031024]">
+            <InabelStrip variant="royal" height={10}/>
+            <InteractiveIslandMap
+              mode="signin"
+              activeIslandId={selectedMapIslandId}
+              onSelectIsland={(island) => setSelectedMapIslandId(island.id)}
+            />
+          </div>
         </div>
 
         {/* Supporting Curriculum Highlights & Storytelling (Underneath Island Map) */}
@@ -1761,7 +1768,8 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
       )}
 
       {/* Footer (Clean, Quiet, with animated emblem, WITHOUT the removed RBAC string) */}
-      <footer className="relative z-20 w-full border-t border-[#143257] bg-[#051326] text-slate-300 px-6 py-5 text-xs">
+      <footer className="relative z-20 w-full border-t border-[#143257] bg-[#051326] text-slate-300 px-6 pt-7 pb-5 text-xs">
+        <div className="absolute inset-x-0 top-0 pointer-events-none" aria-hidden="true"><InabelWovenStrip variant="azure" height={8}/></div>
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
           <div className="flex items-center gap-2.5">
             <LingoQuestEmblem size={24} />
