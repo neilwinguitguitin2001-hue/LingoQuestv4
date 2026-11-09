@@ -731,3 +731,8 @@ div.rounded-3xl.border.bg-white {
   border-color: #123b63 !important;
   box-shadow: 3px 4px 0 #07192f !important;
 }
+
+/* A short decorative entrance, then stillness; no looping or student-pressure cues. */
+.lq-home-boat { animation: lq-home-arrival 2.6s ease-out both; transform-box: fill-box; transform-origin: center; }
+@keyframes lq-home-arrival { from { transform: translate(-26px, 5px) rotate(-3deg); } to { transform: translate(0, 0) rotate(0); } }
+@media (prefers-reduced-motion: reduce) { .lq-home-boat { animation: none; } }
