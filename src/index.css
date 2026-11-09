@@ -742,5 +742,4 @@ div.rounded-3xl.border.bg-white {
 .lq-home-waves { animation: lq-home-swell 8s ease-in-out infinite; }
 @keyframes lq-home-shimmer { 0%,100% { transform: translate(0,0) scaleY(1); opacity: .32; } 50% { transform: translate(8px,-2px) scaleY(1.05); opacity: .52; } }
 @keyframes lq-home-swell { 0%,100% { transform: translate(0,0); } 25% { transform: translate(18px,-2.5px); } 50% { transform: translate(36px,0); } 75% { transform: translate(18px,2px); } }
-.lq-home-scene.is-paused .lq-home-caustics, .lq-home-scene.is-paused .lq-home-waves { animation-play-state: paused; }
 @media (prefers-reduced-motion: reduce) { .lq-home-caustics, .lq-home-waves { animation: none; } }

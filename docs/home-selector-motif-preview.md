@@ -13,3 +13,6 @@ Preview branch only; do not merge without approval.
 Home follows the next unlocked module's quarter; after all modules are complete it retains the last completed quarter. Q1 uses San Victor, Q2 Oak, Q3 Waniban and Q4 Pujada, each copied from the existing selector's original paths. Gentle caustic shimmer and wave swell match the selector's motion pattern. Pause/play controls stop both water layers, and reduced-motion disables them.
 
 Validation: four server-rendered quarter cases pass distinct-artwork, label and SVG-reference checks. All four scenes visually inspected. Live Home CSS confirmed running → paused → running through its button. Production build passed; lint retains the three baseline errors. No changes to progression or the full selector.
+
+
+Owner-requested follow-up: removed the Home water pause/play control. Water loops continuously under normal motion preferences; device reduced-motion still disables ambient animation. Production build passed.

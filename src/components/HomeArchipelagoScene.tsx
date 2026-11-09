@@ -1,15 +1,14 @@
-import React, {useId, useState} from 'react';
+import React, {useId} from 'react';
 
 /** Decorative scene using the selector's original vector paths/palettes.
  * No route controls, island labels or geographic/curriculum claims are added.
  * IDs are local to this SVG so it can coexist with the full selector.
  */
 export function HomeArchipelagoScene({quarter = 1}: {quarter?: number}) {
- const [paused, setPaused] = useState(false);
  const activeQuarter = [1,2,3,4].includes(quarter) ? quarter : 1;
  const islandName = ["San Victor Island", "Oak Island", "Waniban Island", "Pujada Island"][activeQuarter - 1];
  const id=useId().replace(/[^a-zA-Z0-9]/g,'');
- return <div className={paused ? "lq-home-scene is-paused" : "lq-home-scene"}>
+ return <div className="lq-home-scene">
  <svg viewBox="0 0 480 320" className="block w-full rounded-2xl border border-sky-300/30" aria-hidden="true" focusable="false">
  <defs>
 <linearGradient id={`${id}-sea`} x1="0" y1="0" x2="0" y2="1">
@@ -337,6 +336,6 @@ strokeLinecap="round"
 </g>
  </g></g>
  </svg>
- <div className="mt-2 flex items-center justify-between gap-3 text-xs text-sky-100"><span>Quarter {activeQuarter} · {islandName}</span><button type="button" onClick={() => setPaused(value => !value)} aria-pressed={paused} className="min-h-11 shrink-0 rounded-lg border border-sky-300/40 px-3 font-semibold hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-sky-300">{paused ? "Play water" : "Pause water"}</button></div>
+ <div className="mt-2 flex items-center justify-between gap-3 text-xs text-sky-100"><span>Quarter {activeQuarter} · {islandName}</span></div>
  </div>;
 }
