@@ -167,7 +167,7 @@ export const StudentProgressView: React.FC<StudentProgressViewProps> = ({
       {/* Overview Stat Cards */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         {/* Card 1: Completed Modules */}
-        <div className="bg-white rounded-3xl p-5 border border-slate-200 shadow-sm space-y-2">
+        <div className="lq-woven-card lq-woven-pad-5 bg-white rounded-3xl p-5 border border-slate-200 shadow-sm space-y-2">
           <div className="flex items-center justify-between">
             <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">
               Bridges Restored
@@ -189,7 +189,7 @@ export const StudentProgressView: React.FC<StudentProgressViewProps> = ({
         </div>
 
         {/* Card 2: Total Quest Points */}
-        <div className="bg-white rounded-3xl p-5 border border-slate-200 shadow-sm space-y-2">
+        <div className="lq-woven-card lq-woven-pad-5 bg-white rounded-3xl p-5 border border-slate-200 shadow-sm space-y-2">
           <div className="flex items-center justify-between">
             <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">
               Quest Points
@@ -208,7 +208,7 @@ export const StudentProgressView: React.FC<StudentProgressViewProps> = ({
         </div>
 
         {/* Card 3: Average Quiz Score */}
-        <div className="bg-white rounded-3xl p-5 border border-slate-200 shadow-sm space-y-2">
+        <div className="lq-woven-card lq-woven-pad-5 bg-white rounded-3xl p-5 border border-slate-200 shadow-sm space-y-2">
           <div className="flex items-center justify-between">
             <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">
               Quiz Average
@@ -229,7 +229,7 @@ export const StudentProgressView: React.FC<StudentProgressViewProps> = ({
         </div>
 
         {/* Card 4: Badges Earned */}
-        <div className="bg-white rounded-3xl p-5 border border-slate-200 shadow-sm space-y-2">
+        <div className="lq-woven-card lq-woven-pad-5 bg-white rounded-3xl p-5 border border-slate-200 shadow-sm space-y-2">
           <div className="flex items-center justify-between">
             <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">
               Badges Unlocked

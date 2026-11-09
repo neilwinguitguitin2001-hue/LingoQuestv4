@@ -1395,7 +1395,7 @@ export const StudentDashboardView: React.FC<StudentDashboardViewProps> = ({
 
           {/* Selected Badge Detail Callout */}
           {selectedBadge && (
-            <div className="p-5 rounded-3xl bg-gradient-to-r from-purple-50 to-indigo-50 border border-purple-200 flex flex-wrap items-center justify-between gap-4">
+            <div className="lq-woven-card lq-woven-pad-5 p-5 rounded-3xl bg-gradient-to-r from-purple-50 to-indigo-50 border border-purple-200 flex flex-wrap items-center justify-between gap-4">
               <div className="flex items-center gap-4">
                 <div className="w-14 h-14 rounded-2xl bg-purple-600 text-white flex items-center justify-center shrink-0 shadow-md">
                   <BadgeIcon iconType={selectedBadge.iconType} className="w-8 h-8" />
@@ -1453,7 +1453,7 @@ export const StudentDashboardView: React.FC<StudentDashboardViewProps> = ({
       {/* Selected Island Quarter Lessons & Tasks Modal */}
       {selectedIslandModal && (
         <div className="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-xs flex items-center justify-center p-4">
-          <div className="bg-white rounded-3xl max-w-lg w-full shadow-2xl border border-slate-200 overflow-hidden space-y-4 animate-scale-in">
+          <div className="lq-woven-card lq-woven-pad-0 bg-white rounded-3xl max-w-lg w-full shadow-2xl border border-slate-200 overflow-hidden space-y-4 animate-scale-in">
             {/* Header */}
             <div className="p-6 bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 text-white flex items-start justify-between">
               <div>
