@@ -393,12 +393,13 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
             role: 'student',
             status: 'approved',
             gradeLevel: 8,
-            school: fallbackAccount.schoolName,
-            schoolName: fallbackAccount.schoolName,
+            school: fallbackAccount.schoolName || 'Mati National Comprehensive High School',
+            schoolName: fallbackAccount.schoolName || 'Mati National Comprehensive High School',
             createdAt: nowIso,
             lastLoginAt: nowIso,
           }
       }
+      if (!existingProfile) throw new Error('Unable to load account profile.')
       return {
         firebaseUser: {
           uid: fbUser.uid,
