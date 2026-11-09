@@ -699,7 +699,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                 className="text-xs font-semibold text-indigo-700 hover:text-indigo-900 flex items-center gap-1.5 cursor-pointer"
               >
                 <LayoutDashboard className="w-3.5 h-3.5 text-indigo-500" />
-                <span>Student Dashboard</span>
+                <span>Home</span>
               </button>
             </div>
             <div className="flex flex-wrap items-center gap-2 text-xs text-slate-500">
@@ -1195,10 +1195,10 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                 type="button"
                 onClick={handleGoToStudentDashboard}
                 className="px-3.5 py-2 text-xs font-bold text-indigo-800 bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 rounded-xl transition flex items-center gap-1.5 cursor-pointer shadow-xs"
-                title="Go to Student Dashboard"
+                title="Go to Home"
               >
                 <LayoutDashboard className="w-3.5 h-3.5 text-indigo-600" />
-                <span>Student Dashboard</span>
+                <span>Home</span>
               </button>
               <button
                 type="button"
@@ -1421,10 +1421,10 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                   setShowExitModal(true);
                 }}
                 className="px-3 py-1.5 rounded-xl bg-indigo-500/15 hover:bg-indigo-500/25 text-indigo-200 hover:text-white text-xs font-bold border border-indigo-500/30 transition cursor-pointer flex items-center gap-1.5"
-                title="Exit quiz and return to Student Dashboard"
+                title="Exit quiz and return to Home"
               >
                 <LayoutDashboard className="w-3.5 h-3.5 text-indigo-400" />
-                <span>Student Dashboard</span>
+                <span>Home</span>
               </button>
               <button
                 type="button"
@@ -1986,7 +1986,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                   </div>
                 </button>
 
-                {/* Option 2: Go to Student Dashboard */}
+                {/* Option 2: Go to Home */}
                 <button
                   type="button"
                   onClick={handleGoToStudentDashboard}
@@ -1997,11 +1997,11 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                   </div>
                   <div className="flex-1">
                     <div className="text-sm font-bold text-indigo-950 flex items-center justify-between">
-                      <span>Go to Student Dashboard</span>
+                      <span>Go to Home</span>
                       <ArrowRight className="w-4 h-4 text-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity" />
                     </div>
                     <p className="text-xs text-slate-600 mt-0.5">
-                      Exit this quiz session and return to your Student Dashboard (learner profile, bridges restored, badges, and scores).
+                      Exit this quiz session and return to your Home (next learning step and useful shortcuts).
                     </p>
                   </div>
                 </button>
@@ -2351,10 +2351,10 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                 type="button"
                 onClick={handleGoToStudentDashboard}
                 className="px-4 py-2.5 bg-indigo-50 hover:bg-indigo-100 text-indigo-800 border border-indigo-200 text-xs font-bold rounded-lg transition-colors flex items-center gap-1.5 cursor-pointer"
-                title="Go to Student Dashboard"
+                title="Go to Home"
               >
                 <LayoutDashboard className="w-3.5 h-3.5 text-indigo-600" />
-                <span>Student Dashboard</span>
+                <span>Home</span>
               </button>
 
               <button

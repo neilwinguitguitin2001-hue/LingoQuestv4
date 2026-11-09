@@ -698,3 +698,92 @@ div.rounded-3xl.border.bg-white {
 @media(prefers-reduced-motion:reduce){.pdf-source-module *{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 
 .pdf-source-module[data-static=true] *{animation:none!important}
+
+/* Woven card accents: explicitly applied to dashboard panels, never form fields or buttons. */
+.lq-woven-card {
+  position: relative;
+  --lq-card-padding: 0px;
+  padding-top: calc(var(--lq-card-padding) + 16px) !important;
+}
+.lq-woven-card::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 16px;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+  background-color: #07192f;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='16' viewBox='0 0 48 16'%3E%3Crect width='48' height='16' fill='%230A192F'/%3E%3Cpath d='M0 8 8 2H12L4 8 12 14H8ZM48 8 40 2H36L44 8 36 14H40Z' fill='%2338BDF8'/%3E%3Cpath d='m24 1 9 7-9 7-9-7Z' fill='%2322C55E'/%3E%3Cpath d='m24 4 5 4-5 4-5-4Z' fill='%230A192F'/%3E%3Cpath d='m12 6 3 2-3 2-3-2Zm24 0 3 2-3 2-3-2Z' fill='%23DBEAFE'/%3E%3Cpath d='M22.5 6.5h3v3h-3Z' fill='%23DBEAFE'/%3E%3Cpath d='M0 0h48v2H0ZM0 14h48v2H0Z' fill='%23123B63'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-size: 48px 16px;
+  pointer-events: none;
+}
+.lq-woven-pad-4 { --lq-card-padding: 1rem; }
+.lq-woven-pad-5 { --lq-card-padding: 1.25rem; }
+.lq-woven-pad-6 { --lq-card-padding: 1.5rem; }
+.lq-woven-pad-12 { --lq-card-padding: 3rem; }
+@media (min-width: 640px) {
+  .lq-woven-pad-4.sm\:p-5 { --lq-card-padding: 1.25rem; }
+}
+.lq-woven-card,
+.linocut-card,
+.linocut-card-sm {
+  border-color: #123b63 !important;
+  box-shadow: 3px 4px 0 #07192f !important;
+}
+
+/* A short decorative entrance, then stillness; no looping or student-pressure cues. */
+.lq-home-boat { animation: lq-home-arrival 2.6s ease-out both; transform-box: fill-box; transform-origin: center; }
+@keyframes lq-home-arrival { from { transform: translate(-26px, 5px) rotate(-3deg); } to { transform: translate(0, 0) rotate(0); } }
+@media (prefers-reduced-motion: reduce) { .lq-home-boat { animation: none; } }
+
+/* Home uses the selector's ambient water motion, isolated from map controls. */
+.lq-home-caustics { animation: lq-home-shimmer 6s ease-in-out infinite; }
+.lq-home-waves { animation: lq-home-swell 8s ease-in-out infinite; }
+@keyframes lq-home-shimmer { 0%,100% { transform: translate(0,0) scaleY(1); opacity: .32; } 50% { transform: translate(8px,-2px) scaleY(1.05); opacity: .52; } }
+@keyframes lq-home-swell { 0%,100% { transform: translate(0,0); } 25% { transform: translate(18px,-2.5px); } 50% { transform: translate(36px,0); } 75% { transform: translate(18px,2px); } }
+@media (prefers-reduced-motion: reduce) { .lq-home-caustics, .lq-home-waves { animation: none; } }
+
+@keyframes lq-home-cirrus_drift {
+          0% {
+            transform: translateX(-24px);
+          }
+          50% {
+            transform: translateX(36px);
+          }
+          100% {
+            transform: translateX(-24px);
+          }
+        }
+@keyframes lq-home-cloud_billow_1 {
+          0% {
+            transform: translate(-18px, 0px) scale(1, 1);
+          }
+          33% {
+            transform: translate(14px, -1.8px) scale(1.025, 1.018);
+          }
+          66% {
+            transform: translate(36px, 0.8px) scale(0.99, 1.01);
+          }
+          100% {
+            transform: translate(-18px, 0px) scale(1, 1);
+          }
+        }
+@keyframes lq-home-cloud_billow_2 {
+          0% {
+            transform: translate(24px, 0px) scale(1, 1);
+          }
+          33% {
+            transform: translate(-8px, -2px) scale(1.02, 1.02);
+          }
+          66% {
+            transform: translate(-32px, 1.2px) scale(1.01, 0.995);
+          }
+          100% {
+            transform: translate(24px, 0px) scale(1, 1);
+          }
+        }
+.lq-home-cirrus { animation: lq-home-cirrus_drift 75s ease-in-out infinite; }
+.lq-home-cloud-1 { animation: lq-home-cloud_billow_1 60s ease-in-out infinite; }
+.lq-home-cloud-2 { animation: lq-home-cloud_billow_2 45s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) { .lq-home-cirrus, .lq-home-cloud-1, .lq-home-cloud-2 { animation: none; } }

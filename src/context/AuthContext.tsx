@@ -189,7 +189,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         if (error) throw error
         return data.user ? loadProfile(data.user.id) : null
       }
-      return null
+      throw new Error('Supabase authentication is not configured.')
     } catch (error) {
       throw new Error(friendlyAuthError(error))
     }
@@ -307,10 +307,12 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
     if (isSupabaseConfigured && supabase) {
       const { error } = await supabase.auth.resetPasswordForEmail(cleanEmail, {
-        redirectTo: `${window.location.origin}/auth/callback`,
+        redirectTo: `${window.location.origin}/auth/reset-password`,
       })
       if (error) throw new Error(friendlyAuthError(error))
+      return
     }
+    throw new Error('Supabase authentication is not configured.')
   }
 
   return (

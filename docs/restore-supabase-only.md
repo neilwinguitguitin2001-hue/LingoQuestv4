@@ -1,0 +1,11 @@
+# Restore verified release and remove Firebase
+
+Compared main commit 602c4757370adcde3cfca049861cc599add580b0 with verified release 101952937a04e80c58e23caff01079ee596345b0. The intervening commit affected 32 files. Its Firebase-removal title did not describe its unrelated reversions.
+
+Restored the verified release's five-tab navigation and Home bindings, quarter-aware island/boat/cloud artwork and water animation, header/woven theme, private bootstrap and account-switch cleanup, assigned-teacher/aggregate-admin screens, grade/group alias opt-in board, progress subnavigation, versioned notices and acknowledgement bindings, local/optional AI checker boundaries, secure email recovery routing and private server/middleware gates. Curriculum and records are retained.
+
+The intervening commit had reinstated seed/local account directories, a client-asserted local session endpoint and legacy password-writing recovery. Those reversions are removed. Supabase database permissions remain active; no data deletion or schema migration is performed.
+
+Firebase is removed separately: SDK and admin SDK dependencies and lock entries, initialization wrappers, applet/blueprint config, Firestore/storage rules and old progress adapter. Account services use Supabase session tokens only, with no Firebase or locally minted session fallback. Renamed firestoreService to accountService. Auth is Supabase-only and fails closed when configuration is missing. Environment example uses Supabase public/server keys, with service-role key server-only. Stale bun lock removed; npm package-lock is authoritative. No Firebase environment variable keys exist on the correct Vercel project. Historical documentation references are retained as history.
+
+Validation: npm run lint and npm run build pass; 28 privacy/notice/grammar tests pass; password-reset request checks and Q1–Q4 scene/SVG checks pass. Source/API/scripts/dependency configuration scan finds no Firebase/Firestore references. Existing Vite native-config and bundle warnings remain. No real-user password changes. Recovery email delivery was verified previously; final user-entered password change/sign-in remains unverified. Institutional policy details still require confirmation. User authorized restoration and merge; deploy only to LingoQuest_space / lingo-questv4.

@@ -114,6 +114,7 @@ export const StudentProgressView: React.FC<StudentProgressViewProps> = ({
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-8 space-y-6">
+      <p className="rounded-xl border border-sky-200 bg-sky-50 p-4 text-sm text-sky-950">Your scores and learning progress are private to you and authorized staff. Other students cannot open your individual performance records. Your optional grade activity board shows only an alias and activity-completion points.</p>
       {/* Top Banner with Deep Navy Theme */}
       <div className="bg-gradient-to-r from-[#0A192F] via-[#0F3460] to-[#1E3E62] rounded-3xl text-white relative overflow-hidden border-2 border-[#231F20] linocut-card">
         <InabelHeaderStrip variant="royal" label="DepEd Davao Oriental • Learner Progress Analytics" />
@@ -146,7 +147,7 @@ export const StudentProgressView: React.FC<StudentProgressViewProps> = ({
               className="flex items-center gap-2 px-4 py-3 rounded-2xl bg-amber-400 text-slate-950 font-bold text-sm shadow hover:bg-amber-300 transition cursor-pointer"
             >
               <Key className="w-4 h-4" />
-              <span>Student Dashboard</span>
+              <span>Home</span>
             </button>
             <button
               onClick={() => {
@@ -166,7 +167,7 @@ export const StudentProgressView: React.FC<StudentProgressViewProps> = ({
       {/* Overview Stat Cards */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         {/* Card 1: Completed Modules */}
-        <div className="bg-white rounded-3xl p-5 border border-slate-200 shadow-sm space-y-2">
+        <div className="lq-woven-card lq-woven-pad-5 bg-white rounded-3xl p-5 border border-slate-200 shadow-sm space-y-2">
           <div className="flex items-center justify-between">
             <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">
               Bridges Restored
@@ -188,7 +189,7 @@ export const StudentProgressView: React.FC<StudentProgressViewProps> = ({
         </div>
 
         {/* Card 2: Total Quest Points */}
-        <div className="bg-white rounded-3xl p-5 border border-slate-200 shadow-sm space-y-2">
+        <div className="lq-woven-card lq-woven-pad-5 bg-white rounded-3xl p-5 border border-slate-200 shadow-sm space-y-2">
           <div className="flex items-center justify-between">
             <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">
               Quest Points
@@ -207,7 +208,7 @@ export const StudentProgressView: React.FC<StudentProgressViewProps> = ({
         </div>
 
         {/* Card 3: Average Quiz Score */}
-        <div className="bg-white rounded-3xl p-5 border border-slate-200 shadow-sm space-y-2">
+        <div className="lq-woven-card lq-woven-pad-5 bg-white rounded-3xl p-5 border border-slate-200 shadow-sm space-y-2">
           <div className="flex items-center justify-between">
             <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">
               Quiz Average
@@ -228,7 +229,7 @@ export const StudentProgressView: React.FC<StudentProgressViewProps> = ({
         </div>
 
         {/* Card 4: Badges Earned */}
-        <div className="bg-white rounded-3xl p-5 border border-slate-200 shadow-sm space-y-2">
+        <div className="lq-woven-card lq-woven-pad-5 bg-white rounded-3xl p-5 border border-slate-200 shadow-sm space-y-2">
           <div className="flex items-center justify-between">
             <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">
               Badges Unlocked
