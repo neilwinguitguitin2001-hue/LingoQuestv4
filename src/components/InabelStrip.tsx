@@ -35,8 +35,8 @@ const INABEL_PALETTES: Record<
   },
   emerald: {
     bg: '#073B4C',
-    primary: '#38BDF8',
-    secondary: '#34D399',
+    primary: '#34D399',
+    secondary: '#38BDF8',
     accent: '#ECFDF5',
     weave: '#0F766E',
   },
@@ -83,7 +83,7 @@ export const InabelStrip: React.FC<InabelStripProps> = ({
 
   return (
     <div
-      className={`w-full select-none overflow-hidden border-b-2 border-[#123B63] shrink-0 ${className}`}
+      className={`w-full select-none overflow-hidden border-b-2 border-[#231F20] shrink-0 ${className}`}
       aria-hidden={!label}
     >
       {/* Geometric Inabel / Dagmay Repeating SVG Pattern Strip */}
@@ -97,10 +97,8 @@ export const InabelStrip: React.FC<InabelStripProps> = ({
           <pattern
             id={safeId}
             width="48"
-            height={height}
+            height="16"
             patternUnits="userSpaceOnUse"
-            viewBox="0 0 48 16"
-            preserveAspectRatio="none"
           >
             {/* Base woven loom background */}
             <rect width="48" height="16" fill={colors.bg} />
@@ -153,7 +151,7 @@ export const InabelStrip: React.FC<InabelStripProps> = ({
 
       {/* Optional Neo-Filipiniana Linocut Kicker Bar */}
       {label && (
-        <div className="bg-[#07192F] text-[#E0F2FE] px-4 py-1.5 flex items-center justify-between gap-2 text-[10px] font-black uppercase tracking-[0.15em] border-t border-white/15">
+        <div className="bg-[#231F20] text-[#FFFDF9] px-4 py-1.5 flex items-center justify-between gap-2 text-[10px] font-black uppercase tracking-[0.15em] border-t border-white/15">
           <span className="flex items-center gap-2 truncate">
             <span
               className="inline-block w-2 h-2 rotate-45 shrink-0"

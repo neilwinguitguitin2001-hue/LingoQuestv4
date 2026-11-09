@@ -66,7 +66,7 @@ export const QuestMarketView: React.FC = () => {
       <section aria-label="Quest Market items" className="overflow-hidden rounded-2xl border-2 border-slate-900 bg-white shadow-[3px_4px_0_#1c1917]">
         <InabelHeaderStrip variant="emerald" label="Power-Ups • Buy Now, Use Later" />
         <div className="grid gap-4 p-5 sm:grid-cols-2 lg:grid-cols-3">
-          {QUEST_MARKET_ITEMS.map(item => <article key={item.kind} className="lq-woven-card lq-woven-pad-4 rounded-2xl border border-sky-200 bg-gradient-to-br from-white to-sky-50 p-4 shadow-sm">
+          {QUEST_MARKET_ITEMS.map(item => <article key={item.kind} className="rounded-2xl border border-sky-200 bg-gradient-to-br from-white to-sky-50 p-4 shadow-sm">
             <div className="flex items-start justify-between gap-2"><div><h2 className="text-lg font-black text-slate-950">{item.label}</h2><p className="mt-1 text-sm text-slate-700">{item.detail}</p></div><ShoppingBag className="h-5 w-5 shrink-0 text-sky-700" /></div>
             <div className="mt-5 flex items-center justify-between gap-2"><span className="text-sm font-bold text-emerald-800">Owned: {quantity(item.kind)}</span><span className="text-sm font-black text-sky-900">{item.cost} coins</span></div>
             <button type="button" disabled={loading || Boolean(busy) || market.balance < item.cost} onClick={() => void buy(item.kind)} className="mt-3 w-full rounded-xl bg-sky-700 px-4 py-2.5 text-sm font-bold text-white hover:bg-sky-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700 disabled:cursor-not-allowed disabled:opacity-50">{busy === item.kind ? 'Exchanging…' : `Buy 1 ${item.label}`}</button>

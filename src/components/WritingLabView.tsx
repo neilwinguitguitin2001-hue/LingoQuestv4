@@ -1,4 +1,3 @@
-import {generateOpenQuillFeedback} from '../utils/openquillFeedback';
 import React, { useEffect, useRef, useState } from 'react';
 import {
   AlertCircle,
@@ -38,7 +37,6 @@ export const WritingLabView: React.FC<WritingLabViewProps> = ({
   onBackToMap,
 }) => {
   const writingTitle = initialModule?.title ? `${initialModule.title} — Writing` : 'Free Writing';
-  const [useExternalAI,setUseExternalAI]=useState(false);
   const [studentText, setStudentText] = useState('');
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [feedback, setFeedback] = useState<WritingFeedbackResult | null>(null);
@@ -66,7 +64,7 @@ export const WritingLabView: React.FC<WritingLabViewProps> = ({
     const titleToUse = writingTitle;
 
     try {
-      const data = useExternalAI ? await checkWriting(studentText, student) : generateOpenQuillFeedback(studentText);
+      const data = await checkWriting(studentText, student);
       if (!mounted.current) return;
       setFeedback(data);
       soundFX.playPass();
@@ -119,7 +117,7 @@ export const WritingLabView: React.FC<WritingLabViewProps> = ({
                 LingoQuest Writing Lab
               </h1>
               <p className="text-sky-100 text-sm mt-0.5">
-                Choose local checking or optional external AI checking. Review every suggestion with your teacher. Saved submissions still use your LingoQuest account.
+                Check grammar with AI, with local rules available when AI cannot respond. Review every suggestion with your teacher. Saved submissions still use your LingoQuest account.
               </p>
             </div>
           </div>
@@ -243,7 +241,7 @@ export const WritingLabView: React.FC<WritingLabViewProps> = ({
                 className="w-full p-4 rounded-2xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:bg-white text-sm text-slate-800 font-normal leading-relaxed resize-y transition"
               />
 
-              <fieldset className="rounded-2xl border border-sky-200 bg-sky-50 p-4 space-y-3 text-sm"><legend className="font-bold text-[#123B63] px-2">Choose how to check your writing</legend><label className="flex items-start gap-3"><input type="radio" name="writing-check-mode" checked={!useExternalAI} onChange={()=>setUseExternalAI(false)} className="mt-1"/><span><strong>Local check</strong> — limited rules on this device; no draft sent to Groq.</span></label><label className="flex items-start gap-3"><input type="radio" name="writing-check-mode" checked={useExternalAI} onChange={()=>setUseExternalAI(true)} className="mt-1"/><span><strong>AI Grammar Checker</strong> — sends this draft through LingoQuest to Groq. Zero Data Retention is reported enabled; Groq still receives/processes the draft and usage metadata.</span></label><p>Do not include names, learner numbers, passwords or sensitive information. Either check may save the draft and feedback through your account’s existing history flow. AI can be wrong; review suggestions with your teacher.</p><a href="#legal/ai" className="text-sky-800 underline font-semibold">Read the AI Transparency Statement</a></fieldset><p id="writing-check-limit" className="text-xs text-slate-500">10–5,000 characters per check. No background AI checks while typing. If AI cannot respond, a labelled local fallback may run.</p>
+              <p id="writing-check-limit" className="text-xs text-slate-500">10–5,000 characters per check. Clicking Check grammar sends your draft to the AI Grammar Checker. Avoid personal information. If AI is unavailable, local rules run on your device.</p>
 
               {errorMessage && (
                 <div role="alert" className="flex items-center gap-2 p-3 rounded-xl bg-rose-50 border border-rose-200 text-rose-800 text-xs font-semibold">
@@ -279,7 +277,7 @@ export const WritingLabView: React.FC<WritingLabViewProps> = ({
                   ) : (
                     <>
                       <Sparkles className="w-4 h-4 text-amber-300" />
-                      {useExternalAI ? 'Check with AI' : 'Check locally'}
+                      Check grammar
                     </>
                   )}
                 </button>
@@ -308,7 +306,7 @@ export const WritingLabView: React.FC<WritingLabViewProps> = ({
                     <span className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-[10px] font-bold shrink-0 mt-0.5">
                       1
                     </span>
-                    <span><strong>Grammar suggestions</strong> from the checking option you select. Local rules have limited coverage; AI may also be wrong. This is not a grade.</span>
+                    <span><strong>Grammar suggestions</strong> from AI, or limited local rules when AI is unavailable. This is not a grade.</span>
                   </div>
                   <div className="flex items-start gap-2">
                     <span className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-[10px] font-bold shrink-0 mt-0.5">
@@ -367,7 +365,7 @@ export const WritingLabView: React.FC<WritingLabViewProps> = ({
                     <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
                     Overall Feedback
                   </div>
-                  <p className="mb-2 font-bold">Checked by: {feedback.checker === 'groq-ai' ? 'AI Grammar Checker' : feedback.checker === 'openquill' ? 'Local grammar check' : 'Saved feedback'}</p>{feedback.overallClarityComment}
+                  <p className="mb-2 font-bold">Checked by: {feedback.checker === 'groq-ai' ? 'AI Grammar Checker' : feedback.checker === 'openquill' ? 'OpenQuill local fallback' : 'Saved feedback'}</p>{feedback.overallClarityComment}
                 </div>
 
                 {/* Corrected / Suggested Revision */}

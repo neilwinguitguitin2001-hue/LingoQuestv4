@@ -1,22 +1,29 @@
 import React, { createContext, useContext, useEffect, useState } from 'react'
-import {
-  createUserWithEmailAndPassword,
-  onAuthStateChanged,
-  sendPasswordResetEmail,
-  signInWithEmailAndPassword,
-  signInWithPopup,
-  signOut,
-  updateProfile,
-} from 'firebase/auth'
-import { auth, googleAuthProvider } from '../firebase'
 import { isSupabaseConfigured, supabase } from '../lib/supabase'
 import { GradeLevel, StudentAccount, UserRole } from '../types/lingoquest'
-import {
-  FirestoreUserDoc,
-  getUserProfileFromFirestore,
-  syncStudentProgressToFirestore,
-  syncUserProfileToFirestore,
-} from '../services/firebaseProgressService'
+
+export interface UserProfileRecord {
+  uid: string
+  id: string
+  displayName: string
+  name: string
+  email: string
+  role: UserRole
+  status: 'pending' | 'approved' | 'rejected' | 'suspended'
+  gradeLevel?: GradeLevel
+  school: string
+  schoolName: string
+  section?: string
+  lrn?: string
+  learnerId?: string
+  classCode?: string
+  teacherId?: string
+  username?: string
+  photoUrl?: string
+  createdAt: string
+  lastLoginAt: string
+  updatedAt?: string
+}
 
 export interface StudentSignupInput {
   fullName: string
@@ -35,12 +42,12 @@ type AuthUser = { uid: string; id: string; email?: string; displayName?: string;
 
 export interface AuthContextValue {
   user: AuthUser | null
-  profile: FirestoreUserDoc | null
+  profile: UserProfileRecord | null
   role: UserRole | null
   loading: boolean
-  login: (email: string, password: string) => Promise<FirestoreUserDoc | null>
-  signup: (data: StudentSignupInput) => Promise<{ firebaseUser: AuthUser; studentAccount: StudentAccount }>
-  loginWithGoogle: () => Promise<{ firebaseUser: AuthUser; profile: FirestoreUserDoc }>
+  login: (email: string, password: string) => Promise<UserProfileRecord | null>
+  signup: (data: StudentSignupInput) => Promise<{ authUser: AuthUser; studentAccount: StudentAccount }>
+  loginWithGoogle: () => Promise<{ authUser: AuthUser; profile: UserProfileRecord }>
   logout: () => Promise<void>
   resetPassword: (email: string) => Promise<void>
 }
@@ -57,7 +64,7 @@ function friendlyAuthError(error: unknown) {
   return message || 'Authentication failed. Please try again.'
 }
 
-function mapProfile(row: any): FirestoreUserDoc {
+function mapProfile(row: any): UserProfileRecord {
   return {
     uid: row.id,
     id: row.id,
@@ -82,7 +89,7 @@ function mapProfile(row: any): FirestoreUserDoc {
   }
 }
 
-async function loadProfile(id: string): Promise<FirestoreUserDoc | null> {
+async function loadProfile(id: string): Promise<UserProfileRecord | null> {
   if (isSupabaseConfigured && supabase) {
     try {
       const { data, error } = await supabase
@@ -94,18 +101,17 @@ async function loadProfile(id: string): Promise<FirestoreUserDoc | null> {
         .maybeSingle()
       if (!error && data) return mapProfile(data)
     } catch {
-      // A Supabase failure must not query a different account store.
+      // Ignore profile load errors when offline
     }
-    return null
   }
-  return getUserProfileFromFirestore(id)
+  return null
 }
 
 const AuthContext = createContext<AuthContextValue | undefined>(undefined)
 
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [user, setUser] = useState<AuthUser | null>(null)
-  const [profile, setProfile] = useState<FirestoreUserDoc | null>(null)
+  const [profile, setProfile] = useState<UserProfileRecord | null>(null)
   const [role, setRole] = useState<UserRole | null>(null)
   const [loading, setLoading] = useState(true)
 
@@ -166,33 +172,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       }
     }
 
-    const unsubscribe = onAuthStateChanged(auth, async (fbUser) => {
-      if (!mounted) return
-      if (!fbUser) {
-        setUser(null)
-        setProfile(null)
-        setRole(null)
-        setLoading(false)
-        return
-      }
-      const nextUser: AuthUser = {
-        uid: fbUser.uid,
-        id: fbUser.uid,
-        email: fbUser.email || undefined,
-        displayName: fbUser.displayName || undefined,
-        photoURL: fbUser.photoURL || undefined,
-      }
-      const nextProfile = await getUserProfileFromFirestore(fbUser.uid)
-      if (!mounted) return
-      setUser(nextUser)
-      setProfile(nextProfile)
-      setRole(nextProfile?.role || 'student')
-      setLoading(false)
-    })
-
+    setLoading(false)
     return () => {
       mounted = false
-      unsubscribe()
     }
   }, [])
 
@@ -207,9 +189,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         if (error) throw error
         return data.user ? loadProfile(data.user.id) : null
       }
-
-      const cred = await signInWithEmailAndPassword(auth, cleanEmail, password)
-      return await getUserProfileFromFirestore(cred.user.uid)
+      return null
     } catch (error) {
       throw new Error(friendlyAuthError(error))
     }
@@ -283,7 +263,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
           joinedDate: new Date().toISOString().split('T')[0],
         }
         return {
-          firebaseUser: {
+          authUser: {
             uid: authData.user.id,
             id: authData.user.id,
             email: cleanEmail,
@@ -293,49 +273,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         }
       }
 
-      const cred = await createUserWithEmailAndPassword(auth, cleanEmail, data.password)
-      try {
-        await updateProfile(cred.user, { displayName: data.fullName.trim() })
-      } catch {}
-
-      const studentAccount: StudentAccount = {
-        id: cred.user.uid,
-        role: 'student',
-        status: 'approved',
-        enrollmentStatus: 'approved',
-        name: data.fullName.trim(),
-        email: cleanEmail,
-        learnerId: generatedLrn,
-        lrn: generatedLrn,
-        gradeLevel: data.gradeLevel || 8,
-        schoolName: data.school || '',
-        section: data.section || '',
-        classCode,
-        teacherId,
-        username,
-        password: data.password,
-        points: 0,
-        badges: [],
-        completedModules: [],
-        progressByModule: {},
-        personalizationHistory: [],
-        writingSubmissions: [],
-        isActive: true,
-        joinedDate: new Date().toISOString().split('T')[0],
-      }
-
-      await syncUserProfileToFirestore(cred.user.uid, studentAccount, true)
-      await syncStudentProgressToFirestore(cred.user.uid, studentAccount)
-
-      return {
-        firebaseUser: {
-          uid: cred.user.uid,
-          id: cred.user.uid,
-          email: cleanEmail,
-          displayName: data.fullName.trim(),
-        },
-        studentAccount,
-      }
+      throw new Error('Supabase authentication is not configured.')
     } catch (error) {
       throw new Error(friendlyAuthError(error))
     }
@@ -350,76 +288,13 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       if (error) throw new Error(friendlyAuthError(error))
       throw new Error('Redirecting to Google sign-in.')
     }
-
-    try {
-      const result = await signInWithPopup(auth, googleAuthProvider)
-      const fbUser = result.user
-      let existingProfile = await getUserProfileFromFirestore(fbUser.uid)
-      if (!existingProfile) {
-        const nowIso = new Date().toISOString()
-        const generatedLrn = `129${Math.floor(100000000 + Math.random() * 900000000)}`
-        const fallbackAccount: StudentAccount = {
-          id: fbUser.uid,
-          role: 'student',
-          status: 'approved',
-          enrollmentStatus: 'approved',
-          name: fbUser.displayName || fbUser.email?.split('@')[0] || 'Student Explorer',
-          email: fbUser.email || '',
-          learnerId: generatedLrn,
-          lrn: generatedLrn,
-          gradeLevel: 8,
-          schoolName: 'Mati National Comprehensive High School',
-          section: '',
-          classCode: 'LQ-ENG-8492',
-          teacherId: 'tch-marco-solis',
-          username: fbUser.email?.split('@')[0] || fbUser.uid.slice(0, 8),
-          points: 0,
-          badges: [],
-          completedModules: [],
-          progressByModule: {},
-          personalizationHistory: [],
-          writingSubmissions: [],
-          isActive: true,
-          joinedDate: nowIso.split('T')[0],
-          photoUrl: fbUser.photoURL || undefined,
-        }
-        existingProfile =
-          (await syncUserProfileToFirestore(fbUser.uid, fallbackAccount, true)) || {
-            uid: fbUser.uid,
-            id: fbUser.uid,
-            displayName: fallbackAccount.name,
-            name: fallbackAccount.name,
-            email: fallbackAccount.email || '',
-            role: 'student',
-            status: 'approved',
-            gradeLevel: 8,
-            school: fallbackAccount.schoolName || 'Mati National Comprehensive High School',
-            schoolName: fallbackAccount.schoolName || 'Mati National Comprehensive High School',
-            createdAt: nowIso,
-            lastLoginAt: nowIso,
-          }
-      }
-      if (!existingProfile) throw new Error('Unable to load account profile.')
-      return {
-        firebaseUser: {
-          uid: fbUser.uid,
-          id: fbUser.uid,
-          email: fbUser.email || undefined,
-          displayName: fbUser.displayName || undefined,
-          photoURL: fbUser.photoURL || undefined,
-        },
-        profile: existingProfile,
-      }
-    } catch (error) {
-      throw new Error(friendlyAuthError(error))
-    }
+    throw new Error('Supabase authentication is not configured.')
   }
 
   const logout = async () => {
     if (isSupabaseConfigured && supabase) {
       await supabase.auth.signOut().catch(() => {})
     }
-    await signOut(auth).catch(() => {})
     setUser(null)
     setProfile(null)
     setRole(null)
@@ -432,15 +307,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
     if (isSupabaseConfigured && supabase) {
       const { error } = await supabase.auth.resetPasswordForEmail(cleanEmail, {
-        redirectTo: `${window.location.origin}/auth/reset-password`,
+        redirectTo: `${window.location.origin}/auth/callback`,
       })
       if (error) throw new Error(friendlyAuthError(error))
-      return
-    }
-    try {
-      await sendPasswordResetEmail(auth, cleanEmail)
-    } catch (error) {
-      throw new Error(friendlyAuthError(error))
     }
   }
 
@@ -458,4 +327,3 @@ export function useAuth() {
   if (!ctx) throw new Error('useAuth() must be used within an <AuthProvider>.')
   return ctx
 }
-

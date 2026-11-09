@@ -8,9 +8,7 @@ import crypto from 'crypto';
 import { fileURLToPath } from 'url';
 import nodemailer from 'nodemailer';
 import { GoogleGenAI, Type } from '@google/genai';
-import { requireAuth } from './src/middleware/auth.ts';
-import privacyHandler from './api/privacy.ts';
-import accountLoginHandler from './api/account-login.ts';
+import { createAppSessionToken, requireAuth } from './src/middleware/auth.ts';
 import type { AuthRequest } from './src/middleware/auth.ts';
 import { VOICE_PERSONAS, type VoicePersonaId } from './src/data/voiceConfig.ts';
 import {
@@ -122,17 +120,38 @@ async function startServer() {
     res.json({ status: 'ok', service: 'LingoQuest DepEd Davao Oriental Server' });
   });
 
-  // Retired personal-data endpoints fail closed, including unauthenticated bootstrap and exports.
-  app.use((req,res,next)=>{
-    if (/^\/api\/(auth\/(session|google)|users|progress|audit-logs|email-notifications|feedback|grammar-feedback)(?:\/|$)/.test(req.path)) {
-      res.status(410).set('Cache-Control','no-store').json({error:'Legacy access retired. Use the authenticated private records endpoint.'}); return;
-    }
-    next();
-  });
-  app.post('/api/privacy',(req,res)=>void privacyHandler(req,res));
-  app.post('/api/account-login',(req,res)=>void accountLoginHandler(req,res));
+  // Bootstrap session token and initial Cloud SQL seed data
+  app.post('/api/auth/session', async (req, res) => {
+    try {
+      const { uid, email, role } = (req.body || {}) as {
+        uid?: string;
+        email?: string;
+        role?: string;
+      };
+      const token = createAppSessionToken(
+        uid || 'lingoquest-client',
+        email || 'client@lingoquest.deped.gov.ph',
+        role || 'student'
+      );
 
-  // Google Sign-In synchronization with Cloud SQL (protected by Firebase ID token verification)
+      await seedInitialCloudSqlData();
+      const [users, customModules, auditLogs, emailNotifications, systemFeedback] = await Promise.all([
+        getAllUserAccounts(),
+        getAllCustomModulesFromDb(),
+        getAllAuditLogsFromDb(),
+        getAllEmailNotificationsFromDb(),
+        getAllSystemFeedbackFromDb(),
+      ]);
+
+      res.json({ token, users, customModules, auditLogs, emailNotifications, systemFeedback });
+    } catch (error: unknown) {
+      const message = error instanceof Error ? error.message : 'Failed to initialize session';
+      console.error('Session initialization error:', error);
+      res.status(500).json({ error: message });
+    }
+  });
+
+  // Google Sign-In synchronization with Cloud SQL
   app.post('/api/auth/google', requireAuth, async (req: AuthRequest, res) => {
     try {
       const uid = req.user?.uid;

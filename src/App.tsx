@@ -1,5 +1,3 @@
-import {StudentHomeView} from './components/StudentHomeView';
-import {LegalCenter,LegalLinks} from './components/LegalCenter';
 import React, { useEffect, useRef, useState } from 'react';
 import {
   ALL_MODULES,
@@ -34,7 +32,6 @@ import { soundFX } from './utils/soundEffects';
 import { isStudentModuleUnlocked } from './utils/progression';
 
 // Components
-import { PrivateAdminSummary } from './components/PrivateAdminSummary';
 import { AdminDashboardView } from './components/AdminDashboardView';
 import { AuthScreen } from './components/AuthScreen';
 import { IslandMapView } from './components/IslandMapView';
@@ -52,7 +49,6 @@ import { NetworkStatusToast } from './components/NetworkStatusToast';
 import { EmailNotificationCenter } from './components/EmailNotificationCenter';
 import { FloatingFeedbackWidget } from './components/FloatingFeedbackWidget';
 import { supabase } from './lib/supabase';
-import { privateBootstrap } from './services/privacyService';
 import { questGame } from './services/questGameService';
 import {
   InabelWovenStrip,
@@ -101,12 +97,6 @@ import {
   deleteSystemFeedbackItem as apiDeleteSystemFeedbackItem,
 } from './services/firestoreService';
 import { useAuth } from './context/AuthContext';
-import {
-  mergeLocalGuestProgressIntoStudent,
-  recordQuizResultToFirestore,
-  syncStudentProgressToFirestore,
-  syncUserProfileToFirestore,
-} from './services/firebaseProgressService';
 
 import {
   AlertTriangle,
@@ -145,12 +135,9 @@ type AppView =
   | 'PROFILE'
   | 'MARKET'
   | 'STUDENT_DASHBOARD'
-  | 'ACCOUNT'
   | 'TEACHER'
   | 'ADMIN'
   | 'WAITING_APPROVAL';
-
-const STUDENT_NAVIGATION: {view:AppView;label:string}[]=[{view:'STUDENT_DASHBOARD',label:'Home'},{view:'MAP',label:'Island Quests'},{view:'WRITING',label:'Writing Lab'},{view:'PROGRESS',label:'My Progress'},{view:'MARKET',label:'Quest Market'}];
 
 const STORAGE_KEY_STUDENTS = 'lingoquest_students_v3';
 const STORAGE_KEY_TEACHERS = 'lingoquest_teachers_v3';
@@ -262,14 +249,88 @@ function normalizeTeacherClassCodes(rawTeachers: TeacherAccount[]): TeacherAccou
 }
 
 export default function App() {
-  const { user: firebaseUser, logout: firebaseLogout } = useAuth();
+  const { logout: authLogout } = useAuth();
 
   // Initialize Database / Local Storage
-  const [students, setStudents] = useState<StudentAccount[]>([]);
+  const [students, setStudents] = useState<StudentAccount[]>(() => {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY_STUDENTS);
+      if (saved) return JSON.parse(saved);
+    } catch (e) {
+      console.error('Failed to load students', e);
+    }
+    return INITIAL_STUDENTS;
+  });
 
-  const [teachers, setTeachers] = useState<TeacherAccount[]>([]);
+  const [teachers, setTeachers] = useState<TeacherAccount[]>(() => {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY_TEACHERS);
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          return normalizeTeacherClassCodes(parsed);
+        }
+      }
+    } catch (e) {
+      console.error('Failed to load teachers', e);
+    }
+    return normalizeTeacherClassCodes(INITIAL_TEACHERS);
+  });
 
-  const [admins, setAdmins] = useState<AdminAccount[]>([]);
+  const [admins, setAdmins] = useState<AdminAccount[]>(() => {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY_ADMINS);
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          return parsed
+            .filter((a: AdminAccount) => a.id !== 'admin-sub-clarissa-tan' && a.username !== 'clarissa.tan')
+            .map((a: AdminAccount) => {
+            const isMain =
+              a.isMainAdmin ||
+              a.adminLevel === 'main' ||
+              a.id === 'admin-elena-reyes' ||
+              a.id === 'admin-deped-davao-oriental' ||
+              a.name === 'Mrs. Elena G. Reyes';
+            if (isMain) {
+              return {
+                ...a,
+                id: 'admin-deped-davao-oriental',
+                name: 'Department of Education Davao Oriental',
+                email: 'admin.davaooriental@deped.gov.ph',
+                username: a.username === 'elena.reyes' ? 'deped.davaooriental' : (a.username || 'deped.davaooriental'),
+                password: 'DavOr@Admin2026!',
+                adminTitle: 'Division Administrative Office & Executive Main Administrator',
+                isMainAdmin: true,
+                adminLevel: 'main' as const,
+                permissions: {
+                  canApproveTeachers: true,
+                  canManageModules: true,
+                  canViewStudentProgress: true,
+                  canManageSubAdmins: true,
+                },
+              };
+            }
+            if (a.createdByName === 'Mrs. Elena G. Reyes') {
+              return {
+                ...a,
+                email: a.email && a.email.includes('@deped.gov.ph') ? a.email : 'admin.davaooriental@deped.gov.ph',
+                createdByName: 'Department of Education Davao Oriental',
+                createdByAdminId: 'admin-deped-davao-oriental',
+              };
+            }
+            return {
+              ...a,
+              email: a.email && a.email.includes('@deped.gov.ph') ? a.email : 'admin.davaooriental@deped.gov.ph',
+            };
+          });
+        }
+      }
+    } catch (e) {
+      console.error('Failed to load admins', e);
+    }
+    return INITIAL_ADMINS;
+  });
 
   const [modules, setModules] = useState<Module[]>(() => {
     const baseModules = normalizeModuleIslands(ALL_MODULES);
@@ -290,20 +351,36 @@ export default function App() {
     return baseModules;
   });
 
-  const [auditLogs, setAuditLogs] = useState<AuditLogEntry[]>([]);
-  const [emailNotifications, setEmailNotifications] = useState<EmailNotificationRecord[]>([]);
-  const [systemFeedback, setSystemFeedback] = useState<SystemFeedbackRecord[]>([]);
+  const [auditLogs, setAuditLogs] = useState<AuditLogEntry[]>(INITIAL_AUDIT_LOGS);
+  const [emailNotifications, setEmailNotifications] = useState<EmailNotificationRecord[]>(() =>
+    getCachedEmailNotifications()
+  );
+  const [systemFeedback, setSystemFeedback] = useState<SystemFeedbackRecord[]>(() =>
+    getCachedSystemFeedback()
+  );
   const [latestToastEmail, setLatestToastEmail] = useState<EmailNotificationRecord | null>(null);
   const [isEmailModalOpen, setIsEmailModalOpen] = useState<boolean>(false);
   const [emailModalFilter, setEmailModalFilter] = useState<string>('');
 
   // Active current user ID - clean start
-  const [currentUserId, setCurrentUserId] = useState<string>('');
+  const [currentUserId, setCurrentUserId] = useState<string>(() => {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY_CURRENT_USER);
+      if (saved && saved !== 'guest-explorer') return saved;
+      if (saved === 'guest-explorer') {
+        localStorage.removeItem(STORAGE_KEY_CURRENT_USER);
+      }
+    } catch (e) {
+      console.error('Failed to load current user ID', e);
+    }
+    return '';
+  });
 
+  // Current view state - defaults to AUTH unless user is already logged in
   const [currentView, setCurrentView] = useState<AppView>(() => {
     try {
       const saved = localStorage.getItem(STORAGE_KEY_CURRENT_USER);
-      if (saved && saved.trim() !== '' && saved !== 'guest-explorer') return 'STUDENT_DASHBOARD';
+      if (saved && saved.trim() !== '' && saved !== 'guest-explorer') return 'MAP';
     } catch {}
     return 'AUTH';
   });
@@ -321,12 +398,6 @@ export default function App() {
   // Sound & Mobile menu
   const [isMuted, setIsMuted] = useState<boolean>(() => soundFX.isMuted());
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isAccountMenuOpen,setIsAccountMenuOpen]=useState(false);
-  const accountMenuRef=useRef<HTMLDivElement>(null);
-  const navigateStudent=(view:AppView)=>{soundFX.playClick();setIsAccountMenuOpen(false);setIsMobileMenuOpen(false);setCurrentView(view)};
-  const activeStudentView=(view:AppView)=>view==='PROGRESS'?['PROGRESS','PROFILE','LEADERBOARD'].includes(currentView):view===currentView;
-  useEffect(()=>{setIsAccountMenuOpen(false)},[currentView,currentUserId]);
-  useEffect(()=>{if(!isAccountMenuOpen)return;const close=(e:PointerEvent)=>{if(!accountMenuRef.current?.contains(e.target as Node))setIsAccountMenuOpen(false)};const escape=(e:KeyboardEvent)=>{if(e.key==='Escape'){setIsAccountMenuOpen(false);accountMenuRef.current?.querySelector('button')?.focus()}};document.addEventListener('pointerdown',close);document.addEventListener('keydown',escape);return()=>{document.removeEventListener('pointerdown',close);document.removeEventListener('keydown',escape)}},[isAccountMenuOpen]);
   const [questCoinBalance, setQuestCoinBalance] = useState<number | null>(null);
 
   // Session Timeout State
@@ -431,8 +502,8 @@ export default function App() {
         subtitle: 'Syncing Bridge Restorations & Mastery Analytics',
       },
       LEADERBOARD: {
-        title: 'Opening Your Grade Activity Board...',
-        subtitle: 'Optional activity completions in your participating grade group',
+        title: 'Opening Division Leaderboard...',
+        subtitle: 'Ranking DepEd Davao Oriental Explorers',
       },
       PROFILE: {
         title: 'Loading Badges & Trophy Case...',
@@ -443,10 +514,9 @@ export default function App() {
         subtitle: 'Loading Quest Coins, inventory, and exchange history',
       },
       STUDENT_DASHBOARD: {
-        title: 'Opening Home...',
-        subtitle: 'Preparing your next learning step',
+        title: 'Opening Student Dashboard...',
+        subtitle: 'Loading Learner Profile & Credentials',
       },
-      ACCOUNT: {title:'Opening Account Settings...',subtitle:'Your profile, credentials and photo'},
       TEACHER: {
         title: 'Opening Classroom Portal...',
         subtitle: 'Loading Faculty Roster & Performance Analytics',
@@ -474,20 +544,17 @@ export default function App() {
     });
   }, [currentView, selectedModule]);
 
-  // Hydrate only verified, server-authorized records. Ignore stale account-switch responses.
+  // Bootstrap Cloud SQL Seed & Hydrate State
   useEffect(() => {
-    let active = true;
-    (firebaseUser ? privateBootstrap() : Promise.resolve({ users: [], customModules: [], auditLogs: [], emailNotifications: [], systemFeedback: [] }))
+    initializeFirestoreSeed()
       .then((res) => {
-        if (!active) return;
-        if (res?.users && Array.isArray(res.users)) {
+        if (res?.users && Array.isArray(res.users) && res.users.length > 0) {
           const dbStudents = res.users.filter((u): u is StudentAccount => u.role === 'student');
           const dbTeachers = res.users.filter((u): u is TeacherAccount => u.role === 'teacher');
           const dbAdmins = res.users.filter((u): u is AdminAccount => u.role === 'admin');
-          setStudents(dbStudents);
-          setTeachers(normalizeTeacherClassCodes(dbTeachers));
-          setAdmins(dbAdmins);
-          setCurrentUserId(firebaseUser?.uid || '');
+          if (dbStudents.length > 0) setStudents(dbStudents);
+          if (dbTeachers.length > 0) setTeachers(normalizeTeacherClassCodes(dbTeachers));
+          if (dbAdmins.length > 0) setAdmins(dbAdmins);
         }
         if (res?.customModules && Array.isArray(res.customModules) && res.customModules.length > 0) {
           setModules((prev) => {
@@ -515,9 +582,8 @@ export default function App() {
           setSystemFeedback(res.systemFeedback);
         }
       })
-      .catch(() => { if (active) { setStudents([]); setTeachers([]); setAdmins([]); setCurrentUserId(''); } });
-    return () => { active = false; };
-  }, [firebaseUser?.uid]);
+      .catch((err) => console.warn('Seed notice:', err));
+  }, []);
 
   // Subscribe to real-time email confirmation dispatches
   useEffect(() => {
@@ -540,11 +606,17 @@ export default function App() {
   }, []);
 
   // Save changes to localStorage
+  useEffect(() => {
+    safeSetItem(STORAGE_KEY_STUDENTS, JSON.stringify(students));
+  }, [students]);
 
+  useEffect(() => {
+    safeSetItem(STORAGE_KEY_TEACHERS, JSON.stringify(teachers));
+  }, [teachers]);
 
-
-
-
+  useEffect(() => {
+    safeSetItem(STORAGE_KEY_ADMINS, JSON.stringify(admins));
+  }, [admins]);
 
   useEffect(() => {
     try {
@@ -665,7 +737,7 @@ export default function App() {
         setCurrentView('TEACHER');
       }
     } else if (currentUser.role === 'admin') {
-      if (currentView === 'WAITING_APPROVAL' || currentView === 'STUDENT_DASHBOARD' || currentView === 'ACCOUNT') {
+      if (currentView === 'WAITING_APPROVAL') {
         setCurrentView('ADMIN');
       }
     } else if (currentUser.role === 'student') {
@@ -722,17 +794,6 @@ export default function App() {
             setStudents((prev) => prev.map((s) => s.id === account.id ? merged : s));
           })
           .catch((error) => console.warn('Supabase progress hydration failed:', error));
-      } else {
-        // Preserve the existing Firebase path for deployments without Supabase.
-        const targetUid = firebaseUser?.uid || account.id;
-        syncUserProfileToFirestore(targetUid, account, false).catch(() => {});
-        mergeLocalGuestProgressIntoStudent(targetUid, account as StudentAccount)
-          .then((merged) => {
-          setStudents((prev) =>
-            prev.map((s) => (s.id === account.id ? merged : s))
-          );
-          })
-          .catch(() => {});
       }
     } else if (account.role === 'teacher') {
       setTeachers((prev) =>
@@ -740,9 +801,6 @@ export default function App() {
           ? prev.map((t) => (t.id === account.id ? (account as TeacherAccount) : t))
           : [account as TeacherAccount, ...prev]
       );
-      if (firebaseUser?.uid) {
-        syncUserProfileToFirestore(firebaseUser.uid, account, false).catch(() => {});
-      }
     } else if (account.role === 'admin') {
       setAdmins((prev) =>
         prev.some((a) => a.id === account.id)
@@ -774,7 +832,7 @@ export default function App() {
       ) {
         setCurrentView('WAITING_APPROVAL');
       } else {
-        setCurrentView('STUDENT_DASHBOARD');
+        setCurrentView('MAP');
       }
     }
   };
@@ -976,9 +1034,7 @@ export default function App() {
       kind: 'logout',
       durationMs: 620,
     });
-    firebaseLogout().catch(() => {});
-    setStudents([]); setTeachers([]); setAdmins([]); setAuditLogs([]);
-    setEmailNotifications([]); setSystemFeedback([]); setLatestToastEmail(null);
+    authLogout().catch(() => {});
     setCurrentUserId('');
     try {
       localStorage.removeItem(STORAGE_KEY_CURRENT_USER);
@@ -1051,8 +1107,6 @@ export default function App() {
         };
 
         apiPersistStudentProgress(updatedStudent, moduleId, updatedProg);
-        const targetUid = firebaseUser?.uid || updatedStudent.id;
-        if (!supabase) syncStudentProgressToFirestore(targetUid, updatedStudent).catch(() => {});
         return updatedStudent;
       })
     );
@@ -1138,8 +1192,6 @@ export default function App() {
         };
 
         apiPersistStudentProgress(updatedStudent, moduleId, updatedProg);
-        const targetUid = firebaseUser?.uid || updatedStudent.id;
-        if (!supabase) syncStudentProgressToFirestore(targetUid, updatedStudent).catch(() => {});
         return updatedStudent;
       })
     );
@@ -1246,19 +1298,6 @@ export default function App() {
         };
 
         apiPersistStudentProgress(updatedStudent, payload.moduleId, updatedProg);
-        const targetUid = firebaseUser?.uid || updatedStudent.id;
-        if (!supabase) syncStudentProgressToFirestore(targetUid, updatedStudent).catch(() => {});
-        recordQuizResultToFirestore({
-          uid: firebaseUser?.uid || updatedStudent.id,
-          questId: payload.moduleId,
-          moduleTitle: mod.title,
-          difficulty: payload.difficulty,
-          score: payload.score,
-          total: payload.totalQuestions,
-          percentage: payload.percentage,
-          passed: isPassed,
-          timeSpent: 60,
-        }).catch(() => {});
         return updatedStudent;
       })
     );
@@ -1688,30 +1727,114 @@ export default function App() {
 
       {/* Top Universal App Navigation Bar (Neo-Filipiniana & Folk-Mural Edition) */}
       {currentView !== 'AUTH' && currentView !== 'WAITING_APPROVAL' && (
-        <header data-dashboard-theme className="sticky top-0 z-40 bg-[#07192F] text-[#FAF7F2] border-b border-[#2378A6] shadow-sm">
+        <header data-dashboard-theme className="sticky top-0 z-40 bg-[#231F20] text-[#FAF7F2] border-b-[3px] border-[#2563EB] shadow-[0_4px_0_#231F20]">
           {/* Traditional Handwoven Inabel & Yakan Geometric Top Strip */}
           <InabelWovenStrip variant="crimson" height={8} />
 
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 py-2 flex flex-wrap items-center justify-between gap-x-6 gap-y-1">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
             {/* Brand Logo & Tagline */}
-            <button
-              type="button"
-              aria-label="LingoQuest home"
+            <div
               onClick={() => {
                 soundFX.playClick();
                 if (currentUser?.role === 'admin') setCurrentView('ADMIN');
                 else if (currentUser?.role === 'teacher') setCurrentView('TEACHER');
-                else setCurrentView('STUDENT_DASHBOARD');
+                else setCurrentView('MAP');
               }}
-              className="cursor-pointer shrink-0 rounded-lg text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-300"
+              className="cursor-pointer shrink-0"
             >
-              <LingoQuestLogo size="sm" textColor="light" animated={true} />
-            </button>
+              <LingoQuestLogo size="md" textColor="light" animated={true} />
+            </div>
 
             {/* Navigation Links based on Active Role */}
             {currentUser && (
-              <nav aria-label="Primary navigation" className="hidden lg:flex order-3 basis-full items-center justify-center gap-1 border-t border-sky-400/20 pt-2 pb-1 text-xs font-bold text-[#FAF7F2] whitespace-nowrap [&>button]:min-h-11 [&>button]:shrink-0 [&>button]:px-4">
-                {currentUser.role === 'student' && STUDENT_NAVIGATION.map(item=><button key={item.view} onClick={()=>navigateStudent(item.view)} aria-current={activeStudentView(item.view)?'page':undefined} className={`px-3 py-1.5 rounded-lg transition cursor-pointer ${activeStudentView(item.view)?'bg-[#0F766E] text-white border border-[#22C55E] font-extrabold':'hover:text-[#22C55E] hover:bg-white/5'}`}>{item.label}</button>)}
+              <nav className="hidden lg:flex items-center gap-1 bg-[#FFFDFB]/10 border-2 border-[#2563EB] px-2 py-1 rounded-xl text-xs font-bold text-[#FAF7F2]">
+                {currentUser.role === 'student' && (
+                  <>
+                    <button
+                      onClick={() => {
+                        soundFX.playClick();
+                        setCurrentView('STUDENT_DASHBOARD');
+                      }}
+                      className={`px-3 py-1.5 rounded-lg transition flex items-center gap-1.5 cursor-pointer ${
+                        currentView === 'STUDENT_DASHBOARD'
+                          ? 'bg-[#0F766E] text-[#FFFDFB] border border-[#22C55E] shadow-[2px_2px_0px_#22C55E] font-extrabold'
+                          : 'hover:text-[#22C55E] hover:bg-white/5'
+                      }`}
+                    >
+                      <User className="w-3.5 h-3.5 text-[#22C55E]" />
+                      <span>Student Dashboard</span>
+                    </button>
+                    <button
+                      onClick={() => {
+                        soundFX.playClick();
+                        setCurrentView('MAP');
+                      }}
+                      className={`px-3 py-1.5 rounded-lg transition cursor-pointer ${
+                        currentView === 'MAP'
+                          ? 'bg-[#0F766E] text-[#FFFDFB] border border-[#22C55E] shadow-[2px_2px_0px_#22C55E] font-extrabold'
+                          : 'hover:text-[#22C55E] hover:bg-white/5'
+                      }`}
+                    >
+                      Island Quests
+                    </button>
+                    <button
+                      onClick={() => {
+                        soundFX.playClick();
+                        setCurrentView('WRITING');
+                      }}
+                      className={`px-3 py-1.5 rounded-lg transition cursor-pointer ${
+                        currentView === 'WRITING'
+                          ? 'bg-[#0F766E] text-[#FFFDFB] border border-[#22C55E] shadow-[2px_2px_0px_#22C55E] font-extrabold'
+                          : 'hover:text-[#22C55E] hover:bg-white/5'
+                      }`}
+                    >
+                      Writing Lab
+                    </button>
+                    <button
+                      onClick={() => {
+                        soundFX.playClick();
+                        setCurrentView('PROGRESS');
+                      }}
+                      className={`px-3 py-1.5 rounded-lg transition cursor-pointer ${
+                        currentView === 'PROGRESS'
+                          ? 'bg-[#0F766E] text-[#FFFDFB] border border-[#22C55E] shadow-[2px_2px_0px_#22C55E] font-extrabold'
+                          : 'hover:text-[#22C55E] hover:bg-white/5'
+                      }`}
+                    >
+                      My Progress
+                    </button>
+                    <button
+                      onClick={() => {
+                        soundFX.playClick();
+                        setCurrentView('LEADERBOARD');
+                      }}
+                      className={`px-3 py-1.5 rounded-lg transition cursor-pointer ${
+                        currentView === 'LEADERBOARD'
+                          ? 'bg-[#0F766E] text-[#FFFDFB] border border-[#22C55E] shadow-[2px_2px_0px_#22C55E] font-extrabold'
+                          : 'hover:text-[#22C55E] hover:bg-white/5'
+                      }`}
+                    >
+                      Leaderboard
+                    </button>
+                    <button
+                      onClick={() => {
+                        soundFX.playClick();
+                        setCurrentView('PROFILE');
+                      }}
+                      className={`px-3 py-1.5 rounded-lg transition cursor-pointer ${
+                        currentView === 'PROFILE'
+                          ? 'bg-[#0F766E] text-[#FFFDFB] border border-[#22C55E] shadow-[2px_2px_0px_#22C55E] font-extrabold'
+                          : 'hover:text-[#22C55E] hover:bg-white/5'
+                      }`}
+                    >
+                      Badges
+                    </button>
+                    <button
+                      onClick={() => { soundFX.playClick(); setCurrentView('MARKET'); }}
+                      className={`px-3 py-1.5 rounded-lg transition cursor-pointer ${currentView === 'MARKET' ? 'bg-[#0F766E] text-[#FFFDFB] border border-[#22C55E] shadow-[2px_2px_0px_#22C55E] font-extrabold' : 'hover:text-[#22C55E] hover:bg-white/5'}`}
+                    >Quest Market</button>
+                  </>
+                )}
 
                 {currentUser.role === 'teacher' && (
                   <>
@@ -1778,7 +1901,7 @@ export default function App() {
             )}
 
             {/* Right Header Controls: separate permanent XP and spendable Quest Coins */}
-            <div className="ml-auto flex shrink-0 items-center gap-2 sm:gap-3">
+            <div className="flex items-center gap-2">
               {currentStudent && (
                 <div className="hidden xl:flex items-center gap-2 mr-1">
                   {/* Permanent learning progress */}
@@ -1830,7 +1953,7 @@ export default function App() {
               {/* Audio Toggle */}
               <button
                 onClick={handleToggleSound}
-                className="h-10 w-10 flex items-center justify-center rounded-xl border border-[#2563EB]/60 text-[#FAF7F2] hover:text-[#22C55E] hover:bg-white/10 transition cursor-pointer"
+                className="p-2 rounded-xl border border-[#2563EB]/60 text-[#FAF7F2] hover:text-[#22C55E] hover:bg-white/10 transition cursor-pointer"
                 title={isMuted ? 'Unmute Sound' : 'Mute Sound'}
               >
                 {isMuted ? <VolumeX className="w-4 h-4 text-[#0F766E]" /> : <Volume2 className="w-4 h-4 text-[#22C55E]" />}
@@ -1838,19 +1961,16 @@ export default function App() {
 
               {/* User Account / Role Pill */}
               {currentUser ? (
-                <div ref={accountMenuRef} className="relative flex items-center gap-2 pl-2 border-l border-[#2563EB]/50">
+                <div className="flex items-center gap-2 pl-2 border-l border-[#2563EB]/50">
                   {currentUser.role === 'student' ? (
-                    <><button
+                    <button
                       type="button"
                       onClick={() => {
                         soundFX.playClick();
-                        setIsAccountMenuOpen(open=>!open);
+                        setCurrentView('STUDENT_DASHBOARD');
                       }}
                       className="flex items-center gap-2 px-2.5 py-1 rounded-xl hover:bg-white/10 transition text-left cursor-pointer group"
-                      title="Open account menu"
-                      aria-label="Account menu"
-                      aria-expanded={isAccountMenuOpen}
-                      aria-controls="student-account-menu"
+                      title="Open Student Dashboard (Edit Credentials & Photo)"
                     >
                       {currentStudent?.photoUrl ? (
                         <img
@@ -1858,8 +1978,7 @@ export default function App() {
                           alt={currentUser.name}
                           className="w-8 h-8 rounded-lg object-cover border-2 border-[#22C55E] shadow-sm shrink-0 group-hover:scale-105 transition-transform"
                         />
-
-                  ) : (
+                      ) : (
                         <div className="w-8 h-8 rounded-lg bg-[#0F766E] border-2 border-[#22C55E] flex items-center justify-center text-xs font-bold text-[#FFFDFB] shadow-sm shrink-0 group-hover:scale-105 transition-transform">
                           {currentUser.name
                             .split(' ')
@@ -1870,7 +1989,7 @@ export default function App() {
                             .toUpperCase() || 'S'}
                         </div>
                       )}
-                      <div className="text-left hidden sm:block">
+                      <div className="text-right hidden sm:block">
                         <div className="text-xs font-bold text-[#FAF7F2] truncate max-w-[150px] group-hover:text-[#22C55E] transition-colors">
                           {currentUser.name}
                         </div>
@@ -1879,9 +1998,8 @@ export default function App() {
                         </div>
                       </div>
                     </button>
-                    {isAccountMenuOpen&&<nav id="student-account-menu" aria-label="Account actions" className="absolute right-0 top-full mt-3 z-50 w-64 max-w-[85vw] overflow-hidden rounded-2xl border border-sky-400/40 bg-[#07192F] text-white shadow-xl"><InabelWovenStrip variant="azure" height={8}/><div className="p-2 space-y-1"><button className="min-h-11 w-full rounded-lg px-3 py-2 text-left text-sm hover:bg-white/10" onClick={()=>navigateStudent('ACCOUNT')}>Account Settings</button><button className="min-h-11 w-full rounded-lg px-3 py-2 text-left text-sm hover:bg-white/10" onClick={()=>{setIsAccountMenuOpen(false);window.location.hash='legal/privacy'}}>Privacy &amp; Help</button><button className="min-h-11 w-full rounded-lg px-3 py-2 text-left text-sm hover:bg-white/10" onClick={()=>{setIsAccountMenuOpen(false);handleLogOut()}}>Sign Out</button></div></nav>}</>
                   ) : (
-                    <div className="text-left hidden sm:block">
+                    <div className="text-right hidden sm:block">
                       <div className="text-xs font-bold text-[#FAF7F2] truncate max-w-[150px]">
                         {currentUser.name}
                       </div>
@@ -1893,13 +2011,13 @@ export default function App() {
                     </div>
                   )}
 
-                  {currentUser.role!=='student' && (                  <button
+                  <button
                     onClick={handleLogOut}
-                    className="h-10 w-10 flex items-center justify-center rounded-xl text-[#FAF7F2]/80 hover:text-[#22C55E] hover:bg-[#0F766E]/40 transition cursor-pointer"
+                    className="p-2 rounded-xl text-[#FAF7F2]/80 hover:text-[#22C55E] hover:bg-[#0F766E]/40 transition cursor-pointer"
                     title="Sign In with Another Account / Sign Out"
                   >
                     <LogOut className="w-4 h-4" />
-                  </button>)}
+                  </button>
                 </div>
               ) : (
                 <button
@@ -1913,10 +2031,7 @@ export default function App() {
               {/* Mobile Menu Toggle */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                aria-label={isMobileMenuOpen ? 'Close navigation' : 'Open navigation'}
-                aria-expanded={isMobileMenuOpen}
-                aria-controls="lq-compact-navigation"
-                className="lg:hidden h-10 w-10 flex items-center justify-center rounded-xl text-[#FAF7F2] hover:bg-white/10"
+                className="lg:hidden p-2 rounded-xl text-[#FAF7F2] hover:bg-white/10"
               >
                 {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </button>
@@ -1925,8 +2040,72 @@ export default function App() {
 
           {/* Mobile Dropdown */}
           {isMobileMenuOpen && currentUser && (
-            <div id="lq-compact-navigation" className="lg:hidden px-4 py-3 border-t border-white/10 bg-[#07172C] space-y-1 [&>button]:min-h-11">
-              {currentUser.role === 'student' && STUDENT_NAVIGATION.map(item=><button key={item.view} onClick={()=>navigateStudent(item.view)} aria-current={activeStudentView(item.view)?'page':undefined} className={`w-full text-left px-3 py-2 rounded-xl text-sm font-bold ${activeStudentView(item.view)?'bg-sky-900 text-white':'text-slate-200 hover:bg-white/5'}`}>{item.label}</button>)}
+            <div className="lg:hidden px-4 py-3 border-t border-white/10 bg-[#07172C] space-y-1">
+              {currentUser.role === 'student' && (
+                <>
+                  <button
+                    onClick={() => {
+                      soundFX.playClick();
+                      setCurrentView('STUDENT_DASHBOARD');
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold text-sky-300 hover:bg-white/5 flex items-center gap-2"
+                  >
+                    <User className="w-4 h-4 text-sky-400" />
+                    <span>Student Dashboard (Credentials & Photo)</span>
+                  </button>
+                  <button
+                    onClick={() => {
+                      soundFX.playClick();
+                      setCurrentView('MAP');
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold text-slate-200 hover:bg-white/5"
+                  >
+                    Island Quests
+                  </button>
+                  <button
+                    onClick={() => {
+                      setCurrentView('WRITING');
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold text-slate-200 hover:bg-white/5"
+                  >
+                    Writing Lab
+                  </button>
+                  <button
+                    onClick={() => {
+                      setCurrentView('PROGRESS');
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold text-slate-200 hover:bg-white/5"
+                  >
+                    My Progress
+                  </button>
+                  <button
+                    onClick={() => {
+                      setCurrentView('LEADERBOARD');
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold text-slate-200 hover:bg-white/5"
+                  >
+                    Leaderboard
+                  </button>
+                  <button
+                    onClick={() => {
+                      setCurrentView('PROFILE');
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold text-slate-200 hover:bg-white/5"
+                  >
+                    Badges
+                  </button>
+                  <button
+                    onClick={() => { setCurrentView('MARKET'); setIsMobileMenuOpen(false); }}
+                    className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold text-slate-200 hover:bg-white/5"
+                  >Quest Market</button>
+                </>
+              )}
 
               {currentUser.role === 'teacher' && (
                 <>
@@ -2022,7 +2201,7 @@ export default function App() {
 
         {/* Administrator Dashboard View */}
         {currentView === 'ADMIN' && currentAdmin && (
-          <><PrivateAdminSummary /><AdminDashboardView
+          <AdminDashboardView
             currentAdmin={currentAdmin}
             admins={admins}
             allUsers={[...admins, ...teachers, ...students]}
@@ -2057,7 +2236,7 @@ export default function App() {
               }
               setCurrentView('MAP');
             }}
-          /></>
+          />
         )}
 
         {/* Teacher Dashboard View (Approved teachers only, scoped to their classCode) */}
@@ -2141,7 +2320,7 @@ export default function App() {
             }}
             onReturnToDashboard={() => {
               soundFX.playClick();
-              setCurrentView(currentUser?.role === 'student' ? 'STUDENT_DASHBOARD' : currentUser?.role === 'teacher' ? 'TEACHER' : 'ADMIN');
+              setCurrentView(currentUser?.role === 'teacher' ? 'TEACHER' : 'ADMIN');
             }}
             onTogglePersonalization={handleTogglePersonalization}
             onSelectModule={handleSelectModule}
@@ -2162,7 +2341,7 @@ export default function App() {
             }}
             onReturnToDashboard={() => {
               soundFX.playClick();
-              setCurrentView(currentUser?.role === 'student' ? 'STUDENT_DASHBOARD' : currentUser?.role === 'teacher' ? 'TEACHER' : 'ADMIN');
+              setCurrentView(currentUser?.role === 'teacher' ? 'TEACHER' : 'ADMIN');
             }}
             onCompleteLesson={handleCompleteLesson}
             onSubmitQuizResult={handleSubmitQuizResult}
@@ -2188,8 +2367,6 @@ export default function App() {
           />
         )}
 
-        {currentStudent&&['PROGRESS','PROFILE','LEADERBOARD'].includes(currentView)&&<nav aria-label="My Progress sections" className="max-w-6xl mx-auto px-4 pt-6 flex flex-wrap items-center gap-3"><button onClick={()=>navigateStudent('PROGRESS')} aria-current={currentView==='PROGRESS'?'page':undefined} className={`min-h-11 rounded-xl px-4 py-2 font-semibold ${currentView==='PROGRESS'?'bg-sky-700 text-white':'border border-sky-300 text-sky-900'}`}>Learning Progress</button><button onClick={()=>navigateStudent('PROFILE')} aria-current={currentView==='PROFILE'?'page':undefined} className={`min-h-11 rounded-xl px-4 py-2 font-semibold ${currentView==='PROFILE'?'bg-sky-700 text-white':'border border-sky-300 text-sky-900'}`}>Badges</button><button onClick={()=>navigateStudent('LEADERBOARD')} aria-current={currentView==='LEADERBOARD'?'page':undefined} className="min-h-11 ml-auto text-sm font-semibold text-sky-800 underline underline-offset-4">Optional Grade Activity Board</button></nav>}
-
         {currentView === 'PROGRESS' && currentStudent && (
           <StudentProgressView
             student={currentStudent}
@@ -2209,24 +2386,21 @@ export default function App() {
         {currentView === 'LEADERBOARD' && (
           <LeaderboardView
             currentStudent={currentStudent}
-            
+            allStudents={students.filter((s) => s.status === 'approved')}
           />
         )}
 
         {currentView === 'MARKET' && currentStudent && <QuestMarketView />}
 
         {/* Student Dashboard View (Edit credentials, upload picture, view achievements) */}
-        {currentView === 'STUDENT_DASHBOARD' && currentStudent && <StudentHomeView student={currentStudent} modules={modules} onContinue={m=>handleSelectModule(m)} onIslands={()=>navigateStudent('MAP')} onProgress={()=>navigateStudent('PROGRESS')} onWriting={()=>navigateStudent('WRITING')}/>}
-
-        {currentView === 'ACCOUNT' && currentStudent && (
+        {currentView === 'STUDENT_DASHBOARD' && currentStudent && (
           <StudentDashboardView
-            settingsOnly
             student={currentStudent}
             teachers={teachers}
             onUpdateStudent={handleUpdateStudentProfile}
             onBackToMap={() => {
               soundFX.playClick();
-              setCurrentView('STUDENT_DASHBOARD');
+              setCurrentView('MAP');
             }}
             onNavigateToLeaderboard={() => {
               soundFX.playClick();
@@ -2241,7 +2415,6 @@ export default function App() {
 
         {currentView === 'PROFILE' && currentStudent && (
           <ProfileBadgesView
-            badgesOnly
             student={currentStudent}
             onBackToMap={() => {
               soundFX.playClick();
@@ -2273,10 +2446,8 @@ export default function App() {
               </p>
             </div>
           </div>
-          <LegalLinks/>
         </footer>
       )}
-      <LegalCenter user={currentUser} />
       {/* Floating Feedback, Bug Report, Feature Request & Help/FAQ Widget for Students & Teachers */}
       {currentView !== 'AUTH' && (currentStudent || currentTeacher) && (
         <FloatingFeedbackWidget

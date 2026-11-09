@@ -19,7 +19,6 @@ import { BadgeIcon } from './BadgeIcon';
 import { InabelHeaderStrip } from './InabelHeaderStrip';
 
 interface ProfileBadgesViewProps {
-  badgesOnly?: boolean;
   student: StudentAccount;
   onBackToMap: () => void;
   onNavigateToDashboard?: () => void;
@@ -27,7 +26,6 @@ interface ProfileBadgesViewProps {
 
 export const ProfileBadgesView: React.FC<ProfileBadgesViewProps> = ({
   student,
-  badgesOnly = false,
   onBackToMap,
   onNavigateToDashboard,
 }) => {
@@ -52,7 +50,6 @@ export const ProfileBadgesView: React.FC<ProfileBadgesViewProps> = ({
 
   return (
     <div className="max-w-5xl mx-auto px-4 py-8 space-y-6">
-      {!badgesOnly && <>
       {/* Profile Header Card in Deep Navy Theme */}
       <div className="bg-gradient-to-r from-[#0A192F] via-[#0F3460] to-[#1E3E62] rounded-3xl text-white linocut-card relative overflow-hidden border-2 border-[#231F20]">
         <InabelHeaderStrip variant="amber" label="DepEd Learner Profile & Badges" patternId="profile-hero-inabel" />
@@ -100,7 +97,7 @@ export const ProfileBadgesView: React.FC<ProfileBadgesViewProps> = ({
                 title="Modify credentials, name, password, or picture"
               >
                 <Key className="w-3.5 h-3.5" />
-                <span>Home</span>
+                <span>Student Dashboard</span>
               </button>
             )}
 
@@ -236,8 +233,6 @@ export const ProfileBadgesView: React.FC<ProfileBadgesViewProps> = ({
         </div>
       </div>
 
-      </>}
-      {badgesOnly && <div><h1 className="text-2xl font-display font-bold">Your Badges</h1><p className="mt-2 text-slate-600">Celebrate your own learning milestones. Your badges are private from other students.</p></div>}
       {/* Badge Cabinet Showcase */}
       <div className="bg-white rounded-3xl border-2 border-[#231F20] linocut-card overflow-hidden">
         <InabelHeaderStrip variant="amber" label="Achievement Badge Cabinet" patternId="profile-badges-inabel" />

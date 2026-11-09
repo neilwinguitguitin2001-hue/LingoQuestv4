@@ -1503,7 +1503,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
           </div>
 
           {/* Search & Filter Toolbar */}
-          <div className="lq-woven-card lq-woven-pad-5 bg-white p-5 rounded-3xl border border-slate-200 shadow-sm space-y-4">
+          <div className="bg-white p-5 rounded-3xl border border-slate-200 shadow-sm space-y-4">
             <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3">
               {/* Search Bar */}
               <div className="relative flex-1">
@@ -1606,7 +1606,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
 
           {/* Accounts List / Table */}
           {filteredAccounts.length === 0 ? (
-            <div className="lq-woven-card lq-woven-pad-12 bg-white rounded-3xl border border-slate-200 p-12 text-center space-y-3">
+            <div className="bg-white rounded-3xl border border-slate-200 p-12 text-center space-y-3">
               <div className="w-14 h-14 mx-auto rounded-3xl bg-slate-100 flex items-center justify-center text-slate-400">
                 <Users className="w-7 h-7" />
               </div>
@@ -1627,7 +1627,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
               </button>
             </div>
           ) : (
-            <div className="lq-woven-card lq-woven-pad-0 bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
+            <div className="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
               <div className="overflow-x-auto">
                 <table className="w-full text-left border-collapse text-xs">
                   <thead>
@@ -1961,7 +1961,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
 
           {/* Teacher Cards / Table */}
           {filteredTeachers.length === 0 ? (
-            <div className="lq-woven-card lq-woven-pad-12 bg-white rounded-3xl border border-slate-200 p-12 text-center space-y-3">
+            <div className="bg-white rounded-3xl border border-slate-200 p-12 text-center space-y-3">
               <UserCheck className="w-12 h-12 text-slate-300 mx-auto" />
               <h3 className="text-base font-bold text-slate-700">No teachers found</h3>
               <p className="text-xs text-slate-400">
@@ -2156,7 +2156,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
       {activeTab === 'STUDENT_ROSTER' && (
         <div className="space-y-6 animate-dashboard-panel">
           {/* Governance Notice Banner */}
-          <div className="lq-woven-card lq-woven-pad-5 bg-gradient-to-r from-sky-900 via-blue-900 to-indigo-950 text-white p-5 rounded-3xl border border-sky-500/30 shadow-lg flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div className="bg-gradient-to-r from-sky-900 via-blue-900 to-indigo-950 text-white p-5 rounded-3xl border border-sky-500/30 shadow-lg flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div className="flex items-start gap-3.5">
               <div className="w-11 h-11 rounded-2xl bg-sky-400 text-slate-950 flex items-center justify-center shrink-0 font-bold shadow-md">
                 <ShieldCheck className="w-6 h-6 text-slate-950" />
@@ -2263,7 +2263,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
           </div>
 
           {/* Filters & Search Toolbar */}
-          <div className="lq-woven-card lq-woven-pad-4 bg-white p-4 sm:p-5 rounded-3xl border border-slate-200 shadow-xs space-y-4">
+          <div className="bg-white p-4 sm:p-5 rounded-3xl border border-slate-200 shadow-xs space-y-4">
             <div className="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4">
               {/* Search bar */}
               <div className="relative flex-1">
@@ -2394,7 +2394,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
 
           {/* Student Roster Table */}
           {filteredStudents.length === 0 ? (
-            <div className="lq-woven-card lq-woven-pad-12 bg-white rounded-3xl border border-slate-200 p-12 text-center space-y-3">
+            <div className="bg-white rounded-3xl border border-slate-200 p-12 text-center space-y-3">
               <Users className="w-12 h-12 text-slate-300 mx-auto" />
               <h4 className="text-base font-bold text-slate-700">No students match current filters</h4>
               <p className="text-xs text-slate-400 max-w-sm mx-auto">
@@ -2415,7 +2415,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
               </button>
             </div>
           ) : (
-            <div className="lq-woven-card lq-woven-pad-0 bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-xs">
+            <div className="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-xs">
               <div className="overflow-x-auto">
                 <table className="w-full text-left text-xs">
                   <thead>
@@ -2604,7 +2604,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
       {activeTab === 'MODULE_MANAGER' && (
         <div className="space-y-4 animate-dashboard-panel">
           {onPreviewAsStudent && (
-            <div className="lq-woven-card lq-woven-pad-4 bg-gradient-to-r from-[#0A192F] via-[#0F3460] to-[#1E3E62] text-white p-4 sm:p-5 rounded-3xl border border-sky-500/30 shadow-lg flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div className="bg-gradient-to-r from-[#0A192F] via-[#0F3460] to-[#1E3E62] text-white p-4 sm:p-5 rounded-3xl border border-sky-500/30 shadow-lg flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div className="flex items-center gap-3.5">
                 <div className="w-10 h-10 rounded-2xl bg-amber-400 text-slate-950 flex items-center justify-center shrink-0 font-bold shadow-md">
                   <Compass className="w-5 h-5 text-slate-950" />
@@ -2764,7 +2764,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
           </div>
 
           {/* Administrators Table */}
-          <div className="lq-woven-card lq-woven-pad-0 bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-xs">
+          <div className="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-xs">
             <div className="p-5 border-b border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div>
                 <h4 className="text-base font-bold font-display text-slate-900 flex items-center gap-2">
@@ -3001,7 +3001,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
       {activeTab === 'AUDIT_LOG' && (
         <div className="space-y-6 animate-dashboard-panel">
           {/* Top Controls: View Mode Tabs & Search & Filter */}
-          <div className="lq-woven-card lq-woven-pad-5 bg-white p-5 rounded-3xl border border-slate-200 shadow-sm space-y-4">
+          <div className="bg-white p-5 rounded-3xl border border-slate-200 shadow-sm space-y-4">
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-b border-slate-100 pb-4">
               <div>
                 <h3 className="text-base font-bold font-display text-slate-900 flex items-center gap-2">
@@ -3173,7 +3173,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
           )}
 
           {/* Audit Logs Table */}
-          <div className="lq-woven-card lq-woven-pad-0 bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
+          <div className="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse text-xs">
                 <thead>
@@ -3360,7 +3360,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
       {activeTab === 'ARCHIPELAGO_MAP' && (
         <div className="space-y-6 animate-dashboard-panel">
           {/* Top Control Bar: Filters by Grade, Section, Teacher */}
-          <div className="lq-woven-card lq-woven-pad-5 bg-white p-5 rounded-3xl border border-slate-200 shadow-sm space-y-4">
+          <div className="bg-white p-5 rounded-3xl border border-slate-200 shadow-sm space-y-4">
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-b border-slate-100 pb-3">
               <div>
                 <h3 className="text-base font-bold font-display text-slate-900 flex items-center gap-2">
@@ -3438,7 +3438,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
           </div>
 
           {/* Interactive Archipelago Map */}
-          <div className="lq-woven-card lq-woven-pad-5 bg-white p-5 rounded-3xl border border-slate-200 shadow-sm space-y-3">
+          <div className="bg-white p-5 rounded-3xl border border-slate-200 shadow-sm space-y-3">
             <InteractiveIslandMap
               mode="admin"
               activeIslandId={selectedAdminMapIsland?.id || 'discovery-dinosaur'}
@@ -3449,7 +3449,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
 
           {/* Island Detail Report Panel */}
           {selectedAdminMapIsland && (
-            <div className="lq-woven-card lq-woven-pad-6 bg-white p-6 sm:p-7 rounded-3xl border border-slate-200 shadow-lg space-y-5 animate-fade-in">
+            <div className="bg-white p-6 sm:p-7 rounded-3xl border border-slate-200 shadow-lg space-y-5 animate-fade-in">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-4">
                 <div>
                   <span className="text-[10px] font-black uppercase tracking-wider text-blue-600 bg-blue-50 px-2.5 py-0.5 rounded-full border border-blue-200">
@@ -3572,7 +3572,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
       {/* ---------------------------------------------------- */}
       {rejectingTeacher && (
         <div className="fixed inset-0 z-50 bg-black/50 backdrop-blur-xs flex items-center justify-center p-4">
-          <div className="lq-woven-card lq-woven-pad-6 bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl space-y-4 animate-scale-in">
+          <div className="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl space-y-4 animate-scale-in">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2 text-rose-600 font-bold">
                 <AlertCircle className="w-5 h-5" /> Reject Teacher Application
@@ -3624,7 +3624,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
       {/* ---------------------------------------------------- */}
       {suspendingUser && (
         <div className="fixed inset-0 z-50 bg-black/50 backdrop-blur-xs flex items-center justify-center p-4">
-          <div className="lq-woven-card lq-woven-pad-6 bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl space-y-4 animate-scale-in">
+          <div className="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl space-y-4 animate-scale-in">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2 text-amber-700 font-bold">
                 <ShieldAlert className="w-5 h-5" /> Suspend {suspendingUser.role === 'student' ? 'Learner' : suspendingUser.role === 'admin' ? 'Sub-Administrator' : 'Faculty'} Account
@@ -3675,7 +3675,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
       {/* ---------------------------------------------------- */}
       {deletingTeacher && (
         <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4 animate-fade-in">
-          <div className="lq-woven-card lq-woven-pad-6 bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl space-y-4 border border-rose-200 animate-scale-in">
+          <div className="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl space-y-4 border border-rose-200 animate-scale-in">
             <div className="flex items-center justify-between border-b border-rose-100 pb-3">
               <div className="flex items-center gap-2.5 text-rose-600 font-bold text-base">
                 <div className="p-2 bg-rose-100 rounded-xl">
@@ -3779,7 +3779,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
       {/* ---------------------------------------------------- */}
       {deletingStudent && (
         <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4 animate-fade-in">
-          <div className="lq-woven-card lq-woven-pad-6 bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl space-y-4 border border-rose-200 animate-scale-in">
+          <div className="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl space-y-4 border border-rose-200 animate-scale-in">
             <div className="flex items-center justify-between border-b border-rose-100 pb-3">
               <div className="flex items-center gap-2.5 text-rose-600 font-bold text-base">
                 <div className="p-2 bg-rose-100 rounded-xl">
@@ -3884,7 +3884,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
       {/* ---------------------------------------------------- */}
       {deletingModule && (
         <div className="fixed inset-0 z-50 bg-black/50 backdrop-blur-xs flex items-center justify-center p-4">
-          <div className="lq-woven-card lq-woven-pad-6 bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl space-y-4 animate-scale-in">
+          <div className="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl space-y-4 animate-scale-in">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2 text-rose-600 font-bold">
                 <Trash2 className="w-5 h-5" /> Confirm Module Deletion
@@ -3925,7 +3925,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
       {/* ---------------------------------------------------- */}
       {(isCreatingModule || editingModule) && (
         <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4 overflow-y-auto">
-          <div className="lq-woven-card lq-woven-pad-6 bg-white rounded-3xl max-w-3xl w-full p-6 sm:p-8 shadow-2xl space-y-6 my-8 animate-scale-in max-h-[90vh] overflow-y-auto">
+          <div className="bg-white rounded-3xl max-w-3xl w-full p-6 sm:p-8 shadow-2xl space-y-6 my-8 animate-scale-in max-h-[90vh] overflow-y-auto">
             <div className="flex items-center justify-between border-b border-slate-100 pb-4">
               <div>
                 <h3 className="text-lg font-black font-display text-slate-900 flex items-center gap-2">
@@ -4166,7 +4166,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
       {/* Approve Teacher with Unique Class Code Modal */}
       {approvingTeacher && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs animate-fade-in">
-          <div className="lq-woven-card lq-woven-pad-6 bg-white rounded-3xl border border-slate-200 max-w-md w-full p-6 shadow-2xl space-y-5">
+          <div className="bg-white rounded-3xl border border-slate-200 max-w-md w-full p-6 shadow-2xl space-y-5">
             <div className="flex items-start justify-between">
               <div className="flex items-center gap-3">
                 <div className="p-3 rounded-2xl bg-emerald-100 text-emerald-700">
@@ -4268,7 +4268,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
       {/* Edit / Reassign Class Code Modal */}
       {editingCodeTeacher && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs animate-fade-in">
-          <div className="lq-woven-card lq-woven-pad-6 bg-white rounded-3xl border border-slate-200 max-w-md w-full p-6 shadow-2xl space-y-5">
+          <div className="bg-white rounded-3xl border border-slate-200 max-w-md w-full p-6 shadow-2xl space-y-5">
             <div className="flex items-start justify-between">
               <div className="flex items-center gap-3">
                 <div className="p-3 rounded-2xl bg-blue-100 text-blue-700">
@@ -4352,7 +4352,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
       {/* Student Drill-Down Performance Modal (Admin Read-Only) */}
       {selectedStudentForDrillDown && (
         <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
-          <div className="lq-woven-card lq-woven-pad-6 bg-white rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200 p-6 sm:p-8 space-y-6">
+          <div className="bg-white rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200 p-6 sm:p-8 space-y-6">
             <div className="flex items-center justify-between border-b border-slate-100 pb-4">
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center font-black">
@@ -4548,7 +4548,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
       {/* ================================================================ */}
       {showAddSubAdminModal && isMainAdmin && (
         <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4 overflow-y-auto">
-          <div className="lq-woven-card lq-woven-pad-0 bg-white rounded-3xl max-w-lg w-full shadow-2xl border border-slate-200 overflow-hidden space-y-5 my-8">
+          <div className="bg-white rounded-3xl max-w-lg w-full shadow-2xl border border-slate-200 overflow-hidden space-y-5 my-8">
             <div className="p-6 bg-gradient-to-r from-slate-900 via-blue-950 to-indigo-950 text-white flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-2xl bg-amber-400 text-slate-950 flex items-center justify-center font-bold shadow-md">
@@ -4715,7 +4715,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
       {/* ================================================================ */}
       {editingSubAdmin && isMainAdmin && (
         <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
-          <div className="lq-woven-card lq-woven-pad-0 bg-white rounded-3xl max-w-md w-full shadow-2xl border border-slate-200 overflow-hidden space-y-5">
+          <div className="bg-white rounded-3xl max-w-md w-full shadow-2xl border border-slate-200 overflow-hidden space-y-5">
             <div className="p-5 bg-slate-900 text-white flex items-center justify-between">
               <div>
                 <h3 className="text-sm font-bold font-display text-white">
@@ -4815,7 +4815,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
       {/* ================================================================ */}
       {deletingSubAdmin && isMainAdmin && (
         <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
-          <div className="lq-woven-card lq-woven-pad-6 bg-white rounded-3xl max-w-md w-full shadow-2xl border border-slate-200 p-6 space-y-4">
+          <div className="bg-white rounded-3xl max-w-md w-full shadow-2xl border border-slate-200 p-6 space-y-4">
             <div className="flex items-center gap-3 text-rose-600">
               <div className="w-10 h-10 rounded-2xl bg-rose-50 flex items-center justify-center shrink-0">
                 <Trash2 className="w-5 h-5 text-rose-600" />
@@ -4865,7 +4865,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
       {/* ================================================================ */}
       {confirmDeleteAudit && (
         <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
-          <div className="lq-woven-card lq-woven-pad-6 bg-white rounded-3xl max-w-md w-full shadow-2xl border border-slate-200 p-6 space-y-4 animate-scale-in">
+          <div className="bg-white rounded-3xl max-w-md w-full shadow-2xl border border-slate-200 p-6 space-y-4 animate-scale-in">
             <div className="flex items-center gap-3 text-rose-600">
               <div className="w-10 h-10 rounded-2xl bg-rose-50 flex items-center justify-center shrink-0">
                 <Trash2 className="w-5 h-5 text-rose-600" />
@@ -4928,7 +4928,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
       {/* ================================================================ */}
       {showBulkDeleteModal && selectedAuditIds.length > 0 && (
         <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
-          <div className="lq-woven-card lq-woven-pad-6 bg-white rounded-3xl max-w-md w-full shadow-2xl border border-slate-200 p-6 space-y-4 animate-scale-in">
+          <div className="bg-white rounded-3xl max-w-md w-full shadow-2xl border border-slate-200 p-6 space-y-4 animate-scale-in">
             <div className="flex items-center gap-3 text-rose-600">
               <div className="w-10 h-10 rounded-2xl bg-rose-50 flex items-center justify-center shrink-0">
                 <AlertTriangle className="w-5 h-5 text-rose-600" />

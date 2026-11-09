@@ -1460,7 +1460,7 @@ export const TeacherDashboardView: React.FC<TeacherDashboardViewProps> = ({
         {activeTab === 'class_analytics' && (
           <div className="space-y-6 animate-dashboard-panel">
             {/* Header & Subview Navigator */}
-            <div className="lq-woven-card lq-woven-pad-6 bg-gradient-to-r from-indigo-900 via-blue-900 to-[#0B1E36] text-white p-6 rounded-3xl border border-indigo-400/30 shadow-xl flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div className="bg-gradient-to-r from-indigo-900 via-blue-900 to-[#0B1E36] text-white p-6 rounded-3xl border border-indigo-400/30 shadow-xl flex flex-col md:flex-row md:items-center justify-between gap-4">
               <div className="space-y-1">
                 <div className="flex items-center gap-2">
                   <div className="p-2 bg-indigo-500/20 rounded-xl border border-indigo-400/30">
@@ -1495,7 +1495,7 @@ export const TeacherDashboardView: React.FC<TeacherDashboardViewProps> = ({
             </div>
 
             {/* Sub-navigation & Filters Toolbar */}
-            <div className="lq-woven-card lq-woven-pad-4 bg-slate-50 p-4 rounded-3xl border border-slate-200 space-y-3">
+            <div className="bg-slate-50 p-4 rounded-3xl border border-slate-200 space-y-3">
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-3">
                 {/* 3 Analytics Sub-tabs */}
                 <div className="flex items-center gap-1.5 bg-white p-1 rounded-2xl border border-slate-200 shadow-xs">
@@ -1654,7 +1654,7 @@ export const TeacherDashboardView: React.FC<TeacherDashboardViewProps> = ({
 
             {/* Empty Class Notice */}
             {filteredAnalyticsStudents.length === 0 ? (
-              <div className="lq-woven-card lq-woven-pad-12 bg-white rounded-3xl border border-slate-200 p-12 text-center space-y-3">
+              <div className="bg-white rounded-3xl border border-slate-200 p-12 text-center space-y-3">
                 <div className="w-14 h-14 mx-auto rounded-3xl bg-indigo-50 text-indigo-500 flex items-center justify-center">
                   <Users className="w-7 h-7" />
                 </div>
@@ -1685,7 +1685,7 @@ export const TeacherDashboardView: React.FC<TeacherDashboardViewProps> = ({
                     {/* 5 Class KPI Metric Cards */}
                     <div className="grid grid-cols-2 sm:grid-cols-5 gap-3.5">
                       {/* KPI 1: Class Mastery Average */}
-                      <div className="lq-woven-card lq-woven-pad-4 p-4 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-1.5">
+                      <div className="p-4 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-1.5">
                         <div className="flex items-center justify-between text-xs font-bold text-slate-500">
                           <span>Class Mastery</span>
                           <Award className="w-4 h-4 text-indigo-500" />
@@ -1720,7 +1720,7 @@ export const TeacherDashboardView: React.FC<TeacherDashboardViewProps> = ({
                       </div>
 
                       {/* KPI 2: Total Learners */}
-                      <div className="lq-woven-card lq-woven-pad-4 p-4 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-1.5">
+                      <div className="p-4 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-1.5">
                         <div className="flex items-center justify-between text-xs font-bold text-slate-500">
                           <span>Enrolled Learners</span>
                           <Users className="w-4 h-4 text-blue-500" />
@@ -1736,7 +1736,7 @@ export const TeacherDashboardView: React.FC<TeacherDashboardViewProps> = ({
                       </div>
 
                       {/* KPI 3: Modules Completed */}
-                      <div className="lq-woven-card lq-woven-pad-4 p-4 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-1.5">
+                      <div className="p-4 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-1.5">
                         <div className="flex items-center justify-between text-xs font-bold text-slate-500">
                           <span>Modules Mastered</span>
                           <BookOpen className="w-4 h-4 text-emerald-500" />
@@ -1751,7 +1751,7 @@ export const TeacherDashboardView: React.FC<TeacherDashboardViewProps> = ({
                       </div>
 
                       {/* KPI 4: Bridges Restored */}
-                      <div className="lq-woven-card lq-woven-pad-4 p-4 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-1.5">
+                      <div className="p-4 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-1.5">
                         <div className="flex items-center justify-between text-xs font-bold text-slate-500">
                           <span>Bridges Restored</span>
                           <Compass className="w-4 h-4 text-amber-500" />
@@ -1764,7 +1764,7 @@ export const TeacherDashboardView: React.FC<TeacherDashboardViewProps> = ({
                       </div>
 
                       {/* KPI 5: AI Writing Lab */}
-                      <div className="lq-woven-card lq-woven-pad-4 p-4 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-1.5">
+                      <div className="p-4 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-1.5">
                         <div className="flex items-center justify-between text-xs font-bold text-slate-500">
                           <span>AI Writing Lab</span>
                           <Feather className="w-4 h-4 text-purple-500" />
@@ -1780,7 +1780,7 @@ export const TeacherDashboardView: React.FC<TeacherDashboardViewProps> = ({
                     </div>
 
                     {/* Class Proficiency Tier Breakdown */}
-                    <div className="lq-woven-card lq-woven-pad-6 bg-white p-6 rounded-3xl border border-slate-200 shadow-sm space-y-4">
+                    <div className="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm space-y-4">
                       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-3">
                         <div>
                           <h3 className="text-sm font-bold font-display text-slate-900 flex items-center gap-2">
@@ -1899,7 +1899,7 @@ export const TeacherDashboardView: React.FC<TeacherDashboardViewProps> = ({
                     </div>
 
                     {/* Davao Oriental Archipelago Island / Quarter Breakdown */}
-                    <div className="lq-woven-card lq-woven-pad-6 bg-white p-6 rounded-3xl border border-slate-200 shadow-sm space-y-4">
+                    <div className="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm space-y-4">
                       <div className="border-b border-slate-100 pb-3 flex items-center justify-between">
                         <div>
                           <h3 className="text-sm font-bold font-display text-slate-900 flex items-center gap-2">
@@ -1984,7 +1984,7 @@ export const TeacherDashboardView: React.FC<TeacherDashboardViewProps> = ({
                     </div>
 
                     {/* Actionable Teaching Recommendations */}
-                    <div className="lq-woven-card lq-woven-pad-6 bg-gradient-to-r from-blue-50 via-indigo-50 to-purple-50 p-6 rounded-3xl border border-indigo-200 space-y-3">
+                    <div className="bg-gradient-to-r from-blue-50 via-indigo-50 to-purple-50 p-6 rounded-3xl border border-indigo-200 space-y-3">
                       <div className="flex items-center gap-2 text-indigo-900 font-bold text-sm">
                         <Sparkles className="w-4 h-4 text-indigo-600" />
                         <span>Teacher Insights & Instructional Recommendations</span>
@@ -2026,7 +2026,7 @@ export const TeacherDashboardView: React.FC<TeacherDashboardViewProps> = ({
                 {/* ---------------------------------------------------- */}
                 {analyticsSubView === 'competencies' && (
                   <div className="space-y-4">
-                    <div className="lq-woven-card lq-woven-pad-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-white p-5 rounded-3xl border border-slate-200">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-white p-5 rounded-3xl border border-slate-200">
                       <div>
                         <h3 className="text-base font-bold font-display text-slate-900">
                           English MELC Competencies & Quiz Performance
@@ -2045,7 +2045,7 @@ export const TeacherDashboardView: React.FC<TeacherDashboardViewProps> = ({
                       </div>
                     </div>
 
-                    <div className="lq-woven-card lq-woven-pad-0 bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
+                    <div className="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
                       <div className="overflow-x-auto">
                         <table className="w-full text-left text-xs">
                           <thead>
@@ -2160,7 +2160,7 @@ export const TeacherDashboardView: React.FC<TeacherDashboardViewProps> = ({
                 {/* ---------------------------------------------------- */}
                 {analyticsSubView === 'students' && (
                   <div className="space-y-4">
-                    <div className="lq-woven-card lq-woven-pad-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-white p-5 rounded-3xl border border-slate-200">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-white p-5 rounded-3xl border border-slate-200">
                       <div>
                         <h3 className="text-base font-bold font-display text-slate-900">
                           Learner Performance Roster & Mastery Breakdown
@@ -2170,16 +2170,16 @@ export const TeacherDashboardView: React.FC<TeacherDashboardViewProps> = ({
                         </p>
                       </div>
                       <div className="text-xs font-bold text-slate-500 bg-slate-50 px-3 py-1.5 rounded-xl border border-slate-200">
-                        {filteredAnalyticsStudents.length} Assigned records
+                        {filteredAnalyticsStudents.length} Students Ranked
                       </div>
                     </div>
 
-                    <div className="lq-woven-card lq-woven-pad-0 bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
+                    <div className="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
                       <div className="overflow-x-auto">
                         <table className="w-full text-left text-xs">
                           <thead>
                             <tr className="bg-slate-50 text-slate-400 font-semibold uppercase tracking-wider border-b border-slate-200 text-[11px]">
-                              <th className="py-3.5 px-4">Student</th>
+                              <th className="py-3.5 px-4">Rank & Student</th>
                               <th className="py-3.5 px-3">LRN / DepEd ID</th>
                               <th className="py-3.5 px-3">Grade & Section</th>
                               <th className="py-3.5 px-3">Quiz Average</th>
@@ -2204,9 +2204,22 @@ export const TeacherDashboardView: React.FC<TeacherDashboardViewProps> = ({
 
                               return (
                                 <tr key={st.id} className="hover:bg-slate-50/70 transition">
-                                  {/* Student */}
+                                  {/* Rank & Student */}
                                   <td className="py-3.5 px-4">
                                     <div className="flex items-center gap-3">
+                                      <div
+                                        className={`w-7 h-7 rounded-xl flex items-center justify-center text-xs font-black shrink-0 ${
+                                          index === 0
+                                            ? 'bg-amber-400 text-slate-950 shadow-xs'
+                                            : index === 1
+                                            ? 'bg-slate-300 text-slate-900 shadow-xs'
+                                            : index === 2
+                                            ? 'bg-amber-700 text-white shadow-xs'
+                                            : 'bg-slate-100 text-slate-500'
+                                        }`}
+                                      >
+                                        #{index + 1}
+                                      </div>
                                       <div>
                                         <div className="font-bold text-slate-900">{st.name}</div>
                                         <div className="text-[11px] text-slate-400">@{st.username}</div>
@@ -2600,7 +2613,7 @@ export const TeacherDashboardView: React.FC<TeacherDashboardViewProps> = ({
         {activeTab === 'modules' && (
           <div className="pt-2 space-y-4 animate-dashboard-panel">
             {onPreviewIslandMap && (
-              <div className="lq-woven-card lq-woven-pad-4 bg-gradient-to-r from-[#0A192F] via-[#0F3460] to-[#1E3E62] text-white p-4 sm:p-5 rounded-3xl border border-sky-500/30 shadow-lg flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div className="bg-gradient-to-r from-[#0A192F] via-[#0F3460] to-[#1E3E62] text-white p-4 sm:p-5 rounded-3xl border border-sky-500/30 shadow-lg flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div className="flex items-center gap-3.5">
                   <div className="w-10 h-10 rounded-2xl bg-amber-400 text-slate-950 flex items-center justify-center shrink-0 font-bold shadow-md">
                     <Compass className="w-5 h-5 text-slate-950" />
@@ -2640,7 +2653,7 @@ export const TeacherDashboardView: React.FC<TeacherDashboardViewProps> = ({
         {/* Tab 4: Interactive Class Archipelago Map */}
         {activeTab === 'island_map' && (
           <div className="pt-2 space-y-6 animate-dashboard-panel">
-            <div className="lq-woven-card lq-woven-pad-5 bg-white p-5 rounded-3xl border border-slate-200 shadow-sm space-y-3">
+            <div className="bg-white p-5 rounded-3xl border border-slate-200 shadow-sm space-y-3">
               <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-b border-slate-100 pb-3">
                 <div>
                   <h3 className="text-base font-bold font-display text-slate-900 flex items-center gap-2">
@@ -2667,7 +2680,7 @@ export const TeacherDashboardView: React.FC<TeacherDashboardViewProps> = ({
 
             {/* Selected Island Roster & Quick Actions Panel */}
             {selectedMapIsland && (
-              <div className="lq-woven-card lq-woven-pad-6 bg-white p-6 rounded-3xl border border-slate-200 shadow-sm space-y-4 animate-fade-in">
+              <div className="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm space-y-4 animate-fade-in">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-4">
                   <div>
                     <span className="text-[10px] font-black uppercase tracking-wider text-blue-600 bg-blue-50 px-2.5 py-0.5 rounded-full border border-blue-200">
@@ -2755,7 +2768,7 @@ export const TeacherDashboardView: React.FC<TeacherDashboardViewProps> = ({
       {/* Student Drill-Down Performance Modal */}
       {selectedStudentForDrillDown && (
         <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
-          <div className="lq-woven-card lq-woven-pad-6 bg-white rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200 p-6 sm:p-8 space-y-6">
+          <div className="bg-white rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200 p-6 sm:p-8 space-y-6">
             <div className="flex items-center justify-between border-b border-slate-100 pb-4">
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center font-black">
@@ -2929,7 +2942,7 @@ export const TeacherDashboardView: React.FC<TeacherDashboardViewProps> = ({
       {/* Add Student Modal */}
       {showAddStudentModal && (
         <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
-          <div className="lq-woven-card lq-woven-pad-6 bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 space-y-5 shadow-2xl border border-slate-200">
+          <div className="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 space-y-5 shadow-2xl border border-slate-200">
             <div className="flex items-center justify-between border-b border-slate-100 pb-3">
               <h3 className="text-lg font-bold font-display text-slate-900 flex items-center gap-2">
                 <UserPlus className="w-5 h-5 text-indigo-600" />
@@ -3069,7 +3082,7 @@ export const TeacherDashboardView: React.FC<TeacherDashboardViewProps> = ({
       {/* Review & Verify Student Modal */}
       {verifyingStudent && (
         <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4 animate-fade-in">
-          <div className="lq-woven-card lq-woven-pad-6 bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 space-y-5 shadow-2xl border border-slate-200 max-h-[90vh] overflow-y-auto">
+          <div className="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 space-y-5 shadow-2xl border border-slate-200 max-h-[90vh] overflow-y-auto">
             <div className="flex items-center justify-between border-b border-slate-100 pb-3">
               <div className="flex items-center gap-2.5">
                 <div className="p-2 rounded-xl bg-blue-100 text-blue-700">
@@ -3236,7 +3249,7 @@ export const TeacherDashboardView: React.FC<TeacherDashboardViewProps> = ({
       {/* Reject / Flag Student Modal */}
       {rejectingStudent && (
         <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4 animate-fade-in">
-          <div className="lq-woven-card lq-woven-pad-6 bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl border border-rose-200 space-y-4">
+          <div className="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl border border-rose-200 space-y-4">
             <div className="flex items-center justify-between border-b border-rose-100 pb-3">
               <div className="flex items-center gap-2 text-rose-700 font-bold text-base">
                 <div className="p-2 bg-rose-100 rounded-xl">
@@ -3329,7 +3342,7 @@ export const TeacherDashboardView: React.FC<TeacherDashboardViewProps> = ({
       {/* Edit Faculty Profile & Email Modal */}
       {showEditProfileModal && (
         <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4 animate-fade-in">
-          <div className="lq-woven-card lq-woven-pad-6 bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 space-y-5 shadow-2xl border border-slate-200 max-h-[90vh] overflow-y-auto">
+          <div className="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 space-y-5 shadow-2xl border border-slate-200 max-h-[90vh] overflow-y-auto">
             <div className="flex items-center justify-between border-b border-slate-100 pb-3">
               <div>
                 <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
@@ -3514,7 +3527,7 @@ export const TeacherDashboardView: React.FC<TeacherDashboardViewProps> = ({
       {/* Teacher Action: Change Student Grade Level & School / LRN Verification Modal */}
       {editingStudent && (
         <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
-          <div className="lq-woven-card lq-woven-pad-6 bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 space-y-5 shadow-2xl border border-slate-200 animate-in fade-in zoom-in duration-150">
+          <div className="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 space-y-5 shadow-2xl border border-slate-200 animate-in fade-in zoom-in duration-150">
             <div className="flex items-center justify-between border-b border-slate-100 pb-3">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-2xl bg-amber-50 border border-amber-200 text-amber-700 flex items-center justify-center font-bold">
