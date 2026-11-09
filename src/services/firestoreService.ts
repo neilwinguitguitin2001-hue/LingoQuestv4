@@ -1,5 +1,6 @@
 import { signInWithPopup } from 'firebase/auth';
 import { auth, googleAuthProvider } from '../lib/firebase';
+import { privateBootstrap } from './privacyService';
 import { supabase } from '../lib/supabase';
 import {
   ALL_MODULES,
@@ -147,19 +148,9 @@ function safeStorageSet(key: string, value: string): void {
 // ----------------------------------------------------
 // In-Memory & LocalStorage Cache Helpers
 // ----------------------------------------------------
-function getCachedUsers(): UserAccount[] {
-  try {
-    const raw = localStorage.getItem(CACHE_KEY_USERS);
-    if (raw) return JSON.parse(raw);
-  } catch (e) {
-    console.warn('Failed reading cached users', e);
-  }
-  return [...INITIAL_ADMINS, ...INITIAL_TEACHERS, ...INITIAL_STUDENTS];
-}
-
-function setCachedUsers(users: UserAccount[]) {
-  safeStorageSet(CACHE_KEY_USERS, JSON.stringify(users));
-}
+let scopedUsers: UserAccount[] = [];
+function getCachedUsers(): UserAccount[] { return scopedUsers; }
+function setCachedUsers(users: UserAccount[]) { scopedUsers = users; }
 
 function getCachedModules(): Module[] {
   // Curriculum content comes from the reviewed PDF repository data, never stale generated cache entries.
@@ -182,87 +173,17 @@ function setCachedModules(modules: Module[]) {
   }
 }
 
-function getCachedAuditLogs(): AuditLogEntry[] {
-  try {
-    const raw = localStorage.getItem(CACHE_KEY_AUDIT);
-    if (raw) return JSON.parse(raw);
-  } catch (e) {
-    console.warn('Failed reading cached audit logs', e);
-  }
-  return INITIAL_AUDIT_LOGS;
-}
+let scopedAudit: AuditLogEntry[] = [];
+function getCachedAuditLogs(): AuditLogEntry[] { return scopedAudit; }
+function setCachedAuditLogs(logs: AuditLogEntry[]) { scopedAudit = logs; }
 
-function setCachedAuditLogs(logs: AuditLogEntry[]) {
-  safeStorageSet(CACHE_KEY_AUDIT, JSON.stringify(logs));
-}
+let scopedEmails: EmailNotificationRecord[] = [];
+let scopedFeedback: SystemFeedbackRecord[] = [];
+export function getCachedEmailNotifications(): EmailNotificationRecord[] { return scopedEmails; }
+function setCachedEmailNotifications(emails: EmailNotificationRecord[]) { scopedEmails = emails; }
+export function getCachedSystemFeedback(): SystemFeedbackRecord[] { return scopedFeedback; }
+function setCachedSystemFeedback(items: SystemFeedbackRecord[]) { scopedFeedback = items; }
 
-export function getCachedEmailNotifications(): EmailNotificationRecord[] {
-  try {
-    const raw = localStorage.getItem(CACHE_KEY_EMAILS);
-    if (raw) return JSON.parse(raw);
-  } catch (e) {
-    console.warn('Failed reading cached email notifications', e);
-  }
-  return [];
-}
-
-function setCachedEmailNotifications(emails: EmailNotificationRecord[]) {
-  safeStorageSet(CACHE_KEY_EMAILS, JSON.stringify(emails.slice(0, 100)));
-}
-
-export function getCachedSystemFeedback(): SystemFeedbackRecord[] {
-  try {
-    const raw = localStorage.getItem(CACHE_KEY_FEEDBACK);
-    if (raw) return JSON.parse(raw);
-  } catch (e) {
-    console.warn('Failed reading cached system feedback', e);
-  }
-  return [
-    {
-      id: 'fb-seed-001',
-      userId: 'stu-1',
-      userName: 'Maria Clara Santos',
-      userRole: 'student',
-      userEmail: 'mariaclara.santos@student.deped-davaoor.edu.ph',
-      schoolName: 'Mati National Comprehensive High School',
-      gradeLevel: 8,
-      classCode: 'LQ-ENG-8492',
-      category: 'feature_request',
-      priority: 'medium',
-      targetArea: 'Lesson & Quiz Game',
-      subject: 'Audio Pronunciation Button for Vocabulary Words',
-      message:
-        'It would be super helpful if we could click a speaker icon next to unfamiliar Afro-Asian vocabulary words in Grade 8 Quarter 1 so we can hear how they are pronounced before taking the Bridge Quiz.',
-      status: 'in_review',
-      adminResponse:
-        'Thank you Maria! Our Division Curriculum team is reviewing audio pronunciation support for Quarter 1 & 2 vocabulary modules.',
-      respondedBy: 'Department of Education Davao Oriental',
-      respondedAt: '2026-10-28 14:20',
-      createdAt: '2026-10-28 09:15',
-    },
-    {
-      id: 'fb-seed-002',
-      userId: 'tch-marco-solis',
-      userName: 'Mr. Marco Solis',
-      userRole: 'teacher',
-      userEmail: 'marco.solis@deped.gov.ph',
-      schoolName: 'Mati National Comprehensive High School',
-      classCode: 'LQ-ENG-8492',
-      category: 'bug_report',
-      priority: 'high',
-      targetArea: 'Teacher Roster & Analytics',
-      subject: 'Section Filter Resetting After Approving Pending Learner',
-      message:
-        'When filtering my Grade 8 roster by Section Rizal and approving a pending student enrollment, the table view occasionally resets back to All Sections. Could we keep the active section filter selected?',
-      status: 'open',
-      createdAt: '2026-10-29 16:40',
-    },
-  ];
-}
-
-function setCachedSystemFeedback(items: SystemFeedbackRecord[]) {
-  safeStorageSet(CACHE_KEY_FEEDBACK, JSON.stringify(items.slice(0, 150)));
-}
 
 // ----------------------------------------------------
 // System Feedback, Bug Reports & Feature Requests Operations
@@ -605,65 +526,7 @@ export async function initializeFirestoreSeed(): Promise<{
   emailNotifications?: EmailNotificationRecord[];
   systemFeedback?: SystemFeedbackRecord[];
 }> {
-  if (hasSeeded) {
-    return {
-      users: getCachedUsers(),
-      customModules: getCachedModules(),
-      auditLogs: getCachedAuditLogs(),
-      emailNotifications: getCachedEmailNotifications(),
-      systemFeedback: getCachedSystemFeedback(),
-    };
-  }
-  hasSeeded = true;
-
-  try {
-    const res = await fetch('/api/auth/session', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({}),
-    });
-    if (res.ok) {
-      const data = await res.json();
-      if (data?.token) {
-        inMemoryAuthToken = data.token;
-      }
-      if (Array.isArray(data.users) && data.users.length > 0) {
-        setCachedUsers(data.users);
-      }
-      if (Array.isArray(data.customModules) && data.customModules.length > 0) {
-        const moduleMap = new Map<string, Module>();
-        ALL_MODULES.forEach((m) => moduleMap.set(m.id, m));
-        data.customModules.forEach((m: Module) => moduleMap.set(m.id, m));
-        setCachedModules(Array.from(moduleMap.values()));
-      }
-      if (Array.isArray(data.auditLogs) && data.auditLogs.length > 0) {
-        setCachedAuditLogs(data.auditLogs);
-      }
-      if (Array.isArray(data.emailNotifications) && data.emailNotifications.length > 0) {
-        setCachedEmailNotifications(data.emailNotifications);
-        notifyEmailListeners(data.emailNotifications);
-      }
-      if (Array.isArray(data.systemFeedback) && data.systemFeedback.length > 0) {
-        setCachedSystemFeedback(data.systemFeedback);
-      }
-      return {
-        users: data.users,
-        customModules: data.customModules,
-        auditLogs: data.auditLogs,
-        emailNotifications: data.emailNotifications,
-        systemFeedback: data.systemFeedback || getCachedSystemFeedback(),
-      };
-    }
-  } catch (error) {
-    console.warn('Cloud SQL bootstrap fallback to cached data:', error);
-  }
-  return {
-    users: getCachedUsers(),
-    customModules: getCachedModules(),
-    auditLogs: getCachedAuditLogs(),
-    emailNotifications: getCachedEmailNotifications(),
-    systemFeedback: getCachedSystemFeedback(),
-  };
+  return privateBootstrap();
 }
 
 // ----------------------------------------------------
@@ -2278,3 +2141,9 @@ export async function recoverUserPassword(params: {
 
   return { success: true, user: updatedUser };
 }
+
+// Never reuse a prior viewer's in-memory directory or notifications after an account switch.
+supabase?.auth.onAuthStateChange(() => {
+  scopedUsers = []; scopedAudit = []; scopedEmails = []; scopedFeedback = [];
+  inMemoryAuthToken = null;
+});

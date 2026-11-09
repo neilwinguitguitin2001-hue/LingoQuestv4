@@ -39,6 +39,7 @@ import {
   UserAccount,
 } from '../types/lingoquest';
 import { generateUniqueClassCode } from '../services/firestoreService';
+import { privateLogin } from '../services/privacyService';
 import { useAuth } from '../context/AuthContext';
 import { soundFX } from '../utils/soundEffects';
 import { LingoQuestEmblem, LingoQuestLogo } from './LingoQuestLogo';
@@ -277,175 +278,16 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
     soundFX.playClick();
     setErrorMsg('');
     const trimmedUser = loginUsername.trim().toLowerCase();
-
-    if (loginRole === 'student') {
-      let found = students.find(
-        (s) =>
-          (s.username.toLowerCase() === trimmedUser ||
-            (s.lrn && s.lrn === trimmedUser) ||
-            (s.email && s.email.toLowerCase() === trimmedUser)) &&
-          s.password === loginPassword
-      );
-
-      // If user typed an email address, also authenticate with Firebase Auth
-      if (trimmedUser.includes('@')) {
-        setIsSubmitting(true);
-        try {
-          const fbProfile = await firebaseLogin(trimmedUser, loginPassword);
-          if (!found && fbProfile) {
-            found = {
-              id: fbProfile.uid,
-              role: 'student',
-              status: fbProfile.status || 'approved',
-              enrollmentStatus: 'approved',
-              name: fbProfile.displayName || fbProfile.name || trimmedUser.split('@')[0],
-              email: fbProfile.email || trimmedUser,
-              learnerId: fbProfile.learnerId || fbProfile.lrn || '129485080100',
-              lrn: fbProfile.lrn || fbProfile.learnerId || '129485080100',
-              gradeLevel: fbProfile.gradeLevel || 8,
-              schoolName: fbProfile.schoolName || fbProfile.school || DEPED_DAVAO_ORIENTAL_HIGH_SCHOOLS[0],
-              section: fbProfile.section || '',
-              classCode: fbProfile.classCode || 'LQ-ENG-8492',
-              teacherId: fbProfile.teacherId || 'tch-marco-solis',
-              username: fbProfile.username || trimmedUser.split('@')[0],
-              password: loginPassword,
-              points: 0,
-              badges: [],
-              completedModules: [],
-              progressByModule: {},
-              personalizationHistory: [],
-              writingSubmissions: [],
-              isActive: true,
-              joinedDate: (fbProfile.createdAt || new Date().toISOString()).split('T')[0],
-            };
-          }
-        } catch (fbErr: any) {
-          if (!found) {
-            soundFX.playIncorrect();
-            handleRecordFailedAttempt();
-            setErrorMsg(fbErr?.message || 'Invalid learner email or password.');
-            setIsSubmitting(false);
-            return;
-          }
-        } finally {
-          setIsSubmitting(false);
-        }
-      }
-
-      if (!found) {
-        soundFX.playIncorrect();
-        handleRecordFailedAttempt();
-        setErrorMsg('Invalid learner username/email/LRN or password.');
-        return;
-      }
-
-      if (found.status === 'suspended') {
-        soundFX.playIncorrect();
-        setErrorMsg('This student account is suspended. Please contact your English teacher.');
-        return;
-      }
-
-      if (found.status === 'pending' || found.status === 'rejected') {
-        handleResetFailedAttempts();
-        soundFX.playClick();
-        onLoginSuccess(found);
-        return;
-      }
-
-      if (!found.isActive) {
-        soundFX.playIncorrect();
-        setErrorMsg('This student account is currently deactivated.');
-        return;
-      }
-
+    setIsSubmitting(true);
+    try {
+      const account = await privateLogin(trimmedUser, loginPassword, loginRole);
       handleResetFailedAttempts();
-      soundFX.playCorrect();
-      onLoginSuccess(found);
-    } else if (loginRole === 'teacher') {
-      const found = teachers.find(
-        (t) =>
-          (t.username.toLowerCase() === trimmedUser ||
-            (t.depEdEmail && t.depEdEmail.toLowerCase() === trimmedUser)) &&
-          t.password === loginPassword
-      );
-
-      if (!found) {
-        soundFX.playIncorrect();
-        handleRecordFailedAttempt();
-        setErrorMsg('Invalid teacher username/DepEd email or password.');
-        return;
-      }
-
-      if (found.status === 'rejected') {
-        soundFX.playIncorrect();
-        setErrorMsg(
-          `Teacher Application Rejected: ${
-            found.rejectionReason || 'Credentials could not be verified by the Division Office.'
-          }`
-        );
-        return;
-      }
-
-      if (found.status === 'suspended') {
-        soundFX.playIncorrect();
-        setErrorMsg(
-          `Teacher Account Suspended: ${
-            found.suspensionReason || 'Account suspended by Division Administration.'
-          }`
-        );
-        return;
-      }
-
-      handleResetFailedAttempts();
-      soundFX.playCorrect();
-      onLoginSuccess(found);
-    } else {
-      // Administrator login
-      const found = admins.find((a) => {
-        const isMain =
-          a.isMainAdmin ||
-          a.adminLevel === 'main' ||
-          a.id === 'admin-deped-davao-oriental' ||
-          a.id === 'admin-elena-reyes' ||
-          !a.createdByAdminId;
-        const usernameMatch =
-          a.username.toLowerCase() === trimmedUser ||
-          a.email.toLowerCase() === trimmedUser ||
-          (isMain &&
-            (trimmedUser === 'deped.davaooriental' ||
-              trimmedUser === 'elena.reyes' ||
-              trimmedUser === 'deped-davaoor' ||
-              trimmedUser === 'admin.davaooriental@deped.gov.ph' ||
-              trimmedUser === 'division.admin@deped.gov.ph'));
-
-        const passwordMatch =
-          a.password === loginPassword ||
-          (isMain && loginPassword === 'DavOr@Admin2026!');
-
-        return usernameMatch && passwordMatch;
-      });
-
-      if (!found) {
-        soundFX.playIncorrect();
-        handleRecordFailedAttempt();
-        setErrorMsg('Invalid administrator credentials.');
-        return;
-      }
-
-      if (found.status === 'suspended' || !found.isActive) {
-        soundFX.playIncorrect();
-        setErrorMsg(
-          `Administrator Account Suspended: ${
-            found.suspensionReason || 'Account suspended by the Main Administrator.'
-          }`
-        );
-        return;
-      }
-
-      handleResetFailedAttempts();
-      soundFX.playCorrect();
-      onLoginSuccess(found);
-    }
+      onLoginSuccess(account);
+    } catch (error) {
+      handleRecordFailedAttempt();
+      setErrorMsg(error instanceof Error ? error.message : 'Unable to sign in.');
+    } finally { setIsSubmitting(false); }
+    return;
   };
 
   // Registration handler

@@ -32,6 +32,7 @@ import { soundFX } from './utils/soundEffects';
 import { isStudentModuleUnlocked } from './utils/progression';
 
 // Components
+import { PrivateAdminSummary } from './components/PrivateAdminSummary';
 import { AdminDashboardView } from './components/AdminDashboardView';
 import { AuthScreen } from './components/AuthScreen';
 import { IslandMapView } from './components/IslandMapView';
@@ -49,6 +50,7 @@ import { NetworkStatusToast } from './components/NetworkStatusToast';
 import { EmailNotificationCenter } from './components/EmailNotificationCenter';
 import { FloatingFeedbackWidget } from './components/FloatingFeedbackWidget';
 import { supabase } from './lib/supabase';
+import { privateBootstrap } from './services/privacyService';
 import { questGame } from './services/questGameService';
 import {
   InabelWovenStrip,
@@ -258,85 +260,11 @@ export default function App() {
   const { user: firebaseUser, logout: firebaseLogout } = useAuth();
 
   // Initialize Database / Local Storage
-  const [students, setStudents] = useState<StudentAccount[]>(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEY_STUDENTS);
-      if (saved) return JSON.parse(saved);
-    } catch (e) {
-      console.error('Failed to load students', e);
-    }
-    return INITIAL_STUDENTS;
-  });
+  const [students, setStudents] = useState<StudentAccount[]>([]);
 
-  const [teachers, setTeachers] = useState<TeacherAccount[]>(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEY_TEACHERS);
-      if (saved) {
-        const parsed = JSON.parse(saved);
-        if (Array.isArray(parsed) && parsed.length > 0) {
-          return normalizeTeacherClassCodes(parsed);
-        }
-      }
-    } catch (e) {
-      console.error('Failed to load teachers', e);
-    }
-    return normalizeTeacherClassCodes(INITIAL_TEACHERS);
-  });
+  const [teachers, setTeachers] = useState<TeacherAccount[]>([]);
 
-  const [admins, setAdmins] = useState<AdminAccount[]>(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEY_ADMINS);
-      if (saved) {
-        const parsed = JSON.parse(saved);
-        if (Array.isArray(parsed) && parsed.length > 0) {
-          return parsed
-            .filter((a: AdminAccount) => a.id !== 'admin-sub-clarissa-tan' && a.username !== 'clarissa.tan')
-            .map((a: AdminAccount) => {
-            const isMain =
-              a.isMainAdmin ||
-              a.adminLevel === 'main' ||
-              a.id === 'admin-elena-reyes' ||
-              a.id === 'admin-deped-davao-oriental' ||
-              a.name === 'Mrs. Elena G. Reyes';
-            if (isMain) {
-              return {
-                ...a,
-                id: 'admin-deped-davao-oriental',
-                name: 'Department of Education Davao Oriental',
-                email: 'admin.davaooriental@deped.gov.ph',
-                username: a.username === 'elena.reyes' ? 'deped.davaooriental' : (a.username || 'deped.davaooriental'),
-                password: 'DavOr@Admin2026!',
-                adminTitle: 'Division Administrative Office & Executive Main Administrator',
-                isMainAdmin: true,
-                adminLevel: 'main' as const,
-                permissions: {
-                  canApproveTeachers: true,
-                  canManageModules: true,
-                  canViewStudentProgress: true,
-                  canManageSubAdmins: true,
-                },
-              };
-            }
-            if (a.createdByName === 'Mrs. Elena G. Reyes') {
-              return {
-                ...a,
-                email: a.email && a.email.includes('@deped.gov.ph') ? a.email : 'admin.davaooriental@deped.gov.ph',
-                createdByName: 'Department of Education Davao Oriental',
-                createdByAdminId: 'admin-deped-davao-oriental',
-              };
-            }
-            return {
-              ...a,
-              email: a.email && a.email.includes('@deped.gov.ph') ? a.email : 'admin.davaooriental@deped.gov.ph',
-            };
-          });
-        }
-      }
-    } catch (e) {
-      console.error('Failed to load admins', e);
-    }
-    return INITIAL_ADMINS;
-  });
+  const [admins, setAdmins] = useState<AdminAccount[]>([]);
 
   const [modules, setModules] = useState<Module[]>(() => {
     const baseModules = normalizeModuleIslands(ALL_MODULES);
@@ -357,32 +285,16 @@ export default function App() {
     return baseModules;
   });
 
-  const [auditLogs, setAuditLogs] = useState<AuditLogEntry[]>(INITIAL_AUDIT_LOGS);
-  const [emailNotifications, setEmailNotifications] = useState<EmailNotificationRecord[]>(() =>
-    getCachedEmailNotifications()
-  );
-  const [systemFeedback, setSystemFeedback] = useState<SystemFeedbackRecord[]>(() =>
-    getCachedSystemFeedback()
-  );
+  const [auditLogs, setAuditLogs] = useState<AuditLogEntry[]>([]);
+  const [emailNotifications, setEmailNotifications] = useState<EmailNotificationRecord[]>([]);
+  const [systemFeedback, setSystemFeedback] = useState<SystemFeedbackRecord[]>([]);
   const [latestToastEmail, setLatestToastEmail] = useState<EmailNotificationRecord | null>(null);
   const [isEmailModalOpen, setIsEmailModalOpen] = useState<boolean>(false);
   const [emailModalFilter, setEmailModalFilter] = useState<string>('');
 
   // Active current user ID - clean start
-  const [currentUserId, setCurrentUserId] = useState<string>(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEY_CURRENT_USER);
-      if (saved && saved !== 'guest-explorer') return saved;
-      if (saved === 'guest-explorer') {
-        localStorage.removeItem(STORAGE_KEY_CURRENT_USER);
-      }
-    } catch (e) {
-      console.error('Failed to load current user ID', e);
-    }
-    return '';
-  });
+  const [currentUserId, setCurrentUserId] = useState<string>('');
 
-  // Current view state - defaults to AUTH unless user is already logged in
   const [currentView, setCurrentView] = useState<AppView>(() => {
     try {
       const saved = localStorage.getItem(STORAGE_KEY_CURRENT_USER);
@@ -508,8 +420,8 @@ export default function App() {
         subtitle: 'Syncing Bridge Restorations & Mastery Analytics',
       },
       LEADERBOARD: {
-        title: 'Opening Division Leaderboard...',
-        subtitle: 'Ranking DepEd Davao Oriental Explorers',
+        title: 'Opening Your Grade Activity Board...',
+        subtitle: 'Optional activity completions in your participating grade group',
       },
       PROFILE: {
         title: 'Loading Badges & Trophy Case...',
@@ -550,17 +462,20 @@ export default function App() {
     });
   }, [currentView, selectedModule]);
 
-  // Bootstrap Cloud SQL Seed & Hydrate State
+  // Hydrate only verified, server-authorized records. Ignore stale account-switch responses.
   useEffect(() => {
-    initializeFirestoreSeed()
+    let active = true;
+    (firebaseUser ? privateBootstrap() : Promise.resolve({ users: [], customModules: [], auditLogs: [], emailNotifications: [], systemFeedback: [] }))
       .then((res) => {
-        if (res?.users && Array.isArray(res.users) && res.users.length > 0) {
+        if (!active) return;
+        if (res?.users && Array.isArray(res.users)) {
           const dbStudents = res.users.filter((u): u is StudentAccount => u.role === 'student');
           const dbTeachers = res.users.filter((u): u is TeacherAccount => u.role === 'teacher');
           const dbAdmins = res.users.filter((u): u is AdminAccount => u.role === 'admin');
-          if (dbStudents.length > 0) setStudents(dbStudents);
-          if (dbTeachers.length > 0) setTeachers(normalizeTeacherClassCodes(dbTeachers));
-          if (dbAdmins.length > 0) setAdmins(dbAdmins);
+          setStudents(dbStudents);
+          setTeachers(normalizeTeacherClassCodes(dbTeachers));
+          setAdmins(dbAdmins);
+          setCurrentUserId(firebaseUser?.uid || '');
         }
         if (res?.customModules && Array.isArray(res.customModules) && res.customModules.length > 0) {
           setModules((prev) => {
@@ -588,8 +503,9 @@ export default function App() {
           setSystemFeedback(res.systemFeedback);
         }
       })
-      .catch((err) => console.warn('Seed notice:', err));
-  }, []);
+      .catch(() => { if (active) { setStudents([]); setTeachers([]); setAdmins([]); setCurrentUserId(''); } });
+    return () => { active = false; };
+  }, [firebaseUser?.uid]);
 
   // Subscribe to real-time email confirmation dispatches
   useEffect(() => {
@@ -612,17 +528,11 @@ export default function App() {
   }, []);
 
   // Save changes to localStorage
-  useEffect(() => {
-    safeSetItem(STORAGE_KEY_STUDENTS, JSON.stringify(students));
-  }, [students]);
 
-  useEffect(() => {
-    safeSetItem(STORAGE_KEY_TEACHERS, JSON.stringify(teachers));
-  }, [teachers]);
 
-  useEffect(() => {
-    safeSetItem(STORAGE_KEY_ADMINS, JSON.stringify(admins));
-  }, [admins]);
+
+
+
 
   useEffect(() => {
     try {
@@ -1055,6 +965,8 @@ export default function App() {
       durationMs: 620,
     });
     firebaseLogout().catch(() => {});
+    setStudents([]); setTeachers([]); setAdmins([]); setAuditLogs([]);
+    setEmailNotifications([]); setSystemFeedback([]); setLatestToastEmail(null);
     setCurrentUserId('');
     try {
       localStorage.removeItem(STORAGE_KEY_CURRENT_USER);
@@ -1779,7 +1691,8 @@ export default function App() {
               }}
               className="cursor-pointer shrink-0"
             >
-              <LingoQuestLogo size="md" textColor="light" animated={true} />
+              <span className="hidden sm:block"><LingoQuestLogo size="md" textColor="light" animated={true} /></span>
+              <span className="sm:hidden"><LingoQuestLogo size="sm" textColor="light" animated={true} /></span>
             </div>
 
             {/* Navigation Links based on Active Role */}
@@ -1851,7 +1764,7 @@ export default function App() {
                           : 'hover:text-[#22C55E] hover:bg-white/5'
                       }`}
                     >
-                      Leaderboard
+                      Grade Activity Board
                     </button>
                     <button
                       onClick={() => {
@@ -2068,6 +1981,7 @@ export default function App() {
               {/* Mobile Menu Toggle */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                aria-label="Open navigation"
                 className="lg:hidden p-2 rounded-xl text-[#FAF7F2] hover:bg-white/10"
               >
                 {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -2126,7 +2040,7 @@ export default function App() {
                     }}
                     className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold text-slate-200 hover:bg-white/5"
                   >
-                    Leaderboard
+                    Grade Activity Board
                   </button>
                   <button
                     onClick={() => {
@@ -2238,7 +2152,7 @@ export default function App() {
 
         {/* Administrator Dashboard View */}
         {currentView === 'ADMIN' && currentAdmin && (
-          <AdminDashboardView
+          <><PrivateAdminSummary /><AdminDashboardView
             currentAdmin={currentAdmin}
             admins={admins}
             allUsers={[...admins, ...teachers, ...students]}
@@ -2273,7 +2187,7 @@ export default function App() {
               }
               setCurrentView('MAP');
             }}
-          />
+          /></>
         )}
 
         {/* Teacher Dashboard View (Approved teachers only, scoped to their classCode) */}
@@ -2423,7 +2337,7 @@ export default function App() {
         {currentView === 'LEADERBOARD' && (
           <LeaderboardView
             currentStudent={currentStudent}
-            allStudents={students.filter((s) => s.status === 'approved')}
+            
           />
         )}
 

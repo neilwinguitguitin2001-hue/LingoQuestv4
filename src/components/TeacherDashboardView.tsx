@@ -2170,7 +2170,7 @@ export const TeacherDashboardView: React.FC<TeacherDashboardViewProps> = ({
                         </p>
                       </div>
                       <div className="text-xs font-bold text-slate-500 bg-slate-50 px-3 py-1.5 rounded-xl border border-slate-200">
-                        {filteredAnalyticsStudents.length} Students Ranked
+                        {filteredAnalyticsStudents.length} Assigned records
                       </div>
                     </div>
 
@@ -2179,7 +2179,7 @@ export const TeacherDashboardView: React.FC<TeacherDashboardViewProps> = ({
                         <table className="w-full text-left text-xs">
                           <thead>
                             <tr className="bg-slate-50 text-slate-400 font-semibold uppercase tracking-wider border-b border-slate-200 text-[11px]">
-                              <th className="py-3.5 px-4">Rank & Student</th>
+                              <th className="py-3.5 px-4">Student</th>
                               <th className="py-3.5 px-3">LRN / DepEd ID</th>
                               <th className="py-3.5 px-3">Grade & Section</th>
                               <th className="py-3.5 px-3">Quiz Average</th>
@@ -2204,22 +2204,9 @@ export const TeacherDashboardView: React.FC<TeacherDashboardViewProps> = ({
 
                               return (
                                 <tr key={st.id} className="hover:bg-slate-50/70 transition">
-                                  {/* Rank & Student */}
+                                  {/* Student */}
                                   <td className="py-3.5 px-4">
                                     <div className="flex items-center gap-3">
-                                      <div
-                                        className={`w-7 h-7 rounded-xl flex items-center justify-center text-xs font-black shrink-0 ${
-                                          index === 0
-                                            ? 'bg-amber-400 text-slate-950 shadow-xs'
-                                            : index === 1
-                                            ? 'bg-slate-300 text-slate-900 shadow-xs'
-                                            : index === 2
-                                            ? 'bg-amber-700 text-white shadow-xs'
-                                            : 'bg-slate-100 text-slate-500'
-                                        }`}
-                                      >
-                                        #{index + 1}
-                                      </div>
                                       <div>
                                         <div className="font-bold text-slate-900">{st.name}</div>
                                         <div className="text-[11px] text-slate-400">@{st.username}</div>

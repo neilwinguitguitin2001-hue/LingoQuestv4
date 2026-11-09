@@ -114,6 +114,7 @@ export const StudentProgressView: React.FC<StudentProgressViewProps> = ({
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-8 space-y-6">
+      <p className="rounded-xl border border-sky-200 bg-sky-50 p-4 text-sm text-sky-950">Your scores and learning progress are private to you and authorized staff. Other students cannot open your individual performance records. Your optional grade activity board shows only an alias and activity-completion points.</p>
       {/* Top Banner with Deep Navy Theme */}
       <div className="bg-gradient-to-r from-[#0A192F] via-[#0F3460] to-[#1E3E62] rounded-3xl text-white relative overflow-hidden border-2 border-[#231F20] linocut-card">
         <InabelHeaderStrip variant="royal" label="DepEd Davao Oriental • Learner Progress Analytics" />

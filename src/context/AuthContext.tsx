@@ -94,8 +94,9 @@ async function loadProfile(id: string): Promise<FirestoreUserDoc | null> {
         .maybeSingle()
       if (!error && data) return mapProfile(data)
     } catch {
-      // Fallback to Firestore
+      // A Supabase failure must not query a different account store.
     }
+    return null
   }
   return getUserProfileFromFirestore(id)
 }

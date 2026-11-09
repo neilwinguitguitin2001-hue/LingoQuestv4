@@ -928,8 +928,8 @@ export const StudentDashboardView: React.FC<StudentDashboardViewProps> = ({
                   </span>
                 </div>
                 <div className="flex justify-between py-1">
-                  <span className="text-slate-500">Division Rank:</span>
-                  <span className="font-bold text-amber-600">Active Competitor</span>
+                  <span className="text-slate-500">Activity board:</span>
+                  <span className="font-bold text-amber-600">Optional participation</span>
                 </div>
               </div>
 
@@ -943,7 +943,7 @@ export const StudentDashboardView: React.FC<StudentDashboardViewProps> = ({
                   className="w-full mt-2 py-2 rounded-xl bg-purple-50 hover:bg-purple-100 text-purple-700 text-xs font-bold transition flex items-center justify-center gap-1.5 cursor-pointer"
                 >
                   <Award className="w-3.5 h-3.5" />
-                  <span>View Division Leaderboard</span>
+                  <span>View My Grade Activity Board</span>
                 </button>
               )}
               </div>
@@ -1164,7 +1164,7 @@ export const StudentDashboardView: React.FC<StudentDashboardViewProps> = ({
                     className="w-full px-3.5 py-2.5 bg-slate-50 text-slate-900 text-xs rounded-xl border border-slate-200 focus:border-blue-500 focus:bg-white outline-none transition font-medium"
                   />
                   <p className="text-[11px] text-slate-400 mt-1">
-                    Your name shown on leaderboards, quest certificates, and class rosters.
+                    Your name is used for your account and authorized class records. Activity boards use system-generated aliases.
                   </p>
                 </div>
 
