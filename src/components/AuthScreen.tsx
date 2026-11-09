@@ -633,7 +633,7 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
         <div className="max-w-xl mx-auto w-full">
           <div className="relative overflow-hidden bg-[#0B1E36]/95 border border-[#2378A6] backdrop-blur-md rounded-3xl p-6 sm:p-8 shadow-2xl shadow-black/40 space-y-5">
               
-              <div className="absolute inset-x-0 top-0 pointer-events-none" aria-hidden="true"><InabelStrip variant="royal" height={10}/></div>
+              <div className="absolute inset-x-0 top-0 pointer-events-none" aria-hidden="true"><InabelStrip variant="royal" height={16}/></div>
               {/* Card Header: Mode & Switcher */}
               <div className="flex items-center justify-between border-b border-[#1A385E] pb-4">
                 <div>
@@ -1255,7 +1255,7 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
           </div>
 
           <div className="overflow-hidden rounded-3xl border-2 border-[#123B63] bg-[#07192F] shadow-[0_4px_0_#031024]">
-            <InabelStrip variant="royal" height={10}/>
+            <InabelStrip variant="royal" height={16}/>
             <InteractiveIslandMap
               mode="signin"
               activeIslandId={selectedMapIslandId}
