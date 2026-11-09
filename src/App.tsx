@@ -1,3 +1,4 @@
+import {LegalCenter,LegalLinks} from './components/LegalCenter';
 import React, { useEffect, useRef, useState } from 'react';
 import {
   ALL_MODULES,
@@ -2397,8 +2398,10 @@ export default function App() {
               </p>
             </div>
           </div>
+          <LegalLinks/>
         </footer>
       )}
+      <LegalCenter user={currentUser} />
       {/* Floating Feedback, Bug Report, Feature Request & Help/FAQ Widget for Students & Teachers */}
       {currentView !== 'AUTH' && (currentStudent || currentTeacher) && (
         <FloatingFeedbackWidget

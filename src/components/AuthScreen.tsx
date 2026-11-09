@@ -1,3 +1,4 @@
+import {LegalLinks,RegistrationNotices} from './LegalCenter';
 import React, { useEffect, useState } from 'react';
 import {
   AlertCircle,
@@ -39,6 +40,8 @@ import {
   UserAccount,
 } from '../types/lingoquest';
 import { generateUniqueClassCode } from '../services/firestoreService';
+import {NOTICE_VERSION} from '../data/legalNotices';
+import {privateRequest} from '../services/privacyService';
 import { privateLogin } from '../services/privacyService';
 import { useAuth } from '../context/AuthContext';
 import { soundFX } from '../utils/soundEffects';
@@ -106,6 +109,8 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
   // Mode and Role Tabs
   const [mode, setMode] = useState<'login' | 'register'>('login');
   const [loginRole, setLoginRole] = useState<'student' | 'teacher' | 'admin'>('student');
+  const [termsAccepted,setTermsAccepted]=useState(false);
+  const [privacyRead,setPrivacyRead]=useState(false);
   const [registerRole, setRegisterRole] = useState<'student' | 'teacher'>('student');
 
   // Login form fields
@@ -293,6 +298,7 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
   // Registration handler
   const handleRegisterSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if(!termsAccepted||!privacyRead){setErrorMsg('Please read the Privacy Notice and acknowledge it, and accept the Terms of Use before registering. Research consent remains separate.');return;}
     soundFX.playClick();
     setErrorMsg('');
     setIsSubmitting(true);
@@ -372,6 +378,7 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
         });
 
         soundFX.playBridgeRestored();
+        await privateRequest({action:'acknowledgeNotice',version:NOTICE_VERSION,termsAccepted:true},newStudent.id).catch(()=>undefined);
         onLoginSuccess(newStudent);
       } else {
         // Teacher registration
@@ -408,6 +415,7 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
         });
 
         soundFX.playBridgeRestored();
+        await privateRequest({action:'acknowledgeNotice',version:NOTICE_VERSION,termsAccepted:true},newTeacher.id).catch(()=>undefined);
         setRegisteredTeacherResult(newTeacher);
       }
     } catch (err: any) {
@@ -845,6 +853,7 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
               {/* ---------------- REGISTER MODE ---------------- */}
               {mode === 'register' && (
                 <div className="space-y-4">
+                  <RegistrationNotices terms={termsAccepted} privacy={privacyRead} onTerms={setTermsAccepted} onPrivacy={setPrivacyRead}/>
                   {/* Role Switch for Register */}
                   <div className="grid grid-cols-2 gap-1.5 p-1.5 bg-[#07172C] border border-[#16355B] rounded-2xl">
                     <button
@@ -1763,6 +1772,7 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
             Region XI · Davao Oriental · English Learning Adventure
           </div>
         </div>
+        <LegalLinks/>
       </footer>
     </div>
   );

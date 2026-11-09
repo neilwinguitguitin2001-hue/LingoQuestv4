@@ -44,6 +44,7 @@ export async function database(){
  }
  await db.query(`insert into leaderboard values($1,'Historic name',456,7)`,[uid(1)]);
  await db.exec(await fs.readFile(new URL('../../supabase/changes/privacy_grade_leaderboard.sql',import.meta.url),'utf8'));
+ await db.exec(await fs.readFile(new URL('../../supabase/changes/privacy_notice_acknowledgements.sql',import.meta.url),'utf8'));
  return db;
 }
 export async function asUser<T>(db:PGlite,id:string|null,fn:()=>Promise<T>,role='authenticated'):Promise<T>{

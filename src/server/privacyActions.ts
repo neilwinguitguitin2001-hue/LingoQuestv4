@@ -3,8 +3,13 @@ export type PrivacyRpc = (name: string, args?: Record<string,unknown>) => Promis
 export async function privacyAction(body: unknown, rpc: PrivacyRpc): Promise<unknown> {
   if(!body||typeof body!=='object'||Array.isArray(body))throw Error('Invalid request');
   const b=body as Record<string,unknown>;
-  const allowed:Record<string,string[]>={board:['action','grade'],visibility:['action','visible'],report:['action','studentId'],export:['action','studentId'],summary:['action'],bootstrap:['action']};
+  const allowed:Record<string,string[]>={board:['action','grade'],visibility:['action','visible'],report:['action','studentId'],export:['action','studentId'],summary:['action'],bootstrap:['action'],noticeStatus:['action'],acknowledgeNotice:['action','version','termsAccepted']};
   const action=String(b.action);if(!allowed[action]||Object.keys(b).some(k=>!allowed[action].includes(k)))throw Error('Invalid request');
+  if(action==='noticeStatus')return rpc('privacy_notice_status');
+  if(action==='acknowledgeNotice'){
+    if(b.version!=='2026-11-09-preview-1'||typeof b.termsAccepted!=='boolean')throw Error('Invalid acknowledgement');
+    return rpc('privacy_acknowledge_notice',{p_version:b.version,p_terms:b.termsAccepted});
+  }
   if(action==='board'){
     if(b.grade!==undefined&&(!Number.isInteger(b.grade)||Number(b.grade)<7||Number(b.grade)>10))throw Error('Invalid grade');
     return rpc('privacy_grade_board',{p_grade:b.grade??null});

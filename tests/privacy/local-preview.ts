@@ -35,8 +35,8 @@ app.get('/rest/v1/profiles',async(req,res)=>{
 let queue=Promise.resolve();function serial<T>(fn:()=>Promise<T>):Promise<T>{const next=queue.then(fn,fn);queue=next.then(()=>{},()=>{});return next;}
 app.post('/rest/v1/rpc/:name',async(req,res)=>{
  const id=tokens.get(req.headers.authorization?.slice(7)||'');if(!id)return res.status(401).json({message:'Sign in'});
- const names=['privacy_grade_board','privacy_set_board_visibility','privacy_individual_report','privacy_admin_summary','privacy_bootstrap'];if(!names.includes(req.params.name))return res.status(403).json({message:'Not available'});
- try{const namesArgs:Record<string,string[]>={privacy_grade_board:['p_grade'],privacy_set_board_visibility:['p_visible'],privacy_individual_report:['p_student'],privacy_admin_summary:[],privacy_bootstrap:[]};const keys=namesArgs[req.params.name];if(Object.keys(req.body).some(k=>!keys.includes(k)))throw Error('Invalid arguments');
+ const names=['privacy_grade_board','privacy_set_board_visibility','privacy_individual_report','privacy_admin_summary','privacy_bootstrap','privacy_notice_status','privacy_acknowledge_notice'];if(!names.includes(req.params.name))return res.status(403).json({message:'Not available'});
+ try{const namesArgs:Record<string,string[]>={privacy_grade_board:['p_grade'],privacy_set_board_visibility:['p_visible'],privacy_individual_report:['p_student'],privacy_admin_summary:[],privacy_bootstrap:[],privacy_notice_status:[],privacy_acknowledge_notice:['p_version','p_terms']};const keys=namesArgs[req.params.name];if(Object.keys(req.body).some(k=>!keys.includes(k)))throw Error('Invalid arguments');
  const values=keys.filter(k=>k in req.body).map(k=>req.body[k]);const result=await serial(()=>asUser(db,id,async()=>{const r=await db.query<any>(`select public.${req.params.name}(${values.map((_,i)=>'$'+(i+1)).join(',')}) as data`,values);return r.rows[0].data;}));res.json(result);
  }catch{res.status(403).json({message:'Record is not available',code:'42501'});}
 });
