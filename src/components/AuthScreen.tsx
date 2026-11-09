@@ -1,3 +1,7 @@
+import {RecoveryRequest} from './PasswordRecovery';
+import {InabelStrip} from './InabelStrip';
+import {InabelWovenStrip} from './FilipinianaMotifs';
+import {LegalLinks,RegistrationNotices} from './LegalCenter';
 import React, { useEffect, useState } from 'react';
 import {
   AlertCircle,
@@ -39,6 +43,9 @@ import {
   UserAccount,
 } from '../types/lingoquest';
 import { generateUniqueClassCode } from '../services/firestoreService';
+import {NOTICE_VERSION} from '../data/legalNotices';
+import {privateRequest} from '../services/privacyService';
+import { privateLogin } from '../services/privacyService';
 import { useAuth } from '../context/AuthContext';
 import { soundFX } from '../utils/soundEffects';
 import { LingoQuestEmblem, LingoQuestLogo } from './LingoQuestLogo';
@@ -99,12 +106,13 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
   const {
     login: firebaseLogin,
     signup: firebaseSignup,
-    resetPassword: firebaseResetPassword,
   } = useAuth();
 
   // Mode and Role Tabs
   const [mode, setMode] = useState<'login' | 'register'>('login');
   const [loginRole, setLoginRole] = useState<'student' | 'teacher' | 'admin'>('student');
+  const [termsAccepted,setTermsAccepted]=useState(false);
+  const [privacyRead,setPrivacyRead]=useState(false);
   const [registerRole, setRegisterRole] = useState<'student' | 'teacher'>('student');
 
   // Login form fields
@@ -152,24 +160,8 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
   const [stuUsername, setStuUsername] = useState('');
   const [stuPassword, setStuPassword] = useState('');
 
-  // Password Recovery States
   const [showRecoveryModal, setShowRecoveryModal] = useState(false);
-  const [recoveryRole, setRecoveryRole] = useState<'student' | 'teacher'>('student');
-  const [recoveryIdentifier, setRecoveryIdentifier] = useState(''); // username, LRN, or employee ID
-  const [recoveryEmail, setRecoveryEmail] = useState('');
-  const [recoveryStep, setRecoveryStep] = useState<'request' | 'verify' | 'new_password' | 'done'>('request');
-  const [generatedRecoveryCode, setGeneratedRecoveryCode] = useState('');
-  const [enteredRecoveryCode, setEnteredRecoveryCode] = useState('');
-  const [recoveryNewPassword, setRecoveryNewPassword] = useState('');
-  const [recoveryConfirmPassword, setRecoveryConfirmPassword] = useState('');
-
-  // Interactive Curriculum Archipelago Map State
   const [selectedMapIslandId, setSelectedMapIslandId] = useState<string>('discovery-dinosaur');
-  const [showRecoveryNewPassword, setShowRecoveryNewPassword] = useState(false);
-  const [recoverySubmitting, setRecoverySubmitting] = useState(false);
-  const [recoveryError, setRecoveryError] = useState<string | null>(null);
-  const [recoveryNotice, setRecoveryNotice] = useState<string | null>(null);
-  const [simulatedCodeAlert, setSimulatedCodeAlert] = useState<{ email: string; code: string } | null>(null);
 
   // Teacher Registration form fields
   const [tchName, setTchName] = useState('');
@@ -277,180 +269,22 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
     soundFX.playClick();
     setErrorMsg('');
     const trimmedUser = loginUsername.trim().toLowerCase();
-
-    if (loginRole === 'student') {
-      let found = students.find(
-        (s) =>
-          (s.username.toLowerCase() === trimmedUser ||
-            (s.lrn && s.lrn === trimmedUser) ||
-            (s.email && s.email.toLowerCase() === trimmedUser)) &&
-          s.password === loginPassword
-      );
-
-      // If user typed an email address, also authenticate with Firebase Auth
-      if (trimmedUser.includes('@')) {
-        setIsSubmitting(true);
-        try {
-          const fbProfile = await firebaseLogin(trimmedUser, loginPassword);
-          if (!found && fbProfile) {
-            found = {
-              id: fbProfile.uid,
-              role: 'student',
-              status: fbProfile.status || 'approved',
-              enrollmentStatus: 'approved',
-              name: fbProfile.displayName || fbProfile.name || trimmedUser.split('@')[0],
-              email: fbProfile.email || trimmedUser,
-              learnerId: fbProfile.learnerId || fbProfile.lrn || '129485080100',
-              lrn: fbProfile.lrn || fbProfile.learnerId || '129485080100',
-              gradeLevel: fbProfile.gradeLevel || 8,
-              schoolName: fbProfile.schoolName || fbProfile.school || DEPED_DAVAO_ORIENTAL_HIGH_SCHOOLS[0],
-              section: fbProfile.section || '',
-              classCode: fbProfile.classCode || 'LQ-ENG-8492',
-              teacherId: fbProfile.teacherId || 'tch-marco-solis',
-              username: fbProfile.username || trimmedUser.split('@')[0],
-              password: loginPassword,
-              points: 0,
-              badges: [],
-              completedModules: [],
-              progressByModule: {},
-              personalizationHistory: [],
-              writingSubmissions: [],
-              isActive: true,
-              joinedDate: (fbProfile.createdAt || new Date().toISOString()).split('T')[0],
-            };
-          }
-        } catch (fbErr: any) {
-          if (!found) {
-            soundFX.playIncorrect();
-            handleRecordFailedAttempt();
-            setErrorMsg(fbErr?.message || 'Invalid learner email or password.');
-            setIsSubmitting(false);
-            return;
-          }
-        } finally {
-          setIsSubmitting(false);
-        }
-      }
-
-      if (!found) {
-        soundFX.playIncorrect();
-        handleRecordFailedAttempt();
-        setErrorMsg('Invalid learner username/email/LRN or password.');
-        return;
-      }
-
-      if (found.status === 'suspended') {
-        soundFX.playIncorrect();
-        setErrorMsg('This student account is suspended. Please contact your English teacher.');
-        return;
-      }
-
-      if (found.status === 'pending' || found.status === 'rejected') {
-        handleResetFailedAttempts();
-        soundFX.playClick();
-        onLoginSuccess(found);
-        return;
-      }
-
-      if (!found.isActive) {
-        soundFX.playIncorrect();
-        setErrorMsg('This student account is currently deactivated.');
-        return;
-      }
-
+    setIsSubmitting(true);
+    try {
+      const account = await privateLogin(trimmedUser, loginPassword, loginRole);
       handleResetFailedAttempts();
-      soundFX.playCorrect();
-      onLoginSuccess(found);
-    } else if (loginRole === 'teacher') {
-      const found = teachers.find(
-        (t) =>
-          (t.username.toLowerCase() === trimmedUser ||
-            (t.depEdEmail && t.depEdEmail.toLowerCase() === trimmedUser)) &&
-          t.password === loginPassword
-      );
-
-      if (!found) {
-        soundFX.playIncorrect();
-        handleRecordFailedAttempt();
-        setErrorMsg('Invalid teacher username/DepEd email or password.');
-        return;
-      }
-
-      if (found.status === 'rejected') {
-        soundFX.playIncorrect();
-        setErrorMsg(
-          `Teacher Application Rejected: ${
-            found.rejectionReason || 'Credentials could not be verified by the Division Office.'
-          }`
-        );
-        return;
-      }
-
-      if (found.status === 'suspended') {
-        soundFX.playIncorrect();
-        setErrorMsg(
-          `Teacher Account Suspended: ${
-            found.suspensionReason || 'Account suspended by Division Administration.'
-          }`
-        );
-        return;
-      }
-
-      handleResetFailedAttempts();
-      soundFX.playCorrect();
-      onLoginSuccess(found);
-    } else {
-      // Administrator login
-      const found = admins.find((a) => {
-        const isMain =
-          a.isMainAdmin ||
-          a.adminLevel === 'main' ||
-          a.id === 'admin-deped-davao-oriental' ||
-          a.id === 'admin-elena-reyes' ||
-          !a.createdByAdminId;
-        const usernameMatch =
-          a.username.toLowerCase() === trimmedUser ||
-          a.email.toLowerCase() === trimmedUser ||
-          (isMain &&
-            (trimmedUser === 'deped.davaooriental' ||
-              trimmedUser === 'elena.reyes' ||
-              trimmedUser === 'deped-davaoor' ||
-              trimmedUser === 'admin.davaooriental@deped.gov.ph' ||
-              trimmedUser === 'division.admin@deped.gov.ph'));
-
-        const passwordMatch =
-          a.password === loginPassword ||
-          (isMain && loginPassword === 'DavOr@Admin2026!');
-
-        return usernameMatch && passwordMatch;
-      });
-
-      if (!found) {
-        soundFX.playIncorrect();
-        handleRecordFailedAttempt();
-        setErrorMsg('Invalid administrator credentials.');
-        return;
-      }
-
-      if (found.status === 'suspended' || !found.isActive) {
-        soundFX.playIncorrect();
-        setErrorMsg(
-          `Administrator Account Suspended: ${
-            found.suspensionReason || 'Account suspended by the Main Administrator.'
-          }`
-        );
-        return;
-      }
-
-      handleResetFailedAttempts();
-      soundFX.playCorrect();
-      onLoginSuccess(found);
-    }
+      onLoginSuccess(account);
+    } catch (error) {
+      handleRecordFailedAttempt();
+      setErrorMsg(error instanceof Error ? error.message : 'Unable to sign in.');
+    } finally { setIsSubmitting(false); }
+    return;
   };
 
   // Registration handler
   const handleRegisterSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if(!termsAccepted||!privacyRead){setErrorMsg('Please read the Privacy Notice and acknowledge it, and accept the Terms of Use before registering. Research consent remains separate.');return;}
     soundFX.playClick();
     setErrorMsg('');
     setIsSubmitting(true);
@@ -530,6 +364,7 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
         });
 
         soundFX.playBridgeRestored();
+        await privateRequest({action:'acknowledgeNotice',version:NOTICE_VERSION,termsAccepted:true},newStudent.id).catch(()=>undefined);
         onLoginSuccess(newStudent);
       } else {
         // Teacher registration
@@ -566,6 +401,7 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
         });
 
         soundFX.playBridgeRestored();
+        await privateRequest({action:'acknowledgeNotice',version:NOTICE_VERSION,termsAccepted:true},newTeacher.id).catch(()=>undefined);
         setRegisteredTeacherResult(newTeacher);
       }
     } catch (err: any) {
@@ -575,157 +411,19 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
     }
   };
 
-  // ----------------------------------------------------
-  // Password Recovery Handlers
-  // ----------------------------------------------------
-  const handleRequestRecoveryCode = (e: React.FormEvent) => {
-    e.preventDefault();
-    soundFX.playClick();
-    setRecoveryError(null);
-    setRecoveryNotice(null);
-
-    const cleanEmail = recoveryEmail.trim().toLowerCase();
-    const cleanId = recoveryIdentifier.trim().toLowerCase();
-
-    if (!cleanEmail || !cleanEmail.includes('@') || !cleanEmail.includes('.')) {
-      setRecoveryError('Please enter a valid email address.');
-      return;
-    }
-
-    // Verify account exists
-    let matchedUser: UserAccount | undefined;
-    if (recoveryRole === 'student') {
-      matchedUser = students.find((s) => {
-        const emailMatch = s.email && s.email.toLowerCase() === cleanEmail;
-        if (cleanId) {
-          const idMatch = s.username.toLowerCase() === cleanId || s.learnerId === cleanId;
-          return emailMatch || idMatch;
-        }
-        return emailMatch;
-      });
-    } else {
-      matchedUser = teachers.find((t) => {
-        const emailMatch =
-          (t.depEdEmail && t.depEdEmail.toLowerCase() === cleanEmail) ||
-          (t.email && t.email.toLowerCase() === cleanEmail);
-        if (cleanId) {
-          const idMatch =
-            t.username.toLowerCase() === cleanId ||
-            t.employeeId.toLowerCase() === cleanId;
-          return emailMatch || idMatch;
-        }
-        return emailMatch;
-      });
-    }
-
-    if (!matchedUser) {
-      soundFX.playIncorrect();
-      setRecoveryError(
-        `No registered ${recoveryRole} account found for "${cleanEmail}"${
-          cleanId ? ` or username "${cleanId}"` : ''
-        }. Please check your email or registration.`
-      );
-      return;
-    }
-
-    // Also trigger Firebase Auth password reset email if valid email is entered
-    firebaseResetPassword(cleanEmail).catch(() => {
-      // Non-blocking if user is a local seed user without a Firebase Auth record yet
-    });
-
-    // Generate 6-digit recovery code
-    const code = Math.floor(100000 + Math.random() * 900000).toString();
-    setGeneratedRecoveryCode(code);
-    setEnteredRecoveryCode('');
-    setSimulatedCodeAlert({
-      email: cleanEmail,
-      code,
-    });
-    setRecoveryNotice(`Password reset link & one-time security code sent to ${cleanEmail}`);
-    setRecoveryStep('verify');
-    soundFX.playPass();
-  };
-
-  const handleVerifyRecoveryCode = (e: React.FormEvent) => {
-    e.preventDefault();
-    soundFX.playClick();
-    setRecoveryError(null);
-
-    if (!enteredRecoveryCode.trim()) {
-      setRecoveryError('Please enter the 6-digit verification code.');
-      return;
-    }
-
-    if (enteredRecoveryCode.trim() !== generatedRecoveryCode.trim()) {
-      soundFX.playIncorrect();
-      setRecoveryError('Invalid verification code. Please check your email or use the simulated code.');
-      return;
-    }
-
-    soundFX.playPass();
-    setRecoveryStep('new_password');
-    setRecoveryError(null);
-  };
-
-  const handleResetRecoveryPassword = async (e: React.FormEvent) => {
-    e.preventDefault();
-    soundFX.playClick();
-    setRecoveryError(null);
-
-    if (!recoveryNewPassword.trim() || recoveryNewPassword.trim().length < 4) {
-      setRecoveryError('New password must be at least 4 characters long.');
-      return;
-    }
-
-    if (recoveryNewPassword !== recoveryConfirmPassword) {
-      setRecoveryError('New password and confirmation password do not match.');
-      return;
-    }
-
-    if (!onRecoverPassword) {
-      setRecoveryError('Recovery service unavailable.');
-      return;
-    }
-
-    setRecoverySubmitting(true);
-    try {
-      const res = await onRecoverPassword(
-        recoveryRole,
-        recoveryIdentifier.trim(),
-        recoveryEmail.trim().toLowerCase(),
-        recoveryNewPassword.trim()
-      );
-
-      if (res.success && res.user) {
-        soundFX.playBridgeRestored();
-        setRecoveryStep('done');
-        // Pre-fill login credentials
-        setLoginRole(recoveryRole);
-        setLoginUsername(res.user.username || recoveryIdentifier || recoveryEmail);
-        setLoginPassword(recoveryNewPassword);
-      } else {
-        soundFX.playIncorrect();
-        setRecoveryError(res.error || 'Failed to reset password.');
-      }
-    } catch (err: any) {
-      setRecoveryError(err?.message || 'Error occurred while resetting password.');
-    } finally {
-      setRecoverySubmitting(false);
-    }
-  };
-
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#06162B] via-[#091F3C] to-[#0D2A4F] text-slate-100 flex flex-col justify-between selection:bg-amber-400 selection:text-slate-950 relative overflow-hidden">
       {/* Ambient Tropical Glow Accents */}
       <div className="absolute top-0 left-1/4 -translate-x-1/2 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/3 right-10 w-[500px] h-[500px] bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/3 right-10 w-[500px] h-[500px] bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute top-1/2 left-10 w-80 h-80 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
 
       {/* Top Header */}
-      <header className="relative z-20 w-full border-b border-[#143257]/80 bg-[#071930]/90 backdrop-blur-md px-6 py-4">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
+      <header className="relative z-20 w-full border-b border-[#143257]/80 bg-[#071930]/90 backdrop-blur-md px-4 sm:px-6 pt-6 pb-4">
+        <div className="absolute inset-x-0 top-0 pointer-events-none" aria-hidden="true"><InabelWovenStrip variant="azure" height={8}/></div>
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-3">
           {/* Official Brand Logo */}
-          <LingoQuestLogo size="md" textColor="light" animated={true} />
+          <span className="sm:hidden"><LingoQuestLogo size="sm" textColor="light" animated={true}/></span><span className="hidden sm:block"><LingoQuestLogo size="md" textColor="light" animated={true}/></span>
 
           {/* Action on Header */}
           <div className="flex items-center gap-3">
@@ -765,7 +463,7 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
 
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black font-display text-white tracking-tight leading-[1.15] text-balance">
             Journey through the Islands of{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-teal-300 to-amber-300">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-teal-300 to-sky-200">
               English Mastery
             </span>
             .
@@ -778,8 +476,9 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
 
         {/* Top First: Catchy, Interactive Auth Card (Sign In & Registration) */}
         <div className="max-w-xl mx-auto w-full">
-          <div className="bg-[#0B1E36]/95 border border-[#1B3F6D] backdrop-blur-md rounded-3xl p-6 sm:p-8 shadow-2xl shadow-black/40 space-y-5">
+          <div className="relative overflow-hidden bg-[#0B1E36]/95 border border-[#2378A6] backdrop-blur-md rounded-3xl p-6 sm:p-8 shadow-2xl shadow-black/40 space-y-5">
               
+              <div className="absolute inset-x-0 top-0 pointer-events-none" aria-hidden="true"><InabelStrip variant="royal" height={16}/></div>
               {/* Card Header: Mode & Switcher */}
               <div className="flex items-center justify-between border-b border-[#1A385E] pb-4">
                 <div>
@@ -921,18 +620,18 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
                         <label className="block text-xs font-bold text-slate-300">
                           Password
                         </label>
-                        {loginRole !== 'admin' && (
+                        {(
                           <button
                             type="button"
                             onClick={() => {
                               soundFX.playClick();
-                              setRecoveryRole(loginRole as 'student' | 'teacher');
-                              setRecoveryEmail('');
-                              setRecoveryIdentifier(loginUsername);
-                              setRecoveryStep('request');
-                              setRecoveryError(null);
-                              setRecoveryNotice(null);
-                              setSimulatedCodeAlert(null);
+
+
+
+
+
+
+
                               setShowRecoveryModal(true);
                             }}
                             className="text-[11px] font-semibold text-sky-400 hover:text-sky-300 hover:underline transition cursor-pointer"
@@ -988,7 +687,7 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
                       <LogIn className="w-4 h-4" />
                       <span>
                         {loginRole === 'student'
-                          ? 'Enter Student Island Map'
+                          ? 'Enter Learning Home'
                           : loginRole === 'teacher'
                           ? 'Access Faculty Dashboard'
                           : 'Access Division Administration'}
@@ -1003,6 +702,7 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
               {/* ---------------- REGISTER MODE ---------------- */}
               {mode === 'register' && (
                 <div className="space-y-4">
+                  <RegistrationNotices terms={termsAccepted} privacy={privacyRead} onTerms={setTermsAccepted} onPrivacy={setPrivacyRead}/>
                   {/* Role Switch for Register */}
                   <div className="grid grid-cols-2 gap-1.5 p-1.5 bg-[#07172C] border border-[#16355B] rounded-2xl">
                     <button
@@ -1399,11 +1099,14 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
             </span>
           </div>
 
-          <InteractiveIslandMap
-            mode="signin"
-            activeIslandId={selectedMapIslandId}
-            onSelectIsland={(island) => setSelectedMapIslandId(island.id)}
-          />
+          <div className="overflow-hidden rounded-3xl border-2 border-[#123B63] bg-[#07192F] shadow-[0_4px_0_#031024]">
+            <InabelStrip variant="royal" height={16}/>
+            <InteractiveIslandMap
+              mode="signin"
+              activeIslandId={selectedMapIslandId}
+              onSelectIsland={(island) => setSelectedMapIslandId(island.id)}
+            />
+          </div>
         </div>
 
         {/* Supporting Curriculum Highlights & Storytelling (Underneath Island Map) */}
@@ -1562,355 +1265,11 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
         </div>
       )}
 
-      {/* Password Recovery Modal (Linked to Email for Students & Teachers) */}
-      {showRecoveryModal && (
-        <div className="fixed inset-0 z-50 bg-[#040e1c]/80 backdrop-blur-md flex items-center justify-center p-4 animate-fade-in">
-          <div className="bg-[#092244] border border-[#194375] rounded-3xl max-w-lg w-full p-6 sm:p-8 space-y-5 shadow-2xl text-slate-100 max-h-[92vh] overflow-y-auto relative">
-            {/* Modal Header */}
-            <div className="flex items-center justify-between border-b border-white/10 pb-3">
-              <div className="flex items-center gap-2.5">
-                <div className="w-10 h-10 rounded-2xl bg-amber-400/20 border border-amber-400/40 text-amber-300 flex items-center justify-center shrink-0">
-                  <Key className="w-5 h-5" />
-                </div>
-                <div>
-                  <h3 className="text-base font-bold font-display text-white">
-                    Account Password Recovery
-                  </h3>
-                  <p className="text-[11px] text-sky-200">
-                    Linked to your registered email address
-                  </p>
-                </div>
-              </div>
-              <button
-                type="button"
-                onClick={() => {
-                  soundFX.playClick();
-                  setShowRecoveryModal(false);
-                }}
-                className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-slate-300 flex items-center justify-center transition cursor-pointer"
-              >
-                <X className="w-4 h-4" />
-              </button>
-            </div>
-
-            {/* Error Notification */}
-            {recoveryError && (
-              <div className="p-3.5 rounded-2xl bg-rose-950/70 border border-rose-500/50 text-rose-200 text-xs font-bold flex items-center gap-2 animate-shake">
-                <AlertCircle className="w-4 h-4 text-rose-400 shrink-0" />
-                <span>{recoveryError}</span>
-              </div>
-            )}
-
-            {/* Simulated Email Dispatch Card (Clear testing feedback for evaluator) */}
-            {simulatedCodeAlert && (
-              <div className="p-3.5 rounded-2xl bg-sky-950/80 border border-sky-400/60 text-sky-100 text-xs space-y-1.5 animate-pulse">
-                <div className="flex items-center gap-2 font-bold text-sky-300">
-                  <Mail className="w-4 h-4 text-sky-400" />
-                  <span>Email Verification Dispatched</span>
-                </div>
-                <p className="text-[11px] text-slate-300">
-                  A 6-digit recovery code was dispatched to: <strong className="text-white">{simulatedCodeAlert.email}</strong>
-                </p>
-                <div className="pt-1 flex items-center gap-2">
-                  <span className="text-[11px] text-amber-300 font-semibold">One-time Code:</span>
-                  <span className="font-mono font-black text-amber-300 text-sm tracking-widest bg-amber-950/60 px-2.5 py-0.5 rounded-lg border border-amber-400/40">
-                    {simulatedCodeAlert.code}
-                  </span>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      soundFX.playClick();
-                      setEnteredRecoveryCode(simulatedCodeAlert.code);
-                    }}
-                    className="ml-auto text-[10px] font-bold text-sky-300 hover:text-white underline cursor-pointer"
-                  >
-                    Auto-fill Code
-                  </button>
-                </div>
-              </div>
-            )}
-
-            {/* Role Switcher (Visible only during request step) */}
-            {recoveryStep === 'request' && (
-              <div className="grid grid-cols-2 gap-1.5 p-1.5 bg-[#05152B] border border-[#163B66] rounded-2xl">
-                <button
-                  type="button"
-                  onClick={() => {
-                    soundFX.playClick();
-                    setRecoveryRole('student');
-                    setRecoveryError(null);
-                  }}
-                  className={`py-2 text-xs font-bold rounded-xl transition flex items-center justify-center gap-1.5 cursor-pointer ${
-                    recoveryRole === 'student'
-                      ? 'bg-sky-500 text-white shadow-md'
-                      : 'text-slate-400 hover:text-white'
-                  }`}
-                >
-                  <GraduationCap className="w-4 h-4" />
-                  <span>Student Learner</span>
-                </button>
-
-                <button
-                  type="button"
-                  onClick={() => {
-                    soundFX.playClick();
-                    setRecoveryRole('teacher');
-                    setRecoveryError(null);
-                  }}
-                  className={`py-2 text-xs font-bold rounded-xl transition flex items-center justify-center gap-1.5 cursor-pointer ${
-                    recoveryRole === 'teacher'
-                      ? 'bg-emerald-600 text-white shadow-md'
-                      : 'text-slate-400 hover:text-white'
-                  }`}
-                >
-                  <School className="w-4 h-4" />
-                  <span>Teacher Faculty</span>
-                </button>
-              </div>
-            )}
-
-            {/* STEP 1: REQUEST VERIFICATION CODE */}
-            {recoveryStep === 'request' && (
-              <form onSubmit={handleRequestRecoveryCode} className="space-y-4 text-xs">
-                <div>
-                  <label className="block text-slate-300 font-bold mb-1">
-                    Registered Email Address <span className="text-rose-400">*</span>
-                  </label>
-                  <div className="relative">
-                    <input
-                      type="email"
-                      required
-                      value={recoveryEmail}
-                      onChange={(e) => setRecoveryEmail(e.target.value)}
-                      className="w-full px-3.5 py-2.5 bg-[#05152B] text-white text-xs rounded-xl border border-[#193B66] focus:border-amber-400 focus:ring-1 focus:ring-amber-400 outline-none transition"
-                    />
-                  </div>
-                  <p className="text-[10px] text-slate-400 mt-1">
-                    Enter the email linked to your {recoveryRole} account.
-                  </p>
-                </div>
-
-                <div>
-                  <label className="block text-slate-300 font-bold mb-1">
-                    {recoveryRole === 'student' ? 'Username or 12-Digit LRN (Optional)' : 'Username or Employee ID (Optional)'}
-                  </label>
-                  <input
-                    type="text"
-                    value={recoveryIdentifier}
-                    onChange={(e) => setRecoveryIdentifier(e.target.value)}
-                    className="w-full px-3.5 py-2.5 bg-[#05152B] text-white text-xs rounded-xl border border-[#193B66] focus:border-amber-400 outline-none transition"
-                  />
-                </div>
-
-                <div className="pt-2 flex justify-end gap-2">
-                  <button
-                    type="button"
-                    onClick={() => setShowRecoveryModal(false)}
-                    className="px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-slate-300 font-semibold transition cursor-pointer"
-                  >
-                    Cancel
-                  </button>
-                  <button
-                    type="submit"
-                    className="px-5 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold transition shadow-md flex items-center gap-1.5 cursor-pointer"
-                  >
-                    <Send className="w-3.5 h-3.5" />
-                    <span>Send Recovery Code</span>
-                  </button>
-                </div>
-              </form>
-            )}
-
-            {/* STEP 2: VERIFY 6-DIGIT CODE */}
-            {recoveryStep === 'verify' && (
-              <form onSubmit={handleVerifyRecoveryCode} className="space-y-4 text-xs">
-                <div className="text-center space-y-1">
-                  <div className="text-xs font-semibold text-sky-200">
-                    Enter the 6-digit recovery code sent to:
-                  </div>
-                  <div className="font-mono font-bold text-white text-sm">
-                    {recoveryEmail}
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-center text-xs font-bold text-slate-300 mb-2">
-                    6-Digit Verification Code
-                  </label>
-                  <input
-                    type="text"
-                    maxLength={6}
-                    required
-                    value={enteredRecoveryCode}
-                    onChange={(e) => setEnteredRecoveryCode(e.target.value.replace(/\D/g, ''))}
-                    className="w-full max-w-[200px] mx-auto block px-4 py-3 bg-[#05152B] text-amber-300 text-center text-xl font-mono font-black tracking-widest rounded-2xl border border-amber-400/50 focus:border-amber-400 focus:ring-2 focus:ring-amber-400/40 outline-none"
-                  />
-                </div>
-
-                <div className="pt-2 flex items-center justify-between gap-2">
-                  <button
-                    type="button"
-                    onClick={() => {
-                      soundFX.playClick();
-                      setRecoveryStep('request');
-                    }}
-                    className="text-xs text-slate-400 hover:text-white underline cursor-pointer"
-                  >
-                    Change Email
-                  </button>
-
-                  <div className="flex gap-2">
-                    <button
-                      type="button"
-                      onClick={() => {
-                        const code = Math.floor(100000 + Math.random() * 900000).toString();
-                        setGeneratedRecoveryCode(code);
-                        setSimulatedCodeAlert({
-                          email: recoveryEmail,
-                          code,
-                        });
-                        soundFX.playClick();
-                      }}
-                      className="px-3 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-slate-300 font-semibold transition cursor-pointer"
-                    >
-                      Resend Code
-                    </button>
-                    <button
-                      type="submit"
-                      className="px-5 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold transition shadow-md flex items-center gap-1.5 cursor-pointer"
-                    >
-                      <Check className="w-3.5 h-3.5" />
-                      <span>Verify Code</span>
-                    </button>
-                  </div>
-                </div>
-              </form>
-            )}
-
-            {/* STEP 3: ENTER NEW PASSWORD */}
-            {recoveryStep === 'new_password' && (
-              <form onSubmit={handleResetRecoveryPassword} className="space-y-4 text-xs">
-                <div>
-                  <label className="block text-slate-300 font-bold mb-1">
-                    New Password (at least 4 characters) <span className="text-rose-400">*</span>
-                  </label>
-                  <div className="relative">
-                    <input
-                      type={showRecoveryNewPassword ? 'text' : 'password'}
-                      required
-                      value={recoveryNewPassword}
-                      onChange={(e) => setRecoveryNewPassword(e.target.value)}
-                      className="w-full px-3.5 py-2.5 bg-[#05152B] text-white text-xs rounded-xl border border-[#193B66] focus:border-amber-400 outline-none pr-10"
-                    />
-                    <button
-                      type="button"
-                      onClick={() => setShowRecoveryNewPassword(!showRecoveryNewPassword)}
-                      className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white p-1"
-                    >
-                      {showRecoveryNewPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
-                    </button>
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-slate-300 font-bold mb-1">
-                    Confirm New Password <span className="text-rose-400">*</span>
-                  </label>
-                  <div className="relative">
-                    <input
-                      type={showRecoveryNewPassword ? 'text' : 'password'}
-                      required
-                      value={recoveryConfirmPassword}
-                      onChange={(e) => setRecoveryConfirmPassword(e.target.value)}
-                      className="w-full px-3.5 py-2.5 bg-[#05152B] text-white text-xs rounded-xl border border-[#193B66] focus:border-amber-400 outline-none pr-10"
-                    />
-                    <button
-                      type="button"
-                      onClick={() => setShowRecoveryNewPassword(!showRecoveryNewPassword)}
-                      className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white p-1 cursor-pointer"
-                      title={showRecoveryNewPassword ? 'Hide password' : 'Show password'}
-                      aria-label={showRecoveryNewPassword ? 'Hide password' : 'Show password'}
-                    >
-                      {showRecoveryNewPassword ? <EyeOff className="w-4 h-4 text-amber-400" /> : <Eye className="w-4 h-4" />}
-                    </button>
-                  </div>
-                  {recoveryNewPassword && recoveryConfirmPassword && (
-                    <p
-                      className={`text-[11px] mt-1 font-semibold ${
-                        recoveryNewPassword === recoveryConfirmPassword
-                          ? 'text-emerald-400'
-                          : 'text-rose-400'
-                      }`}
-                    >
-                      {recoveryNewPassword === recoveryConfirmPassword
-                        ? '✓ Passwords match'
-                        : '✕ Passwords do not match'}
-                    </p>
-                  )}
-                </div>
-
-                <div className="pt-2 flex justify-end gap-2">
-                  <button
-                    type="button"
-                    onClick={() => setShowRecoveryModal(false)}
-                    className="px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-slate-300 font-semibold transition cursor-pointer"
-                  >
-                    Cancel
-                  </button>
-                  <button
-                    type="submit"
-                    disabled={recoverySubmitting}
-                    className="px-5 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold transition shadow-md flex items-center gap-1.5 cursor-pointer disabled:opacity-50"
-                  >
-                    {recoverySubmitting ? (
-                      <RefreshCw className="w-3.5 h-3.5 animate-spin" />
-                    ) : (
-                      <Lock className="w-3.5 h-3.5" />
-                    )}
-                    <span>{recoverySubmitting ? 'Updating...' : 'Save New Password'}</span>
-                  </button>
-                </div>
-              </form>
-            )}
-
-            {/* STEP 4: RECOVERY SUCCESS & SIGN IN */}
-            {recoveryStep === 'done' && (
-              <div className="space-y-4 text-center py-3">
-                <div className="w-14 h-14 mx-auto rounded-3xl bg-emerald-500/20 border-2 border-emerald-400 text-emerald-300 flex items-center justify-center shadow-lg">
-                  <CheckCircle2 className="w-8 h-8" />
-                </div>
-                <div className="space-y-1">
-                  <h4 className="text-base font-bold font-display text-white">
-                    Password Successfully Recovered!
-                  </h4>
-                  <p className="text-xs text-slate-300 max-w-sm mx-auto">
-                    Your password has been securely updated in the database. You can now access your {recoveryRole} account using your new credentials.
-                  </p>
-                </div>
-
-                <div className="pt-2 flex justify-center">
-                  <button
-                    type="button"
-                    onClick={() => {
-                      soundFX.playClick();
-                      setShowRecoveryModal(false);
-                      setMode('login');
-                      setLoginRole(recoveryRole);
-                    }}
-                    className="px-6 py-3 rounded-2xl bg-sky-500 hover:bg-sky-400 text-white font-bold text-xs shadow-lg transition flex items-center gap-2 cursor-pointer"
-                  >
-                    <LogIn className="w-4 h-4" />
-                    <span>Proceed to Sign In Now</span>
-                  </button>
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-      )}
+      {showRecoveryModal && <RecoveryRequest onClose={() => setShowRecoveryModal(false)}/>}
 
       {/* Footer (Clean, Quiet, with animated emblem, WITHOUT the removed RBAC string) */}
-      <footer className="relative z-20 w-full border-t border-[#143257] bg-[#051326] text-slate-300 px-6 py-5 text-xs">
+      <footer className="relative z-20 w-full border-t border-[#143257] bg-[#051326] text-slate-300 px-6 pt-7 pb-5 text-xs">
+        <div className="absolute inset-x-0 top-0 pointer-events-none" aria-hidden="true"><InabelWovenStrip variant="azure" height={8}/></div>
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
           <div className="flex items-center gap-2.5">
             <LingoQuestEmblem size={24} />
@@ -1921,6 +1280,7 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
             Region XI · Davao Oriental · English Learning Adventure
           </div>
         </div>
+        <LegalLinks/>
       </footer>
     </div>
   );

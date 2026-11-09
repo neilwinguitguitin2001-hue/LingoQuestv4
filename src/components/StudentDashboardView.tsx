@@ -153,6 +153,7 @@ function compressImageFile(file: File, maxWidth = 360, maxHeight = 360, quality 
 }
 
 interface StudentDashboardViewProps {
+  settingsOnly?: boolean;
   student: StudentAccount;
   teachers?: TeacherAccount[];
   onUpdateStudent: (updates: {
@@ -169,6 +170,7 @@ interface StudentDashboardViewProps {
 
 export const StudentDashboardView: React.FC<StudentDashboardViewProps> = ({
   student,
+  settingsOnly = false,
   teachers = [],
   onUpdateStudent,
   onBackToMap,
@@ -176,7 +178,7 @@ export const StudentDashboardView: React.FC<StudentDashboardViewProps> = ({
   onNavigateToProgress,
 }) => {
   // Active Dashboard Sub-view: 'overview' | 'credentials' | 'badges'
-  const [activeTab, setActiveTab] = useState<'overview' | 'credentials' | 'badges'>('overview');
+  const [activeTab, setActiveTab] = useState<'overview' | 'credentials' | 'badges'>(settingsOnly?'credentials':'overview');
   const [isMuted, setIsMuted] = useState(() => soundFX.isMuted());
 
   // Credentials form state
@@ -517,6 +519,7 @@ export const StudentDashboardView: React.FC<StudentDashboardViewProps> = ({
         className="hidden"
       />
 
+      {!settingsOnly && <>
       {/* Main Student Hero Banner */}
       <div className="bg-gradient-to-r from-[#07192F] via-[#0E2F59] to-[#15467C] rounded-3xl text-white relative overflow-hidden border-2 border-[#231F20] linocut-card animate-dashboard-hero">
         <InabelHeaderStrip variant="royal" label="DepEd Davao Oriental • Student Quest Dashboard" />
@@ -726,7 +729,7 @@ export const StudentDashboardView: React.FC<StudentDashboardViewProps> = ({
           type="button"
           onClick={() => {
             soundFX.playClick();
-            setActiveTab('overview');
+            if(settingsOnly)onBackToMap();else setActiveTab('overview');
           }}
           className={`flex-1 py-2 px-3 rounded-xl text-xs font-bold transition-all duration-250 flex items-center justify-center gap-1.5 cursor-pointer ${
             activeTab === 'overview'
@@ -771,6 +774,8 @@ export const StudentDashboardView: React.FC<StudentDashboardViewProps> = ({
         </button>
       </div>
 
+      </>}
+      {settingsOnly && <div className="flex flex-wrap items-center justify-between gap-3"><h1 className="font-display text-2xl font-bold">Account Settings</h1><button onClick={onBackToMap} className="min-h-11 rounded-xl border border-sky-300 px-4 py-2 text-sky-800">Back to Home</button></div>}
       {/* TAB 1: DASHBOARD OVERVIEW */}
       {activeTab === 'overview' && (
         <div className="space-y-6 animate-dashboard-panel">
@@ -928,8 +933,8 @@ export const StudentDashboardView: React.FC<StudentDashboardViewProps> = ({
                   </span>
                 </div>
                 <div className="flex justify-between py-1">
-                  <span className="text-slate-500">Division Rank:</span>
-                  <span className="font-bold text-amber-600">Active Competitor</span>
+                  <span className="text-slate-500">Activity board:</span>
+                  <span className="font-bold text-amber-600">Optional participation</span>
                 </div>
               </div>
 
@@ -943,7 +948,7 @@ export const StudentDashboardView: React.FC<StudentDashboardViewProps> = ({
                   className="w-full mt-2 py-2 rounded-xl bg-purple-50 hover:bg-purple-100 text-purple-700 text-xs font-bold transition flex items-center justify-center gap-1.5 cursor-pointer"
                 >
                   <Award className="w-3.5 h-3.5" />
-                  <span>View Division Leaderboard</span>
+                  <span>View My Grade Activity Board</span>
                 </button>
               )}
               </div>
@@ -1164,7 +1169,7 @@ export const StudentDashboardView: React.FC<StudentDashboardViewProps> = ({
                     className="w-full px-3.5 py-2.5 bg-slate-50 text-slate-900 text-xs rounded-xl border border-slate-200 focus:border-blue-500 focus:bg-white outline-none transition font-medium"
                   />
                   <p className="text-[11px] text-slate-400 mt-1">
-                    Your name shown on leaderboards, quest certificates, and class rosters.
+                    Your name is used for your account and authorized class records. Activity boards use system-generated aliases.
                   </p>
                 </div>
 
@@ -1303,7 +1308,7 @@ export const StudentDashboardView: React.FC<StudentDashboardViewProps> = ({
                   setNewPasswordInput('');
                   setConfirmPasswordInput('');
                   setErrorMessage(null);
-                  setActiveTab('overview');
+                  if(settingsOnly)onBackToMap();else setActiveTab('overview');
                 }}
                 className="w-full sm:w-auto px-5 py-2.5 rounded-xl border border-slate-200 text-slate-600 hover:bg-slate-50 text-xs font-bold transition cursor-pointer"
               >
@@ -1395,7 +1400,7 @@ export const StudentDashboardView: React.FC<StudentDashboardViewProps> = ({
 
           {/* Selected Badge Detail Callout */}
           {selectedBadge && (
-            <div className="p-5 rounded-3xl bg-gradient-to-r from-purple-50 to-indigo-50 border border-purple-200 flex flex-wrap items-center justify-between gap-4">
+            <div className="lq-woven-card lq-woven-pad-5 p-5 rounded-3xl bg-gradient-to-r from-purple-50 to-indigo-50 border border-purple-200 flex flex-wrap items-center justify-between gap-4">
               <div className="flex items-center gap-4">
                 <div className="w-14 h-14 rounded-2xl bg-purple-600 text-white flex items-center justify-center shrink-0 shadow-md">
                   <BadgeIcon iconType={selectedBadge.iconType} className="w-8 h-8" />
@@ -1453,7 +1458,7 @@ export const StudentDashboardView: React.FC<StudentDashboardViewProps> = ({
       {/* Selected Island Quarter Lessons & Tasks Modal */}
       {selectedIslandModal && (
         <div className="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-xs flex items-center justify-center p-4">
-          <div className="bg-white rounded-3xl max-w-lg w-full shadow-2xl border border-slate-200 overflow-hidden space-y-4 animate-scale-in">
+          <div className="lq-woven-card lq-woven-pad-0 bg-white rounded-3xl max-w-lg w-full shadow-2xl border border-slate-200 overflow-hidden space-y-4 animate-scale-in">
             {/* Header */}
             <div className="p-6 bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 text-white flex items-start justify-between">
               <div>

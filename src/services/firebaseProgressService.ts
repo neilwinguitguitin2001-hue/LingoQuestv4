@@ -484,50 +484,11 @@ export async function syncLeaderboardEntryToFirestore(
   uid: string,
   student: StudentAccount
 ): Promise<void> {
-  if (!uid || !auth.currentUser || auth.currentUser.uid !== uid) {
-    return;
-  }
-
-  const xp = Math.max(0, Number(student.points) || 0);
-  const level = calculateLevelFromXp(xp);
-  const bridgesRestoredCount = Object.values(student.progressByModule || {}).filter(
-    (p) => p.isBridgeRestored
-  ).length;
-
-  const entry: FirestoreLeaderboardDoc = {
-    uid,
-    displayName: (student.name || 'Student Explorer').slice(0, 120),
-    school: (student.schoolName || 'DepEd Davao Oriental').slice(0, 180),
-    xp,
-    level,
-    gradeLevel: student.gradeLevel || 8,
-    section: (student.section || '').slice(0, 80),
-    bridgesRestoredCount,
-    completedQuestsCount: student.completedModules?.length || 0,
-    updatedAt: new Date().toISOString(),
-  };
-
-  try {
-    await setDoc(doc(db, 'leaderboard', uid), entry, { merge: true });
-  } catch (err) {
-    try {
-      handleFirestoreError(err, OperationType.WRITE, `leaderboard/${uid}`);
-    } catch {}
-  }
+  // Legacy identifiable leaderboard writes are retired; activity points are server-verified.
+  return;
 }
 
 export async function getPublicLeaderboardFromFirestore(): Promise<FirestoreLeaderboardDoc[]> {
-  try {
-    const q = query(collection(db, 'leaderboard'), orderBy('xp', 'desc'), limit(100));
-    const snap = await getDocs(q);
-    return snap.docs.map((d) => ({
-      uid: d.id,
-      ...(d.data() as FirestoreLeaderboardDoc),
-    }));
-  } catch (err) {
-    try {
-      handleFirestoreError(err, OperationType.LIST, 'leaderboard');
-    } catch {}
-    return [];
-  }
+  // This legacy public endpoint must never be a fallback.
+  return [];
 }

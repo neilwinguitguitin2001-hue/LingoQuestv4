@@ -1,3 +1,4 @@
+import {PasswordResetPage} from './components/PasswordRecovery';
 import {StrictMode} from 'react';
 import {createRoot} from 'react-dom/client';
 import App from './App.tsx';
@@ -6,8 +7,8 @@ import './index.css';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <AuthProvider>
+    {window.location.pathname === "/auth/reset-password" ? <PasswordResetPage/> : <AuthProvider>
       <App />
-    </AuthProvider>
+    </AuthProvider>}
   </StrictMode>,
 );

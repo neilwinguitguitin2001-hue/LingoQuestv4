@@ -94,8 +94,9 @@ async function loadProfile(id: string): Promise<FirestoreUserDoc | null> {
         .maybeSingle()
       if (!error && data) return mapProfile(data)
     } catch {
-      // Fallback to Firestore
+      // A Supabase failure must not query a different account store.
     }
+    return null
   }
   return getUserProfileFromFirestore(id)
 }
@@ -392,12 +393,13 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
             role: 'student',
             status: 'approved',
             gradeLevel: 8,
-            school: fallbackAccount.schoolName,
-            schoolName: fallbackAccount.schoolName,
+            school: fallbackAccount.schoolName || 'Mati National Comprehensive High School',
+            schoolName: fallbackAccount.schoolName || 'Mati National Comprehensive High School',
             createdAt: nowIso,
             lastLoginAt: nowIso,
           }
       }
+      if (!existingProfile) throw new Error('Unable to load account profile.')
       return {
         firebaseUser: {
           uid: fbUser.uid,
@@ -430,7 +432,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
     if (isSupabaseConfigured && supabase) {
       const { error } = await supabase.auth.resetPasswordForEmail(cleanEmail, {
-        redirectTo: `${window.location.origin}/auth/callback`,
+        redirectTo: `${window.location.origin}/auth/reset-password`,
       })
       if (error) throw new Error(friendlyAuthError(error))
       return
