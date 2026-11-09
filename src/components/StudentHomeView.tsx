@@ -41,7 +41,7 @@ export function StudentHomeView({student, modules, onContinue, onIslands, onProg
           {next && <div className="inline-flex max-w-full flex-wrap items-center gap-2 rounded-xl border border-sky-300/30 bg-[#07192F]/50 px-3 py-2 text-sm"><BookOpen className="h-4 w-4 shrink-0 text-emerald-300" aria-hidden="true"/><strong>{next.title}</strong><span className="text-sky-200">Q{next.quarter} · Module {next.quarterModuleIndex}</span></div>}
           <div className="flex flex-wrap gap-3 pt-1"><button onClick={() => next ? onContinue(next) : onIslands()} className="min-h-11 rounded-xl bg-sky-400 hover:bg-sky-300 px-5 py-3 font-bold text-slate-950 transition-colors inline-flex items-center gap-2">{next ? 'Continue Learning' : 'Explore Island Quests'}<ArrowRight className="h-4 w-4" aria-hidden="true"/></button>{next && <button onClick={onIslands} className="min-h-11 rounded-xl border border-sky-300/60 px-5 py-3 font-semibold hover:bg-white/10 transition-colors">Browse lessons</button>}</div>
         </div>
-        <div className="pointer-events-none mx-auto w-full max-w-sm md:max-w-none"><HomeArchipelagoScene/></div>
+        <div className="mx-auto w-full max-w-sm md:max-w-none"><HomeArchipelagoScene quarter={next?.quarter ?? completedStep?.quarter ?? 1}/></div>
       </div>
     </section>
 

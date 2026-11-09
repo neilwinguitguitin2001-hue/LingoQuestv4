@@ -1,12 +1,16 @@
-import React, {useId} from 'react';
+import React, {useId, useState} from 'react';
 
 /** Decorative scene using the selector's original vector paths/palettes.
  * No route controls, island labels or geographic/curriculum claims are added.
  * IDs are local to this SVG so it can coexist with the full selector.
  */
-export function HomeArchipelagoScene() {
+export function HomeArchipelagoScene({quarter = 1}: {quarter?: number}) {
+ const [paused, setPaused] = useState(false);
+ const activeQuarter = [1,2,3,4].includes(quarter) ? quarter : 1;
+ const islandName = ["San Victor Island", "Oak Island", "Waniban Island", "Pujada Island"][activeQuarter - 1];
  const id=useId().replace(/[^a-zA-Z0-9]/g,'');
- return <svg viewBox="0 0 480 320" className="block w-full rounded-2xl border border-sky-300/30" aria-hidden="true" focusable="false">
+ return <div className={paused ? "lq-home-scene is-paused" : "lq-home-scene"}>
+ <svg viewBox="0 0 480 320" className="block w-full rounded-2xl border border-sky-300/30" aria-hidden="true" focusable="false">
  <defs>
 <linearGradient id={`${id}-sea`} x1="0" y1="0" x2="0" y2="1">
 <stop offset="0%" stopColor="#0b548b" />
@@ -90,13 +94,14 @@ strokeLinecap="round"
  </defs>
  <rect width="480" height="110" fill={`url(#${id}-davaoSkyGrad)`}/>
  <rect y="100" width="480" height="220" fill={`url(#${id}-sea)`}/>
- <rect y="100" width="480" height="220" fill={`url(#${id}-causticPattern)`} opacity=".6"/>
+ <defs><clipPath id={`${id}-waterClip`}><rect y="103" width="480" height="217"/></clipPath></defs>
+ <g clipPath={`url(#${id}-waterClip)`}><rect className="lq-home-caustics" x="-48" y="100" width="576" height="240" fill={`url(#${id}-causticPattern)`} opacity=".6"/></g>
  <g fill={`url(#${id}-cloudPuffGrad)`}><ellipse cx="75" cy="47" rx="55" ry="21"/><ellipse cx="116" cy="41" rx="62" ry="24"/><ellipse cx="162" cy="49" rx="55" ry="21"/></g>
  <circle cx="402" cy="49" r="48" fill={`url(#${id}-morningSunGlow)`}/><circle cx="402" cy="49" r="10" fill="#fffbeb"/>
  <path d="M0 100h480" stroke="#fef08a" strokeWidth="3" opacity=".3"/>
- <g fill="none" stroke="#7dd3fc" strokeWidth="1.2" opacity=".38"><path d="M0 130q40-12 80 0t80 0 80 0 80 0 80 0 80 0M0 180q40-12 80 0t80 0 80 0 80 0 80 0 80 0M0 232q40-12 80 0t80 0 80 0 80 0 80 0 80 0M0 284q40-12 80 0t80 0 80 0 80 0 80 0 80 0"/></g>
+ <g clipPath={`url(#${id}-waterClip)`}><g className="lq-home-waves" fill="none" stroke="#7dd3fc" strokeWidth="1.2" opacity=".38"><path d="M0 130q40-12 80 0t80 0 80 0 80 0 80 0 80 0M0 180q40-12 80 0t80 0 80 0 80 0 80 0 80 0M0 232q40-12 80 0t80 0 80 0 80 0 80 0 80 0M0 284q40-12 80 0t80 0 80 0 80 0 80 0 80 0"/></g></g>
  <path d="M92 275C166 301 194 264 239 221" fill="none" stroke="#38bdf8" strokeWidth="2" strokeDasharray="6 8" opacity=".7"/>
- <g transform="translate(285 178) scale(1.45)">
+{activeQuarter === 1 && <g data-quarter="1" transform="translate(285 178) scale(1.45)">
 <ellipse rx="118" ry="60" fill={`url(#${id}-glow)`} />
 <ellipse rx="96" ry="48" fill={`url(#${id}-shallow)`} opacity=".85" />
 <ellipse rx="78" ry="38" fill="#5eead4" opacity=".25" />
@@ -195,7 +200,100 @@ fill="none"
 strokeLinecap="round"
 opacity=".7"
 />
- </g>
+ </g>}
+{activeQuarter === 2 && <g data-quarter="2" transform="translate(285 178) scale(1.45)"><ellipse rx="104" ry="48" fill={`url(#${id}-glow)`} opacity=".7" />
+<ellipse rx="82" ry="36" fill={`url(#${id}-shallow)`} />
+<ellipse rx="62" ry="25" fill="#9bf0f4" opacity=".28" />
+<g fill="none" stroke="#fff" strokeOpacity=".4" strokeWidth="1.2">
+<ellipse rx="72" ry="30" />
+<ellipse rx="52" ry="21" />
+</g>
+<path
+d="M-52 6 C-46 -12 -6 -18 32 -9 C58 -4 62 9 44 16 C12 24 -42 22 -52 6Z"
+fill={`url(#${id}-sand)`}
+/>
+<path
+d="M-40 4 C-35 -7 -4 -12 26 -6 C46 -2 48 6 34 11 C10 17 -32 16 -40 4Z"
+fill="#fff8e7"
+opacity=".7"
+/>
+<path
+d="M-28 6 C-14 3 6 4 20 8 M-15 11 C-4 9 10 10 18 13"
+stroke="#dfc08b"
+strokeWidth="1.2"
+strokeLinecap="round"
+fill="none"
+opacity=".55"
+/></g>}
+{activeQuarter === 3 && <g data-quarter="3" transform="translate(285 178) scale(1.2)"><ellipse rx="120" ry="50" fill={`url(#${id}-glow)`} />
+<path
+d="M-84 6 C-82 -22 -30 -34 24 -30 C74 -26 112 -4 120 10 C100 30 -50 40 -84 6Z"
+fill={`url(#${id}-shallow)`}
+opacity=".8"
+/>
+<g fill="#1d7fa6" opacity=".38">
+<ellipse cx="-50" cy="15" rx="10" ry="4" />
+<ellipse cx="30" cy="22" rx="12" ry="4" />
+<ellipse cx="72" cy="15" rx="9" ry="3" />
+<ellipse cx="-8" cy="-18" rx="8" ry="3" />
+<ellipse cx="-72" cy="2" rx="6" ry="3" />
+</g>
+<path
+d="M-62 6 C-58 -8 -20 -14 14 -12 C40 -10 66 -2 110 8 C78 8 56 14 30 14 C-6 20 -52 18 -62 6Z"
+fill={`url(#${id}-sand)`}
+/>
+<path
+d="M-54 4 C-54 -12 -36 -22 -20 -16 C-6 -14 0 -4 -2 4 C-20 10 -44 10 -54 4Z"
+fill={`url(#${id}-forest)`}
+/>
+<g fill="#1d6a3a" opacity=".5">
+<circle cx="-38" cy="-2" r="4" />
+<circle cx="-18" cy="-4" r="4" />
+</g>
+<use href={`#${id}-palm`} transform="translate(-34,-4) scale(.9)" />
+<use href={`#${id}-palm`} transform="translate(-14,-2) scale(.72)" /></g>}
+{activeQuarter === 4 && <g data-quarter="4" transform="translate(285 178) scale(1.2)"><ellipse rx="135" ry="64" fill={`url(#${id}-glow)`} />
+<path
+d="M-100 12 C-98 -30 -30 -46 40 -38 C98 -30 118 6 96 32 C60 56 -64 58 -100 12Z"
+fill={`url(#${id}-shallow)`}
+opacity=".7"
+/>
+<path
+d="M-84 12 C-82 -14 -30 -24 22 -20 C72 -16 96 -2 92 16 C72 36 -52 40 -84 12Z"
+fill={`url(#${id}-sand)`}
+/>
+<path
+d="M-72 8 C-68 -22 -46 -40 -16 -38 C-2 -50 28 -46 40 -26 C62 -24 76 -8 68 10 C40 22 -42 24 -72 8Z"
+fill={`url(#${id}-forest)`}
+/>
+<path
+d="M-52 -8 C-42 -28 -22 -34 -8 -30 C-22 -22 -36 -14 -52 -8Z"
+fill="#8be08b"
+opacity=".45"
+/>
+<path
+d="M10 -32 C24 -42 42 -34 46 -22 C34 -22 20 -24 10 -32Z"
+fill="#8be08b"
+opacity=".35"
+/>
+<g fill="#1d6a3a" opacity=".5">
+<circle cx="-44" cy="-4" r="5" />
+<circle cx="-20" cy="-14" r="6" />
+<circle cx="14" cy="-12" r="6" />
+<circle cx="46" cy="-4" r="5" />
+<circle cx="-4" cy="2" r="5" />
+</g>
+<path
+d="M-76 14 C-44 34 34 36 74 14"
+stroke="#fffdf0"
+strokeWidth="3.5"
+fill="none"
+strokeLinecap="round"
+opacity=".9"
+/>
+<use href={`#${id}-palm`} transform="translate(-26,-26) scale(1.1)" />
+<use href={`#${id}-palm`} transform="translate(12,-32) scale(1)" />
+<use href={`#${id}-palm`} transform="translate(40,-14) scale(.8)" /></g>}
  <g transform="translate(123 263) scale(1.8)"><g className="lq-home-boat">
 <ellipse
 rx="30"
@@ -238,5 +336,7 @@ strokeLinecap="round"
 <circle cx="0" cy="-32" r="2.2" fill="#ffb53d" />
 </g>
  </g></g>
- </svg>;
+ </svg>
+ <div className="mt-2 flex items-center justify-between gap-3 text-xs text-sky-100"><span>Quarter {activeQuarter} · {islandName}</span><button type="button" onClick={() => setPaused(value => !value)} aria-pressed={paused} className="min-h-11 shrink-0 rounded-lg border border-sky-300/40 px-3 font-semibold hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-sky-300">{paused ? "Play water" : "Pause water"}</button></div>
+ </div>;
 }
