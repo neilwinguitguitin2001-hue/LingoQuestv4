@@ -1023,7 +1023,7 @@ export const IslandMapView: React.FC<IslandMapViewProps> = ({
             {/* Modal Footer */}
             <div className="p-4 bg-slate-50 border-t border-slate-200 flex items-center justify-between">
               <span className="text-xs text-slate-500">
-                DepEd Davao Oriental Curriculum Inspector · Verified PDF Question Bank
+                DepEd Davao Oriental Curriculum Inspector · Verified Question Bank
               </span>
               <button
                 type="button"

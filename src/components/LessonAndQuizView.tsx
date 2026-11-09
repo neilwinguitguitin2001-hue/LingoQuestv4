@@ -348,7 +348,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
         submittedQuestionRef.current = null;
         activeQuestionIdRef.current = response.question.id;
         setStage('PLAYING_QUIZ');
-      } catch (error) { setSourceReviewMessage(error instanceof Error ? error.message : 'The PDF question bank is unavailable.'); }
+      } catch (error) { setSourceReviewMessage(error instanceof Error ? error.message : 'The question bank is unavailable.'); }
       finally { setQuestBusy(false); }
       return;
     }
@@ -357,7 +357,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
     try { previousIds = new Set(JSON.parse(localStorage.getItem(historyKey) || '[]') as string[]); } catch { /* private browsing */ }
     const finalPool = createSourceGameSession(module, module.quizQuestions, requestedMode, difficulty, Math.random, previousIds);
     if (!finalPool) {
-      setSourceReviewMessage('This module needs at least 10 verified PDF questions for this game and level. The game is unavailable until its source bank is complete.');
+      setSourceReviewMessage('This module needs at least 10 verified questions for this game and level. The game is unavailable until its question bank is complete.');
       return;
     }
     try { localStorage.setItem(historyKey, JSON.stringify([...previousIds,...finalPool.map(q=>q.id)].slice(-120))); } catch { /* private browsing */ }
@@ -607,7 +607,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
       const textToCopy = [module.title,
         ...(sourceContent.data?.sourceSections || []).flatMap(section=>[
           `[${section.title}]`, ...section.entries.flatMap(entry=>[
-            `PDF p. ${entry.page}`, ...entry.blockIds.map(id=>sourceContent.data!.blocks[id]).filter(Boolean).map(block=>block.text || block.rows?.map(row=>row.join(' | ')).join('\n') || block.labels?.map(label=>label.text).join(' ') || '')
+            ...entry.blockIds.map(id=>sourceContent.data!.blocks[id]).filter(Boolean).map(block=>block.text || block.rows?.map(row=>row.join(' | ')).join('\n') || block.labels?.map(label=>label.text).join(' ') || '')
           ])
         ])].join('\n\n');
 
@@ -724,10 +724,10 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
             {/* Visual XP Mastery Pill */}
             <div
               className="px-2.5 py-1.5 rounded-lg bg-amber-50 border border-amber-200 text-amber-800 text-[11px] font-bold flex items-center gap-1.5"
-              title="Illustrations and diagrams from this module’s PDF"
+              title="Illustrations and diagrams for this module"
             >
               <Sparkles className="w-3.5 h-3.5 text-amber-500" />
-              <span>Source visuals: {sourceContent.data ? new Set(sourceContent.data.sourceSections?.flatMap(section=>section.entries.flatMap(entry=>entry.blockIds)).filter(id=>['figure','diagram'].includes(sourceContent.data!.blocks[id]?.type))).size : '…'}</span>
+              <span>Visuals: {sourceContent.data ? new Set(sourceContent.data.sourceSections?.flatMap(section=>section.entries.flatMap(entry=>entry.blockIds)).filter(id=>['figure','diagram'].includes(sourceContent.data!.blocks[id]?.type))).size : '…'}</span>
             </div>
 
             {/* Data Saver Mode Toggle */}
@@ -778,7 +778,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
           </div>
         </div>
 
-        {module.pdfLesson ? <SourceLessonSections key={module.id} module={module} content={sourceContent.data} error={sourceContent.error} retry={sourceContent.retry} dataSaver={dataSaver}/> : <p role="status">This module needs a PDF source before lesson sections can be displayed.</p>}
+        {module.pdfLesson ? <SourceLessonSections key={module.id} module={module} content={sourceContent.data} error={sourceContent.error} retry={sourceContent.retry} dataSaver={dataSaver}/> : <p role="status">Lesson content is currently unavailable for this module.</p>}
 
         {/* Floating XP Reward & Badge Toast */}
         <XPToast
@@ -899,7 +899,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                   </span>
                 </div>
                 <p className="text-xs text-slate-200">
-                  Previewing quizzes for <strong>{module.title}</strong> · {module.quizQuestions.length} PDF-linked questions (10 per session)
+                  Previewing quizzes for <strong>{module.title}</strong> · {module.quizQuestions.length} verified questions (10 per session)
                 </p>
               </div>
             </div>
@@ -963,7 +963,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
               }`}
             >
               <ListChecks className="w-4 h-4" />
-              <span>Audit Verified PDF Questions with Answer Keys</span>
+              <span>Review Verified Questions with Answer Keys</span>
             </button>
           </div>
         )}
@@ -1913,7 +1913,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                     </>
                   )}
                 </div>
-                <p className="text-xs sm:text-sm opacity-90">{currentQ.explanation}{currentQ.source && ` · PDF p. ${currentQ.source.page}`}</p>
+                <p className="text-xs sm:text-sm opacity-90">{currentQ.explanation}</p>
               </div>
 
               <button
