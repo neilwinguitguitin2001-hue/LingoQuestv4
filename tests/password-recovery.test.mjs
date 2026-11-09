@@ -1,0 +1,7 @@
+import {build} from 'esbuild';
+import {strict as assert} from 'node:assert';
+import {writeFile,unlink} from 'node:fs/promises';
+const result=await build({entryPoints:['src/components/PasswordRecovery.tsx'],bundle:true,platform:'node',format:'esm',write:false,external:['react','react-dom'],plugins:[{name:'mock-auth',setup(b){b.onResolve({filter:/lib\/supabase$/},()=>({path:'mock',namespace:'mock'}));b.onLoad({filter:/.*/,namespace:'mock'},()=>({contents:'export const supabase = globalThis.recoveryMock;',loader:'js'}));}}]});
+const file=new URL('../.password-recovery-test.mjs',import.meta.url);
+let called;globalThis.recoveryMock={auth:{resetPasswordForEmail:async(...args)=>{called=args;return {error:null};}}};globalThis.window={location:{origin:'https://preview.example'}};
+try{await writeFile(file,result.outputFiles[0].text);const {requestRecovery}=await import(file.href);await requestRecovery(' Test@Example.com ');assert.equal(called[0],'test@example.com');assert.equal(called[1].redirectTo,'https://preview.example/auth/reset-password');globalThis.recoveryMock.auth.resetPasswordForEmail=async()=>({error:{message:'private provider detail'}});await assert.rejects(requestRecovery('test@example.com'),e=>!e.message.includes('private provider detail'));console.log('PASS: reset request uses Supabase, normalized email, exact callback, and safe failure propagation.');}finally{await unlink(file).catch(()=>{});delete globalThis.recoveryMock;delete globalThis.window;}
