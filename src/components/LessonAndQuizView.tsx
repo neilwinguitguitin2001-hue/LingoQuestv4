@@ -4,6 +4,8 @@ import {QuizCloze} from './QuizCloze';
 import {isQuizAnswerCorrect,formatCrosswordResponse} from '../utils/quizResponses';
 import { QuizConceptCard } from './QuizConceptCard';
 import { SourceLessonSections } from './SourceLessonSections';
+import { PilotQuizSceneCue } from './LessonPilotGuide';
+import { getLessonPilot, lessonPilotHeadings } from '../data/curriculum/lessonPilot';
 import { SourceActivity, SourceExcerpt, SourceGraphic } from './SourceContent';
 import { useDigitalContent } from '../data/curriculum/digitalContent';
 import { createSourceGameSession, getSessionQuestionCount } from '../utils/sourceGameSession';
@@ -604,7 +606,13 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
 
     const handleCopyStudyNotes = () => {
       soundFX.playClick();
-      const textToCopy = [module.title,
+      const pilot = getLessonPilot(module.id);
+      const pilotNotes = pilot ? [
+        '[Original teaching examples]',
+        ...lessonPilotHeadings.map((heading, index) => `${heading}\n${pilot.steps[index]}`),
+        pilot.extra,
+      ] : [];
+      const textToCopy = [module.title, ...pilotNotes,
         ...(sourceContent.data?.sourceSections || []).flatMap(section=>[
           `[${section.title}]`, ...section.entries.flatMap(entry=>[
             ...entry.blockIds.map(id=>sourceContent.data!.blocks[id]).filter(Boolean).map(block=>block.text || block.rows?.map(row=>row.join(' | ')).join('\n') || block.labels?.map(label=>label.text).join(' ') || '')
@@ -972,7 +980,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
         {isPreviewMode && setupPreviewTab === 'answer_keys' ? (
           <div className="bg-white border-2 border-[#231F20] linocut-card rounded-2xl overflow-hidden space-y-6 animate-fade-in">
             <InabelStrip variant="royal" label="Curriculum Answer Key & Pedagogical Audit" />
-            <div className="px-6 sm:px-8 pb-6 sm:pb-8 space-y-6">
+            <div className="min-w-0 px-4 sm:px-8 pb-6 sm:pb-8 space-y-6 [overflow-wrap:anywhere]">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-5">
               <div>
                 <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-sky-700">
@@ -1165,7 +1173,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
             label={`Quiz Challenge Setup • ${currentIslandName}`}
             rightText={`Passing Mark: ${module.requiredPassingScore}%`}
           />
-          <div className="px-6 sm:px-8 pb-6 sm:pb-8 space-y-6">
+          <div className="min-w-0 px-4 sm:px-8 pb-6 sm:pb-8 space-y-6 [overflow-wrap:anywhere]">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-5">
             <div>
               <div className="text-xs text-slate-500">
@@ -1552,7 +1560,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
             variant="royal"
             label={`Challenge ${currentQIndex + 1} • ${gameInfo.name}`}
           />
-          <div className="px-6 sm:px-8 pb-6 sm:pb-8 space-y-6">
+          <div className="min-w-0 px-4 sm:px-8 pb-6 sm:pb-8 space-y-6 [overflow-wrap:anywhere]">
           <div className="space-y-2">
             <div className="text-xs font-mono font-semibold text-sky-700">
               CHALLENGE {currentQIndex + 1} · {gameInfo.name.toUpperCase()}
@@ -1568,7 +1576,8 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
           {currentQ.type === 'typeHunter' && (
             <div className="space-y-5">
               {currentQ.contextSentence && (
-                <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 text-sm sm:text-base text-slate-800 font-medium">
+                <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 text-sm sm:text-base leading-relaxed text-slate-800 font-medium">
+                  <PilotQuizSceneCue moduleId={module.id} />
                   “{currentQ.contextSentence}”
                 </div>
               )}
@@ -1637,7 +1646,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
               </section>
               <section className="space-y-3" aria-label="Picture answer choices">
                 <h3 className="text-sm font-bold text-slate-900">Choose the picture that completes the clue.</h3>
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 min-[380px]:grid-cols-2 auto-rows-fr gap-3">
                 {currentQ.pictureOptions.map((pic,index)=>{
                   if (removedChoices.includes(pic.id)) return null;
                   const selected=selectedOption===pic.id;const correct=pic.id===currentQ.answer;
@@ -1735,7 +1744,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
               </div>) : <p className="p-5 rounded-xl bg-slate-900 text-white text-sm leading-relaxed">{currentQ.contextSentence}</p>}
 
               {currentQ.options && (
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 auto-rows-fr gap-3">
                   {currentQ.options.map((opt) => {
                     if (removedChoices.includes(opt)) return null;
                     const isSelected = selectedOption === opt;
@@ -2107,7 +2116,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
             label={`${sourceModuleLabel} Quiz Summary • ${difficulty.toUpperCase()} Difficulty`}
             rightText={`${finalOutcome.percentage}% Score`}
           />
-          <div className="px-6 sm:px-8 pb-6 sm:pb-8 space-y-6">
+          <div className="min-w-0 px-4 sm:px-8 pb-6 sm:pb-8 space-y-6 [overflow-wrap:anywhere]">
           {serverSessionId&&<p className="inline-flex rounded-xl border border-sky-200 bg-sky-50 px-4 py-2 text-sm font-bold text-sky-900" role="status">Quest Coins balance: {questBalance}</p>}
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-slate-100 pb-6">
             <div className="space-y-1.5">

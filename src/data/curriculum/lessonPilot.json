@@ -1,0 +1,164 @@
+{
+  "g7-q1-m5": {
+    "title": "The bus had already left",
+    "prompt": "Watch the two clocks and notice which event is already finished when Mia arrives.",
+    "extra": "The shop had closed before I reached the door. First, the shop closed. Later, I reached the door. Compare “The shop closed, and I reached the door.” The simple past reports two events in sequence. The past perfect explicitly looks back from the later arrival.",
+    "scenes": [
+      [
+        "0–12 s",
+        "Show a teal bus pulling away from a stop. Hold on the clock.",
+        "7:10 · The bus left",
+        "The bus pulls away at seven ten. This is the first event in our story."
+      ],
+      [
+        "12–26 s",
+        "Show Mia arriving at the same stop. Hold both clocks in view.",
+        "7:15 · Mia arrived",
+        "Mia reaches the stop at seven fifteen. By then, the bus is already gone. Both events happened in the past."
+      ],
+      [
+        "26–49 s",
+        "Draw a line between the events. Bracket had left in the sentence.",
+        "The bus had left before Mia arrived.",
+        "We can look back from Mia’s arrival and say: The bus had left before Mia arrived. Had plus the past participle left marks the earlier event. Arrived is simple past."
+      ],
+      [
+        "49–65 s",
+        "Compare had left and arrived under the two clocks. Keep the last frame on screen.",
+        "Earlier · had left / Later · arrived",
+        "Find the later moment first. Then ask what had already happened. Use had plus the past participle to show that earlier action."
+      ]
+    ],
+    "steps": [
+      "At 7:10 the bus left. At 7:15 Mia arrived.",
+      "Use had plus the past participle to mark an action already finished before another point in the past. A past participle is the verb form used after had, such as left or finished.",
+      "The bus had left before Mia arrived. Had left marks the 7:10 event. Arrived gives the later past event.",
+      "Had went is incorrect. Go changes to gone after had.",
+      "Past perfect looks back from a point in the past."
+    ],
+    "mediaStatus": "Create original explainer"
+  },
+  "g8-q2-m1": {
+    "title": "What the library chart really says",
+    "prompt": "Watch how the day labels and loan counts support one caption and limit the other.",
+    "extra": "A room table lists 24 chairs in A and 18 in B. “Room A has six more chairs than Room B” follows from 24 minus 18. “Room A has more seats than any room in the school” would need data on other rooms.",
+    "scenes": [
+      [
+        "0–12 s",
+        "Reveal the chart title and a zero baseline.",
+        "Library book loans · Monday to Wednesday",
+        "This chart counts books loaned over three days. Read the title before comparing any bars."
+      ],
+      [
+        "12–28 s",
+        "Reveal day labels and exact values. Keep all labels visible.",
+        "Mon 12 · Tue 18 · Wed 15",
+        "The labels tell us when. The numbers tell us how many loans. Tuesday has eighteen, compared with twelve on Monday and fifteen on Wednesday."
+      ],
+      [
+        "28–48 s",
+        "Show both captions side by side with equal weight, then outline the evidence for the first.",
+        "Most of these three days / Always the busiest",
+        "The chart supports ‘Tuesday had the most loans of the three days.’ It does not show what usually happens on Tuesdays. We would need more dates for that claim."
+      ],
+      [
+        "48–65 s",
+        "Switch to a plain table containing the same counts.",
+        "Title → Unit → Values → Scope",
+        "Read the title and unit, check the values, and say only what those values support. You can do the same with a table."
+      ]
+    ],
+    "steps": [
+      "A bar chart shows 12 library loans on Monday, 18 on Tuesday and 15 on Wednesday.",
+      "A visual–verbal relationship connects what a visual shows with what words explain. Check the title, labels, unit and values before writing a caption.",
+      "“Tuesday had the most loans of the three days” is supported by 18, compared with 12 and 15. “Tuesday is always busiest” goes beyond the dates shown.",
+      "Do not confuse loans with borrowers or three days with a usual pattern.",
+      "Say exactly what the visual supports."
+    ],
+    "mediaStatus": "Create original explainer"
+  },
+  "g9-q1-w5": {
+    "title": "A deadline we can only imagine changing",
+    "prompt": "Listen for the difference between what actually happened and what the two clauses imagine.",
+    "extra": "The team missed its bus after leaving late. “If the team had left earlier, it might have caught the bus.” Might have expresses a possible imagined result. Reversing the clauses also works: “The team might have caught the bus if it had left earlier.” The comma usually drops out when the if-clause comes second.",
+    "scenes": [
+      [
+        "0–12 s",
+        "Show the deadline at noon and a 12:08 upload receipt.",
+        "Actual past · submitted at 12:08",
+        "Mia’s deadline was noon. Her upload arrived eight minutes late. Those are the facts in this example."
+      ],
+      [
+        "12–28 s",
+        "Add a separate dashed timeline with an 11:55 upload.",
+        "Imagined past · submit before noon",
+        "Now imagine a different past. If Mia had submitted the file before noon, what result would follow in this example?"
+      ],
+      [
+        "28–49 s",
+        "Align the two clauses with the imagined condition and result.",
+        "If she had submitted… / it would have arrived on time.",
+        "Use had plus the past participle in the if-clause. In the result clause, would have plus the past participle shows the imagined result. Could have or might have can express a less certain result."
+      ],
+      [
+        "49–66 s",
+        "Reveal the corrected condition beside the common error.",
+        "Condition · if she had submitted",
+        "Keep would have in the result of this pattern. The third conditional helps us reason about an alternative past, even though the real event cannot change."
+      ]
+    ],
+    "steps": [
+      "Mia submitted the file after the deadline. Imagine she had submitted it earlier.",
+      "A clause is a group of words with a subject and a verb. In the third conditional, the if-clause imagines a different past using had plus past participle. The result clause uses would, could or might have plus past participle.",
+      "“If Mia had submitted the file before noon, it would have arrived on time.” Had submitted imagines a different action. Would have arrived shows the imagined result.",
+      "“If Mia would have submitted” puts the result form in the if-clause. Use if Mia had submitted.",
+      "The past stays the same. The sentence imagines what could have changed."
+    ],
+    "mediaStatus": "Create original explainer"
+  },
+  "g10-q1-m4": {
+    "title": "The Empty Rehearsal Room",
+    "prompt": "Notice how the written version tells you Noor’s thought and how the storyboard communicates her uncertainty with framing and sound.",
+    "extra": "“Noor pushed the rehearsal-room door open. The lights were off, so she was sure everyone had gone home. Then a chair scraped behind the curtain. ‘Who’s there?’ she whispered.” In the storyboard, the audience sees the dark room and hears the scrape without first hearing Noor’s thought. The written version gives direct access to her assumption. The storyboard uses the sound and her reaction to let viewers infer it.",
+    "scenes": [
+      [
+        "0–13 s",
+        "Show a hallway and the original character opening the door. Use a wide shot.",
+        "Original adaptation · Rehearsal room",
+        "[Door creaks]"
+      ],
+      [
+        "13–27 s",
+        "Follow Noor’s glance across an empty row of chairs. Keep the curtain at the edge of the frame.",
+        "Dark room · no visible performers",
+        "[Quiet room tone]"
+      ],
+      [
+        "27–42 s",
+        "Cut to the still curtain. A chair scrapes from behind it. Cut to Noor stopping mid-step.",
+        "Off-screen sound · behind the curtain",
+        "[Chair scrapes behind curtain]"
+      ],
+      [
+        "42–53 s",
+        "Hold a medium shot of Noor facing the curtain.",
+        "Noor turns toward the sound.",
+        "Noor, whispering: Who’s there?"
+      ],
+      [
+        "53–67 s",
+        "Fade to an annotated still comparing the scene and the relevant passage line.",
+        "Written thought / filmed sound and reaction",
+        "The passage tells us Noor thinks everyone has left. The clip lets us infer it from the dark room and her reaction. Both present the same event from different kinds of evidence."
+      ]
+    ],
+    "steps": [
+      "In a written scene, Noor thinks the rehearsal room is empty. In the storyboard, she stops when she hears a chair scrape.",
+      "An adaptation tells a version of a work in another medium. Compare a matched moment and explain how each medium communicates information through words, sound, framing or performance.",
+      "The passage lets us hear Noor’s mistaken assumption as a thought. The storyboard uses sound and her reaction to make the audience discover someone may be there at the same time she does.",
+      "Listing changes without explaining their effect leaves the comparison unfinished.",
+      "Name the change, cite evidence from both versions and explain its effect."
+    ],
+    "mediaStatus": "Needs review"
+  }
+}
