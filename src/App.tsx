@@ -1677,28 +1677,29 @@ export default function App() {
 
       {/* Top Universal App Navigation Bar (Neo-Filipiniana & Folk-Mural Edition) */}
       {currentView !== 'AUTH' && currentView !== 'WAITING_APPROVAL' && (
-        <header data-dashboard-theme className="sticky top-0 z-40 bg-[#231F20] text-[#FAF7F2] border-b-[3px] border-[#2563EB] shadow-[0_4px_0_#231F20]">
+        <header data-dashboard-theme className="sticky top-0 z-40 bg-[#07192F] text-[#FAF7F2] border-b border-[#2378A6] shadow-sm">
           {/* Traditional Handwoven Inabel & Yakan Geometric Top Strip */}
           <InabelWovenStrip variant="crimson" height={8} />
 
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 py-2 flex flex-wrap items-center justify-between gap-x-6 gap-y-1">
             {/* Brand Logo & Tagline */}
-            <div
+            <button
+              type="button"
+              aria-label="LingoQuest home"
               onClick={() => {
                 soundFX.playClick();
                 if (currentUser?.role === 'admin') setCurrentView('ADMIN');
                 else if (currentUser?.role === 'teacher') setCurrentView('TEACHER');
                 else setCurrentView('MAP');
               }}
-              className="cursor-pointer shrink-0"
+              className="cursor-pointer shrink-0 rounded-lg text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-300"
             >
-              <span className="hidden sm:block"><LingoQuestLogo size="md" textColor="light" animated={true} /></span>
-              <span className="sm:hidden"><LingoQuestLogo size="sm" textColor="light" animated={true} /></span>
-            </div>
+              <LingoQuestLogo size="sm" textColor="light" animated={true} />
+            </button>
 
             {/* Navigation Links based on Active Role */}
             {currentUser && (
-              <nav className="hidden lg:flex items-center gap-1 bg-[#FFFDFB]/10 border-2 border-[#2563EB] px-2 py-1 rounded-xl text-xs font-bold text-[#FAF7F2]">
+              <nav aria-label="Primary navigation" className="hidden lg:flex order-3 basis-full items-center justify-center gap-1 border-t border-sky-400/20 pt-2 pb-1 text-xs font-bold text-[#FAF7F2] whitespace-nowrap [&>button]:min-h-11 [&>button]:shrink-0 [&>button]:px-4">
                 {currentUser.role === 'student' && (
                   <>
                     <button
@@ -1852,7 +1853,7 @@ export default function App() {
             )}
 
             {/* Right Header Controls: separate permanent XP and spendable Quest Coins */}
-            <div className="flex items-center gap-2">
+            <div className="ml-auto flex shrink-0 items-center gap-2 sm:gap-3">
               {currentStudent && (
                 <div className="hidden xl:flex items-center gap-2 mr-1">
                   {/* Permanent learning progress */}
@@ -1904,7 +1905,7 @@ export default function App() {
               {/* Audio Toggle */}
               <button
                 onClick={handleToggleSound}
-                className="p-2 rounded-xl border border-[#2563EB]/60 text-[#FAF7F2] hover:text-[#22C55E] hover:bg-white/10 transition cursor-pointer"
+                className="h-10 w-10 flex items-center justify-center rounded-xl border border-[#2563EB]/60 text-[#FAF7F2] hover:text-[#22C55E] hover:bg-white/10 transition cursor-pointer"
                 title={isMuted ? 'Unmute Sound' : 'Mute Sound'}
               >
                 {isMuted ? <VolumeX className="w-4 h-4 text-[#0F766E]" /> : <Volume2 className="w-4 h-4 text-[#22C55E]" />}
@@ -1940,7 +1941,7 @@ export default function App() {
                             .toUpperCase() || 'S'}
                         </div>
                       )}
-                      <div className="text-right hidden sm:block">
+                      <div className="text-left hidden sm:block">
                         <div className="text-xs font-bold text-[#FAF7F2] truncate max-w-[150px] group-hover:text-[#22C55E] transition-colors">
                           {currentUser.name}
                         </div>
@@ -1950,7 +1951,7 @@ export default function App() {
                       </div>
                     </button>
                   ) : (
-                    <div className="text-right hidden sm:block">
+                    <div className="text-left hidden sm:block">
                       <div className="text-xs font-bold text-[#FAF7F2] truncate max-w-[150px]">
                         {currentUser.name}
                       </div>
@@ -1964,7 +1965,7 @@ export default function App() {
 
                   <button
                     onClick={handleLogOut}
-                    className="p-2 rounded-xl text-[#FAF7F2]/80 hover:text-[#22C55E] hover:bg-[#0F766E]/40 transition cursor-pointer"
+                    className="h-10 w-10 flex items-center justify-center rounded-xl text-[#FAF7F2]/80 hover:text-[#22C55E] hover:bg-[#0F766E]/40 transition cursor-pointer"
                     title="Sign In with Another Account / Sign Out"
                   >
                     <LogOut className="w-4 h-4" />
@@ -1982,8 +1983,10 @@ export default function App() {
               {/* Mobile Menu Toggle */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                aria-label="Open navigation"
-                className="lg:hidden p-2 rounded-xl text-[#FAF7F2] hover:bg-white/10"
+                aria-label={isMobileMenuOpen ? 'Close navigation' : 'Open navigation'}
+                aria-expanded={isMobileMenuOpen}
+                aria-controls="lq-compact-navigation"
+                className="lg:hidden h-10 w-10 flex items-center justify-center rounded-xl text-[#FAF7F2] hover:bg-white/10"
               >
                 {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </button>
@@ -1992,7 +1995,7 @@ export default function App() {
 
           {/* Mobile Dropdown */}
           {isMobileMenuOpen && currentUser && (
-            <div className="lg:hidden px-4 py-3 border-t border-white/10 bg-[#07172C] space-y-1">
+            <div id="lq-compact-navigation" className="lg:hidden px-4 py-3 border-t border-white/10 bg-[#07172C] space-y-1 [&>button]:min-h-11">
               {currentUser.role === 'student' && (
                 <>
                   <button
