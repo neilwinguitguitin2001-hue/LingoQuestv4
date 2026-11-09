@@ -1,4 +1,5 @@
-import React, {useId} from 'react';
+import React from 'react';
+import {HomeArchipelagoScene} from './HomeArchipelagoScene';
 import {ArrowRight, BookOpen, Check, Compass, Feather, Flag, Sparkles} from 'lucide-react';
 import type {Module, StudentAccount} from '../types/lingoquest';
 import {BADGE_DEFINITIONS} from '../data/seedData';
@@ -14,33 +15,6 @@ type Props = {
   onProgress: () => void;
   onWriting: () => void;
 };
-
-/** Decorative quest-world art, not a map or a curriculum explanation. */
-function QuestIslandScene() {
-  const id = useId().replace(/[^a-zA-Z0-9]/g, '');
-  return <svg viewBox="0 0 480 320" className="block w-full max-w-lg mx-auto" aria-hidden="true" focusable="false">
-    <defs>
-      <linearGradient id={`${id}-sea`} x2="0" y2="1"><stop stopColor="#0EA5E9"/><stop offset="1" stopColor="#075985"/></linearGradient>
-      <linearGradient id={`${id}-land`} x2="0" y2="1"><stop stopColor="#6EE7B7"/><stop offset="1" stopColor="#059669"/></linearGradient>
-    </defs>
-    <circle cx="248" cy="153" r="144" fill="#38BDF8" opacity=".08"/>
-    <circle cx="248" cy="153" r="118" fill="none" stroke="#7DD3FC" strokeOpacity=".2" strokeDasharray="4 10"/>
-    <circle cx="390" cy="56" r="24" fill="#FDE68A"/>
-    <g fill="#E0F2FE" opacity=".85"><path d="M53 70c-4-14 16-24 24-12 10-19 35-11 35 5 17-3 23 12 17 17H53Z"/><path d="M289 33c0-10 15-16 22-7 9-10 24-4 25 7h14c8 0 10 12 1 12h-61c-9 0-10-12-1-12Z"/></g>
-    <ellipse cx="247" cy="230" rx="209" ry="68" fill={`url(#${id}-sea)`}/>
-    <g fill="none" stroke="#7DD3FC" strokeLinecap="round" opacity=".5"><path d="M60 235q18-8 36 0t36 0M335 255q18-8 36 0t36 0M153 276q22-7 44 0t44 0"/><path d="M77 208q16-5 32 0M376 215h27"/></g>
-    <ellipse cx="270" cy="197" rx="98" ry="33" fill="#BAE6FD" opacity=".4"/>
-    <ellipse cx="270" cy="184" rx="91" ry="33" fill="#FDE68A"/>
-    <path d="M190 176q15-49 77-53 62-3 83 53-72 33-160 0Z" fill={`url(#${id}-land)`}/>
-    <path d="M209 170q39 17 114 1" fill="none" stroke="#047857" strokeWidth="3" opacity=".3"/>
-    <path d="M275 150q-4-48 12-79" fill="none" stroke="#92400E" strokeWidth="10" strokeLinecap="round"/>
-    <path d="M282 94q-28-35-61-9 36-7 58 14M285 90q4-43 35-35-18 13-28 41M288 91q42-26 66 9-36-14-63-1M283 91q-7-35-39-39 18 19 30 45" fill="#10B981" stroke="#047857" strokeWidth="3" strokeLinejoin="round"/>
-    <path d="M326 155v-43" stroke="#E0F2FE" strokeWidth="4" strokeLinecap="round"/>
-    <path d="M328 112h34l-9 12 9 12h-34Z" fill="#38BDF8"/>
-    <g className="lq-home-boat"><ellipse cx="151" cy="247" rx="49" ry="11" fill="#082F49" opacity=".3"/><path d="M104 229h89l-17 21h-51Z" fill="#FBBF24" stroke="#92400E" strokeWidth="3" strokeLinejoin="round"/><path d="M147 228v-76" stroke="#E0F2FE" strokeWidth="4" strokeLinecap="round"/><path d="M143 160 111 217h32Z" fill="#E0F2FE"/><path d="m152 167 30 50h-30Z" fill="#38BDF8"/><path d="M102 254h93M115 244l-9 11M181 244l9 11" fill="none" stroke="#E0F2FE" strokeWidth="3" strokeLinecap="round"/></g>
-    <g fill="#BAE6FD"><path d="m86 126 3 7 7 3-7 3-3 7-3-7-7-3 7-3Z"/><path d="m388 149 2 5 5 2-5 2-2 5-2-5-5-2 5-2Z"/></g>
-  </svg>;
-}
 
 export function StudentHomeView({student, modules, onContinue, onIslands, onProgress, onWriting}: Props) {
   const own = modules.filter(m => m.gradeLevel === student.gradeLevel).sort((a, b) => a.moduleNumber - b.moduleNumber);
@@ -67,7 +41,7 @@ export function StudentHomeView({student, modules, onContinue, onIslands, onProg
           {next && <div className="inline-flex max-w-full flex-wrap items-center gap-2 rounded-xl border border-sky-300/30 bg-[#07192F]/50 px-3 py-2 text-sm"><BookOpen className="h-4 w-4 shrink-0 text-emerald-300" aria-hidden="true"/><strong>{next.title}</strong><span className="text-sky-200">Q{next.quarter} · Module {next.quarterModuleIndex}</span></div>}
           <div className="flex flex-wrap gap-3 pt-1"><button onClick={() => next ? onContinue(next) : onIslands()} className="min-h-11 rounded-xl bg-sky-400 hover:bg-sky-300 px-5 py-3 font-bold text-slate-950 transition-colors inline-flex items-center gap-2">{next ? 'Continue Learning' : 'Explore Island Quests'}<ArrowRight className="h-4 w-4" aria-hidden="true"/></button>{next && <button onClick={onIslands} className="min-h-11 rounded-xl border border-sky-300/60 px-5 py-3 font-semibold hover:bg-white/10 transition-colors">Browse lessons</button>}</div>
         </div>
-        <div className="pointer-events-none mx-auto w-full max-w-sm md:max-w-none"><QuestIslandScene/></div>
+        <div className="pointer-events-none mx-auto w-full max-w-sm md:max-w-none"><HomeArchipelagoScene/></div>
       </div>
     </section>
 
