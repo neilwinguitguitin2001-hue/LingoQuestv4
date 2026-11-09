@@ -1,5 +1,5 @@
--- REVIEW CANDIDATE: not applied to production. No historical record is deleted.
--- Apply only after ethics review, authorization, backup and the documented tests.
+-- Applied to shared Supabase with explicit owner authorization for preview on 2026-11-09.
+-- No historical record is deleted. Research intervention still requires ethics review.
 begin;
 create schema if not exists lq_private;
 revoke all on schema lq_private from public, anon, authenticated;

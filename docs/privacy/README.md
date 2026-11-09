@@ -39,13 +39,13 @@ Findings: legacy `leaderboard_read` allowed every authenticated user to read row
 
 The live security advisor also reported leaked-password protection disabled. That unrelated Auth setting was not changed. Audit logs and question-bank tables had RLS with no client policies (default deny), not public access.
 
-## Verification
+## Initial local verification
 
 1. `node --import tsx --test tests/privacy/permissions.test.ts` — 14 PostgreSQL scenarios pass (15 Node test results including the parent). Uses real PostgreSQL RLS/roles through PGlite, against a synthetic schema reproducing the inspected tables and relevant legacy policies.
 2. Start the local preview, then `node --import tsx --test tests/privacy/http.test.ts` — authenticated HTTP flow passes through the actual account-login handler, private API dispatcher and database RPCs, with synthetic Auth. Checks cross-student report/export denial, cross-grade denial, teacher assignment limits, admin aggregates, token tampering, opt-in/out and absent unauthorized fields.
 3. Existing grammar regression tests: 12 pass. `npm run build` passes. `npm run lint` has the same three pre-existing errors in PictureHuntIllustration.tsx and AuthContext.tsx; changed production code introduces no additional type errors.
 4. Browser review: 1280×900 desktop and 390×844 mobile viewport overrides. No horizontal overflow in the board after the header fix (document scroll width equals client width: 1265/1265 desktop; 375/375 mobile). Confirmed hidden default, explicit opt-in dialog, visible alias, successful withdrawal and mobile navigation. Screenshots: desktop.png, mobile.png.
-5. No live database privacy migration or live role tests were run. Supabase branch creation was declined; no production fallback was used. Firebase rules are a reviewed candidate only; no Firebase emulator or remote rules deployment was performed.
+5. At the initial local-only checkpoint, no live database privacy migration or live role tests had been run. Supabase branch creation was declined; no production fallback was used. Firebase rules are a reviewed candidate only; no Firebase emulator or remote rules deployment was performed.
 
 ## Consent and methodology revisions
 
@@ -79,3 +79,15 @@ For the methodology/protocol amendment, specify:
 The shared `hxkeomhutnkvtulqjbss` database privacy migration was explicitly authorized and applied for the preview. Existing account and performance rows are retained. These shared database rules also affect the current production site even though the UI branch is not merged. Saved approved Grade 7–10 students were enrolled into this project’s participating group, hidden by default; teacher access requires separately verified assignments. No individual administrator/researcher grants were created.
 
 The earlier local-only status and rollout notes above describe the pre-authorization review. No isolated Supabase branch was used. The local fixtures remain test-only and are not deployed as the preview backend. The remote preview uses saved Supabase accounts, not fixture credentials.
+
+### Completed shared-database preview verification
+
+- Preview: https://lingo-questv4-qnxh5r5z2-lingo-quest-space.vercel.app/
+- Draft PR: https://github.com/neilwinguitguitin2001-hue/LingoQuestv4/pull/13
+- Branch: `codex/private-grade-leaderboard-preview`; main remains unmerged.
+- Owner explicitly confirmed assigning each existing teacher to the saved student of the same official grade. Four assignment pairs were provisioned; no individual admin/researcher grants were added.
+- Real Supabase PostgreSQL tests used the saved account IDs under the authenticated role, then rolled back: all four grade boards, cross-grade/report denial, direct peer-record denial, legacy leaderboard denial, opt-in/out, teacher assigned roster/unassigned-report denial, and aggregate-only administrators passed. No password-based browser login was performed on behalf of a saved student.
+- Existing profiles/student_progress/quiz_results row counts and content fingerprints matched before and after migration/provisioning. All four entries remained hidden after the rolled-back test.
+- Vercel deployment READY; browser sign-in page rendered; both deployed API routes reject GET with 405 and no-store. Existing credentials remain in Supabase Auth; the preview uses the project’s existing Supabase environment variables.
+- Security advisors: the five intentionally authenticated SECURITY DEFINER RPCs are flagged for review; they validate auth.uid(), roles and record scope, use fixed empty search paths and deny anonymous execution. Private tables intentionally have RLS with no client policies/grants. Existing leaked-password protection remains disabled; it was not changed.
+- The revised leaderboard still requires ethics-board review before research use. Shared database rule changes do not confer ethics approval. Firebase rules remain a source candidate only.
