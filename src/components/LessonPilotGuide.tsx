@@ -1,6 +1,7 @@
 import React from 'react';
 import { BarChart3, BusFront, Clapperboard, Clock3, FileText, Film, MapPin, Upload } from 'lucide-react';
-import { lessonPilotHeadings, type LessonPilot } from '../data/curriculum/lessonPilot';
+import type { LessonPilot } from '../data/curriculum/lessonPilot';
+import { discussionHeadings, type LessonDiscussion } from '../data/curriculum/lessonDiscussions';
 import { InabelStrip } from './InabelStrip';
 
 const quizSceneIcons = {
@@ -70,21 +71,30 @@ function TeachingVisual({ moduleId }: { moduleId: string }) {
   );
 }
 
-export function LessonPilotGuide({ moduleId, lesson }: { moduleId: string; lesson: LessonPilot }) {
+export function LessonDiscussionGuide({ moduleId, discussion, pilot }: {
+  moduleId: string;
+  discussion: LessonDiscussion;
+  pilot?: LessonPilot;
+}) {
   return (
     <div className="space-y-4">
-      <p className="text-xs font-bold uppercase tracking-wide text-emerald-800">Original teaching examples</p>
-      {lessonPilotHeadings.map((heading, index) => (
-        <section key={heading} className="space-y-3 rounded-xl border border-slate-200 p-4">
-          <h3 className="font-semibold text-sky-950">{heading}</h3>
-          <p className="text-sm leading-relaxed text-slate-700">{lesson.steps[index]}</p>
-          {index === 2 && <TeachingVisual moduleId={moduleId} />}
-        </section>
-      ))}
-      <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-4">
-        <h3 className="font-semibold text-emerald-950">{moduleId === 'g10-q1-m4' ? 'Original written passage' : 'Another worked example'}</h3>
-        <p className="mt-2 text-sm leading-relaxed text-slate-700">{lesson.extra}</p>
+      <h3 className="font-display text-lg font-bold text-sky-950">{discussion.topic}</h3>
+      <div className="divide-y divide-slate-200 rounded-xl border border-slate-200">
+        {discussionHeadings.map((heading, index) => (
+          <section key={heading} className={index === 4 ? 'space-y-2 rounded-b-xl bg-emerald-50 p-4' : 'space-y-2 p-4'}>
+            <h4 className="font-semibold text-sky-950">{heading}</h4>
+            {index === 2 && <p className="text-xs font-semibold text-emerald-800">{discussion.exampleLabel}</p>}
+            <p className="text-sm leading-relaxed text-slate-700">{discussion.steps[index]}</p>
+            {index === 2 && pilot && <TeachingVisual moduleId={moduleId} />}
+          </section>
+        ))}
       </div>
+      {pilot && (
+        <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-4">
+          <h4 className="font-semibold text-emerald-950">{moduleId === 'g10-q1-m4' ? 'Original written passage' : 'Another worked example'}</h4>
+          <p className="mt-2 text-sm leading-relaxed text-slate-700">{pilot.extra}</p>
+        </div>
+      )}
     </div>
   );
 }

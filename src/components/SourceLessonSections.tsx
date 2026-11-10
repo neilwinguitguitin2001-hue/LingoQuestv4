@@ -5,7 +5,8 @@ import type {DigitalContent, DigitalBlock} from '../data/curriculum/digitalConte
 import {InabelStrip} from './InabelStrip';
 import {SourceBlock} from './SourceContent';
 import {getLessonPilot} from '../data/curriculum/lessonPilot';
-import {LessonPilotGuide, LessonWatchStoryboard} from './LessonPilotGuide';
+import {LessonDiscussionGuide, LessonWatchStoryboard} from './LessonPilotGuide';
+import {getLessonDiscussion} from '../data/curriculum/lessonDiscussions';
 import {getGenreCards, LessonGenreCards} from './LessonGenreCards';
 import {getLessonVideo, LessonVideo} from './LessonVideo';
 import {getLessonVisualKey, getRestoredLessonFigures, RestoredLessonFigures} from './RestoredLessonFigures';
@@ -25,10 +26,11 @@ export function SourceLessonSections({module,content,error,retry,dataSaver=false
   }) || [];
  }, [section, content, module.id]);
  const pilot=active==='concepts' ? getLessonPilot(module.id) : undefined;
+ const guide=active==='concepts' ? getLessonDiscussion(module.id) : undefined;
  const video=active==='concepts' ? getLessonVideo(module.id) : undefined;
  const select=(id:string)=>{setActive(id);setVisualLimit(3);};
  const discussion = <>
-     {active==='concepts'&&<div className="space-y-3"><p className="text-sm text-slate-700 leading-relaxed">{lesson.overview.text}</p></div>}
+     {active==='concepts'&&!guide&&<div className="space-y-3"><p className="text-sm text-slate-700 leading-relaxed">{lesson.overview.text}</p></div>}
      {error?<div role="status"><p>Lesson content could not be loaded. Please try again.</p><button type="button" onClick={retry} className="mt-3 rounded-lg bg-sky-600 px-4 py-2 text-xs font-bold text-white">Retry lesson content</button></div>:!content?<p role="status" className="text-xs text-slate-500">Loading lesson sections…</p>:section?.entries.map((entry,i)=><article key={`${entry.page}-${i}`} className="space-y-3 border-t border-slate-100 pt-4"><div className="space-y-3">{entry.blockIds.map(id=>content.blocks[id]).filter((b):b is DigitalBlock=>!!b&&b.type!=='figure'&&b.type!=='diagram').map((block,j)=><SourceBlock key={j} block={block}/>)}</div>{entry.blockIds.some(id=>['figure','diagram'].includes(content.blocks[id]?.type))&&<a className="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-700" href="#lesson-visual-examples"><ImageIcon size={13}/> See the illustrations alongside</a>}</article>)}
      {content&&!section?.entries.length&&<p className="text-xs text-slate-600">No separate content is provided under this heading.</p>}
  </>;
@@ -40,10 +42,10 @@ export function SourceLessonSections({module,content,error,retry,dataSaver=false
    <div className="min-w-0 lg:col-span-7 space-y-6">
     <section className="bg-white border-2 border-[#231F20] linocut-card rounded-xl overflow-hidden"><InabelStrip variant="royal" label={`${selected?.title||'Discussion'} • ${lesson.sourceLabel}`}/><div className="p-5 sm:p-6 space-y-5">
      <div className="flex flex-wrap justify-between gap-3 border-b border-slate-100 pb-3"><h2 className="text-lg font-display font-bold text-slate-900">{selected?.title}</h2></div>
-     {pilot && <LessonPilotGuide moduleId={module.id} lesson={pilot} />}
-     {pilot ? (
+     {guide && <LessonDiscussionGuide moduleId={module.id} discussion={guide} pilot={pilot} />}
+     {guide ? (
       <details className="rounded-xl border border-slate-200">
-       <summary className="cursor-pointer rounded-xl p-4 text-sm font-semibold text-sky-900 focus-visible:outline-2 focus-visible:outline-sky-700">Read the full discussion</summary>
+       <summary className="cursor-pointer rounded-xl p-4 text-sm font-semibold text-sky-900 focus-visible:outline-2 focus-visible:outline-sky-700">Read more definitions and source examples</summary>
        <div className="space-y-5 px-4 pb-4">{discussion}</div>
       </details>
      ) : discussion}
@@ -70,7 +72,7 @@ export function SourceLessonSections({module,content,error,retry,dataSaver=false
        <span className="lq-genre-icon"><Compass size={22} aria-hidden="true" /></span>
        <div className="min-w-0">
         <h3 className="text-sm font-bold text-slate-950">Key idea</h3>
-        <p className="mt-1 break-words text-sm leading-relaxed text-slate-700">{pilot?.steps[4] || lesson.overview.text}</p>
+        <p className="mt-1 break-words text-sm leading-relaxed text-slate-700">{guide?.steps[4] || lesson.overview.text}</p>
        </div>
       </div>}
       {visualLimit < visuals.length && <button type="button" onClick={() => setVisualLimit(n => n + 3)} className="rounded-lg border border-sky-200 bg-sky-50 px-4 py-2 text-sm font-bold text-sky-900 transition-colors hover:bg-sky-100">

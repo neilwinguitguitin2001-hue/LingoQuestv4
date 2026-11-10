@@ -6,7 +6,8 @@ import { QuizConceptCard } from './QuizConceptCard';
 import { SourceLessonSections } from './SourceLessonSections';
 import { getLessonVisualKey } from './RestoredLessonFigures';
 import { PilotQuizSceneCue } from './LessonPilotGuide';
-import { getLessonPilot, lessonPilotHeadings } from '../data/curriculum/lessonPilot';
+import { getLessonPilot } from '../data/curriculum/lessonPilot';
+import { discussionHeadings, getLessonDiscussion } from '../data/curriculum/lessonDiscussions';
 import { SourceActivity, SourceExcerpt, SourceGraphic } from './SourceContent';
 import { useDigitalContent } from '../data/curriculum/digitalContent';
 import { createSourceGameSession, getSessionQuestionCount } from '../utils/sourceGameSession';
@@ -607,18 +608,22 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
 
     const handleCopyStudyNotes = () => {
       soundFX.playClick();
+      const guide = getLessonDiscussion(module.id);
       const pilot = getLessonPilot(module.id);
-      const pilotNotes = pilot ? [
-        '[Original teaching examples]',
-        ...lessonPilotHeadings.map((heading, index) => `${heading}\n${pilot.steps[index]}`),
-        pilot.extra,
-      ] : [];
-      const textToCopy = [module.title, ...pilotNotes,
-        ...(sourceContent.data?.sourceSections || []).flatMap(section=>[
-          `[${section.title}]`, ...section.entries.flatMap(entry=>[
-            ...entry.blockIds.map(id=>sourceContent.data!.blocks[id]).filter(Boolean).map(block=>block.text || block.rows?.map(row=>row.join(' | ')).join('\n') || block.labels?.map(label=>label.text).join(' ') || '')
-          ])
-        ])].join('\n\n');
+      const notes = guide ? [
+        guide.topic,
+        ...discussionHeadings.map((heading, index) => {
+          const credit = index === 2 ? `\n${guide.exampleLabel}` : '';
+          return `${heading}${credit}\n${guide.steps[index]}`;
+        }),
+        ...(pilot ? [pilot.extra] : []),
+      ] : (sourceContent.data?.sourceSections || []).flatMap(section => [
+        `[${section.title}]`,
+        ...section.entries.flatMap(entry => entry.blockIds.map(id => sourceContent.data!.blocks[id])
+          .filter(Boolean)
+          .map(block => block.text || block.rows?.map(row => row.join(' | ')).join('\n') || block.labels?.map(label => label.text).join(' ') || '')),
+      ]);
+      const textToCopy = [module.title, ...notes].join('\n\n');
 
       if (navigator.clipboard?.writeText) {
         navigator.clipboard.writeText(textToCopy).then(() => {
