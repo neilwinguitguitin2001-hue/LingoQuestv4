@@ -21,17 +21,29 @@ type LessonVideoData = {
   start?: number;
   end?: number;
   supplementary?: boolean;
+  sourceReading?: { title: string; text: string };
 };
 
 const videos: Partial<Record<string, LessonVideoData>> = {
-  'g8-q1-m2': {
-    id: 'opp259YvaoE',
-    title: 'APA 7 in-text citations',
-    provider: 'Scribbr',
+  'g7-q1-m2': {
+    id: 'P_crrjX_5Uk',
+    title: 'ActNow: A climate action announcement',
+    provider: 'United Nations',
     supplementary: true,
-    prompt: 'Watch how the same author and year can appear either in the sentence or together in parentheses.',
-    summary: 'An in-text citation points to a full reference. In APA style, it usually gives the author and year. A direct quotation also gives a page number or another locator.',
-    writtenGuide: 'https://owl.purdue.edu/owl/research_and_citation/apa_style/apa_formatting_and_style_guide/in_text_citations_the_basics.html',
+    prompt: 'Notice how the characters, message, and call to action show what this public service announcement wants viewers to do.',
+    summary: 'This alternative clip uses familiar animated characters to encourage viewers to try everyday climate actions.',
+    sourceReading: {
+      title: 'Read the lesson’s original viewing example',
+      text: 'In “Heal the Earth, Heal the Future,” the campaign says people already have tools to help the planet and urges them to act together. Which parts of the message show what response the campaign wants?',
+    },
+  },
+  'g8-q1-m2': {
+    id: 'wWs-m1Gr7M0',
+    title: 'Chicago 17th edition: Notes and bibliography',
+    provider: 'California State University, Dominguez Hills Library',
+    supplementary: true,
+    prompt: 'Focus on the notes and bibliography example. Which details help a reader locate the journal article?',
+    summary: 'In Chicago’s notes and bibliography system, a note identifies the work at the point of use. The bibliography lists the works with enough detail for readers to find them. For a journal article, look for the author, article title, journal title, issue details, and pages.',
   },
   // G7 Q2 Module 4, PDF p. 38.
   'g7-q2-m4': {
@@ -96,7 +108,7 @@ export function LessonVideo({ video }: { video: NonNullable<ReturnType<typeof ge
   if (video.start !== undefined) params.set('start', String(video.start));
   if (video.end !== undefined) params.set('end', String(video.end));
   return (
-    <section className="min-w-0 overflow-hidden rounded-xl border-2 border-[#231F20] bg-white linocut-card">
+    <section id="lesson-watch-video" className="min-w-0 scroll-mt-36 overflow-hidden rounded-xl border-2 border-[#231F20] bg-white linocut-card">
       <InabelStrip variant="emerald" label="Watch & Understand" />
       <div className="space-y-3 p-4 sm:p-5">
         <h2 className="font-display text-lg font-bold text-slate-950">{video.title}</h2>
@@ -125,6 +137,12 @@ export function LessonVideo({ video }: { video: NonNullable<ReturnType<typeof ge
           {video.transcript && <a className="mt-2 inline-block text-sm font-semibold text-sky-800 underline" href={video.transcript} target="_blank" rel="noopener noreferrer">Open the transcript</a>}
           {video.writtenGuide && <a className="mt-2 inline-block text-sm font-semibold text-sky-800 underline" href={video.writtenGuide} target="_blank" rel="noopener noreferrer">Open the written guide</a>}
         </details>
+        {video.sourceReading && (
+          <details className="rounded-lg border border-slate-200 px-3 py-2.5">
+            <summary className="cursor-pointer text-sm font-semibold text-sky-900">{video.sourceReading.title}</summary>
+            <p className="mt-2 text-sm leading-relaxed text-slate-700">{video.sourceReading.text}</p>
+          </details>
+        )}
         <a className="inline-flex items-center gap-1.5 text-sm font-semibold text-sky-800 underline" href={`https://www.youtube.com/watch?v=${video.id}${video.start ? `&t=${video.start}s` : ''}`} target="_blank" rel="noopener noreferrer">
           Open on YouTube <ExternalLink size={14} aria-hidden="true" />
         </a>

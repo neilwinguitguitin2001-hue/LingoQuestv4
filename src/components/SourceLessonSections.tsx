@@ -1,5 +1,5 @@
 import React, {useMemo, useRef, useState} from 'react';
-import {BookOpen, CheckSquare, FileText, Image as ImageIcon, ListChecks, Compass} from 'lucide-react';
+import {BookOpen, CheckSquare, FileText, Image as ImageIcon, ListChecks, Compass, Play} from 'lucide-react';
 import type {Module} from '../types/lingoquest';
 import type {DigitalContent, DigitalBlock} from '../data/curriculum/digitalContent';
 import {InabelStrip} from './InabelStrip';
@@ -57,6 +57,9 @@ export function SourceLessonSections({module,content,error,retry,dataSaver=false
       <h2 className="flex items-center gap-2 font-display text-lg font-bold text-slate-950">
        <ImageIcon className="h-4 w-4 text-sky-700" aria-hidden="true" /> Visual Explanations
       </h2>
+      {video && <a className="inline-flex items-center gap-1.5 rounded-lg border border-sky-200 bg-sky-50 px-3 py-2 text-sm font-bold text-sky-900 hover:bg-sky-100" href="#lesson-watch-video">
+       <Play size={15} aria-hidden="true" /> Watch &amp; Understand
+      </a>}
       {visuals.length > 0 ? visuals.slice(0, visualLimit).map(({id, block, repaired}) => {
        const cards = getGenreCards(module.id, id);
        return <div key={id}>
@@ -78,19 +81,6 @@ export function SourceLessonSections({module,content,error,retry,dataSaver=false
     </section>
     {video && <LessonVideo key={video.id} video={video} />}
     {pilot && <LessonWatchStoryboard lesson={pilot} />}
-    {active === 'concepts' && module.id === 'g7-q1-m2' && (
-     <section className="overflow-hidden rounded-xl border-2 border-[#231F20] bg-white linocut-card">
-      <InabelStrip variant="emerald" label="Watch & Understand" />
-      <div className="space-y-3 p-4 sm:p-5">
-       <h2 className="font-display text-lg font-bold text-slate-950">Heal the Earth, Heal the Future</h2>
-       <p className="text-sm leading-relaxed text-slate-700">The video listed in this lesson could not be verified for playback. Use this short reading version to consider how a message can ask viewers to act.</p>
-       <details className="rounded-lg border border-slate-200 px-3 py-2.5">
-        <summary className="cursor-pointer text-sm font-semibold text-sky-900">Read the viewing example</summary>
-        <p className="mt-2 text-sm leading-relaxed text-slate-700">The campaign message calls for people to help the planet. It says people already have tools to make a difference and urges them to work together. Which words signal the response the campaign wants from viewers?</p>
-       </details>
-      </div>
-     </section>
-    )}
    </aside>
   </div>
  </div></SourceMotionContext.Provider>;
