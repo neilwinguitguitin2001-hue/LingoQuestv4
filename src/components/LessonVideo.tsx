@@ -17,11 +17,22 @@ type LessonVideoData = {
   prompt: string;
   summary: string;
   transcript?: string;
+  writtenGuide?: string;
   start?: number;
   end?: number;
+  supplementary?: boolean;
 };
 
 const videos: Partial<Record<string, LessonVideoData>> = {
+  'g8-q1-m2': {
+    id: 'qQ0iUeUxazM',
+    title: 'APA 7 reference lists',
+    provider: 'Purdue OWL',
+    supplementary: true,
+    prompt: 'Watch how the author, date, title, and source are assembled into one reference.',
+    summary: 'A reference helps readers find the work. Gather the author, date, title, and source, then apply the format for the type of work you used.',
+    writtenGuide: 'https://owl.purdue.edu/owl/research_and_citation/apa_style/apa_formatting_and_style_guide/reference_list_textual_sources.html',
+  },
   // G7 Q2 Module 4, PDF p. 38.
   'g7-q2-m4': {
     id: 'oiM0x0ApVL8',
@@ -89,7 +100,7 @@ export function LessonVideo({ video }: { video: NonNullable<ReturnType<typeof ge
       <InabelStrip variant="emerald" label="Watch & Understand" />
       <div className="space-y-3 p-4 sm:p-5">
         <h2 className="font-display text-lg font-bold text-slate-950">{video.title}</h2>
-        <p className="text-xs font-semibold text-emerald-800">Optional · {video.provider}</p>
+        <p className="text-xs font-semibold text-emerald-800">Optional · {video.supplementary ? 'Supplementary · ' : ''}{video.provider}</p>
         <p className="text-sm leading-relaxed text-slate-700">{video.prompt}</p>
         {loaded ? (
           <iframe
@@ -112,6 +123,7 @@ export function LessonVideo({ video }: { video: NonNullable<ReturnType<typeof ge
           <summary className="cursor-pointer text-sm font-semibold text-sky-900">Read the summary</summary>
           <p className="mt-2 text-sm leading-relaxed text-slate-700">{video.summary}</p>
           {video.transcript && <a className="mt-2 inline-block text-sm font-semibold text-sky-800 underline" href={video.transcript} target="_blank" rel="noopener noreferrer">Open the transcript</a>}
+          {video.writtenGuide && <a className="mt-2 inline-block text-sm font-semibold text-sky-800 underline" href={video.writtenGuide} target="_blank" rel="noopener noreferrer">Open the written guide</a>}
         </details>
         <a className="inline-flex items-center gap-1.5 text-sm font-semibold text-sky-800 underline" href={`https://www.youtube.com/watch?v=${video.id}${video.start ? `&t=${video.start}s` : ''}`} target="_blank" rel="noopener noreferrer">
           Open on YouTube <ExternalLink size={14} aria-hidden="true" />

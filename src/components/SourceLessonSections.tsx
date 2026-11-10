@@ -9,11 +9,22 @@ import {getLessonPilot} from '../data/curriculum/lessonPilot';
 import {LessonPilotGuide, LessonWatchStoryboard} from './LessonPilotGuide';
 import {getGenreCards, LessonGenreCards} from './LessonGenreCards';
 import {getLessonVideo, LessonVideo} from './LessonVideo';
+import {getLessonVisualKey, getRestoredLessonFigures, RestoredLessonFigures} from './RestoredLessonFigures';
 
 export function SourceLessonSections({module,content,error,retry,dataSaver=false,initialSection='concepts'}:{initialSection?:string;dataSaver?:boolean;module:Module;content?:DigitalContent;error?:string;retry:()=>void}) {
  const lesson=module.pdfLesson!;const tabs=(lesson.sourceSections||[]).filter(s=>s.kind==='discussion');const [active,setActive]=useState(tabs.some(s=>s.id===initialSection)?initialSection:'concepts');const [visualLimit,setVisualLimit]=useState(3);const refs=useRef<(HTMLButtonElement|null)[]>([]);
  const section=content?.sourceSections?.find(s=>s.id===active&&s.kind==='discussion');const selected=tabs.find(t=>t.id===active)||tabs[0];
- const visuals=useMemo(()=>{const items=section?.entries.flatMap(e=>e.blockIds.map(id=>({id,block:content!.blocks[id]}))).filter(x=>x.block&&(x.block.type==='figure'||x.block.type==='diagram'))||[];return [...new Map(items.map(x=>[x.block.src||x.id,x])).values()];},[section,content]);
+ const visuals = useMemo(() => {
+  const seen = new Set<string>();
+  return section?.entries.flatMap(entry => entry.blockIds).flatMap(id => {
+   const block = content?.blocks[id];
+   const key = getLessonVisualKey(module.id, id, block);
+   if (!block || !key || seen.has(key)) return [];
+   const repaired = block.type === 'figure' ? getRestoredLessonFigures(module.id, block.page) : undefined;
+   seen.add(key);
+   return [{ id, block, repaired }];
+  }) || [];
+ }, [section, content, module.id]);
  const pilot=active==='concepts' ? getLessonPilot(module.id) : undefined;
  const video=active==='concepts' ? getLessonVideo(module.id) : undefined;
  const select=(id:string)=>{setActive(id);setVisualLimit(3);};
@@ -46,10 +57,12 @@ export function SourceLessonSections({module,content,error,retry,dataSaver=false
       <h2 className="flex items-center gap-2 font-display text-lg font-bold text-slate-950">
        <ImageIcon className="h-4 w-4 text-sky-700" aria-hidden="true" /> Visual Explanations
       </h2>
-      {visuals.length > 0 ? visuals.slice(0, visualLimit).map(({id, block}) => {
+      {visuals.length > 0 ? visuals.slice(0, visualLimit).map(({id, block, repaired}) => {
        const cards = getGenreCards(module.id, id);
        return <div key={id}>
-        {cards ? <LessonGenreCards cards={cards} /> : <SourceBlock block={block} />}
+        {cards ? <LessonGenreCards cards={cards} /> : repaired
+         ? <RestoredLessonFigures figures={repaired} page={block.page} />
+         : <SourceBlock block={block} />}
        </div>;
       }) : <div className="lq-genre-card" data-tone="reef">
        <span className="lq-genre-icon"><Compass size={22} aria-hidden="true" /></span>

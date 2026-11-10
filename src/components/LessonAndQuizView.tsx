@@ -4,6 +4,7 @@ import {QuizCloze} from './QuizCloze';
 import {isQuizAnswerCorrect,formatCrosswordResponse} from '../utils/quizResponses';
 import { QuizConceptCard } from './QuizConceptCard';
 import { SourceLessonSections } from './SourceLessonSections';
+import { getLessonVisualKey } from './RestoredLessonFigures';
 import { PilotQuizSceneCue } from './LessonPilotGuide';
 import { getLessonPilot, lessonPilotHeadings } from '../data/curriculum/lessonPilot';
 import { SourceActivity, SourceExcerpt, SourceGraphic } from './SourceContent';
@@ -735,7 +736,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
               title="Illustrations and diagrams for this module"
             >
               <Sparkles className="w-3.5 h-3.5 text-amber-500" />
-              <span>Visuals: {sourceContent.data ? new Set(sourceContent.data.sourceSections?.flatMap(section=>section.entries.flatMap(entry=>entry.blockIds)).filter(id=>['figure','diagram'].includes(sourceContent.data!.blocks[id]?.type))).size : '…'}</span>
+              <span>Visuals: {sourceContent.data ? new Set(sourceContent.data.sourceSections?.flatMap(section=>section.entries.flatMap(entry=>entry.blockIds)).map(id => getLessonVisualKey(module.id, id, sourceContent.data!.blocks[id])).filter(Boolean)).size : '…'}</span>
             </div>
 
             {/* Data Saver Mode Toggle */}
