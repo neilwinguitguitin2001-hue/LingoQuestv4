@@ -25,13 +25,13 @@ type LessonVideoData = {
 
 const videos: Partial<Record<string, LessonVideoData>> = {
   'g8-q1-m2': {
-    id: 'qQ0iUeUxazM',
-    title: 'APA 7 reference lists',
-    provider: 'Purdue OWL',
+    id: 'opp259YvaoE',
+    title: 'APA 7 in-text citations',
+    provider: 'Scribbr',
     supplementary: true,
-    prompt: 'Watch how the author, date, title, and source are assembled into one reference.',
-    summary: 'A reference helps readers find the work. Gather the author, date, title, and source, then apply the format for the type of work you used.',
-    writtenGuide: 'https://owl.purdue.edu/owl/research_and_citation/apa_style/apa_formatting_and_style_guide/reference_list_textual_sources.html',
+    prompt: 'Watch how the same author and year can appear either in the sentence or together in parentheses.',
+    summary: 'An in-text citation points to a full reference. In APA style, it usually gives the author and year. A direct quotation also gives a page number or another locator.',
+    writtenGuide: 'https://owl.purdue.edu/owl/research_and_citation/apa_style/apa_formatting_and_style_guide/in_text_citations_the_basics.html',
   },
   // G7 Q2 Module 4, PDF p. 38.
   'g7-q2-m4': {
