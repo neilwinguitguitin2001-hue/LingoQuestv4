@@ -3,7 +3,6 @@ import {BookOpen, CheckSquare, FileText, Image as ImageIcon, ListChecks, Compass
 import type {Module} from '../types/lingoquest';
 import type {DigitalContent, DigitalBlock} from '../data/curriculum/digitalContent';
 import {InabelStrip} from './InabelStrip';
-import {SourceMotionContext} from './SourceIllustration';
 import {SourceBlock} from './SourceContent';
 import {getLessonPilot} from '../data/curriculum/lessonPilot';
 import {LessonPilotGuide, LessonWatchStoryboard} from './LessonPilotGuide';
@@ -33,7 +32,7 @@ export function SourceLessonSections({module,content,error,retry,dataSaver=false
      {error?<div role="status"><p>Lesson content could not be loaded. Please try again.</p><button type="button" onClick={retry} className="mt-3 rounded-lg bg-sky-600 px-4 py-2 text-xs font-bold text-white">Retry lesson content</button></div>:!content?<p role="status" className="text-xs text-slate-500">Loading lesson sections…</p>:section?.entries.map((entry,i)=><article key={`${entry.page}-${i}`} className="space-y-3 border-t border-slate-100 pt-4"><div className="space-y-3">{entry.blockIds.map(id=>content.blocks[id]).filter((b):b is DigitalBlock=>!!b&&b.type!=='figure'&&b.type!=='diagram').map((block,j)=><SourceBlock key={j} block={block}/>)}</div>{entry.blockIds.some(id=>['figure','diagram'].includes(content.blocks[id]?.type))&&<a className="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-700" href="#lesson-visual-examples"><ImageIcon size={13}/> See the illustrations alongside</a>}</article>)}
      {content&&!section?.entries.length&&<p className="text-xs text-slate-600">No separate content is provided under this heading.</p>}
  </>;
- return <SourceMotionContext.Provider value={dataSaver}><div className="pdf-source-module space-y-6" data-static={dataSaver}>
+ return <div className="pdf-source-module space-y-6" data-static={dataSaver}>
   <div className="flex items-center gap-1.5 overflow-x-auto pb-1 bg-white p-1.5 border-2 border-[#231F20] linocut-card rounded-xl" role="tablist" aria-label="Module discussion">
    {tabs.map((tab,i)=>{const Icon=tab.kind==='discussion'?BookOpen:tab.kind==='objectives'?ListChecks:tab.kind==='answers'?CheckSquare:FileText;return <button key={tab.id} ref={el=>{refs.current[i]=el;}} type="button" role="tab" id={`pdf-tab-${tab.id}`} aria-controls="pdf-source-panel" aria-selected={active===tab.id} tabIndex={active===tab.id?0:-1} onClick={()=>select(tab.id)} onKeyDown={e=>{let next=i;if(e.key==='ArrowRight')next=(i+1)%tabs.length;else if(e.key==='ArrowLeft')next=(i+tabs.length-1)%tabs.length;else if(e.key==='Home')next=0;else if(e.key==='End')next=tabs.length-1;else return;e.preventDefault();select(tabs[next].id);refs.current[next]?.focus();}} className={`px-3 py-2 text-xs font-bold rounded-lg transition-all flex items-center gap-1.5 whitespace-nowrap cursor-pointer ${active===tab.id?'bg-sky-700 text-white shadow-sm':'text-slate-600 hover:bg-slate-100'}`}><Icon className="w-3.5 h-3.5"/>{tab.title}</button>;})}
   </div>
@@ -83,5 +82,5 @@ export function SourceLessonSections({module,content,error,retry,dataSaver=false
     {pilot && <LessonWatchStoryboard lesson={pilot} />}
    </aside>
   </div>
- </div></SourceMotionContext.Provider>;
+ </div>;
 }
