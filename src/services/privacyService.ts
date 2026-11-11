@@ -10,8 +10,8 @@ export async function privateRequest<T>(body:Record<string,unknown>,expectedUser
 }
 export function profileAccount(p:any):UserAccount{
  const base={id:p.id,name:p.display_name||'',email:p.email||'',username:p.username||'',status:p.status,isActive:p.status==='approved',joinedDate:p.created_at||'',schoolName:p.school_name||''};
- if(p.role==='student')return {...base,role:'student',learnerId:p.lrn||'',lrn:p.lrn||'',gradeLevel:p.grade_level,section:p.section||'',classCode:p.class_code||'',teacherId:p.teacher_id||'',points:0,badges:[],completedModules:[],progressByModule:{},personalizationHistory:[],writingSubmissions:[]};
- if(p.role==='teacher')return {...base,role:'teacher',department:'',employeeId:'',depEdEmail:p.email||'',classCode:p.class_code||''};
+ if(p.role==='student')return {...base,role:'student',learnerId:p.lrn||'',lrn:p.lrn||'',gradeLevel:p.grade_level,section:p.section||'',enrollmentStatus:p.status==='pending'?'pending_review':p.status==='rejected'?'rejected':undefined,enrollmentReviewNote:p.review_note||p.profile_data?.registrationReviewNote,classCode:p.class_code||'',teacherId:p.teacher_id||'',points:0,badges:[],completedModules:[],progressByModule:{},personalizationHistory:[],writingSubmissions:[]};
+ if(p.role==='teacher')return {...base,role:'teacher',department:p.department||p.profile_data?.department||'',employeeId:p.employee_id||p.profile_data?.employeeId||'',rejectionReason:p.review_note||p.profile_data?.registrationReviewNote,depEdEmail:p.email||'',classCode:p.class_code||''};
  return {...base,role:'admin',adminTitle:'Administrator',employeeId:'',isMainAdmin:false,permissions:{canApproveTeachers:false,canManageModules:false,canViewStudentProgress:false,canManageSubAdmins:false}};
 }
 export function reportStudent(r:any):StudentAccount{
@@ -19,7 +19,13 @@ export function reportStudent(r:any):StudentAccount{
  teacherId:r.student.teacher_id||'',points:r.progress?.xp||0,badges:r.progress?.badges||[],completedModules:r.progress?.completed_quests||[],progressByModule:r.progress?.progress_by_module||{}};
 }
 export async function privateBootstrap(){
- const data=await privateRequest<any>({action:'bootstrap'});
+ const data=await privateRequest<any>({action:'bootstrap'}).catch(async error=>{
+  const {data:{session}}=await supabase!.auth.getSession();
+  if(!session) throw error;
+  const result=await supabase!.from('profiles').select('id,email,display_name,role,status,grade_level,school_name,section,lrn,username,class_code,teacher_id,created_at,profile_data').eq('id',session.user.id).in('role',['teacher','student']).in('status',['pending','rejected']).maybeSingle();
+  if(!result.data || result.error) throw error;
+  return {profile:result.data,students:[]};
+ });
  const own=profileAccount(data.profile),students=(data.students||[]).map(reportStudent) as StudentAccount[];
  if(own.role==='teacher') for(const s of students) if(s.teacherId===own.id) s.classCode=own.classCode;
  if(own.role==='admin' && own.permissions) own.permissions.canViewStudentProgress=students.length>0;

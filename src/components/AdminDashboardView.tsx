@@ -73,7 +73,7 @@ interface AdminDashboardViewProps {
   allUsers: UserAccount[];
   modules: Module[];
   auditLogs: AuditLogEntry[];
-  onApproveTeacher: (teacherId: string, customClassCode?: string) => Promise<{ success: boolean; classCode: string }>;
+  onApproveTeacher: (teacherId: string, customClassCode?: string) => Promise<{ success: boolean; classCode: string; error?: string }>;
   onUpdateTeacherClassCode?: (teacherId: string, newClassCode: string) => Promise<{ success: boolean; classCode: string; error?: string }>;
   onRejectTeacher: (teacherId: string, reason: string) => Promise<boolean>;
   onSuspendUser: (userId: string, reason: string) => Promise<boolean>;
@@ -228,7 +228,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
   const [selectedStudentForDrillDown, setSelectedStudentForDrillDown] = useState<StudentAccount | null>(null);
 
   // Approval queue filters
-  const [teacherStatusFilter, setTeacherStatusFilter] = useState<'all' | 'pending' | 'approved' | 'rejected' | 'suspended'>('pending');
+  const [teacherStatusFilter, setTeacherStatusFilter] = useState<'all' | 'pending' | 'approved' | 'rejected' | 'suspended'>('all');
   const [teacherSearch, setTeacherSearch] = useState('');
 
   // Modal states for action reasons
@@ -622,6 +622,8 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
     const result = await onApproveTeacher(teacher.id, codeToUse);
     if (result.success) {
       showNotice(`Approved ${teacher.name}! Class code ${result.classCode} is now active.`);
+    } else {
+      showNotice(result.error || 'Could not approve this application.');
     }
   };
 
@@ -653,6 +655,8 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
     if (result.success) {
       showNotice(`Approved ${approvingTeacher.name}! Activated class code: ${result.classCode}`);
       setApprovingTeacher(null);
+    } else {
+      setClassCodeError(result.error || 'Could not approve this application.');
     }
   };
 
@@ -699,7 +703,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
   const handleConfirmReject = async () => {
     if (!rejectingTeacher || !rejectionReasonInput.trim()) return;
     soundFX.playIncorrect();
-    await onRejectTeacher(rejectingTeacher.id, rejectionReasonInput.trim());
+    if (!await onRejectTeacher(rejectingTeacher.id, rejectionReasonInput.trim())) return;
     showNotice(`Application for ${rejectingTeacher.name} rejected.`);
     setRejectingTeacher(null);
   };

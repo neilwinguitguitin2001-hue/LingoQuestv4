@@ -53,6 +53,7 @@ import { EmailNotificationCenter } from './components/EmailNotificationCenter';
 import { FloatingFeedbackWidget } from './components/FloatingFeedbackWidget';
 import { supabase } from './lib/supabase';
 import { privateBootstrap } from './services/privacyService';
+import { loadRegistrationQueue, saveRegistrationReview, submitRegistration } from './services/registrationService';
 import { questGame } from './services/questGameService';
 import {
   InabelWovenStrip,
@@ -61,7 +62,6 @@ import {
 
 // Services
 import {
-  approveTeacher as apiApproveTeacher,
   createNewModule as apiCreateNewModule,
   deleteExistingModule as apiDeleteExistingModule,
   getAuditLogs as apiGetAuditLogs,
@@ -70,18 +70,13 @@ import {
   hydrateStudentProgressFromSupabase,
   reactivateUser as apiReactivateUser,
   recoverUserPassword as apiRecoverUserPassword,
-  registerNewStudent as apiRegisterNewStudent,
-  registerNewTeacher as apiRegisterNewTeacher,
-  rejectTeacher as apiRejectTeacher,
   suspendUser as apiSuspendUser,
   deleteTeacherAccount as apiDeleteTeacherAccount,
   deleteStudentAccount as apiDeleteStudentAccount,
-  reviewStudentEnrollment as apiReviewStudentEnrollment,
   updateExistingModule as apiUpdateExistingModule,
   updateStudentProfile as apiUpdateStudentProfile,
   updateTeacherClassCode as apiUpdateTeacherClassCode,
   updateTeacherProfile as apiUpdateTeacherProfile,
-  verifyClassCode as apiVerifyClassCode,
   generateUniqueClassCode,
   createSubAdminAccount as apiCreateSubAdmin,
   updateSubAdminAccount as apiUpdateSubAdmin,
@@ -261,6 +256,8 @@ export default function App() {
   // Initialize Database / Local Storage
   const [students, setStudents] = useState<StudentAccount[]>([]);
 
+  const [registrationQueue, setRegistrationQueue] = useState<UserAccount[]>([]);
+  const [queueError, setQueueError] = useState('');
   const [teachers, setTeachers] = useState<TeacherAccount[]>([]);
 
   const [admins, setAdmins] = useState<AdminAccount[]>([]);
@@ -571,6 +568,63 @@ export default function App() {
   const currentAdmin = admins.find((a) => a.id === currentUserId) || null;
   const currentUser: UserAccount | null = currentStudent || currentTeacher || currentAdmin;
 
+  const reviewQueueActive = Boolean(authUser?.uid === currentUserId &&
+    (currentView === 'ADMIN' && currentAdmin?.status === 'approved' ||
+     currentView === 'TEACHER' && currentTeacher?.status === 'approved'));
+
+  useEffect(() => {
+    setRegistrationQueue([]);
+    setQueueError('');
+    if (!reviewQueueActive) return;
+    let active = true;
+    let loading = false;
+    const refresh = async () => {
+      if (loading || document.hidden) return;
+      loading = true;
+      try {
+        const accounts = await loadRegistrationQueue();
+        if (active) {
+          setRegistrationQueue(accounts);
+          setQueueError('');
+        }
+      } catch (error) {
+        if (active) setQueueError((error as Error).message);
+      } finally {
+        loading = false;
+      }
+    };
+    void refresh();
+    const timer = window.setInterval(refresh, 15000);
+    document.addEventListener('visibilitychange', refresh);
+    return () => {
+      active = false;
+      window.clearInterval(timer);
+      document.removeEventListener('visibilitychange', refresh);
+    };
+  }, [reviewQueueActive, authUser?.uid]);
+
+  const refreshRegistrationQueue = async () => {
+    try {
+      setRegistrationQueue(await loadRegistrationQueue());
+      setQueueError('');
+    } catch (error) {
+      setQueueError((error as Error).message);
+    }
+  };
+
+  const faculty = registrationQueue.filter((account): account is TeacherAccount => account.role === 'teacher');
+  const classroom = new Map(students.map(student => [student.id, student]));
+  for (const account of registrationQueue) {
+    if (account.role === 'student') classroom.set(account.id, { ...classroom.get(account.id), ...account,
+      ...(classroom.has(account.id) ? {
+        points: classroom.get(account.id)!.points,
+        badges: classroom.get(account.id)!.badges,
+        completedModules: classroom.get(account.id)!.completedModules,
+        progressByModule: classroom.get(account.id)!.progressByModule,
+      } : {}),
+    });
+  }
+
   useEffect(() => {
     let active = true;
     const handleBalance = (event: Event) => {
@@ -666,7 +720,7 @@ export default function App() {
       const studentAcc = currentUser as StudentAccount;
       if (
         studentAcc.status === 'pending' ||
-        studentAcc.status === 'rejected' ||
+        studentAcc.status === 'rejected' || studentAcc.status === 'suspended' ||
         studentAcc.enrollmentStatus === 'pending_review' ||
         studentAcc.enrollmentStatus === 'rejected'
       ) {
@@ -748,7 +802,7 @@ export default function App() {
       const studentAcc = account as StudentAccount;
       if (
         studentAcc.status === 'pending' ||
-        studentAcc.status === 'rejected' ||
+        studentAcc.status === 'rejected' || studentAcc.status === 'suspended' ||
         studentAcc.enrollmentStatus === 'pending_review' ||
         studentAcc.enrollmentStatus === 'rejected'
       ) {
@@ -763,48 +817,6 @@ export default function App() {
     soundFX.playClick();
     setEmailModalFilter(filterEmail || '');
     setIsEmailModalOpen(true);
-  };
-
-  // Registration: Student
-  const handleRegisterStudent = async (newStudentData: {
-    name: string;
-    email: string;
-    lrn: string;
-    gradeLevel: GradeLevel;
-    schoolName: string;
-    section?: string;
-    classCode: string;
-    teacherId: string;
-    username: string;
-    password?: string;
-  }): Promise<StudentAccount> => {
-    const created = await apiRegisterNewStudent({
-      ...newStudentData,
-      section: newStudentData.section || '',
-      learnerId: newStudentData.lrn,
-    });
-    customTransitionTriggeredRef.current = true;
-    triggerLogoTransition({
-      title: `Welcome Aboard, ${created.name}!`,
-      subtitle: 'Preparing your Student Enrollment Portal...',
-      kind: 'signin',
-      durationMs: 680,
-    });
-    setStudents((prev) => [created, ...prev]);
-    setCurrentUserId(created.id);
-    setBrowseGrade(created.gradeLevel);
-    setIsPersonalizationMode(false);
-    if (
-      created.status === 'pending' ||
-      created.status === 'rejected' ||
-      created.enrollmentStatus === 'pending_review' ||
-      created.enrollmentStatus === 'rejected'
-    ) {
-      setCurrentView('WAITING_APPROVAL');
-    } else {
-      setCurrentView('MAP');
-    }
-    return created;
   };
 
   // Student Profile & Credentials Updates (Name, Email, Password, Picture, Section)
@@ -899,51 +911,13 @@ export default function App() {
     return res;
   };
 
-  // Registration: Teacher
-  const handleRegisterTeacher = async (newTeacherData: {
-    name: string;
-    employeeId: string;
-    schoolName: string;
-    department: string;
-    depEdEmail: string;
-    username: string;
-    password?: string;
-    classCode?: string;
-  }): Promise<TeacherAccount> => {
-    const created = await apiRegisterNewTeacher(newTeacherData);
-    customTransitionTriggeredRef.current = true;
-    triggerLogoTransition({
-      title: `Faculty Profile Created!`,
-      subtitle: 'Routing to Division Approval Verification...',
-      kind: 'signin',
-      durationMs: 680,
-    });
-    setTeachers((prev) => [created, ...prev]);
-    setCurrentUserId(created.id);
-    // Route to waiting for approval screen!
-    setCurrentView('WAITING_APPROVAL');
-    return created;
-  };
-
-  // Verify class code helper
-  const handleVerifyClassCode = (classCode: string) => {
-    return apiVerifyClassCode(classCode, teachers);
-  };
-
-  // Refresh status for waiting teacher or student
-  const handleRefreshTeacherStatus = () => {
-    const curTeacher = teachers.find((t) => t.id === currentUserId);
-    if (curTeacher && curTeacher.status === 'approved') {
-      soundFX.playPass();
-      setCurrentView('TEACHER');
-      return;
-    }
-    const curStudent = students.find((s) => s.id === currentUserId);
-    if (curStudent && curStudent.status === 'approved') {
-      soundFX.playPass();
-      setCurrentView('MAP');
-      return;
-    }
+  const handleRefreshApprovalStatus = async () => {
+    const response = await privateBootstrap();
+    const own = response.users.find(account => account.id === authUser?.uid);
+    if (!own) throw new Error('Please sign in again to check your status.');
+    if (own.role === 'student') setStudents(prev => prev.map(student => student.id === own.id ? own : student));
+    if (own.role === 'teacher') setTeachers(prev => prev.map(teacher => teacher.id === own.id ? own : teacher));
+    return own.status;
   };
 
   // Log Out
@@ -1293,14 +1267,13 @@ export default function App() {
   // Admin Actions
   const handleAdminApproveTeacher = async (teacherId: string, customClassCode?: string) => {
     if (!currentAdmin) return { success: false, classCode: '' };
-    const res = await apiApproveTeacher(teacherId, currentAdmin, customClassCode);
-    if (res.success) {
-      setTeachers((prev) =>
-        prev.map((t) => (t.id === teacherId ? { ...t, status: 'approved', classCode: res.classCode } : t))
-      );
-      apiGetAuditLogs().then(setAuditLogs);
+    try {
+      await saveRegistrationReview(teacherId, 'approve', { classCode: customClassCode });
+      await refreshRegistrationQueue();
+      return { success: true, classCode: customClassCode || '' };
+    } catch (error) {
+      return { success: false, classCode: '', error: (error as Error).message };
     }
-    return res;
   };
 
   const handleAdminUpdateTeacherClassCode = async (teacherId: string, newClassCode: string) => {
@@ -1317,14 +1290,14 @@ export default function App() {
 
   const handleAdminRejectTeacher = async (teacherId: string, reason: string) => {
     if (!currentAdmin) return false;
-    const ok = await apiRejectTeacher(teacherId, reason, currentAdmin);
-    if (ok) {
-      setTeachers((prev) =>
-        prev.map((t) => (t.id === teacherId ? { ...t, status: 'rejected', rejectionReason: reason } : t))
-      );
-      apiGetAuditLogs().then(setAuditLogs);
+    try {
+      await saveRegistrationReview(teacherId, 'reject', { note: reason });
+      await refreshRegistrationQueue();
+      return true;
+    } catch (error) {
+      setQueueError((error as Error).message);
+      return false;
     }
-    return ok;
   };
 
   const handleAdminSuspendUser = async (userId: string, reason: string) => {
@@ -1529,19 +1502,20 @@ export default function App() {
     if (!currentTeacher) {
       return { success: false, error: 'No active teacher session found.' };
     }
-    const res = await apiReviewStudentEnrollment(studentId, currentTeacher, action, updates, note);
-    if (res.success && res.student) {
-      const updated = res.student;
-      setStudents((prev) => prev.map((s) => (s.id === updated.id ? updated : s)));
-      return { success: true, student: updated };
+    try {
+      await saveRegistrationReview(studentId, action, { edits: updates, note });
+      await refreshRegistrationQueue();
+      return { success: true };
+    } catch (error) {
+      return { success: false, error: (error as Error).message };
     }
-    return { success: false, error: res.error || 'Failed to review student enrollment.' };
   };
 
   const handleRefreshAdminData = async () => {
     const [logs, feedbackList] = await Promise.all([
       apiGetAuditLogs(),
       apiGetAllSystemFeedback(),
+      refreshRegistrationQueue(),
     ]);
     setAuditLogs(logs);
     setSystemFeedback(feedbackList);
@@ -1959,13 +1933,7 @@ export default function App() {
         {/* Authentication View */}
         {currentView === 'AUTH' && (
           <AuthScreen
-            students={students}
-            teachers={teachers}
-            admins={admins}
             onLoginSuccess={handleLoginSuccess}
-            onRegisterStudent={handleRegisterStudent}
-            onRegisterTeacher={handleRegisterTeacher}
-            onVerifyClassCode={handleVerifyClassCode}
             onRecoverPassword={handleRecoverPassword}
             onTriggerTransition={(title, subtitle) =>
               triggerLogoTransition({ title, subtitle, kind: 'navigate', durationMs: 380 })
@@ -1978,17 +1946,17 @@ export default function App() {
           <PendingApprovalScreen
             teacher={currentTeacher || undefined}
             student={currentStudent || undefined}
-            onRefreshStatus={handleRefreshTeacherStatus}
+            onRefreshStatus={handleRefreshApprovalStatus}
             onLogOut={handleLogOut}
           />
         )}
 
         {/* Administrator Dashboard View */}
         {currentView === 'ADMIN' && currentAdmin && (
-          <><PrivateAdminSummary /><AdminDashboardView
+          <><PrivateAdminSummary />{queueError && <p role="alert" className="p-3 text-center text-red-700">{queueError}</p>}<AdminDashboardView
             currentAdmin={currentAdmin}
             admins={admins}
-            allUsers={[...admins, ...teachers, ...students]}
+            allUsers={[...admins, ...faculty, ...students]}
             modules={modules}
             auditLogs={auditLogs}
             onApproveTeacher={handleAdminApproveTeacher}
@@ -2025,13 +1993,13 @@ export default function App() {
 
         {/* Teacher Dashboard View (Approved teachers only, scoped to their classCode) */}
         {currentView === 'TEACHER' && currentTeacher && currentTeacher.status === 'approved' && (
-          <TeacherDashboardView
+          <>{queueError && <p role="alert" className="p-3 text-center text-red-700">{queueError}</p>}<TeacherDashboardView
             currentTeacher={currentTeacher}
-            students={students}
+            students={Array.from(classroom.values())}
             allModules={modules}
             onAddStudent={async (newStu) => {
-              const res = await handleRegisterStudent(newStu as any);
-              return res;
+              await submitRegistration({ ...newStu, role: 'student', schoolName: currentTeacher.schoolName || '', classCode: currentTeacher.classCode });
+              await refreshRegistrationQueue();
             }}
             onToggleStudentStatus={(stuId) => {
               setStudents((prev) =>
@@ -2052,7 +2020,7 @@ export default function App() {
               }
               setCurrentView('MAP');
             }}
-          />
+          /></>
         )}
 
         {/* Student Views */}

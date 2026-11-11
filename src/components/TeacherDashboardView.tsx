@@ -666,7 +666,7 @@ export const TeacherDashboardView: React.FC<TeacherDashboardViewProps> = ({
     }
   };
 
-  const handleCreateStudent = (e: React.FormEvent) => {
+  const handleCreateStudent = async (e: React.FormEvent) => {
     e.preventDefault();
     setStuModalError(null);
     if (!newStuName || !newStuLearnerId || !newStuUsername || !newStuPassword) {
@@ -679,7 +679,8 @@ export const TeacherDashboardView: React.FC<TeacherDashboardViewProps> = ({
       return;
     }
     soundFX.playClick();
-    onAddStudent({
+    try {
+      await onAddStudent({
       name: newStuName.trim(),
       email: cleanEmail,
       learnerId: newStuLearnerId.trim(),
@@ -691,7 +692,11 @@ export const TeacherDashboardView: React.FC<TeacherDashboardViewProps> = ({
       status: 'approved',
       classCode: currentTeacher.classCode,
       teacherId: currentTeacher.id,
-    } as any);
+      });
+    } catch (error) {
+      setStuModalError((error as Error).message);
+      return;
+    }
     setShowAddStudentModal(false);
     setNewStuName('');
     setNewStuEmail('');

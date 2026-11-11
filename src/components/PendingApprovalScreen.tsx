@@ -22,7 +22,7 @@ import { LingoQuestLogo } from './LingoQuestLogo';
 interface PendingApprovalScreenProps {
   teacher?: TeacherAccount;
   student?: StudentAccount;
-  onRefreshStatus: () => void;
+  onRefreshStatus: () => Promise<string>;
   onLogOut: () => void;
   onOpenEmailInbox?: (filterEmail?: string) => void;
 }
@@ -35,6 +35,16 @@ export const PendingApprovalScreen: React.FC<PendingApprovalScreenProps> = ({
   onOpenEmailInbox,
 }) => {
   const [copied, setCopied] = useState(false);
+  const [statusMessage, setStatusMessage] = useState('');
+  const checkStatus = async () => {
+    setStatusMessage('Checking status…');
+    try {
+      const status = await onRefreshStatus();
+      setStatusMessage(status === 'pending' ? 'Your application is still pending.' : 'Your application status was updated.');
+    } catch {
+      setStatusMessage('Could not check your status. Please sign in again or try again later.');
+    }
+  };
 
   // If student mode
   if (student) {
@@ -160,12 +170,13 @@ export const PendingApprovalScreen: React.FC<PendingApprovalScreenProps> = ({
                 <button
                   onClick={() => {
                     soundFX.playClick();
-                    onRefreshStatus();
+                    void checkStatus();
                   }}
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-2xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs shadow-md shadow-blue-600/20 transition cursor-pointer"
                 >
                   <RefreshCw className="w-4 h-4" /> Check Enrollment Status
                 </button>
+                {statusMessage && <p role="status" className="text-xs text-slate-700">{statusMessage}</p>}
 
                 <button
                   onClick={() => {
@@ -411,12 +422,13 @@ export const PendingApprovalScreen: React.FC<PendingApprovalScreenProps> = ({
               <button
                 onClick={() => {
                   soundFX.playClick();
-                  onRefreshStatus();
+                  void checkStatus();
                 }}
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-2xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs shadow-md shadow-blue-600/20 transition cursor-pointer"
               >
                 <RefreshCw className="w-4 h-4" /> Check Approval Status
               </button>
+                {statusMessage && <p role="status" className="text-xs text-slate-700">{statusMessage}</p>}
 
               <button
                 onClick={() => {

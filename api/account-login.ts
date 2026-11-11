@@ -23,7 +23,9 @@ export default async function handler(req:IncomingMessage & {body?:any},res:Serv
   const client=createClient(url,key,options);
   // Uniform outward error; no profile data or existence response before password verification.
   const {data,error:authError}=await client.auth.signInWithPassword({email:p?.email||'unavailable-account@example.invalid',password:b.password});
-  if(!p||p.status!=='approved'||authError||data.user?.id!==p.id||!data.session)return send(401,{error:'Incorrect account or password.'});
+  if(p && authError?.code==='email_not_confirmed')return send(401,{error:'Confirm your email using the link sent when you registered.'});
+  const canSignIn=p&&(p.status==='approved'||(p.role!=='admin'&&['pending','rejected'].includes(p.status)));
+  if(!canSignIn||authError||data.user?.id!==p.id||!data.session)return send(401,{error:'Incorrect account or password.'});
   return send(200,{session:{access_token:data.session.access_token,refresh_token:data.session.refresh_token}});
  }catch{return send(401,{error:'Incorrect account or password.'});}
 }

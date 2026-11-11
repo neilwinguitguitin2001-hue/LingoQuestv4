@@ -21,3 +21,11 @@ export const supabase: SupabaseClient | null = isSupabaseConfigured
     })
   : null
 
+
+// Registration must never replace a staff session in the current browser.
+export function createSignupClient() {
+  if (!isSupabaseConfigured) throw new Error('Registration is not configured.');
+  return createClient(supabaseUrl, supabaseAnonKey, {
+    auth: { persistSession: false, autoRefreshToken: false, detectSessionInUrl: false },
+  });
+}

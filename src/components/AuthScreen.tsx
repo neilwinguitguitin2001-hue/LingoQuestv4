@@ -42,43 +42,14 @@ import {
   TeacherAccount,
   UserAccount,
 } from '../types/lingoquest';
-import { generateUniqueClassCode } from '../services/accountService';
-import {NOTICE_VERSION} from '../data/legalNotices';
-import {privateRequest} from '../services/privacyService';
+import { submitRegistration } from '../services/registrationService';
 import { privateLogin } from '../services/privacyService';
-import { useAuth } from '../context/AuthContext';
 import { soundFX } from '../utils/soundEffects';
 import { LingoQuestEmblem, LingoQuestLogo } from './LingoQuestLogo';
 import { InteractiveIslandMap, IslandStationData } from './InteractiveIslandMap';
 
 interface AuthScreenProps {
-  students: StudentAccount[];
-  teachers: TeacherAccount[];
-  admins: AdminAccount[];
   onLoginSuccess: (account: UserAccount) => void;
-  onRegisterStudent: (newStudent: {
-    name: string;
-    email: string;
-    lrn: string;
-    gradeLevel: GradeLevel;
-    schoolName: string;
-    section?: string;
-    classCode: string;
-    teacherId: string;
-    username: string;
-    password?: string;
-  }) => Promise<StudentAccount>;
-  onRegisterTeacher: (newTeacher: {
-    name: string;
-    employeeId: string;
-    schoolName: string;
-    department: string;
-    depEdEmail: string;
-    username: string;
-    password?: string;
-    classCode?: string;
-  }) => Promise<TeacherAccount>;
-  onVerifyClassCode: (classCode: string) => { valid: boolean; teacher?: TeacherAccount; error?: string };
   onRecoverPassword?: (
     role: 'student' | 'teacher',
     identifier: string,
@@ -91,23 +62,12 @@ interface AuthScreenProps {
 }
 
 export const AuthScreen: React.FC<AuthScreenProps> = ({
-  students,
-  teachers,
-  admins,
   onLoginSuccess,
-  onRegisterStudent,
-  onRegisterTeacher,
-  onVerifyClassCode,
   onRecoverPassword,
   onTriggerTransition,
   emailNotifications = [],
   onOpenEmailInbox,
 }) => {
-  const {
-    login: supabaseLogin,
-    signup: supabaseSignup,
-  } = useAuth();
-
   // Mode and Role Tabs
   const [mode, setMode] = useState<'login' | 'register'>('login');
   const [loginRole, setLoginRole] = useState<'student' | 'teacher' | 'admin'>('student');
@@ -171,19 +131,7 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
   const [tchUsername, setTchUsername] = useState('');
   const [tchPassword, setTchPassword] = useState('');
 
-  // System-assigned unique class code for teacher registration
-  const [assignedTeacherCode, setAssignedTeacherCode] = useState<string>(() =>
-    generateUniqueClassCode(teachers)
-  );
-  const [assignedCodeCopied, setAssignedCodeCopied] = useState(false);
-  const [registeredTeacherResult, setRegisteredTeacherResult] = useState<TeacherAccount | null>(null);
-
-  // Live class code verification feedback
-  const [classCodeFeedback, setClassCodeFeedback] = useState<{
-    valid: boolean;
-    teacherName?: string;
-    error?: string;
-  } | null>(null);
+  const [registrationReceipt, setRegistrationReceipt] = useState('');
 
   // Rate Limit Countdown Interval
   useEffect(() => {
@@ -200,26 +148,6 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
     const timer = setInterval(updateCountdown, 1000);
     return () => clearInterval(timer);
   }, [lockoutUntil]);
-
-  // Check class code in real-time as user types
-  useEffect(() => {
-    if (mode === 'register' && registerRole === 'student' && stuClassCode.trim().length >= 4) {
-      const result = onVerifyClassCode(stuClassCode.trim());
-      if (result.valid && result.teacher) {
-        setClassCodeFeedback({
-          valid: true,
-          teacherName: result.teacher.name,
-        });
-      } else {
-        setClassCodeFeedback({
-          valid: false,
-          error: result.error || 'Class code not recognized',
-        });
-      }
-    } else {
-      setClassCodeFeedback(null);
-    }
-  }, [stuClassCode, mode, registerRole, onVerifyClassCode]);
 
   const handleRoleSwitch = (newRole: 'student' | 'teacher' | 'admin') => {
     soundFX.playClick();
@@ -244,12 +172,6 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
       } catch {}
       setErrorMsg('Too many failed login attempts. Login temporarily locked for 30 seconds.');
     }
-  };
-
-  const handleRegenerateTeacherCode = () => {
-    soundFX.playClick();
-    const newCode = generateUniqueClassCode(teachers);
-    setAssignedTeacherCode(newCode);
   };
 
   const handleResetFailedAttempts = () => {
@@ -290,120 +212,35 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
     setIsSubmitting(true);
 
     try {
-      if (registerRole === 'student') {
-        if (!stuName.trim() || !stuEmail.trim() || !stuLrn.trim() || !stuSchool || !stuClassCode.trim() || !stuUsername.trim() || !stuPassword.trim()) {
-          setErrorMsg('Please complete all required fields, including your email address.');
-          setIsSubmitting(false);
-          return;
-        }
-
-        // Validate Email
-        const cleanEmail = stuEmail.trim().toLowerCase();
-        if (!cleanEmail.includes('@') || !cleanEmail.includes('.')) {
-          setErrorMsg('Please enter a valid email address for password recovery.');
-          setIsSubmitting(false);
-          return;
-        }
-
-        // Validate LRN
-        if (stuLrn.trim().length !== 12 || !/^\d+$/.test(stuLrn.trim())) {
-          setErrorMsg('DepEd Learner Reference Number (LRN) must be exactly 12 numeric digits.');
-          setIsSubmitting(false);
-          return;
-        }
-
-        // Validate Class Code against approved teachers
-        const codeCheck = onVerifyClassCode(stuClassCode.trim());
-        if (!codeCheck.valid || !codeCheck.teacher) {
-          setErrorMsg(codeCheck.error || 'Invalid class code. Please ask your teacher for their approved class code.');
-          setIsSubmitting(false);
-          return;
-        }
-
-        // Check duplicate username
-        const exists =
-          students.some((s) => s.username.toLowerCase() === stuUsername.trim().toLowerCase()) ||
-          teachers.some((t) => t.username.toLowerCase() === stuUsername.trim().toLowerCase());
-        if (exists) {
-          setErrorMsg('That username is already registered. Please choose another username.');
-          setIsSubmitting(false);
-          return;
-        }
-
-        // Register student in Supabase Auth and profile storage if password >= 6 chars
-        try {
-          if (stuPassword.length >= 6) {
-            await supabaseSignup({
-              fullName: stuName.trim(),
-              email: cleanEmail,
-              password: stuPassword,
-              gradeLevel: stuGrade,
-              school: stuSchool,
-              section: stuSection.trim(),
-              lrn: stuLrn.trim(),
-              classCode: stuClassCode.trim().toUpperCase(),
-              teacherId: codeCheck.teacher.id,
-              username: stuUsername.trim(),
-            });
-          }
-        } catch (signupError: any) {
-          console.warn('Supabase signup notice:', signupError?.message || signupError);
-        }
-
-        const newStudent = await onRegisterStudent({
-          name: stuName.trim(),
-          email: cleanEmail,
-          lrn: stuLrn.trim(),
-          gradeLevel: stuGrade,
-          schoolName: stuSchool,
-          section: stuSection.trim(),
-          classCode: stuClassCode.trim().toUpperCase(),
-          teacherId: codeCheck.teacher.id,
-          username: stuUsername.trim(),
-          password: stuPassword,
-        });
-
-        soundFX.playBridgeRestored();
-        await privateRequest({action:'acknowledgeNotice',version:NOTICE_VERSION,termsAccepted:true},newStudent.id).catch(()=>undefined);
-        onLoginSuccess(newStudent);
-      } else {
-        // Teacher registration
-        if (!tchName.trim() || !tchEmployeeId.trim() || !tchSchool || !tchDepEdEmail.trim() || !tchUsername.trim() || !tchPassword.trim()) {
-          setErrorMsg('Please complete all required teacher registration fields.');
-          setIsSubmitting(false);
-          return;
-        }
-
-        if (!tchDepEdEmail.includes('@')) {
-          setErrorMsg('Please enter a valid DepEd or institutional email address.');
-          setIsSubmitting(false);
-          return;
-        }
-
-        const exists =
-          students.some((s) => s.username.toLowerCase() === tchUsername.trim().toLowerCase()) ||
-          teachers.some((t) => t.username.toLowerCase() === tchUsername.trim().toLowerCase());
-        if (exists) {
-          setErrorMsg('That username is already registered. Please choose another username.');
-          setIsSubmitting(false);
-          return;
-        }
-
-        const newTeacher = await onRegisterTeacher({
-          name: tchName.trim(),
-          employeeId: tchEmployeeId.trim(),
-          schoolName: tchSchool,
-          department: `${tchSchool} - English Department`,
-          depEdEmail: tchDepEdEmail.trim(),
-          username: tchUsername.trim(),
-          password: tchPassword,
-          classCode: assignedTeacherCode,
-        });
-
-        soundFX.playBridgeRestored();
-        await privateRequest({action:'acknowledgeNotice',version:NOTICE_VERSION,termsAccepted:true},newTeacher.id).catch(()=>undefined);
-        setRegisteredTeacherResult(newTeacher);
-      }
+      const result = await submitRegistration(registerRole === 'student' ? {
+        role: 'student',
+        name: stuName.trim(),
+        email: stuEmail,
+        lrn: stuLrn.trim(),
+        gradeLevel: stuGrade,
+        schoolName: stuSchool,
+        section: stuSection.trim(),
+        classCode: stuClassCode.trim().toUpperCase(),
+        username: stuUsername.trim(),
+        password: stuPassword,
+      } : {
+        role: 'teacher',
+        name: tchName.trim(),
+        email: tchDepEdEmail,
+        employeeId: tchEmployeeId.trim(),
+        schoolName: tchSchool,
+        username: tchUsername.trim(),
+        password: tchPassword,
+      });
+      const reviewer = registerRole === 'teacher' ? 'division administrator' : 'class teacher';
+      setRegistrationReceipt(`Application submitted to your ${reviewer}. ${result.needsEmailConfirmation
+        ? 'Confirm your email using the link we sent, then sign in to check your status.'
+        : 'Sign in to check your status.'}`);
+      setLoginRole(registerRole);
+      setLoginUsername(registerRole === 'teacher' ? tchDepEdEmail.trim() : stuEmail.trim());
+      setStuPassword('');
+      setTchPassword('');
+      setMode('login');
     } catch (err: any) {
       setErrorMsg(err?.message || 'Registration failed. Please try again.');
     } finally {
@@ -583,6 +420,11 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
 
                   {/* Sign In Form */}
                   <form onSubmit={handleLoginSubmit} className="space-y-4">
+                    {registrationReceipt && (
+                      <p role="status" className="rounded-xl border border-emerald-500/40 bg-emerald-950/40 p-3 text-sm text-emerald-100">
+                        {registrationReceipt}
+                      </p>
+                    )}
                     {loginRole === 'admin' && (
                       <div className="p-3 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-xs flex items-center gap-2.5 text-amber-300">
                         <ShieldCheck className="w-4 h-4 text-amber-400 shrink-0" />
@@ -845,11 +687,6 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
                           <label className="block text-xs font-bold text-slate-300">
                             Class Code from English Teacher
                           </label>
-                          {classCodeFeedback?.valid && (
-                            <span className="text-[10px] text-emerald-400 font-semibold flex items-center gap-1">
-                              <CheckCircle2 className="w-3 h-3" /> Teacher: {classCodeFeedback.teacherName}
-                            </span>
-                          )}
                         </div>
                         <input
                           type="text"
@@ -1014,62 +851,9 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
                         </div>
                       </div>
 
-                      {/* System-Assigned Unique Class Code Preview Card */}
-                      <div className="p-3.5 rounded-2xl bg-gradient-to-br from-[#061D38] via-[#0A274B] to-[#0D315E] border border-sky-500/40 space-y-2.5 shadow-md">
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center gap-2">
-                            <div className="w-7 h-7 rounded-lg bg-sky-500/20 text-sky-300 flex items-center justify-center">
-                              <Key className="w-3.5 h-3.5" />
-                            </div>
-                            <div>
-                              <span className="text-[11px] font-black uppercase tracking-wider text-sky-200 block">
-                                System-Assigned Unique Class Code
-                              </span>
-                              <span className="text-[10px] text-slate-300">
-                                Assigned to your account upon registration
-                              </span>
-                            </div>
-                          </div>
-
-                          <button
-                            type="button"
-                            onClick={handleRegenerateTeacherCode}
-                            className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-sky-950/70 hover:bg-sky-900/70 border border-sky-500/30 text-[10px] font-bold text-sky-300 transition"
-                            title="Generate another unique code"
-                          >
-                            <RefreshCw className="w-3 h-3" />
-                            <span>Regenerate</span>
-                          </button>
-                        </div>
-
-                        <div className="flex items-center justify-between bg-[#031022] px-3.5 py-2.5 rounded-xl border border-sky-500/30">
-                          <div className="flex items-center gap-2">
-                            <span className="font-mono text-base font-black text-amber-300 tracking-wider">
-                              {assignedTeacherCode}
-                            </span>
-                            <button
-                              type="button"
-                              onClick={() => {
-                                soundFX.playClick();
-                                navigator.clipboard.writeText(assignedTeacherCode);
-                                setAssignedCodeCopied(true);
-                                setTimeout(() => setAssignedCodeCopied(false), 2000);
-                              }}
-                              className="px-2 py-0.5 rounded-md bg-white/10 hover:bg-white/20 text-[10px] font-bold text-sky-200 transition flex items-center gap-1"
-                            >
-                              {assignedCodeCopied ? <Check className="w-3 h-3 text-emerald-400" /> : <Copy className="w-3 h-3" />}
-                              <span>{assignedCodeCopied ? 'Copied' : 'Copy'}</span>
-                            </button>
-                          </div>
-                          <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30">
-                            Pending Admin Approval
-                          </span>
-                        </div>
-
-                        <p className="text-[10.5px] text-slate-300 leading-relaxed">
-                          The system assigns this unique class code to your account. Upon review and approval by the Division Office Admin, this code is activated so your students can enroll in your class.
-                        </p>
-                      </div>
+                      <p className="text-xs text-slate-300">
+                        Students can use your assigned class code after the division administrator approves your account.
+                      </p>
 
                       <button
                         type="submit"
@@ -1173,97 +957,7 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
       </main>
 
       {/* Teacher Account Created & Assigned Class Code Modal */}
-      {registeredTeacherResult && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-fade-in">
-          <div className="bg-[#0B1E36] border border-sky-500/40 rounded-3xl max-w-lg w-full p-6 sm:p-8 text-white shadow-2xl space-y-6">
-            <div className="flex items-start gap-4">
-              <div className="p-3.5 rounded-2xl bg-emerald-500/20 border border-emerald-400/40 text-emerald-400">
-                <CheckCircle2 className="w-8 h-8" />
-              </div>
-              <div className="space-y-1">
-                <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
-                  Account Created & Code Assigned
-                </span>
-                <h3 className="text-xl sm:text-2xl font-black font-display text-white">
-                  Teacher Registration Submitted
-                </h3>
-                <p className="text-xs text-slate-300">
-                  Welcome, <strong>{registeredTeacherResult.name}</strong>! Your account has been submitted for administrative review.
-                </p>
-              </div>
-            </div>
 
-            {/* Assigned Unique Class Code Showcase */}
-            <div className="p-4 rounded-2xl bg-gradient-to-br from-sky-950/80 via-[#071F3F] to-[#0A2B54] border border-sky-400/30 space-y-2">
-              <span className="text-[10px] font-black uppercase tracking-wider text-sky-300 block">
-                Your Assigned Unique Class Code
-              </span>
-              <div className="flex items-center justify-between bg-[#041226] px-4 py-3 rounded-xl border border-sky-500/30">
-                <span className="font-mono text-2xl font-black text-amber-300 tracking-wider">
-                  {registeredTeacherResult.classCode}
-                </span>
-                <button
-                  type="button"
-                  onClick={() => {
-                    soundFX.playClick();
-                    navigator.clipboard.writeText(registeredTeacherResult.classCode);
-                    setAssignedCodeCopied(true);
-                    setTimeout(() => setAssignedCodeCopied(false), 2000);
-                  }}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-sky-500/20 hover:bg-sky-500/30 text-sky-200 text-xs font-bold border border-sky-400/30 transition"
-                >
-                  {assignedCodeCopied ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
-                  <span>{assignedCodeCopied ? 'Copied' : 'Copy Code'}</span>
-                </button>
-              </div>
-              <div className="flex items-center gap-2 text-[11px] text-amber-200/90 pt-1">
-                <Clock className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                <span>Status: <strong>Pending Administrator Approval</strong></span>
-              </div>
-            </div>
-
-            <div className="p-3.5 rounded-xl bg-white/[0.04] border border-white/10 text-xs text-slate-300 space-y-1.5 leading-relaxed">
-              <strong className="text-white block font-bold">What happens next?</strong>
-              <p>
-                1. An authorized Administrator in the Davao Oriental Division Office will review your faculty credentials.
-              </p>
-              <p>
-                2. Once approved, this class code becomes active, allowing your students to register and join your class roster.
-              </p>
-              <p>
-                3. You can sign in anytime to monitor your verification status.
-              </p>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-3 pt-2">
-              <button
-                type="button"
-                onClick={() => {
-                  soundFX.playClick();
-                  onLoginSuccess(registeredTeacherResult);
-                }}
-                className="flex-1 py-3 px-4 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs shadow-lg transition flex items-center justify-center gap-2"
-              >
-                <span>View Status Console</span>
-                <ArrowRight className="w-4 h-4" />
-              </button>
-
-              <button
-                type="button"
-                onClick={() => {
-                  soundFX.playClick();
-                  setRegisteredTeacherResult(null);
-                  setMode('login');
-                  setLoginRole('teacher');
-                }}
-                className="py-3 px-4 rounded-2xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs transition text-center"
-              >
-                Return to Sign In
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
 
       {showRecoveryModal && <RecoveryRequest onClose={() => setShowRecoveryModal(false)}/>}
 
