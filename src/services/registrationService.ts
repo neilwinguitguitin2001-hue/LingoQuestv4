@@ -17,7 +17,7 @@ export async function submitRegistration(input: (StudentRegistration | TeacherRe
   username: string;
   email: string;
   password: string;
-}) {
+}, termsAccepted = true) {
   const { email, password, ...application } = input;
   if (password.length < 6) throw new Error('Use a password of at least 6 characters.');
   const { data, error } = await createSignupClient().auth.signUp({
@@ -27,7 +27,7 @@ export async function submitRegistration(input: (StudentRegistration | TeacherRe
       emailRedirectTo: window.location.origin,
       data: {
         full_name: application.name,
-        lingoquest_registration: { ...application, noticeVersion: NOTICE_VERSION, termsAccepted: true },
+        lingoquest_registration: { ...application, noticeVersion: NOTICE_VERSION, termsAccepted },
       },
     },
   });

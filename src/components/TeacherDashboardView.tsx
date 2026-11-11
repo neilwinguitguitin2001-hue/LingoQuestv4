@@ -681,17 +681,13 @@ export const TeacherDashboardView: React.FC<TeacherDashboardViewProps> = ({
     soundFX.playClick();
     try {
       await onAddStudent({
-      name: newStuName.trim(),
-      email: cleanEmail,
-      learnerId: newStuLearnerId.trim(),
-      gradeLevel: newStuGrade,
-      section: newStuSection.trim(),
-      username: newStuUsername.trim(),
-      password: newStuPassword,
-      lrn: newStuLearnerId.trim(),
-      status: 'approved',
-      classCode: currentTeacher.classCode,
-      teacherId: currentTeacher.id,
+        name: newStuName.trim(),
+        email: cleanEmail,
+        gradeLevel: newStuGrade,
+        section: newStuSection.trim(),
+        username: newStuUsername.trim(),
+        password: newStuPassword,
+        lrn: newStuLearnerId.trim(),
       });
     } catch (error) {
       setStuModalError((error as Error).message);

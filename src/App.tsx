@@ -1998,7 +1998,7 @@ export default function App() {
             students={Array.from(classroom.values())}
             allModules={modules}
             onAddStudent={async (newStu) => {
-              await submitRegistration({ ...newStu, role: 'student', schoolName: currentTeacher.schoolName || '', classCode: currentTeacher.classCode });
+              await submitRegistration({ ...newStu, role: 'student', schoolName: currentTeacher.schoolName || '', classCode: currentTeacher.classCode }, false);
               await refreshRegistrationQueue();
             }}
             onToggleStudentStatus={(stuId) => {
