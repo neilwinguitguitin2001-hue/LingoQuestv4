@@ -17,7 +17,19 @@ import {
 } from 'lucide-react';
 import { StudentAccount, TeacherAccount } from '../types/lingoquest';
 import { soundFX } from '../utils/soundEffects';
+import { InabelWovenStrip } from './FilipinianaMotifs';
 import { LingoQuestLogo } from './LingoQuestLogo';
+
+const approvalBackground =
+  'min-h-screen flex flex-col justify-between bg-[#091F3C] bg-[radial-gradient(ellipse_at_top_left,_#103b60,_transparent_50%),radial-gradient(ellipse_at_bottom_right,_#064653,_transparent_54%),linear-gradient(#06162B,_#091F3C_55%,_#0D2A4F)] selection:bg-amber-300 selection:text-slate-950';
+
+function formatSubmissionDate(value: string) {
+  const date = new Date(value);
+  return Number.isNaN(date.getTime()) ? value : new Intl.DateTimeFormat('en-PH', {
+    dateStyle: 'long',
+    timeZone: 'Asia/Manila',
+  }).format(date);
+}
 
 interface PendingApprovalScreenProps {
   teacher?: TeacherAccount;
@@ -51,8 +63,11 @@ export const PendingApprovalScreen: React.FC<PendingApprovalScreenProps> = ({
     const isStudentRejected = student.status === 'rejected' || student.enrollmentStatus === 'rejected';
 
     return (
-      <div className="min-h-screen bg-[#EEF4FB] flex flex-col justify-between selection:bg-sky-200">
-        <header className="w-full border-b border-[#143257] bg-[#0B1E36] px-6 py-4 shadow-sm">
+      <div className={approvalBackground}>
+        <header className="relative w-full border-b border-[#143257]/80 bg-[#071930]/90 px-4 pb-4 pt-6 sm:px-6">
+          <div className="pointer-events-none absolute inset-x-0 top-0" aria-hidden="true">
+            <InabelWovenStrip variant="azure" height={8} />
+          </div>
           <div className="max-w-7xl mx-auto flex items-center justify-between">
             <LingoQuestLogo size="md" textColor="light" />
             <div className="flex items-center gap-3">
@@ -72,10 +87,10 @@ export const PendingApprovalScreen: React.FC<PendingApprovalScreenProps> = ({
           </div>
         </header>
 
-        <main className="flex-1 max-w-3xl w-full mx-auto px-4 py-12 flex flex-col justify-center">
-          <div className="bg-white rounded-3xl border border-slate-200 shadow-xl overflow-hidden">
+        <main className="flex-1 max-w-3xl w-full mx-auto px-4 py-6 sm:py-12 flex flex-col justify-center">
+          <div className="bg-white rounded-3xl border border-sky-300/40 shadow-2xl shadow-slate-950/50 overflow-hidden">
             <div
-              className={`p-8 text-white ${
+              className={`p-5 sm:p-8 text-white ${
                 isStudentRejected
                   ? 'bg-gradient-to-r from-rose-900 via-rose-800 to-red-950'
                   : 'bg-gradient-to-r from-[#0A192F] via-[#0F3460] to-[#1E3E62]'
@@ -129,7 +144,7 @@ export const PendingApprovalScreen: React.FC<PendingApprovalScreenProps> = ({
                     <ShieldCheck className="w-4 h-4" /> DepEd Davao Oriental Verification
                   </div>
                   <p className="text-xs leading-relaxed text-blue-950">
-                    To maintain official class masterlists, your teacher reviews every student who registers with their class code (<strong>{student.classCode}</strong>). Once your teacher confirms your details, your island learning journey will automatically unlock!
+                    To maintain official class masterlists, your teacher reviews every student who registers with their class code (<strong className="break-all">{student.classCode}</strong>). Once your teacher confirms your details, your island learning journey will automatically unlock!
                   </p>
                 </div>
               )}
@@ -145,7 +160,7 @@ export const PendingApprovalScreen: React.FC<PendingApprovalScreenProps> = ({
                   </div>
                   <div>
                     <span className="text-slate-400 block">Class Code Used:</span>
-                    <strong className="text-blue-700 text-sm font-mono font-bold">{student.classCode}</strong>
+                    <strong className="break-all text-blue-700 text-sm font-mono font-bold">{student.classCode}</strong>
                   </div>
                   <div>
                     <span className="text-slate-400 block">DepEd LRN (12 Digits):</span>
@@ -161,7 +176,7 @@ export const PendingApprovalScreen: React.FC<PendingApprovalScreenProps> = ({
                   </div>
                   <div>
                     <span className="text-slate-400 block">Registration Date:</span>
-                    <span className="text-slate-700">{student.joinedDate}</span>
+                    <span className="text-slate-700">{formatSubmissionDate(student.joinedDate)}</span>
                   </div>
                 </div>
               </div>
@@ -205,9 +220,12 @@ export const PendingApprovalScreen: React.FC<PendingApprovalScreenProps> = ({
   const isSuspended = teacher.status === 'suspended';
 
   return (
-    <div className="min-h-screen bg-[#EEF4FB] flex flex-col justify-between selection:bg-sky-200">
+    <div className={approvalBackground}>
       {/* Header */}
-      <header className="w-full border-b border-[#143257] bg-[#0B1E36] px-6 py-4 shadow-sm">
+      <header className="relative w-full border-b border-[#143257]/80 bg-[#071930]/90 px-4 pb-4 pt-6 sm:px-6">
+          <div className="pointer-events-none absolute inset-x-0 top-0" aria-hidden="true">
+            <InabelWovenStrip variant="azure" height={8} />
+          </div>
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <LingoQuestLogo size="md" textColor="light" />
           <div className="flex items-center gap-3">
@@ -228,11 +246,11 @@ export const PendingApprovalScreen: React.FC<PendingApprovalScreenProps> = ({
       </header>
 
       {/* Main Container */}
-      <main className="flex-1 max-w-3xl w-full mx-auto px-4 py-12 flex flex-col justify-center">
-        <div className="bg-white rounded-3xl border border-slate-200 shadow-xl overflow-hidden">
+      <main className="flex-1 max-w-3xl w-full mx-auto px-4 py-6 sm:py-12 flex flex-col justify-center">
+        <div className="bg-white rounded-3xl border border-sky-300/40 shadow-2xl shadow-slate-950/50 overflow-hidden">
           {/* Top Banner */}
           <div
-            className={`p-8 text-white ${
+            className={`p-5 sm:p-8 text-white ${
               isRejected
                 ? 'bg-gradient-to-r from-rose-900 via-rose-800 to-red-950'
                 : isSuspended
@@ -307,26 +325,26 @@ export const PendingApprovalScreen: React.FC<PendingApprovalScreenProps> = ({
               </div>
             )}
 
-            {/* System-Assigned Unique Class Code Showcase Card */}
+            {/* Class code Showcase Card */}
             <div className="p-5 rounded-2xl bg-gradient-to-br from-[#092244] via-[#0D2D57] to-[#143B6E] text-white border border-sky-400/30 shadow-lg space-y-3">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                <div className="flex items-center gap-3">
+              <div className="flex flex-wrap items-start justify-between gap-4">
+                <div className="flex min-w-0 items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-sky-500/20 text-sky-300 flex items-center justify-center shrink-0 border border-sky-400/30">
                     <Key className="w-5 h-5" />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <span className="text-[10px] font-black uppercase tracking-wider text-sky-300 block">
-                      System-Assigned Unique Class Code
+                      Class code
                     </span>
-                    <span className="text-2xl font-mono font-black text-amber-300 tracking-wider">
-                      {teacher.classCode || 'LQ-ENG-ASSIGNED'}
+                    <span className="block break-all font-mono text-xl font-bold tracking-wide text-amber-300 sm:text-2xl">
+                      {teacher.classCode || 'Assignment pending'}
                     </span>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-2">
+                <div className="flex flex-wrap items-center gap-2">
                   <span className="px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-wider bg-amber-400/20 text-amber-300 border border-amber-400/30 animate-pulse">
-                    Pending Admin Activation
+                    {isRejected || isSuspended ? 'Inactive' : 'Activates after approval'}
                   </span>
                   {teacher.classCode && (
                     <button
@@ -347,7 +365,7 @@ export const PendingApprovalScreen: React.FC<PendingApprovalScreenProps> = ({
               </div>
 
               <p className="border-t border-sky-800/60 pt-2.5 text-xs text-sky-100/90 leading-relaxed">
-                This unique class code is permanently linked to your faculty account. When the Division Administrator approves your application, this code is activated so your students can register and join your class roster.
+                Students can register with your code once the division administrator approves your application.
               </p>
             </div>
 
@@ -363,7 +381,6 @@ export const PendingApprovalScreen: React.FC<PendingApprovalScreenProps> = ({
                   Once approved:
                 </p>
                 <ul className="text-xs text-sky-900 list-disc list-inside space-y-1 pl-1">
-                  <li>Your assigned unique Class Code (<strong>{teacher.classCode || 'LQ-ENG-XXXX'}</strong>) will be activated for student registration.</li>
                   <li>Students in your section can register using this Class Code to join your roster.</li>
                   <li>You will gain full access to your classroom analytics, quiz results, and student writing reviews.</li>
                 </ul>
@@ -381,10 +398,6 @@ export const PendingApprovalScreen: React.FC<PendingApprovalScreenProps> = ({
                   <strong className="text-slate-800 text-sm">{teacher.name}</strong>
                 </div>
                 <div>
-                  <span className="text-slate-400 block">Assigned Class Code:</span>
-                  <strong className="text-blue-700 text-sm font-mono font-bold">{teacher.classCode || 'Assigned on submission'}</strong>
-                </div>
-                <div>
                   <span className="text-slate-400 block">Employee ID:</span>
                   <strong className="text-slate-800 text-sm font-mono">{teacher.employeeId}</strong>
                 </div>
@@ -398,7 +411,7 @@ export const PendingApprovalScreen: React.FC<PendingApprovalScreenProps> = ({
                 </div>
                 <div>
                   <span className="text-slate-400 block">Submission Date:</span>
-                  <span className="text-slate-700">{teacher.joinedDate}</span>
+                  <span className="text-slate-700">{formatSubmissionDate(teacher.joinedDate)}</span>
                 </div>
                 <div>
                   <span className="text-slate-400 block">Status:</span>
