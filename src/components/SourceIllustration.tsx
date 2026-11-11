@@ -6,10 +6,12 @@ export function SourceIllustration({
   block,
   children,
   imageDescription = 'Lesson illustration',
+  allowFullSize = false,
 }: {
   block: DigitalBlock;
   children?: React.ReactNode;
   imageDescription?: string;
+  allowFullSize?: boolean;
 }) {
   const [failedSrc, setFailedSrc] = useState<string>();
   const unavailable = !children && (!block.src || block.src === failedSrc);
@@ -40,6 +42,17 @@ export function SourceIllustration({
           )
         )}
       </div>
+      {allowFullSize && block.src && !unavailable && (
+        <a
+          href={block.src}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block text-sm font-semibold text-sky-900 underline underline-offset-2"
+          aria-label={`Open full-size illustration: ${imageDescription} (opens in a new tab)`}
+        >
+          Open full-size illustration
+        </a>
+      )}
       {readableText && (
         <details className="rounded-lg border border-slate-200 px-3 py-2.5 text-sm text-slate-700" open={unavailable || undefined}>
           <summary className="cursor-pointer font-semibold text-sky-900">Read illustration text</summary>

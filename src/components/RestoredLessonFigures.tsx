@@ -2,10 +2,18 @@ import React from 'react';
 import { SourceIllustration } from './SourceIllustration';
 import type { DigitalBlock } from '../data/curriculum/digitalContent';
 import repairs from '../data/curriculum/figureRepairs.json';
+import corrections from '../data/curriculum/visualCorrections.json';
 
 type RestoredFigure =
   | { title: string; src: string; width: number; height: number; transcript: string }
   | { title: string; rows: string[][] };
+
+type VisualCorrection = Exclude<RestoredFigure, { rows: string[][] }> | { text: string } | null;
+const correctedByModule: Partial<Record<string, Record<string, VisualCorrection>>> = corrections;
+
+export function getLessonVisualCorrection(moduleId: string, blockId: string) {
+  return correctedByModule[moduleId]?.[blockId];
+}
 
 const byModule: Partial<Record<string, Record<string, RestoredFigure[]>>> = repairs;
 
@@ -15,6 +23,9 @@ export function getRestoredLessonFigures(moduleId: string, page: number) {
 
 export function getLessonVisualKey(moduleId: string, id: string, block?: DigitalBlock) {
   if (!block || (block.type !== 'figure' && block.type !== 'diagram')) return undefined;
+  const correction = getLessonVisualCorrection(moduleId, id);
+  if (correction === null) return undefined;
+  if (correction) return id;
   if (block.type === 'figure' && getRestoredLessonFigures(moduleId, block.page)) return `restored-${block.page}`;
   return block.src || id;
 }
@@ -28,6 +39,7 @@ export function RestoredLessonFigures({ figures, page }: { figures: RestoredFigu
           {'src' in figure ? (
             <SourceIllustration
               imageDescription={figure.title}
+              allowFullSize
               block={{ type: 'figure', page, src: figure.src, width: figure.width, height: figure.height, transcript: figure.transcript }}
             />
           ) : (

@@ -9,7 +9,7 @@ import {LessonDiscussionGuide, LessonWatchStoryboard} from './LessonPilotGuide';
 import {getLessonDiscussion} from '../data/curriculum/lessonDiscussions';
 import {getGenreCards, LessonGenreCards} from './LessonGenreCards';
 import {getLessonVideo, LessonVideo} from './LessonVideo';
-import {getLessonVisualKey, getRestoredLessonFigures, RestoredLessonFigures} from './RestoredLessonFigures';
+import {getLessonVisualCorrection, getLessonVisualKey, getRestoredLessonFigures, RestoredLessonFigures} from './RestoredLessonFigures';
 
 export function SourceLessonSections({module,content,error,retry,dataSaver=false,initialSection='concepts'}:{initialSection?:string;dataSaver?:boolean;module:Module;content?:DigitalContent;error?:string;retry:()=>void}) {
  const lesson=module.pdfLesson!;const tabs=(lesson.sourceSections||[]).filter(s=>s.kind==='discussion');const [active,setActive]=useState(tabs.some(s=>s.id===initialSection)?initialSection:'concepts');const [visualLimit,setVisualLimit]=useState(3);const refs=useRef<(HTMLButtonElement|null)[]>([]);
@@ -20,9 +20,10 @@ export function SourceLessonSections({module,content,error,retry,dataSaver=false
    const block = content?.blocks[id];
    const key = getLessonVisualKey(module.id, id, block);
    if (!block || !key || seen.has(key)) return [];
-   const repaired = block.type === 'figure' ? getRestoredLessonFigures(module.id, block.page) : undefined;
+   const correction = getLessonVisualCorrection(module.id, id);
+   const repaired = !correction && block.type === 'figure' ? getRestoredLessonFigures(module.id, block.page) : undefined;
    seen.add(key);
-   return [{ id, block, repaired }];
+   return [{ id, block, repaired, correction }];
   }) || [];
  }, [section, content, module.id]);
  const pilot=active==='concepts' ? getLessonPilot(module.id) : undefined;
@@ -61,7 +62,15 @@ export function SourceLessonSections({module,content,error,retry,dataSaver=false
       {video && <a className="inline-flex items-center gap-1.5 rounded-lg border border-sky-200 bg-sky-50 px-3 py-2 text-sm font-bold text-sky-900 hover:bg-sky-100" href="#lesson-watch-video">
        <Play size={15} aria-hidden="true" /> Watch &amp; Understand
       </a>}
-      {visuals.length > 0 ? visuals.slice(0, visualLimit).map(({id, block, repaired}) => {
+      {visuals.length > 0 ? visuals.slice(0, visualLimit).map(({id, block, repaired, correction}) => {
+       if (correction && 'text' in correction) {
+        return <div key={id} className="pdf-source-visual-stage">
+         <p className="whitespace-pre-line break-words text-sm leading-relaxed text-slate-800">{correction.text}</p>
+        </div>;
+       }
+       if (correction) {
+        return <RestoredLessonFigures key={id} figures={[correction]} page={block.page} />;
+       }
        const cards = getGenreCards(module.id, id);
        return <div key={id}>
         {cards ? <LessonGenreCards cards={cards} /> : repaired
