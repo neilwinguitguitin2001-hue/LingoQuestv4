@@ -4,7 +4,7 @@ import { useAudioSettings } from '../context/AudioContext';
 import { soundFX } from '../utils/soundEffects';
 import { InabelWovenStrip } from './FilipinianaMotifs';
 
-export function AudioSettings() {
+export function AudioSettings({ inAccountMenu = false }: { inAccountMenu?: boolean }) {
   const { preferences, update, error } = useAudioSettings();
   const [open, setOpen] = useState(false);
   const dialog = useRef<HTMLDialogElement>(null);
@@ -19,7 +19,9 @@ export function AudioSettings() {
   return (
     <>
       <button type="button" onClick={() => setOpen(true)} aria-label="Audio settings" title="Audio settings"
-        className="inline-flex h-10 shrink-0 items-center justify-center gap-2 rounded-xl border border-sky-500/60 px-3 text-sm font-bold text-sky-100 hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-sky-300">
+        className={inAccountMenu
+          ? 'flex min-h-11 w-full items-center gap-2 rounded-lg px-3 py-2 text-left text-sm hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-sky-300'
+          : 'inline-flex h-10 shrink-0 items-center justify-center gap-2 rounded-xl border border-sky-500/60 px-3 text-sm font-bold text-sky-100 hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-sky-300'}>
         <SlidersHorizontal size={18} aria-hidden="true" /><span>Audio settings</span>
       </button>
       <dialog ref={dialog} onCancel={() => setOpen(false)} onClose={() => setOpen(false)} aria-labelledby={id}

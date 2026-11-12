@@ -1,3 +1,4 @@
+import { AudioSettings } from './components/AudioSettings';
 import { AudioScene } from './context/AudioContext';
 import { DashboardGuide } from './components/DashboardGuide';
 import {StudentHomeView} from './components/StudentHomeView';
@@ -318,7 +319,7 @@ export default function App() {
   const navigateStudent=(view:AppView)=>{soundFX.playClick();setIsAccountMenuOpen(false);setIsMobileMenuOpen(false);setCurrentView(view)};
   const activeStudentView=(view:AppView)=>view==='PROGRESS'?['PROGRESS','PROFILE','LEADERBOARD'].includes(currentView):view===currentView;
   useEffect(()=>{setIsAccountMenuOpen(false)},[currentView,currentUserId]);
-  useEffect(()=>{if(!isAccountMenuOpen)return;const close=(e:PointerEvent)=>{if(!accountMenuRef.current?.contains(e.target as Node))setIsAccountMenuOpen(false)};const escape=(e:KeyboardEvent)=>{if(e.key==='Escape'){setIsAccountMenuOpen(false);accountMenuRef.current?.querySelector('button')?.focus()}};document.addEventListener('pointerdown',close);document.addEventListener('keydown',escape);return()=>{document.removeEventListener('pointerdown',close);document.removeEventListener('keydown',escape)}},[isAccountMenuOpen]);
+  useEffect(()=>{if(!isAccountMenuOpen)return;const close=(e:PointerEvent)=>{if(!accountMenuRef.current?.contains(e.target as Node))setIsAccountMenuOpen(false)};const escape=(e:KeyboardEvent)=>{if(e.key==='Escape' && !accountMenuRef.current?.querySelector('dialog[open]')){setIsAccountMenuOpen(false);accountMenuRef.current?.querySelector('button')?.focus()}};document.addEventListener('pointerdown',close);document.addEventListener('keydown',escape);return()=>{document.removeEventListener('pointerdown',close);document.removeEventListener('keydown',escape)}},[isAccountMenuOpen]);
   const [questCoinBalance, setQuestCoinBalance] = useState<number | null>(null);
 
   // Session Timeout State
@@ -1802,7 +1803,7 @@ export default function App() {
                         </div>
                       </div>
                     </button>
-                    {isAccountMenuOpen&&<nav id="student-account-menu" aria-label="Account actions" className="absolute right-0 top-full mt-3 z-50 w-64 max-w-[85vw] overflow-hidden rounded-2xl border border-sky-400/40 bg-[#07192F] text-white shadow-xl"><InabelWovenStrip variant="azure" height={8}/><div className="p-2 space-y-1"><button className="min-h-11 w-full rounded-lg px-3 py-2 text-left text-sm hover:bg-white/10" onClick={()=>navigateStudent('ACCOUNT')}>Account Settings</button><button className="min-h-11 w-full rounded-lg px-3 py-2 text-left text-sm hover:bg-white/10" onClick={()=>{setIsAccountMenuOpen(false);window.location.hash='legal/privacy'}}>Privacy &amp; Help</button><button className="min-h-11 w-full rounded-lg px-3 py-2 text-left text-sm hover:bg-white/10" onClick={()=>{setIsAccountMenuOpen(false);handleLogOut()}}>Sign Out</button></div></nav>}</>
+                    {isAccountMenuOpen&&<nav id="student-account-menu" aria-label="Account actions" className="absolute right-0 top-full mt-3 z-50 w-64 max-w-[85vw] overflow-hidden rounded-2xl border border-sky-400/40 bg-[#07192F] text-white shadow-xl"><InabelWovenStrip variant="azure" height={8}/><div className="p-2 space-y-1"><button className="min-h-11 w-full rounded-lg px-3 py-2 text-left text-sm hover:bg-white/10" onClick={()=>navigateStudent('ACCOUNT')}>Account Settings</button><button className="min-h-11 w-full rounded-lg px-3 py-2 text-left text-sm hover:bg-white/10" onClick={()=>{setIsAccountMenuOpen(false);window.location.hash='legal/privacy'}}>Privacy &amp; Help</button><AudioSettings inAccountMenu /><button className="min-h-11 w-full rounded-lg px-3 py-2 text-left text-sm hover:bg-white/10" onClick={()=>{setIsAccountMenuOpen(false);handleLogOut()}}>Sign Out</button></div></nav>}</>
                   ) : (
                     <div className="text-left hidden sm:block">
                       <div className="text-xs font-bold text-[#FAF7F2] truncate max-w-[150px]">

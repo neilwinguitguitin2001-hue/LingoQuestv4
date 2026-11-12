@@ -1,4 +1,3 @@
-import { AudioSettings } from './AudioSettings';
 import React from 'react';
 import {HomeArchipelagoScene} from './HomeArchipelagoScene';
 import {ArrowRight, BookOpen, Check, Compass, Feather, Flag, Sparkles} from 'lucide-react';
@@ -36,7 +35,7 @@ export function StudentHomeView({student, modules, onContinue, onIslands, onProg
       <InabelHeaderStrip variant="royal" label={`Your next adventure • Grade ${student.gradeLevel}`}/>
       <div className="grid items-center gap-2 md:grid-cols-[1.15fr_1fr] p-6 sm:p-8">
         <div className="relative z-10 space-y-4">
-          <div className="flex flex-wrap items-center justify-between gap-3"><AudioSettings /><p className="flex items-center gap-2 text-sm font-semibold text-sky-200"><Compass className="h-4 w-4" aria-hidden="true"/> Welcome back, {student.name.split(' ')[0] || 'explorer'}.</p></div>
+          <p className="flex items-center gap-2 text-sm font-semibold text-sky-200"><Compass className="h-4 w-4" aria-hidden="true"/> Welcome back, {student.name.split(' ')[0] || 'explorer'}.</p>
           <h1 className="font-display text-3xl sm:text-4xl font-bold leading-tight max-w-lg">Ready for your<br className="hidden sm:block"/> next quest?</h1>
           <p className="text-sky-100 max-w-md">A little practice, one island at a time. Follow your own path and ask for help whenever you need it.</p>
           {next && <div className="inline-flex max-w-full flex-wrap items-center gap-2 rounded-xl border border-sky-300/30 bg-[#07192F]/50 px-3 py-2 text-sm"><BookOpen className="h-4 w-4 shrink-0 text-emerald-300" aria-hidden="true"/><strong>{next.title}</strong><span className="text-sky-200">Q{next.quarter} · Module {next.quarterModuleIndex}</span></div>}
