@@ -3,7 +3,7 @@ import { BookOpen, Compass, GraduationCap, Map, PenLine, Route, Users, X } from 
 import { InabelWovenStrip } from './FilipinianaMotifs';
 
 const studentSteps = [
-  { icon: Compass, title: 'Start from your dashboard', body: 'Use Continue Quest to pick up where you left off. If you are new, start with the first available module for your grade.' },
+  { icon: Compass, title: 'Start from your dashboard', body: 'Use Continue Learning to pick up where you left off. If you are new, start with the first available module for your grade.' },
   { icon: Map, title: 'Explore Island Quests', body: 'Each island represents a school quarter. Open an available module and read Concepts & Rules. Use the illustrated examples and watch a video when one is available.' },
   { icon: GraduationCap, title: 'Complete the lesson and quiz', body: 'Choose Complete & Start Quiz when you are ready. Pick an available game mode and difficulty. Completing the lesson and passing its quiz restores the bridge to the next module.' },
   { icon: Route, title: 'Check My Progress', body: 'See your completed modules and earned badges. Use your own progress to decide what to review next.' },
