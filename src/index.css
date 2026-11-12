@@ -830,3 +830,10 @@ div.rounded-3xl.border.bg-white {
 .lq-home-cloud-1 { animation: lq-home-cloud_billow_1 60s ease-in-out infinite; }
 .lq-home-cloud-2 { animation: lq-home-cloud_billow_2 45s ease-in-out infinite; }
 @media (prefers-reduced-motion: reduce) { .lq-home-cirrus, .lq-home-cloud-1, .lq-home-cloud-2 { animation: none; } }
+
+/* The outline leaves the actual control usable during the dashboard tour. */
+[data-guide-highlight] {
+  outline: 3px solid #00b4d8;
+  outline-offset: 4px;
+  box-shadow: 0 0 0 8px #38bdf84d;
+}

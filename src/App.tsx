@@ -1930,6 +1930,12 @@ export default function App() {
 
       {/* Main Content View Switcher */}
       <main className={`flex-1 ${currentView === 'AUTH' || currentView === 'WAITING_APPROVAL' ? '' : 'pb-16'}`}>
+        {authUser?.uid === currentUser?.id && currentUser?.status === 'approved' &&
+          (currentUser.role === 'student' || currentUser.role === 'teacher') &&
+          currentView !== 'AUTH' && currentView !== 'WAITING_APPROVAL' && (
+          <DashboardGuide key={currentUser.id} accountId={currentUser.id} role={currentUser.role}
+            currentView={currentView} onNavigate={navigateStudent} />
+        )}
         <div key={currentView} className="animate-lq-page-enter">
         {/* Authentication View */}
         {currentView === 'AUTH' && (
@@ -1950,14 +1956,6 @@ export default function App() {
             onRefreshStatus={handleRefreshApprovalStatus}
             onLogOut={handleLogOut}
           />
-        )}
-
-        {authUser?.uid === currentUser?.id && currentUser?.status === 'approved' && (
-          currentView === 'STUDENT_DASHBOARD' && currentUser.role === 'student'
-            ? <DashboardGuide key={currentUser.id} accountId={currentUser.id} role="student" onNavigate={navigateStudent} />
-            : currentView === 'TEACHER' && currentUser.role === 'teacher'
-              ? <DashboardGuide key={currentUser.id} accountId={currentUser.id} role="teacher" />
-              : null
         )}
 
         {/* Administrator Dashboard View */}
@@ -2128,7 +2126,7 @@ export default function App() {
           />
         )}
 
-        {currentStudent&&['PROGRESS','PROFILE','LEADERBOARD'].includes(currentView)&&<nav aria-label="My Progress sections" className="max-w-6xl mx-auto px-4 pt-6 flex flex-wrap items-center gap-3"><button onClick={()=>navigateStudent('PROGRESS')} aria-current={currentView==='PROGRESS'?'page':undefined} className={`min-h-11 rounded-xl px-4 py-2 font-semibold ${currentView==='PROGRESS'?'bg-sky-700 text-white':'border border-sky-300 text-sky-900'}`}>Learning Progress</button><button onClick={()=>navigateStudent('PROFILE')} aria-current={currentView==='PROFILE'?'page':undefined} className={`min-h-11 rounded-xl px-4 py-2 font-semibold ${currentView==='PROFILE'?'bg-sky-700 text-white':'border border-sky-300 text-sky-900'}`}>Badges</button><button onClick={()=>navigateStudent('LEADERBOARD')} aria-current={currentView==='LEADERBOARD'?'page':undefined} className="min-h-11 ml-auto text-sm font-semibold text-sky-800 underline underline-offset-4">Optional Grade Activity Board</button></nav>}
+        {currentStudent&&['PROGRESS','PROFILE','LEADERBOARD'].includes(currentView)&&<nav data-guide-target="progress" aria-label="My Progress sections" className="max-w-6xl mx-auto px-4 pt-6 flex flex-wrap items-center gap-3"><button onClick={()=>navigateStudent('PROGRESS')} aria-current={currentView==='PROGRESS'?'page':undefined} className={`min-h-11 rounded-xl px-4 py-2 font-semibold ${currentView==='PROGRESS'?'bg-sky-700 text-white':'border border-sky-300 text-sky-900'}`}>Learning Progress</button><button onClick={()=>navigateStudent('PROFILE')} aria-current={currentView==='PROFILE'?'page':undefined} className={`min-h-11 rounded-xl px-4 py-2 font-semibold ${currentView==='PROFILE'?'bg-sky-700 text-white':'border border-sky-300 text-sky-900'}`}>Badges</button><button onClick={()=>navigateStudent('LEADERBOARD')} aria-current={currentView==='LEADERBOARD'?'page':undefined} className="min-h-11 ml-auto text-sm font-semibold text-sky-800 underline underline-offset-4">Optional Grade Activity Board</button></nav>}
 
         {currentView === 'PROGRESS' && currentStudent && (
           <StudentProgressView

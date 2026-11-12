@@ -50,7 +50,7 @@ export const QuestMarketView: React.FC = () => {
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-7 space-y-6">
-      <section className="overflow-hidden rounded-2xl border-2 border-slate-900 bg-white shadow-[3px_4px_0_#1c1917]">
+      <section data-guide-target="market" className="overflow-hidden rounded-2xl border-2 border-slate-900 bg-white shadow-[3px_4px_0_#1c1917]">
         <InabelHeaderStrip variant="royal" label="Quest Market • Coin Exchange" />
         <div className="bg-gradient-to-r from-[#07192F] via-[#0F3460] to-[#0F766E] p-6 text-white">
           <div className="flex flex-wrap items-center justify-between gap-4">

@@ -777,6 +777,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
               )}
             </button>
             <button
+              data-guide-target="quiz"
               type="button"
               onClick={() => {
                 soundFX.playClick();
@@ -1230,7 +1231,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
           </div>
 
           <div>
-            <h2 className="text-sm font-bold text-slate-900 mb-3">
+            <h2 data-guide-target="quiz" className="text-sm font-bold text-slate-900 mb-3">
               1. Select Difficulty Level (Adjusts Question Complexity & Timer per Question)
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">

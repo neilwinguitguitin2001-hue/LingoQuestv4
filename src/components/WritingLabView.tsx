@@ -232,7 +232,7 @@ export const WritingLabView: React.FC<WritingLabViewProps> = ({
                 </span>
               </div>
 
-              <textarea
+              <textarea data-guide-target="writing"
                 id="writing-composition"
                 aria-describedby="writing-check-limit"
                 disabled={isAnalyzing}

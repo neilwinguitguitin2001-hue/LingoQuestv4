@@ -298,7 +298,7 @@ export const IslandMapView: React.FC<IslandMapViewProps> = ({
                 {isPreviewMode ? 'Inspection Mode (All Unlocked)' : `${restoredBridgesCount} / ${gradeModules.length} Bridges Restored`}
               </span>
             </div>
-            <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 font-display mt-1.5 flex items-center gap-3">
+            <h1 data-guide-target="islands" className="text-2xl sm:text-3xl font-bold text-slate-900 font-display mt-1.5 flex items-center gap-3">
               <span>Grade {activeGrade} English Archipelago Map</span>
               <span className="text-xs px-2.5 py-0.5 rounded-full bg-sky-100 text-sky-800 font-bold border border-sky-200">
                 {gradeModules.length} Modules Total
@@ -780,6 +780,7 @@ export const IslandMapView: React.FC<IslandMapViewProps> = ({
                           <div className="mt-4 grid grid-cols-2 gap-2">
                             <button
                               type="button"
+                              data-guide-target={unlocked ? "lesson" : undefined}
                               onClick={() => handleModuleClick(mod, false)}
                               className={`py-2 px-3 rounded-lg text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors whitespace-nowrap cursor-pointer ${
                                 unlocked

@@ -36,7 +36,7 @@ export function SourceLessonSections({module,content,error,retry,dataSaver=false
      {content&&!section?.entries.length&&<p className="text-xs text-slate-600">No separate content is provided under this heading.</p>}
  </>;
  return <div className="pdf-source-module space-y-6" data-static={dataSaver}>
-  <div className="flex items-center gap-1.5 overflow-x-auto pb-1 bg-white p-1.5 border-2 border-[#231F20] linocut-card rounded-xl" role="tablist" aria-label="Module discussion">
+  <div className="flex items-center gap-1.5 overflow-x-auto pb-1 bg-white p-1.5 border-2 border-[#231F20] linocut-card rounded-xl" data-guide-target="concepts" role="tablist" aria-label="Module discussion">
    {tabs.map((tab,i)=>{const Icon=tab.kind==='discussion'?BookOpen:tab.kind==='objectives'?ListChecks:tab.kind==='answers'?CheckSquare:FileText;return <button key={tab.id} ref={el=>{refs.current[i]=el;}} type="button" role="tab" id={`pdf-tab-${tab.id}`} aria-controls="pdf-source-panel" aria-selected={active===tab.id} tabIndex={active===tab.id?0:-1} onClick={()=>select(tab.id)} onKeyDown={e=>{let next=i;if(e.key==='ArrowRight')next=(i+1)%tabs.length;else if(e.key==='ArrowLeft')next=(i+tabs.length-1)%tabs.length;else if(e.key==='Home')next=0;else if(e.key==='End')next=tabs.length-1;else return;e.preventDefault();select(tabs[next].id);refs.current[next]?.focus();}} className={`px-3 py-2 text-xs font-bold rounded-lg transition-all flex items-center gap-1.5 whitespace-nowrap cursor-pointer ${active===tab.id?'bg-sky-700 text-white shadow-sm':'text-slate-600 hover:bg-slate-100'}`}><Icon className="w-3.5 h-3.5"/>{tab.title}</button>;})}
   </div>
   <div id="pdf-source-panel" role="tabpanel" aria-labelledby={`pdf-tab-${active}`} className="grid grid-cols-1 lg:grid-cols-12 gap-6">
