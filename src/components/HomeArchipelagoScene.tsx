@@ -1,3 +1,4 @@
+import { IslandBoat } from './IslandBoat';
 import React, {useId} from 'react';
 
 /** Decorative scene using the selector's original vector paths/palettes.
@@ -75,6 +76,7 @@ opacity="0.26"
 <stop offset="1" stopColor="#2b86b3" stopOpacity="0" />
 </radialGradient>
 <g id={`${id}-palm`}>
+<g className="davao_palm_bend">
 <path
 d="M0 0 C3 -10 -1 -20 4 -30"
 stroke="#8a5a2b"
@@ -82,12 +84,13 @@ strokeWidth="2.6"
 fill="none"
 strokeLinecap="round"
 />
-<g stroke="#2f9a4c" strokeWidth="2.6" fill="none" strokeLinecap="round">
+<g className="davao_fronds" stroke="#2f9a4c" strokeWidth="2.6" fill="none" strokeLinecap="round">
 <path d="M4 -30 C-6 -40 -18 -36 -24 -26" />
 <path d="M4 -30 C-2 -44 10 -48 20 -42" />
 <path d="M4 -30 C14 -38 26 -32 28 -22" />
 <path d="M4 -30 C-10 -32 -20 -26 -26 -18" />
 <path d="M4 -30 C16 -28 24 -22 26 -14" />
+</g>
 </g>
 </g>
 
@@ -262,6 +265,7 @@ fill={`url(#${id}-forest)`}
 <ellipse cx="16" cy="-15" rx="5" ry="3" />
 </g>
 <g transform="translate(6, -26)">
+<g className="davao_palm_bend">
 <path
 d="M0 8 C1 -6 3 -16 2 -26"
 stroke="#78350f"
@@ -269,7 +273,7 @@ strokeWidth="2.2"
 fill="none"
 strokeLinecap="round"
 />
-<g stroke="#15803d" strokeWidth="2.2" fill="none" strokeLinecap="round">
+<g className="davao_fronds" stroke="#15803d" strokeWidth="2.2" fill="none" strokeLinecap="round">
 <path d="M2 -26 C-7 -34 -15 -30 -18 -22" />
 <path d="M2 -26 C-2 -37 7 -40 14 -35" />
 <path d="M2 -26 C11 -33 19 -28 20 -19" />
@@ -278,8 +282,9 @@ strokeLinecap="round"
 </g>
 <circle cx="2" cy="-26" r="2.2" fill="#854d0e" />
 </g>
-<use href={`#${id}-palm`} transform="translate(-24, -14) scale(0.9)" />
-<use href={`#${id}-palm`} transform="translate(28, -6) scale(0.75)" />
+</g>
+<use className="davao_palm_instance" href={`#${id}-palm`} transform="translate(-24, -14) scale(0.9)" />
+<use className="davao_palm_instance" href={`#${id}-palm`} transform="translate(28, -6) scale(0.75)" />
 <path
 d="M-58 18 C-36 28 0 28 36 24 C54 22 62 14 62 10"
 stroke="#ffffff"
@@ -338,8 +343,8 @@ fill={`url(#${id}-forest)`}
 <circle cx="-38" cy="-2" r="4" />
 <circle cx="-18" cy="-4" r="4" />
 </g>
-<use href={`#${id}-palm`} transform="translate(-34,-4) scale(.9)" />
-<use href={`#${id}-palm`} transform="translate(-14,-2) scale(.72)" /></g>}
+<use className="davao_palm_instance" href={`#${id}-palm`} transform="translate(-34,-4) scale(.9)" />
+<use className="davao_palm_instance" href={`#${id}-palm`} transform="translate(-14,-2) scale(.72)" /></g>}
 {activeQuarter === 4 && <g data-quarter="4" transform="translate(285 178) scale(1.2)"><ellipse rx="135" ry="64" fill={`url(#${id}-glow)`} />
 <path
 d="M-100 12 C-98 -30 -30 -46 40 -38 C98 -30 118 6 96 32 C60 56 -64 58 -100 12Z"
@@ -379,9 +384,9 @@ fill="none"
 strokeLinecap="round"
 opacity=".9"
 />
-<use href={`#${id}-palm`} transform="translate(-26,-26) scale(1.1)" />
-<use href={`#${id}-palm`} transform="translate(12,-32) scale(1)" />
-<use href={`#${id}-palm`} transform="translate(40,-14) scale(.8)" /></g>}
+<use className="davao_palm_instance" href={`#${id}-palm`} transform="translate(-26,-26) scale(1.1)" />
+<use className="davao_palm_instance" href={`#${id}-palm`} transform="translate(12,-32) scale(1)" />
+<use className="davao_palm_instance" href={`#${id}-palm`} transform="translate(40,-14) scale(.8)" /></g>}
  <g transform="translate(123 263) scale(1.8)"><g className="lq-home-boat">
 <ellipse
 rx="30"
@@ -392,37 +397,7 @@ strokeOpacity=".6"
 strokeWidth="1.5"
 />
 <circle r="24" fill="#ffd45a" opacity=".1" />
-<g
->
-<path
-d="M-28 6 L28 6"
-stroke="#ffe9a8"
-strokeWidth="2.6"
-strokeLinecap="round"
-/>
-<path
-d="M-16 5 L-14 -1 M16 5 L14 -1"
-stroke="#caa86a"
-strokeWidth="1.4"
-strokeLinecap="round"
-/>
-<path
-d="M-15 -3 C-11 7 11 7 15 -3Z"
-fill="#8a4b22"
-stroke="#4e2810"
-strokeWidth="1"
-/>
-<path
-d="M0 -3 L0 -31"
-stroke="#5a3418"
-strokeWidth="1.6"
-strokeLinecap="round"
-/>
-<path d="M1 -30 L6.1 -22 L1 -22Z" fill="#ff6b6b" />
-<path d="M1 -22 L6.1 -22 L11.6 -13.5 L1 -13.5Z" fill="#ffd166" />
-<path d="M1 -13.5 L11.6 -13.5 L17 -5 L1 -5Z" fill="#4dabf7" />
-<circle cx="0" cy="-32" r="2.2" fill="#ffb53d" />
-</g>
+<IslandBoat />
  </g></g>
  </svg>
  <div className="mt-2 flex items-center justify-between gap-3 text-xs text-sky-100"><span>Quarter {activeQuarter} · {islandName}</span></div>

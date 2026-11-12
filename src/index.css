@@ -837,3 +837,69 @@ div.rounded-3xl.border.bg-white {
   outline-offset: 4px;
   box-shadow: 0 0 0 8px #38bdf84d;
 }
+
+/* Boat and palm motion shared by Home and Island Quests. */
+@keyframes davao_bob {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  25% { transform: translateY(-2px) rotate(0deg); }
+  55% { transform: translateY(-3.5px) rotate(2.5deg); }
+  80% { transform: translateY(-0.5px) rotate(0.5deg); }
+}
+@keyframes davao_sail {
+  0%, 100% { transform: scaleX(0.88); }
+  36% { transform: scaleX(1.10); }
+  61% { transform: scaleX(0.96); }
+  78% { transform: scaleX(1.04); }
+}
+@keyframes davao_pennant {
+  0%, 100% { transform: rotate(-8deg) scaleY(0.8); }
+  45% { transform: rotate(12deg) scaleY(1.1); }
+  70% { transform: rotate(3deg) scaleY(0.9); }
+}
+@keyframes davao_palm_bend {
+  0%, 100% { transform: skewX(-1deg); }
+  28% { transform: skewX(4.5deg); }
+  53% { transform: skewX(1.5deg); }
+  76% { transform: skewX(6deg); }
+}
+@keyframes davao_frond_sway {
+  0%, 100% { transform: rotate(2deg) scaleY(1); }
+  35% { transform: rotate(-5deg) scaleY(0.94); }
+  73% { transform: rotate(-1deg) scaleY(1.02); }
+}
+.davao_bob {
+  animation: davao_bob 3.2s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+}
+.davao_sail {
+  animation: davao_sail 2.7s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: left center;
+}
+.davao_pennant {
+  animation: davao_pennant 1.5s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: right center;
+}
+.davao_palm_bend {
+  animation: davao_palm_bend var(--palm-cycle, 5.8s) ease-in-out var(--palm-phase, -1s) infinite;
+  transform-box: fill-box;
+  transform-origin: center bottom;
+}
+.davao_fronds {
+  animation: davao_frond_sway 3.6s ease-in-out var(--palm-phase, -1s) infinite;
+  transform-box: fill-box;
+  transform-origin: center 55%;
+}
+.davao_palm_instance:nth-of-type(even) { --palm-phase: -2.4s; --palm-cycle: 6.7s; }
+.davao_palm_instance:nth-of-type(odd) { --palm-phase: -0.6s; --palm-cycle: 5.2s; }
+@media (prefers-reduced-motion: reduce) {
+  .davao_bob,
+  .davao_sail,
+  .davao_pennant,
+  .davao_palm_bend,
+  .davao_fronds {
+    animation: none;
+  }
+}
