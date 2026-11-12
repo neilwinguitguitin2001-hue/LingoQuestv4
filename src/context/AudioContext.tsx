@@ -45,6 +45,7 @@ export function AudioProvider({ children }: { children: ReactNode }) {
   const [quiz, setQuiz] = useState(false);
   const [maps, setMaps] = useState(0);
   const engine = useRef<{ context: AudioContext; music: GainNode; sea: GainNode } | null>(null);
+  const suspendTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const latest = useRef({ preferences, study, quiz, maps });
   latest.current = { preferences, study, quiz, maps };
 
@@ -53,13 +54,20 @@ export function AudioProvider({ children }: { children: ReactNode }) {
     const output = engine.current;
     if (!output) return;
     const { context, music, sea } = output;
-    const audible = value.musicEnabled && value.musicVolume > 0 && !document.hidden && (!reading || playing);
+    const audible = value.musicEnabled && value.musicVolume > 0 && !document.hidden;
     const volume = audible ? value.musicVolume / 100 : 0;
-    music.gain.setTargetAtTime(volume * (playing ? 0.4 : visibleMaps ? 0.55 : 1), context.currentTime, 0.25);
+    music.gain.setTargetAtTime(volume * (playing ? 0.4 : reading ? 0.25 : visibleMaps ? 0.55 : 1), context.currentTime, 0.25);
     sea.gain.setTargetAtTime(visibleMaps && audible && !playing ? volume * 0.8 : 0, context.currentTime, 0.25);
-    if (document.hidden || !audible) {
-      void context.suspend().catch(() => {});
-    } else {
+    // Keep the same looping sources through navigation and mute changes. Fade
+    // before suspending a hidden tab, and cancel stale suspension on return.
+    if (suspendTimer.current !== null) clearTimeout(suspendTimer.current);
+    suspendTimer.current = null;
+    if (document.hidden) {
+      suspendTimer.current = setTimeout(() => {
+        if (document.hidden && engine.current === output) void context.suspend().catch(() => {});
+        suspendTimer.current = null;
+      }, 1500);
+    } else if (audible) {
       void context.resume().catch(() => {});
     }
   }
@@ -95,6 +103,7 @@ export function AudioProvider({ children }: { children: ReactNode }) {
       document.removeEventListener('pointerup', unlockAudio);
       document.removeEventListener('keydown', unlockAudio);
       document.removeEventListener('visibilitychange', syncAudio);
+      if (suspendTimer.current !== null) clearTimeout(suspendTimer.current);
       const context = engine.current?.context;
       engine.current = null;
       if (context) void context.close().catch(() => {});

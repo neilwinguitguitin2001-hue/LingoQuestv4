@@ -49,7 +49,7 @@ export function createIslandMusic(context: AudioContext, destination: AudioNode 
   track.loop = true;
   const gain = context.createGain();
   gain.gain.value = 0.32;
-  track.connect(gain).connect(context.destination);
+  track.connect(gain).connect(destination);
   return track;
 }
 
@@ -58,18 +58,27 @@ export function createIslandMusic(context: AudioContext, destination: AudioNode 
 export function createSeaAmbience(context: AudioContext, destination: AudioNode) {
   const rate = 16000;
   const length = rate * 12;
+  const overlap = rate * 2;
   const buffer = context.createBuffer(2, length, rate);
   for (let channel = 0; channel < 2; channel++) {
     const samples = buffer.getChannelData(channel);
+    const raw = new Float32Array(length + overlap);
     let state = 19387 + channel * 917;
     let breeze = 0;
-    for (let index = 0; index < length; index++) {
+    for (let index = 0; index < raw.length; index++) {
       state = (Math.imul(1664525, state) + 1013904223) >>> 0;
       const white = state / 2147483648 - 1;
       breeze = (breeze + 0.035 * white) / 1.035;
       const wave = 0.35 + 0.65 * (0.5 + 0.5 * Math.sin(index / rate * Math.PI / 3 + channel * 0.4)) ** 2;
-      const edge = Math.min(1, index / (rate * 0.3), (length - 1 - index) / (rate * 0.3));
-      samples[index] = (breeze * 1.5 + white * 0.012) * wave * edge;
+      raw[index] = (breeze * 1.5 + white * 0.012) * wave;
+    }
+    // Blend the tail into the head without fading to silence. The buffer seam
+    // follows consecutive raw samples; independent noise uses equal-power gains.
+    for (let index = 0; index < length; index++) {
+      const phase = Math.min(1, index / overlap) * Math.PI / 2;
+      samples[index] = index < overlap
+        ? raw[length + index] * Math.cos(phase) + raw[index] * Math.sin(phase)
+        : raw[index];
     }
   }
   const source = context.createBufferSource();

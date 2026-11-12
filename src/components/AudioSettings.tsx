@@ -20,7 +20,7 @@ export function AudioSettings() {
     <>
       <button type="button" onClick={() => setOpen(true)} aria-label="Audio settings" title="Audio settings"
         className="inline-flex h-10 shrink-0 items-center justify-center gap-2 rounded-xl border border-sky-500/60 px-3 text-sm font-bold text-sky-100 hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-sky-300">
-        <SlidersHorizontal size={18} aria-hidden="true" /><span className="hidden sm:inline">Audio</span>
+        <SlidersHorizontal size={18} aria-hidden="true" /><span>Audio settings</span>
       </button>
       <dialog ref={dialog} onCancel={() => setOpen(false)} onClose={() => setOpen(false)} aria-labelledby={id}
         className="m-auto max-h-[90dvh] w-[min(94vw,460px)] overflow-y-auto rounded-2xl border border-sky-600 bg-[#071930] p-0 text-white shadow-2xl backdrop:bg-slate-950/70">
@@ -54,7 +54,7 @@ export function AudioSettings() {
               </fieldset>
             );
           })}
-          <p className="text-xs leading-relaxed text-sky-200">Music starts after your first interaction, pauses during lesson reading and writing, and plays softly during games. Ocean ambience accompanies island maps.</p>
+          <p className="text-xs leading-relaxed text-sky-200">Music starts after your first interaction, continues quietly during lessons, writing, and games. Ocean ambience accompanies island maps.</p>
           {error && <p role="status" className="text-sm text-amber-200">Audio could not start. Try again after closing this panel.</p>}
           <div className="flex flex-wrap justify-between gap-2">
             <button type="button" disabled={!preferences.effectsEnabled || !preferences.effectsVolume} onClick={() => soundFX.playCorrect()} className="min-h-11 rounded-xl border border-sky-500 px-4 text-sm font-bold disabled:opacity-40">Test sound effect</button>

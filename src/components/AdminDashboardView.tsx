@@ -1,3 +1,4 @@
+import { AudioSettings } from './AudioSettings';
 import React, { useState, useMemo } from 'react';
 import {
   AlertCircle,
@@ -1140,6 +1141,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
           </div>
 
           <div className="flex flex-wrap items-center gap-3">
+            <AudioSettings />
 
             <button
               onClick={() => {

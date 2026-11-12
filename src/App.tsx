@@ -1,4 +1,3 @@
-import { AudioSettings } from './components/AudioSettings';
 import { AudioScene } from './context/AudioContext';
 import { DashboardGuide } from './components/DashboardGuide';
 import {StudentHomeView} from './components/StudentHomeView';
@@ -1758,7 +1757,7 @@ export default function App() {
                 </button>
               )}
 
-              <AudioSettings />
+              
 
               {/* User Account / Role Pill */}
               {currentUser ? (

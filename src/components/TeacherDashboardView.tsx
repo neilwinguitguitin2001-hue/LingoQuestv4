@@ -1,3 +1,4 @@
+import { AudioSettings } from './AudioSettings';
 import React, { useEffect, useState } from 'react';
 import {
   AlertCircle,
@@ -919,6 +920,7 @@ export const TeacherDashboardView: React.FC<TeacherDashboardViewProps> = ({
           </div>
 
           <div className="flex flex-wrap items-center gap-3">
+            <AudioSettings />
             {/* Prominent Class Code Card */}
             <div className="flex items-center gap-2.5 px-4 py-2 rounded-2xl bg-white/10 border border-white/20">
               <div>
