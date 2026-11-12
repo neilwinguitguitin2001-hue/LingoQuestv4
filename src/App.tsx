@@ -1708,9 +1708,9 @@ export default function App() {
             )}
 
             {/* Right Header Controls: separate permanent XP and spendable Quest Coins */}
-            <div className="ml-auto flex shrink-0 items-center gap-2 sm:gap-3">
+            <div className="ml-auto flex max-w-full flex-wrap items-center justify-end gap-2 sm:gap-3">
               {currentStudent && (
-                <div className="hidden xl:flex items-center gap-2 mr-1">
+                <div className="flex items-center gap-2 mr-1">
                   {/* Permanent learning progress */}
                   <div
                     className="flex items-center gap-2 rounded-xl border border-sky-400/70 bg-gradient-to-br from-[#123B63] to-[#07192F] px-2.5 py-1 text-white shadow-[2px_2px_0px_#0284C7]"
