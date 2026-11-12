@@ -1,3 +1,4 @@
+import { DashboardGuide } from './components/DashboardGuide';
 import {StudentHomeView} from './components/StudentHomeView';
 import {LegalCenter,LegalLinks} from './components/LegalCenter';
 import React, { useEffect, useRef, useState } from 'react';
@@ -1949,6 +1950,14 @@ export default function App() {
             onRefreshStatus={handleRefreshApprovalStatus}
             onLogOut={handleLogOut}
           />
+        )}
+
+        {authUser?.uid === currentUser?.id && currentUser?.status === 'approved' && (
+          currentView === 'STUDENT_DASHBOARD' && currentUser.role === 'student'
+            ? <DashboardGuide key={currentUser.id} accountId={currentUser.id} role="student" onNavigate={navigateStudent} />
+            : currentView === 'TEACHER' && currentUser.role === 'teacher'
+              ? <DashboardGuide key={currentUser.id} accountId={currentUser.id} role="teacher" />
+              : null
         )}
 
         {/* Administrator Dashboard View */}
