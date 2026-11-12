@@ -692,9 +692,15 @@ export const InteractiveIslandMap: React.FC<InteractiveIslandMapProps> = ({
           80% { transform: translateY(-0.5px) rotate(0.5deg); }
         }
         @keyframes davao_sail {
-          0%, 100% { transform: skewX(-2deg) scaleX(0.96); }
-          40% { transform: skewX(4deg) scaleX(1); }
-          75% { transform: skewX(1deg) scaleX(0.98); }
+          0%, 100% { transform: scaleX(0.88); }
+          36% { transform: scaleX(1.10); }
+          61% { transform: scaleX(0.96); }
+          78% { transform: scaleX(1.04); }
+        }
+        @keyframes davao_pennant {
+          0%, 100% { transform: rotate(-8deg) scaleY(0.8); }
+          45% { transform: rotate(12deg) scaleY(1.1); }
+          70% { transform: rotate(3deg) scaleY(0.9); }
         }
         @keyframes davao_palm_bend {
           0%, 100% { transform: skewX(-1deg); }
@@ -776,7 +782,12 @@ export const InteractiveIslandMap: React.FC<InteractiveIslandMapProps> = ({
         .davao_sail {
           animation: davao_sail 2.7s ease-in-out infinite;
           transform-box: fill-box;
-          transform-origin: left bottom;
+          transform-origin: left center;
+        }
+        .davao_pennant {
+          animation: davao_pennant 1.5s ease-in-out infinite;
+          transform-box: fill-box;
+          transform-origin: right center;
         }
         .davao_palm_bend {
           animation: davao_palm_bend var(--palm-cycle, 5.8s) ease-in-out var(--palm-phase, -1s) infinite;
@@ -819,6 +830,7 @@ export const InteractiveIslandMap: React.FC<InteractiveIslandMapProps> = ({
           .davao_cloud_2,
           .davao_bob,
           .davao_sail,
+          .davao_pennant,
           .davao_palm_bend,
           .davao_fronds,
           .davao_wake,
@@ -1633,36 +1645,19 @@ export const InteractiveIslandMap: React.FC<InteractiveIslandMapProps> = ({
                     </g>
                   )}
                   <g className="davao_bob">
-                  <path
-                    d="M-28 6 L28 6"
-                    stroke="#ffe9a8"
-                    strokeWidth="2.6"
-                    strokeLinecap="round"
-                  />
-                  <path
-                    d="M-16 5 L-14 -1 M16 5 L14 -1"
-                    stroke="#caa86a"
-                    strokeWidth="1.4"
-                    strokeLinecap="round"
-                  />
-                  <path
-                    d="M-15 -3 C-11 7 11 7 15 -3Z"
-                    fill="#8a4b22"
-                    stroke="#4e2810"
-                    strokeWidth="1"
-                  />
-                  <path
-                    d="M0 -3 L0 -31"
-                    stroke="#5a3418"
-                    strokeWidth="1.6"
-                    strokeLinecap="round"
-                  />
-                  <g className="davao_sail">
-                  <path d="M1 -30 L6.1 -22 L1 -22Z" fill="#ff6b6b" />
-                  <path d="M1 -22 L6.1 -22 L11.6 -13.5 L1 -13.5Z" fill="#ffd166" />
-                  <path d="M1 -13.5 L11.6 -13.5 L17 -5 L1 -5Z" fill="#4dabf7" />
-                  </g>
-                  <circle cx="0" cy="-32" r="2.2" fill="#ffb53d" />
+                    <path d="M-28 6 Q-23 9 23 8 L29 5 Q20 6 -24 5Z" fill="#d8ad69" stroke="#79502b" strokeWidth="0.8" />
+                    <path d="M-17 6 L-12 -2 M16 6 L12 -2" stroke="#f4d18d" strokeWidth="1.6" strokeLinecap="round" />
+                    <path d="M-18 -4 Q0 0 18 -5 Q13 6 1 7 Q-12 7 -18 -4Z" fill="#8a4b22" stroke="#4e2810" strokeWidth="1" />
+                    <path d="M-15 -2 Q1 2 15 -3" fill="none" stroke="#f6cd84" strokeWidth="1.3" strokeLinecap="round" />
+                    <path d="M0 -3 L0 -34" stroke="#5a3418" strokeWidth="1.8" strokeLinecap="round" />
+                    <g className="davao_sail">
+                      <path d="M1 -32 Q7 -28 11 -22 Q6 -22 1 -23Z" fill="#ff7869" />
+                      <path d="M1 -23 Q6 -22 11 -22 Q15 -17 18 -14 Q9 -12 1 -14Z" fill="#ffd166" />
+                      <path d="M1 -14 Q9 -12 18 -14 Q21 -10 23 -6 Q12 -2 1 -6Z" fill="#4dabf7" />
+                      <path d="M3 -30 Q5 -18 4 -7" fill="none" stroke="#fff" strokeOpacity=".48" strokeWidth=".8" />
+                    </g>
+                    <path className="davao_pennant" d="M0 -34 Q-5 -38 -12 -34 L-10 -32 Q-5 -35 0 -32Z" fill="#ffd166" />
+                    <circle cy="-35" r="1.4" fill="#ffb53d" />
                   </g>
                 </g>
               </g>
