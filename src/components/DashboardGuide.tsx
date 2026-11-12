@@ -1,5 +1,5 @@
 import { useId, useState } from 'react';
-import { BookOpen, Compass, GraduationCap, Map, PenLine, Route, Users, X } from 'lucide-react';
+import { ArrowRight, BookOpen, Compass, GraduationCap, Map, PenLine, Route, Users, X } from 'lucide-react';
 import { InabelWovenStrip } from './FilipinianaMotifs';
 
 const studentSteps = [
@@ -51,12 +51,16 @@ export function DashboardGuide({ accountId, role, onNavigate }: {
   const button = 'min-h-11 rounded-xl px-4 py-2 text-sm font-bold focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-400';
 
   return (
-    <section aria-labelledby={headingId} className="mx-auto w-full max-w-7xl px-4 pb-5 sm:px-6">
+    <section aria-labelledby={headingId} className="mx-auto w-full max-w-7xl px-4 pb-2 sm:px-6">
       {mode === 'closed' ? (
-        <div className="flex justify-end pt-4">
+        <div className="flex justify-start pt-4">
           <h2 id={headingId} className="sr-only">LingoQuest guide</h2>
-          <button type="button" onClick={() => setMode('guide')} className={`${button} inline-flex items-center gap-2 border border-sky-200 bg-white text-sky-900 hover:bg-sky-50`}>
-            <BookOpen size={18} aria-hidden="true" /> How LingoQuest works
+          <button type="button" onClick={() => setMode('guide')} className={`${button} group inline-flex w-full items-center gap-3 border border-teal-600 bg-gradient-to-r from-sky-950 to-teal-800 text-left text-white shadow-sm hover:from-sky-900 hover:to-teal-700 sm:w-auto`}>
+            <span className="grid size-8 shrink-0 place-items-center rounded-lg bg-white/10 text-emerald-200">
+              <BookOpen size={18} aria-hidden="true" />
+            </span>
+            <span>How LingoQuest works</span>
+            <ArrowRight size={17} aria-hidden="true" className="ml-auto shrink-0 text-emerald-200 sm:ml-2" />
           </button>
         </div>
       ) : (
