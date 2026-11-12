@@ -351,6 +351,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
         completedSessionRef.current = false;
         submittedQuestionRef.current = null;
         activeQuestionIdRef.current = response.question.id;
+        soundFX.playQuestStart();
         setStage('PLAYING_QUIZ');
       } catch (error) { setSourceReviewMessage(error instanceof Error ? error.message : 'The question bank is unavailable.'); }
       finally { setQuestBusy(false); }
@@ -378,6 +379,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
     setQuestionLocked(false);
     setAnswerLogs([]);
     setFinalOutcome(null);
+    soundFX.playQuestStart();
     setStage('PLAYING_QUIZ');
   };
 

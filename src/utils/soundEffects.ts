@@ -98,24 +98,33 @@ class SoundManager {
     }
   }
 
+  private playSoftNotes(notes: number[], volume: number, spacing = 0.09) {
+    const context = this.getContext();
+    if (!context) return;
+    notes.forEach((frequency, index) => {
+      const start = context.currentTime + index * spacing;
+      const oscillator = context.createOscillator();
+      const gain = context.createGain();
+      oscillator.frequency.value = frequency;
+      gain.gain.setValueAtTime(0.001, start);
+      gain.gain.exponentialRampToValueAtTime(volume, start + 0.02);
+      gain.gain.exponentialRampToValueAtTime(0.001, start + 0.25);
+      oscillator.connect(gain).connect(context.destination);
+      oscillator.start(start);
+      oscillator.stop(start + 0.26);
+    });
+  }
+
   public playIncorrect() {
-    const ctx = this.getContext();
-    if (!ctx) return;
-    try {
-      const osc = ctx.createOscillator();
-      const gain = ctx.createGain();
-      osc.type = 'sawtooth';
-      osc.frequency.setValueAtTime(240, ctx.currentTime);
-      osc.frequency.linearRampToValueAtTime(175, ctx.currentTime + 0.22);
-      gain.gain.setValueAtTime(0.09, ctx.currentTime);
-      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.24);
-      osc.connect(gain);
-      gain.connect(ctx.destination);
-      osc.start();
-      osc.stop(ctx.currentTime + 0.25);
-    } catch {
-      // ignore
-    }
+    this.playSoftNotes([392, 329.63], 0.055);
+  }
+
+  public playQuestStart() {
+    this.playSoftNotes([392, 523.25, 587.33], 0.075);
+  }
+
+  public playCoinExchange() {
+    this.playSoftNotes([659.25, 987.77, 1318.51], 0.065, 0.055);
   }
 
   public playBridgeRestored() {

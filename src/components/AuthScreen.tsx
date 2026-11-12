@@ -1,3 +1,4 @@
+import { BackgroundMusic } from './BackgroundMusic';
 import {RecoveryRequest} from './PasswordRecovery';
 import {InabelStrip} from './InabelStrip';
 import {InabelWovenStrip} from './FilipinianaMotifs';
@@ -263,7 +264,8 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
           <span className="sm:hidden"><LingoQuestLogo size="sm" textColor="light" animated={true}/></span><span className="hidden sm:block"><LingoQuestLogo size="md" textColor="light" animated={true}/></span>
 
           {/* Action on Header */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
+            <BackgroundMusic />
             <button
               type="button"
               onClick={() => {

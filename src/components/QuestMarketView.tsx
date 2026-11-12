@@ -1,3 +1,4 @@
+import { soundFX } from '../utils/soundEffects';
 import React, { useEffect, useState } from 'react';
 import { Coins, PackageCheck, RefreshCw, ShoppingBag } from 'lucide-react';
 import { InabelHeaderStrip } from './InabelHeaderStrip';
@@ -29,6 +30,7 @@ export const QuestMarketView: React.FC = () => {
     setBusy(kind);
     try {
       const purchased = await questGame<QuestBuyResponse>('buy', { kind });
+      soundFX.playCoinExchange();
       const latest = await questGame<QuestMarketState>('market');
       setMarket(latest);
       setMessage(`${item.label} added to inventory. Balance: ${purchased.balance} Quest Coins.`);

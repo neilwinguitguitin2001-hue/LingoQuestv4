@@ -1,3 +1,4 @@
+import { BackgroundMusic } from './components/BackgroundMusic';
 import { DashboardGuide } from './components/DashboardGuide';
 import {StudentHomeView} from './components/StudentHomeView';
 import {LegalCenter,LegalLinks} from './components/LegalCenter';
@@ -1765,11 +1766,15 @@ export default function App() {
                 </button>
               )}
 
-              {/* Audio Toggle */}
+              <BackgroundMusic paused={currentView === 'LESSON_QUIZ' || currentView === 'WRITING'} />
+
+              {/* Sound effects toggle */}
               <button
                 onClick={handleToggleSound}
                 className="h-10 w-10 flex items-center justify-center rounded-xl border border-[#2563EB]/60 text-[#FAF7F2] hover:text-[#22C55E] hover:bg-white/10 transition cursor-pointer"
-                title={isMuted ? 'Unmute Sound' : 'Mute Sound'}
+                aria-label="Sound effects"
+                aria-pressed={!isMuted}
+                title={isMuted ? 'Unmute sound effects' : 'Mute sound effects'}
               >
                 {isMuted ? <VolumeX className="w-4 h-4 text-[#0F766E]" /> : <Volume2 className="w-4 h-4 text-[#22C55E]" />}
               </button>

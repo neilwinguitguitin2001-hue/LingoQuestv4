@@ -1,3 +1,4 @@
+import { soundFX } from '../utils/soundEffects';
 import { useEffect, useId, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { ArrowRight, BookOpen, X } from 'lucide-react';
@@ -83,6 +84,7 @@ export function DashboardGuide({ accountId, role, currentView, onNavigate }: {
   }
 
   function showStep(nextIndex: number) {
+    soundFX.playClick();
     const next = steps[nextIndex];
     setIndex(nextIndex);
     setMode('tour');
