@@ -686,23 +686,31 @@ export const InteractiveIslandMap: React.FC<InteractiveIslandMapProps> = ({
           }
         }
         @keyframes davao_bob {
-          0%,
-          100% {
-            transform: translateY(0) rotate(-1.5deg);
-          }
-          50% {
-            transform: translateY(-2.5px) rotate(1.5deg);
-          }
+          0%, 100% { transform: translateY(0) rotate(-2deg); }
+          25% { transform: translateY(-2px) rotate(0deg); }
+          55% { transform: translateY(-3.5px) rotate(2.5deg); }
+          80% { transform: translateY(-0.5px) rotate(0.5deg); }
+        }
+        @keyframes davao_sail {
+          0%, 100% { transform: skewX(-2deg) scaleX(0.96); }
+          40% { transform: skewX(4deg) scaleX(1); }
+          75% { transform: skewX(1deg) scaleX(0.98); }
+        }
+        @keyframes davao_palm_bend {
+          0%, 100% { transform: skewX(-1deg); }
+          28% { transform: skewX(4.5deg); }
+          53% { transform: skewX(1.5deg); }
+          76% { transform: skewX(6deg); }
+        }
+        @keyframes davao_frond_sway {
+          0%, 100% { transform: rotate(2deg) scaleY(1); }
+          35% { transform: rotate(-5deg) scaleY(0.94); }
+          73% { transform: rotate(-1deg) scaleY(1.02); }
         }
         @keyframes davao_wake {
-          0% {
-            transform: scale(0.7);
-            opacity: 0.7;
-          }
-          100% {
-            transform: scale(1.5);
-            opacity: 0;
-          }
+          0% { transform: translateX(0) scale(0.75, 0.65); opacity: 0; }
+          22% { opacity: 0.65; }
+          100% { transform: translateX(-16px) scale(1.45, 1.2); opacity: 0; }
         }
         @keyframes davao_beam {
           0%,
@@ -765,6 +773,23 @@ export const InteractiveIslandMap: React.FC<InteractiveIslandMapProps> = ({
           transform-box: fill-box;
           transform-origin: 50% 100%;
         }
+        .davao_sail {
+          animation: davao_sail 2.7s ease-in-out infinite;
+          transform-box: fill-box;
+          transform-origin: left bottom;
+        }
+        .davao_palm_bend {
+          animation: davao_palm_bend var(--palm-cycle, 5.8s) ease-in-out var(--palm-phase, -1s) infinite;
+          transform-box: fill-box;
+          transform-origin: center bottom;
+        }
+        .davao_fronds {
+          animation: davao_frond_sway 3.6s ease-in-out var(--palm-phase, -1s) infinite;
+          transform-box: fill-box;
+          transform-origin: center 55%;
+        }
+        .davao_palm_instance:nth-of-type(even) { --palm-phase: -2.4s; --palm-cycle: 6.7s; }
+        .davao_palm_instance:nth-of-type(odd) { --palm-phase: -0.6s; --palm-cycle: 5.2s; }
         .davao_wake {
           animation: davao_wake 2.4s ease-out infinite;
           transform-box: fill-box;
@@ -793,6 +818,9 @@ export const InteractiveIslandMap: React.FC<InteractiveIslandMapProps> = ({
           .davao_cloud_1,
           .davao_cloud_2,
           .davao_bob,
+          .davao_sail,
+          .davao_palm_bend,
+          .davao_fronds,
           .davao_wake,
           .davao_beam,
           .davao_lantern {
@@ -947,7 +975,7 @@ export const InteractiveIslandMap: React.FC<InteractiveIslandMapProps> = ({
                   <feGaussianBlur stdDeviation="5" />
                 </filter>
 
-                <g id="palm">
+                <g id="palm"><g className="davao_palm_bend">
                   <path
                     d="M0 0 C3 -10 -1 -20 4 -30"
                     stroke="#8a5a2b"
@@ -955,14 +983,14 @@ export const InteractiveIslandMap: React.FC<InteractiveIslandMapProps> = ({
                     fill="none"
                     strokeLinecap="round"
                   />
-                  <g stroke="#2f9a4c" strokeWidth="2.6" fill="none" strokeLinecap="round">
+                  <g className="davao_fronds" stroke="#2f9a4c" strokeWidth="2.6" fill="none" strokeLinecap="round">
                     <path d="M4 -30 C-6 -40 -18 -36 -24 -26" />
                     <path d="M4 -30 C-2 -44 10 -48 20 -42" />
                     <path d="M4 -30 C14 -38 26 -32 28 -22" />
                     <path d="M4 -30 C-10 -32 -20 -26 -26 -18" />
                     <path d="M4 -30 C16 -28 24 -22 26 -14" />
                   </g>
-                </g>
+                </g></g>
 
                 <path
                   id="dinoBody"
@@ -1281,7 +1309,7 @@ export const InteractiveIslandMap: React.FC<InteractiveIslandMapProps> = ({
                 </g>
 
                 {/* Distinctive Lone Tall Coconut Palm (Prominent feature in reference image 1 rising above center-right) */}
-                <g transform="translate(6, -26)">
+                <g transform="translate(6, -26)"><g className="davao_palm_bend">
                   {/* Tall curved slender trunk */}
                   <path
                     d="M0 8 C1 -6 3 -16 2 -26"
@@ -1291,7 +1319,7 @@ export const InteractiveIslandMap: React.FC<InteractiveIslandMapProps> = ({
                     strokeLinecap="round"
                   />
                   {/* Palm fronds crowning the tall palm */}
-                  <g stroke="#15803d" strokeWidth="2.2" fill="none" strokeLinecap="round">
+                  <g className="davao_fronds" stroke="#15803d" strokeWidth="2.2" fill="none" strokeLinecap="round">
                     <path d="M2 -26 C-7 -34 -15 -30 -18 -22" />
                     <path d="M2 -26 C-2 -37 7 -40 14 -35" />
                     <path d="M2 -26 C11 -33 19 -28 20 -19" />
@@ -1299,12 +1327,12 @@ export const InteractiveIslandMap: React.FC<InteractiveIslandMapProps> = ({
                     <path d="M2 -26 C12 -23 18 -18 19 -11" />
                   </g>
                   <circle cx="2" cy="-26" r="2.2" fill="#854d0e" />
-                </g>
+                </g></g>
 
                 {/* Companion Palm on the Left Slope */}
-                <use href="#palm" transform="translate(-24, -14) scale(0.9)" />
+                <use className="davao_palm_instance" href="#palm" transform="translate(-24, -14) scale(0.9)" />
                 {/* Companion Palm on the Far-Right Edge */}
-                <use href="#palm" transform="translate(28, -6) scale(0.75)" />
+                <use className="davao_palm_instance" href="#palm" transform="translate(28, -6) scale(0.75)" />
 
                 {/* Gentle Shoreline Water Wash / Gentle Surf Lapping on the Sand */}
                 <path
@@ -1393,8 +1421,8 @@ export const InteractiveIslandMap: React.FC<InteractiveIslandMapProps> = ({
                   <circle cx="-38" cy="-2" r="4" />
                   <circle cx="-18" cy="-4" r="4" />
                 </g>
-                <use href="#palm" transform="translate(-34,-4) scale(.9)" />
-                <use href="#palm" transform="translate(-14,-2) scale(.72)" />
+                <use className="davao_palm_instance" href="#palm" transform="translate(-34,-4) scale(.9)" />
+                <use className="davao_palm_instance" href="#palm" transform="translate(-14,-2) scale(.72)" />
               </g>
 
               {/* 4 · Pujada Island: big forested hills, curving white beach */}
@@ -1447,9 +1475,9 @@ export const InteractiveIslandMap: React.FC<InteractiveIslandMapProps> = ({
                   strokeLinecap="round"
                   opacity=".9"
                 />
-                <use href="#palm" transform="translate(-26,-26) scale(1.1)" />
-                <use href="#palm" transform="translate(12,-32) scale(1)" />
-                <use href="#palm" transform="translate(40,-14) scale(.8)" />
+                <use className="davao_palm_instance" href="#palm" transform="translate(-26,-26) scale(1.1)" />
+                <use className="davao_palm_instance" href="#palm" transform="translate(12,-32) scale(1)" />
+                <use className="davao_palm_instance" href="#palm" transform="translate(40,-14) scale(.8)" />
               </g>
 
               {/* 5 · Sleeping Dinosaur (Badas, Mati City): recreated based on real landmark headland */}
@@ -1597,20 +1625,14 @@ export const InteractiveIslandMap: React.FC<InteractiveIslandMapProps> = ({
                 pointerEvents="none"
                 transform={`translate(${boatPos.x.toFixed(1)},${boatPos.y.toFixed(1)})`}
               >
-                <ellipse
-                  className="davao_wake"
-                  rx="30"
-                  ry="8"
-                  fill="none"
-                  stroke="#bfe3ff"
-                  strokeOpacity=".6"
-                  strokeWidth="1.5"
-                />
-                <circle r="24" fill="#ffd45a" opacity=".1" />
-                <g
-                  className="davao_bob"
-                  transform={heading === 'west' ? 'scale(-1, 1)' : undefined}
-                >
+                <g transform={heading === 'west' ? 'scale(-1, 1)' : undefined}>
+                  {Math.abs(currentDist - (STATIC_CUM_LENGTHS[activeIndex] ?? 0)) > 0.5 && (
+                    <g transform="translate(-24, 5)">
+                      <path className="davao_wake" d="M0 0 Q-12 -5 -34 -5 M0 0 Q-12 5 -34 5"
+                        fill="none" stroke="#bfe3ff" strokeWidth="1.4" strokeLinecap="round" />
+                    </g>
+                  )}
+                  <g className="davao_bob">
                   <path
                     d="M-28 6 L28 6"
                     stroke="#ffe9a8"
@@ -1635,10 +1657,13 @@ export const InteractiveIslandMap: React.FC<InteractiveIslandMapProps> = ({
                     strokeWidth="1.6"
                     strokeLinecap="round"
                   />
+                  <g className="davao_sail">
                   <path d="M1 -30 L6.1 -22 L1 -22Z" fill="#ff6b6b" />
                   <path d="M1 -22 L6.1 -22 L11.6 -13.5 L1 -13.5Z" fill="#ffd166" />
                   <path d="M1 -13.5 L11.6 -13.5 L17 -5 L1 -5Z" fill="#4dabf7" />
+                  </g>
                   <circle cx="0" cy="-32" r="2.2" fill="#ffb53d" />
+                  </g>
                 </g>
               </g>
             </svg>
