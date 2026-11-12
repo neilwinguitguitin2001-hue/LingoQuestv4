@@ -37,26 +37,27 @@ export function AudioSettings({ inAccountMenu = false }: { inAccountMenu?: boole
             const music = kind === 'music';
             const enabled = music ? preferences.musicEnabled : preferences.effectsEnabled;
             const volume = music ? preferences.musicVolume : preferences.effectsVolume;
-            const title = music ? 'Music & sea ambience' : 'Sound effects';
+            const title = music ? 'Background music' : 'Sound effects';
             const Icon = music ? Music : Volume2;
             return (
-              <fieldset key={kind} className="space-y-3 rounded-xl border border-sky-800 p-4">
+              <fieldset key={kind} className={music ? "space-y-3 rounded-xl border border-sky-600 bg-sky-950/50 p-4" : "space-y-3 rounded-xl border border-sky-800 p-4"}>
                 <legend className="px-1 font-bold"><Icon className="mr-2 inline text-emerald-300" size={18} aria-hidden="true" />{title}</legend>
+                {music && <p className="text-xs text-sky-200">Also controls the ocean ambience on island maps.</p>}
                 <label className="flex min-h-11 items-center justify-between gap-3 text-sm">
-                  <span>{music ? 'Enable music and ambience' : 'Enable sound effects'}</span>
+                  <span>{music ? 'Enable background music' : 'Enable sound effects'}</span>
                   <input type="checkbox" checked={enabled} className="size-5 accent-emerald-400" onChange={event => update(music ? { musicEnabled: event.target.checked } : { effectsEnabled: event.target.checked })} />
                 </label>
                 <label className="block space-y-2 text-sm">
-                  <span className="flex justify-between"><span>{music ? 'Music volume' : 'Effects volume'}</span><output>{volume}%</output></span>
+                  <span className="flex justify-between"><span>{music ? 'Background music volume' : 'Effects volume'}</span><output>{volume}%</output></span>
                   <input type="range" min="0" max="100" step="5" value={volume} disabled={!enabled}
                     className="min-h-8 w-full accent-emerald-400 disabled:opacity-40"
-                    aria-label={music ? 'Music volume' : 'Effects volume'} aria-valuetext={volume + ' percent'}
+                    aria-label={music ? 'Background music volume' : 'Effects volume'} aria-valuetext={volume + ' percent'}
                     onChange={event => update(music ? { musicVolume: Number(event.target.value) } : { effectsVolume: Number(event.target.value) })} />
                 </label>
               </fieldset>
             );
           })}
-          <p className="text-xs leading-relaxed text-sky-200">Music starts after your first interaction, continues quietly during lessons, writing, and games. Ocean ambience accompanies island maps.</p>
+          <p className="text-xs leading-relaxed text-sky-200">Background music starts after your first interaction and plays more quietly during lessons, writing, and games.</p>
           {error && <p role="status" className="text-sm text-amber-200">Audio could not start. Try again after closing this panel.</p>}
           <div className="flex flex-wrap justify-between gap-2">
             <button type="button" disabled={!preferences.effectsEnabled || !preferences.effectsVolume} onClick={() => soundFX.playCorrect()} className="min-h-11 rounded-xl border border-sky-500 px-4 text-sm font-bold disabled:opacity-40">Test sound effect</button>
