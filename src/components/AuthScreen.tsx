@@ -1,4 +1,4 @@
-import { BackgroundMusic } from './BackgroundMusic';
+import { AudioSettings } from './AudioSettings';
 import {RecoveryRequest} from './PasswordRecovery';
 import {InabelStrip} from './InabelStrip';
 import {InabelWovenStrip} from './FilipinianaMotifs';
@@ -265,7 +265,7 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
 
           {/* Action on Header */}
           <div className="flex items-center gap-2 sm:gap-3">
-            <BackgroundMusic />
+            <AudioSettings />
             <button
               type="button"
               onClick={() => {

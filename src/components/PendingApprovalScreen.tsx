@@ -1,3 +1,4 @@
+import { AudioSettings } from './AudioSettings';
 import React, { useState } from 'react';
 import {
   AlertCircle,
@@ -70,7 +71,7 @@ export const PendingApprovalScreen: React.FC<PendingApprovalScreenProps> = ({
           </div>
           <div className="max-w-7xl mx-auto flex items-center justify-between">
             <LingoQuestLogo size="md" textColor="light" />
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3"><AudioSettings />
               <span className="hidden sm:inline text-xs text-slate-300">
                 Learner: <strong className="text-white">{student.name}</strong>
               </span>
@@ -228,7 +229,7 @@ export const PendingApprovalScreen: React.FC<PendingApprovalScreenProps> = ({
           </div>
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <LingoQuestLogo size="md" textColor="light" />
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3"><AudioSettings />
             <span className="hidden sm:inline text-xs text-slate-300">
               Signed in as: <strong className="text-white">{teacher.name}</strong>
             </span>

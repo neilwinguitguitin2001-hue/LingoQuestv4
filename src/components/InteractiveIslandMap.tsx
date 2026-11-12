@@ -1,3 +1,4 @@
+import { useMapAudio } from '../context/AudioContext';
 import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import { soundFX } from '../utils/soundEffects';
 
@@ -209,6 +210,7 @@ export const InteractiveIslandMap: React.FC<InteractiveIslandMapProps> = ({
   interactive = true,
   showRouteLine = true,
 }) => {
+  useMapAudio();
   // Keep onSelectIsland in a ref so changes in parent callbacks do not trigger effect re-runs
   const onSelectIslandRef = useRef(onSelectIsland);
   onSelectIslandRef.current = onSelectIsland;
@@ -288,7 +290,7 @@ export const InteractiveIslandMap: React.FC<InteractiveIslandMapProps> = ({
   // Navigate boat to island `i` with easeInOutQuad timing
   const goToIsland = useCallback((i: number, triggerCallback = true) => {
     if (i < 0 || i >= DAVAO_ORIENTAL_ISLANDS.length) return;
-    soundFX.playClick();
+    soundFX.playSailing();
     setActiveIndex(i);
 
     const target = STATIC_CUM_LENGTHS[i] ?? 0;

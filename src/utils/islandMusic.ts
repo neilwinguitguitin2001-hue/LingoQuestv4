@@ -1,5 +1,5 @@
 // Island Breeze: an original instrumental loop built from soft plucks and sustained chords.
-export function createIslandMusic(context: AudioContext) {
+export function createIslandMusic(context: AudioContext, destination: AudioNode = context.destination) {
   const rate = 22050;
   const beat = 0.75;
   const length = 24 * rate;
@@ -51,4 +51,30 @@ export function createIslandMusic(context: AudioContext) {
   gain.gain.value = 0.32;
   track.connect(gain).connect(context.destination);
   return track;
+}
+
+
+// Layered waves and soft breeze, generated locally with a repeatable noise signal.
+export function createSeaAmbience(context: AudioContext, destination: AudioNode) {
+  const rate = 16000;
+  const length = rate * 12;
+  const buffer = context.createBuffer(2, length, rate);
+  for (let channel = 0; channel < 2; channel++) {
+    const samples = buffer.getChannelData(channel);
+    let state = 19387 + channel * 917;
+    let breeze = 0;
+    for (let index = 0; index < length; index++) {
+      state = (Math.imul(1664525, state) + 1013904223) >>> 0;
+      const white = state / 2147483648 - 1;
+      breeze = (breeze + 0.035 * white) / 1.035;
+      const wave = 0.35 + 0.65 * (0.5 + 0.5 * Math.sin(index / rate * Math.PI / 3 + channel * 0.4)) ** 2;
+      const edge = Math.min(1, index / (rate * 0.3), (length - 1 - index) / (rate * 0.3));
+      samples[index] = (breeze * 1.5 + white * 0.012) * wave * edge;
+    }
+  }
+  const source = context.createBufferSource();
+  source.buffer = buffer;
+  source.loop = true;
+  source.connect(destination);
+  return source;
 }

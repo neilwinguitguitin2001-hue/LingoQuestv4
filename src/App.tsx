@@ -1,4 +1,5 @@
-import { BackgroundMusic } from './components/BackgroundMusic';
+import { AudioSettings } from './components/AudioSettings';
+import { AudioScene } from './context/AudioContext';
 import { DashboardGuide } from './components/DashboardGuide';
 import {StudentHomeView} from './components/StudentHomeView';
 import {LegalCenter,LegalLinks} from './components/LegalCenter';
@@ -312,7 +313,6 @@ export default function App() {
   const [isPersonalizationMode, setIsPersonalizationMode] = useState<boolean>(false);
 
   // Sound & Mobile menu
-  const [isMuted, setIsMuted] = useState<boolean>(() => soundFX.isMuted());
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isAccountMenuOpen,setIsAccountMenuOpen]=useState(false);
   const accountMenuRef=useRef<HTMLDivElement>(null);
@@ -732,14 +732,6 @@ export default function App() {
       }
     }
   }, [currentUser, currentView]);
-
-  // Audio mute toggle
-  const handleToggleSound = () => {
-    const next = !isMuted;
-    soundFX.setMuted(next);
-    setIsMuted(next);
-    if (!next) soundFX.playClick();
-  };
 
   // Login handler
   const handleLoginSuccess = (account: UserAccount) => {
@@ -1766,18 +1758,7 @@ export default function App() {
                 </button>
               )}
 
-              <BackgroundMusic paused={currentView === 'LESSON_QUIZ' || currentView === 'WRITING'} />
-
-              {/* Sound effects toggle */}
-              <button
-                onClick={handleToggleSound}
-                className="h-10 w-10 flex items-center justify-center rounded-xl border border-[#2563EB]/60 text-[#FAF7F2] hover:text-[#22C55E] hover:bg-white/10 transition cursor-pointer"
-                aria-label="Sound effects"
-                aria-pressed={!isMuted}
-                title={isMuted ? 'Unmute sound effects' : 'Mute sound effects'}
-              >
-                {isMuted ? <VolumeX className="w-4 h-4 text-[#0F766E]" /> : <Volume2 className="w-4 h-4 text-[#22C55E]" />}
-              </button>
+              <AudioSettings />
 
               {/* User Account / Role Pill */}
               {currentUser ? (
@@ -2219,6 +2200,7 @@ export default function App() {
           <LegalLinks/>
         </footer>
       )}
+      <AudioScene study={currentView === 'LESSON_QUIZ' || currentView === 'WRITING'} />
       <LegalCenter user={currentUser} />
       {/* Floating Feedback, Bug Report, Feature Request & Help/FAQ Widget for Students & Teachers */}
       {currentView !== 'AUTH' && (currentStudent || currentTeacher) && (
