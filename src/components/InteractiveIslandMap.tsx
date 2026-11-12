@@ -290,7 +290,7 @@ export const InteractiveIslandMap: React.FC<InteractiveIslandMapProps> = ({
   // Navigate boat to island `i` with easeInOutQuad timing
   const goToIsland = useCallback((i: number, triggerCallback = true) => {
     if (i < 0 || i >= DAVAO_ORIENTAL_ISLANDS.length) return;
-    soundFX.playSailing();
+    soundFX.stopSailing();
     setActiveIndex(i);
 
     const target = STATIC_CUM_LENGTHS[i] ?? 0;
@@ -325,6 +325,7 @@ export const InteractiveIslandMap: React.FC<InteractiveIslandMapProps> = ({
 
     const dist = Math.abs(target - from);
     const dur = Math.min(2600, Math.max(700, dist * 2.2));
+    soundFX.playSailing(dur / 1000);
     const t0 = performance.now();
 
     const step = (now: number) => {

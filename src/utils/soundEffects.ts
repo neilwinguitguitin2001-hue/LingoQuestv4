@@ -1,9 +1,11 @@
+import { createPaddleBuffer } from './paddleSound';
 // Synthesized Web Audio API sound effects for LingoQuest game interactions
 class SoundManager {
   private ctx: AudioContext | null = null;
   private muted: boolean = false;
   private volume = 0.65;
   private output: GainNode | null = null;
+  private sailing: { source: AudioBufferSourceNode; gain: GainNode } | null = null;
 
   constructor() {
     try {
@@ -74,8 +76,35 @@ class SoundManager {
     this.playSoftNotes([440, 659.25, 880], 0.07, 0.06);
   }
 
-  public playSailing() {
-    this.playSoftNotes([293.66, 392, 440], 0.045, 0.13);
+  public stopSailing() {
+    const previous = this.sailing;
+    this.sailing = null;
+    if (!previous || !this.ctx) return;
+    previous.gain.gain.setTargetAtTime(0, this.ctx.currentTime, 0.015);
+    previous.source.stop(this.ctx.currentTime + 0.07);
+  }
+
+  public playSailing(duration = 1.8) {
+    this.stopSailing();
+    const context = this.getContext();
+    if (!context) return;
+    try {
+      const source = context.createBufferSource();
+      const gain = context.createGain();
+      source.buffer = createPaddleBuffer(context, Math.max(0.3, Math.min(2.6, duration)));
+      gain.gain.value = 0.75;
+      source.connect(gain).connect(this.output!);
+      const active = { source, gain };
+      this.sailing = active;
+      source.onended = () => {
+        source.disconnect();
+        gain.disconnect();
+        if (this.sailing === active) this.sailing = null;
+      };
+      source.start();
+    } catch {
+      // Audio availability must not interrupt island navigation.
+    }
   }
 
   public playPass() {
