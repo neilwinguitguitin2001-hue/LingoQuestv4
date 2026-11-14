@@ -46,7 +46,10 @@ export function DashboardGuide({ accountId, role, currentView, onNavigate }: {
   const step = steps[index];
   const visible = mode === 'tour' && (role === 'student' || currentView === dashboard || (step.target === 'class-map' && currentView === 'MAP'));
 
-  const [speaking, setSpeaking] = useState(false);
+  const [muted, setMuted] = useState(() => {
+    try { return localStorage.getItem('lq-tour-narration-muted') === 'true'; }
+    catch { return false; }
+  });
   const [voiceError, setVoiceError] = useState(false);
   const recording = step.target === 'quiz' && currentView === 'MAP'
     ? 'quiz-map'
@@ -65,36 +68,47 @@ export function DashboardGuide({ accountId, role, currentView, onNavigate }: {
           : step.body;
 
   useEffect(() => {
-    setSpeaking(false);
+    try { localStorage.setItem('lq-tour-narration-muted', String(muted)); } catch {}
     setVoiceError(false);
-    return () => {
-      audioClip.current?.pause();
-      audioClip.current = null;
-
-    };
-  }, [visible, index, currentView, role, accountId]);
-
-  function playNarration() {
-    if (audioClip.current) {
-      audioClip.current.pause();
-      audioClip.current = null;
-      setSpeaking(false);
-      return;
-    }
+    if (!visible || muted) return;
     const clip = new Audio(import.meta.env.BASE_URL + 'audio/tours/' + recording + '-roger.mp3');
     audioClip.current = clip;
-    const finish = (failed: boolean) => {
-      if (audioClip.current !== clip) return;
-      audioClip.current = null;
-      setSpeaking(false);
-      setVoiceError(failed);
+    let active = true;
+    let started = false;
+    const start = () => {
+      if (!active || started || document.hidden) return;
+      started = true;
+      void clip.play().catch(() => {
+        if (!active) return;
+        started = false;
+        setVoiceError(true);
+      });
     };
-    clip.onended = () => finish(false);
-    clip.onerror = () => finish(true);
-    setVoiceError(false);
-    setSpeaking(true);
-    void clip.play().catch(() => finish(true));
-  }
+    const retry = () => {
+      if (started) return;
+      setVoiceError(false);
+      start();
+    };
+    clip.onerror = () => { if (active) setVoiceError(true); };
+    const visibility = () => {
+      if (document.hidden) { clip.pause(); started = false; }
+      else start();
+    };
+    start();
+    document.addEventListener('pointerup', retry);
+    document.addEventListener('keydown', retry);
+    document.addEventListener('visibilitychange', visibility);
+    return () => {
+      active = false;
+      clip.pause();
+      clip.removeAttribute('src');
+      clip.load();
+      if (audioClip.current === clip) audioClip.current = null;
+      document.removeEventListener('pointerup', retry);
+      document.removeEventListener('keydown', retry);
+      document.removeEventListener('visibilitychange', visibility);
+    };
+  }, [visible, muted, recording, role, accountId]);
 
   useEffect(() => {
     if (!visible) return;
@@ -186,11 +200,11 @@ export function DashboardGuide({ accountId, role, currentView, onNavigate }: {
               <button type="button" aria-label="Close tour" onClick={closeGuide} className="grid size-11 shrink-0 place-items-center rounded-xl border border-sky-700 hover:bg-sky-900"><X size={18} aria-hidden="true" /></button>
             </div>
             {(
-              <button type="button" onClick={playNarration} className={`${button} border border-sky-700 hover:bg-sky-900`}>
-                {speaking ? 'Stop narration' : 'Listen to this step'}
+              <button type="button" onClick={() => setMuted(value => !value)} aria-pressed={muted} className={`${button} border border-sky-700 hover:bg-sky-900`}>
+                {muted ? 'Unmute narration' : 'Mute narration'}
               </button>
             )}
-            {voiceError && <p role="status" className="text-sm text-amber-200">Narration couldn’t play. You can read the step above.</p>}
+            {voiceError && <p role="status" className="text-sm text-amber-200">Tap anywhere to enable narration. If audio is unavailable, follow the written step.</p>}
             <div className="flex flex-wrap justify-between gap-2">
               <button type="button" onClick={closeGuide} className={`${button} text-sky-200`}>Skip tour</button>
               <div className="flex gap-2">
