@@ -1,5 +1,5 @@
 import { soundFX } from '../utils/soundEffects';
-import { useEffect, useId, useState } from 'react';
+import { useEffect, useRef, useId, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { ArrowRight, BookOpen, X } from 'lucide-react';
 import { InabelWovenStrip } from './FilipinianaMotifs';
@@ -45,6 +45,60 @@ export function DashboardGuide({ accountId, role, currentView, onNavigate }: {
   const steps = role === 'student' ? studentSteps : teacherSteps;
   const step = steps[index];
   const visible = mode === 'tour' && (role === 'student' || currentView === dashboard || (step.target === 'class-map' && currentView === 'MAP'));
+
+  const [speaking, setSpeaking] = useState(false);
+  const [voiceError, setVoiceError] = useState(false);
+  const narration = useRef<SpeechSynthesisUtterance | null>(null);
+  const canSpeak = typeof window !== 'undefined' && 'speechSynthesis' in window
+    && 'SpeechSynthesisUtterance' in window;
+  const stepText = step.target === 'quiz' && currentView === 'MAP'
+    ? 'Open the outlined lesson to see where the quiz starts. You can also use Next to continue the tour.'
+    : step.target === 'lesson' && currentView === 'LESSON_QUIZ'
+      ? 'You’re in the lesson. Start with Concepts & Rules, then explore its examples. Select Next to see where the quiz starts.'
+      : index === 0 && role === 'student'
+        ? 'Welcome aboard! See Continue Learning? That takes you straight to your next lesson. If you’d like to look around first, tap Next and we’ll head to the island map.'
+        : index === 0 && role === 'teacher'
+          ? 'Welcome! Let’s start with your class code. Tap Copy, then share the code with your students. They’ll enter it when they register so they can join your class.'
+          : step.body;
+
+  useEffect(() => {
+    setSpeaking(false);
+    setVoiceError(false);
+    return () => {
+      if (!narration.current) return;
+      narration.current = null;
+      window.speechSynthesis.cancel();
+    };
+  }, [visible, index, currentView, role, accountId]);
+
+  function playNarration() {
+    if (!canSpeak) return;
+    if (narration.current) {
+      narration.current = null;
+      window.speechSynthesis.cancel();
+      setSpeaking(false);
+      return;
+    }
+    const speech = new SpeechSynthesisUtterance(stepText);
+    const voices = window.speechSynthesis.getVoices().filter(voice => voice.localService);
+    speech.voice = voices.find(voice => voice.lang.toLowerCase() === 'en-ph')
+      ?? voices.find(voice => /^en[-_]/i.test(voice.lang) && /natural|premium|enhanced/i.test(voice.name))
+      ?? voices.find(voice => /^en[-_]/i.test(voice.lang)) ?? null;
+    speech.lang = speech.voice?.lang ?? 'en-PH';
+    speech.rate = 0.92;
+    const finish = (event: Event) => {
+      if (narration.current !== speech) return;
+      narration.current = null;
+      setSpeaking(false);
+      setVoiceError(event.type === 'error');
+    };
+    speech.onend = finish;
+    speech.onerror = finish;
+    narration.current = speech;
+    setVoiceError(false);
+    setSpeaking(true);
+    window.speechSynthesis.speak(speech);
+  }
 
   useEffect(() => {
     if (!visible) return;
@@ -130,15 +184,17 @@ export function DashboardGuide({ accountId, role, currentView, onNavigate }: {
                 <p className="text-xs font-semibold text-emerald-300">{role === 'student' ? 'Student tour' : 'Teacher tour'} · {index + 1} of {steps.length}</p>
                 <h2 id={headingId} className="mt-1 font-display text-lg font-bold">{step.title}</h2>
                 <p className="mt-1 text-sm leading-relaxed text-sky-100">
-                  {step.target === 'quiz' && currentView === 'MAP'
-                    ? 'Open the outlined lesson to see where the quiz starts. You can also use Next to continue the tour.'
-                    : step.target === 'lesson' && currentView === 'LESSON_QUIZ'
-                      ? 'You’re in the lesson. Start with Concepts & Rules, then explore its examples. Select Next to see where the quiz starts.'
-                      : step.body}
+                  {stepText}
                 </p>
               </div>
               <button type="button" aria-label="Close tour" onClick={closeGuide} className="grid size-11 shrink-0 place-items-center rounded-xl border border-sky-700 hover:bg-sky-900"><X size={18} aria-hidden="true" /></button>
             </div>
+            {canSpeak && (
+              <button type="button" onClick={playNarration} className={`${button} border border-sky-700 hover:bg-sky-900`}>
+                {speaking ? 'Stop narration' : 'Listen to this step'}
+              </button>
+            )}
+            {voiceError && <p role="status" className="text-sm text-amber-200">Narration couldn’t play. You can read the step above.</p>}
             <div className="flex flex-wrap justify-between gap-2">
               <button type="button" onClick={closeGuide} className={`${button} text-sky-200`}>Skip tour</button>
               <div className="flex gap-2">
