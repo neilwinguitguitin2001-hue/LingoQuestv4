@@ -48,11 +48,12 @@ export function DashboardGuide({ accountId, role, currentView, onNavigate }: {
 
   const [speaking, setSpeaking] = useState(false);
   const [voiceError, setVoiceError] = useState(false);
-  const recordedIntro = role === 'student' && index === 0;
+  const recording = step.target === 'quiz' && currentView === 'MAP'
+    ? 'quiz-map'
+    : step.target === 'lesson' && currentView === 'LESSON_QUIZ'
+      ? 'lesson-open'
+      : step.target === 'home' ? 'student-intro' : step.target;
   const audioClip = useRef<HTMLAudioElement | null>(null);
-  const narration = useRef<SpeechSynthesisUtterance | null>(null);
-  const canSpeak = typeof window !== 'undefined' && 'speechSynthesis' in window
-    && 'SpeechSynthesisUtterance' in window;
   const stepText = step.target === 'quiz' && currentView === 'MAP'
     ? 'Open the outlined lesson to see where the quiz starts. You can also use Next to continue the tour.'
     : step.target === 'lesson' && currentView === 'LESSON_QUIZ'
@@ -69,66 +70,30 @@ export function DashboardGuide({ accountId, role, currentView, onNavigate }: {
     return () => {
       audioClip.current?.pause();
       audioClip.current = null;
-      if (!narration.current) return;
-      narration.current = null;
-      window.speechSynthesis.cancel();
+
     };
   }, [visible, index, currentView, role, accountId]);
 
   function playNarration() {
-    if (recordedIntro) {
-      if (audioClip.current) {
-        audioClip.current.pause();
-        audioClip.current = null;
-        setSpeaking(false);
-        return;
-      }
-      const clip = new Audio(import.meta.env.BASE_URL + 'audio/tours/student-intro-roger.mp3');
-      audioClip.current = clip;
-      const finish = (failed: boolean) => {
-        if (audioClip.current !== clip) return;
-        audioClip.current = null;
-        setSpeaking(false);
-        setVoiceError(failed);
-      };
-      clip.onended = () => finish(false);
-      clip.onerror = () => finish(true);
-      setVoiceError(false);
-      setSpeaking(true);
-      void clip.play().catch(() => finish(true));
-      return;
-    }
-    if (!canSpeak) return;
-    if (narration.current) {
-      narration.current = null;
-      window.speechSynthesis.cancel();
+    if (audioClip.current) {
+      audioClip.current.pause();
+      audioClip.current = null;
       setSpeaking(false);
       return;
     }
-    const speech = new SpeechSynthesisUtterance(stepText);
-    const voices = window.speechSynthesis.getVoices();
-    const localVoices = voices.filter(voice => voice.localService);
-    const philippineEnglish = (voice: SpeechSynthesisVoice) =>
-      voice.lang.toLowerCase().replace('_', '-') === 'en-ph';
-    speech.voice = voices.find(voice => philippineEnglish(voice) && /\brosa\b/i.test(voice.name))
-      ?? voices.find(voice => philippineEnglish(voice) && /\bjames\b/i.test(voice.name))
-      ?? localVoices.find(philippineEnglish)
-      ?? localVoices.find(voice => /^en[-_]/i.test(voice.lang) && /natural|premium|enhanced/i.test(voice.name))
-      ?? localVoices.find(voice => /^en[-_]/i.test(voice.lang)) ?? null;
-    speech.lang = speech.voice?.lang ?? 'en-PH';
-    speech.rate = 0.92;
-    const finish = (event: Event) => {
-      if (narration.current !== speech) return;
-      narration.current = null;
+    const clip = new Audio(import.meta.env.BASE_URL + 'audio/tours/' + recording + '-roger.mp3');
+    audioClip.current = clip;
+    const finish = (failed: boolean) => {
+      if (audioClip.current !== clip) return;
+      audioClip.current = null;
       setSpeaking(false);
-      setVoiceError(event.type === 'error');
+      setVoiceError(failed);
     };
-    speech.onend = finish;
-    speech.onerror = finish;
-    narration.current = speech;
+    clip.onended = () => finish(false);
+    clip.onerror = () => finish(true);
     setVoiceError(false);
     setSpeaking(true);
-    window.speechSynthesis.speak(speech);
+    void clip.play().catch(() => finish(true));
   }
 
   useEffect(() => {
@@ -220,7 +185,7 @@ export function DashboardGuide({ accountId, role, currentView, onNavigate }: {
               </div>
               <button type="button" aria-label="Close tour" onClick={closeGuide} className="grid size-11 shrink-0 place-items-center rounded-xl border border-sky-700 hover:bg-sky-900"><X size={18} aria-hidden="true" /></button>
             </div>
-            {(recordedIntro || canSpeak) && (
+            {(
               <button type="button" onClick={playNarration} className={`${button} border border-sky-700 hover:bg-sky-900`}>
                 {speaking ? 'Stop narration' : 'Listen to this step'}
               </button>
