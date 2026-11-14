@@ -1,3 +1,4 @@
+import { DashboardGuide } from './DashboardGuide';
 import { AudioSettings } from './AudioSettings';
 import React, { useState, useMemo } from 'react';
 import {
@@ -1080,6 +1081,9 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 space-y-8 animate-fade-in">
+      <DashboardGuide key={currentAdmin.id + String(isMainAdmin)} accountId={currentAdmin.id}
+        role={isMainAdmin ? 'division' : 'principal'} currentView="ADMIN" onNavigate={() => {}} />
+
       {/* Toast Notification */}
       {actionNotice && (
         <div className="fixed bottom-6 right-6 z-50 bg-[#0B1E36] text-white border border-sky-500 px-5 py-3 rounded-2xl shadow-2xl flex items-center gap-3 animate-fade-in">
@@ -1125,11 +1129,11 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
                 </button>
               )}
             </div>
-            <h1 className="text-2xl sm:text-3xl font-display font-black tracking-tight">
+            <h1 data-guide-target={isMainAdmin ? "division-welcome" : "principal-welcome"} className="text-2xl sm:text-3xl font-display font-black tracking-tight">
               LingoQuest Governance & Faculty Oversight
             </h1>
             <p className="text-xs sm:text-sm text-slate-300 max-w-2xl">
-              DepEd Davao Oriental Division • {isMainAdmin ? 'Executive Administrator' : 'Sub-Administrator'}:{' '}
+              DepEd Davao Oriental Division • {isMainAdmin ? 'Schools Division Staff / Head' : 'School Principal (Sub-Administrator)'}:{' '}
               <strong>{currentAdmin.name}</strong> ({currentAdmin.adminTitle || currentAdmin.employeeId})
               {!isMainAdmin && (
                 <span className="block mt-1 text-sky-200 text-xs font-medium">
@@ -1178,7 +1182,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
 
         {/* Navigation Tabs */}
         <div className="flex flex-wrap items-center gap-2 mt-8 pt-6 border-t border-white/10">
-          <button
+          <button data-guide-target="admin-accounts"
             onClick={() => {
               soundFX.playClick();
               setActiveTab('ACCOUNT_MANAGEMENT');
@@ -1201,7 +1205,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
             )}
           </button>
 
-          <button
+          <button data-guide-target="admin-approvals"
             onClick={() => {
               soundFX.playClick();
               setActiveTab('APPROVAL_QUEUE');
@@ -1221,7 +1225,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
             )}
           </button>
 
-          <button
+          <button data-guide-target="admin-rosters"
             onClick={() => {
               soundFX.playClick();
               setActiveTab('STUDENT_ROSTER');
@@ -1239,7 +1243,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
             </span>
           </button>
 
-          <button
+          <button data-guide-target="admin-modules"
             onClick={() => {
               soundFX.playClick();
               setActiveTab('MODULE_MANAGER');
@@ -1257,7 +1261,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
             </span>
           </button>
 
-          <button
+          <button data-guide-target="admin-analytics"
             onClick={() => {
               soundFX.playClick();
               setActiveTab('CURRICULUM_ANALYTICS');
@@ -1275,7 +1279,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
             </span>
           </button>
 
-          <button
+          <button data-guide-target="admin-map"
             onClick={() => {
               soundFX.playClick();
               setActiveTab('ARCHIPELAGO_MAP');
@@ -1290,7 +1294,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
             Division Archipelago Map
           </button>
 
-          <button
+          <button data-guide-target="admin-delegation"
             onClick={() => {
               soundFX.playClick();
               setActiveTab('SUB_ADMINS');
@@ -1308,7 +1312,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
             </span>
           </button>
 
-          <button
+          <button data-guide-target="admin-audit"
             onClick={() => {
               soundFX.playClick();
               setActiveTab('AUDIT_LOG');
@@ -1326,7 +1330,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
             </span>
           </button>
 
-          <button
+          <button data-guide-target="admin-feedback"
             onClick={() => {
               soundFX.playClick();
               setActiveTab('FEEDBACK_CONSOLE');
