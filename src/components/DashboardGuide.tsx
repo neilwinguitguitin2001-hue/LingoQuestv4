@@ -80,10 +80,15 @@ export function DashboardGuide({ accountId, role, currentView, onNavigate }: {
       return;
     }
     const speech = new SpeechSynthesisUtterance(stepText);
-    const voices = window.speechSynthesis.getVoices().filter(voice => voice.localService);
-    speech.voice = voices.find(voice => voice.lang.toLowerCase() === 'en-ph')
-      ?? voices.find(voice => /^en[-_]/i.test(voice.lang) && /natural|premium|enhanced/i.test(voice.name))
-      ?? voices.find(voice => /^en[-_]/i.test(voice.lang)) ?? null;
+    const voices = window.speechSynthesis.getVoices();
+    const localVoices = voices.filter(voice => voice.localService);
+    const philippineEnglish = (voice: SpeechSynthesisVoice) =>
+      voice.lang.toLowerCase().replace('_', '-') === 'en-ph';
+    speech.voice = voices.find(voice => philippineEnglish(voice) && /\brosa\b/i.test(voice.name))
+      ?? voices.find(voice => philippineEnglish(voice) && /\bjames\b/i.test(voice.name))
+      ?? localVoices.find(philippineEnglish)
+      ?? localVoices.find(voice => /^en[-_]/i.test(voice.lang) && /natural|premium|enhanced/i.test(voice.name))
+      ?? localVoices.find(voice => /^en[-_]/i.test(voice.lang)) ?? null;
     speech.lang = speech.voice?.lang ?? 'en-PH';
     speech.rate = 0.92;
     const finish = (event: Event) => {
