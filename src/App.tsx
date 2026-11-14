@@ -1,3 +1,6 @@
+import { AudioSettings } from './components/AudioSettings';
+import { AudioScene } from './context/AudioContext';
+import { DashboardGuide } from './components/DashboardGuide';
 import {StudentHomeView} from './components/StudentHomeView';
 import {LegalCenter,LegalLinks} from './components/LegalCenter';
 import React, { useEffect, useRef, useState } from 'react';
@@ -310,14 +313,13 @@ export default function App() {
   const [isPersonalizationMode, setIsPersonalizationMode] = useState<boolean>(false);
 
   // Sound & Mobile menu
-  const [isMuted, setIsMuted] = useState<boolean>(() => soundFX.isMuted());
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isAccountMenuOpen,setIsAccountMenuOpen]=useState(false);
   const accountMenuRef=useRef<HTMLDivElement>(null);
   const navigateStudent=(view:AppView)=>{soundFX.playClick();setIsAccountMenuOpen(false);setIsMobileMenuOpen(false);setCurrentView(view)};
   const activeStudentView=(view:AppView)=>view==='PROGRESS'?['PROGRESS','PROFILE','LEADERBOARD'].includes(currentView):view===currentView;
   useEffect(()=>{setIsAccountMenuOpen(false)},[currentView,currentUserId]);
-  useEffect(()=>{if(!isAccountMenuOpen)return;const close=(e:PointerEvent)=>{if(!accountMenuRef.current?.contains(e.target as Node))setIsAccountMenuOpen(false)};const escape=(e:KeyboardEvent)=>{if(e.key==='Escape'){setIsAccountMenuOpen(false);accountMenuRef.current?.querySelector('button')?.focus()}};document.addEventListener('pointerdown',close);document.addEventListener('keydown',escape);return()=>{document.removeEventListener('pointerdown',close);document.removeEventListener('keydown',escape)}},[isAccountMenuOpen]);
+  useEffect(()=>{if(!isAccountMenuOpen)return;const close=(e:PointerEvent)=>{if(!accountMenuRef.current?.contains(e.target as Node))setIsAccountMenuOpen(false)};const escape=(e:KeyboardEvent)=>{if(e.key==='Escape' && !accountMenuRef.current?.querySelector('dialog[open]')){setIsAccountMenuOpen(false);accountMenuRef.current?.querySelector('button')?.focus()}};document.addEventListener('pointerdown',close);document.addEventListener('keydown',escape);return()=>{document.removeEventListener('pointerdown',close);document.removeEventListener('keydown',escape)}},[isAccountMenuOpen]);
   const [questCoinBalance, setQuestCoinBalance] = useState<number | null>(null);
 
   // Session Timeout State
@@ -730,14 +732,6 @@ export default function App() {
       }
     }
   }, [currentUser, currentView]);
-
-  // Audio mute toggle
-  const handleToggleSound = () => {
-    const next = !isMuted;
-    soundFX.setMuted(next);
-    setIsMuted(next);
-    if (!next) soundFX.playClick();
-  };
 
   // Login handler
   const handleLoginSuccess = (account: UserAccount) => {
@@ -1715,9 +1709,9 @@ export default function App() {
             )}
 
             {/* Right Header Controls: separate permanent XP and spendable Quest Coins */}
-            <div className="ml-auto flex shrink-0 items-center gap-2 sm:gap-3">
+            <div className="ml-auto flex max-w-full flex-wrap items-center justify-end gap-2 sm:gap-3">
               {currentStudent && (
-                <div className="hidden xl:flex items-center gap-2 mr-1">
+                <div className="flex items-center gap-2 mr-1">
                   {/* Permanent learning progress */}
                   <div
                     className="flex items-center gap-2 rounded-xl border border-sky-400/70 bg-gradient-to-br from-[#123B63] to-[#07192F] px-2.5 py-1 text-white shadow-[2px_2px_0px_#0284C7]"
@@ -1764,14 +1758,7 @@ export default function App() {
                 </button>
               )}
 
-              {/* Audio Toggle */}
-              <button
-                onClick={handleToggleSound}
-                className="h-10 w-10 flex items-center justify-center rounded-xl border border-[#2563EB]/60 text-[#FAF7F2] hover:text-[#22C55E] hover:bg-white/10 transition cursor-pointer"
-                title={isMuted ? 'Unmute Sound' : 'Mute Sound'}
-              >
-                {isMuted ? <VolumeX className="w-4 h-4 text-[#0F766E]" /> : <Volume2 className="w-4 h-4 text-[#22C55E]" />}
-              </button>
+              
 
               {/* User Account / Role Pill */}
               {currentUser ? (
@@ -1816,7 +1803,7 @@ export default function App() {
                         </div>
                       </div>
                     </button>
-                    {isAccountMenuOpen&&<nav id="student-account-menu" aria-label="Account actions" className="absolute right-0 top-full mt-3 z-50 w-64 max-w-[85vw] overflow-hidden rounded-2xl border border-sky-400/40 bg-[#07192F] text-white shadow-xl"><InabelWovenStrip variant="azure" height={8}/><div className="p-2 space-y-1"><button className="min-h-11 w-full rounded-lg px-3 py-2 text-left text-sm hover:bg-white/10" onClick={()=>navigateStudent('ACCOUNT')}>Account Settings</button><button className="min-h-11 w-full rounded-lg px-3 py-2 text-left text-sm hover:bg-white/10" onClick={()=>{setIsAccountMenuOpen(false);window.location.hash='legal/privacy'}}>Privacy &amp; Help</button><button className="min-h-11 w-full rounded-lg px-3 py-2 text-left text-sm hover:bg-white/10" onClick={()=>{setIsAccountMenuOpen(false);handleLogOut()}}>Sign Out</button></div></nav>}</>
+                    {isAccountMenuOpen&&<nav id="student-account-menu" aria-label="Account actions" className="absolute right-0 top-full mt-3 z-50 w-64 max-w-[85vw] overflow-hidden rounded-2xl border border-sky-400/40 bg-[#07192F] text-white shadow-xl"><InabelWovenStrip variant="azure" height={8}/><div className="p-2 space-y-1"><button className="min-h-11 w-full rounded-lg px-3 py-2 text-left text-sm hover:bg-white/10" onClick={()=>navigateStudent('ACCOUNT')}>Account Settings</button><button className="min-h-11 w-full rounded-lg px-3 py-2 text-left text-sm hover:bg-white/10" onClick={()=>{setIsAccountMenuOpen(false);window.location.hash='legal/privacy'}}>Privacy &amp; Help</button><AudioSettings inAccountMenu /><button className="min-h-11 w-full rounded-lg px-3 py-2 text-left text-sm hover:bg-white/10" onClick={()=>{setIsAccountMenuOpen(false);handleLogOut()}}>Sign Out</button></div></nav>}</>
                   ) : (
                     <div className="text-left hidden sm:block">
                       <div className="text-xs font-bold text-[#FAF7F2] truncate max-w-[150px]">
@@ -1929,6 +1916,12 @@ export default function App() {
 
       {/* Main Content View Switcher */}
       <main className={`flex-1 ${currentView === 'AUTH' || currentView === 'WAITING_APPROVAL' ? '' : 'pb-16'}`}>
+        {authUser?.uid === currentUser?.id && currentUser?.status === 'approved' &&
+          (currentUser.role === 'student' || currentUser.role === 'teacher') &&
+          currentView !== 'AUTH' && currentView !== 'WAITING_APPROVAL' && (
+          <DashboardGuide key={currentUser.id} accountId={currentUser.id} role={currentUser.role}
+            currentView={currentView} onNavigate={navigateStudent} />
+        )}
         <div key={currentView} className="animate-lq-page-enter">
         {/* Authentication View */}
         {currentView === 'AUTH' && (
@@ -2119,7 +2112,7 @@ export default function App() {
           />
         )}
 
-        {currentStudent&&['PROGRESS','PROFILE','LEADERBOARD'].includes(currentView)&&<nav aria-label="My Progress sections" className="max-w-6xl mx-auto px-4 pt-6 flex flex-wrap items-center gap-3"><button onClick={()=>navigateStudent('PROGRESS')} aria-current={currentView==='PROGRESS'?'page':undefined} className={`min-h-11 rounded-xl px-4 py-2 font-semibold ${currentView==='PROGRESS'?'bg-sky-700 text-white':'border border-sky-300 text-sky-900'}`}>Learning Progress</button><button onClick={()=>navigateStudent('PROFILE')} aria-current={currentView==='PROFILE'?'page':undefined} className={`min-h-11 rounded-xl px-4 py-2 font-semibold ${currentView==='PROFILE'?'bg-sky-700 text-white':'border border-sky-300 text-sky-900'}`}>Badges</button><button onClick={()=>navigateStudent('LEADERBOARD')} aria-current={currentView==='LEADERBOARD'?'page':undefined} className="min-h-11 ml-auto text-sm font-semibold text-sky-800 underline underline-offset-4">Optional Grade Activity Board</button></nav>}
+        {currentStudent&&['PROGRESS','PROFILE','LEADERBOARD'].includes(currentView)&&<nav data-guide-target="progress" aria-label="My Progress sections" className="max-w-6xl mx-auto px-4 pt-6 flex flex-wrap items-center gap-3"><button onClick={()=>navigateStudent('PROGRESS')} aria-current={currentView==='PROGRESS'?'page':undefined} className={`min-h-11 rounded-xl px-4 py-2 font-semibold ${currentView==='PROGRESS'?'bg-sky-700 text-white':'border border-sky-300 text-sky-900'}`}>Learning Progress</button><button onClick={()=>navigateStudent('PROFILE')} aria-current={currentView==='PROFILE'?'page':undefined} className={`min-h-11 rounded-xl px-4 py-2 font-semibold ${currentView==='PROFILE'?'bg-sky-700 text-white':'border border-sky-300 text-sky-900'}`}>Badges</button><button onClick={()=>navigateStudent('LEADERBOARD')} aria-current={currentView==='LEADERBOARD'?'page':undefined} className="min-h-11 ml-auto text-sm font-semibold text-sky-800 underline underline-offset-4">Optional Grade Activity Board</button></nav>}
 
         {currentView === 'PROGRESS' && currentStudent && (
           <StudentProgressView
@@ -2207,6 +2200,7 @@ export default function App() {
           <LegalLinks/>
         </footer>
       )}
+      <AudioScene study={currentView === 'LESSON_QUIZ' || currentView === 'WRITING'} />
       <LegalCenter user={currentUser} />
       {/* Floating Feedback, Bug Report, Feature Request & Help/FAQ Widget for Students & Teachers */}
       {currentView !== 'AUTH' && (currentStudent || currentTeacher) && (

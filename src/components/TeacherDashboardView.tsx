@@ -1,3 +1,4 @@
+import { AudioSettings } from './AudioSettings';
 import React, { useEffect, useState } from 'react';
 import {
   AlertCircle,
@@ -919,6 +920,7 @@ export const TeacherDashboardView: React.FC<TeacherDashboardViewProps> = ({
           </div>
 
           <div className="flex flex-wrap items-center gap-3">
+            <AudioSettings />
             {/* Prominent Class Code Card */}
             <div className="flex items-center gap-2.5 px-4 py-2 rounded-2xl bg-white/10 border border-white/20">
               <div>
@@ -939,6 +941,7 @@ export const TeacherDashboardView: React.FC<TeacherDashboardViewProps> = ({
                     setTimeout(() => setCopiedCode(false), 2000);
                   }}
                   className="inline-flex items-center gap-1 px-2.5 py-1 rounded-xl bg-sky-500/20 hover:bg-sky-500/30 text-sky-200 text-[11px] font-bold border border-sky-400/30 transition cursor-pointer"
+                  data-guide-target="class-code"
                   title="Copy class code to share with students"
                 >
                   {copiedCode ? <Check className="w-3.5 h-3.5 text-emerald-300" /> : <Copy className="w-3.5 h-3.5" />}
@@ -1177,8 +1180,9 @@ export const TeacherDashboardView: React.FC<TeacherDashboardViewProps> = ({
         )}
 
         <div className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-100 pb-4">
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2">
             <button
+              data-guide-target="roster"
               onClick={() => {
                 soundFX.playClick();
                 setActiveTab('students');
@@ -1192,6 +1196,7 @@ export const TeacherDashboardView: React.FC<TeacherDashboardViewProps> = ({
               Active Roster ({filteredStudents.length})
             </button>
             <button
+              data-guide-target="analytics"
               onClick={() => {
                 soundFX.playClick();
                 setActiveTab('class_analytics');
@@ -1206,6 +1211,7 @@ export const TeacherDashboardView: React.FC<TeacherDashboardViewProps> = ({
               Class Performance Analytics ({classAnalyticsKPIs.totalStudents})
             </button>
             <button
+              data-guide-target="review"
               onClick={() => {
                 soundFX.playClick();
                 setActiveTab('review');
@@ -1225,6 +1231,7 @@ export const TeacherDashboardView: React.FC<TeacherDashboardViewProps> = ({
               )}
             </button>
             <button
+              data-guide-target="modules"
               onClick={() => {
                 soundFX.playClick();
                 setActiveTab('modules');
@@ -1239,6 +1246,7 @@ export const TeacherDashboardView: React.FC<TeacherDashboardViewProps> = ({
               Modules & Quiz Answer Keys ({allModules.length})
             </button>
             <button
+              data-guide-target="class-map"
               onClick={() => {
                 soundFX.playClick();
                 setActiveTab('island_map');

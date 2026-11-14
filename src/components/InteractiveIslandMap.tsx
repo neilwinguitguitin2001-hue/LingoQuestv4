@@ -1,3 +1,5 @@
+import { IslandBoat } from './IslandBoat';
+import { useMapAudio } from '../context/AudioContext';
 import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import { soundFX } from '../utils/soundEffects';
 
@@ -209,6 +211,7 @@ export const InteractiveIslandMap: React.FC<InteractiveIslandMapProps> = ({
   interactive = true,
   showRouteLine = true,
 }) => {
+  useMapAudio();
   // Keep onSelectIsland in a ref so changes in parent callbacks do not trigger effect re-runs
   const onSelectIslandRef = useRef(onSelectIsland);
   onSelectIslandRef.current = onSelectIsland;
@@ -288,7 +291,7 @@ export const InteractiveIslandMap: React.FC<InteractiveIslandMapProps> = ({
   // Navigate boat to island `i` with easeInOutQuad timing
   const goToIsland = useCallback((i: number, triggerCallback = true) => {
     if (i < 0 || i >= DAVAO_ORIENTAL_ISLANDS.length) return;
-    soundFX.playClick();
+    soundFX.stopSailing();
     setActiveIndex(i);
 
     const target = STATIC_CUM_LENGTHS[i] ?? 0;
@@ -323,6 +326,7 @@ export const InteractiveIslandMap: React.FC<InteractiveIslandMapProps> = ({
 
     const dist = Math.abs(target - from);
     const dur = Math.min(2600, Math.max(700, dist * 2.2));
+    soundFX.playSailing(dur / 1000);
     const t0 = performance.now();
 
     const step = (now: number) => {
@@ -682,24 +686,10 @@ export const InteractiveIslandMap: React.FC<InteractiveIslandMapProps> = ({
             transform: translate(24px, 0px) scale(1, 1);
           }
         }
-        @keyframes davao_bob {
-          0%,
-          100% {
-            transform: translateY(0) rotate(-1.5deg);
-          }
-          50% {
-            transform: translateY(-2.5px) rotate(1.5deg);
-          }
-        }
         @keyframes davao_wake {
-          0% {
-            transform: scale(0.7);
-            opacity: 0.7;
-          }
-          100% {
-            transform: scale(1.5);
-            opacity: 0;
-          }
+          0% { transform: translateX(0) scale(0.75, 0.65); opacity: 0; }
+          22% { opacity: 0.65; }
+          100% { transform: translateX(-16px) scale(1.45, 1.2); opacity: 0; }
         }
         @keyframes davao_beam {
           0%,
@@ -757,11 +747,6 @@ export const InteractiveIslandMap: React.FC<InteractiveIslandMapProps> = ({
         .davao_cloud_2 {
           animation: davao_cloud_billow_2 45s ease-in-out infinite;
         }
-        .davao_bob {
-          animation: davao_bob 3.2s ease-in-out infinite;
-          transform-box: fill-box;
-          transform-origin: 50% 100%;
-        }
         .davao_wake {
           animation: davao_wake 2.4s ease-out infinite;
           transform-box: fill-box;
@@ -789,7 +774,6 @@ export const InteractiveIslandMap: React.FC<InteractiveIslandMapProps> = ({
           .davao_cirrus,
           .davao_cloud_1,
           .davao_cloud_2,
-          .davao_bob,
           .davao_wake,
           .davao_beam,
           .davao_lantern {
@@ -944,7 +928,7 @@ export const InteractiveIslandMap: React.FC<InteractiveIslandMapProps> = ({
                   <feGaussianBlur stdDeviation="5" />
                 </filter>
 
-                <g id="palm">
+                <g id="palm"><g className="davao_palm_bend">
                   <path
                     d="M0 0 C3 -10 -1 -20 4 -30"
                     stroke="#8a5a2b"
@@ -952,14 +936,14 @@ export const InteractiveIslandMap: React.FC<InteractiveIslandMapProps> = ({
                     fill="none"
                     strokeLinecap="round"
                   />
-                  <g stroke="#2f9a4c" strokeWidth="2.6" fill="none" strokeLinecap="round">
+                  <g className="davao_fronds" stroke="#2f9a4c" strokeWidth="2.6" fill="none" strokeLinecap="round">
                     <path d="M4 -30 C-6 -40 -18 -36 -24 -26" />
                     <path d="M4 -30 C-2 -44 10 -48 20 -42" />
                     <path d="M4 -30 C14 -38 26 -32 28 -22" />
                     <path d="M4 -30 C-10 -32 -20 -26 -26 -18" />
                     <path d="M4 -30 C16 -28 24 -22 26 -14" />
                   </g>
-                </g>
+                </g></g>
 
                 <path
                   id="dinoBody"
@@ -1278,7 +1262,7 @@ export const InteractiveIslandMap: React.FC<InteractiveIslandMapProps> = ({
                 </g>
 
                 {/* Distinctive Lone Tall Coconut Palm (Prominent feature in reference image 1 rising above center-right) */}
-                <g transform="translate(6, -26)">
+                <g transform="translate(6, -26)"><g className="davao_palm_bend">
                   {/* Tall curved slender trunk */}
                   <path
                     d="M0 8 C1 -6 3 -16 2 -26"
@@ -1288,7 +1272,7 @@ export const InteractiveIslandMap: React.FC<InteractiveIslandMapProps> = ({
                     strokeLinecap="round"
                   />
                   {/* Palm fronds crowning the tall palm */}
-                  <g stroke="#15803d" strokeWidth="2.2" fill="none" strokeLinecap="round">
+                  <g className="davao_fronds" stroke="#15803d" strokeWidth="2.2" fill="none" strokeLinecap="round">
                     <path d="M2 -26 C-7 -34 -15 -30 -18 -22" />
                     <path d="M2 -26 C-2 -37 7 -40 14 -35" />
                     <path d="M2 -26 C11 -33 19 -28 20 -19" />
@@ -1296,12 +1280,12 @@ export const InteractiveIslandMap: React.FC<InteractiveIslandMapProps> = ({
                     <path d="M2 -26 C12 -23 18 -18 19 -11" />
                   </g>
                   <circle cx="2" cy="-26" r="2.2" fill="#854d0e" />
-                </g>
+                </g></g>
 
                 {/* Companion Palm on the Left Slope */}
-                <use href="#palm" transform="translate(-24, -14) scale(0.9)" />
+                <use className="davao_palm_instance" href="#palm" transform="translate(-24, -14) scale(0.9)" />
                 {/* Companion Palm on the Far-Right Edge */}
-                <use href="#palm" transform="translate(28, -6) scale(0.75)" />
+                <use className="davao_palm_instance" href="#palm" transform="translate(28, -6) scale(0.75)" />
 
                 {/* Gentle Shoreline Water Wash / Gentle Surf Lapping on the Sand */}
                 <path
@@ -1390,8 +1374,8 @@ export const InteractiveIslandMap: React.FC<InteractiveIslandMapProps> = ({
                   <circle cx="-38" cy="-2" r="4" />
                   <circle cx="-18" cy="-4" r="4" />
                 </g>
-                <use href="#palm" transform="translate(-34,-4) scale(.9)" />
-                <use href="#palm" transform="translate(-14,-2) scale(.72)" />
+                <use className="davao_palm_instance" href="#palm" transform="translate(-34,-4) scale(.9)" />
+                <use className="davao_palm_instance" href="#palm" transform="translate(-14,-2) scale(.72)" />
               </g>
 
               {/* 4 · Pujada Island: big forested hills, curving white beach */}
@@ -1444,9 +1428,9 @@ export const InteractiveIslandMap: React.FC<InteractiveIslandMapProps> = ({
                   strokeLinecap="round"
                   opacity=".9"
                 />
-                <use href="#palm" transform="translate(-26,-26) scale(1.1)" />
-                <use href="#palm" transform="translate(12,-32) scale(1)" />
-                <use href="#palm" transform="translate(40,-14) scale(.8)" />
+                <use className="davao_palm_instance" href="#palm" transform="translate(-26,-26) scale(1.1)" />
+                <use className="davao_palm_instance" href="#palm" transform="translate(12,-32) scale(1)" />
+                <use className="davao_palm_instance" href="#palm" transform="translate(40,-14) scale(.8)" />
               </g>
 
               {/* 5 · Sleeping Dinosaur (Badas, Mati City): recreated based on real landmark headland */}
@@ -1594,48 +1578,14 @@ export const InteractiveIslandMap: React.FC<InteractiveIslandMapProps> = ({
                 pointerEvents="none"
                 transform={`translate(${boatPos.x.toFixed(1)},${boatPos.y.toFixed(1)})`}
               >
-                <ellipse
-                  className="davao_wake"
-                  rx="30"
-                  ry="8"
-                  fill="none"
-                  stroke="#bfe3ff"
-                  strokeOpacity=".6"
-                  strokeWidth="1.5"
-                />
-                <circle r="24" fill="#ffd45a" opacity=".1" />
-                <g
-                  className="davao_bob"
-                  transform={heading === 'west' ? 'scale(-1, 1)' : undefined}
-                >
-                  <path
-                    d="M-28 6 L28 6"
-                    stroke="#ffe9a8"
-                    strokeWidth="2.6"
-                    strokeLinecap="round"
-                  />
-                  <path
-                    d="M-16 5 L-14 -1 M16 5 L14 -1"
-                    stroke="#caa86a"
-                    strokeWidth="1.4"
-                    strokeLinecap="round"
-                  />
-                  <path
-                    d="M-15 -3 C-11 7 11 7 15 -3Z"
-                    fill="#8a4b22"
-                    stroke="#4e2810"
-                    strokeWidth="1"
-                  />
-                  <path
-                    d="M0 -3 L0 -31"
-                    stroke="#5a3418"
-                    strokeWidth="1.6"
-                    strokeLinecap="round"
-                  />
-                  <path d="M1 -30 L6.1 -22 L1 -22Z" fill="#ff6b6b" />
-                  <path d="M1 -22 L6.1 -22 L11.6 -13.5 L1 -13.5Z" fill="#ffd166" />
-                  <path d="M1 -13.5 L11.6 -13.5 L17 -5 L1 -5Z" fill="#4dabf7" />
-                  <circle cx="0" cy="-32" r="2.2" fill="#ffb53d" />
+                <g transform={heading === 'west' ? 'scale(-1, 1)' : undefined}>
+                  {Math.abs(currentDist - (STATIC_CUM_LENGTHS[activeIndex] ?? 0)) > 0.5 && (
+                    <g transform="translate(-24, 5)">
+                      <path className="davao_wake" d="M0 0 Q-12 -5 -34 -5 M0 0 Q-12 5 -34 5"
+                        fill="none" stroke="#bfe3ff" strokeWidth="1.4" strokeLinecap="round" />
+                    </g>
+                  )}
+                  <IslandBoat />
                 </g>
               </g>
             </svg>

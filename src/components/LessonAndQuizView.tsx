@@ -1,3 +1,4 @@
+import { useAudioSettings } from '../context/AudioContext';
 import {PictureHuntIllustration} from './PictureHuntIllustration';
 import {CrosswordLetters} from './CrosswordLetters';
 import {QuizCloze} from './QuizCloze';
@@ -158,6 +159,12 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
 
   const [warmupSelected, setWarmupSelected] = useState<string>('');
   const [warmupSubmitted, setWarmupSubmitted] = useState<boolean>(false);
+
+  const { setQuiz } = useAudioSettings();
+  useEffect(() => {
+    setQuiz(stage === 'PLAYING_QUIZ');
+    return () => setQuiz(false);
+  }, [stage, setQuiz]);
 
   const [difficulty, setDifficulty] = useState<DifficultyLevel>('easy');
   const [gameModeFilter, setGameModeFilter] = useState<QuizGameType | 'all'>('all');
@@ -351,6 +358,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
         completedSessionRef.current = false;
         submittedQuestionRef.current = null;
         activeQuestionIdRef.current = response.question.id;
+        soundFX.playQuestStart();
         setStage('PLAYING_QUIZ');
       } catch (error) { setSourceReviewMessage(error instanceof Error ? error.message : 'The question bank is unavailable.'); }
       finally { setQuestBusy(false); }
@@ -378,6 +386,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
     setQuestionLocked(false);
     setAnswerLogs([]);
     setFinalOutcome(null);
+    soundFX.playQuestStart();
     setStage('PLAYING_QUIZ');
   };
 
@@ -389,6 +398,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
     setQuestBusy(true);
     try {
       const bought=await questGame<QuestBuyResponse>('buy',{kind});
+      soundFX.playCoinExchange();
       setQuestBalance(bought.balance);
       setQuestInventory(previous=>({...previous,[kind]:bought.quantity}));
       setQuestMessage(`${item.label} added to inventory.`);
@@ -403,6 +413,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
     try {
       const purchase=await questGame<QuestPurchaseResponse>('activate',{sessionId:serverSessionId,kind});
       setQuestInventory(previous=>({...previous,[kind]:Math.max(0,(previous[kind] || 0)-1)}));
+      soundFX.playPowerUp();
       setUsedPowerUps(previous=>[...previous,kind]);
       setQuestMessage('');
       setShowPowerShop(false);
@@ -470,6 +481,8 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
     }
     if (isCorrect) {
       soundFX.playCorrect();
+    } else if (timedOut) {
+      soundFX.playTimeExpired();
     } else {
       soundFX.playIncorrect();
     }
@@ -545,9 +558,9 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
         basePointsEarned,
       });
 
-      if (passed) {
-        soundFX.playBridgeRestored();
-      }
+      if (score === total) soundFX.playVictory();
+      else if (passed) soundFX.playBridgeRestored();
+      else soundFX.playTryAgain();
 
       setFinalOutcome({
         score,
@@ -777,6 +790,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
               )}
             </button>
             <button
+              data-guide-target="quiz"
               type="button"
               onClick={() => {
                 soundFX.playClick();
@@ -1230,7 +1244,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
           </div>
 
           <div>
-            <h2 className="text-sm font-bold text-slate-900 mb-3">
+            <h2 data-guide-target="quiz" className="text-sm font-bold text-slate-900 mb-3">
               1. Select Difficulty Level (Adjusts Question Complexity & Timer per Question)
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
