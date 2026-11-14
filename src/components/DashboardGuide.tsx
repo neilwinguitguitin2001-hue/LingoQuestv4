@@ -48,6 +48,8 @@ export function DashboardGuide({ accountId, role, currentView, onNavigate }: {
 
   const [speaking, setSpeaking] = useState(false);
   const [voiceError, setVoiceError] = useState(false);
+  const recordedIntro = role === 'student' && index === 0;
+  const audioClip = useRef<HTMLAudioElement | null>(null);
   const narration = useRef<SpeechSynthesisUtterance | null>(null);
   const canSpeak = typeof window !== 'undefined' && 'speechSynthesis' in window
     && 'SpeechSynthesisUtterance' in window;
@@ -65,6 +67,8 @@ export function DashboardGuide({ accountId, role, currentView, onNavigate }: {
     setSpeaking(false);
     setVoiceError(false);
     return () => {
+      audioClip.current?.pause();
+      audioClip.current = null;
       if (!narration.current) return;
       narration.current = null;
       window.speechSynthesis.cancel();
@@ -72,6 +76,28 @@ export function DashboardGuide({ accountId, role, currentView, onNavigate }: {
   }, [visible, index, currentView, role, accountId]);
 
   function playNarration() {
+    if (recordedIntro) {
+      if (audioClip.current) {
+        audioClip.current.pause();
+        audioClip.current = null;
+        setSpeaking(false);
+        return;
+      }
+      const clip = new Audio(import.meta.env.BASE_URL + 'audio/tours/student-intro-roger.mp3');
+      audioClip.current = clip;
+      const finish = (failed: boolean) => {
+        if (audioClip.current !== clip) return;
+        audioClip.current = null;
+        setSpeaking(false);
+        setVoiceError(failed);
+      };
+      clip.onended = () => finish(false);
+      clip.onerror = () => finish(true);
+      setVoiceError(false);
+      setSpeaking(true);
+      void clip.play().catch(() => finish(true));
+      return;
+    }
     if (!canSpeak) return;
     if (narration.current) {
       narration.current = null;
@@ -194,7 +220,7 @@ export function DashboardGuide({ accountId, role, currentView, onNavigate }: {
               </div>
               <button type="button" aria-label="Close tour" onClick={closeGuide} className="grid size-11 shrink-0 place-items-center rounded-xl border border-sky-700 hover:bg-sky-900"><X size={18} aria-hidden="true" /></button>
             </div>
-            {canSpeak && (
+            {(recordedIntro || canSpeak) && (
               <button type="button" onClick={playNarration} className={`${button} border border-sky-700 hover:bg-sky-900`}>
                 {speaking ? 'Stop narration' : 'Listen to this step'}
               </button>
