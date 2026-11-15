@@ -1,10 +1,11 @@
 import { soundFX } from '../utils/soundEffects';
-import { useEffect, useId, useState } from 'react';
+import { useEffect, useRef, useId, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { ArrowRight, BookOpen, X } from 'lucide-react';
 import { InabelWovenStrip } from './FilipinianaMotifs';
 
 export type GuideView = 'TEACHER' | 'STUDENT_DASHBOARD' | 'MAP' | 'PROGRESS' | 'WRITING' | 'MARKET';
+type TourRole = 'student' | 'teacher' | 'division' | 'principal';
 type Step = { title: string; body: string; target: string; view?: GuideView };
 
 const studentSteps: Step[] = [
@@ -26,15 +27,17 @@ const teacherSteps: Step[] = [
   { title: 'Preview the island map', body: 'Click Class Archipelago Map to see how modules are arranged. Open the map preview to explore the islands your learners will see.', target: 'class-map' },
 ];
 
+const adminSteps: Step[] = [{"title": "Division administration", "body": "Welcome to division administration. This tour is for Department of Education Schools Division staff and heads. Follow the highlighted controls to explore your authorized oversight responsibilities.", "target": "division-welcome"}, {"title": "Principal dashboard", "body": "Welcome to the principal dashboard. Principals use delegated sub administrator accounts. Follow this tour to find the controls available to your account and review only records you are authorized to access.", "target": "principal-welcome"}, {"title": "Review accounts", "body": "Open Manage Accounts to review the account directory available to you. Check identity and status carefully before taking an account action.", "target": "admin-accounts"}, {"title": "Review teacher applications", "body": "Open Teacher Approval Queue to review pending teacher applications. Check the submitted details before deciding whether to approve an application.", "target": "admin-approvals"}, {"title": "Review learner records", "body": "Open Learner Progress and Rosters to review the records available to your account. Keep individual learning records private and use them only for your authorized responsibilities.", "target": "admin-rosters"}, {"title": "Browse curriculum", "body": "Open Module Manager to find curriculum material by grade and quarter. Review the lesson and quiz details carefully before saving changes.", "target": "admin-modules"}, {"title": "Review curriculum summaries", "body": "Open Curriculum Bottlenecks and Analytics to review curriculum summaries and identify areas that may need support.", "target": "admin-analytics"}, {"title": "Explore the map", "body": "Open Division Archipelago Map to explore the grade and quarter layout that learners use.", "target": "admin-map"}, {"title": "Principal account delegation", "body": "Open Division Administrators and Sub Admins to review administrator accounts. Division administrators manage delegated principal accounts. Check the intended responsibilities before changing administrator access.", "target": "admin-delegation"}, {"title": "Review audit history", "body": "Open Admin Audit Trail to review recorded administrative actions. Use the available filters to find the activity you need to check.", "target": "admin-audit"}, {"title": "Review feedback", "body": "Open Feedback and Bug Reports to review messages and reported problems. Follow up through the available controls, then return to your dashboard whenever you need this guide again.", "target": "admin-feedback"}];
+
 const button = 'min-h-11 rounded-xl px-3 py-2 text-sm font-bold focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-400';
 
 export function DashboardGuide({ accountId, role, currentView, onNavigate }: {
   accountId: string;
-  role: 'student' | 'teacher';
+  role: TourRole;
   currentView: string;
   onNavigate: (destination: GuideView) => void;
 }) {
-  const dashboard = role === 'student' ? 'STUDENT_DASHBOARD' : 'TEACHER';
+  const dashboard = role === 'student' ? 'STUDENT_DASHBOARD' : role === 'teacher' ? 'TEACHER' : 'ADMIN';
   const key = `lq-dashboard-guide-v2:${role}:${accountId}`;
   const [mode, setMode] = useState<'tour' | 'guide' | 'closed'>(() => {
     try { return localStorage.getItem(key) ? 'closed' : 'tour'; }
@@ -42,9 +45,77 @@ export function DashboardGuide({ accountId, role, currentView, onNavigate }: {
   });
   const [index, setIndex] = useState(0);
   const headingId = useId();
-  const steps = role === 'student' ? studentSteps : teacherSteps;
+  const steps = role === 'student' ? studentSteps : role === 'teacher' ? teacherSteps
+    : adminSteps.filter(item => item.target !== (role === 'principal' ? 'division-welcome' : 'principal-welcome')
+      && (role !== 'principal' || item.target !== 'admin-delegation'));
+  const tourLabel = role === 'student' ? 'Student tour' : role === 'teacher' ? 'Teacher tour'
+    : role === 'principal' ? 'Principal tour' : 'Division admin tour';
   const step = steps[index];
   const visible = mode === 'tour' && (role === 'student' || currentView === dashboard || (step.target === 'class-map' && currentView === 'MAP'));
+
+  const [muted, setMuted] = useState(() => {
+    try { return localStorage.getItem('lq-tour-narration-muted') === 'true'; }
+    catch { return false; }
+  });
+  const [voiceError, setVoiceError] = useState(false);
+  const recording = step.target === 'quiz' && currentView === 'MAP'
+    ? 'quiz-map'
+    : step.target === 'lesson' && currentView === 'LESSON_QUIZ'
+      ? 'lesson-open'
+      : step.target === 'home' ? 'student-intro' : step.target;
+  const audioClip = useRef<HTMLAudioElement | null>(null);
+  const stepText = step.target === 'quiz' && currentView === 'MAP'
+    ? 'Open the outlined lesson to see where the quiz starts. You can also use Next to continue the tour.'
+    : step.target === 'lesson' && currentView === 'LESSON_QUIZ'
+      ? 'You’re in the lesson. Start with Concepts & Rules, then explore its examples. Select Next to see where the quiz starts.'
+      : index === 0 && role === 'student'
+        ? 'Welcome aboard! See Continue Learning? That takes you straight to your next lesson. If you’d like to look around first, tap Next and we’ll head to the island map.'
+        : index === 0 && role === 'teacher'
+          ? 'Welcome! Let’s start with your class code. Tap Copy, then share the code with your students. They’ll enter it when they register so they can join your class.'
+          : step.body;
+
+  useEffect(() => {
+    try { localStorage.setItem('lq-tour-narration-muted', String(muted)); } catch {}
+    setVoiceError(false);
+    if (!visible || muted) return;
+    const clip = new Audio(import.meta.env.BASE_URL + 'audio/tours/' + recording + '-roger.mp3');
+    audioClip.current = clip;
+    let active = true;
+    let started = false;
+    const start = () => {
+      if (!active || started || document.hidden) return;
+      started = true;
+      void clip.play().catch(() => {
+        if (!active) return;
+        started = false;
+        setVoiceError(true);
+      });
+    };
+    const retry = () => {
+      if (started) return;
+      setVoiceError(false);
+      start();
+    };
+    clip.onerror = () => { if (active) setVoiceError(true); };
+    const visibility = () => {
+      if (document.hidden) { clip.pause(); started = false; }
+      else start();
+    };
+    start();
+    document.addEventListener('pointerup', retry);
+    document.addEventListener('keydown', retry);
+    document.addEventListener('visibilitychange', visibility);
+    return () => {
+      active = false;
+      clip.pause();
+      clip.removeAttribute('src');
+      clip.load();
+      if (audioClip.current === clip) audioClip.current = null;
+      document.removeEventListener('pointerup', retry);
+      document.removeEventListener('keydown', retry);
+      document.removeEventListener('visibilitychange', visibility);
+    };
+  }, [visible, muted, recording, role, accountId]);
 
   useEffect(() => {
     if (!visible) return;
@@ -127,18 +198,20 @@ export function DashboardGuide({ accountId, role, currentView, onNavigate }: {
           <div className="space-y-2 px-4 py-3">
             <div className="flex items-start justify-between gap-3">
               <div aria-live="polite" aria-atomic="true">
-                <p className="text-xs font-semibold text-emerald-300">{role === 'student' ? 'Student tour' : 'Teacher tour'} · {index + 1} of {steps.length}</p>
+                <p className="text-xs font-semibold text-emerald-300">{tourLabel} · {index + 1} of {steps.length}</p>
                 <h2 id={headingId} className="mt-1 font-display text-lg font-bold">{step.title}</h2>
                 <p className="mt-1 text-sm leading-relaxed text-sky-100">
-                  {step.target === 'quiz' && currentView === 'MAP'
-                    ? 'Open the outlined lesson to see where the quiz starts. You can also use Next to continue the tour.'
-                    : step.target === 'lesson' && currentView === 'LESSON_QUIZ'
-                      ? 'You’re in the lesson. Start with Concepts & Rules, then explore its examples. Select Next to see where the quiz starts.'
-                      : step.body}
+                  {stepText}
                 </p>
               </div>
               <button type="button" aria-label="Close tour" onClick={closeGuide} className="grid size-11 shrink-0 place-items-center rounded-xl border border-sky-700 hover:bg-sky-900"><X size={18} aria-hidden="true" /></button>
             </div>
+            {(
+              <button type="button" onClick={() => setMuted(value => !value)} aria-pressed={muted} className={`${button} border border-sky-700 hover:bg-sky-900`}>
+                {muted ? 'Unmute narration' : 'Mute narration'}
+              </button>
+            )}
+            {voiceError && <p role="status" className="text-sm text-amber-200">Tap anywhere to enable narration. If audio is unavailable, follow the written step.</p>}
             <div className="flex flex-wrap justify-between gap-2">
               <button type="button" onClick={closeGuide} className={`${button} text-sky-200`}>Skip tour</button>
               <div className="flex gap-2">
