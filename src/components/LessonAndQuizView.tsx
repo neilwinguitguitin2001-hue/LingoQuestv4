@@ -5,10 +5,7 @@ import {QuizCloze} from './QuizCloze';
 import {isQuizAnswerCorrect,formatCrosswordResponse} from '../utils/quizResponses';
 import { QuizConceptCard } from './QuizConceptCard';
 import { SourceLessonSections } from './SourceLessonSections';
-import { getLessonVisualKey } from './RestoredLessonFigures';
 import { PilotQuizSceneCue } from './LessonPilotGuide';
-import { getLessonPilot } from '../data/curriculum/lessonPilot';
-import { discussionHeadings, getLessonDiscussion } from '../data/curriculum/lessonDiscussions';
 import { SourceActivity, SourceExcerpt, SourceGraphic } from './SourceContent';
 import { useDigitalContent } from '../data/curriculum/digitalContent';
 import { createSourceGameSession, getSessionQuestionCount } from '../utils/sourceGameSession';
@@ -24,7 +21,6 @@ import {
   CheckSquare,
   Clock,
   Compass,
-  Copy,
   Eye,
   Feather,
   FileText,
@@ -227,10 +223,9 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
     'concepts' | 'examples' | 'tips' | 'cultural' | 'vocabulary' | 'checklist' | 'cheatsheet'
   >('concepts');
   const [checkedObjectives, setCheckedObjectives] = useState<Record<number, boolean>>({});
-  const [copiedNotes, setCopiedNotes] = useState<boolean>(false);
 
   // Visual Layer State: Data Saver (low-bandwidth mode), local completed items, flipped vocab cards, XP toast
-  const [dataSaver, setDataSaver] = useState<boolean>(() => {
+  const [dataSaver] = useState<boolean>(() => {
     try {
       return localStorage.getItem('lingoquest_data_saver') === 'true';
     } catch {
@@ -241,17 +236,6 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
   const [flippedVocabMap, setFlippedVocabMap] = useState<Record<string, boolean>>({});
   const [xpToast, setXpToast] = useState<XPToastPayload | null>(null);
 
-
-  const handleToggleDataSaver = () => {
-    soundFX.playClick();
-    setDataSaver((prev) => {
-      const next = !prev;
-      try {
-        localStorage.setItem('lingoquest_data_saver', String(next));
-      } catch {}
-      return next;
-    });
-  };
 
   const triggerVisualActivityComplete = (
     activityKey: VisualActivityKey,
@@ -309,7 +293,6 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
     setFinalOutcome(null);
     setLessonActiveTab('concepts');
     setCheckedObjectives({});
-    setCopiedNotes(false);
     setShowExitModal(false);
     setLocalCompletedVisuals(completedVisualItems);
     setFlippedVocabMap({});
@@ -642,33 +625,6 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
     const checkedCount = checklistItems.filter((_, idx) => Boolean(checkedObjectives[idx])).length;
     const allChecked = checkedCount === checklistItems.length;
 
-    const handleCopyStudyNotes = () => {
-      soundFX.playClick();
-      const guide = getLessonDiscussion(module.id);
-      const pilot = getLessonPilot(module.id);
-      const notes = guide ? [
-        guide.topic,
-        ...discussionHeadings.map((heading, index) => {
-          const credit = index === 2 ? `\n${guide.exampleLabel}` : '';
-          return `${heading}${credit}\n${guide.steps[index]}`;
-        }),
-        ...(pilot ? [pilot.extra] : []),
-      ] : (sourceContent.data?.sourceSections || []).flatMap(section => [
-        `[${section.title}]`,
-        ...section.entries.flatMap(entry => entry.blockIds.map(id => sourceContent.data!.blocks[id])
-          .filter(Boolean)
-          .map(block => block.text || block.rows?.map(row => row.join(' | ')).join('\n') || block.labels?.map(label => label.text).join(' ') || '')),
-      ]);
-      const textToCopy = [module.title, ...notes].join('\n\n');
-
-      if (navigator.clipboard?.writeText) {
-        navigator.clipboard.writeText(textToCopy).then(() => {
-          setCopiedNotes(true);
-          setTimeout(() => setCopiedNotes(false), 2500);
-        });
-      }
-    };
-
     return (
       <div className="space-y-6">
         {/* Faculty / Admin Preview Bar */}
@@ -721,101 +677,36 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
           </div>
         )}
 
-        {/* Top Header Card */}
-        <div className="bg-white border-2 border-[#231F20] linocut-card rounded-xl overflow-hidden">
+        {/* Shared lesson header: navigation first, then title and essential details. */}
+        <header className="bg-white border-2 border-[#231F20] linocut-card rounded-xl overflow-hidden">
           <InabelStrip
             variant="royal"
-            label={`DepEd MELC ${sourceModuleLabel} • ${currentIslandName}`}
+            label={`${currentIslandName} • English lesson`}
             rightText={`Grade ${module.gradeLevel} • Quarter ${module.quarter}`}
           />
-          <div className="p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-          <div>
-            <div className="flex flex-wrap items-center gap-2.5 mb-1.5">
-              <button
-                type="button"
-                onClick={() => {
-                  soundFX.playClick();
-                  onBackToMap();
-                }}
-                className="text-xs font-semibold text-sky-700 hover:text-sky-900 flex items-center gap-1.5 cursor-pointer"
-              >
-                <ArrowLeft className="w-3.5 h-3.5" />
-                <span>Back to Island Map ({currentIslandName})</span>
-              </button>
-              <span className="text-slate-300">·</span>
-              <button
-                type="button"
-                onClick={handleGoToStudentDashboard}
-                className="text-xs font-semibold text-indigo-700 hover:text-indigo-900 flex items-center gap-1.5 cursor-pointer"
-              >
-                <LayoutDashboard className="w-3.5 h-3.5 text-indigo-500" />
-                <span>Home</span>
-              </button>
-            </div>
-            <div className="flex flex-wrap items-center gap-2 text-xs text-slate-500">
-              <span className="font-semibold text-sky-800">Grade {module.gradeLevel}</span>
-              <span>·</span>
-              <span>Quarter {module.quarter}</span>
-              <span>·</span>
-              <span>{sourceModuleLabel}</span>
-              <span>·</span>
-              <span className="capitalize font-medium text-slate-700">{module.topicType.replace('-', ' ')}</span>
-              <span>·</span>
-              <span className="bg-sky-100 text-sky-800 px-2 py-0.5 rounded-full font-bold text-[10px]">
-                Pass: {module.requiredPassingScore}%
-              </span>
-            </div>
-            <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 font-display mt-1">
+          <nav aria-label="Lesson navigation" className="flex flex-wrap items-center gap-2 border-b border-sky-100 bg-sky-50/50 px-4 py-3 sm:px-6">
+            <button type="button" onClick={() => { soundFX.playClick(); onBackToMap(); }}
+              className="inline-flex min-h-11 items-center gap-2 rounded-lg border border-sky-200 bg-white px-3 py-2 text-sm font-semibold text-sky-900 transition-colors hover:bg-sky-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600">
+              <ArrowLeft className="h-4 w-4 shrink-0" aria-hidden="true" />
+              <span>Island Quests</span>
+            </button>
+            <button type="button" onClick={handleGoToStudentDashboard}
+              className="inline-flex min-h-11 items-center gap-2 rounded-lg px-3 py-2 text-sm font-semibold text-slate-600 transition-colors hover:bg-sky-100 hover:text-sky-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600">
+              <LayoutDashboard className="h-4 w-4 shrink-0" aria-hidden="true" />
+              <span>Home</span>
+            </button>
+          </nav>
+          <div className="min-w-0 px-4 py-5 sm:px-6 sm:py-6">
+            <h1 className="break-words font-display text-2xl font-bold leading-tight text-slate-900 sm:text-3xl">
               {module.title}
             </h1>
+            <ul aria-label="Lesson details" className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-slate-600">
+              <li className="font-semibold text-sky-900">{sourceModuleLabel}</li>
+              <li className="capitalize">{module.topicType.replace(/-/g, ' ')}</li>
+              <li className="rounded-md bg-sky-50 px-2.5 py-1 text-xs font-semibold text-sky-900">Quiz passing score: {module.requiredPassingScore}%</li>
+            </ul>
           </div>
-
-          <div className="flex flex-wrap items-center gap-2">
-            {/* Visual XP Mastery Pill */}
-            <div
-              className="px-2.5 py-1.5 rounded-lg bg-amber-50 border border-amber-200 text-amber-800 text-[11px] font-bold flex items-center gap-1.5"
-              title="Illustrations and diagrams for this module"
-            >
-              <Sparkles className="w-3.5 h-3.5 text-amber-500" />
-              <span>Visuals: {sourceContent.data ? new Set(sourceContent.data.sourceSections?.flatMap(section=>section.entries.flatMap(entry=>entry.blockIds)).map(id => getLessonVisualKey(module.id, id, sourceContent.data!.blocks[id])).filter(Boolean)).size : '…'}</span>
-            </div>
-
-            {/* Data Saver Mode Toggle */}
-            <button
-              type="button"
-              onClick={handleToggleDataSaver}
-              className={`px-2.5 py-1.5 rounded-lg text-[11px] font-bold border transition-colors flex items-center gap-1.5 cursor-pointer ${
-                dataSaver
-                  ? 'bg-emerald-50 border-emerald-300 text-emerald-800'
-                  : 'bg-slate-100 hover:bg-slate-200 border-slate-200 text-slate-600'
-              }`}
-              title="Toggle Data Saver Mode (pauses autoplay animations and shows static posters until tapped)"
-            >
-              <span>{dataSaver ? '⚡ Data Saver: ON' : '⚡ Data Saver: OFF'}</span>
-            </button>
-
-            <button
-              type="button"
-              onClick={handleCopyStudyNotes}
-              className="px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-lg transition-colors flex items-center gap-1.5 cursor-pointer"
-              title="Copy formatted lesson summary notes to clipboard"
-            >
-              {copiedNotes ? (
-                <>
-                  <Check className="w-3.5 h-3.5 text-emerald-600" />
-                  <span className="text-emerald-700">Copied!</span>
-                </>
-              ) : (
-                <>
-                  <Copy className="w-3.5 h-3.5 text-slate-600" />
-                  <span>Copy Notes</span>
-                </>
-              )}
-            </button>
-
-          </div>
-          </div>
-        </div>
+        </header>
 
         {module.pdfLesson ? <SourceLessonSections key={module.id} module={module} content={sourceContent.data} error={sourceContent.error} retry={sourceContent.retry} dataSaver={dataSaver}/> : <p role="status">Lesson content is currently unavailable for this module.</p>}
 
