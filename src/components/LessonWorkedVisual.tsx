@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowDown, BookOpen, MessageSquare } from 'lucide-react';
+import { LessonNarration } from './LessonNarration';
 import guides from '../data/curriculum/lessonVisualGuides.json';
 
 type Node = { label: string; text: string; highlight?: string };
@@ -12,6 +13,11 @@ export function LessonWorkedVisual({ moduleId, sourceSha256 }: { moduleId: strin
   const sequence = ['timeline', 'flow', 'structure'].includes(guide.kind);
   const chart = guide.kind === 'chart';
   const maximum = chart ? Math.max(...guide.nodes.map(node => Number(node.text))) : 0;
+
+  const spokenExample = guide.nodes.slice(0, 2).map(({ label, text }) =>
+    label + '. ' + text.replace(/ → /g, ' belongs to ').replace(/[.!?]$/, '') + '.'
+  ).join(' ');
+  const transcript = guide.title.replace(/[.!?]$/, '') + '. ' + spokenExample + ' ' + guide.notice;
 
   return (
     <figure className="rounded-xl border border-sky-200 bg-sky-50/60 p-4">
@@ -48,6 +54,7 @@ export function LessonWorkedVisual({ moduleId, sourceSha256 }: { moduleId: strin
         })}
       </ul>
       <p className="mt-3 text-sm leading-relaxed text-slate-700">{guide.notice}</p>
+      <LessonNarration key={moduleId} transcript={transcript} />
     </figure>
   );
 }
