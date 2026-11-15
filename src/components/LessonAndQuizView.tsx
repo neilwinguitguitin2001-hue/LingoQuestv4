@@ -98,9 +98,10 @@ interface LessonAndQuizViewProps {
   module: Module;
   nextModule: Module | null;
   initialStage?: 'LESSON' | 'QUIZ_SETUP';
+  lessonCompleted?: boolean;
   isPersonalization: boolean;
   onBackToMap: () => void;
-  onCompleteLesson: (moduleId: string) => void;
+  onCompleteLesson: (moduleId: string) => void | Promise<void>;
   onSubmitQuizResult: (payload: QuizCompletionPayload) => {
     totalPointsAwarded: number;
     newlyUnlockedBadges: string[];
@@ -133,6 +134,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
   module: sourceModule,
   nextModule,
   initialStage = 'LESSON',
+  lessonCompleted = false,
   isPersonalization,
   onBackToMap,
   onCompleteLesson,
@@ -151,8 +153,27 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
   const sourceModuleLabel = module.pdfLesson?.sourceLabel || `Module ${module.moduleNumber}`;
   const [sourceReviewMessage, setSourceReviewMessage] = useState('');
   const [stage, setStage] = useState<'LESSON' | 'QUIZ_SETUP' | 'PLAYING_QUIZ' | 'QUIZ_RESULTS'>(
-    initialStage
+    isPreviewMode || lessonCompleted ? initialStage : 'LESSON'
   );
+  const [completionOpen, setCompletionOpen] = useState(false);
+  const [completionBusy, setCompletionBusy] = useState(false);
+  const [completionError, setCompletionError] = useState('');
+  const completionButton = useRef<HTMLButtonElement>(null);
+  const completionDialog = useRef<HTMLDialogElement>(null);
+  useEffect(() => {
+    if (completionOpen) completionDialog.current?.showModal();
+    else completionDialog.current?.close();
+  }, [completionOpen]);
+  const closeCompletion = () => { setCompletionOpen(false); completionButton.current?.focus(); };
+  const completeLesson = async () => {
+    if (completionBusy) return;
+    setCompletionBusy(true); setCompletionError('');
+    try {
+      if (!isPreviewMode && !lessonCompleted) await onCompleteLesson(module.id);
+      setCompletionOpen(true);
+    } catch { setCompletionError('Your lesson could not be saved. Check your connection and try again. The quiz will unlock after saving.'); }
+    finally { setCompletionBusy(false); }
+  };
 
   const [setupPreviewTab, setSetupPreviewTab] = useState<'simulation' | 'answer_keys'>('simulation');
   const [inspectedMode, setInspectedMode] = useState<QuizGameType | 'all'>('all');
@@ -281,7 +302,8 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
   };
 
   useEffect(() => {
-    setStage(initialStage);
+    setStage(isPreviewMode || lessonCompleted ? initialStage : 'LESSON');
+    setCompletionOpen(false); setCompletionError('');
     setWarmupSelected('');
     setWarmupSubmitted(false);
     setFinalOutcome(null);
@@ -335,6 +357,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
   }, [stage, currentQIndex, questionLocked, activeQuestions, showExitModal, freezeUntilMs, timerRevision]);
 
   const startQuizSession = async (requestedMode: QuizGameType | 'all' = gameModeFilter) => {
+    if (!isPreviewMode && !lessonCompleted) { setStage('LESSON'); return; }
     soundFX.playClick();
     stopAllVoicePlayback();
     if (useServerGame) {
@@ -789,24 +812,29 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                 </>
               )}
             </button>
-            <button
-              data-guide-target="quiz"
-              type="button"
-              onClick={() => {
-                soundFX.playClick();
-                onCompleteLesson(module.id);
-                setStage('QUIZ_SETUP');
-              }}
-              className="px-4 py-2.5 bg-sky-600 hover:bg-sky-700 text-white text-xs font-bold rounded-lg transition-colors flex items-center gap-2 whitespace-nowrap cursor-pointer shadow-xs"
-            >
-              <span>Complete & Start Quiz</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
+
           </div>
           </div>
         </div>
 
         {module.pdfLesson ? <SourceLessonSections key={module.id} module={module} content={sourceContent.data} error={sourceContent.error} retry={sourceContent.retry} dataSaver={dataSaver}/> : <p role="status">Lesson content is currently unavailable for this module.</p>}
+
+        <section className="mt-6 bg-white border-2 border-[#231F20] linocut-card rounded-xl p-6 sm:p-8" aria-labelledby="lesson-finish-title">
+          <h2 id="lesson-finish-title" className="text-xl font-display font-bold text-slate-900">{lessonCompleted ? 'Lesson completed' : 'Finished reviewing this lesson?'}</h2>
+          <p className="mt-2 text-slate-600">{lessonCompleted ? 'You can review the discussion whenever you need it, or continue to the quiz.' : 'Mark this lesson as complete when you have finished reading the discussion and reviewing its examples. Then you can start the quiz.'}</p>
+          {completionError && <p role="alert" className="mt-3 text-red-700">{completionError}</p>}
+          <button ref={completionButton} data-guide-target="quiz" type="button" disabled={completionBusy || (!isPreviewMode && (!sourceContent.data || !!sourceContent.error))} onClick={completeLesson} className="mt-4 min-h-11 px-5 py-3 bg-sky-700 hover:bg-sky-800 text-white rounded-xl font-bold disabled:opacity-50">
+            {completionBusy ? 'Saving lesson…' : isPreviewMode ? 'Preview quiz' : lessonCompleted ? 'Continue to quiz' : 'Mark lesson as complete'}
+          </button>
+          <dialog ref={completionDialog} onCancel={closeCompletion} onClose={closeCompletion} aria-labelledby="lesson-complete-title" className="m-auto w-[min(92vw,30rem)] rounded-2xl border-2 border-sky-900 p-6 text-slate-900 bg-white backdrop:bg-slate-950/60">
+            <h2 id="lesson-complete-title" className="font-display text-2xl font-bold">{isPreviewMode ? 'Quiz preview' : 'Lesson completed!'}</h2>
+            <p className="mt-3">{isPreviewMode ? 'Open the existing quiz review tools.' : 'Ready to practise? Start the quiz, or return to the discussion for another look.'}</p>
+            <div className="mt-5 flex flex-wrap gap-3">
+              <button autoFocus type="button" onClick={() => { setCompletionOpen(false); setStage('QUIZ_SETUP'); }} className="min-h-11 rounded-xl bg-sky-700 px-5 py-3 font-bold text-white">{isPreviewMode ? 'Preview quiz' : 'Start quiz'}</button>
+              <button type="button" onClick={closeCompletion} className="min-h-11 rounded-xl border border-sky-300 px-5 py-3 font-semibold text-sky-900">Review lesson</button>
+            </div>
+          </dialog>
+        </section>
 
         {/* Floating XP Reward & Badge Toast */}
         <XPToast

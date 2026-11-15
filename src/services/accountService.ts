@@ -1707,7 +1707,8 @@ export async function bulkDeleteAuditLogs(
 export async function persistStudentProgress(
   student: StudentAccount,
   moduleId: string,
-  prog: ModuleProgress
+  prog: ModuleProgress,
+  requireCloudSave = false
 ): Promise<void> {
   if (supabase) {
     try {
@@ -1724,9 +1725,11 @@ export async function persistStudentProgress(
       if (error) throw error;
       return;
     } catch (error) {
+      if (requireCloudSave) throw error;
       console.warn('Supabase student progress write error:', error);
     }
   }
+  if (requireCloudSave) throw new Error('Please reconnect before completing this lesson.');
   try {
     await cloudSqlFetch('/api/progress', {
       method: 'POST',

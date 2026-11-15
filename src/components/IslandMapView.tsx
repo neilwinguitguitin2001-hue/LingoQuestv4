@@ -791,7 +791,7 @@ export const IslandMapView: React.FC<IslandMapViewProps> = ({
                               {unlocked ? (
                                 <>
                                   <BookOpen className="w-3.5 h-3.5" />
-                                  <span>{isPreviewMode ? 'Preview Lesson' : 'Lesson'}</span>
+                                  <span>{isPreviewMode ? 'Preview Lesson' : lessonDone ? 'Review lesson' : 'Start lesson'}</span>
                                 </>
                               ) : (
                                 <>
@@ -801,7 +801,7 @@ export const IslandMapView: React.FC<IslandMapViewProps> = ({
                               )}
                             </button>
 
-                            <button
+                            {(isPreviewMode || (unlocked && lessonDone)) && <button
                               type="button"
                               onClick={() => handleModuleClick(mod, true)}
                               className={`py-2 px-3 rounded-lg text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors whitespace-nowrap cursor-pointer ${
@@ -812,7 +812,8 @@ export const IslandMapView: React.FC<IslandMapViewProps> = ({
                             >
                               <Play className={`w-3.5 h-3.5 ${isPreviewMode ? 'text-amber-600' : ''}`} />
                               <span>{isPreviewMode ? 'Preview Quiz' : 'Start Quiz'}</span>
-                            </button>
+                            </button>}
+                            {!isPreviewMode && !lessonDone && <p className="col-span-2 text-xs text-slate-600">Finish the lesson to unlock its quiz.</p>}
                           </div>
 
                           {isPreviewMode && (
