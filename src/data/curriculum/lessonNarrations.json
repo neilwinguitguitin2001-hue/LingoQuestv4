@@ -1,0 +1,702 @@
+{
+  "g7-q1-m1": {
+    "transcript": "Look at the two pairs in the diagram. A wheel is part of a bicycle, just as a page is part of a book. Both arrows point from a part to the whole it belongs to. When you read an analogy, name the relationship in the first pair, then check whether it works in the same direction in the second pair.",
+    "scriptSha256": "e827b00d86c81faa856a22cab74db00b380fe57186e51342b355cd38284870b2",
+    "sourceSha256": "90d3d6aa4700af691bdb952c37c12918515f57c39ecc4e351c68839e8d13499d",
+    "audioPath": "/audio/lessons/g7-q1-m1-390508a535d2fec9.mp3",
+    "voiceId": "CwhRBWXzGAHq8TQ4Fs17",
+    "voiceName": "Roger - Laid-Back, Casual, Resonant",
+    "modelId": "eleven_multilingual_v2",
+    "audioSha256": "30655f19b44ae92912370d4cac8b6fb229c49ece61bf1217830bc47d6b9205fb"
+  },
+  "g7-q1-m2": {
+    "transcript": "Look at the visual as we work through this idea. A viewing genre is a type of program. Look at its purpose, intended audience, and format. A documentary explores real events or issues. A public service announcement asks viewers to take an action. A trailer previews a film. A short video shows families reducing waste and ends with “Bring a reusable bag.” The request is evidence that the clip aims to persuade viewers to act. Compare the purpose of each genre, rather than judging only by its pictures.",
+    "scriptSha256": "2a65ba0aacee4d37ed3622c9b21068872a69e12cdbd280908bcb341549d44f08",
+    "sourceSha256": "d2601e49d79cc421d3f6376d299ec9f71a21437747cb17ca0f26abe195f4f2a2",
+    "audioPath": "/audio/lessons/g7-q1-m2-6a214855a7588f0a.mp3",
+    "voiceId": "CwhRBWXzGAHq8TQ4Fs17",
+    "voiceName": "Roger - Laid-Back, Casual, Resonant",
+    "modelId": "eleven_multilingual_v2",
+    "audioSha256": "6fd9cfcb5a1029134c4d65492144751459c2f60e701566e78cd0bf22f0b242c9"
+  },
+  "g7-q1-m3": {
+    "transcript": "Look at the visual as we work through this idea. In active voice, the subject does the action. In passive voice, the subject receives the action, and the verb uses a form of be plus the past participle. Move the sign into subject position. Use was painted to keep the past tense. Follow the doer and receiver in these two versions of the same source example.",
+    "scriptSha256": "05b3a6ce1d33d8d77ec7663604e2f56ad56f612241292d85ba5ce40f0c972030",
+    "sourceSha256": "288ab033ae500caf19bc6742c34e5f95e1d97696161153df51366b83d997aee0",
+    "audioPath": "/audio/lessons/g7-q1-m3-793a80e32f783e26.mp3",
+    "voiceId": "CwhRBWXzGAHq8TQ4Fs17",
+    "voiceName": "Roger - Laid-Back, Casual, Resonant",
+    "modelId": "eleven_multilingual_v2",
+    "audioSha256": "b79b90e63ab74df53f6aa76f9313b70bd42a650b93bfd1d73f98d5ba758707ce"
+  },
+  "g7-q1-m4": {
+    "transcript": "Look at the visual as we work through this idea. Use simple past for finished past events. Regular verbs usually take -ed. Irregular verbs have their own forms. Pack becomes packed. Go becomes went. The word yesterday tells when the actions happened. The three highlighted verbs belong to a finished sequence, not a present routine.",
+    "scriptSha256": "d46f8bf5c10155522cca6e1afde1d2d9a9038647ce1b284bf4215ae3160e99fe",
+    "sourceSha256": "ad559d2da3c00444ec22d66f59e46edffdc7e2217d41f822e51ce628dd02eac3",
+    "audioPath": "/audio/lessons/g7-q1-m4-3052e1de0e7acf64.mp3",
+    "voiceId": "CwhRBWXzGAHq8TQ4Fs17",
+    "voiceName": "Roger - Laid-Back, Casual, Resonant",
+    "modelId": "eleven_multilingual_v2",
+    "audioSha256": "4007675fda5d8b05912433358ce0303b5c11e2b29a058b66a9b8a1c8ebf57dbc"
+  },
+  "g7-q1-m5": {
+    "transcript": "Look at the visual as we work through this idea. Use had plus the past participle to mark an action already finished before another point in the past. A past participle is the verb form used after had, such as left or finished. The bus had left before Mia arrived. Had left marks the 7:10 event. Arrived gives the later past event. The meeting happened first. Notice had + past participle in the earlier action.",
+    "scriptSha256": "b5603c8cb6bbd45fab0d5c380bd271104e11a156238102acfe161f9dfe968edc",
+    "sourceSha256": "382f13af9946f03dbbffe7ff8f7fa19b8c1f1700f9ca7256ad5ac6c6a472a6cf",
+    "audioPath": "/audio/lessons/g7-q1-m5-c2310d906698de52.mp3",
+    "voiceId": "CwhRBWXzGAHq8TQ4Fs17",
+    "voiceName": "Roger - Laid-Back, Casual, Resonant",
+    "modelId": "eleven_multilingual_v2",
+    "audioSha256": "9d6eec9aa4ae89b8dd0d98c8e52f0c60380cae1e589ac88767396aca9cc81c7a"
+  },
+  "g7-q1-m6": {
+    "transcript": "Look at the visual as we work through this idea. Direct speech gives the speaker’s exact words. Reported speech retells the message and may adjust pronouns, time words and tense to fit the new viewpoint. Lia says, “Sam said that he was tired.” I becomes he because Sam is the person being described. Compare the quotation, pronoun, and verb in the direct and reported versions.",
+    "scriptSha256": "ce42b6e945685e37d12e2a4852d5adde56a40c271a12485ea3232d971edc877f",
+    "sourceSha256": "543597484daf4d5f9527222d80b068a57e8418b3272e6c82aef0ea4b3c62e3e5",
+    "audioPath": "/audio/lessons/g7-q1-m6-ba5a5f91cd7ebf9b.mp3",
+    "voiceId": "CwhRBWXzGAHq8TQ4Fs17",
+    "voiceName": "Roger - Laid-Back, Casual, Resonant",
+    "modelId": "eleven_multilingual_v2",
+    "audioSha256": "57e609db1a7086b86f0a27be633b9f3cc070c5639f3330d8223922198e514c52"
+  },
+  "g7-q1-m7": {
+    "transcript": "Look at the visual as we work through this idea. A phrase is a group of words that acts as a unit. Unlike a clause, it has no subject and verb working together. After the game tells when and has no verb. After the game ended has the subject game and the verb ended. The highlighted groups are phrases within complete example sentences.",
+    "scriptSha256": "2559ea263b29d20f07e0268505d7b07332ff916c3ae2432047a28d1390e53ef0",
+    "sourceSha256": "0b3b25c7e25062ecbc434a56799806ae0fa8815abc360339cf31ed537c98a20b",
+    "audioPath": "/audio/lessons/g7-q1-m7-2bb55925ccabb8fc.mp3",
+    "voiceId": "CwhRBWXzGAHq8TQ4Fs17",
+    "voiceName": "Roger - Laid-Back, Casual, Resonant",
+    "modelId": "eleven_multilingual_v2",
+    "audioSha256": "bab9bbe4d6bc1d361f4d8c07bdcf177de66c2a176bd24b407b08104c6c478af2"
+  },
+  "g7-q1-m8": {
+    "transcript": "Look at the visual as we work through this idea. A clause contains a subject and a verb. An independent clause can stand alone. A dependent clause needs another clause to complete the thought. Because the bus stopped, we walked. Bus stopped belongs to the reason clause; we walked can stand alone. Both kinds contain a subject and predicate. Compare whether they express a complete thought.",
+    "scriptSha256": "2f05648129690bb6d63cfe3d10c5cffa90ae912c9ac1c970743a97fe86fac273",
+    "sourceSha256": "7b65f71dea3e87198b25dcb9778fe4856edb0932973b8a2c8ae37fbea9b39003",
+    "audioPath": "/audio/lessons/g7-q1-m8-da211b787b1bcf0e.mp3",
+    "voiceId": "CwhRBWXzGAHq8TQ4Fs17",
+    "voiceName": "Roger - Laid-Back, Casual, Resonant",
+    "modelId": "eleven_multilingual_v2",
+    "audioSha256": "0df9c2d0486d00b43f689e57b74479459cdbb2a45a19dbae11623e43d5fed5d6"
+  },
+  "g7-q1-m9": {
+    "transcript": "Look at the visual as we work through this idea. Sentence structure depends on the kinds and number of clauses. A simple sentence has one independent clause. A compound sentence joins two. A complex sentence joins a dependent clause to an independent one. When the bell rang, the doors opened is complex. The when-clause depends on the rest. Use the complete source sentence to locate its subject and verb.",
+    "scriptSha256": "a0b2fe9e8ebde267120f4332104629e566ed0253a41ccc7f7ddc5277a2715deb",
+    "sourceSha256": "a1305fac52ab040b4bd70c0a5a658fb6cebd54d66eda9da203a6ee67b28c79db",
+    "audioPath": "/audio/lessons/g7-q1-m9-92b4df9cdd02ba67.mp3",
+    "voiceId": "CwhRBWXzGAHq8TQ4Fs17",
+    "voiceName": "Roger - Laid-Back, Casual, Resonant",
+    "modelId": "eleven_multilingual_v2",
+    "audioSha256": "e496dbb9cb0944b5e5612d35cb9947ea4f436c34bb928579bd7d2014c837a11c"
+  },
+  "g7-q1-m10": {
+    "transcript": "Look at the visual as we work through this idea. Skim to get the main idea, scan for a specific detail, and read closely when meaning depends on exact wording. Scan the route column for Route 4 and read across to find 8:20. Skim the headings of a news story to tell what it covers. Scanning looks for a particular detail; skimming seeks the overall idea.",
+    "scriptSha256": "e494732c8a6802874b9d0a7e7b2782d52b31ce3cfe53de643e8374a70db252f5",
+    "sourceSha256": "b17125ab6ea698927ee37d41e4bbfb6d20f0fd3fba18a888728c961fbff0a6e0",
+    "audioPath": "/audio/lessons/g7-q1-m10-44b569626a801664.mp3",
+    "voiceId": "CwhRBWXzGAHq8TQ4Fs17",
+    "voiceName": "Roger - Laid-Back, Casual, Resonant",
+    "modelId": "eleven_multilingual_v2",
+    "audioSha256": "e9844b1619007014630885096d98031dca4aef3e705d9d35de4a975c6a18c9a4"
+  },
+  "g7-q2-m1": {
+    "transcript": "Look at the visual as we work through this idea. Before listening, decide what you need to hear and recall what you know. During listening, use clues and check details you missed. If you need your gate, listen for your route and the gate number. Then replay or ask for that part again. Follow the source techniques as a listening checklist. These are strategies, not quiz tasks.",
+    "scriptSha256": "62b9636a6770db6c1271f744cb44d9075e7210f291cbdcdf504f055987d866cc",
+    "sourceSha256": "bbc1ab821389aa9539aa4087604e6173527dae5339d547bab9f3b004103646d7",
+    "audioPath": "/audio/lessons/g7-q2-m1-f0d007d007ad59c4.mp3",
+    "voiceId": "CwhRBWXzGAHq8TQ4Fs17",
+    "voiceName": "Roger - Laid-Back, Casual, Resonant",
+    "modelId": "eleven_multilingual_v2",
+    "audioSha256": "0ef199bfdfc5056ce2af2af88ccf13ebb80f5b39b34d9cf44f5554b4262e4d13"
+  },
+  "g7-q2-m2": {
+    "transcript": "Look at the visual as we work through this idea. A search engine finds pages using your search words. Specific terms narrow the results. Try jaguar habitat to focus on the animal. Read the result title and snippet before opening it. A search engine searches an index and returns a list; the search term is the input.",
+    "scriptSha256": "a641d36011a9624407f2cbdff56b9db1a4cc1464b2af0ccb5a418e641930a655",
+    "sourceSha256": "9c9c7d77afba51598aa9bcdc7795366de6cb8527325d296839b9ee28f649e08c",
+    "audioPath": "/audio/lessons/g7-q2-m2-d618c7065970cf00.mp3",
+    "voiceId": "CwhRBWXzGAHq8TQ4Fs17",
+    "voiceName": "Roger - Laid-Back, Casual, Resonant",
+    "modelId": "eleven_multilingual_v2",
+    "audioSha256": "d64580f30f6406349d995d35f4beb1cd9a9985ba30c04d329a20916714f4b273"
+  },
+  "g7-q2-m3": {
+    "transcript": "Look at the visual as we work through this idea. An information source can be a person, publication or digital resource. Choose a source that fits the question and check who provided it and when. For today’s departure, compare the date on the operator’s notice with the date on the blog. Different sources serve different research purposes.",
+    "scriptSha256": "6ef7e97110a077887524366aa629e40e2b2da40fddea418cc6e92b8de086acbb",
+    "sourceSha256": "feca4e9440e6c89c3db792932a83c57097207eae52e5aaa7ebf7d8e871c08d0a",
+    "audioPath": "/audio/lessons/g7-q2-m3-6ba89ff073d9ea19.mp3",
+    "voiceId": "CwhRBWXzGAHq8TQ4Fs17",
+    "voiceName": "Roger - Laid-Back, Casual, Resonant",
+    "modelId": "eleven_multilingual_v2",
+    "audioSha256": "47d8dca3562c7d327827d34e6d941f88116f68b289b3d78a1ffce2413899f11b"
+  },
+  "g7-q2-m4": {
+    "transcript": "Look at the visual as we work through this idea. A summary gives the main points briefly. A précis is a concise restatement that preserves the original argument or order. A paraphrase restates a specific idea in your own words at a similar level of detail. Original idea: The shop opens later on Fridays so staff can count stock. Paraphrase: Friday opening is delayed while staff check inventory. Short summary: Stock checks affect Friday hours. Compare what each form keeps from the original passage.",
+    "scriptSha256": "69ba8008f97d4a14e1c3972724f73f0e9043b21326d55260bf2fb2bcf7e253f9",
+    "sourceSha256": "e4deca49c4b050e5ec70dfcb4c19ebccb610e2a4b8425f8694296c614dcd702f",
+    "audioPath": "/audio/lessons/g7-q2-m4-41b2b59435f0c645.mp3",
+    "voiceId": "CwhRBWXzGAHq8TQ4Fs17",
+    "voiceName": "Roger - Laid-Back, Casual, Resonant",
+    "modelId": "eleven_multilingual_v2",
+    "audioSha256": "3d1c55c321cb8dc0508550c5f8288975ea62f261e25b41492709ee3b13c9dab4"
+  },
+  "g7-q2-m7": {
+    "transcript": "Look at the visual as we work through this idea. Linear text follows a reading sequence. Nonlinear text lets readers enter through a heading, row, branch or label. Put Chess, Drama and Art in separate rows with day and room columns. To find Drama’s room, read across that row. Reading order is the important distinction; a picture alone does not explain it.",
+    "scriptSha256": "b99ad0d257274922dcf02cf39d2bdc87fdf3b81108b6ba9fd00795d0e73b6701",
+    "sourceSha256": "3b667141f196367bbb55e04a7d84e3b3c759c5f4e02da0355597753519b4c06a",
+    "audioPath": "/audio/lessons/g7-q2-m7-a4f869478fc5ebe2.mp3",
+    "voiceId": "CwhRBWXzGAHq8TQ4Fs17",
+    "voiceName": "Roger - Laid-Back, Casual, Resonant",
+    "modelId": "eleven_multilingual_v2",
+    "audioSha256": "fc74855c09363670e1e647daee498efeac9fdcf531ed1d9d96f8010c9fe7d91c"
+  },
+  "g7-q3-m1": {
+    "transcript": "Look at the visual as we work through this idea. Multimedia combines resources such as text, images, audio or video. Each resource should help the audience understand the spoken message. Use a map for the turn and say, “Turn left after the bridge.” Both cues point to the same spot. These resources communicate through different forms. Match them to the purpose of the presentation.",
+    "scriptSha256": "531cf8f7ee7b4018ba6b27f41347e857ea7ad5d07a7ef26d1a22f863bd0cdec6",
+    "sourceSha256": "48769ec302d1f258f4816883026a447d747c05226eb26331fcb9040eaaced146",
+    "audioPath": "/audio/lessons/g7-q3-m1-f5a39eda2605d47a.mp3",
+    "voiceId": "CwhRBWXzGAHq8TQ4Fs17",
+    "voiceName": "Roger - Laid-Back, Casual, Resonant",
+    "modelId": "eleven_multilingual_v2",
+    "audioSha256": "105b3930c635a4e26323136a04dd9fd25a5e6365764c987b532c2702b6bd2a09"
+  },
+  "g7-q3-m2": {
+    "transcript": "Look at the visual as we work through this idea. Manuscript delivery reads a script. Memorized delivery recalls it word for word. Impromptu delivery has little preparation. Extemporaneous delivery uses preparation and notes with flexible wording. For a precise emergency notice, read the script. For a prepared club report, use a few cue cards and explain naturally. Preparation and delivery are connected, but they are not the same action.",
+    "scriptSha256": "0c16c315b565bfb92ba88efa6aa0e2c6b0223afe5bc79916d3bb3e8598948fe6",
+    "sourceSha256": "811c4185a5ba9caec5a9b3adb4822de387448a39a6c039c076532138e62a6aac",
+    "audioPath": null
+  },
+  "g7-q3-m3": {
+    "transcript": "Look at the visual as we work through this idea. A folk epic is a long traditional story about a hero. A character’s strength is a quality that can be inferred from what they do and how others respond. When enemies attack Bumbaran, Bantugan leads soldiers to defend it. That action supports an inference of courage. The praise he receives shows how others see him. Keep the named source story and its setting together when considering the characters.",
+    "scriptSha256": "2d5a003498f60327f15cd477ea2ae4e6cc3a85a4420e65454ccaba77957134ba",
+    "sourceSha256": "e55b0c78afb0f762032aa737185987f01e95056829cb174aad86592af0e31abf",
+    "audioPath": null
+  },
+  "g7-q3-m4": {
+    "transcript": "Look at the visual as we work through this idea. A belief is a view you hold. A conviction is a firmly held belief. Explain yours with a specific detail from the material. “I believe taking smaller portions could help because the poster shows unfinished food on several plates.” The visible detail supports the response. Notice the difference between considering something true and being firmly convinced.",
+    "scriptSha256": "7ede168d7ed57e82f2cb80a624f88037e544895a0a9c05a1007eca717dda1df2",
+    "sourceSha256": "46d033dfe1a477881e0ba770b2df85ca3c153a9ce201ca323415344df9fc7508",
+    "audioPath": null
+  },
+  "g7-q3-m5": {
+    "transcript": "Look at the visual as we work through this idea. Evidence is a specific detail that supports a general statement. Choose a detail that actually bears on the claim. “The line reached the door at noon” supports the claim about crowding. The price of a sandwich does not. Supporting details must explain the main idea. Giving a source also matters.",
+    "scriptSha256": "99a09e56905af92ad363e49e15172c925e7708263233487aeb697eab1ce207c6",
+    "sourceSha256": "fb5ebbd58820e0e214fedcd90281fc6a35664f9859aa925bbf664dfa6fab0080",
+    "audioPath": null
+  },
+  "g7-q3-m6": {
+    "transcript": "Look at the visual as we work through this idea. A fact can be checked against evidence. An opinion expresses a judgment or preference. Check the score against the match record. Ask the speaker what made the match best for them. Compare the kind of support required, rather than deciding by how confident a speaker sounds.",
+    "scriptSha256": "bbf485fcdaff777c88dc3294c80958f969feb31c344e412329b237d80d8b12ad",
+    "sourceSha256": "1b2d933a2b3e01c760fd901f4572ebb82fe227cab595c30ac14ac942b98d812f",
+    "audioPath": null
+  },
+  "g7-q3-m7": {
+    "transcript": "Look at the visual as we work through this idea. Wh-questions ask for specific information. Who asks about people, where asks about place, when asks about time, why asks about reasons and how asks about manner. “Where did the club meet?” asks for a place and uses did plus meet. “Who moved the meeting?” asks for the subject and needs no did. The reply supplies a time, not yes or no.",
+    "scriptSha256": "6e868773e60d57eb27d0d40ddd36c286d0eb09c9cdbe780665f4b6863c675327",
+    "sourceSha256": "be7f420694ae484ec784388a16a149bc08db08103edc95809c2c6f4963828edf",
+    "audioPath": null
+  },
+  "g7-q4-m1": {
+    "transcript": "Look at the visual as we work through this idea. Academic writing uses precise, organized language and supports statements with evidence. The tone suits a reader who needs to check the claim. “Twelve of the fifteen seedlings grew” states the result more clearly and gives a count. Compare the features of the writing, not how long its words are.",
+    "scriptSha256": "fc8288f387a0ca87abeb024d3c090bc605349f54983a0efc7f6083a79e72c713",
+    "sourceSha256": "92e4a4d82b1b340b08592126441e6498d6318ef441c36e7dc301aeacaec53f4d",
+    "audioPath": null
+  },
+  "g7-q4-m2": {
+    "transcript": "Look at the visual as we work through this idea. An interview gathers information through planned questions. Conversation and dialogue also rely on listening, turn-taking and clarification. Ask, “When was the book last checked in?” Follow with, “Which shelf should I check?” The source describes both channels of interpersonal communication.",
+    "scriptSha256": "05cc3c2f6d9a1f21a6cb76eedea07d67cb911adbd2d9c4892738c8b6627a7346",
+    "sourceSha256": "877422b66ffe55f6273fc781257496f4e6c22ed9e20b3f48cbe22b37b077e440",
+    "audioPath": null
+  },
+  "g7-q4-m3": {
+    "transcript": "Look at the visual as we work through this idea. Judge an idea by its relevance to the topic and how well it is supported. A week of delay records helps explain a transport problem. A color preference contributes little to that question. Keep the main idea in view while choosing which information matters.",
+    "scriptSha256": "a1747ccb7f39d1afdde654179cbad2b89203f55acaf489730fde2cd5360952ee",
+    "sourceSha256": "9560512d2680587c4257926f8ed47324dadefd12ae2f2dbcd77e24cf33a0365a",
+    "audioPath": null
+  },
+  "g7-q4-m4": {
+    "transcript": "Look at the visual as we work through this idea. Check a viewed claim by comparing its date, place and details with reliable independent sources. Look for an official road notice for the named place and date. A real flood video from another year cannot establish today’s closure. Honesty and correctness are related checks. Neither is established just by the appearance of a post.",
+    "scriptSha256": "2aca33ab1d0f095873a2d0a380e47f564bc389d21d2b8ee62b0be84d5aaf72d3",
+    "sourceSha256": "e69507a2530c13b571ee8e94ce38577e67b8236303517ebe5e25993512c35b29",
+    "audioPath": null
+  },
+  "g7-q4-m5": {
+    "transcript": "Look at the visual as we work through this idea. Conflict is a struggle between opposing needs, forces or choices. A peaceful resolution addresses those needs without harm. The groups explain why they need the room and agree on two time slots. Both can rehearse. Identify whether the opposing force is within the character or outside the character.",
+    "scriptSha256": "fd4aa365f4e951cfbcec1221c098a9a91b9679453755188f970c0478afeee6ce",
+    "sourceSha256": "50beedf34e2512254fee2c0162dc6d8721da89b9b5fc90be23c447b141582902",
+    "audioPath": null
+  },
+  "g7-q4-m6": {
+    "transcript": "Look at the visual as we work through this idea. A legend is a traditional story often connected to a place or person. To understand a character’s identity, look at what the story calls them, the choices they make, and the community around them. The text introduces Daragang Magayon in Rawis and explains the meaning of her name. Reading that detail alongside the Bicol setting helps explain why the name matters in this story. Use the source setting and character names when following the legend.",
+    "scriptSha256": "90a1c791c6e5de7a63d545193e6fb0bb2e44e281742b87659e35aee8fd671404",
+    "sourceSha256": "946c6ec75e1d752859db0b02ed450db45aecd39a5b93623f3ce71b04efadd026",
+    "audioPath": null
+  },
+  "g7-q4-m7": {
+    "transcript": "Look at the visual as we work through this idea. The setting is where and when the story happens. Characters are the people in it. The plot is the sequence of events, and the conflict is the problem the characters face. A theme is a larger idea the story develops through those elements. After a storm, one neighbor checks who needs supplies while another organizes deliveries. The storm creates the problem, and each character’s action helps solve it. Together, those actions develop a theme about sharing responsibility. Use each element to understand the same story, rather than treating the labels as separate facts.",
+    "scriptSha256": "eb6b8dadf3b67e660b8c0ea1e89b8aef8c949d49b81ddfc6fb6d7360594f7df7",
+    "sourceSha256": "b5fffc17981d5073acb214c7a4bc9a75d0e50bff388073b836eae5f283223665",
+    "audioPath": null
+  },
+  "g7-q4-m8": {
+    "transcript": "Look at the visual as we work through this idea. An informative essay explains a topic using a clear introduction, organized details and a conclusion. Introduce book care, group details by storage and handling, then recap the most useful steps. The thesis guides the information developed in the essay.",
+    "scriptSha256": "001c0f8515d184f2b7d50d7b22cc644115dca16bbdecaed86659af129046922f",
+    "sourceSha256": "421c92d53da7010f042ab14126e7d03f62ca29228414124133595457b29b4d5b",
+    "audioPath": null
+  },
+  "g8-q1-m1": {
+    "transcript": "Look at the visual as we work through this idea. Context clues are words or ideas nearby that help you infer a word’s meaning. Slipping and slowed point to slick meaning slippery. Try replacing slick with slippery and reread the sentence. The phrase not to reveal explains why the writer used another name.",
+    "scriptSha256": "4e820e4a8d103856fdbe0002a716d10a2cc3f26aaaa5a576c5d5bc358bb720bb",
+    "sourceSha256": "90c835f4f0cfdb4315d29749fcb5945d75e432f317b9035cde913371d80c9f63",
+    "audioPath": null
+  },
+  "g8-q1-m2": {
+    "transcript": "Look at the visual as we work through this idea. A bibliography lists the sources used in a work. This module uses Chicago’s notes and bibliography style, 17th edition. Start by identifying the source type, then collect the relevant details, such as author, title, publication, date, and pages or URL. In the lesson’s printed-journal example, Juana Martinez is the author, “Distance Learning Amidst COVID-19” is the article, and Journal of Studies in Philippine Education is the journal. Put those details in the matching places in a journal entry. The example names the author, book, publication place, publisher, and year. Read the parts in order.",
+    "scriptSha256": "0d00fdfffab271781ff432183f76be230278ad7dc01697273fe91305d032fadb",
+    "sourceSha256": "050b788edf883e83238a5b32718d018708270813af76c581fbfd1a8326781566",
+    "audioPath": null
+  },
+  "g8-q1-m3": {
+    "transcript": "Look at the visual as we work through this idea. Modals express meanings such as possibility, certainty or obligation. A modal verb helps a main verb, a modal noun names the idea and a modal adverb modifies the strength of a statement. Compare “It might rain,” “There is a possibility of rain” and “It will probably rain.” Their forms differ, and all leave uncertainty. Compare the two source sentences. Might introduces possibility.",
+    "scriptSha256": "14569a95fbfe1e59c33e30df509191ca729e65912e182f985775acdaf496761f",
+    "sourceSha256": "4545b52ba7eec7d88b6fec2c96c7ca2d64b55d6eece2f6711550439dc5ab20cc",
+    "audioPath": null
+  },
+  "g8-q1-m4": {
+    "transcript": "Look at the visual as we work through this idea. Transition signals show relations between ideas, such as result, contrast, addition or sequence. Therefore points to a result. However would set up a contrast, as in “The room was full. However, the meeting started on time.” And adds equally connected ideas; but introduces a contrast.",
+    "scriptSha256": "39e79f8a6e70d3f72643763fae56f346b455a455fbcee05b3ff1e6dfed7b6a1a",
+    "sourceSha256": "4a2f8a0f3bf536c0f85ce5f85abaea1c430d9f5a7c31d7f283e9c0151d623cdc",
+    "audioPath": null
+  },
+  "g8-q1-m5": {
+    "transcript": "Look at the visual as we work through this idea. Verbs, adjectives and adverbs can show an emotional response and strengthen a persuasive appeal. “I urge our class to repair the wasteful tap promptly.” Urge expresses the appeal, wasteful gives a judgment and promptly sets urgency. These source lines express an emotion and a stand. Notice the words doing that work.",
+    "scriptSha256": "f8a204d24d1b469f73e43dd121cd2e992baffb76c6057011c32d9f393237b013",
+    "sourceSha256": "76bf7e1ae3a8b3a6142eff932f8c4f7c4b6964443658ad9e3fbd53ccbc390fd4",
+    "audioPath": null
+  },
+  "g8-q2-m1": {
+    "transcript": "Look at the visual as we work through this idea. A visual–verbal relationship connects what a visual shows with what words explain. Check the title, labels, unit and values before writing a caption. “Tuesday had the most loans of the three days” is supported by 18, compared with 12 and 15. “Tuesday is always busiest” goes beyond the dates shown. Compare the enrollment counts for the two sections. The rows and columns tell you what each number represents.",
+    "scriptSha256": "b4d627ed6db91a5eb04f17a902b66ec44eea7d0526bafd0ea22460906841224c",
+    "sourceSha256": "065ba5dbc6dd315752a64580f213ad07e10d8a3f68932057092385c7f97e8756",
+    "audioPath": null
+  },
+  "g8-q2-m2": {
+    "transcript": "Look at the visual as we work through this idea. An opinion-marking signal introduces a view or judgment. Examples include in my view and I believe. “In my view, the gym should open earlier” states a preference. A reason, such as morning practice, explains it. The opening words signal that the speaker is expressing a view.",
+    "scriptSha256": "0926231f0b4d0a6d0cd28b72f080307edcf66bbdcb361d74d1fdd0e20d3dd771",
+    "sourceSha256": "365ef892fbaa44169607a5dbc929a16ce5d06b5f0f68624db1d9f85f47fdc953",
+    "audioPath": null
+  },
+  "g8-q2-m3": {
+    "transcript": "Look at the visual as we work through this idea. Multimodal texts combine ways of communicating, such as images, print and sound. Compare the information and how each format emphasizes it. Both give the event date. The poster makes the location easy to revisit; the announcement uses repetition to help listeners catch it. Both forms address diversity; compare how they present the message.",
+    "scriptSha256": "66d83671a4578436582bd9ee7cca8b09fd33586040b1b9386ef9d98e554991c0",
+    "sourceSha256": "9d6dce2bfb794732ab1d532469bb0ad95936a93f811c504c3bda1fc328569928",
+    "audioPath": null
+  },
+  "g8-q2-m4": {
+    "transcript": "Look at the visual as we work through this idea. To compare opinions, state each view fairly, identify common ground and explain the difference with reasons. “We both support a reading break. I prefer morning because the room is quiet, while Ben prefers afternoon because more students can attend.” Use both kinds of observation before forming an evidence-based opinion.",
+    "scriptSha256": "3e35ba0e6dc017e4c0eb576ad4cc15667a89d8378d3ee775a29d7bcda1721ff7",
+    "sourceSha256": "324e9c24cb9265c1d602388a193adeaca559e3b44417247224fa54f890d5c33e",
+    "audioPath": null
+  },
+  "g8-q2-m5": {
+    "transcript": "Look at the visual as we work through this idea. Literal language states its message directly. Figurative language can suggest a positive or negative attitude through context, comparison or irony. “Frustrating” states a negative response. “Just what I needed” sounds positive on its own, but “another hour in line” suggests a complaint in this context. The distinction depends on how the message is expressed, not only whether it is positive or negative.",
+    "scriptSha256": "1a451ae06aa314c9a493b7a4061be8b61a674577a6390475b1fb9134e4cc6efe",
+    "sourceSha256": "cc9346ca0a44b78c16cc03e719cfb711674ccd5d5dd2a054384a5ff89e8cffb1",
+    "audioPath": null
+  },
+  "g8-q3-m1": {
+    "transcript": "Look at the visual as we work through this idea. Bias is a leaning that can affect how a text selects or presents information. Compare the report with a version that describes both plans’ costs and benefits. Loaded adjectives reveal the writer’s slant. The author’s choices can reveal a one-sided presentation. Inspect both support and diction.",
+    "scriptSha256": "8d93109bc1a78744336d4c720332c0ed70d9e0978842e6ce135d2ebd0c0d7194",
+    "sourceSha256": "44709f58c13af907b409a96a37a5a6be7405b36c9a29a1a1670af940925ae64c",
+    "audioPath": null
+  },
+  "g8-q3-m2": {
+    "transcript": "Look at the visual as we work through this idea. Propaganda uses techniques to influence beliefs or behavior. Bandwagon appeals to the desire to join others; a testimonial uses an endorsement. “Everyone has this backpack” is bandwagon. “A sports star recommends it” uses a testimonial. The source’s card-stacking example distinguishes what is promoted from what is omitted.",
+    "scriptSha256": "ede2f40a24fe12108750ad380640343656801f97b399b12f38335f8503525dfc",
+    "sourceSha256": "42be5021af48ae1ac8b3823275f9e0fed15b33a3d98e7925e0faa51c4a1082bf",
+    "audioPath": null
+  },
+  "g8-q3-m3": {
+    "transcript": "Look at the visual as we work through this idea. A social issue affects how people live together. A moral issue involves judgments about right and wrong. An economic issue concerns resources, money or livelihood. Rising rent raises an economic issue. An unfair rule raises a moral concern. The same situation can involve several categories. These categories help explain what kind of problem a text discusses. An issue may overlap categories.",
+    "scriptSha256": "8b760c3e4a2fd7584ae18b7ae6efde8532ef2930ec26e470fb03aa80ad4ef22a",
+    "sourceSha256": "7251b5af10835d03221a7a0d6434ac1f818bd4fcbdd05229ad9dc5df88983033",
+    "audioPath": null
+  },
+  "g8-q3-m4": {
+    "transcript": "Look at the visual as we work through this idea. Heritage includes stories, customs, and values passed between generations. Look at choices and consequences in a story to see how a value is expressed. The mother helps solve the problem of making a rope of ashes. Her role supports a reading about the value of older people’s knowledge. Compare how the ruler treats older people before their knowledge is needed. Keep the source work, its characters, and its cultural background connected.",
+    "scriptSha256": "d29c4aa13afabd68362e7170ccd3b90d98469ae5dcaaa414cc82dd23519fe6df",
+    "sourceSha256": "eda3f6177f5361a1db77c78e5537c7ffb99eea4e88d9f10ad55ab1b46c396671",
+    "audioPath": null
+  },
+  "g8-q3-m5": {
+    "transcript": "Look at the visual as we work through this idea. Cohesive devices connect sentences. Pronouns refer back to earlier words and conjunctions show relations between ideas. She points to Lina and it points to the novel. The links let the reader follow the topic without repetition. The source explains what each highlighted cohesive device contributes.",
+    "scriptSha256": "a2b22e179edd6c2bdb8b039d3dc33bed8d96dddc51a00dbc25d3dc013d7a1e13",
+    "sourceSha256": "dd7004c850167dd89684037d81cb47f4383da4120192ed3fa2ae9b1c6a42ec3a",
+    "audioPath": null
+  },
+  "g8-q3-m6": {
+    "transcript": "Look at the visual as we work through this idea. Parallel structure uses the same grammatical pattern for ideas of equal importance. Revise to “reading, drawing and singing.” All three items now use the same verb form. Compare the forms after enjoys. Reading pairs with writing in the corrected source example.",
+    "scriptSha256": "06a2db3cd980d55c95a2f9a0522223362d27003df2391c3e94cb00f861a6681d",
+    "sourceSha256": "93039f23591955214dfdbcd6e6cd0e3d54865471b869450cb7824be08c200075",
+    "audioPath": null
+  },
+  "g8-q4-m1": {
+    "transcript": "Look at the visual as we work through this idea. Idea development is the way a writer organizes a point. The module uses general to particular, cause and effect, claim and counterclaim, problem and solution, and persuasion. Signals tell readers how ideas fit together. In an original notice, “Because the line blocks the doorway” gives a cause. “One way to solve this is to move the queue outside” introduces a solution. Each phrase signals a different relationship. These are different ways to organize ideas; they are not steps to use in every paragraph.",
+    "scriptSha256": "89e4ea30532fe9d3f60d43bda49df55f5d25d7f8f6eb6666c6cea56177f01b6a",
+    "sourceSha256": "4a2804fa585107dc99cff3f837202a643369038e90b894ec2cabe1912e6e9d5a",
+    "audioPath": null
+  },
+  "g8-q4-m2": {
+    "transcript": "Look at the visual as we work through this idea. A primary source supplies direct evidence. A secondary source interprets or summarizes evidence. Notes from both can support different outline points. Put the library’s daily loan record under use patterns and a report interpreting several libraries’ records under comparison. Use the hierarchy to distinguish a major topic from its supporting details.",
+    "scriptSha256": "ff0d013498e16c229879a42c7f04df05eca32531407633c4c37f3ce2e6852089",
+    "sourceSha256": "eed2eacbc6a82e16cbb8b84860c2e5ef89eeca2a437a365f2e6ded33a64af7c5",
+    "audioPath": null
+  },
+  "g8-q4-m3": {
+    "transcript": "Look at the visual as we work through this idea. Synthesis combines relevant ideas from several sources into a new explanation. One notice gives the date and another gives the entry requirements. Combine them into a single accurate event description and identify where each detail came from. Both source paragraphs discuss The Lion and the Mouse, but they do different work.",
+    "scriptSha256": "00faffec0957cd102ce677ef1ad404d63ca40773f1e4e69f3d4067edfa507fe5",
+    "sourceSha256": "1a4ab9640bea06a5e4d6012ae16fe17ab745cab1d5b8c2438d794c59a2312855",
+    "audioPath": null
+  },
+  "g8-q4-m4": {
+    "transcript": "Look at the visual as we work through this idea. An effective paragraph develops one controlling idea with relevant details in a clear order. “The canteen line moves faster with two counters.” Follow with details about orders and payment that explain why. The topic sentence controls the paragraph; the other parts develop and close that idea.",
+    "scriptSha256": "a6d37f799479db4aa4b852eebb1b59579189bb484224ef39a69ee6bd0e63780d",
+    "sourceSha256": "4fc02356c51ab5766891ee8c09c032c8fed3c18227ab21d6bffea2a5c3ca9dcd",
+    "audioPath": null
+  },
+  "g8-q4-m5": {
+    "transcript": "Look at the visual as we work through this idea. Text types organize paragraphs according to purpose, such as describing, recounting, explaining or giving steps. A description shows where the queue bends. A procedural paragraph gives numbered actions for joining the line. Keep the source examples separate: one recounts events, while the other explains a topic.",
+    "scriptSha256": "227eefe1ff29633e0e7435288b8ed8927ae831a000a16728d05dbc8b972a5e24",
+    "sourceSha256": "4f8d674b556db1efa21e0de8174b9e8bb079e6824e3c13ab2c3d6a3b96e5b0b5",
+    "audioPath": null
+  },
+  "g8-q4-m6": {
+    "transcript": "Look at the visual as we work through this idea. Plan a speech around its audience, purpose and topic. Use clear articulation, pacing, emphasis and suitable body language. Pause after “Our club needs one quiet hour,” then emphasize “one” so the request is easy to hear. A speech communicates meaning through more than its written words.",
+    "scriptSha256": "b620ea5c45d34389841b8e840242641116383259351a8a3e57952d843df1fd64",
+    "sourceSha256": "529b6bcb416751e31a813f3c26cbbc6154583a7e0d18331c315ddb01a4dbcb08",
+    "audioPath": null
+  },
+  "g9-q1-w1": {
+    "transcript": "Look at the visual as we work through this idea. Modal verbs help express permission, obligation and prohibition. Permission allows an action, obligation requires one and prohibition forbids it. “You must wear goggles” requires goggles. “You must not eat” forbids eating. “You don’t have to bring gloves” removes a requirement. Compare the purpose of the modal expression in each source category.",
+    "scriptSha256": "251d124cebcfaab0a7840f3f5650e20d49dcc7a1919b230eae7dd3a9249b7c95",
+    "sourceSha256": "2ede6fff852fa7e2d0363be49f58bc9522fac3209e335e6c03b007f916568780",
+    "audioPath": null
+  },
+  "g9-q1-w2": {
+    "transcript": "Look at the visual as we work through this idea. The zero conditional describes a general result. Use a present form in the condition and the result when stating a general pattern. “If you press Save, the editor stores your changes.” The sentence describes how the editor works each time. Use the two clause roles to follow the rule. The source connects zero conditionals to general truths.",
+    "scriptSha256": "bf23812dd37e90e745aee67360c8d02995bff24dc942a91ba0ff466ab00fe6a1",
+    "sourceSha256": "43e7f44be32ad21f7f957faadbf2cc6f6d40a56b1c1193bd53074cbcde652a83",
+    "audioPath": null
+  },
+  "g9-q1-w3": {
+    "transcript": "Look at the visual as we work through this idea. The first conditional connects a real future possibility to its likely or planned result. A common pattern is if plus simple present, then will plus base verb. “If it rains tomorrow, we will move practice indoors.” The rain is possible and the move depends on it. Read the condition first, then its result. Notice present tense in the if-clause and will in the result.",
+    "scriptSha256": "a107a7f7f5457eeefbd2379271bbaf209e71fc1dbb4f0f142b49c8bfee1e5f0f",
+    "sourceSha256": "21167ca52ff7c92843125ede4f8568e293c2b31863a3f3a84188bdc58b170198",
+    "audioPath": null
+  },
+  "g9-q1-w4": {
+    "transcript": "Look at the visual as we work through this idea. The second conditional imagines an unlikely or unreal present or future situation. Use if plus past form and would plus base verb in a common pattern. “If we had five laptops, each group would have one.” Had marks the imagined situation here. The source example imagines a superpower; it does not describe a real past event.",
+    "scriptSha256": "54cbcac04c3d2ce1a11a5d515a8960b127e7f9c6a265bec5086baae60f51e339",
+    "sourceSha256": "6e9189a12b6170c936871d0605a2def9adbc1fc155c84f6543ee39a0d84d7c55",
+    "audioPath": null
+  },
+  "g9-q1-w5": {
+    "transcript": "Look at the visual as we work through this idea. A clause is a group of words with a subject and a verb. In the third conditional, the if-clause imagines a different past using had plus past participle. The result clause uses would, could or might have plus past participle. “If Mia had submitted the file before noon, it would have arrived on time.” Had submitted imagines a different action. Would have arrived shows the imagined result. The had + participle clause is paired with would have + participle in this source example.",
+    "scriptSha256": "d762230bfb0c42ece1b9152c94060c3c20bf5c03b48a6ab7b9c7914751187cfd",
+    "sourceSha256": "5a5ca13056c2a6623b71bba0ac4cb806630728b9354fe7c7bc0689b9207be1ef",
+    "audioPath": null
+  },
+  "g9-q1-w6": {
+    "transcript": "Look at the visual as we work through this idea. Zero covers a general pattern. First covers a real future possibility. Second imagines a different present or future. Third imagines a different past. Compare “If it rains, the yard gets wet,” “If it rains tomorrow, we’ll play indoors,” “If we had a gym, we’d play inside” and “If we had booked a room, we would have played.” Compare the time and possibility, rather than choosing only by the word if.",
+    "scriptSha256": "5db5d5d798a11a91604c06aee0931bf61da86164575f6a3c9eed4687d3eab303",
+    "sourceSha256": "7af0ca9708cd481ae96a4b4fc3109d26bc5daa7836788b7e58636bc7039df8ca",
+    "audioPath": null
+  },
+  "g9-q1-w7": {
+    "transcript": "Look at the visual as we work through this idea. Communicative style is the way someone uses language for a particular situation. Frozen style uses established wording. The conversational style discussed in this module uses natural, familiar wording to engage listeners. In an original example, a school recites its pledge word for word. Then the host says, “Welcome, families. Let me show you where to sit.” The pledge is fixed; the welcome sounds conversational. This module introduces frozen and conversational styles. The next source continues the styles.",
+    "scriptSha256": "1881f69a746feefec8fcbb4e70bbccaf07c9b3e78320502a765795206cbecc49",
+    "sourceSha256": "2b2a6d4caa7de6d8009f15f8b9e0e024ecc66181aa68f12b560796b53028acb4",
+    "audioPath": null
+  },
+  "g9-q1-w8": {
+    "transcript": "Look at the visual as we work through this idea. Consultative style gives information and invites feedback, as in a teacher–student conversation. Casual style uses informal language between familiar people. Intimate style relies on shared understanding between people who are very close. In an original example, a student asks a teacher, “Could you show me the next step?” A friend texts, “See you after practice.” A sibling says, “The usual?” and a shared routine supplies the missing detail. Compare the participants and the level of formality described in the source.",
+    "scriptSha256": "2b320bd94cc27dc8969f011f2d493f795de687667b6c6e802b2ac5f33a4b9167",
+    "sourceSha256": "c6e2fce5886d5407dcd25dc0b3ce87025441e75433c107c1580464b85a3710f3",
+    "audioPath": null
+  },
+  "g9-q2-m1": {
+    "transcript": "Look at the visual as we work through this idea. A text-to-world connection links a specific detail to a real issue and explains the relationship. The missed meetings suggest a transport barrier. Check local transport data before claiming how widespread it is. Compare form and language before relating the text to a real-life concern.",
+    "scriptSha256": "fd79fa401cb8cf61a7eb7a84c193d6d2b15cd8a6d2219d281a0a39165fdc5025",
+    "sourceSha256": "a6a466de73125b53be57c8eba6222afff8cd493b42086795ab7062f01618ca69",
+    "audioPath": null
+  },
+  "g9-q2-m2": {
+    "transcript": "Look at the visual as we work through this idea. Look at the author’s purpose and how word choices support it. Tone is the speaker’s attitude. Mood is the feeling the language creates for the audience. Repetition can make a key idea stand out. In Martin Luther King Jr.’s speech, the repeated phrase “I have a dream” introduces different hopes for racial equality. The repetition connects those hopes and helps listeners picture the future King is asking them to work toward. This source analogy maps parts of an atom to parts of a solar system. It is a comparison, not a scientific model.",
+    "scriptSha256": "be2dd4d2b157e2d7b927e49be3a6355a6e596b8e8deca2615f6de12b5d22cff1",
+    "sourceSha256": "f3025baefca371cb635ee98a031fdf8cf2ddc3cc02918cad8afee16c7292949c",
+    "audioPath": null
+  },
+  "g9-q3-w1": {
+    "transcript": "Look at the visual as we work through this idea. Bias is a leaning that affects judgment. Prejudice is a judgment formed in advance, often about a person or group without fair evidence. Choosing only favorable scores suggests bias. Assuming a new player cannot play because of their background shows prejudice. Compare the source definitions. Neither label should be used to stereotype a person or group.",
+    "scriptSha256": "e9de6160c1e3e815b24f80c64365fcc313213255bf39f26fdde38d828f2f71df",
+    "sourceSha256": "f8ea24f3b06e3c2743c39afb4cebde606e33e5a23c6a46ce172bb09554dec41b",
+    "audioPath": null
+  },
+  "g9-q3-w2": {
+    "transcript": "Look at the visual as we work through this idea. Relevance asks whether an idea bears on the topic. Truthfulness asks whether reliable evidence supports it. The schedule is relevant. Compare it with the collector’s dated notice to check if it is true. Find the topic, main idea, and supporting details before judging the viewed material.",
+    "scriptSha256": "b0f578d53cdbb047f594d911182c8b31763f99a024ed58e69a6facad73804c20",
+    "sourceSha256": "ea781ef3cedebe98e938b7e90ed28ad748ae361a13d7430fcccecb8c004ea070",
+    "audioPath": null
+  },
+  "g9-q3-w3": {
+    "transcript": "Look at the visual as we work through this idea. Test whether a viewed detail proves the exact claim being made. An official notice for today would help confirm the early closing. An undated photo may show a real closure at another time. Agreement and disagreement express a stand. Examine support on both sides.",
+    "scriptSha256": "b78f375ba3a9eb7611a318e93cdc36c2c29551233f059754cf6c9f4654b47c16",
+    "sourceSha256": "c53db741ac89eaa87bd431bf9f9a9646327bc8a395b0bf7c3a5af6bef8ae7d2d",
+    "audioPath": null
+  },
+  "g9-q3-w4-5": {
+    "transcript": "Look at the visual as we work through this idea. Compare the wording, evidence and sources before deciding which claims are relevant and trustworthy. One clip names a recent inspection and the other gives an anonymous rumor. Look up the inspection to check what it actually says. Each check asks about a different aspect of the same material.",
+    "scriptSha256": "19a2a941018c7fb454c0aff8b06e31911a3b2b203f77bdf12a26e47aa30c3b93",
+    "sourceSha256": "f6182600474707560ce97ae52bc71be333f91b64b4c9c34ec280774699451c48",
+    "audioPath": null
+  },
+  "g9-q3-w6": {
+    "transcript": "Look at the visual as we work through this idea. Validity concerns whether evidence gives a sound basis for the claim. Check relevance, accuracy and how much the evidence can establish. One student’s trip shows that a delay happened once. A dated series of trip records is stronger support for a claim about frequent delays. Facts, statistics, and other evidence need to be examined before accepting the conclusion.",
+    "scriptSha256": "56513cf6ae994566517d1bdd82d31a599317fcadf2123a5c9c36c589c9ef691c",
+    "sourceSha256": "bb2576bfb11939fe24a252e128d3a0f9554f464c749605ba88a62b9bfcb01636",
+    "audioPath": null
+  },
+  "g9-q3-w7": {
+    "transcript": "Look at the visual as we work through this idea. Separate the speaker’s claim from examples, testimony and data offered as evidence. “Ten students were turned away on Tuesday” is a data claim. Ask who counted, when and whether the number supports the wider proposal. Keep the central point separate from the evidence offered to support it.",
+    "scriptSha256": "6cd7cca29e7bc68546c09b57741177e54c17bc3a2c5359b6bd1440fa89862455",
+    "sourceSha256": "fb1c1050e0d5fb200c64fef09b54618e4be4e69a09a6943ad9f267e572ed0e7e",
+    "audioPath": null
+  },
+  "g9-q3-w8": {
+    "transcript": "Look at the visual as we work through this idea. Evaluate whether evidence is relevant, trustworthy and representative. Representative evidence reflects the wider group being discussed. A chess-club survey may show what that club thinks. It cannot by itself tell what all students think. This is the source speaker’s anecdote. It supports a claim through personal experience.",
+    "scriptSha256": "88b6abb48d7089a812bc046d75abbda60a7ec781e18b2262d6d5dff4a3468f9a",
+    "sourceSha256": "477c3b3257d9508b1e56a6bf350399f903ef70e3e2b72e0549d5f3da31811f83",
+    "audioPath": null
+  },
+  "g9-q4-m1": {
+    "transcript": "Look at the visual as we work through this idea. Evaluation expresses a judgment and the strength of that judgment. Modals and evaluative words help readers see possibility, recommendation or necessity. “The repair could reduce leaks” expresses possibility. “It is essential to replace the cracked pipe” gives a stronger judgment that needs evidence. The same word can express ability or ask permission. Read the whole sentence.",
+    "scriptSha256": "2c80a2dd2f28a8d2f169b3cadbba75c1e0638b325b0fe526e80018087f987027",
+    "sourceSha256": "f65181f424a510d50ee3f815a78b78c790536cd4fbbe209c4e59cd0c8bbb8834",
+    "audioPath": null
+  },
+  "g9-q4-m2": {
+    "transcript": "Look at the visual as we work through this idea. Connect the text to a real concern by explaining the similarity and its limits. The detail relates to access to quiet study space. A school survey could help tell whether classmates experience a similar problem. Use the text’s details when identifying an issue. Do not assume every person or family has the same experience.",
+    "scriptSha256": "cfd5ba9b8250535fcb39acfb27a8eb27e90627128e3aa0f35f4461c30a2dca2b",
+    "sourceSha256": "9710505c9baf79eb4b2520715fb8ae64a29a3dc057a1c10f7804821430468ca4",
+    "audioPath": null
+  },
+  "g9-q4-m3": {
+    "transcript": "Look at the visual as we work through this idea. Plot is the sequence of events. Setting is the time and place. Conflict is the struggle. Theme is a larger idea developed by the story. A locked door at night raises the stakes. The character’s choice to ask for help can contribute to a theme about trust if other events support it. These source examples use different figures of speech. Preserve the parable’s original religious context.",
+    "scriptSha256": "1fa9437765b1b2e5162e6a1f43f5b48805fbd6407902d510b5bf01afa58891d6",
+    "sourceSha256": "192f90ca5e502c5edcaa9d91d12af4eda0a7e5da9dfac26aef926aeed57168f9",
+    "audioPath": null
+  },
+  "g9-q4-m4": {
+    "transcript": "Look at the visual as we work through this idea. Judge relevance, reasoning and presentation separately. Reasoning explains how evidence supports a conclusion. Attendance records show when students are absent. They do not show a lunch schedule caused the absences without further evidence. Look at the relation between the visual and the words, rather than treating an attractive layout as proof.",
+    "scriptSha256": "f2781b159b5cce3c09b350e4aef9cb1afa2ef321ee4ef3aa7c9220ac06000c7b",
+    "sourceSha256": "92abd4ed4a62c626b077a4894feb34436d49aaf79dbb7054c7949f777f4632cf",
+    "audioPath": null
+  },
+  "g9-q4-m5": {
+    "transcript": "Look at the visual as we work through this idea. A value judgment weighs what ought to matter, such as safety, fairness or urgency. Identify evidence and consider the effects of an action. An inspection report supports the safety concern. A temporary closure and alternate route respond to both safety and access. Use this distinction when evaluating an issue. The unverified claims in the source exercise are not facts to memorize.",
+    "scriptSha256": "25b5ae5c1f806a159af9129282957bfec25c936c34ed995eaf3dadae8faf116e",
+    "sourceSha256": "e623939935ce69259b85ec33cbba7f6eb593a6fb3dd70806d2695275b3bd8173",
+    "audioPath": null
+  },
+  "g9-q4-m6": {
+    "transcript": "Look at the visual as we work through this idea. A prediction says what may happen next. A projection extends a known trend under stated assumptions. “If heavy rain continues, the creek may rise further” connects the forecast to a condition. A pause in rain could change the outcome. The source describes listening again to understand meaning. The visual does not substitute for the assigned audio.",
+    "scriptSha256": "1eac9cfd0fb45342848fdd84339db8592b0d06cf39d69f292346750734298282",
+    "sourceSha256": "b3263f2bb408767895c8499335187eeb78ee13fe1343d25762c34fb78c11c368",
+    "audioPath": null
+  },
+  "g9-q4-m7": {
+    "transcript": "Look at the visual as we work through this idea. Bias can favor or disfavor someone. Prejudice makes an advance judgment about a person or group without sufficient evidence. Giving a friend extra credit shows favoritism. Assuming a newcomer lacks skill without seeing their work shows prejudice. Distinguish the reasoning behind a judgment. The source examples describe unfair treatment, not a rule about groups.",
+    "scriptSha256": "40386a08b576c450140b941a9b92718a6791a8e5b30c850b5220eb62f988d071",
+    "sourceSha256": "b30bbfa408f3804a2a9817117faace0204179be0b2d6a47d95266fb676a2c65b",
+    "audioPath": null
+  },
+  "g9-q4-m8": {
+    "transcript": "Look at the visual as we work through this idea. A generalization draws a broader conclusion from examples. Its scope should reflect the size and range of the evidence. “Setup delays affected these three sessions” fits the records. “Practice always starts late” needs broader evidence. Compare everybody with many people. The claim’s scope changes.",
+    "scriptSha256": "8bf670f9a29d297b9c095a938b37cefb811a3a83ff2cd65ebbfe91af41695aae",
+    "sourceSha256": "dbb08d4f5f0858d644d47f1e51517c24ee472883f345bd3551b5ead2767cb424",
+    "audioPath": null
+  },
+  "g9-q4-m9": {
+    "transcript": "Look at the visual as we work through this idea. A viewed claim is relevant when it addresses the issue and trustworthy when the evidence supports its scope. A clip of one room supports a claim about that room. A dated checklist for all rooms would better support the wider claim. Inspect the reasoning and information behind a claim before accepting it.",
+    "scriptSha256": "0b5b63f27eee8c67fe0a6685ef5c27c5e7f79edc3d1eb3b30ad5714d88f8013f",
+    "sourceSha256": "bdc0f02a0a66c630b01b063c097ff01e20a81140ad07c60bf732ee4a7767ba8b",
+    "audioPath": null
+  },
+  "g9-q4-m11": {
+    "transcript": "Look at the visual as we work through this idea. A play develops theme through dialogue, actions, stage directions and the sequence of scenes and acts. The repeated promise and later action can build a theme about trust. Use both scenes to explain the contrast. The source’s worked example compares sudden love to lightning. Keep the comparison within the scene.",
+    "scriptSha256": "d2255f41c0208a4547e47e375025835cd497e6cf5f7ca4d63b23bb5fb3b4cc2e",
+    "sourceSha256": "a6f35101f4d762fbe4a558f26fefaf46cccafcb7edac4f8d364443fd572adee9",
+    "audioPath": null
+  },
+  "g9-q4-m12": {
+    "transcript": "Look at the visual as we work through this idea. Verbal communication uses words and vocal delivery. Nonverbal communication includes gesture, posture, movement and facial expression. A quiet invitation and an open gesture support welcome. The same words and a raised hand can suggest hesitation. Coordinate spoken delivery with wordless cues; meaning depends on the scene and cultural context.",
+    "scriptSha256": "3a8783084e758a6704bd31139ae8c1d9567cd36f53cb0c1127fc27fa28879bca",
+    "sourceSha256": "0b78935b8af032eb2f8ccb5750f8606a1787335bf0c476be030505b27aec1baf",
+    "audioPath": null
+  },
+  "g9-q4-m13": {
+    "transcript": "Look at the visual as we work through this idea. English uses vowel and consonant sounds to distinguish words. Articulation is how we shape those sounds. Compare ship and sheep. Hold the rest of the line steady so you can hear the different vowel clearly. Minimal pairs differ in one sound element. Read the source pair list alongside this definition.",
+    "scriptSha256": "183a6f14d6584218a9881ba2110bd471e0a2815005631245d02319c03a7a7641",
+    "sourceSha256": "2ecd062b8abdca1f5eabbceea7115ed545573e273ea416717135af410d766d4b",
+    "audioPath": null
+  },
+  "g9-q4-m14": {
+    "transcript": "Look at the visual as we work through this idea. Pitch is how high or low the voice sounds. Stress gives a syllable or word emphasis. Juncture marks boundaries or pauses. Intonation is the pitch pattern across speech. Say “You finished?” with rising pitch, then stress you to express surprise about who finished. Use the pitch paths as schematic reading cues, not an audio recording.",
+    "scriptSha256": "cb2cd52493d7553e9c60fe74f4b4970e1f56558f7018b9832ed90f8e854504ad",
+    "sourceSha256": "b1330475e4ba2d612b040870829bd551552607f22f09aaf671d350116fc0d434",
+    "audioPath": null
+  },
+  "g10-q1-m1": {
+    "transcript": "Look at the visual as we work through this idea. Set a listening purpose and capture key details such as who, what, where and when. Confirm any detail that would affect your next step. If the announcement says “Room 12, Thursday at 3,” write the place, day and time in separate fields. Follow the source approaches before reacting to the speaker’s ideas.",
+    "scriptSha256": "f26577b95f85e5473e20fa20685fff1b6a83a0ff061cc0185220e35ac859be22",
+    "sourceSha256": "2d4320ac4b7cfce6e6aa33b8e1b595a05aa38580ec3b45f8110c95b4d9fcc9cf",
+    "audioPath": null
+  },
+  "g10-q1-m2": {
+    "transcript": "Look at the visual as we work through this idea. A textual aid helps readers find, organize or understand information. Headings name sections, diagrams show relationships and tables support precise comparisons. A diagram shows where an exit is. A table can tell which exit is nearest to each room. The visual demonstrates the functions named in the source: direct attention and add information.",
+    "scriptSha256": "0e5f17c874af10c3392cbbd075c40522a22bb41f545c21e117e0cde14038ab15",
+    "sourceSha256": "15f1ad49e35262df2445342026bb8778b64e8d23f810f6c86750a0f28875d001",
+    "audioPath": null
+  },
+  "g10-q1-m3": {
+    "transcript": "Look at the visual as we work through this idea. Purpose is what a writer aims to accomplish. Subtext is meaning suggested beneath the words. Identify clues in tone, details and what the writer asks the reader to do. The notice informs. The ad uses urgency to persuade readers to sign up. Connect story elements to the writer’s purpose. A genre label alone does not reveal every message.",
+    "scriptSha256": "e14c7cb3064595b4940bded039f4efd7abc240cb352f92155aae1099cfc435ed",
+    "sourceSha256": "30bb4a15535d467744be3f27f7183b8f102f8d1f8adfc4816e7c7b34d4b70d9b",
+    "audioPath": null
+  },
+  "g10-q1-m4": {
+    "transcript": "Look at the visual as we work through this idea. An adaptation tells a version of a work in another medium. Compare a matched moment and explain how each medium communicates information through words, sound, framing or performance. The passage lets us hear Noor’s mistaken assumption as a thought. The storyboard uses sound and her reaction to make the audience discover someone may be there at the same time she does. The source uses The Gorgon’s Head. A generic video cannot replace a matching adaptation.",
+    "scriptSha256": "b87bf2e2567811705607679071622e387f15e57956d42c6afb0a1f2ff5ce90fd",
+    "sourceSha256": "8e8c328c72e6d5ced697da246545d519e29b7346b2f3a52997a9b07be01bd2fa",
+    "audioPath": null
+  },
+  "g10-q1-m5": {
+    "transcript": "Look at the visual as we work through this idea. Evaluate a source by its author, evidence, date, purpose and relevance. Format alone tells little about reliability. Compare the dated library notice with the older booklet and contact the library if the hours still conflict. Print and web sources both need evaluation. Compare these criteria for the same information.",
+    "scriptSha256": "3dc671002d84a6b16686757ef5056bb8ef6facb147378404262e9e05efeaba40",
+    "sourceSha256": "00def4a7625cd6634e26d8c14ca167a3f09a499bd7b55aab7aa0a0a6980062d2",
+    "audioPath": null
+  },
+  "g10-q1-m6": {
+    "transcript": "Look at the visual as we work through this idea. Analytical listening separates the problem, constraints and evidence from proposed solutions. An open route without stairs meets the accessibility constraint. Check that it also stays clear of the flooded area. The source’s analytical listener asks questions and checks evidence before validating a claim.",
+    "scriptSha256": "9a624e6bd5763830229e969ae0d39c7ce969fede1d4a75929d91ff30fc4d2ab2",
+    "sourceSha256": "c0918db40c26a8e4aefdaa3bd95b7fb16ccb3ff4fd276f4478930c574fdef10e",
+    "audioPath": null
+  },
+  "g10-q1-m7": {
+    "transcript": "Look at the visual as we work through this idea. A reasoned judgment checks a text against clear criteria such as relevance, evidence and the soundness of its conclusion. A dated sign-in log can support a claim about demand. A recommendation still needs a reason that weighs staff availability. Use these connected elements to explain a judgment about a narrative.",
+    "scriptSha256": "652af8d3e71e8292dac25158e788506ecadf35af8713b0146342f3a2941dfd55",
+    "sourceSha256": "174780a23200ca6452fcba0fdb0fcb2b545a7be38fd3cd512f903510750070aa",
+    "audioPath": null
+  },
+  "g10-q1-m8": {
+    "transcript": "Look at the visual as we work through this idea. Evaluate fluency, coherence, cohesion, tone, and correctness. Fluency is smooth delivery. Coherence is the overall sense of the ideas. Cohesion is how words and phrases connect them. Tone is the speaker’s attitude. Correctness covers appropriate and accurate language use. In an original example, a speaker says “first” and “next” while describing two steps in order. Those words create cohesion, while the logical order makes the speech coherent. Fluency involves accuracy, rate, and expression; faster is not the only consideration.",
+    "scriptSha256": "5f946d0da43c68d07e2255fb085d8913f1b050bb732e16b8261d54a02961044d",
+    "sourceSha256": "4871c1135e49f092219a4d7d406221245c28232a2e5e09f17ade80f891fa442d",
+    "audioPath": null
+  },
+  "g10-q2-m1": {
+    "transcript": "Look at the visual as we work through this idea. Research language investigates and reports evidence. Campaign language gains attention. Advocacy argues for a change and calls for action. A water survey counts leaking taps. “Every drop counts” is a campaign message. A request for a repair budget makes an advocacy case. These are stages described in the source, not extra steps added to the game.",
+    "scriptSha256": "b1be50639d2599f65c305f46d6e46210dcd5f64494d23a90f32c1c10fc880ba7",
+    "sourceSha256": "9a455882bfe0c5b5c65553cc6f3b2722c61aacacd9eb304cdeed77c807a73d7d",
+    "audioPath": null
+  },
+  "g10-q2-m2": {
+    "transcript": "Look at the visual as we work through this idea. Conjunctions connect ideas and signal relations such as contrast, cause or addition. But signals contrast. Because could explain why: “We chose the plan because it reaches more students.” Compare what the reader expects after each expression.",
+    "scriptSha256": "8f7a038d630c0e82c7473c390b24cbe50ee1609f4576d44ed10e11d9a9943df7",
+    "sourceSha256": "a1a8597eceae08ec551830f7b8def1e8db68aed609954c181a6815248f0b5df9",
+    "audioPath": null
+  },
+  "g10-q2-m3": {
+    "transcript": "Look at the visual as we work through this idea. An opinion states a judgment or preference. An assertion presents a position as a statement that can be examined or supported. “Extended hours would help students who finish clubs at 4” gives a position that can be supported by attendance records. Most limits the scope of this source statement; evidence is still needed.",
+    "scriptSha256": "6910e6f817412992a1f0d0ae789c29ab237ca2233f0b25c425adbb1482330bbe",
+    "sourceSha256": "5fd4c6b29b69f52089e728062f84fa20239814c83282e36d7973d63343de617d",
+    "audioPath": null
+  },
+  "g10-q2-m4": {
+    "transcript": "Look at the visual as we work through this idea. Modal verbs and modal adverbs qualify claims. Choose the degree of possibility, certainty or obligation that matches the evidence. A small pilot suggests the change may help. Several consistent trials can justify stronger wording if their conditions match. Compare the highlighted language in the source’s examples.",
+    "scriptSha256": "43b249c99a87fad9fa432d09e51aee899c3f8831f0a55bae4a75f89e550ca331",
+    "sourceSha256": "02460e403250fabdab6fdc4d7e25258aff427c604b08908a96007c30eef8b43e",
+    "audioPath": null
+  },
+  "g10-q2-m5": {
+    "transcript": "Look at the visual as we work through this idea. A claim of fact can be checked with evidence. A claim of value judges quality or importance. A claim of policy proposes action. “The gate closes at 4” is a fact claim. “That is too early” is a value claim. “Keep it open until 5” is a policy claim. Distinguish the kind of position before deciding what support it needs.",
+    "scriptSha256": "f6414194ff0b03ae3b93c24ec3d2bcd03f5c0cb189b08bf62d3cbd8eab48c44a",
+    "sourceSha256": "8b20af3a7d31c130700299b3cc9409e97701c8e6339c80879df495b96c75ca80",
+    "audioPath": null
+  },
+  "g10-q2-m6": {
+    "transcript": "Look at the visual as we work through this idea. A rhetorical question is asked for effect, rather than to collect an answer. It can emphasize an idea or invite reflection. In a speech, “What could we do with that hour?” draws attention to wasted time. In a survey, the same words could request a genuine response. In the source passage, the questions emphasize a shared human experience rather than asking for spoken replies.",
+    "scriptSha256": "8bfc928695e463f8f2d8f5cdab700846414f68372c0598b9317073b76135fb59",
+    "sourceSha256": "85c490408a3e2797c4cc6f7d2e315cacf47267f928a85619d3a6730272850c78",
+    "audioPath": null
+  },
+  "g10-q2-m7": {
+    "transcript": "Look at the visual as we work through this idea. A multimodal text combines ways of making meaning, such as words, pictures, sound, movement and spatial layout. The map shows the route shape, written directions name stops, and spoken audio emphasizes the temporary change. A multimodal text combines two or more systems. Compare what each contributes.",
+    "scriptSha256": "83479d7251b5df403b7164f5a6c035743a5cedff00b249450a1e2f0d17d0263c",
+    "sourceSha256": "11f6e04c74ffd31750c4fe6295da01e122872260235b29f24407c513377dbce0",
+    "audioPath": null
+  },
+  "g10-q2-m8": {
+    "transcript": "Look at the visual as we work through this idea. A prepared speech allows planning and practice. An impromptu speech allows little preparation. Both need a clear point and audience awareness. For a quick reply, state one point, give one reason, then close. A prepared speech can add examples and rehearsed transitions. The source techniques connect your topic, speaking goal, and delivery.",
+    "scriptSha256": "9dd600ae1559318c90246d568c7cd01c21f0e03125fb3b69d7747472749fdc56",
+    "sourceSha256": "03485e84834b14adc3948e2ac1e918dac03fc17f6b18f6d5e8a1e6ae912d8d9e",
+    "audioPath": null
+  },
+  "g10-q3-m1": {
+    "transcript": "Look at the visual as we work through this idea. An argumentative essay supports a claim with reasons and evidence. A counterclaim is an opposing position. A rebuttal answers it fairly. Claim: Open a room during lunch. Counterclaim: Staff cannot supervise all week. Rebuttal: Pilot two supervised days and measure use. Separate the position, its reason, and its supporting detail. These are examples from the essay discussion.",
+    "scriptSha256": "1134b0831f4b18063a31125dc9a2050b3c40e18716d01a2ef68cc13cd37ffbab",
+    "sourceSha256": "bd925c1d26b351003283530358998bba522f0e057d6288c3a3f8aae78a141f8b",
+    "audioPath": null
+  },
+  "g10-q3-m2a": {
+    "transcript": "Look at the visual as we work through this idea. Informative writing explains a subject clearly. Use definitions, relevant details and an order the reader can follow. Define rain gauge first, show how water collects, then explain how to read the scale. Keep the information focused on the topic and supported by credible sources.",
+    "scriptSha256": "24becc250598905fa59d8404283e8bcf80bae5435605031285de607b1d10112e",
+    "sourceSha256": "dd302bba100087b93e5d4cdfffc9f31f978a15b01f65cf31e25fecee35eafe19",
+    "audioPath": null
+  },
+  "g10-q3-m2b": {
+    "transcript": "Look at the visual as we work through this idea. Persuasion may use appeals to values, feelings or credibility. Argumentation also needs a supported claim and reasoning that addresses objections. A photo may prompt concern about waste. Refill counts and an explanation of cost help support the policy argument. The writer’s opinion, support, and requested action have distinct roles.",
+    "scriptSha256": "d3b03421fa52b8ac87074700a243dadf1bdc1329dc57551ee3bb394b2d4658fe",
+    "sourceSha256": "32f4f6b674ce8a376904db973b918e5154f8f2698970e0a8a2824cc6a01745ab",
+    "audioPath": null
+  },
+  "g10-q3-m3": {
+    "transcript": "Look at the visual as we work through this idea. A critique evaluates a work using clear criteria and specific evidence. A brief summary gives context for the judgment. “The ending weakens the mystery because it introduces the key clue only in the final paragraph.” This names a criterion and points to evidence. The source describes evaluation, not simply fault-finding. Connect your judgment to the narrative.",
+    "scriptSha256": "c5d144146fbc59de19422fafe039ae1e718ff6cbc760dbcfb567b9d440dbb45c",
+    "sourceSha256": "0ea3e99b28a6b207e37ecfe0756d11d3af6020f7c0afbc20e8760b6c0efbe93f",
+    "audioPath": null
+  },
+  "g10-q3-m4": {
+    "transcript": "Look at the visual as we work through this idea. A formalist reading examines how the work’s own language, imagery, structure and other elements create meaning. A closed-to-open window pattern can suggest a shift toward possibility if surrounding words reinforce it. The formalist approach focuses on form, elements, and devices operating within the text.",
+    "scriptSha256": "75570132793d92b84bc350960e1bb2ca3324d6ac7058a3676343a432920754a6",
+    "sourceSha256": "cac662784326538105877cdab6473a6b2e45669a7c7de1c1f88272097caf7d6e",
+    "audioPath": null
+  },
+  "g10-q4-m1": {
+    "transcript": "Look at the visual as we work through this idea. A research question defines what to find out. A method explains how data are collected. A sample is the group or set observed. Question: How long is the wait at noon? Method: Record arrival and service times. Sample: Students observed during five lunch periods. Compare a named idea with an explanation built from concepts and principles.",
+    "scriptSha256": "6ed1e6807516d7974dd895515b0ed85c47ef9665d22671b43083c42f96f71350",
+    "sourceSha256": "9e4912bc2b13652a9274155030b10ad4a1c302dc9e32a64ceb7bc2aebf1c400f",
+    "audioPath": null
+  },
+  "g10-q4-m2": {
+    "transcript": "Look at the visual as we work through this idea. A technical definition explains the accepted meaning of a term. An operational definition explains how a particular study observes or measures it. Reading speed means how quickly someone reads. This study measures it as words read aloud correctly in one minute from a selected passage. The source automobile example contrasts technical details with practical use.",
+    "scriptSha256": "42907e7b8b756c92f368907fd6846b35e48ca75015311b10b765bd67a614d99d",
+    "sourceSha256": "0d26127b057a087ac6701e587c6b23a4df670a7cf97f4510a3bb4d8fb80681f8",
+    "audioPath": null
+  },
+  "g10-q4-m3": {
+    "transcript": "Look at the visual as we work through this idea. An expanded definition explains a term beyond a single sentence using details such as examples, parts, comparisons or purpose. A budget is a plan for using money. A school club budget might list expected income, supply costs and the money set aside for later. The source shows several ways to develop the meaning of speed beyond a short definition.",
+    "scriptSha256": "74679485673f69b1ed3f6e3a23fa555e75ed8d09a5c423df52af5da1198ac4f6",
+    "sourceSha256": "889382cceff0bb8d6419da94eba25852fd55e31da364d3d17f772c6384a57395",
+    "audioPath": null
+  }
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowDown, BookOpen, MessageSquare } from 'lucide-react';
 import { LessonNarration } from './LessonNarration';
+import narrations from '../data/curriculum/lessonNarrations.json';
 import guides from '../data/curriculum/lessonVisualGuides.json';
 
 type Node = { label: string; text: string; highlight?: string };
@@ -14,10 +15,8 @@ export function LessonWorkedVisual({ moduleId, sourceSha256 }: { moduleId: strin
   const chart = guide.kind === 'chart';
   const maximum = chart ? Math.max(...guide.nodes.map(node => Number(node.text))) : 0;
 
-  const spokenExample = guide.nodes.slice(0, 2).map(({ label, text }) =>
-    label + '. ' + text.replace(/ → /g, ' belongs to ').replace(/[.!?]$/, '') + '.'
-  ).join(' ');
-  const transcript = guide.title.replace(/[.!?]$/, '') + '. ' + spokenExample + ' ' + guide.notice;
+  const narration = (narrations as Partial<Record<string, { transcript: string; sourceSha256: string; audioPath: string | null }>>)[moduleId];
+  const matchingNarration = narration?.sourceSha256 === sourceSha256 ? narration : undefined;
 
   return (
     <figure className="rounded-xl border border-sky-200 bg-sky-50/60 p-4">
@@ -54,7 +53,7 @@ export function LessonWorkedVisual({ moduleId, sourceSha256 }: { moduleId: strin
         })}
       </ul>
       <p className="mt-3 text-sm leading-relaxed text-slate-700">{guide.notice}</p>
-      <LessonNarration key={moduleId} transcript={transcript} />
+      {matchingNarration && <LessonNarration key={moduleId} transcript={matchingNarration.transcript} audioPath={matchingNarration.audioPath} />}
     </figure>
   );
 }
