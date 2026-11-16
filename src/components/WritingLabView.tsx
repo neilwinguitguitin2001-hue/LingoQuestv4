@@ -38,7 +38,7 @@ export const WritingLabView: React.FC<WritingLabViewProps> = ({
   onBackToMap,
 }) => {
   const writingTitle = initialModule?.title ? `${initialModule.title} — Writing` : 'Free Writing';
-  const [useExternalAI,setUseExternalAI]=useState(false);
+  const [useExternalAI,setUseExternalAI]=useState(true);
   const [studentText, setStudentText] = useState('');
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [feedback, setFeedback] = useState<WritingFeedbackResult | null>(null);
@@ -68,6 +68,10 @@ export const WritingLabView: React.FC<WritingLabViewProps> = ({
     try {
       const data = useExternalAI ? await checkWriting(studentText, student) : generateOpenQuillFeedback(studentText);
       if (!mounted.current) return;
+      if (useExternalAI && data.checker !== 'groq-ai') {
+        setErrorMessage('AI checking is unavailable right now. Try again, or choose Local check below to check on this device.');
+        return;
+      }
       setFeedback(data);
       soundFX.playPass();
       onSaveSubmission({
@@ -80,7 +84,7 @@ export const WritingLabView: React.FC<WritingLabViewProps> = ({
       });
     } catch {
       if (!mounted.current) return;
-      setErrorMessage('The local check could not finish. Please try again.');
+      setErrorMessage(useExternalAI ? 'AI checking could not finish. Try again, or choose Local check.' : 'The local check could not finish. Please try again.');
     } finally {
       if (mounted.current) setIsAnalyzing(false);
     }
@@ -119,7 +123,7 @@ export const WritingLabView: React.FC<WritingLabViewProps> = ({
                 LingoQuest Writing Lab
               </h1>
               <p className="text-sky-100 text-sm mt-0.5">
-                Choose local checking or optional external AI checking. Review every suggestion with your teacher. Saved submissions still use your LingoQuest account.
+                AI checking is selected by default. You can choose local checking on your device instead. Review every suggestion with your teacher. Saved submissions still use your LingoQuest account.
               </p>
             </div>
           </div>
@@ -243,7 +247,7 @@ export const WritingLabView: React.FC<WritingLabViewProps> = ({
                 className="w-full p-4 rounded-2xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:bg-white text-sm text-slate-800 font-normal leading-relaxed resize-y transition"
               />
 
-              <fieldset className="rounded-2xl border border-sky-200 bg-sky-50 p-4 space-y-3 text-sm"><legend className="font-bold text-[#123B63] px-2">Choose how to check your writing</legend><label className="flex items-start gap-3"><input type="radio" name="writing-check-mode" checked={!useExternalAI} onChange={()=>setUseExternalAI(false)} className="mt-1"/><span><strong>Local check</strong> — limited rules on this device; no draft sent to Groq.</span></label><label className="flex items-start gap-3"><input type="radio" name="writing-check-mode" checked={useExternalAI} onChange={()=>setUseExternalAI(true)} className="mt-1"/><span><strong>AI Grammar Checker</strong> — sends this draft through LingoQuest to Groq. Zero Data Retention is reported enabled; Groq still receives/processes the draft and usage metadata.</span></label><p>Do not include names, learner numbers, passwords or sensitive information. Either check may save the draft and feedback through your account’s existing history flow. AI can be wrong; review suggestions with your teacher.</p><a href="#legal/ai" className="text-sky-800 underline font-semibold">Read the AI Transparency Statement</a></fieldset><p id="writing-check-limit" className="text-xs text-slate-500">10–5,000 characters per check. No background AI checks while typing. If AI cannot respond, a labelled local fallback may run.</p>
+              <fieldset className="rounded-2xl border border-sky-200 bg-sky-50 p-4 space-y-3 text-sm"><legend className="font-bold text-[#123B63] px-2">Choose how to check your writing</legend><label className="flex items-start gap-3"><input type="radio" name="writing-check-mode" checked={useExternalAI} onChange={()=>setUseExternalAI(true)} className="mt-1"/><span><strong>AI Grammar Checker</strong> — sends this draft through LingoQuest to Groq. Zero Data Retention is reported enabled; Groq still receives/processes the draft and usage metadata.</span></label><label className="flex items-start gap-3"><input type="radio" name="writing-check-mode" checked={!useExternalAI} onChange={()=>setUseExternalAI(false)} className="mt-1"/><span><strong>Local check</strong> — limited rules on this device; no draft sent to Groq.</span></label><p>Do not include names, learner numbers, passwords or sensitive information. Either check may save the draft and feedback through your account’s existing history flow. AI can be wrong; review suggestions with your teacher.</p><a href="#legal/ai" className="text-sky-800 underline font-semibold">Read the AI Transparency Statement</a></fieldset><p id="writing-check-limit" className="text-xs text-slate-500">10–5,000 characters per check. No background AI checks while typing. If AI cannot respond, you can retry or select Local check; it will not switch automatically.</p>
 
               {errorMessage && (
                 <div role="alert" className="flex items-center gap-2 p-3 rounded-xl bg-rose-50 border border-rose-200 text-rose-800 text-xs font-semibold">
