@@ -40,8 +40,9 @@ export function DashboardGuide({ accountId, role, currentView, onNavigate }: {
   const dashboard = role === 'student' ? 'STUDENT_DASHBOARD' : role === 'teacher' ? 'TEACHER' : 'ADMIN';
   const key = `lq-dashboard-guide-v2:${role}:${accountId}`;
   const [mode, setMode] = useState<'tour' | 'guide' | 'closed'>(() => {
+    if (role === 'division') return 'closed';
     try { return localStorage.getItem(key) ? 'closed' : 'tour'; }
-    catch { return 'tour'; }
+    catch { return 'closed'; }
   });
   const [index, setIndex] = useState(0);
   const headingId = useId();
@@ -52,6 +53,12 @@ export function DashboardGuide({ accountId, role, currentView, onNavigate }: {
     : role === 'principal' ? 'Principal tour' : 'Division admin tour';
   const step = steps[index];
   const visible = mode === 'tour' && (role === 'student' || currentView === dashboard || (step.target === 'class-map' && currentView === 'MAP'));
+
+  useEffect(() => {
+    if (visible && role !== 'division') {
+      try { localStorage.setItem(key, 'seen'); } catch {}
+    }
+  }, [visible, key, role]);
 
   const [muted, setMuted] = useState(() => {
     try { return localStorage.getItem('lq-tour-narration-muted') === 'true'; }
