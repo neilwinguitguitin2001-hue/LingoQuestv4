@@ -1,0 +1,2791 @@
+{
+  "g7-q1-m1": {
+    "kind": "analogy",
+    "title": "Part to whole, twice",
+    "notice": "Both arrows go from one part to the whole it belongs to. Reversing just one pair changes the relationship.",
+    "nodes": [
+      {
+        "label": "Part → whole",
+        "text": "Wheel → bicycle",
+        "page": 11,
+        "highlight": "Wheel"
+      },
+      {
+        "label": "Part → whole",
+        "text": "Page → book",
+        "page": 11,
+        "highlight": "Page"
+      }
+    ],
+    "sourceFileId": "1apMCFoA_8wiK--6IjOwDJ_3q8WIv8UX8",
+    "sourceSha256": "90d3d6aa4700af691bdb952c37c12918515f57c39ecc4e351c68839e8d13499d",
+    "original": true
+  },
+  "g7-q1-m2": {
+    "kind": "compare",
+    "title": "What does each viewing genre do?",
+    "notice": "Compare the purpose of each genre, rather than judging only by its pictures.",
+    "nodes": [
+      {
+        "label": "Animation",
+        "text": "Inanimate objects (such as puppets) or drawings appear to move",
+        "page": 15
+      },
+      {
+        "label": "Trailer",
+        "text": "a preview that gives highlights of the film that will be exhibited in the future",
+        "page": 15
+      },
+      {
+        "label": "Educational program",
+        "text": "educational activities designed and organized to achieve pre-determined learning objectives",
+        "page": 15
+      }
+    ],
+    "sourceFileId": "1UEs1q6ozrI70Mz9-na4jffSq-B8gdTmu",
+    "sourceSha256": "d2601e49d79cc421d3f6376d299ec9f71a21437747cb17ca0f26abe195f4f2a2"
+  },
+  "g7-q1-m3": {
+    "kind": "sentence",
+    "title": "The action stays; the subject changes",
+    "notice": "Follow the doer and receiver in these two versions of the same source example.",
+    "nodes": [
+      {
+        "label": "Active",
+        "text": "Maria boiled the egg.",
+        "page": 8,
+        "highlight": "Maria"
+      },
+      {
+        "label": "Passive",
+        "text": "The egg was boiled by Maria.",
+        "page": 8,
+        "highlight": "The egg"
+      },
+      {
+        "label": "Notice the subject",
+        "text": "either as doer or receiver of the action",
+        "page": 8
+      }
+    ],
+    "sourceFileId": "1TJzXG88JXkB3ENdig_20ZffPBXMzcqDY",
+    "sourceSha256": "288ab033ae500caf19bc6742c34e5f95e1d97696161153df51366b83d997aee0"
+  },
+  "g7-q1-m4": {
+    "kind": "timeline",
+    "title": "Completed actions in the past",
+    "notice": "The three highlighted verbs belong to a finished sequence, not a present routine.",
+    "nodes": [
+      {
+        "label": "First",
+        "text": "I finished the project",
+        "page": 11,
+        "highlight": "finished"
+      },
+      {
+        "label": "Next",
+        "text": "submitted on time",
+        "page": 11,
+        "highlight": "submitted"
+      },
+      {
+        "label": "Then",
+        "text": "received a good grade",
+        "page": 11,
+        "highlight": "received"
+      }
+    ],
+    "sourceFileId": "1EQ41sCKSPqb8RVeUxAt1sCCb5MD_idrg",
+    "sourceSha256": "ad559d2da3c00444ec22d66f59e46edffdc7e2217d41f822e51ce628dd02eac3"
+  },
+  "g7-q1-m5": {
+    "kind": "timeline",
+    "title": "Earlier than another past event",
+    "notice": "The meeting happened first. Notice had + past participle in the earlier action.",
+    "nodes": [
+      {
+        "label": "Earlier event",
+        "text": "Ann had met Roy",
+        "page": 9,
+        "highlight": "had met"
+      },
+      {
+        "label": "Later event",
+        "text": "you introduced him to us at the party",
+        "page": 9,
+        "highlight": "introduced"
+      },
+      {
+        "label": "Source sentence",
+        "text": "Ann had met Roy before you introduced him to us at the party.",
+        "page": 9,
+        "highlight": "before"
+      }
+    ],
+    "sourceFileId": "1t9TSBjO0G_0irvBwa2XmlKC0dgVDvcnO",
+    "sourceSha256": "382f13af9946f03dbbffe7ff8f7fa19b8c1f1700f9ca7256ad5ac6c6a472a6cf"
+  },
+  "g7-q1-m6": {
+    "kind": "speech",
+    "title": "The same message, two forms",
+    "notice": "Compare the quotation, pronoun, and verb in the direct and reported versions.",
+    "nodes": [
+      {
+        "label": "Direct speech",
+        "text": "Lizel said, “I like your story book.”",
+        "page": 8,
+        "highlight": "I like"
+      },
+      {
+        "label": "Reported speech",
+        "text": "Lizel said that she liked my story book.",
+        "page": 8,
+        "highlight": "she liked"
+      }
+    ],
+    "sourceFileId": "1gAUO7gcFkglj_RrLAqH4tCBs6N3cgyRR",
+    "sourceSha256": "543597484daf4d5f9527222d80b068a57e8418b3272e6c82aef0ea4b3c62e3e5"
+  },
+  "g7-q1-m7": {
+    "kind": "compare",
+    "title": "Recognize the phrase by its job",
+    "notice": "The highlighted groups are phrases within complete example sentences.",
+    "nodes": [
+      {
+        "label": "Verb phrase",
+        "text": "Mary might have been waiting outside for you.",
+        "page": 9,
+        "highlight": "might have been waiting"
+      },
+      {
+        "label": "Infinitive phrase",
+        "text": "She helped to build the roof.",
+        "page": 9,
+        "highlight": "to build the roof"
+      },
+      {
+        "label": "Prepositional phrase",
+        "text": "in the kitchen",
+        "page": 9,
+        "highlight": "in the kitchen"
+      }
+    ],
+    "sourceFileId": "1sWryZ6RZpLH27YGmIIgu4g9vdLHKDM-S",
+    "sourceSha256": "0b3b25c7e25062ecbc434a56799806ae0fa8815abc360339cf31ed537c98a20b"
+  },
+  "g7-q1-m8": {
+    "kind": "compare",
+    "title": "Can the clause stand alone?",
+    "notice": "Both kinds contain a subject and predicate. Compare whether they express a complete thought.",
+    "nodes": [
+      {
+        "label": "Clause",
+        "text": "A clause contains both a subject and a predicate.",
+        "page": 8
+      },
+      {
+        "label": "Two kinds",
+        "text": "independent clause and dependent clause",
+        "page": 8
+      },
+      {
+        "label": "Phrase contrast",
+        "text": "a phrase does not have both a subject and a verb",
+        "page": 8
+      }
+    ],
+    "sourceFileId": "1zSm8CYZjywHb7tykQNb-84V2hZsHtfF_",
+    "sourceSha256": "7b65f71dea3e87198b25dcb9778fe4856edb0932973b8a2c8ae37fbea9b39003"
+  },
+  "g7-q1-m9": {
+    "kind": "sentence",
+    "title": "Who or what + what happens",
+    "notice": "Use the complete source sentence to locate its subject and verb.",
+    "nodes": [
+      {
+        "label": "Source sentence",
+        "text": "Mr. Jose purchases new welding machines.",
+        "page": 8,
+        "highlight": "purchases"
+      },
+      {
+        "label": "Subject",
+        "text": "Mr. Jose",
+        "page": 8,
+        "highlight": "Mr. Jose"
+      },
+      {
+        "label": "A complete sentence",
+        "text": "a subject and a verb and expresses a complete thought",
+        "page": 8
+      }
+    ],
+    "sourceFileId": "1ZYNSlfcAd5Z7-ULbg8e1hVtX7tkTQlhG",
+    "sourceSha256": "a1305fac52ab040b4bd70c0a5a658fb6cebd54d66eda9da203a6ee67b28c79db"
+  },
+  "g7-q1-m10": {
+    "kind": "compare",
+    "title": "Choose a reading approach",
+    "notice": "Scanning looks for a particular detail; skimming seeks the overall idea.",
+    "nodes": [
+      {
+        "label": "Scanning",
+        "text": "When you look through a text very quickly to find specific details, it is called SCANNING.",
+        "page": 9
+      },
+      {
+        "label": "Source example",
+        "text": "when you are searching for a telephone number in a directory",
+        "page": 9
+      },
+      {
+        "label": "Skimming",
+        "text": "Skimming",
+        "page": 4
+      }
+    ],
+    "sourceFileId": "1-BTf7lLJxjP7GOtk_J0NW_wA-AqiWSNU",
+    "sourceSha256": "b17125ab6ea698927ee37d41e4bbfb6d20f0fd3fba18a888728c961fbff0a6e0"
+  },
+  "g7-q2-m1": {
+    "kind": "flow",
+    "title": "Listen, acknowledge, respond",
+    "notice": "Follow the source techniques as a listening checklist. These are strategies, not quiz tasks.",
+    "nodes": [
+      {
+        "label": "Attend",
+        "text": "Give the speaker your undivided attention",
+        "page": 9
+      },
+      {
+        "label": "Acknowledge",
+        "text": "Use your own body language and gestures to show that you are engaged.",
+        "page": 9
+      },
+      {
+        "label": "Clarify",
+        "text": "reflect on what is being said and to ask questions",
+        "page": 9
+      },
+      {
+        "label": "Wait",
+        "text": "Interrupting is a waste of time.",
+        "page": 9
+      }
+    ],
+    "sourceFileId": "1VxdAmC0tNrHn-UqycoT0XPK8IqZ1Gdu0",
+    "sourceSha256": "bbc1ab821389aa9539aa4087604e6173527dae5339d547bab9f3b004103646d7"
+  },
+  "g7-q2-m2": {
+    "kind": "flow",
+    "title": "From a search term to results",
+    "notice": "A search engine searches an index and returns a list; the search term is the input.",
+    "nodes": [
+      {
+        "label": "Input",
+        "text": "users enter the desired search term into the search field",
+        "page": 10
+      },
+      {
+        "label": "Search",
+        "text": "looks through its index for relevant websites",
+        "page": 10
+      },
+      {
+        "label": "Output",
+        "text": "displays them in the form of a list",
+        "page": 10
+      }
+    ],
+    "sourceFileId": "1SWUwUhtn1gVNoxSA9RfNrPapdxifkKPn",
+    "sourceSha256": "9c9c7d77afba51598aa9bcdc7795366de6cb8527325d296839b9ee28f649e08c"
+  },
+  "g7-q2-m3": {
+    "kind": "compare",
+    "title": "Match the source to the information needed",
+    "notice": "Different sources serve different research purposes.",
+    "nodes": [
+      {
+        "label": "Books",
+        "text": "cover virtually any topic, fact or fiction",
+        "page": 11
+      },
+      {
+        "label": "Encyclopedias",
+        "text": "collections of short, factual entries",
+        "page": 5
+      },
+      {
+        "label": "Journals",
+        "text": "collection of articles usually written by scholars",
+        "page": 5
+      }
+    ],
+    "sourceFileId": "1JdjukGGll0z4pk8b3YErLRFr9yC5OB9Q",
+    "sourceSha256": "feca4e9440e6c89c3db792932a83c57097207eae52e5aaa7ebf7d8e871c08d0a"
+  },
+  "g7-q2-m4": {
+    "kind": "compare",
+    "title": "Three ways to restate information",
+    "notice": "Compare what each form keeps from the original passage.",
+    "nodes": [
+      {
+        "label": "Summary",
+        "text": "a shortened version of a text that highlights its key points",
+        "page": 9
+      },
+      {
+        "label": "Precis",
+        "text": "the gist of a passage expressed in as few words as possible",
+        "page": 23
+      },
+      {
+        "label": "Paraphrase",
+        "text": "Paraphrase",
+        "page": 1
+      }
+    ],
+    "sourceFileId": "1RUjib0EJWOA5fGzU2SG_eq14EO417G_N",
+    "sourceSha256": "e4deca49c4b050e5ec70dfcb4c19ebccb610e2a4b8425f8694296c614dcd702f"
+  },
+  "g7-q2-m7": {
+    "kind": "compare",
+    "title": "Two ways a reader follows information",
+    "notice": "Reading order is the important distinction; a picture alone does not explain it.",
+    "nodes": [
+      {
+        "label": "Linear",
+        "text": "traditional text that needs to be read from beginning to end",
+        "page": 9
+      },
+      {
+        "label": "Examples",
+        "text": "Novels, poems, short stories, letters, educational texts",
+        "page": 9
+      },
+      {
+        "label": "Non-linear",
+        "text": "non-sequential",
+        "page": 9
+      }
+    ],
+    "sourceFileId": "16sSkMj9xRyjcGBPwG99biDzCWlwBXnZ0",
+    "sourceSha256": "3b667141f196367bbb55e04a7d84e3b3c759c5f4e02da0355597753519b4c06a"
+  },
+  "g7-q3-m1": {
+    "kind": "concept-map",
+    "title": "Choose a medium for the message",
+    "notice": "These resources communicate through different forms. Match them to the purpose of the presentation.",
+    "nodes": [
+      {
+        "label": "Audio",
+        "text": "audio",
+        "page": 6
+      },
+      {
+        "label": "Video",
+        "text": "video",
+        "page": 6
+      },
+      {
+        "label": "Animation",
+        "text": "animation",
+        "page": 6
+      },
+      {
+        "label": "Multimedia",
+        "text": "computer information can be represented through audio, video, and animation",
+        "page": 9
+      }
+    ],
+    "sourceFileId": "1XGFVqCY1K4-gtPN3YwEqxKb9Z0b73sfQ",
+    "sourceSha256": "48769ec302d1f258f4816883026a447d747c05226eb26331fcb9040eaaced146"
+  },
+  "g7-q3-m2": {
+    "kind": "compare",
+    "title": "How a speech is delivered",
+    "notice": "Preparation and delivery are connected, but they are not the same action.",
+    "nodes": [
+      {
+        "label": "Delivery",
+        "text": "the presentation of the speech you studied, planned, described, and practiced",
+        "page": 8
+      },
+      {
+        "label": "Extemporaneous",
+        "text": "prepared and practiced in advance",
+        "page": 9
+      },
+      {
+        "label": "Verbal communication",
+        "text": "language, both written and spoken",
+        "page": 8
+      }
+    ],
+    "sourceFileId": "1tbAVr7c312GCn6KDd7MDQWaMRpXAuavk",
+    "sourceSha256": "811c4185a5ba9caec5a9b3adb4822de387448a39a6c039c076532138e62a6aac"
+  },
+  "g7-q3-m3": {
+    "kind": "story",
+    "title": "Read the story in its own cultural setting",
+    "notice": "Keep the named source story and its setting together when considering the characters.",
+    "nodes": [
+      {
+        "label": "Story",
+        "text": "The Good Prince Bantugan",
+        "page": 7
+      },
+      {
+        "label": "Setting",
+        "text": "kingdom of Bumbaran",
+        "page": 9
+      },
+      {
+        "label": "Conflict clue",
+        "text": "the king was not contented",
+        "page": 9
+      },
+      {
+        "label": "Literary form",
+        "text": "Folk epic is a story that evolves from the people of a civilization and their lives.",
+        "page": 8
+      }
+    ],
+    "sourceFileId": "167TTGYfS88AeEOraMBJera8zJay12oL5",
+    "sourceSha256": "e55b0c78afb0f762032aa737185987f01e95056829cb174aad86592af0e31abf"
+  },
+  "g7-q3-m4": {
+    "kind": "compare",
+    "title": "Belief and conviction",
+    "notice": "Notice the difference between considering something true and being firmly convinced.",
+    "nodes": [
+      {
+        "label": "Belief",
+        "text": "something that an individual considers as the truth",
+        "page": 10
+      },
+      {
+        "label": "Conviction",
+        "text": "a firm belief on something that an individual is convinced of",
+        "page": 11
+      },
+      {
+        "label": "Information to examine",
+        "text": "statistical data",
+        "page": 11,
+        "highlight": "statistical"
+      }
+    ],
+    "sourceFileId": "1ZvBNqtLkb62_KqW2_VOHeRM8PXcWv3Uo",
+    "sourceSha256": "46d033dfe1a477881e0ba770b2df85ca3c153a9ce201ca323415344df9fc7508"
+  },
+  "g7-q3-m5": {
+    "kind": "evidence",
+    "title": "Connect a general idea to its support",
+    "notice": "Supporting details must explain the main idea. Giving a source also matters.",
+    "nodes": [
+      {
+        "label": "General statement",
+        "text": "a main idea that is supported by specific statements or details",
+        "page": 11
+      },
+      {
+        "label": "Supporting details",
+        "text": "facts, examples, reasons, facts or statistics",
+        "page": 11
+      },
+      {
+        "label": "Cite",
+        "text": "give the source where you found your information",
+        "page": 18
+      }
+    ],
+    "sourceFileId": "1O7Uz5PO8R7RBLJpxEIXqBY-YGV9sO-m1",
+    "sourceSha256": "fb5ebbd58820e0e214fedcd90281fc6a35664f9859aa925bbf664dfa6fab0080"
+  },
+  "g7-q3-m6": {
+    "kind": "compare",
+    "title": "Can the statement be checked?",
+    "notice": "Compare the kind of support required, rather than deciding by how confident a speaker sounds.",
+    "nodes": [
+      {
+        "label": "Fact",
+        "text": "a specific detail that can be proven as true based on objective evidence",
+        "page": 6
+      },
+      {
+        "label": "Opinion",
+        "text": "a feeling, judgment, belief, or conclusion that cannot be proven true by objective evidence",
+        "page": 10
+      },
+      {
+        "label": "Evidence",
+        "text": "physical evidence, an eyewitness account, or the result of an accepted scientific method",
+        "page": 10
+      }
+    ],
+    "sourceFileId": "1288t5OrgK5v2GD3tPes_lZYA9Stb9eTl",
+    "sourceSha256": "1b2d933a2b3e01c760fd901f4572ebb82fe227cab595c30ac14ac942b98d812f"
+  },
+  "g7-q3-m7": {
+    "kind": "speech",
+    "title": "A question asks for missing information",
+    "notice": "The reply supplies a time, not yes or no.",
+    "nodes": [
+      {
+        "label": "Question",
+        "text": "When do you finish high school?",
+        "page": 9,
+        "highlight": "When"
+      },
+      {
+        "label": "Reply",
+        "text": "Next year.",
+        "page": 9
+      },
+      {
+        "label": "Another question",
+        "text": "Where do they live?",
+        "page": 9,
+        "highlight": "Where"
+      }
+    ],
+    "sourceFileId": "1KMLSCYJfYvlZ9AK9xaZzqAg_4gKVYyTV",
+    "sourceSha256": "be7f420694ae484ec784388a16a149bc08db08103edc95809c2c6f4963828edf"
+  },
+  "g7-q4-m1": {
+    "kind": "compare",
+    "title": "Make writing academic",
+    "notice": "Compare the features of the writing, not how long its words are.",
+    "nodes": [
+      {
+        "label": "Tone",
+        "text": "formal tone and style",
+        "page": 8
+      },
+      {
+        "label": "Support",
+        "text": "evidence-based claims",
+        "page": 8
+      },
+      {
+        "label": "Organization",
+        "text": "consistent logical organization",
+        "page": 8
+      },
+      {
+        "label": "Objectivity",
+        "text": "facts rather than personal feelings or biases",
+        "page": 12
+      }
+    ],
+    "sourceFileId": "1uo8karug9R3IQ5mwreSUD9sck_qYJUwG",
+    "sourceSha256": "92e4a4d82b1b340b08592126441e6498d6318ef441c36e7dc301aeacaec53f4d"
+  },
+  "g7-q4-m2": {
+    "kind": "compare",
+    "title": "Words and wordless messages",
+    "notice": "The source describes both channels of interpersonal communication.",
+    "nodes": [
+      {
+        "label": "Verbal",
+        "text": "the use of sounds and words to express yourself",
+        "page": 6
+      },
+      {
+        "label": "Non-verbal",
+        "text": "body language including eye contact, facial expressions, gestures",
+        "page": 9
+      },
+      {
+        "label": "Conversation",
+        "text": "people can exchange information and maintain social relationships",
+        "page": 10
+      }
+    ],
+    "sourceFileId": "1m7Up--fA7OBTyn7BN1bEP3mIYadSNEXg",
+    "sourceSha256": "877422b66ffe55f6273fc781257496f4e6c22ed9e20b3f48cbe22b37b077e440"
+  },
+  "g7-q4-m3": {
+    "kind": "compare",
+    "title": "Important or just interesting?",
+    "notice": "Keep the main idea in view while choosing which information matters.",
+    "nodes": [
+      {
+        "label": "Important",
+        "text": "main ideas or key topics",
+        "page": 10
+      },
+      {
+        "label": "Interesting",
+        "text": "interesting but not necessary for understanding",
+        "page": 10
+      },
+      {
+        "label": "Filtering",
+        "text": "selecting only the information necessary to better understand the selection",
+        "page": 10
+      }
+    ],
+    "sourceFileId": "1g8hcn_ImIe-WKcSTeY56w44PGBubpmJG",
+    "sourceSha256": "9560512d2680587c4257926f8ed47324dadefd12ae2f2dbcd77e24cf33a0365a"
+  },
+  "g7-q4-m4": {
+    "kind": "compare",
+    "title": "Two checks before accepting a message",
+    "notice": "Honesty and correctness are related checks. Neither is established just by the appearance of a post.",
+    "nodes": [
+      {
+        "label": "Truth",
+        "text": "the quality of being honest and not containing or telling any lie",
+        "page": 9
+      },
+      {
+        "label": "Accuracy",
+        "text": "the fact of being exact or correct",
+        "page": 9
+      },
+      {
+        "label": "Imposter content",
+        "text": "genuine sources are impersonated",
+        "page": 10
+      }
+    ],
+    "sourceFileId": "1lPBBs8XVkhfK2qkyjyiaMlmoBOewUUYq",
+    "sourceSha256": "e69507a2530c13b571ee8e94ce38577e67b8236303517ebe5e25993512c35b29"
+  },
+  "g7-q4-m5": {
+    "kind": "compare",
+    "title": "Where does the struggle happen?",
+    "notice": "Identify whether the opposing force is within the character or outside the character.",
+    "nodes": [
+      {
+        "label": "Internal conflict",
+        "text": "a character struggles with their own opposing desires or beliefs",
+        "page": 10
+      },
+      {
+        "label": "External conflict",
+        "text": "sets a character against something or someone beyond their control",
+        "page": 10
+      }
+    ],
+    "sourceFileId": "1EMDuPKmHSu6jvbn4_QuFePYhRcRRwmOL",
+    "sourceSha256": "50beedf34e2512254fee2c0162dc6d8721da89b9b5fc90be23c447b141582902"
+  },
+  "g7-q4-m6": {
+    "kind": "story",
+    "title": "Keep the story and its elements connected",
+    "notice": "Use the source setting and character names when following the legend.",
+    "nodes": [
+      {
+        "label": "Story",
+        "text": "The Legend of Mayon Volcano",
+        "page": 9
+      },
+      {
+        "label": "Setting",
+        "text": "the province of Albay in the Bicol Region",
+        "page": 9
+      },
+      {
+        "label": "Character",
+        "text": "Daragang Magayon",
+        "page": 9
+      },
+      {
+        "label": "Theme",
+        "text": "the center or main idea of the story",
+        "page": 12
+      }
+    ],
+    "sourceFileId": "1ghEwNQhrfeTOG31vbl5Xg_4ZmTY21H7Y",
+    "sourceSha256": "946c6ec75e1d752859db0b02ed450db45aecd39a5b93623f3ce71b04efadd026"
+  },
+  "g7-q4-m7": {
+    "kind": "concept-map",
+    "title": "A short story has connected elements",
+    "notice": "Use each element to understand the same story, rather than treating the labels as separate facts.",
+    "nodes": [
+      {
+        "label": "Setting",
+        "text": "where and when the story takes place",
+        "page": 8
+      },
+      {
+        "label": "Plot",
+        "text": "the main sequence of events that make up the story",
+        "page": 8
+      },
+      {
+        "label": "Conflict",
+        "text": "usually the heart of the short story",
+        "page": 9
+      },
+      {
+        "label": "Theme",
+        "text": "the main idea, lesson, or message in the short story",
+        "page": 9
+      }
+    ],
+    "sourceFileId": "1sL4LQ7ZGbflxAgcsMqzQVyKKwBkvnYQb",
+    "sourceSha256": "b5fffc17981d5073acb214c7a4bc9a75d0e50bff388073b836eae5f283223665"
+  },
+  "g7-q4-m8": {
+    "kind": "structure",
+    "title": "Build around the main idea",
+    "notice": "The thesis guides the information developed in the essay.",
+    "nodes": [
+      {
+        "label": "Thesis statement",
+        "text": "one-sentence statement that expresses the main idea of an essay or text",
+        "page": 11
+      },
+      {
+        "label": "Introduction",
+        "text": "Introduction",
+        "page": 6
+      },
+      {
+        "label": "Body",
+        "text": "Body",
+        "page": 6
+      },
+      {
+        "label": "Conclusion",
+        "text": "Conclusion",
+        "page": 6
+      }
+    ],
+    "sourceFileId": "1TksdIdgLSlBkJNPMWimwIpNIYP0P4QqO",
+    "sourceSha256": "421c92d53da7010f042ab14126e7d03f62ca29228414124133595457b29b4d5b"
+  },
+  "g8-q1-m1": {
+    "kind": "annotation",
+    "title": "Use the clue, then infer the word",
+    "notice": "The phrase not to reveal explains why the writer used another name.",
+    "nodes": [
+      {
+        "label": "Source sentence",
+        "text": "Dr. Jose Rizal used several pseudonyms so as not to reveal his real identity.",
+        "page": 10,
+        "highlight": "pseudonyms"
+      },
+      {
+        "label": "Context clue",
+        "text": "not to reveal",
+        "page": 10,
+        "highlight": "not to reveal"
+      },
+      {
+        "label": "Meaning given in the discussion",
+        "text": "pen names",
+        "page": 10
+      }
+    ],
+    "sourceFileId": "1KpWtXEc3QWjR4v74FdzWMvkTN86gclDC",
+    "sourceSha256": "90c835f4f0cfdb4315d29749fcb5945d75e432f317b9035cde913371d80c9f63"
+  },
+  "g8-q1-m2": {
+    "kind": "structure",
+    "title": "Follow a bibliography entry",
+    "notice": "The example names the author, book, publication place, publisher, and year. Read the parts in order.",
+    "nodes": [
+      {
+        "label": "Author",
+        "text": "Bolante, Christopher.",
+        "page": 11
+      },
+      {
+        "label": "Book title",
+        "text": "Expressing One’s Self Through Literature.",
+        "page": 11
+      },
+      {
+        "label": "Publication details",
+        "text": "Binyan: Bughaw Publishing, Inc., 2017.",
+        "page": 11
+      },
+      {
+        "label": "Why cite?",
+        "text": "It gives credit to the authors.",
+        "page": 11
+      }
+    ],
+    "sourceFileId": "1klN3fLuIAtlkp29tlUQlBNJhf_AA_Yvx",
+    "sourceSha256": "050b788edf883e83238a5b32718d018708270813af76c581fbfd1a8326781566"
+  },
+  "g8-q1-m3": {
+    "kind": "compare",
+    "title": "A modal changes the certainty",
+    "notice": "Compare the two source sentences. Might introduces possibility.",
+    "nodes": [
+      {
+        "label": "Statement",
+        "text": "His 75-year-old mother is too old to ride a horse.",
+        "page": 9
+      },
+      {
+        "label": "With a modal",
+        "text": "His 75-year-old mother might be too old to ride a horse.",
+        "page": 9,
+        "highlight": "might"
+      },
+      {
+        "label": "Function",
+        "text": "expresses the possibility",
+        "page": 9
+      }
+    ],
+    "sourceFileId": "1ShkzGV028s4rpy9BwCEIn_vtwAZ9mAEz",
+    "sourceSha256": "4545b52ba7eec7d88b6fec2c96c7ca2d64b55d6eece2f6711550439dc5ab20cc"
+  },
+  "g8-q1-m4": {
+    "kind": "sentence",
+    "title": "A connector shows the relationship",
+    "notice": "And adds equally connected ideas; but introduces a contrast.",
+    "nodes": [
+      {
+        "label": "Addition",
+        "text": "Threats and trials were rough.",
+        "page": 9,
+        "highlight": "and"
+      },
+      {
+        "label": "Contrast",
+        "text": "Life is full of challenges but meant to be well.",
+        "page": 9,
+        "highlight": "but"
+      },
+      {
+        "label": "Connection",
+        "text": "words and phrases that connect ideas of sentences and paragraphs for coherence",
+        "page": 10
+      }
+    ],
+    "sourceFileId": "1R5AKCVhlXkNR4fgukMe9OlU-tg6pmKKj",
+    "sourceSha256": "4a2f8a0f3bf536c0f85ce5f85abaea1c430d9f5a7c31d7f283e9c0151d623cdc"
+  },
+  "g8-q1-m5": {
+    "kind": "speech",
+    "title": "Notice the language of a reaction",
+    "notice": "These source lines express an emotion and a stand. Notice the words doing that work.",
+    "nodes": [
+      {
+        "label": "Emotion",
+        "text": "The possibility of you getting sick scares me.",
+        "page": 11,
+        "highlight": "scares"
+      },
+      {
+        "label": "Stand",
+        "text": "No, Noel. I strongly disagree.",
+        "page": 11,
+        "highlight": "strongly disagree"
+      },
+      {
+        "label": "Function",
+        "text": "verbs used to highlight emotions and opinions",
+        "page": 10
+      }
+    ],
+    "sourceFileId": "1-OdUX2OwFdLOZnWn7IN7TWZqKnHxBNNi",
+    "sourceSha256": "76bf7e1ae3a8b3a6142eff932f8c4f7c4b6964443658ad9e3fbd53ccbc390fd4"
+  },
+  "g8-q2-m1": {
+    "kind": "chart",
+    "title": "Read labels before interpreting the values",
+    "notice": "Compare the enrollment counts for the two sections. The rows and columns tell you what each number represents.",
+    "nodes": [
+      {
+        "label": "Gumamela: male",
+        "text": "20",
+        "page": 2
+      },
+      {
+        "label": "Gumamela: female",
+        "text": "30",
+        "page": 8
+      },
+      {
+        "label": "Rose: male",
+        "text": "25",
+        "page": 2
+      },
+      {
+        "label": "Rose: female",
+        "text": "20",
+        "page": 2
+      }
+    ],
+    "sourceFileId": "1oWjNKD0cguMcot0EFP49EO3EmG93p0a_",
+    "sourceSha256": "065ba5dbc6dd315752a64580f213ad07e10d8a3f68932057092385c7f97e8756"
+  },
+  "g8-q2-m2": {
+    "kind": "annotation",
+    "title": "Spot the opinion-marking phrase",
+    "notice": "The opening words signal that the speaker is expressing a view.",
+    "nodes": [
+      {
+        "label": "Source example",
+        "text": "I feel happy about being a Filipino.",
+        "page": 10,
+        "highlight": "I feel"
+      },
+      {
+        "label": "Source example",
+        "text": "It seems that Filipinos have strong family ties.",
+        "page": 10,
+        "highlight": "It seems"
+      },
+      {
+        "label": "Signal phrase",
+        "text": "In my opinion",
+        "page": 9
+      }
+    ],
+    "sourceFileId": "1zVgUbckMgAclELyG9qWmGDZ9sP-oKAaC",
+    "sourceSha256": "365ef892fbaa44169607a5dbc929a16ce5d06b5f0f68624db1d9f85f47fdc953"
+  },
+  "g8-q2-m3": {
+    "kind": "compare",
+    "title": "The same topic in two forms",
+    "notice": "Both forms address diversity; compare how they present the message.",
+    "nodes": [
+      {
+        "label": "Infographic",
+        "text": "diversity was discussed in short phrases",
+        "page": 10
+      },
+      {
+        "label": "Print text",
+        "text": "diversity was discussed in sentences",
+        "page": 10
+      },
+      {
+        "label": "Shared topic",
+        "text": "understanding and recognizing our differences",
+        "page": 10
+      }
+    ],
+    "sourceFileId": "1I4ESAlBAY81uH6HCLh6kj2uWJcHMVKig",
+    "sourceSha256": "9d6dce2bfb794732ab1d532469bb0ad95936a93f811c504c3bda1fc328569928"
+  },
+  "g8-q2-m4": {
+    "kind": "compare",
+    "title": "Similarities and differences do different jobs",
+    "notice": "Use both kinds of observation before forming an evidence-based opinion.",
+    "nodes": [
+      {
+        "label": "Comparing",
+        "text": "looking at the similarities of two things or ideas",
+        "page": 11
+      },
+      {
+        "label": "Contrasting",
+        "text": "looking at the differences between two things or ideas",
+        "page": 11
+      },
+      {
+        "label": "Use the evidence",
+        "text": "form our own informed and evidence-based opinions",
+        "page": 11
+      }
+    ],
+    "sourceFileId": "1wCe9PW_bnf77A_Nzyc-5r_GAl5xtpKGC",
+    "sourceSha256": "324e9c24cb9265c1d602388a193adeaca559e3b44417247224fa54f890d5c33e"
+  },
+  "g8-q2-m5": {
+    "kind": "compare",
+    "title": "Literal words or figurative meaning?",
+    "notice": "The distinction depends on how the message is expressed, not only whether it is positive or negative.",
+    "nodes": [
+      {
+        "label": "Literal",
+        "text": "the words or phrases mean exactly what they are supposed to mean",
+        "page": 12
+      },
+      {
+        "label": "Figurative",
+        "text": "implicitly expressed and departs from the dictionary meaning",
+        "page": 12
+      },
+      {
+        "label": "Literal appreciation",
+        "text": "I appreciate every little thing you do.",
+        "page": 13,
+        "highlight": "appreciate"
+      }
+    ],
+    "sourceFileId": "1YLsi3vwmUaqkpjuBUnBaao-gKzaDr_xs",
+    "sourceSha256": "cc9346ca0a44b78c16cc03e719cfb711674ccd5d5dd2a054384a5ff89e8cffb1"
+  },
+  "g8-q3-m1": {
+    "kind": "compare",
+    "title": "Check evidence and wording",
+    "notice": "The author’s choices can reveal a one-sided presentation. Inspect both support and diction.",
+    "nodes": [
+      {
+        "label": "Biased presentation",
+        "text": "Focuses on one side",
+        "page": 9
+      },
+      {
+        "label": "Unbiased presentation",
+        "text": "Focuses on both sides",
+        "page": 9
+      },
+      {
+        "label": "Diction",
+        "text": "the words or expressions that help convey the stand of the author towards an issue",
+        "page": 10
+      }
+    ],
+    "sourceFileId": "1EI3Ec8xFWb_YgecUk35TMZqXSa1CA_9m",
+    "sourceSha256": "44709f58c13af907b409a96a37a5a6be7405b36c9a29a1a1670af940925ae64c"
+  },
+  "g8-q3-m2": {
+    "kind": "annotation",
+    "title": "A claim can leave something out",
+    "notice": "The source’s card-stacking example distinguishes what is promoted from what is omitted.",
+    "nodes": [
+      {
+        "label": "Technique",
+        "text": "Card Stacking",
+        "page": 6
+      },
+      {
+        "label": "What is shown",
+        "text": "shows the product’s best features",
+        "page": 11
+      },
+      {
+        "label": "What is hidden",
+        "text": "omits its potential problems",
+        "page": 11
+      },
+      {
+        "label": "Source poster claim",
+        "text": "no trans-fat",
+        "page": 11,
+        "highlight": "no trans-fat"
+      }
+    ],
+    "sourceFileId": "1NsuF8UwNC_AsKYqFuq1pEGgGUPoHQTb6",
+    "sourceSha256": "42be5021af48ae1ac8b3823275f9e0fed15b33a3d98e7925e0faa51c4a1082bf"
+  },
+  "g8-q3-m3": {
+    "kind": "concept-map",
+    "title": "Different lenses for an issue",
+    "notice": "These categories help explain what kind of problem a text discusses. An issue may overlap categories.",
+    "nodes": [
+      {
+        "label": "Social",
+        "text": "prevent the society from functioning at the most desirable level",
+        "page": 12
+      },
+      {
+        "label": "Moral",
+        "text": "do not conform to the shared norms and values",
+        "page": 13
+      },
+      {
+        "label": "Economic",
+        "text": "scarcity of resources",
+        "page": 6
+      },
+      {
+        "label": "Overlap in the source",
+        "text": "Crime is a social issue and at the same time a moral issue",
+        "page": 13
+      }
+    ],
+    "sourceFileId": "1OLsb1l_RIYEM-c2IJFdshKFfl1NF3x--",
+    "sourceSha256": "7251b5af10835d03221a7a0d6434ac1f818bd4fcbdd05229ad9dc5df88983033"
+  },
+  "g8-q3-m4": {
+    "kind": "story",
+    "title": "Read literature in its cultural setting",
+    "notice": "Keep the source work, its characters, and its cultural background connected.",
+    "nodes": [
+      {
+        "label": "Chinese story",
+        "text": "The Soul of the Great Bell",
+        "page": 12
+      },
+      {
+        "label": "Characters",
+        "text": "Ko-Ngai",
+        "page": 12,
+        "highlight": "Ko-Ngai"
+      },
+      {
+        "label": "Japanese folktale",
+        "text": "Story of the Aged Mother",
+        "page": 12
+      },
+      {
+        "label": "What literature reflects",
+        "text": "the background of a certain culture",
+        "page": 6
+      }
+    ],
+    "sourceFileId": "1H9rlu6XLKaNU-g2dVpjwDBj5UYwRBbZ_",
+    "sourceSha256": "eda3f6177f5361a1db77c78e5537c7ffb99eea4e88d9f10ad55ab1b46c396671"
+  },
+  "g8-q3-m5": {
+    "kind": "annotation",
+    "title": "Follow the connector between ideas",
+    "notice": "The source explains what each highlighted cohesive device contributes.",
+    "nodes": [
+      {
+        "label": "Add",
+        "text": "Stay healthy and enjoy learning with us.",
+        "page": 12,
+        "highlight": "and"
+      },
+      {
+        "label": "Conclude",
+        "text": "Therefore, we do not have to worry anymore.",
+        "page": 12,
+        "highlight": "Therefore"
+      },
+      {
+        "label": "Contrast",
+        "text": "However, my parents told me to stay home",
+        "page": 12,
+        "highlight": "However"
+      }
+    ],
+    "sourceFileId": "1exjrqFhpwJGvh0q9o8GKbJlwu-DvcNN1",
+    "sourceSha256": "dd7004c850167dd89684037d81cb47f4383da4120192ed3fa2ae9b1c6a42ec3a"
+  },
+  "g8-q3-m6": {
+    "kind": "compare",
+    "title": "Keep sentence elements parallel",
+    "notice": "Compare the forms after enjoys. Reading pairs with writing in the corrected source example.",
+    "nodes": [
+      {
+        "label": "Not parallel",
+        "text": "James enjoys reading more than to write.",
+        "page": 11,
+        "highlight": "to write"
+      },
+      {
+        "label": "Parallel",
+        "text": "James enjoys reading more than writing.",
+        "page": 11,
+        "highlight": "writing"
+      },
+      {
+        "label": "Rule",
+        "text": "the same construction for sentence elements that are the same in function",
+        "page": 10
+      }
+    ],
+    "sourceFileId": "1bs_SOxJUfyQ0mu0aR8XncjnvGTH8MBU9",
+    "sourceSha256": "93039f23591955214dfdbcd6e6cd0e3d54865471b869450cb7824be08c200075"
+  },
+  "g8-q4-m1": {
+    "kind": "concept-map",
+    "title": "Match the pattern to the purpose",
+    "notice": "These are different ways to organize ideas; they are not steps to use in every paragraph.",
+    "nodes": [
+      {
+        "label": "General to particular",
+        "text": "general topic by presenting specific details",
+        "page": 11
+      },
+      {
+        "label": "Cause and effect",
+        "text": "cause and effect",
+        "page": 5
+      },
+      {
+        "label": "Claim and counterclaim",
+        "text": "claim-counterclaim",
+        "page": 6
+      },
+      {
+        "label": "Problem and solution",
+        "text": "problem-solution",
+        "page": 5
+      }
+    ],
+    "sourceFileId": "1eAL4NkVXLLqTzBlTmpiUrnb9-ahMRnHP",
+    "sourceSha256": "4a2804fa585107dc99cff3f837202a643369038e90b894ec2cabe1912e6e9d5a"
+  },
+  "g8-q4-m2": {
+    "kind": "structure",
+    "title": "An outline makes levels visible",
+    "notice": "Use the hierarchy to distinguish a major topic from its supporting details.",
+    "nodes": [
+      {
+        "label": "Sentence outline",
+        "text": "in sentence form",
+        "page": 6
+      },
+      {
+        "label": "Topic outline",
+        "text": "in the form of words and phrases",
+        "page": 13
+      },
+      {
+        "label": "Supporting details",
+        "text": "additional information to clarify or prove",
+        "page": 14
+      },
+      {
+        "label": "Purpose",
+        "text": "organizing written ideas about a topic into a logical order",
+        "page": 11
+      }
+    ],
+    "sourceFileId": "1UwbpVm8X7puuqzUOewpR7Aet8_xhog0S",
+    "sourceSha256": "eed2eacbc6a82e16cbb8b84860c2e5ef89eeca2a437a365f2e6ded33a64af7c5"
+  },
+  "g8-q4-m3": {
+    "kind": "compare",
+    "title": "A summary retells; synthesis adds insight",
+    "notice": "Both source paragraphs discuss The Lion and the Mouse, but they do different work.",
+    "nodes": [
+      {
+        "label": "Summary",
+        "text": "a ferocious lion spares a timid, little mouse",
+        "page": 10
+      },
+      {
+        "label": "Later event",
+        "text": "the mouse later saved the lion",
+        "page": 10
+      },
+      {
+        "label": "Synthesis",
+        "text": "we all have the power to make a difference in the lives others",
+        "page": 10
+      },
+      {
+        "label": "Notice",
+        "text": "includes insights which give a new and deeper meaning to the text",
+        "page": 11
+      }
+    ],
+    "sourceFileId": "13eeDpbAAC6M_17Ju8dnHyunYs86ZcfUs",
+    "sourceSha256": "1a4ab9640bea06a5e4d6012ae16fe17ab745cab1d5b8c2438d794c59a2312855"
+  },
+  "g8-q4-m4": {
+    "kind": "structure",
+    "title": "Keep the paragraph on one topic",
+    "notice": "The topic sentence controls the paragraph; the other parts develop and close that idea.",
+    "nodes": [
+      {
+        "label": "Source topic sentence",
+        "text": "There are three reasons why I prefer walking to other physical activities.",
+        "page": 11,
+        "highlight": "three reasons"
+      },
+      {
+        "label": "Support",
+        "text": "elaborate your topic by including specific details or evidences",
+        "page": 11
+      },
+      {
+        "label": "Close",
+        "text": "concluding sentence",
+        "page": 6
+      },
+      {
+        "label": "Unity",
+        "text": "all sentences in the paragraph talk about one central idea",
+        "page": 6
+      }
+    ],
+    "sourceFileId": "1LgwsCPEIfrKJinfj6toRLACoF6mO8Wo-",
+    "sourceSha256": "4fc02356c51ab5766891ee8c09c032c8fed3c18227ab21d6bffea2a5c3ca9dcd"
+  },
+  "g8-q4-m5": {
+    "kind": "story",
+    "title": "Notice what each text is trying to do",
+    "notice": "Keep the source examples separate: one recounts events, while the other explains a topic.",
+    "nodes": [
+      {
+        "label": "Narrative example",
+        "text": "Friendship Detour",
+        "page": 11
+      },
+      {
+        "label": "Narrative structure",
+        "text": "Presents events in chronological order or causal relationship",
+        "page": 11
+      },
+      {
+        "label": "Explanation example",
+        "text": "Why Sleep is Important",
+        "page": 11
+      },
+      {
+        "label": "Explanation detail",
+        "text": "Sleep lets your mind recharge and process information.",
+        "page": 11
+      }
+    ],
+    "sourceFileId": "1oXJl0BpCaV0CV6o8di7e1vrE0wCJoJj1",
+    "sourceSha256": "4f8d674b556db1efa21e0de8174b9e8bb079e6824e3c13ab2c3d6a3b96e5b0b5"
+  },
+  "g8-q4-m6": {
+    "kind": "concept-map",
+    "title": "Give a speech a clear voice",
+    "notice": "A speech communicates meaning through more than its written words.",
+    "nodes": [
+      {
+        "label": "Speech",
+        "text": "the use of language in human vocal communication",
+        "page": 13
+      },
+      {
+        "label": "Delivery features",
+        "text": "enunciation, intonation, loudness, tempo",
+        "page": 13
+      },
+      {
+        "label": "Audience",
+        "text": "participation of the audience with the speaker",
+        "page": 14
+      }
+    ],
+    "sourceFileId": "1TSJZC97CJI9uTgJtWpbbMbkFVNqYqjYX",
+    "sourceSha256": "529b6bcb416751e31a813f3c26cbbc6154583a7e0d18331c315ddb01a4dbcb08"
+  },
+  "g9-q1-w1": {
+    "kind": "speech",
+    "title": "Permission, prohibition, obligation",
+    "notice": "Compare the purpose of the modal expression in each source category.",
+    "nodes": [
+      {
+        "label": "Permission",
+        "text": "Can I wash my hands?",
+        "page": 4,
+        "highlight": "Can"
+      },
+      {
+        "label": "Prohibition",
+        "text": "'Can't' and 'mustn't' (must not)",
+        "page": 4
+      },
+      {
+        "label": "Obligation",
+        "text": "'Have to' and 'must' are both used to express obligation.",
+        "page": 4
+      }
+    ],
+    "sourceFileId": "1XW053aQeCA4ikZO0RhgZrFom57UqD7m0",
+    "sourceSha256": "2ede6fff852fa7e2d0363be49f58bc9522fac3209e335e6c03b007f916568780"
+  },
+  "g9-q1-w2": {
+    "kind": "sentence",
+    "title": "A zero conditional links a condition and a result",
+    "notice": "Use the two clause roles to follow the rule. The source connects zero conditionals to general truths.",
+    "nodes": [
+      {
+        "label": "If-clause",
+        "text": "CONDITION",
+        "page": 1
+      },
+      {
+        "label": "Main clause",
+        "text": "RESULT",
+        "page": 5
+      },
+      {
+        "label": "Use",
+        "text": "refers to general truths, like scientific facts",
+        "page": 5
+      },
+      {
+        "label": "Time",
+        "text": "the time is now or always",
+        "page": 5
+      }
+    ],
+    "sourceFileId": "1ICiJOBXf4bOrbtI69Akv1e0yvX_KdCEG",
+    "sourceSha256": "43e7f44be32ad21f7f957faadbf2cc6f6d40a56b1c1193bd53074cbcde652a83"
+  },
+  "g9-q1-w3": {
+    "kind": "sentence",
+    "title": "A possible future result",
+    "notice": "Read the condition first, then its result. Notice present tense in the if-clause and will in the result.",
+    "nodes": [
+      {
+        "label": "Condition",
+        "text": "If it rains",
+        "page": 5,
+        "highlight": "rains"
+      },
+      {
+        "label": "Result",
+        "text": "you will get wet",
+        "page": 5,
+        "highlight": "will get"
+      },
+      {
+        "label": "Use",
+        "text": "a possible situation in the future",
+        "page": 4
+      }
+    ],
+    "sourceFileId": "1edVGTweFHZYzGwOe9EUROEvurSnq637I",
+    "sourceSha256": "21167ca52ff7c92843125ede4f8568e293c2b31863a3f3a84188bdc58b170198"
+  },
+  "g9-q1-w4": {
+    "kind": "sentence",
+    "title": "Imagine an unreal situation",
+    "notice": "The source example imagines a superpower; it does not describe a real past event.",
+    "nodes": [
+      {
+        "label": "Condition",
+        "text": "If I had a superpower",
+        "page": 5,
+        "highlight": "had"
+      },
+      {
+        "label": "Result",
+        "text": "I could go anywhere in just a second.",
+        "page": 5,
+        "highlight": "could"
+      },
+      {
+        "label": "Meaning",
+        "text": "dreams or unreal situations in the present or in the future",
+        "page": 4
+      }
+    ],
+    "sourceFileId": "1gVM2xPQDwPJgo6Iynb-A9sG7ZXdtBOFT",
+    "sourceSha256": "6e9189a12b6170c936871d0605a2def9adbc1fc155c84f6543ee39a0d84d7c55"
+  },
+  "g9-q1-w5": {
+    "kind": "sentence",
+    "title": "Imagine a different past",
+    "notice": "The had + participle clause is paired with would have + participle in this source example.",
+    "nodes": [
+      {
+        "label": "If-clause",
+        "text": "If I had phoned you last night",
+        "page": 5,
+        "highlight": "had phoned"
+      },
+      {
+        "label": "Result clause",
+        "text": "I would have reminded you to stay.",
+        "page": 5,
+        "highlight": "would have reminded"
+      },
+      {
+        "label": "Meaning",
+        "text": "unreal situation in the past",
+        "page": 3
+      }
+    ],
+    "sourceFileId": "1w5OjEPvoar4szPJF3PHrOGqC27QaHXK0",
+    "sourceSha256": "5a5ca13056c2a6623b71bba0ac4cb806630728b9354fe7c7bc0689b9207be1ef"
+  },
+  "g9-q1-w6": {
+    "kind": "compare",
+    "title": "Choose the conditional by its meaning",
+    "notice": "Compare the time and possibility, rather than choosing only by the word if.",
+    "nodes": [
+      {
+        "label": "Zero",
+        "text": "general truth",
+        "page": 3
+      },
+      {
+        "label": "First",
+        "text": "future situation that is possible to happen",
+        "page": 4
+      },
+      {
+        "label": "Second",
+        "text": "present or future situation that is impossible or unlikely",
+        "page": 4
+      },
+      {
+        "label": "Third",
+        "text": "unreal past condition",
+        "page": 4
+      }
+    ],
+    "sourceFileId": "10n6YQL62o3bc3FyZuz6rKvXZLXB8CYtm",
+    "sourceSha256": "7af0ca9708cd481ae96a4b4fc3109d26bc5daa7836788b7e58636bc7039df8ca"
+  },
+  "g9-q1-w7": {
+    "kind": "compare",
+    "title": "Match speech style to the situation",
+    "notice": "This module introduces frozen and conversational styles. The next source continues the styles.",
+    "nodes": [
+      {
+        "label": "Frozen style",
+        "text": "fixed speech",
+        "page": 4
+      },
+      {
+        "label": "Source situations",
+        "text": "National pledge, anthem, school creeds, marriage ceremonies",
+        "page": 4
+      },
+      {
+        "label": "Conversational style",
+        "text": "Conversational style breaks most of the grammatical rules.",
+        "page": 4
+      }
+    ],
+    "sourceFileId": "1I8xD1b6ieDRg3_Fk7QuDFNy5ZQZoSciH",
+    "sourceSha256": "2b2a6d4caa7de6d8009f15f8b9e0e024ecc66181aa68f12b560796b53028acb4"
+  },
+  "g9-q1-w8": {
+    "kind": "compare",
+    "title": "How familiar are the speakers?",
+    "notice": "Compare the participants and the level of formality described in the source.",
+    "nodes": [
+      {
+        "label": "Consultative",
+        "text": "teacher-student, doctor-patient, expert-apprentice",
+        "page": 4
+      },
+      {
+        "label": "Casual",
+        "text": "casual conversations with friends, family members, chats, phone calls and messages",
+        "page": 4
+      },
+      {
+        "label": "Intimate",
+        "text": "talks between two very close individuals",
+        "page": 4
+      }
+    ],
+    "sourceFileId": "1kfz311Nhr4MKQsY0xqWAIq2XIqn0kgx_",
+    "sourceSha256": "c6e2fce5886d5407dcd25dc0b3ce87025441e75433c107c1580464b85a3710f3"
+  },
+  "g9-q2-m1": {
+    "kind": "compare",
+    "title": "Prose and poetry organize language differently",
+    "notice": "Compare form and language before relating the text to a real-life concern.",
+    "nodes": [
+      {
+        "label": "Prose",
+        "text": "sentences that are arranged in paragraphs",
+        "page": 11
+      },
+      {
+        "label": "Poetry",
+        "text": "Repetition and rhythm are often used as building blocks for poetry.",
+        "page": 11
+      },
+      {
+        "label": "Poetry form",
+        "text": "Written in lines forming stanzas/verses",
+        "page": 11
+      }
+    ],
+    "sourceFileId": "1fYWEF1s4FpoBt26kxcuCzStIloDlShoz",
+    "sourceSha256": "a6a466de73125b53be57c8eba6222afff8cd493b42086795ab7062f01618ca69"
+  },
+  "g9-q2-m2": {
+    "kind": "analogy",
+    "title": "A comparison makes an idea clearer",
+    "notice": "This source analogy maps parts of an atom to parts of a solar system. It is a comparison, not a scientific model.",
+    "nodes": [
+      {
+        "label": "Pair 1",
+        "text": "The nucleus is the sun",
+        "page": 13
+      },
+      {
+        "label": "Pair 2",
+        "text": "electrons are the planets",
+        "page": 13
+      },
+      {
+        "label": "Device",
+        "text": "Analogy",
+        "page": 13
+      },
+      {
+        "label": "Purpose",
+        "text": "explanation or clarification",
+        "page": 13
+      }
+    ],
+    "sourceFileId": "1sE1_PlqARG59kCtim19js5G9FFvB9x1O",
+    "sourceSha256": "f3025baefca371cb635ee98a031fdf8cf2ddc3cc02918cad8afee16c7292949c"
+  },
+  "g9-q3-w1": {
+    "kind": "compare",
+    "title": "A leaning is not the same as a prejudgment",
+    "notice": "Compare the source definitions. Neither label should be used to stereotype a person or group.",
+    "nodes": [
+      {
+        "label": "Bias",
+        "text": "a tendency to lean in a particular direction or side",
+        "page": 4
+      },
+      {
+        "label": "Prejudice",
+        "text": "an irrational or incorrect attitude towards an individual",
+        "page": 5
+      },
+      {
+        "label": "Basis of prejudice",
+        "text": "based solely on their social group membership",
+        "page": 5
+      }
+    ],
+    "sourceFileId": "160mB3bVwZyDz_jV91TupLEv6bwOKCBo9",
+    "sourceSha256": "f8ea24f3b06e3c2743c39afb4cebde606e33e5a23c6a46ce172bb09554dec41b"
+  },
+  "g9-q3-w2": {
+    "kind": "flow",
+    "title": "Understand before evaluating",
+    "notice": "Find the topic, main idea, and supporting details before judging the viewed material.",
+    "nodes": [
+      {
+        "label": "Topic",
+        "text": "What is this about?",
+        "page": 4
+      },
+      {
+        "label": "Main idea",
+        "text": "the essential piece of information the author wants you to know",
+        "page": 4
+      },
+      {
+        "label": "Support",
+        "text": "facts, statements, and examples",
+        "page": 4
+      }
+    ],
+    "sourceFileId": "16bBuggxIQ6HE4acIb-afji3KMUh_pnN0",
+    "sourceSha256": "ea781ef3cedebe98e938b7e90ed28ad748ae361a13d7430fcccecb8c004ea070"
+  },
+  "g9-q3-w3": {
+    "kind": "speech",
+    "title": "A response should have reasons",
+    "notice": "Agreement and disagreement express a stand. Examine support on both sides.",
+    "nodes": [
+      {
+        "label": "Agreement",
+        "text": "I agree with you 100 percent.",
+        "page": 4
+      },
+      {
+        "label": "Disagreement",
+        "text": "I disagree",
+        "page": 3
+      },
+      {
+        "label": "Evaluate support",
+        "text": "What evidence supports and contradicts",
+        "page": 4
+      }
+    ],
+    "sourceFileId": "1n8PGQ9cfLkfJ48OPpYx3S7FfsuX_x8zJ",
+    "sourceSha256": "c53db741ac89eaa87bd431bf9f9a9646327bc8a395b0bf7c3a5af6bef8ae7d2d"
+  },
+  "g9-q3-w4-5": {
+    "kind": "concept-map",
+    "title": "Four checks for viewed information",
+    "notice": "Each check asks about a different aspect of the same material.",
+    "nodes": [
+      {
+        "label": "Relevance",
+        "text": "the information's level of importance to a particular viewing purpose",
+        "page": 2
+      },
+      {
+        "label": "Accuracy",
+        "text": "factual and updated details that can be verified",
+        "page": 4
+      },
+      {
+        "label": "Perspective",
+        "text": "the position or slant toward which an author shapes information",
+        "page": 2
+      },
+      {
+        "label": "Reliability",
+        "text": "the information's level of trustworthiness",
+        "page": 2
+      }
+    ],
+    "sourceFileId": "1ACqJFs-wkRMprc5I7RHhQbdMoyd1dGmM",
+    "sourceSha256": "f6182600474707560ce97ae52bc71be333f91b64b4c9c34ec280774699451c48"
+  },
+  "g9-q3-w6": {
+    "kind": "evidence",
+    "title": "What supports the claim?",
+    "notice": "Facts, statistics, and other evidence need to be examined before accepting the conclusion.",
+    "nodes": [
+      {
+        "label": "Claim",
+        "text": "the main idea",
+        "page": 3
+      },
+      {
+        "label": "Evidence",
+        "text": "facts, documentation, or testimony",
+        "page": 3
+      },
+      {
+        "label": "Connection",
+        "text": "used to strengthen a claim, support an argument or reach a conclusion",
+        "page": 3
+      }
+    ],
+    "sourceFileId": "12Mx6Rn_JDaAp5XpiymMq-yf85MBKSdga",
+    "sourceSha256": "bb2576bfb11939fe24a252e128d3a0f9554f464c749605ba88a62b9bfcb01636"
+  },
+  "g9-q3-w7": {
+    "kind": "flow",
+    "title": "Find the claim before weighing evidence",
+    "notice": "Keep the central point separate from the evidence offered to support it.",
+    "nodes": [
+      {
+        "label": "Find the main idea",
+        "text": "What does the author want me to know about the topic?",
+        "page": 4
+      },
+      {
+        "label": "Restate",
+        "text": "Summarize the content in your own words.",
+        "page": 4
+      },
+      {
+        "label": "Check support",
+        "text": "A claim cannot stand alone if there is no evidence to support it.",
+        "page": 4
+      }
+    ],
+    "sourceFileId": "120lXzwYBUJfF3EBghqJ9eIi2nV2Mo3nJ",
+    "sourceSha256": "fb1c1050e0d5fb200c64fef09b54618e4be4e69a09a6943ad9f267e572ed0e7e"
+  },
+  "g9-q3-w8": {
+    "kind": "evidence",
+    "title": "Connect the evidence to the claim",
+    "notice": "This is the source speaker’s anecdote. It supports a claim through personal experience.",
+    "nodes": [
+      {
+        "label": "Claim",
+        "text": "We should set a limit for our game time.",
+        "page": 4
+      },
+      {
+        "label": "Evidence",
+        "text": "spending too much time on computer games prevents us from doing essential class works",
+        "page": 4
+      },
+      {
+        "label": "Evidence type",
+        "text": "Anecdotal evidence",
+        "page": 3
+      },
+      {
+        "label": "Check",
+        "text": "Is the evidence sufficient?",
+        "page": 4
+      }
+    ],
+    "sourceFileId": "11KxFfo_5g4zdrASPlXGp7gJv3deyU1Xy",
+    "sourceSha256": "477c3b3257d9508b1e56a6bf350399f903ef70e3e2b72e0549d5f3da31811f83"
+  },
+  "g9-q4-m1": {
+    "kind": "speech",
+    "title": "One modal can serve different purposes",
+    "notice": "The same word can express ability or ask permission. Read the whole sentence.",
+    "nodes": [
+      {
+        "label": "Ability",
+        "text": "I can speak a little Russian.",
+        "page": 9,
+        "highlight": "can"
+      },
+      {
+        "label": "Permission",
+        "text": "Can I open the window?",
+        "page": 9,
+        "highlight": "Can"
+      },
+      {
+        "label": "Possibility",
+        "text": "I may be home late.",
+        "page": 9,
+        "highlight": "may"
+      }
+    ],
+    "sourceFileId": "1o60IXjYfDk03sBQQqiq1UbUEKU18GqgT",
+    "sourceSha256": "f65181f424a510d50ee3f815a78b78c790536cd4fbbe209c4e59cd0c8bbb8834"
+  },
+  "g9-q4-m2": {
+    "kind": "concept-map",
+    "title": "Connect the text to a social issue",
+    "notice": "Use the text’s details when identifying an issue. Do not assume every person or family has the same experience.",
+    "nodes": [
+      {
+        "label": "Social issues",
+        "text": "problems that influence many citizens within a society",
+        "page": 12
+      },
+      {
+        "label": "Source examples",
+        "text": "racial discrimination, overpopulation, bullying",
+        "page": 12
+      },
+      {
+        "label": "A family’s role",
+        "text": "providing practical and emotional support",
+        "page": 12
+      }
+    ],
+    "sourceFileId": "1bnjIhxKaEPEIw0xwaipj8vmognRald7B",
+    "sourceSha256": "9710505c9baf79eb4b2520715fb8ae64a29a3dc057a1c10f7804821430468ca4"
+  },
+  "g9-q4-m3": {
+    "kind": "compare",
+    "title": "Notice how a comparison is expressed",
+    "notice": "These source examples use different figures of speech. Preserve the parable’s original religious context.",
+    "nodes": [
+      {
+        "label": "Metaphor",
+        "text": "The Lord is my shepherd",
+        "page": 10,
+        "highlight": "shepherd"
+      },
+      {
+        "label": "Simile",
+        "text": "The kingdom of heaven is like treasure hidden in a field.",
+        "page": 10,
+        "highlight": "like"
+      },
+      {
+        "label": "Allegory",
+        "text": "The seed mentioned in the parable is interpreted as the Word of God.",
+        "page": 10
+      }
+    ],
+    "sourceFileId": "1re2qBWhdZIo5d0wnCCSiqu7bO_wps5KJ",
+    "sourceSha256": "192f90ca5e502c5edcaa9d91d12af4eda0a7e5da9dfac26aef926aeed57168f9"
+  },
+  "g9-q4-m4": {
+    "kind": "concept-map",
+    "title": "An infographic brings forms together",
+    "notice": "Look at the relation between the visual and the words, rather than treating an attractive layout as proof.",
+    "nodes": [
+      {
+        "label": "Images",
+        "text": "imagery",
+        "page": 9
+      },
+      {
+        "label": "Data displays",
+        "text": "charts",
+        "page": 9
+      },
+      {
+        "label": "Words",
+        "text": "minimal texts",
+        "page": 9
+      },
+      {
+        "label": "Purpose",
+        "text": "an easy-to-understand overview of a topic",
+        "page": 9
+      }
+    ],
+    "sourceFileId": "1-Saa9Cm3HLSdvAxxI027la84hLrLUtdW",
+    "sourceSha256": "92abd4ed4a62c626b077a4894feb34436d49aaf79dbb7054c7949f777f4632cf"
+  },
+  "g9-q4-m5": {
+    "kind": "compare",
+    "title": "Evidence or a judgment?",
+    "notice": "Use this distinction when evaluating an issue. The unverified claims in the source exercise are not facts to memorize.",
+    "nodes": [
+      {
+        "label": "Fact",
+        "text": "a piece of information that can be proved with concrete evidence",
+        "page": 8
+      },
+      {
+        "label": "Opinion",
+        "text": "a view or judgment about something that cannot be proved by evidence",
+        "page": 8
+      }
+    ],
+    "sourceFileId": "1oYhuKRyE4ZiUi6Pg9sL70z0k8ZTuM5hB",
+    "sourceSha256": "e623939935ce69259b85ec33cbba7f6eb593a6fb3dd70806d2695275b3bd8173"
+  },
+  "g9-q4-m6": {
+    "kind": "flow",
+    "title": "Listen closely enough to interpret",
+    "notice": "The source describes listening again to understand meaning. The visual does not substitute for the assigned audio.",
+    "nodes": [
+      {
+        "label": "Listen again",
+        "text": "listen to songs again to figure out the meaning",
+        "page": 9
+      },
+      {
+        "label": "Notice the change",
+        "text": "only now did you realize how insightful it is",
+        "page": 9
+      },
+      {
+        "label": "Focus",
+        "text": "this needs to be done with much focus",
+        "page": 9
+      }
+    ],
+    "sourceFileId": "1Lph4GDZLlXKJ_THF5UzY0woUNU-ANIKv",
+    "sourceSha256": "b3263f2bb408767895c8499335187eeb78ee13fe1343d25762c34fb78c11c368"
+  },
+  "g9-q4-m7": {
+    "kind": "compare",
+    "title": "Favoritism and prejudgment",
+    "notice": "Distinguish the reasoning behind a judgment. The source examples describe unfair treatment, not a rule about groups.",
+    "nodes": [
+      {
+        "label": "Bias",
+        "text": "a tendency to favor a person, group or thing or point of view over another",
+        "page": 7
+      },
+      {
+        "label": "Prejudice",
+        "text": "an unfavorable opinion or feeling formed beforehand",
+        "page": 7
+      },
+      {
+        "label": "Difference",
+        "text": "The first scenarios show favoritism",
+        "page": 7
+      }
+    ],
+    "sourceFileId": "1BmfaJ-44rrB3KU9AYeAIGpFm3JuCr0-b",
+    "sourceSha256": "b30bbfa408f3804a2a9817117faace0204179be0b2d6a47d95266fb676a2c65b"
+  },
+  "g9-q4-m8": {
+    "kind": "compare",
+    "title": "Check the scope of a generalization",
+    "notice": "Compare everybody with many people. The claim’s scope changes.",
+    "nodes": [
+      {
+        "label": "Faulty source example",
+        "text": "Everybody loves popcorn.",
+        "page": 9,
+        "highlight": "Everybody"
+      },
+      {
+        "label": "Qualified source example",
+        "text": "Many people like popcorn.",
+        "page": 9,
+        "highlight": "Many"
+      },
+      {
+        "label": "Support",
+        "text": "supported by facts",
+        "page": 6
+      }
+    ],
+    "sourceFileId": "1pwYwKgVnNHnJzPJnwLuhrDh92hsrlBnX",
+    "sourceSha256": "dbb08d4f5f0858d644d47f1e51517c24ee472883f345bd3551b5ead2767cb424"
+  },
+  "g9-q4-m9": {
+    "kind": "concept-map",
+    "title": "Do not mistake belief for sound reasoning",
+    "notice": "Inspect the reasoning and information behind a claim before accepting it.",
+    "nodes": [
+      {
+        "label": "Fallacy",
+        "text": "an idea which is believed to be true",
+        "page": 9
+      },
+      {
+        "label": "Problem",
+        "text": "really false due to incorrect information or reasoning",
+        "page": 9
+      }
+    ],
+    "sourceFileId": "1mUzEO3guNWjfhpEoThAafOei3jQCMRnD",
+    "sourceSha256": "bdc0f02a0a66c630b01b063c097ff01e20a81140ad07c60bf732ee4a7767ba8b"
+  },
+  "g9-q4-m11": {
+    "kind": "annotation",
+    "title": "A simile in the balcony scene",
+    "notice": "The source’s worked example compares sudden love to lightning. Keep the comparison within the scene.",
+    "nodes": [
+      {
+        "label": "Words from the scene",
+        "text": "Too like the lightning",
+        "page": 9,
+        "highlight": "like"
+      },
+      {
+        "label": "Figure of speech",
+        "text": "simile",
+        "page": 13
+      },
+      {
+        "label": "What is compared",
+        "text": "Juliet is comparing their love to lighting because it came upon them so quickly",
+        "page": 13
+      }
+    ],
+    "sourceFileId": "1VFAQIeGa9-TEqGeaJDLwDWAX9NMmDNSw",
+    "sourceSha256": "a6f35101f4d762fbe4a558f26fefaf46cccafcb7edac4f8d364443fd572adee9"
+  },
+  "g9-q4-m12": {
+    "kind": "compare",
+    "title": "A stage message has more than words",
+    "notice": "Coordinate spoken delivery with wordless cues; meaning depends on the scene and cultural context.",
+    "nodes": [
+      {
+        "label": "Verbal",
+        "text": "through the use of speech (spoken words)",
+        "page": 8
+      },
+      {
+        "label": "Non-verbal",
+        "text": "there are no spoken words involved",
+        "page": 9
+      },
+      {
+        "label": "Gestures",
+        "text": "the meaning of gestures can be very different across cultures and regions",
+        "page": 10
+      }
+    ],
+    "sourceFileId": "1tsV852piu9_iirKpFrlcEPo6zsHigu4v",
+    "sourceSha256": "0b78935b8af032eb2f8ccb5750f8606a1787335bf0c476be030505b27aec1baf"
+  },
+  "g9-q4-m13": {
+    "kind": "compare",
+    "title": "Small sound changes can change meaning",
+    "notice": "Minimal pairs differ in one sound element. Read the source pair list alongside this definition.",
+    "nodes": [
+      {
+        "label": "Minimal pairs",
+        "text": "pairs of words or phrases",
+        "page": 10
+      },
+      {
+        "label": "Sound contrast",
+        "text": "differ in only one phonological element",
+        "page": 10
+      },
+      {
+        "label": "Meaning",
+        "text": "have distinct meanings",
+        "page": 10
+      }
+    ],
+    "sourceFileId": "1QmcUJL9dCX3YR0b3kJc0qEODxMCJSy39",
+    "sourceSha256": "2ecd062b8abdca1f5eabbceea7115ed545573e273ea416717135af410d766d4b"
+  },
+  "g9-q4-m14": {
+    "kind": "intonation",
+    "title": "The voice can rise or fall",
+    "notice": "Use the pitch paths as schematic reading cues, not an audio recording.",
+    "nodes": [
+      {
+        "label": "Falling",
+        "text": "the pitch falls with time",
+        "page": 9
+      },
+      {
+        "label": "Rising",
+        "text": "the pitch of the voice rises over time",
+        "page": 10
+      },
+      {
+        "label": "Source statement",
+        "text": "We live in MOScow.",
+        "page": 9,
+        "highlight": "MOScow"
+      },
+      {
+        "label": "Source question",
+        "text": "Was she glad to/SEE him?",
+        "page": 10,
+        "highlight": "SEE"
+      }
+    ],
+    "sourceFileId": "1lx6duXiQmM-_G5PeOJWvWIam3maJOS3O",
+    "sourceSha256": "b1330475e4ba2d612b040870829bd551552607f22f09aaf671d350116fc0d434"
+  },
+  "g10-q1-m1": {
+    "kind": "flow",
+    "title": "Listen to understand the message",
+    "notice": "Follow the source approaches before reacting to the speaker’s ideas.",
+    "nodes": [
+      {
+        "label": "Receive",
+        "text": "receive the same thoughts which speakers are trying to convey",
+        "page": 11
+      },
+      {
+        "label": "Understand",
+        "text": "Try to understand the speaker’s ideas before judging them.",
+        "page": 6
+      },
+      {
+        "label": "Find the main point",
+        "text": "Look for key ideas.",
+        "page": 6
+      },
+      {
+        "label": "Restate",
+        "text": "Restate in your own words the message of the speaker",
+        "page": 11
+      }
+    ],
+    "sourceFileId": "1_PMZ3YJJiF0QFny24HFoIRZoMSRfekQj",
+    "sourceSha256": "2d4320ac4b7cfce6e6aa33b8e1b595a05aa38580ec3b45f8110c95b4d9fcc9cf"
+  },
+  "g10-q1-m2": {
+    "kind": "structure",
+    "title": "Textual aids make organization visible",
+    "notice": "The visual demonstrates the functions named in the source: direct attention and add information.",
+    "nodes": [
+      {
+        "label": "Title",
+        "text": "key concepts",
+        "page": 9
+      },
+      {
+        "label": "Subtitle",
+        "text": "supporting ideas",
+        "page": 9
+      },
+      {
+        "label": "Tables",
+        "text": "organized and arranged in columns and rows",
+        "page": 10
+      },
+      {
+        "label": "Purpose",
+        "text": "direct the readers’ attention to important ideas",
+        "page": 8
+      }
+    ],
+    "sourceFileId": "1ZHngPMQOU09_NC6UYqOF2xqUXh06p8pz",
+    "sourceSha256": "15f1ad49e35262df2445342026bb8778b64e8d23f810f6c86750a0f28875d001"
+  },
+  "g10-q1-m3": {
+    "kind": "concept-map",
+    "title": "Look beyond the film genre",
+    "notice": "Connect story elements to the writer’s purpose. A genre label alone does not reveal every message.",
+    "nodes": [
+      {
+        "label": "Characterization",
+        "text": "the emotions they portray and the delivery of their dialogues",
+        "page": 12
+      },
+      {
+        "label": "Setting",
+        "text": "physical set up, time of the event, and the musical background",
+        "page": 12
+      },
+      {
+        "label": "Plot",
+        "text": "the storyline that gives you the overall picture of the story",
+        "page": 12
+      },
+      {
+        "label": "Subtext",
+        "text": "an underlying message, theme, or metaphor",
+        "page": 11
+      }
+    ],
+    "sourceFileId": "1f0xPojc78IioO86WRl_R-uN1QcWAzM5I",
+    "sourceSha256": "30bb4a15535d467744be3f27f7183b8f102f8d1f8adfc4816e7c7b34d4b70d9b"
+  },
+  "g10-q1-m4": {
+    "kind": "compare",
+    "title": "Compare the same story across media",
+    "notice": "The source uses The Gorgon’s Head. A generic video cannot replace a matching adaptation.",
+    "nodes": [
+      {
+        "label": "Written story",
+        "text": "Books would give the story in details.",
+        "page": 12
+      },
+      {
+        "label": "Viewed adaptation",
+        "text": "it gives us a view of the scenes used in the story",
+        "page": 12
+      },
+      {
+        "label": "Source work",
+        "text": "The Gorgon’s Head",
+        "page": 12
+      },
+      {
+        "label": "Author",
+        "text": "Anne Terry White",
+        "page": 12
+      }
+    ],
+    "sourceFileId": "1wF0G81YTWsqw_R-2H2vW9UHCHkv35Qjt",
+    "sourceSha256": "8e8c328c72e6d5ced697da246545d519e29b7346b2f3a52997a9b07be01bd2fa"
+  },
+  "g10-q1-m5": {
+    "kind": "concept-map",
+    "title": "Check a source beyond its format",
+    "notice": "Print and web sources both need evaluation. Compare these criteria for the same information.",
+    "nodes": [
+      {
+        "label": "Currency",
+        "text": "the timeliness of the information",
+        "page": 10
+      },
+      {
+        "label": "Relevance",
+        "text": "the importance of the information for your needs",
+        "page": 10
+      },
+      {
+        "label": "Coverage",
+        "text": "whether the source provides enough coverage of the topic",
+        "page": 10
+      },
+      {
+        "label": "Source clues",
+        "text": "date of publication",
+        "page": 10
+      }
+    ],
+    "sourceFileId": "1NwK6_sDCc542ZmsLobfhMa33EylYGAIb",
+    "sourceSha256": "00def4a7625cd6634e26d8c14ca167a3f09a499bd7b55aab7aa0a0a6980062d2"
+  },
+  "g10-q1-m6": {
+    "kind": "evidence",
+    "title": "A claim needs checking",
+    "notice": "The source’s analytical listener asks questions and checks evidence before validating a claim.",
+    "nodes": [
+      {
+        "label": "Listen",
+        "text": "listen attentively to the speaker",
+        "page": 7
+      },
+      {
+        "label": "Question",
+        "text": "ask for questions to determine to what extent is the truthfulness",
+        "page": 8
+      },
+      {
+        "label": "Evidence",
+        "text": "look for evidences",
+        "page": 8
+      },
+      {
+        "label": "Evaluate",
+        "text": "validate the claim based on proofs and honesty of answers given",
+        "page": 8
+      }
+    ],
+    "sourceFileId": "1rvWuAPBFH0x7Lm3-xYKaHDv9VuyQcjUG",
+    "sourceSha256": "c0918db40c26a8e4aefdaa3bd95b7fb16ccb3ff4fd276f4478930c574fdef10e"
+  },
+  "g10-q1-m7": {
+    "kind": "concept-map",
+    "title": "Judge how the story works",
+    "notice": "Use these connected elements to explain a judgment about a narrative.",
+    "nodes": [
+      {
+        "label": "Setting",
+        "text": "appealing to all of the senses",
+        "page": 10
+      },
+      {
+        "label": "Characters",
+        "text": "well-drawn and well-developed",
+        "page": 10
+      },
+      {
+        "label": "Plot",
+        "text": "original and not predictable",
+        "page": 10
+      },
+      {
+        "label": "Conflict",
+        "text": "an interesting conflict that will move the plot",
+        "page": 11
+      }
+    ],
+    "sourceFileId": "1UlPDPaBBf-IffkqJnpoN8E-UF6G07mcu",
+    "sourceSha256": "174780a23200ca6452fcba0fdb0fcb2b545a7be38fd3cd512f903510750070aa"
+  },
+  "g10-q1-m8": {
+    "kind": "concept-map",
+    "title": "Listen for more than speed",
+    "notice": "Fluency involves accuracy, rate, and expression; faster is not the only consideration.",
+    "nodes": [
+      {
+        "label": "Accuracy",
+        "text": "pronouncing words correctly",
+        "page": 10
+      },
+      {
+        "label": "Rate",
+        "text": "the speed with which a reader processes an extended text",
+        "page": 10
+      },
+      {
+        "label": "Prosody",
+        "text": "reading with expression",
+        "page": 10
+      },
+      {
+        "label": "Fluency",
+        "text": "speech rate and speech continuity",
+        "page": 10
+      }
+    ],
+    "sourceFileId": "18UpnBAmymds0HOOk6NAZ0m0dqaeZv4IA",
+    "sourceSha256": "4871c1135e49f092219a4d7d406221245c28232a2e5e09f17ade80f891fa442d"
+  },
+  "g10-q2-m1": {
+    "kind": "flow",
+    "title": "A research question leads to a process",
+    "notice": "These are stages described in the source, not extra steps added to the game.",
+    "nodes": [
+      {
+        "label": "Question",
+        "text": "Research starts with a question or a problem.",
+        "page": 6
+      },
+      {
+        "label": "Gather",
+        "text": "observations or perform an experiment",
+        "page": 6
+      },
+      {
+        "label": "Analyze",
+        "text": "analyze the data",
+        "page": 6
+      },
+      {
+        "label": "Share",
+        "text": "publish their procedures, data, and conclusions",
+        "page": 6
+      }
+    ],
+    "sourceFileId": "1Q1shTKIZ4xwqZftk82i61rNel8aENdU0",
+    "sourceSha256": "9a455882bfe0c5b5c65553cc6f3b2722c61aacacd9eb304cdeed77c807a73d7d"
+  },
+  "g10-q2-m2": {
+    "kind": "compare",
+    "title": "A transition tells the reader how ideas connect",
+    "notice": "Compare what the reader expects after each expression.",
+    "nodes": [
+      {
+        "label": "Support",
+        "text": "for example",
+        "page": 7,
+        "highlight": "for example"
+      },
+      {
+        "label": "Opposition",
+        "text": "however",
+        "page": 2,
+        "highlight": "however"
+      },
+      {
+        "label": "Conclusion",
+        "text": "overall",
+        "page": 9,
+        "highlight": "overall"
+      },
+      {
+        "label": "Purpose",
+        "text": "the relationship between ideas in a paragraph or even between paragraphs",
+        "page": 9
+      }
+    ],
+    "sourceFileId": "1Fa3s_IRPf8rIsoIA1tj4VgX2XB1jE-U9",
+    "sourceSha256": "a1a8597eceae08ec551830f7b8def1e8db68aed609954c181a6815248f0b5df9"
+  },
+  "g10-q2-m3": {
+    "kind": "annotation",
+    "title": "Notice the qualifier in an opinion",
+    "notice": "Most limits the scope of this source statement; evidence is still needed.",
+    "nodes": [
+      {
+        "label": "Source statement",
+        "text": "Most public schools are ready for distance education.",
+        "page": 10,
+        "highlight": "Most"
+      },
+      {
+        "label": "Structure",
+        "text": "a debatable topic and a focus",
+        "page": 10
+      },
+      {
+        "label": "Qualifier examples",
+        "text": "almost, usually, maybe, probably, often, some, most",
+        "page": 10
+      }
+    ],
+    "sourceFileId": "13TLCt46RngpHY3HvZYwWn_PwYp6uS98-",
+    "sourceSha256": "5fd4c6b29b69f52089e728062f84fa20239814c83282e36d7973d63343de617d"
+  },
+  "g10-q2-m4": {
+    "kind": "compare",
+    "title": "Modal verbs and modal adverbs",
+    "notice": "Compare the highlighted language in the source’s examples.",
+    "nodes": [
+      {
+        "label": "Modal verb",
+        "text": "I may come and visit you after work.",
+        "page": 9,
+        "highlight": "may"
+      },
+      {
+        "label": "Modal adverb",
+        "text": "It will probably rain this afternoon.",
+        "page": 15,
+        "highlight": "probably"
+      },
+      {
+        "label": "Obligation",
+        "text": "You must finish your task by this afternoon.",
+        "page": 9,
+        "highlight": "must"
+      }
+    ],
+    "sourceFileId": "1X8QA_AwPWA8mUzjrUuU0k6cnSlPj5duw",
+    "sourceSha256": "02460e403250fabdab6fdc4d7e25258aff427c604b08908a96007c30eef8b43e"
+  },
+  "g10-q2-m5": {
+    "kind": "compare",
+    "title": "What kind of claim is being made?",
+    "notice": "Distinguish the kind of position before deciding what support it needs.",
+    "nodes": [
+      {
+        "label": "Claim of fact",
+        "text": "Claim of Fact",
+        "page": 8
+      },
+      {
+        "label": "Claim of value",
+        "text": "Claim of Value",
+        "page": 8
+      },
+      {
+        "label": "Claim of policy",
+        "text": "Claim of Policy",
+        "page": 8
+      },
+      {
+        "label": "Claim",
+        "text": "the main topic of an argument",
+        "page": 6
+      }
+    ],
+    "sourceFileId": "1RiUzPjHIyUjn-H1UFej_TbfzAWUI8wAD",
+    "sourceSha256": "8b20af3a7d31c130700299b3cc9409e97701c8e6339c80879df495b96c75ca80"
+  },
+  "g10-q2-m6": {
+    "kind": "speech",
+    "title": "A question can make a point",
+    "notice": "In the source passage, the questions emphasize a shared human experience rather than asking for spoken replies.",
+    "nodes": [
+      {
+        "label": "Source question",
+        "text": "If you prick us, do we not bleed?",
+        "page": 10,
+        "highlight": "do we not"
+      },
+      {
+        "label": "Source question",
+        "text": "If you tickle us, do we not laugh?",
+        "page": 10,
+        "highlight": "do we not"
+      },
+      {
+        "label": "Notice",
+        "text": "an answer is usually not expected",
+        "page": 10
+      }
+    ],
+    "sourceFileId": "1MSpaDma0gUZEsvR11iYt3EQWKHkxnGSq",
+    "sourceSha256": "85c490408a3e2797c4cc6f7d2e315cacf47267f928a85619d3a6730272850c78"
+  },
+  "g10-q2-m7": {
+    "kind": "concept-map",
+    "title": "Modes work together to make meaning",
+    "notice": "A multimodal text combines two or more systems. Compare what each contributes.",
+    "nodes": [
+      {
+        "label": "Linguistic",
+        "text": "vocabulary, structure, grammar",
+        "page": 7
+      },
+      {
+        "label": "Visual",
+        "text": "color, vectors and viewpoint",
+        "page": 7
+      },
+      {
+        "label": "Audio",
+        "text": "volume, pitch and rhythm",
+        "page": 7
+      },
+      {
+        "label": "Gestural",
+        "text": "movement, facial expression and body language",
+        "page": 7
+      }
+    ],
+    "sourceFileId": "18fBTmhbCONeF7e-DV8QziWE_8s5sO8Me",
+    "sourceSha256": "11f6e04c74ffd31750c4fe6295da01e122872260235b29f24407c513377dbce0"
+  },
+  "g10-q2-m8": {
+    "kind": "flow",
+    "title": "Keep the audience and purpose in view",
+    "notice": "The source techniques connect your topic, speaking goal, and delivery.",
+    "nodes": [
+      {
+        "label": "Topic",
+        "text": "Care About Your Topic",
+        "page": 9
+      },
+      {
+        "label": "Goal",
+        "text": "Remember Your Speaking Goal",
+        "page": 9
+      },
+      {
+        "label": "Audience",
+        "text": "a speech before a live audience",
+        "page": 9
+      }
+    ],
+    "sourceFileId": "1SQj83gbfpAmdFYHmRUqmqzbdkCbrmLVK",
+    "sourceSha256": "03485e84834b14adc3948e2ac1e918dac03fc17f6b18f6d5e8a1e6ae912d8d9e"
+  },
+  "g10-q3-m1": {
+    "kind": "evidence",
+    "title": "Follow the source argument about bicycles",
+    "notice": "Separate the position, its reason, and its supporting detail. These are examples from the essay discussion.",
+    "nodes": [
+      {
+        "label": "Claim",
+        "text": "People should be encouraged to travel by bicycle rather than by car.",
+        "page": 11
+      },
+      {
+        "label": "Argument",
+        "text": "Maintaining a bicycle is less expensive than a car.",
+        "page": 11
+      },
+      {
+        "label": "Evidence",
+        "text": "The parts of a bicycle are much cheaper than the parts of a car.",
+        "page": 11
+      },
+      {
+        "label": "Counterargument",
+        "text": "riding a bicycle would increase travel time and decrease productivity",
+        "page": 11
+      }
+    ],
+    "sourceFileId": "1ZpevlxZOYmtED2IHFcdluF7EI1diYZIU",
+    "sourceSha256": "bd925c1d26b351003283530358998bba522f0e057d6288c3a3f8aae78a141f8b"
+  },
+  "g10-q3-m2a": {
+    "kind": "structure",
+    "title": "An informative text builds around a thesis",
+    "notice": "Keep the information focused on the topic and supported by credible sources.",
+    "nodes": [
+      {
+        "label": "Introduction",
+        "text": "where the thesis statement is found",
+        "page": 9
+      },
+      {
+        "label": "Body",
+        "text": "body",
+        "page": 6
+      },
+      {
+        "label": "Conclusion",
+        "text": "conclusion",
+        "page": 6
+      },
+      {
+        "label": "Purpose",
+        "text": "educates readers about a topic or subject",
+        "page": 9
+      }
+    ],
+    "sourceFileId": "1JVjW6Q9iuj3XY8pXac82dLE12cv4Pt_m",
+    "sourceSha256": "dd302bba100087b93e5d4cdfffc9f31f978a15b01f65cf31e25fecee35eafe19"
+  },
+  "g10-q3-m2b": {
+    "kind": "evidence",
+    "title": "A persuasive text asks for agreement or action",
+    "notice": "The writer’s opinion, support, and requested action have distinct roles.",
+    "nodes": [
+      {
+        "label": "Position",
+        "text": "the writer’s opinion",
+        "page": 6
+      },
+      {
+        "label": "Support",
+        "text": "evidence or information to support the writer’s opinion",
+        "page": 9
+      },
+      {
+        "label": "Action",
+        "text": "the action that the writer wants the readers to do",
+        "page": 9
+      },
+      {
+        "label": "Source technique",
+        "text": "Wouldn’t you do everything to make your family happy?",
+        "page": 10
+      }
+    ],
+    "sourceFileId": "1AQBtvMVTTu3kEOcQS9TlXjWmneZTF01a",
+    "sourceSha256": "32f4f6b674ce8a376904db973b918e5154f8f2698970e0a8a2824cc6a01745ab"
+  },
+  "g10-q3-m3": {
+    "kind": "concept-map",
+    "title": "A critique examines how the text works",
+    "notice": "The source describes evaluation, not simply fault-finding. Connect your judgment to the narrative.",
+    "nodes": [
+      {
+        "label": "Characterization",
+        "text": "characterization",
+        "page": 5
+      },
+      {
+        "label": "Setting",
+        "text": "setting",
+        "page": 6
+      },
+      {
+        "label": "Conflict and plot",
+        "text": "conflict, plot",
+        "page": 9
+      },
+      {
+        "label": "Other elements",
+        "text": "dialogue, theme, and style",
+        "page": 9
+      }
+    ],
+    "sourceFileId": "1InbSlkQUhHDfTwn7eRDxP2DpYJZOOf4w",
+    "sourceSha256": "0ea3e99b28a6b207e37ecfe0756d11d3af6020f7c0afbc20e8760b6c0efbe93f"
+  },
+  "g10-q3-m4": {
+    "kind": "concept-map",
+    "title": "Look inside the literary work",
+    "notice": "The formalist approach focuses on form, elements, and devices operating within the text.",
+    "nodes": [
+      {
+        "label": "Form",
+        "text": "form or structure",
+        "page": 10
+      },
+      {
+        "label": "Plot and conflict",
+        "text": "the plot (chronological sequence) and the conflict",
+        "page": 10
+      },
+      {
+        "label": "Point of view",
+        "text": "the point of view",
+        "page": 6
+      },
+      {
+        "label": "Tone",
+        "text": "the overall emotion conveyed",
+        "page": 10
+      }
+    ],
+    "sourceFileId": "19Zd6oLW62Zr4aE4lvJGwyg90l2XbbIY9",
+    "sourceSha256": "cac662784326538105877cdab6473a6b2e45669a7c7de1c1f88272097caf7d6e"
+  },
+  "g10-q4-m1": {
+    "kind": "compare",
+    "title": "Research terms have different jobs",
+    "notice": "Compare a named idea with an explanation built from concepts and principles.",
+    "nodes": [
+      {
+        "label": "Concept",
+        "text": "abstractly describes and names an object, a phenomenon, or an idea",
+        "page": 7
+      },
+      {
+        "label": "Theory",
+        "text": "an organized body of concepts and principles",
+        "page": 7
+      },
+      {
+        "label": "Quantitative method",
+        "text": "focuses on numbers, objective hard data",
+        "page": 11
+      }
+    ],
+    "sourceFileId": "183c4T1iPG97HRpZhwuUjEym9AjL-nhA1",
+    "sourceSha256": "9e4912bc2b13652a9274155030b10ad4a1c302dc9e32a64ceb7bc2aebf1c400f"
+  },
+  "g10-q4-m2": {
+    "kind": "compare",
+    "title": "One object, two kinds of definition",
+    "notice": "The source automobile example contrasts technical details with practical use.",
+    "nodes": [
+      {
+        "label": "Technical view",
+        "text": "a machine with four wheels",
+        "page": 10
+      },
+      {
+        "label": "Operational view",
+        "text": "gets you around from place to place",
+        "page": 10
+      }
+    ],
+    "sourceFileId": "1jrr9i9bVgVkIdJeXIwOh4u3ZNO7zgw5B",
+    "sourceSha256": "0d26127b057a087ac6701e587c6b23a4df670a7cf97f4510a3bb4d8fb80681f8"
+  },
+  "g10-q4-m3": {
+    "kind": "compare",
+    "title": "Expand a definition in different ways",
+    "notice": "The source shows several ways to develop the meaning of speed beyond a short definition.",
+    "nodes": [
+      {
+        "label": "Method 1",
+        "text": "Expanding by Giving an Example",
+        "page": 8
+      },
+      {
+        "label": "Method 2",
+        "text": "Expanding by Comparing and Contrasting",
+        "page": 8
+      },
+      {
+        "label": "Term in the example",
+        "text": "Speed is a concept that marks our time.",
+        "page": 8
+      },
+      {
+        "label": "Purpose",
+        "text": "a very detailed explanation",
+        "page": 8
+      }
+    ],
+    "sourceFileId": "1DbBZP0Fwfc1YMDEyWdh8EJLlDgHV4oay",
+    "sourceSha256": "889382cceff0bb8d6419da94eba25852fd55e31da364d3d17f772c6384a57395"
+  }
+}

@@ -6,3 +6,5 @@ dist
 .main-baseline/
 .missing-main.json
 .curriculum-sources/
+
+.env.local

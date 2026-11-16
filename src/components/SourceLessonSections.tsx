@@ -1,7 +1,8 @@
 import React, {useMemo, useRef, useState} from 'react';
-import {BookOpen, CheckSquare, FileText, Image as ImageIcon, ListChecks, Compass, Play} from 'lucide-react';
+import {BookOpen, CheckSquare, FileText, Image as ImageIcon, ListChecks, Play} from 'lucide-react';
 import type {Module} from '../types/lingoquest';
 import type {DigitalContent, DigitalBlock} from '../data/curriculum/digitalContent';
+import {LessonWorkedVisual} from './LessonWorkedVisual';
 import {InabelStrip} from './InabelStrip';
 import {SourceBlock} from './SourceContent';
 import {getLessonPilot} from '../data/curriculum/lessonPilot';
@@ -62,7 +63,8 @@ export function SourceLessonSections({module,content,error,retry,dataSaver=false
       {video && <a className="inline-flex items-center gap-1.5 rounded-lg border border-sky-200 bg-sky-50 px-3 py-2 text-sm font-bold text-sky-900 hover:bg-sky-100" href="#lesson-watch-video">
        <Play size={15} aria-hidden="true" /> Watch &amp; Understand
       </a>}
-      {visuals.length > 0 ? visuals.slice(0, visualLimit).map(({id, block, repaired, correction}) => {
+      {active === 'concepts' && <LessonWorkedVisual moduleId={module.id} sourceSha256={lesson.source.sha256} />}
+      {visuals.length > 0 && visuals.slice(0, visualLimit).map(({id, block, repaired, correction}) => {
        if (correction && 'text' in correction) {
         return <div key={id} className="pdf-source-visual-stage">
          <p className="whitespace-pre-line break-words text-sm leading-relaxed text-slate-800">{correction.text}</p>
@@ -77,13 +79,7 @@ export function SourceLessonSections({module,content,error,retry,dataSaver=false
          ? <RestoredLessonFigures figures={repaired} page={block.page} />
          : <SourceBlock block={block} />}
        </div>;
-      }) : <div className="lq-genre-card" data-tone="reef">
-       <span className="lq-genre-icon"><Compass size={22} aria-hidden="true" /></span>
-       <div className="min-w-0">
-        <h3 className="text-sm font-bold text-slate-950">Key idea</h3>
-        <p className="mt-1 break-words text-sm leading-relaxed text-slate-700">{guide?.steps[4] || lesson.overview.text}</p>
-       </div>
-      </div>}
+      })}
       {visualLimit < visuals.length && <button type="button" onClick={() => setVisualLimit(n => n + 3)} className="rounded-lg border border-sky-200 bg-sky-50 px-4 py-2 text-sm font-bold text-sky-900 transition-colors hover:bg-sky-100">
        Show more illustrations ({visuals.length - visualLimit})
       </button>}

@@ -954,54 +954,35 @@ export default function App() {
     }
     setSelectedModule(mod);
     setBrowseGrade(mod.gradeLevel);
-    const isLessonDone = Boolean(currentStudent?.progressByModule[mod.id]?.lessonCompleted);
+    const isLessonDone = Boolean(currentStudent && (currentStudent.progressByModule[mod.id]?.lessonCompleted || currentStudent.progressByModule[mod.id]?.isBridgeRestored || currentStudent.completedModules.includes(mod.id)));
     setLessonInitialStage(startDirectlyInQuiz && (isLessonDone || !currentStudent) ? 'QUIZ_SETUP' : 'LESSON');
     setCurrentView('LESSON_QUIZ');
   };
 
   // Complete lesson
-  const handleCompleteLesson = (moduleId: string) => {
-    if (!currentStudent) return;
-
-    setStudents((prevStudents) =>
-      prevStudents.map((st) => {
-        if (st.id !== currentStudent.id) return st;
-
-        const currentProg = st.progressByModule[moduleId] || {
-          moduleId,
-          lessonCompleted: false,
-          isBridgeRestored: false,
-          bestScorePercent: 0,
-          attemptsCount: 0,
-          completedDifficulties: [],
-          lastAttemptDate: new Date().toISOString().split('T')[0],
-          quizHistory: [],
-        };
-
-        const newlyCompleted = !currentProg.lessonCompleted;
-        const updatedProg: ModuleProgress = {
-          ...currentProg,
-          lessonCompleted: true,
-          lastAttemptDate: new Date().toISOString().split('T')[0],
-        };
-
-        const updatedBadges = Array.from(new Set([...st.badges, 'first_lesson']));
-
-        const bonusPoints = newlyCompleted ? 50 : 10;
-        const updatedStudent: StudentAccount = {
-          ...st,
-          points: st.points + bonusPoints,
-          badges: updatedBadges,
-          progressByModule: {
-            ...st.progressByModule,
-            [moduleId]: updatedProg,
-          },
-        };
-
-        apiPersistStudentProgress(updatedStudent, moduleId, updatedProg);
-        return updatedStudent;
-      })
-    );
+  const handleCompleteLesson = async (moduleId: string) => {
+    if (!currentStudent || selectedModule?.id !== moduleId) throw new Error('Please reopen your lesson.');
+    const st = currentStudent;
+    const currentProg = st.progressByModule[moduleId] || {
+      moduleId, lessonCompleted: false, isBridgeRestored: false, bestScorePercent: 0,
+      attemptsCount: 0, completedDifficulties: [], lastAttemptDate: '', quizHistory: [],
+    };
+    const newlyCompleted = !currentProg.lessonCompleted;
+    const updatedProg: ModuleProgress = {
+      ...currentProg, lessonCompleted: true, lastAttemptDate: new Date().toISOString().split('T')[0],
+    };
+    const updatedStudent: StudentAccount = {
+      ...st, points: st.points + (newlyCompleted ? 50 : 0),
+      badges: Array.from(new Set([...st.badges, 'first_lesson'])),
+      progressByModule: { ...st.progressByModule, [moduleId]: updatedProg },
+    };
+    // Unlock the quiz only after the owned progress record has been saved.
+    await apiPersistStudentProgress(updatedStudent, moduleId, updatedProg, true);
+    setStudents(prev => prev.map(student => student.id === st.id ? {
+      ...student, points: Math.max(student.points, updatedStudent.points),
+      badges: Array.from(new Set([...student.badges, ...updatedStudent.badges])),
+      progressByModule: { ...student.progressByModule, [moduleId]: updatedProg },
+    } : student));
   };
 
   // Award XP & unlock Visual Learner / Explainer Explorer badges on visual activity completion (once per item)
@@ -2077,6 +2058,7 @@ export default function App() {
             module={selectedModule}
             nextModule={nextModule || null}
             initialStage={lessonInitialStage}
+            lessonCompleted={Boolean(currentStudent && (currentStudent.progressByModule[selectedModule.id]?.lessonCompleted || currentStudent.progressByModule[selectedModule.id]?.isBridgeRestored || currentStudent.completedModules.includes(selectedModule.id)))}
             isPersonalization={currentStudent ? selectedModule.gradeLevel !== currentStudent.gradeLevel : false}
             isPreviewMode={!currentStudent && (currentUser?.role === 'teacher' || currentUser?.role === 'admin')}
             previewRole={currentUser?.role === 'teacher' ? 'teacher' : currentUser?.role === 'admin' ? 'admin' : null}

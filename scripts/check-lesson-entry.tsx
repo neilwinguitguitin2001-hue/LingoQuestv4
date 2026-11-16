@@ -1,0 +1,15 @@
+import React from 'react';
+import assert from 'node:assert/strict';
+import {renderToStaticMarkup} from 'react-dom/server';
+import {AudioProvider} from '../src/context/AudioContext';
+import {LessonAndQuizView} from '../src/components/LessonAndQuizView';
+import {PDF_MODULES} from '../src/data/curriculum/pdfCurriculum';
+const module=PDF_MODULES[0];
+const render=(completed:boolean,preview=false)=>renderToStaticMarkup(<AudioProvider><LessonAndQuizView module={module} nextModule={null} initialStage="QUIZ_SETUP" lessonCompleted={completed} isPersonalization={false} isPreviewMode={preview} onBackToMap={()=>{}} onCompleteLesson={async()=>{}} onSubmitQuizResult={()=>({totalPointsAwarded:0,newlyUnlockedBadges:[],bridgeNewlyRestored:false})} onAdvanceToNextModule={()=>{}} onOpenWritingLabWithPrompt={()=>{}}/></AudioProvider>);
+const incomplete=render(false);
+assert.ok(incomplete.includes('Mark lesson as complete'));
+assert.ok(!incomplete.includes('Launch Gamified Quiz Now'));
+assert.ok(!incomplete.includes('Complete &amp; Start Quiz'));
+assert.ok(render(true).includes('Launch Gamified Quiz Now'));
+assert.ok(render(false,true).includes('Launch Gamified Quiz Now'));
+console.log('PASS: incomplete student forced to lesson even with quiz initial stage; completed student and faculty preview retain quiz setup.');
