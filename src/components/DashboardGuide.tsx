@@ -1,3 +1,4 @@
+import { supabase } from '../lib/supabase';
 import { soundFX } from '../utils/soundEffects';
 import { useEffect, useRef, useId, useState } from 'react';
 import { createPortal } from 'react-dom';
@@ -39,11 +40,24 @@ export function DashboardGuide({ accountId, role, currentView, onNavigate }: {
 }) {
   const dashboard = role === 'student' ? 'STUDENT_DASHBOARD' : role === 'teacher' ? 'TEACHER' : 'ADMIN';
   const key = `lq-dashboard-guide-v2:${role}:${accountId}`;
-  const [mode, setMode] = useState<'tour' | 'guide' | 'closed'>(() => {
-    if (role === 'division') return 'closed';
-    try { return localStorage.getItem(key) ? 'closed' : 'tour'; }
-    catch { return 'closed'; }
-  });
+  const [mode, setMode] = useState<'tour' | 'guide' | 'closed'>('closed');
+  const automaticClaim = useRef<Promise<boolean> | null>(null);
+  useEffect(() => {
+    if (role === 'division' || !supabase) return;
+    let active = true;
+    // Reuse the request during React's effect replay. The database atomically
+    // claims a new account's welcome once across browsers and devices.
+    automaticClaim.current ??= (async () => {
+      const { data: { session } } = await supabase.auth.getSession();
+      if (session?.user.id !== accountId) return false;
+      const { data, error } = await supabase.rpc('claim_new_account_guide');
+      return !error && data === true;
+    })().catch(() => false);
+    automaticClaim.current.then(show => {
+      if (active && show) setMode(previous => previous === 'closed' ? 'tour' : previous);
+    });
+    return () => { active = false; };
+  }, [accountId, role]);
   const [index, setIndex] = useState(0);
   const headingId = useId();
   const steps = role === 'student' ? studentSteps : role === 'teacher' ? teacherSteps
