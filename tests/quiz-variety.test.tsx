@@ -30,3 +30,15 @@ test('picture inspection has no answer submission controls or correctness data',
  const html=renderToStaticMarkup(<QuizPictureInspector pictures={q.pictureOptions!} topic="Analogy"/>);
  assert.match(html,/Inspect pictures/);assert.match(html,/Next picture/);assert.match(html,/timer keeps running/);assert.doesNotMatch(html,/correct|Submit answer/);
 });
+
+test('simulation rejects ten IDs with duplicate clues instead of repeating them',async()=>{
+ const {createSourceGameSession}=await import('../src/utils/sourceGameSession');
+ const target=(targets as ModuleTargets[])[0];
+ const compiled=compileModuleQuestions(target);
+ const module={pdfLesson:{source:{fileId:target.fileId,sha256:target.pdfSha256,pageCount:100}}} as any;
+ const originals=compiled.filter(q=>q.type==='pictureHunt'&&q.difficulty==='easy').slice(0,10);
+ const duplicate=originals.map(q=>({...q,contextSentence:'Identical clue'}));
+ assert.equal(createSourceGameSession(module,duplicate,'pictureHunt','easy'),null);
+ const session=createSourceGameSession(module,compiled,'all','easy');
+ assert.equal(session?.length,10);assert.equal(new Set(session?.map(q=>q.learningTargetId)).size,10);
+});
