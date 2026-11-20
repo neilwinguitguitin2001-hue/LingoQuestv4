@@ -1,3 +1,4 @@
+import {MonthlyReports} from './MonthlyReports';
 import { AudioSettings } from './AudioSettings';
 import React, { useEffect, useState } from 'react';
 import {
@@ -1498,11 +1499,12 @@ export const TeacherDashboardView: React.FC<TeacherDashboardViewProps> = ({
                   title="Print or save class performance analytics report"
                 >
                   <Printer className="w-3.5 h-3.5 text-indigo-300" />
-                  <span>Print Report</span>
+                  <span>Print lifetime analytics</span>
                 </button>
               </div>
             </div>
 
+            <MonthlyReports />
             {/* Sub-navigation & Filters Toolbar */}
             <div className="lq-woven-card lq-woven-pad-4 bg-slate-50 p-4 rounded-3xl border border-slate-200 space-y-3">
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-3">
