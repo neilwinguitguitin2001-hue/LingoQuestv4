@@ -1,0 +1,21 @@
+import {useEffect,useState} from 'react';
+import {requestEmailCode,verifyEmailCode,type OtpPurpose} from '../services/emailOtp';
+import type {UserAccount} from '../types/lingoquest';
+export function EmailOtpPanel({purpose,role,initialEmail='',onSuccess,onCancel,initiallySent=false}:{purpose:OtpPurpose;role:'student'|'teacher'|'admin';initialEmail?:string;initiallySent?:boolean;onSuccess:(account:UserAccount|null)=>void;onCancel:()=>void}){
+ const [email,setEmail]=useState(initialEmail),[code,setCode]=useState(''),[sent,setSent]=useState(initiallySent),[busy,setBusy]=useState(false),[error,setError]=useState(''),[wait,setWait]=useState(initiallySent?60:0);
+ useEffect(()=>{if(!wait)return;const timer=window.setTimeout(()=>setWait(value=>Math.max(0,value-1)),1000);return()=>window.clearTimeout(timer);},[wait]);
+ async function send(){if(busy||wait)return;setBusy(true);setError('');try{await requestEmailCode(email,purpose);setSent(true);setWait(60);setCode('');}catch(err){setError(err instanceof Error?err.message:'Unable to request a code.');}finally{setBusy(false);}}
+ return <section className="space-y-4 rounded-2xl border border-sky-400/30 bg-[#07172C] p-4 text-white" aria-labelledby="email-code-title">
+  <h3 id="email-code-title" className="text-lg font-bold">{purpose==='registration'?'Verify your email':'Sign in with email code'}</h3>
+  <p className="text-xs leading-relaxed text-slate-300">{purpose==='registration'?'Enter the code in your registration email. If the email contains only a confirmation link, you can use that link and return to password sign-in. Verification does not approve your application; your teacher or administrator must still review it.':'Use the email already registered with your account. A code replaces your password for this sign-in; it does not change your account role or approval status.'}</p>
+  {error&&<p role="alert" className="text-sm text-rose-200">{error}</p>}
+  <form className="space-y-3" onSubmit={async event=>{event.preventDefault();if(busy)return;if(!sent){await send();return;}setBusy(true);setError('');try{const own=await verifyEmailCode(email,code,purpose,role);setCode('');onSuccess(own);}catch(err){setError(err instanceof Error?err.message:'Verification could not finish.');}finally{setBusy(false);}}}>
+   <label className="block text-xs font-bold text-slate-300">Registered email<input type="email" autoComplete="email" required maxLength={200} readOnly={sent} value={email} onChange={e=>setEmail(e.target.value)} className="mt-1 block w-full rounded-xl border border-[#193B66] bg-[#0B2340] p-3 text-sm text-white"/></label>
+   {sent&&<><p role="status" className="text-xs text-emerald-200">If this email is eligible and delivery is available, a code has been requested. Check your inbox and spam folder. Use the newest email you receive.</p><label className="block text-xs font-bold text-slate-300">Email verification code (enter all digits)<input autoFocus type="text" inputMode="numeric" autoComplete="one-time-code" required pattern="[0-9]{6,10}" minLength={6} maxLength={10} value={code} onChange={e=>setCode(e.target.value.replace(/[^0-9]/g,''))} className="mt-1 block w-full rounded-xl border border-sky-400/50 bg-[#0B2340] p-3 text-lg tracking-widest text-white"/></label></>}
+   <button disabled={busy} className="min-h-11 w-full rounded-xl bg-sky-500 px-4 py-3 text-sm font-bold text-white disabled:opacity-50">{busy?'Please wait…':sent?'Verify code': 'Send email code'}</button>
+  </form>
+  {sent&&<div className="flex flex-wrap gap-3 text-xs"><button type="button" disabled={busy||wait>0} onClick={send} className="min-h-11 text-sky-200 underline disabled:opacity-50">{wait?`Resend in ${wait}s`:'Resend code'}</button><button type="button" disabled={busy} onClick={()=>{setSent(false);setCode('');setError('');}} className="min-h-11 text-sky-200 underline">Change email</button></div>}
+  <button type="button" disabled={busy} onClick={onCancel} className="min-h-11 text-sm font-semibold text-slate-200 underline">Return to password sign-in</button>
+  <p className="text-[11px] text-slate-400">Never share your code. Expired, incorrect or already-used codes cannot sign you in. Mobile verification is not enabled.</p>
+ </section>;
+}

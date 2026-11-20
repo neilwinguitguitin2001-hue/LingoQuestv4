@@ -13,12 +13,19 @@ type TeacherRegistration = { role: 'teacher'; employeeId: string };
 
 export async function submitRegistration(input: (StudentRegistration | TeacherRegistration) & {
   name: string;
+  firstName: string;
+  lastName: string;
+  middleName?: string;
+  contactNumber?: string;
   schoolName: string;
   username: string;
   email: string;
   password: string;
 }, termsAccepted = true) {
-  const { email, password, ...application } = input;
+  const { email, password, ...details } = input;
+  const { normalizeRegistrationIdentity } = await import('../utils/registrationIdentity');
+  const identity = normalizeRegistrationIdentity(details);
+  const application = { ...details, ...identity };
   if (password.length < 6) throw new Error('Use a password of at least 6 characters.');
   const { data, error } = await createSignupClient().auth.signUp({
     email: email.trim().toLowerCase(),

@@ -1,3 +1,5 @@
+import {EmailOtpPanel} from './EmailOtpPanel';
+import {RegistrationIdentityFields, type RegistrationIdentity} from './RegistrationIdentityFields';
 import {RecoveryRequest} from './PasswordRecovery';
 import {InabelStrip} from './InabelStrip';
 import {InabelWovenStrip} from './FilipinianaMotifs';
@@ -110,7 +112,7 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Student Registration form fields
-  const [stuName, setStuName] = useState('');
+  const [stuIdentity, setStuIdentity] = useState<RegistrationIdentity>({firstName:'',lastName:'',middleName:'',contactNumber:''});
   const [stuEmail, setStuEmail] = useState('');
   const [stuLrn, setStuLrn] = useState('');
   const [stuGrade, setStuGrade] = useState<GradeLevel>(8);
@@ -124,7 +126,7 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
   const [selectedMapIslandId, setSelectedMapIslandId] = useState<string>('discovery-dinosaur');
 
   // Teacher Registration form fields
-  const [tchName, setTchName] = useState('');
+  const [tchIdentity, setTchIdentity] = useState<RegistrationIdentity>({firstName:'',lastName:'',middleName:'',contactNumber:''});
   const [tchEmployeeId, setTchEmployeeId] = useState('');
   const [tchSchool, setTchSchool] = useState<string>(DEPED_DAVAO_ORIENTAL_HIGH_SCHOOLS[0]);
   const [tchDepEdEmail, setTchDepEdEmail] = useState('');
@@ -132,6 +134,7 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
   const [tchPassword, setTchPassword] = useState('');
 
   const [registrationReceipt, setRegistrationReceipt] = useState('');
+  const [otpFlow,setOtpFlow]=useState<{purpose:'login'|'registration';email:string;role:'student'|'teacher'|'admin';sent:boolean}|null>(null);
 
   // Rate Limit Countdown Interval
   useEffect(() => {
@@ -152,6 +155,7 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
   const handleRoleSwitch = (newRole: 'student' | 'teacher' | 'admin') => {
     soundFX.playClick();
     setLoginRole(newRole);
+    setOtpFlow(null);
     setErrorMsg('');
     setLoginUsername('');
     setLoginPassword('');
@@ -214,7 +218,8 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
     try {
       const result = await submitRegistration(registerRole === 'student' ? {
         role: 'student',
-        name: stuName.trim(),
+        ...stuIdentity,
+        name: [stuIdentity.firstName,stuIdentity.middleName,stuIdentity.lastName].map(value=>value.trim()).filter(Boolean).join(' '),
         email: stuEmail,
         lrn: stuLrn.trim(),
         gradeLevel: stuGrade,
@@ -225,7 +230,8 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
         password: stuPassword,
       } : {
         role: 'teacher',
-        name: tchName.trim(),
+        ...tchIdentity,
+        name: [tchIdentity.firstName,tchIdentity.middleName,tchIdentity.lastName].map(value=>value.trim()).filter(Boolean).join(' '),
         email: tchDepEdEmail,
         employeeId: tchEmployeeId.trim(),
         schoolName: tchSchool,
@@ -241,6 +247,7 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
       setStuPassword('');
       setTchPassword('');
       setMode('login');
+      if(result.needsEmailConfirmation) setOtpFlow({purpose:'registration',email:registerRole==='student'?stuEmail.trim():tchDepEdEmail.trim(),role:registerRole,sent:true});
     } catch (err: any) {
       setErrorMsg(err?.message || 'Registration failed. Please try again.');
     } finally {
@@ -419,7 +426,8 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
                     </button>
                   </div>
 
-                  {/* Sign In Form */}
+                  {/* Password remains the default; email-code flow only opens explicitly or after signup. */}
+                  {otpFlow ? <EmailOtpPanel key={`${otpFlow.purpose}:${otpFlow.role}:${otpFlow.email}`} purpose={otpFlow.purpose} role={otpFlow.role} initialEmail={otpFlow.email} initiallySent={otpFlow.sent} onCancel={()=>setOtpFlow(null)} onSuccess={account=>{setOtpFlow(null);if(account){handleResetFailedAttempts();onLoginSuccess(account);}else{setRegistrationReceipt('Email verified. Sign in to check your application status. Teacher or administrator approval is still required.');}}}/> : <>
                   <form onSubmit={handleLoginSubmit} className="space-y-4">
                     {registrationReceipt && (
                       <p role="status" className="rounded-xl border border-emerald-500/40 bg-emerald-950/40 p-3 text-sm text-emerald-100">
@@ -539,6 +547,8 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
 
 
                   </form>
+                  <button type="button" onClick={()=>{setErrorMsg('');setLoginPassword('');setOtpFlow({purpose:'login',email:loginUsername.includes('@')?loginUsername.trim():'',role:loginRole,sent:false});}} className="min-h-11 w-full rounded-xl border border-sky-400/40 bg-sky-950/40 px-4 py-3 text-sm font-bold text-sky-100 hover:bg-sky-900/40">Sign in with email code instead</button>
+                  </>}
                 </div>
               )}
 
@@ -586,18 +596,7 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
                   {/* Student Registration Form */}
                   {registerRole === 'student' && (
                     <form onSubmit={handleRegisterSubmit} className="space-y-3">
-                      <div>
-                        <label className="block text-xs font-bold text-slate-300 mb-1">
-                          Complete Student Name <span className="text-rose-400">*</span>
-                        </label>
-                        <input
-                          type="text"
-                          required
-                          value={stuName}
-                          onChange={(e) => setStuName(e.target.value)}
-                          className="w-full px-3.5 py-2 bg-[#07172C] text-white text-xs rounded-xl border border-[#193B66] focus:border-sky-400 outline-none"
-                        />
-                      </div>
+                      <RegistrationIdentityFields role="student" value={stuIdentity} onChange={setStuIdentity} />
 
                       <div>
                         <label className="block text-xs font-bold text-slate-300 mb-1 flex items-center justify-between">
@@ -757,17 +756,8 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
                         Teacher accounts are subject to administrative review by the Davao Oriental Division Office before activation.
                       </div>
 
-                      <div className="grid grid-cols-2 gap-2.5">
-                        <div>
-                          <label className="block text-xs font-bold text-slate-300 mb-1">Full Name</label>
-                          <input
-                            type="text"
-                            required
-                            value={tchName}
-                            onChange={(e) => setTchName(e.target.value)}
-                            className="w-full px-3.5 py-2 bg-[#07172C] text-white text-xs rounded-xl border border-[#193B66] focus:border-emerald-400 outline-none"
-                          />
-                        </div>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                        <RegistrationIdentityFields role="teacher" value={tchIdentity} onChange={setTchIdentity} />
 
                         <div>
                           <label className="block text-xs font-bold text-slate-300 mb-1">Employee ID</label>
