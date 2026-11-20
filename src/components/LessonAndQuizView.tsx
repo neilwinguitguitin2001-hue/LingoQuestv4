@@ -1,3 +1,4 @@
+import {QuizPictureInspector} from './QuizPictureInspector';
 import { useAudioSettings } from '../context/AudioContext';
 import {PictureHuntIllustration} from './PictureHuntIllustration';
 import {CrosswordLetters} from './CrosswordLetters';
@@ -1511,7 +1512,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
             {purchasedClue&&<p role="status" className="rounded-lg border border-sky-200 bg-sky-50 p-3 text-sm text-sky-950">{purchasedClue}</p>}
           </div>
 
-          {currentQ.sourceGraphic && <SourceGraphic block={currentQ.sourceGraphic}/>}
+          {currentQ.sourceGraphic && <SourceGraphic block={currentQ.sourceGraphic} interactive/>}
           {currentQ.type === 'typeHunter' && (
             <div className="space-y-5">
               {currentQ.contextSentence && (
@@ -1585,6 +1586,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
               </section>
               <section className="space-y-3" aria-label="Picture answer choices">
                 <h3 className="text-sm font-bold text-slate-900">Choose the picture that completes the clue.</h3>
+                <QuizPictureInspector key={currentQ.id} pictures={currentQ.pictureOptions.filter(pic=>!removedChoices.includes(pic.id))} topic={module.title}/>
                 <div className="grid grid-cols-1 min-[380px]:grid-cols-2 auto-rows-fr gap-3">
                 {currentQ.pictureOptions.map((pic,index)=>{
                   if (removedChoices.includes(pic.id)) return null;

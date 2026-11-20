@@ -1,3 +1,4 @@
+import {pictureSceneFor} from './pictureIllustrations';
 import type {QuizQuestion, QuizGameType, DifficultyLevel} from '../../types/lingoquest';
 export interface LearningTarget {term:string;quote:string;page:number;selection:string}
 export interface ModuleTargets {moduleId:string;fileId:string;pdfSha256:string;title:string;anchors:LearningTarget[]}
@@ -30,7 +31,12 @@ export function compileModuleQuestions(module:ModuleTargets):QuizQuestion[] {
   if(double)context=context.replace(match(second),'[2] ________');
   const answer=spans.join(' / ');
   const distractors=variants.filter(v=>v.index!==index).map(v=>double?`${v.target.term} / ${second}`:v.target.term).filter(x=>x.toLowerCase()!==answer.toLowerCase());
-  const choices=[answer,...distractors].slice(0,difficulty==='easy'?2:4);
+  // Rotate candidates by question, rather than always taking the first anchors.
+  // Every distractor still comes from this module's reviewed source excerpts.
+  const seed=[...id].reduce((sum,char)=>(Math.imul(sum,31)+char.charCodeAt(0))>>>0,0);
+  const uniqueDistractors=[...new Map(distractors.map(value=>[value.toLowerCase(),value])).values()];
+  const rotated=uniqueDistractors.map((value,i)=>({value,rank:((Math.imul(seed^(i+1),2654435761))>>>0)})).sort((a,b)=>a.rank-b.rank).map(item=>item.value);
+  const choices=[answer,...rotated].slice(0,difficulty==='easy'?2:4);
   const clue=double?'Restore gaps [1] and [2] in order; separate your answers with “ / ”.':'Restore the missing term exactly as it appears in the lesson.';
   const base:QuizQuestion={id,type:mode,difficulty,prompt:clue,contextSentence:context,answer,explanation:`The lesson states: “${target.quote}” ${double?`The two missing expressions are “${target.term}” and “${second}”.`:`The missing expression is “${target.term}”.`}`,timeLimitSeconds:difficulty==='easy'?60:difficulty==='moderate'?60:90,learningTargetId:targetId,assessmentKey:`${targetId}-${difficulty}`,source:{pdfSha256:module.pdfSha256,fileId:module.fileId,page:target.page,quote:target.quote,answerQuote:target.term,answerSpans:spans,sourceId:id,kind:'pdf-topic-completion'}};
   if(mode==='analogyMaster'){
@@ -51,7 +57,13 @@ export function compileModuleQuestions(module:ModuleTargets):QuizQuestion[] {
   }
   if(mode==='pictureHunt'){
    base.prompt=`Picture & Concept Hunt: select the card that ${double?'restores both numbered gaps in order.':'completes the lesson explanation.'}`;
-   base.pictureOptions=choices.map((value,i)=>({id:`${id}-card-${i}`,sceneId:'ancient_scroll',label:value,caption:'',conceptVisual:{tokens:value.split(' / '),variant:index%3}}));
+   const answerScene=pictureSceneFor(target.term);
+   const pictureDistractors=[...rotated].sort((a,b)=>{
+    const sceneA=pictureSceneFor(a.split(' / ')[0]),sceneB=pictureSceneFor(b.split(' / ')[0]);
+    return Number(!sceneA||sceneA===answerScene)-Number(!sceneB||sceneB===answerScene);
+   });
+   const pictureChoices=[answer,...pictureDistractors].slice(0,4);
+   base.pictureOptions=pictureChoices.map((value,i)=>({id:`${id}-card-${i}`,sceneId:'ancient_scroll',label:value,caption:'',conceptVisual:{tokens:value.split(' / '),variant:index%3}}));
    base.answer=base.pictureOptions[0].id;
   }
   result.push(base);
