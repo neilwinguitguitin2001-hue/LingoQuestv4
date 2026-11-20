@@ -1,3 +1,4 @@
+import './LessonReading.css';
 import React, {useMemo, useRef, useState} from 'react';
 import {BookOpen, CheckSquare, FileText, Image as ImageIcon, ListChecks, Play} from 'lucide-react';
 import type {Module} from '../types/lingoquest';
@@ -42,7 +43,7 @@ export function SourceLessonSections({module,content,error,retry,dataSaver=false
   </div>
   <div id="pdf-source-panel" role="tabpanel" aria-labelledby={`pdf-tab-${active}`} className="grid grid-cols-1 lg:grid-cols-12 gap-6">
    <div className="min-w-0 lg:col-span-7 space-y-6">
-    <section className="bg-white border-2 border-[#231F20] linocut-card rounded-xl overflow-hidden"><InabelStrip variant="royal" label={`${selected?.title||'Discussion'} • ${lesson.sourceLabel}`}/><div className="p-5 sm:p-6 space-y-5">
+    <section className="bg-white border-2 border-[#231F20] linocut-card rounded-xl overflow-hidden"><InabelStrip variant="royal" label={`${selected?.title||'Discussion'} • ${lesson.sourceLabel}`}/><div className="lq-lesson-reading p-5 sm:p-6 space-y-5">
      <div className="flex flex-wrap justify-between gap-3 border-b border-slate-100 pb-3"><h2 className="text-lg font-display font-bold text-slate-900">{selected?.title}</h2></div>
      {guide && <LessonDiscussionGuide moduleId={module.id} discussion={guide} pilot={pilot} />}
      {guide ? (
@@ -56,7 +57,7 @@ export function SourceLessonSections({module,content,error,retry,dataSaver=false
    <aside className="min-w-0 lg:col-span-5 space-y-6 scroll-mt-32" id="lesson-visual-examples" aria-label="Visual explanations">
     <section className="overflow-hidden rounded-xl border-2 border-[#231F20] bg-white linocut-card">
      <InabelStrip variant="emerald" label="Illustrated Examples" />
-     <div className="space-y-4 p-4 sm:p-5">
+     <div className="lq-lesson-support space-y-4 p-4 sm:p-5">
       <h2 className="flex items-center gap-2 font-display text-lg font-bold text-slate-950">
        <ImageIcon className="h-4 w-4 text-sky-700" aria-hidden="true" /> Visual Explanations
       </h2>

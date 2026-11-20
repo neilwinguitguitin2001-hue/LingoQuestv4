@@ -1,0 +1,86 @@
+/* Module reading styles only: retain the existing theme, content, and controls. */
+.pdf-source-module .lq-lesson-reading {
+  --lesson-ink: #334155;
+  padding: clamp(1.25rem, 2.5vw, 2rem);
+  color: var(--lesson-ink);
+}
+.pdf-source-module .lq-lesson-reading :where(p, li, td, th) {
+  font-size: 1rem;
+  line-height: 1.85;
+  letter-spacing: normal;
+  word-spacing: normal;
+  overflow-wrap: anywhere;
+}
+.pdf-source-module .lq-lesson-reading p {
+  max-inline-size: 70ch;
+  margin-block: 0 1.1em;
+  text-align: start;
+  text-wrap: pretty;
+}
+.pdf-source-module .lq-lesson-reading h2 {
+  font-size: clamp(1.35rem, 1.1rem + .6vw, 1.65rem);
+  line-height: 1.35;
+  color: #0f172a;
+}
+.pdf-source-module .lq-lesson-reading h3 {
+  font-size: clamp(1.2rem, 1rem + .5vw, 1.45rem);
+  line-height: 1.4;
+  margin-block: 1.35em .65em;
+  color: #083344;
+  text-wrap: balance;
+  white-space: normal;
+}
+.pdf-source-module .lq-lesson-reading h4 {
+  font-size: 1.0625rem;
+  line-height: 1.45;
+  margin-block: .25em .65em;
+  font-weight: 700;
+  color: #0c4a6e;
+}
+.pdf-source-module .lq-lesson-reading :where(h2,h3,h4) {
+  overflow-wrap: anywhere;
+}
+.pdf-source-module .lq-lesson-reading article {
+  padding-block-start: 1.5rem;
+  margin-block-start: 1.5rem;
+}
+.pdf-source-module .lq-lesson-reading article > div {
+  /* Consistent rhythm instead of stacking utility margins with paragraph margins. */
+  display: flow-root;
+}
+.pdf-source-module .lq-lesson-reading article > div > * + * {
+  margin-block-start: 1rem;
+}
+.pdf-source-module .lq-lesson-reading summary {
+  font-size: .9375rem;
+  line-height: 1.6;
+  padding: 1rem 1.25rem;
+}
+.pdf-source-module .lq-lesson-reading details[open] > summary {
+  margin-block-end: 1rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+.pdf-source-module .lq-lesson-reading :where(ul,ol) {
+  margin-block: 1rem;
+}
+.pdf-source-module .lq-lesson-reading :where(td,th) {
+  padding: .8rem 1rem;
+  font-size: .9375rem;
+  line-height: 1.65;
+  min-inline-size: 8rem;
+}
+.pdf-source-module .lq-lesson-reading :where(p:last-child) {
+  margin-block-end: 0;
+}
+.pdf-source-module .lq-lesson-support :where(p,li) {
+  font-size: .9375rem;
+  line-height: 1.75;
+  overflow-wrap: anywhere;
+}
+@media (min-width: 768px) {
+  .pdf-source-module .lq-lesson-reading :where(p,li) { font-size: 1.0625rem; }
+}
+@media (max-width: 480px) {
+  .pdf-source-module .lq-lesson-reading details > div { padding-inline: 1rem; }
+  .pdf-source-module .lq-lesson-reading section { padding: 1rem; }
+}
