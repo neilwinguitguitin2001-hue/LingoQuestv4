@@ -3,6 +3,7 @@ import React, {useMemo, useRef, useState} from 'react';
 import {BookOpen, CheckSquare, FileText, Image as ImageIcon, ListChecks, Play} from 'lucide-react';
 import type {Module} from '../types/lingoquest';
 import type {DigitalContent, DigitalBlock} from '../data/curriculum/digitalContent';
+import {AnalogyVideoExplainer} from './AnalogyVideoExplainer';
 import {LessonWorkedVisual} from './LessonWorkedVisual';
 import {InabelStrip} from './InabelStrip';
 import {SourceBlock} from './SourceContent';
@@ -64,6 +65,7 @@ export function SourceLessonSections({module,content,error,retry,dataSaver=false
       {video && <a className="inline-flex items-center gap-1.5 rounded-lg border border-sky-200 bg-sky-50 px-3 py-2 text-sm font-bold text-sky-900 hover:bg-sky-100" href="#lesson-watch-video">
        <Play size={15} aria-hidden="true" /> Watch &amp; Understand
       </a>}
+      {active === 'concepts' && <AnalogyVideoExplainer moduleId={module.id} sourceSha256={lesson.source.sha256} />}
       {active === 'concepts' && <LessonWorkedVisual moduleId={module.id} sourceSha256={lesson.source.sha256} />}
       {visuals.length > 0 && visuals.slice(0, visualLimit).map(({id, block, repaired, correction}) => {
        if (correction && 'text' in correction) {
