@@ -1,3 +1,4 @@
+import {DashboardSectionBack} from './DashboardSectionBack';
 import { AudioSettings } from './AudioSettings';
 import React, { useEffect, useState } from 'react';
 import {
@@ -890,6 +891,7 @@ export const TeacherDashboardView: React.FC<TeacherDashboardViewProps> = ({
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-8 space-y-6 animate-fade-in">
+      {activeTab!=='students'&&<DashboardSectionBack label="Back to student roster" onBack={()=>setActiveTab('students')}/>}
       {/* Top Banner in Deep Navy Theme */}
       <div className="bg-gradient-to-r from-[#0A192F] via-[#0F3460] to-[#1E3E62] rounded-3xl text-white relative overflow-hidden border-2 border-[#231F20] linocut-card animate-dashboard-hero">
         <InabelHeaderStrip variant="royal" label="DepEd Davao Oriental • Faculty Academic Monitoring Console" />

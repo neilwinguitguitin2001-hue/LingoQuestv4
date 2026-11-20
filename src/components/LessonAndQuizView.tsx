@@ -1,3 +1,4 @@
+import {navigationEvent} from '../hooks/useDashboardHistory';
 import { useAudioSettings } from '../context/AudioContext';
 import {PictureHuntIllustration} from './PictureHuntIllustration';
 import {CrosswordLetters} from './CrosswordLetters';
@@ -267,6 +268,14 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
     }
   };
 
+  const exitApprovedRef=useRef(false);
+  useEffect(()=>{
+    if(stage!=='PLAYING_QUIZ')return;
+    const guard=(event:Event)=>{if(!exitApprovedRef.current&&!window.confirm('Leave this quiz? The current game will not be completed. Previously saved progress and rewards remain.'))event.preventDefault();};
+    const unload=(event:BeforeUnloadEvent)=>{event.preventDefault();event.returnValue='';};
+    window.addEventListener(navigationEvent,guard);window.addEventListener('beforeunload',unload);
+    return()=>{window.removeEventListener(navigationEvent,guard);window.removeEventListener('beforeunload',unload);};
+  },[stage]);
   const timerRef = useRef<number | null>(null);
   const submittedQuestionRef = useRef<string | null>(null);
   const activeQuestionIdRef = useRef<string | null>(null);
@@ -274,6 +283,7 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
   const currentIslandName = getDavaoOrientalIsland(module.quarter)?.name || module.islandName;
 
   const handleGoToStudentDashboard = () => {
+    if(showExitModal){exitApprovedRef.current=true;queueMicrotask(()=>{exitApprovedRef.current=false;});}
     soundFX.playClick();
     setShowExitModal(false);
     if (onBackToStudentDashboard) {
@@ -1960,7 +1970,9 @@ export const LessonAndQuizView: React.FC<LessonAndQuizViewProps> = ({
                   onClick={() => {
                     soundFX.playClick();
                     setShowExitModal(false);
+                    exitApprovedRef.current=true;
                     onBackToMap();
+                    queueMicrotask(()=>{exitApprovedRef.current=false;});
                   }}
                   className="w-full text-left p-3.5 rounded-xl border border-slate-200 bg-slate-50 hover:bg-slate-100 hover:border-slate-300 transition cursor-pointer flex items-center gap-3.5 group"
                 >

@@ -1,3 +1,4 @@
+import {navigationEvent} from '../hooks/useDashboardHistory';
 import {generateOpenQuillFeedback} from '../utils/openquillFeedback';
 import React, { useEffect, useRef, useState } from 'react';
 import {
@@ -47,6 +48,13 @@ export const WritingLabView: React.FC<WritingLabViewProps> = ({
   const [copied, setCopied] = useState(false);
   const mounted = useRef(true);
   useEffect(() => { mounted.current = true; return () => { mounted.current = false; }; }, []);
+  useEffect(()=>{
+    if(!studentText.trim())return;
+    const guard=(event:Event)=>{if(!window.confirm('Leave Writing Lab? Copy any editor text you want to keep before leaving. Previously saved submissions remain.'))event.preventDefault();};
+    const unload=(event:BeforeUnloadEvent)=>{event.preventDefault();event.returnValue='';};
+    window.addEventListener(navigationEvent,guard);window.addEventListener('beforeunload',unload);
+    return()=>{window.removeEventListener(navigationEvent,guard);window.removeEventListener('beforeunload',unload);};
+  },[studentText]);
   const handleAnalyze = async () => {
     if (!studentText.trim() || studentText.trim().length < 10) {
       setErrorMessage('Please write at least one complete sentence (minimum 10 characters) to analyze.');
