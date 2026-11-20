@@ -1,3 +1,4 @@
+import {EmailOtpPanel} from './EmailOtpPanel';
 import {RegistrationIdentityFields, type RegistrationIdentity} from './RegistrationIdentityFields';
 import {RecoveryRequest} from './PasswordRecovery';
 import {InabelStrip} from './InabelStrip';
@@ -133,6 +134,7 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
   const [tchPassword, setTchPassword] = useState('');
 
   const [registrationReceipt, setRegistrationReceipt] = useState('');
+  const [otpFlow,setOtpFlow]=useState<{purpose:'login'|'registration';email:string;role:'student'|'teacher'|'admin';sent:boolean}|null>(null);
 
   // Rate Limit Countdown Interval
   useEffect(() => {
@@ -153,6 +155,7 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
   const handleRoleSwitch = (newRole: 'student' | 'teacher' | 'admin') => {
     soundFX.playClick();
     setLoginRole(newRole);
+    setOtpFlow(null);
     setErrorMsg('');
     setLoginUsername('');
     setLoginPassword('');
@@ -244,6 +247,7 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
       setStuPassword('');
       setTchPassword('');
       setMode('login');
+      if(result.needsEmailConfirmation) setOtpFlow({purpose:'registration',email:registerRole==='student'?stuEmail.trim():tchDepEdEmail.trim(),role:registerRole,sent:true});
     } catch (err: any) {
       setErrorMsg(err?.message || 'Registration failed. Please try again.');
     } finally {
@@ -422,7 +426,8 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
                     </button>
                   </div>
 
-                  {/* Sign In Form */}
+                  {/* Password remains the default; email-code flow only opens explicitly or after signup. */}
+                  {otpFlow ? <EmailOtpPanel key={`${otpFlow.purpose}:${otpFlow.role}:${otpFlow.email}`} purpose={otpFlow.purpose} role={otpFlow.role} initialEmail={otpFlow.email} initiallySent={otpFlow.sent} onCancel={()=>setOtpFlow(null)} onSuccess={account=>{setOtpFlow(null);if(account){handleResetFailedAttempts();onLoginSuccess(account);}else{setRegistrationReceipt('Email verified. Sign in to check your application status. Teacher or administrator approval is still required.');}}}/> : <>
                   <form onSubmit={handleLoginSubmit} className="space-y-4">
                     {registrationReceipt && (
                       <p role="status" className="rounded-xl border border-emerald-500/40 bg-emerald-950/40 p-3 text-sm text-emerald-100">
@@ -542,6 +547,8 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
 
 
                   </form>
+                  <button type="button" onClick={()=>{setErrorMsg('');setLoginPassword('');setOtpFlow({purpose:'login',email:loginUsername.includes('@')?loginUsername.trim():'',role:loginRole,sent:false});}} className="min-h-11 w-full rounded-xl border border-sky-400/40 bg-sky-950/40 px-4 py-3 text-sm font-bold text-sky-100 hover:bg-sky-900/40">Sign in with email code instead</button>
+                  </>}
                 </div>
               )}
 
