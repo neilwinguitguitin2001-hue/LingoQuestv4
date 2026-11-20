@@ -1,7 +1,7 @@
 -- Additive reporting endpoint: no changes to existing access rules or records.
 create or replace function public.privacy_monthly_report(p_period text,p_kind text,p_grade integer default null,p_section text default null)
 returns jsonb language plpgsql security definer set search_path='' as $$
-declare viewer public.profiles; start_at timestamptz; end_at timestamptz; result jsonb; rows_data jsonb; total_rows integer; main_staff boolean;
+declare viewer public.profiles; start_at timestamptz; end_at timestamptz; result jsonb; rows_data jsonb; total_rows integer;
 begin
  select * into viewer from public.profiles where id=auth.uid() and status='approved';
  if viewer.id is null or viewer.role not in ('teacher','admin') then raise exception 'Staff report access required' using errcode='42501'; end if;
@@ -9,12 +9,10 @@ begin
  start_at:=(p_period||'-01')::timestamp at time zone 'Asia/Manila';
  end_at:=((p_period||'-01')::date+interval '1 month')::timestamp at time zone 'Asia/Manila';
  if viewer.role='admin' then
-  -- Institution-scoped summaries. Principals/sub-admins cannot request other schools.
-  select exists(select 1 from lq_private.staff_roles r where r.viewer_id=viewer.id and r.staff_role in ('division_admin','main_admin','coordinator')) into main_staff;
+  -- Match the existing privacy_admin_summary aggregate scope; never return identities or scores.
   with scope as (
    select p.id,p.grade_level from public.profiles p where p.role='student' and p.status='approved' and p.created_at<end_at
     and (p_grade is null or p.grade_level=p_grade) and (p_section is null or p.section=p_section)
-    and (main_staff or (nullif(viewer.school_name,'') is not null and p.school_name=viewer.school_name))
   ), counts as (
    select s.grade_level grade,count(*) participants,
     sum(case when p_kind='games' then (select count(*) from public.quest_sessions q where q.user_id=s.id and q.finished_at>=start_at and q.finished_at<end_at and q.next_index=10)

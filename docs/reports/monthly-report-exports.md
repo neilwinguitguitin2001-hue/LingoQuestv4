@@ -8,7 +8,7 @@ Both exports use the same generated data snapshot, period, columns, filters, gen
 
 ## Scope and limitations
 - Teachers: currently approved assigned learners only, enforced by trusted assignments and existing performance authorization. No student IDs, LRNs, emails or raw answers are exported.
-- Admins/sub-admins: aggregate summaries only; grade cohorts below five learners have activity counts withheld. School scope is required unless a trusted staff_roles entry grants division_admin/main_admin/coordinator scope. This does not create such a grant or give new individual access.
+- Admins/sub-admins: aggregate summaries only; grade cohorts below five learners have activity counts withheld. Uses the same aggregate scope as the existing privacy_admin_summary endpoint. No individual access is added.
 - Reports describe activity during the month using current permissions/rosters; they are not historical enrollment snapshots or lifetime progress reports.
 - Completed games use quest_sessions with finished_at and next_index=10. Legacy quiz_results are excluded to avoid double counting; unfinished games excluded.
 - Activity completions use timestamped lq_private.activity_completions. Undated progress, lifetime badges and writing drafts cannot be reliably assigned to a month and are excluded.
@@ -18,4 +18,4 @@ Both exports use the same generated data snapshot, period, columns, filters, gen
 ## Validation
 TypeScript and production build pass. Four unit tests cover API input scope/validation, CSV formula safety/quoting, actual escaped report text/table HTML and Philippine dates. Six rollback-only database checks passed: start/end boundaries included, outside-month excluded, unassigned teacher denied Grade 7 details, student direct call rejected, admin individual fields absent, small-group suppression. Test activity records were rolled back.
 
-No existing records or access rules changed. Additive privacy_monthly_report RPC is authenticated-only with explicit staff checks and current assignment/school enforcement.
+No existing records or access rules changed. Additive privacy_monthly_report RPC is authenticated-only with explicit staff checks and current assignment enforcement and existing aggregate scope.
