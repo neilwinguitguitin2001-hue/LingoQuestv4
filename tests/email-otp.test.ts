@@ -7,7 +7,9 @@ test('email OTP normalizes address and requires an email, not a username or phon
 });
 test('OTP input preserves leading zeroes and rejects malformed tokens',()=>{
  assert.equal(validateOtpCode(' 001234 '),'001234');
- for(const x of ['12345','1234567','123 456','abcdef',''])assert.throws(()=>validateOtpCode(x));
+ assert.equal(validateOtpCode('00123456'),'00123456');
+ assert.equal(validateOtpCode('0012345678'),'0012345678');
+ for(const x of ['12345','12345678901','123 456','abcdef',''])assert.throws(()=>validateOtpCode(x));
 });
 test('email verification cannot change portal role or bypass suspension and approval requirements',()=>{
  for(const role of ['student','teacher','admin'] as const){

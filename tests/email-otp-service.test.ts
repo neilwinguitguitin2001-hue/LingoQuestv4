@@ -36,27 +36,27 @@ test('registration resend uses signup verification without creating a login requ
 });
 test('invalid, expired, reused or missing-session verification never installs a session',async()=>{
  for(const options of [{verifyError:{code:'otp_expired'}},{verifyError:{code:'otp_disabled'}},{empty:true}]){
-  const {api,calls}=harness(options);await assert.rejects(api.verifyEmailCode('a@example.edu','001234','login','student'),/invalid or expired/);assert.equal(calls.some(x=>x[0]==='install'),false);
+  const {api,calls}=harness(options);await assert.rejects(api.verifyEmailCode('a@example.edu','00123456','login','student'),/invalid or expired/);assert.equal(calls.some(x=>x[0]==='install'),false);
  }
 });
 test('signup verification discards temporary session and never opens or approves a portal',async()=>{
- const {api,calls}=harness();assert.equal(await api.verifyEmailCode('a@example.edu','001234','registration','teacher'),null);
+ const {api,calls}=harness();assert.equal(await api.verifyEmailCode('a@example.edu','00123456','registration','teacher'),null);
  assert.equal(calls[0][1].type,'signup');assert.equal(calls.some(x=>x[0]==='temporary-signout'),true);assert.equal(calls.some(x=>['install','table','bootstrap'].includes(x[0])),false);
 });
 test('portal mismatch, suspension and profile lookup errors prevent persistent login',async()=>{
  for(const options of [{profile:{role:'teacher',status:'approved'}},{profile:{role:'student',status:'suspended'}},{profileError:{message:'denied'}}]){
-  const {api,calls}=harness(options);await assert.rejects(api.verifyEmailCode('a@example.edu','001234','login','student'),/unavailable/);
+  const {api,calls}=harness(options);await assert.rejects(api.verifyEmailCode('a@example.edu','00123456','login','student'),/unavailable/);
   assert.equal(calls.some(x=>x[0]==='install'),false);assert.equal(calls.some(x=>x[0]==='temporary-signout'),true);
  }
 });
 test('valid login queries only verified identity and returns its own bootstrap record',async()=>{
- const {api,calls}=harness();const result=await api.verifyEmailCode('a@example.edu','001234','login','student');assert.equal(result.id,'verified-user');
- assert.equal(calls[0][1].type,'email');assert.equal(calls[0][1].token,'001234');
+ const {api,calls}=harness();const result=await api.verifyEmailCode('a@example.edu','00123456','login','student');assert.equal(result.id,'verified-user');
+ assert.equal(calls[0][1].type,'email');assert.equal(calls[0][1].token,'00123456');
  const query=calls.find(x=>x[0]==='identity');assert.equal(query[1],'id');assert.equal(query[2],'verified-user');assert.equal(calls.filter(x=>x[0]==='install').length,1);
 });
 test('failed account bootstrap removes only the session just installed',async()=>{
  for(const currentUser of ['verified-user','another-user']){
-  const {api,calls}=harness({bootstrapError:true,currentUser});await assert.rejects(api.verifyEmailCode('a@example.edu','001234','login','student'),/could not be opened/);
+  const {api,calls}=harness({bootstrapError:true,currentUser});await assert.rejects(api.verifyEmailCode('a@example.edu','00123456','login','student'),/could not be opened/);
   assert.equal(calls.some(x=>x[0]==='persistent-signout'),currentUser==='verified-user');
  }
 });

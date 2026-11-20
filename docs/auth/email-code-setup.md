@@ -13,7 +13,7 @@ Project hxkeomhutnkvtulqjbss → Authentication → Email Templates. Add the cod
 <p>If you did not request this email, ignore it. Never share this code.</p>
 ```
 
-Keep email confirmation enabled and SMTP configured. Do not put service-role keys or Resend keys in browser variables. The templates are shared with the live website, so this document does not claim they were applied. Native Supabase limits and token expiry/reuse checks enforce the code; the UI adds a60-second resend countdown. Six-digit token UI assumes the project's standard six-digit email OTP setting.
+Keep email confirmation enabled and SMTP configured. Do not put service-role keys or Resend keys in browser variables. The templates are shared with the live website, so this document does not claim they were applied. Native Supabase limits and token expiry/reuse checks enforce the code; the UI adds a60-second resend countdown. The input accepts 6–10 numeric digits, including the project's eight-digit emails, and preserves leading zeros. Supabase validates the actual issued token. Both signup and sign-in email templates were updated to include Token alongside their existing links; inbox delivery was confirmed, while successful code verification remains pending.
 
 ## Verification needed before release
 
