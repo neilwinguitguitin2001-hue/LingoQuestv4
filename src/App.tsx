@@ -1,3 +1,4 @@
+import {QuickAudioToggle} from './components/QuickAudioToggle';
 import { AudioSettings } from './components/AudioSettings';
 import { AudioScene } from './context/AudioContext';
 import { DashboardGuide } from './components/DashboardGuide';
@@ -1716,6 +1717,8 @@ export default function App() {
                   </button>
                 </div>
               )}
+
+              <QuickAudioToggle />
 
               {/* Credential & Email Confirmations Review Button (Admin & Approved Teachers Only) */}
               {(currentUser?.role === 'admin' ||
