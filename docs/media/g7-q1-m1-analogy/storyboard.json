@@ -1,0 +1,6089 @@
+{
+  "title": "Analogy \u2014 Match the relationship",
+  "question": "How do two pairs of words belong together?",
+  "audience": "Grade 7 students studying Quarter 1 Module 1; everyday English words are familiar but analogy notation may be new.",
+  "promise": "I can name the relationship in the first word pair and check that the second pair follows it in the same order.",
+  "language": "en",
+  "format": "1920x1080",
+  "duration": 70.505,
+  "fps": 60,
+  "standard": 3,
+  "look": {
+    "accent": "#00B8F0",
+    "accent2": "#20B973",
+    "mood": "LingoQuest navy stage with cream lettering, blue relationship brackets, green matching links and small gold emphasis. Legible flat educational diagrams; no decorative 3D or fast motion."
+  },
+  "voice": {
+    "voice_id": "am_michael",
+    "name": "Kokoro Michael \u2014 existing module narrator",
+    "model": "Kokoro",
+    "language": "en",
+    "note": "Uses the owner\u2019s existing all-module Kokoro preference. One continuous take, not clips per sentence. Tutorial ElevenLabs recordings are untouched.",
+    "alignment": "Kokoro phoneme durations; source-to-spoken matching 0.99032"
+  },
+  "music": {
+    "track": "Original quiet instrumental bed, composed after storyboard approval",
+    "bpm": 96,
+    "beat": 0.625,
+    "offset": 0,
+    "note": "Quiet bed under narration; key relationship changes receive soft cues. No abrupt loop and no copyrighted library audio."
+  },
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "Word analogies compare the relationships between two word pairs; the second pair must preserve the first pair\u2019s relationship.",
+      "source": "CO_Q1_ENGLISH 7_Module 1 \u2014 Analogy; supplied Drive PDF 1apMCFoA_8wiK--6IjOwDJ_3q8WIv8UX8; SHA256 90d3d6aa4700af691bdb952c37c12918515f57c39ecc4e351c68839e8d13499d. PDF page 10 (printed page 7)."
+    },
+    {
+      "id": "f2",
+      "claim": "The discussion uses night:day::happy:sad to explain antonyms, or opposite meanings.",
+      "source": "CO_Q1_ENGLISH 7_Module 1 \u2014 Analogy; supplied Drive PDF 1apMCFoA_8wiK--6IjOwDJ_3q8WIv8UX8; SHA256 90d3d6aa4700af691bdb952c37c12918515f57c39ecc4e351c68839e8d13499d. PDF page 10 (printed page 7)."
+    },
+    {
+      "id": "f3",
+      "claim": "A single colon is read as is to; a double colon is read as as.",
+      "source": "CO_Q1_ENGLISH 7_Module 1 \u2014 Analogy; supplied Drive PDF 1apMCFoA_8wiK--6IjOwDJ_3q8WIv8UX8; SHA256 90d3d6aa4700af691bdb952c37c12918515f57c39ecc4e351c68839e8d13499d. PDF page 10 (printed page 7)."
+    },
+    {
+      "id": "f4",
+      "claim": "Greeting:letter::title page:book illustrates part-to-whole relationships.",
+      "source": "CO_Q1_ENGLISH 7_Module 1 \u2014 Analogy; supplied Drive PDF 1apMCFoA_8wiK--6IjOwDJ_3q8WIv8UX8; SHA256 90d3d6aa4700af691bdb952c37c12918515f57c39ecc4e351c68839e8d13499d. PDF page 11 (printed page 8)."
+    },
+    {
+      "id": "f5",
+      "claim": "The module calls words with similar or the same meaning synonyms.",
+      "source": "CO_Q1_ENGLISH 7_Module 1 \u2014 Analogy; supplied Drive PDF 1apMCFoA_8wiK--6IjOwDJ_3q8WIv8UX8; SHA256 90d3d6aa4700af691bdb952c37c12918515f57c39ecc4e351c68839e8d13499d. PDF page 10 (printed page 7)."
+    },
+    {
+      "id": "f6",
+      "claim": "Cause and effect relates a source, action or condition to a result or consequence.",
+      "source": "CO_Q1_ENGLISH 7_Module 1 \u2014 Analogy; supplied Drive PDF 1apMCFoA_8wiK--6IjOwDJ_3q8WIv8UX8; SHA256 90d3d6aa4700af691bdb952c37c12918515f57c39ecc4e351c68839e8d13499d. PDF page 10 (printed page 7)."
+    },
+    {
+      "id": "f7",
+      "claim": "The module identifies location as a type of analogy.",
+      "source": "CO_Q1_ENGLISH 7_Module 1 \u2014 Analogy; supplied Drive PDF 1apMCFoA_8wiK--6IjOwDJ_3q8WIv8UX8; SHA256 90d3d6aa4700af691bdb952c37c12918515f57c39ecc4e351c68839e8d13499d. PDF page 11 (printed page 8)."
+    }
+  ],
+  "models": [],
+  "acts": [
+    {
+      "id": "hook",
+      "title": "The question",
+      "goal": "See two complete pairs and ask what makes their relationships fit.",
+      "rail": false
+    },
+    {
+      "id": "decode",
+      "title": "Read the pattern",
+      "goal": "Connect opposite meanings and decode the colon notation aloud.",
+      "rail": true
+    },
+    {
+      "id": "apply",
+      "title": "Follow the connection",
+      "goal": "Use the part-to-whole example to match both meaning and order.",
+      "rail": true
+    },
+    {
+      "id": "patterns",
+      "title": "Other patterns",
+      "goal": "Name the remaining relationships without inventing new examples.",
+      "rail": true
+    },
+    {
+      "id": "remember",
+      "title": "The takeaway",
+      "goal": "Name the first relationship and check the second in the same direction.",
+      "rail": false
+    }
+  ],
+  "scope": "Sample of the word-relationship discussion. The module\u2019s literary analogy/simile/metaphor extension remains in the lesson; this short does not claim to replace the complete module. No scored items, answers, game mechanics, timers or progress requirements change.",
+  "accessibility": "Optional click-to-play video, no autoplay; English WebVTT captions and selectable transcript; static labeled fallback.",
+  "integration": "Only module g7-q1-m1: add Watch & Understand video card within Illustrated Examples, preserving the existing visual guide and narration. Preview only; no main merge.",
+  "shots": [
+    {
+      "id": "s01",
+      "act": "hook",
+      "type": "wide",
+      "start": 0,
+      "end": 2.605,
+      "caption": "How do these pairs fit?",
+      "voice": "How do two pairs of words belong together?",
+      "teaches": "Begin with two complete pairs; connect them with an unanswered relationship bridge.",
+      "screen": "Original moving coastal landscape at night and day, paired with the same original student character smiling or looking sad. Clear labels remain outside the scene. Begin with two complete pairs; connect them with an unanswered relationship bridge. The title occupies the upper band; the comparison fills the middle of the landscape frame with large phone-legible labels.",
+      "motion": "Night stars gently shimmer; the sea moves continuously; clouds drift in daylight. The same student blinks, breathes and changes mouth and brow shape between happy and sad. Motion and captions follow this recorded take.",
+      "carries": "HAPPY : SAD and the relationship highlight stay through the cut.",
+      "transition": "Match-cut on the retained label, then shift attention to the next connection.",
+      "sound": "Continuous low-volume original music under the narration; a soft cue marks the completed relationship.",
+      "check": "Read all labels at phone width; ensure both arrows mean the same thing and no words are clipped.",
+      "facts": [
+        "f1"
+      ],
+      "frames": [
+        {
+          "at": 0,
+          "note": "Start with readable words and a complete comparison; nothing begins on black. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "How do these pairs fit?",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "NIGHT : DAY"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": true
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "HAPPY : SAD"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": true
+            },
+            {
+              "move": [
+                170,
+                860,
+                700,
+                860
+              ],
+              "text": "reveal the first connection"
+            }
+          ]
+        },
+        {
+          "at": 0.5,
+          "note": "Reveal the relationship with the pointer aligned to the spoken phrase. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "How do these pairs fit?",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "NIGHT : DAY"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": false
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "HAPPY : SAD"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": false
+            },
+            {
+              "arrow": [
+                650,
+                505,
+                1190,
+                505
+              ]
+            },
+            {
+              "label": [
+                670,
+                550
+              ],
+              "text": "SAME RELATIONSHIP"
+            },
+            {
+              "move": [
+                170,
+                860,
+                1500,
+                860
+              ],
+              "text": "connect the second pair"
+            }
+          ]
+        },
+        {
+          "at": 1,
+          "note": "Hold the matched connection so the next shot inherits its words and direction. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "How do these pairs fit?",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "NIGHT : DAY"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": false
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "HAPPY : SAD"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": false
+            },
+            {
+              "arrow": [
+                650,
+                505,
+                1190,
+                505
+              ]
+            },
+            {
+              "label": [
+                670,
+                550
+              ],
+              "text": "SAME RELATIONSHIP"
+            },
+            {
+              "move": [
+                170,
+                860,
+                1500,
+                860
+              ],
+              "text": "connect the second pair"
+            },
+            {
+              "cut": "carry the relationship into the next view"
+            }
+          ]
+        }
+      ],
+      "visual": "four-scenes"
+    },
+    {
+      "id": "s02",
+      "act": "hook",
+      "type": "diagram",
+      "start": 2.605,
+      "end": 5.23,
+      "caption": "Compare the relationships",
+      "voice": "An analogy links the relationship in one pair",
+      "teaches": "A blue bracket joins each word pair; a green bridge connects the two brackets.",
+      "screen": "Original moving coastal landscape at night and day, paired with the same original student character smiling or looking sad. Clear labels remain outside the scene. A blue bracket joins each word pair; a green bridge connects the two brackets. The title occupies the upper band; the comparison fills the middle of the landscape frame with large phone-legible labels.",
+      "motion": "Night stars gently shimmer; the sea moves continuously; clouds drift in daylight. The same student blinks, breathes and changes mouth and brow shape between happy and sad. Motion and captions follow this recorded take.",
+      "carries": "SECOND PAIR and the relationship highlight stay through the cut.",
+      "transition": "Match-cut on the retained label, then shift attention to the next connection.",
+      "sound": "Continuous low-volume original music under the narration; a soft cue marks the completed relationship.",
+      "check": "Read all labels at phone width; ensure both arrows mean the same thing and no words are clipped.",
+      "facts": [
+        "f1"
+      ],
+      "frames": [
+        {
+          "at": 0,
+          "note": "Start with readable words and a complete comparison; nothing begins on black. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Compare the relationships",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "FIRST PAIR"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": true
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "SECOND PAIR"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": true
+            },
+            {
+              "move": [
+                170,
+                860,
+                700,
+                860
+              ],
+              "text": "reveal the first connection"
+            }
+          ]
+        },
+        {
+          "at": 0.5,
+          "note": "Reveal the relationship with the pointer aligned to the spoken phrase. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Compare the relationships",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "FIRST PAIR"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": false
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "SECOND PAIR"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": false
+            },
+            {
+              "arrow": [
+                650,
+                505,
+                1190,
+                505
+              ]
+            },
+            {
+              "label": [
+                670,
+                550
+              ],
+              "text": "SAME RELATIONSHIP"
+            },
+            {
+              "move": [
+                170,
+                860,
+                1500,
+                860
+              ],
+              "text": "connect the second pair"
+            }
+          ]
+        },
+        {
+          "at": 1,
+          "note": "Hold the matched connection so the next shot inherits its words and direction. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Compare the relationships",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "FIRST PAIR"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": false
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "SECOND PAIR"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": false
+            },
+            {
+              "arrow": [
+                650,
+                505,
+                1190,
+                505
+              ]
+            },
+            {
+              "label": [
+                670,
+                550
+              ],
+              "text": "SAME RELATIONSHIP"
+            },
+            {
+              "move": [
+                170,
+                860,
+                1500,
+                860
+              ],
+              "text": "connect the second pair"
+            },
+            {
+              "cut": "carry the relationship into the next view"
+            }
+          ]
+        }
+      ],
+      "visual": "four-scenes"
+    },
+    {
+      "id": "s03",
+      "act": "decode",
+      "type": "compare",
+      "start": 5.23,
+      "end": 8.605,
+      "caption": "One matching connection",
+      "voice": "to the relationship in another. Look at night and day.",
+      "teaches": "Focus the left pair while the second pair waits softly in the background.",
+      "screen": "Original moving coastal landscape at night and day, paired with the same original student character smiling or looking sad. Clear labels remain outside the scene. Focus the left pair while the second pair waits softly in the background. The title occupies the upper band; the comparison fills the middle of the landscape frame with large phone-legible labels.",
+      "motion": "Night stars gently shimmer; the sea moves continuously; clouds drift in daylight. The same student blinks, breathes and changes mouth and brow shape between happy and sad. Motion and captions follow this recorded take.",
+      "carries": "DAY and the relationship highlight stay through the cut.",
+      "transition": "Match-cut on the retained label, then shift attention to the next connection.",
+      "sound": "Continuous low-volume original music under the narration; a soft cue marks the completed relationship.",
+      "check": "Read all labels at phone width; ensure both arrows mean the same thing and no words are clipped.",
+      "facts": [
+        "f2"
+      ],
+      "frames": [
+        {
+          "at": 0,
+          "note": "Start with readable words and a complete comparison; nothing begins on black. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "One matching connection",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "sky": [
+                240,
+                820
+              ],
+              "tone": "dusk"
+            },
+            {
+              "horizon": [
+                750
+              ]
+            },
+            {
+              "move": [
+                600,
+                500,
+                1300,
+                500
+              ],
+              "text": "same setting: night to day"
+            },
+            {
+              "ring": [
+                1400,
+                420,
+                120
+              ]
+            }
+          ]
+        },
+        {
+          "at": 0.5,
+          "note": "Reveal the relationship with the pointer aligned to the spoken phrase. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "One matching connection",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "sky": [
+                240,
+                820
+              ],
+              "tone": "dusk"
+            },
+            {
+              "horizon": [
+                750
+              ]
+            },
+            {
+              "move": [
+                600,
+                500,
+                1300,
+                500
+              ],
+              "text": "same setting: night to day"
+            },
+            {
+              "sun": [
+                1400,
+                420,
+                120
+              ]
+            }
+          ]
+        },
+        {
+          "at": 1,
+          "note": "Hold the matched connection so the next shot inherits its words and direction. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "One matching connection",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "sky": [
+                240,
+                820
+              ],
+              "tone": "dusk"
+            },
+            {
+              "horizon": [
+                750
+              ]
+            },
+            {
+              "move": [
+                600,
+                500,
+                1300,
+                500
+              ],
+              "text": "same setting: night to day"
+            },
+            {
+              "sun": [
+                1400,
+                420,
+                120
+              ]
+            }
+          ]
+        }
+      ],
+      "visual": "night-day"
+    },
+    {
+      "id": "s04",
+      "act": "decode",
+      "type": "wide",
+      "start": 8.605,
+      "end": 11.555,
+      "caption": "Opposite meanings",
+      "voice": "They're opposites. Now compare happy and sad:",
+      "teaches": "Change from a moon-and-sun comparison to equally sized labeled expressions.",
+      "screen": "Original moving coastal landscape at night and day, paired with the same original student character smiling or looking sad. Clear labels remain outside the scene. Change from a moon-and-sun comparison to equally sized labeled expressions. The title occupies the upper band; the comparison fills the middle of the landscape frame with large phone-legible labels.",
+      "motion": "Night stars gently shimmer; the sea moves continuously; clouds drift in daylight. The same student blinks, breathes and changes mouth and brow shape between happy and sad. Motion and captions follow this recorded take.",
+      "carries": "HAPPY  \u2192  SAD and the relationship highlight stay through the cut.",
+      "transition": "Match-cut on the retained label, then shift attention to the next connection.",
+      "sound": "Continuous low-volume original music under the narration; a soft cue marks the completed relationship.",
+      "check": "Read all labels at phone width; ensure both arrows mean the same thing and no words are clipped.",
+      "facts": [
+        "f2"
+      ],
+      "frames": [
+        {
+          "at": 0,
+          "note": "Start with readable words and a complete comparison; nothing begins on black. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Opposite meanings",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "sky": [
+                240,
+                820
+              ],
+              "tone": "dusk"
+            },
+            {
+              "horizon": [
+                750
+              ]
+            },
+            {
+              "move": [
+                600,
+                500,
+                1300,
+                500
+              ],
+              "text": "same person: happy to sad"
+            },
+            {
+              "person": [
+                950,
+                650,
+                280
+              ]
+            },
+            {
+              "label": [
+                960,
+                850
+              ],
+              "text": "HAPPY"
+            }
+          ]
+        },
+        {
+          "at": 0.5,
+          "note": "Reveal the relationship with the pointer aligned to the spoken phrase. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Opposite meanings",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "sky": [
+                240,
+                820
+              ],
+              "tone": "dusk"
+            },
+            {
+              "horizon": [
+                750
+              ]
+            },
+            {
+              "move": [
+                600,
+                500,
+                1300,
+                500
+              ],
+              "text": "same person: happy to sad"
+            },
+            {
+              "person": [
+                950,
+                650,
+                280
+              ]
+            },
+            {
+              "label": [
+                960,
+                850
+              ],
+              "text": "SAD"
+            }
+          ]
+        },
+        {
+          "at": 1,
+          "note": "Hold the matched connection so the next shot inherits its words and direction. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Opposite meanings",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "sky": [
+                240,
+                820
+              ],
+              "tone": "dusk"
+            },
+            {
+              "horizon": [
+                750
+              ]
+            },
+            {
+              "move": [
+                600,
+                500,
+                1300,
+                500
+              ],
+              "text": "same person: happy to sad"
+            },
+            {
+              "person": [
+                950,
+                650,
+                280
+              ]
+            },
+            {
+              "label": [
+                960,
+                850
+              ],
+              "text": "SAD"
+            }
+          ]
+        }
+      ],
+      "visual": "emotion-change"
+    },
+    {
+      "id": "s05",
+      "act": "decode",
+      "type": "compare",
+      "start": 11.555,
+      "end": 14.965,
+      "caption": "Opposites in both pairs",
+      "voice": "they're opposites too. That's why these two pairs fit.",
+      "teaches": "Give both relationship arrows the same opposite-meaning label.",
+      "screen": "Original moving coastal landscape at night and day, paired with the same original student character smiling or looking sad. Clear labels remain outside the scene. Give both relationship arrows the same opposite-meaning label. The title occupies the upper band; the comparison fills the middle of the landscape frame with large phone-legible labels.",
+      "motion": "Night stars gently shimmer; the sea moves continuously; clouds drift in daylight. The same student blinks, breathes and changes mouth and brow shape between happy and sad. Motion and captions follow this recorded take.",
+      "carries": "HAPPY : SAD and the relationship highlight stay through the cut.",
+      "transition": "Match-cut on the retained label, then shift attention to the next connection.",
+      "sound": "Continuous low-volume original music under the narration; a soft cue marks the completed relationship.",
+      "check": "Read all labels at phone width; ensure both arrows mean the same thing and no words are clipped.",
+      "facts": [
+        "f2"
+      ],
+      "frames": [
+        {
+          "at": 0,
+          "note": "Start with readable words and a complete comparison; nothing begins on black. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Opposites in both pairs",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "NIGHT : DAY"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": true
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "HAPPY : SAD"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": true
+            },
+            {
+              "label": [
+                1430,
+                610
+              ],
+              "text": "COMPARE"
+            },
+            {
+              "arrow": [
+                620,
+                420,
+                1010,
+                420
+              ]
+            },
+            {
+              "move": [
+                170,
+                860,
+                700,
+                860
+              ],
+              "text": "reveal the first connection"
+            }
+          ]
+        },
+        {
+          "at": 0.5,
+          "note": "Reveal the relationship with the pointer aligned to the spoken phrase. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Opposites in both pairs",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "NIGHT : DAY"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": false
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "HAPPY : SAD"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": false
+            },
+            {
+              "label": [
+                1430,
+                610
+              ],
+              "text": "OPPOSITES"
+            },
+            {
+              "arrow": [
+                620,
+                420,
+                1010,
+                420
+              ]
+            },
+            {
+              "arrow": [
+                650,
+                505,
+                1190,
+                505
+              ]
+            },
+            {
+              "label": [
+                670,
+                550
+              ],
+              "text": "SAME RELATIONSHIP"
+            },
+            {
+              "move": [
+                170,
+                860,
+                1500,
+                860
+              ],
+              "text": "connect the second pair"
+            }
+          ]
+        },
+        {
+          "at": 1,
+          "note": "Hold the matched connection so the next shot inherits its words and direction. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Opposites in both pairs",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "NIGHT : DAY"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": false
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "HAPPY : SAD"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": false
+            },
+            {
+              "label": [
+                1430,
+                610
+              ],
+              "text": "OPPOSITES"
+            },
+            {
+              "arrow": [
+                620,
+                420,
+                1010,
+                420
+              ]
+            },
+            {
+              "arrow": [
+                650,
+                505,
+                1190,
+                505
+              ]
+            },
+            {
+              "label": [
+                670,
+                550
+              ],
+              "text": "SAME RELATIONSHIP"
+            },
+            {
+              "move": [
+                170,
+                860,
+                1500,
+                860
+              ],
+              "text": "connect the second pair"
+            },
+            {
+              "cut": "carry the relationship into the next view"
+            }
+          ]
+        }
+      ],
+      "visual": "four-scenes"
+    },
+    {
+      "id": "s06",
+      "act": "decode",
+      "type": "type",
+      "start": 14.965,
+      "end": 18.09,
+      "caption": "Antonyms",
+      "voice": "We call words with opposite meanings antonyms.",
+      "teaches": "The relationship label expands into its name without changing either word pair.",
+      "screen": "Original moving coastal landscape at night and day, paired with the same original student character smiling or looking sad. Clear labels remain outside the scene. The relationship label expands into its name without changing either word pair. The title occupies the upper band; the comparison fills the middle of the landscape frame with large phone-legible labels.",
+      "motion": "Night stars gently shimmer; the sea moves continuously; clouds drift in daylight. The same student blinks, breathes and changes mouth and brow shape between happy and sad. Motion and captions follow this recorded take.",
+      "carries": "ANTONYMS and the relationship highlight stay through the cut.",
+      "transition": "Match-cut on the retained label, then shift attention to the next connection.",
+      "sound": "Continuous low-volume original music under the narration; a soft cue marks the completed relationship.",
+      "check": "Read all labels at phone width; ensure both arrows mean the same thing and no words are clipped.",
+      "facts": [
+        "f2"
+      ],
+      "frames": [
+        {
+          "at": 0,
+          "note": "Start with readable words and a complete comparison; nothing begins on black. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Antonyms",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "OPPOSITE MEANINGS"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": true
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "ANTONYMS"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": true
+            },
+            {
+              "label": [
+                1430,
+                610
+              ],
+              "text": "COMPARE"
+            },
+            {
+              "arrow": [
+                620,
+                420,
+                1010,
+                420
+              ]
+            },
+            {
+              "move": [
+                170,
+                860,
+                700,
+                860
+              ],
+              "text": "reveal the first connection"
+            }
+          ]
+        },
+        {
+          "at": 0.5,
+          "note": "Reveal the relationship with the pointer aligned to the spoken phrase. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Antonyms",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "OPPOSITE MEANINGS"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": false
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "ANTONYMS"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": false
+            },
+            {
+              "label": [
+                1430,
+                610
+              ],
+              "text": "OPPOSITES"
+            },
+            {
+              "arrow": [
+                620,
+                420,
+                1010,
+                420
+              ]
+            },
+            {
+              "arrow": [
+                650,
+                505,
+                1190,
+                505
+              ]
+            },
+            {
+              "label": [
+                670,
+                550
+              ],
+              "text": "SAME RELATIONSHIP"
+            },
+            {
+              "move": [
+                170,
+                860,
+                1500,
+                860
+              ],
+              "text": "connect the second pair"
+            }
+          ]
+        },
+        {
+          "at": 1,
+          "note": "Hold the matched connection so the next shot inherits its words and direction. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Antonyms",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "OPPOSITE MEANINGS"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": false
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "ANTONYMS"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": false
+            },
+            {
+              "label": [
+                1430,
+                610
+              ],
+              "text": "OPPOSITES"
+            },
+            {
+              "arrow": [
+                620,
+                420,
+                1010,
+                420
+              ]
+            },
+            {
+              "arrow": [
+                650,
+                505,
+                1190,
+                505
+              ]
+            },
+            {
+              "label": [
+                670,
+                550
+              ],
+              "text": "SAME RELATIONSHIP"
+            },
+            {
+              "move": [
+                170,
+                860,
+                1500,
+                860
+              ],
+              "text": "connect the second pair"
+            },
+            {
+              "cut": "carry the relationship into the next view"
+            }
+          ]
+        }
+      ],
+      "visual": "four-scenes"
+    },
+    {
+      "id": "s07",
+      "act": "decode",
+      "type": "diagram",
+      "start": 18.09,
+      "end": 20.165,
+      "caption": "Read the single colon",
+      "voice": "The single colon means 'is to.'",
+      "teaches": "Isolate the single colon with a gold outline, then place is to beneath it.",
+      "screen": "Isolate the single colon with a gold outline, then place is to beneath it. The title occupies the upper band; the comparison fills the middle of the landscape frame with large phone-legible labels.",
+      "motion": "A single measured highlight leads the eye along the relationship arrow; other words remain still until they are compared.",
+      "carries": "NIGHT IS TO DAY and the relationship highlight stay through the cut.",
+      "transition": "Match-cut on the retained label, then shift attention to the next connection.",
+      "sound": "Continuous low-volume original music under the narration; a soft cue marks the completed relationship.",
+      "check": "Read all labels at phone width; ensure both arrows mean the same thing and no words are clipped.",
+      "facts": [
+        "f3"
+      ],
+      "frames": [
+        {
+          "at": 0,
+          "note": "Start with readable words and a complete comparison; nothing begins on black. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Read the single colon",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "NIGHT : DAY"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": true
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "NIGHT IS TO DAY"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": true
+            },
+            {
+              "move": [
+                170,
+                860,
+                700,
+                860
+              ],
+              "text": "reveal the first connection"
+            }
+          ]
+        },
+        {
+          "at": 0.5,
+          "note": "Reveal the relationship with the pointer aligned to the spoken phrase. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Read the single colon",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "NIGHT : DAY"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": false
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "NIGHT IS TO DAY"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": false
+            },
+            {
+              "arrow": [
+                650,
+                505,
+                1190,
+                505
+              ]
+            },
+            {
+              "label": [
+                670,
+                550
+              ],
+              "text": "IS TO / AS"
+            },
+            {
+              "move": [
+                170,
+                860,
+                1500,
+                860
+              ],
+              "text": "connect the second pair"
+            }
+          ]
+        },
+        {
+          "at": 1,
+          "note": "Hold the matched connection so the next shot inherits its words and direction. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Read the single colon",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "NIGHT : DAY"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": false
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "NIGHT IS TO DAY"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": false
+            },
+            {
+              "arrow": [
+                650,
+                505,
+                1190,
+                505
+              ]
+            },
+            {
+              "label": [
+                670,
+                550
+              ],
+              "text": "IS TO / AS"
+            },
+            {
+              "move": [
+                170,
+                860,
+                1500,
+                860
+              ],
+              "text": "connect the second pair"
+            },
+            {
+              "cut": "carry the relationship into the next view"
+            }
+          ]
+        }
+      ],
+      "visual": "notation"
+    },
+    {
+      "id": "s08",
+      "act": "decode",
+      "type": "type",
+      "start": 20.165,
+      "end": 21.89,
+      "caption": "Double colon",
+      "voice": "The double colon means 'as.'",
+      "teaches": "Keep the first symbol present while revealing the second symbol at the same scale.",
+      "screen": "Keep the first symbol present while revealing the second symbol at the same scale. The title occupies the upper band; the comparison fills the middle of the landscape frame with large phone-legible labels.",
+      "motion": "A single measured highlight leads the eye along the relationship arrow; other words remain still until they are compared.",
+      "carries": "::  AS and the relationship highlight stay through the cut.",
+      "transition": "Match-cut on the retained label, then shift attention to the next connection.",
+      "sound": "Continuous low-volume original music under the narration; a soft cue marks the completed relationship.",
+      "check": "Read all labels at phone width; ensure both arrows mean the same thing and no words are clipped.",
+      "facts": [
+        "f3"
+      ],
+      "frames": [
+        {
+          "at": 0,
+          "note": "Start with readable words and a complete comparison; nothing begins on black. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Read the double colon",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": ":  IS TO"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": true
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "::  AS"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": true
+            },
+            {
+              "move": [
+                170,
+                860,
+                700,
+                860
+              ],
+              "text": "reveal the first connection"
+            }
+          ]
+        },
+        {
+          "at": 0.5,
+          "note": "Reveal the relationship with the pointer aligned to the spoken phrase. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Read the double colon",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": ":  IS TO"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": false
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "::  AS"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": false
+            },
+            {
+              "arrow": [
+                650,
+                505,
+                1190,
+                505
+              ]
+            },
+            {
+              "label": [
+                670,
+                550
+              ],
+              "text": "IS TO / AS"
+            },
+            {
+              "move": [
+                170,
+                860,
+                1500,
+                860
+              ],
+              "text": "connect the second pair"
+            }
+          ]
+        },
+        {
+          "at": 1,
+          "note": "Hold the matched connection so the next shot inherits its words and direction. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Read the double colon",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": ":  IS TO"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": false
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "::  AS"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": false
+            },
+            {
+              "arrow": [
+                650,
+                505,
+                1190,
+                505
+              ]
+            },
+            {
+              "label": [
+                670,
+                550
+              ],
+              "text": "IS TO / AS"
+            },
+            {
+              "move": [
+                170,
+                860,
+                1500,
+                860
+              ],
+              "text": "connect the second pair"
+            },
+            {
+              "cut": "carry the relationship into the next view"
+            }
+          ]
+        }
+      ],
+      "visual": "notation"
+    },
+    {
+      "id": "s09",
+      "act": "decode",
+      "type": "wide",
+      "start": 21.89,
+      "end": 23.34,
+      "caption": "Read the analogy",
+      "voice": "Read it: night is to day",
+      "teaches": "Track the spoken words across two stacked, fully spelled-out lines.",
+      "screen": "Original moving coastal landscape at night and day, paired with the same original student character smiling or looking sad. Clear labels remain outside the scene. Track the spoken words across two stacked, fully spelled-out lines. The title occupies the upper band; the comparison fills the middle of the landscape frame with large phone-legible labels.",
+      "motion": "Night stars gently shimmer; the sea moves continuously; clouds drift in daylight. The same student blinks, breathes and changes mouth and brow shape between happy and sad. Motion and captions follow this recorded take.",
+      "carries": "AS HAPPY IS TO SAD and the relationship highlight stay through the cut.",
+      "transition": "Match-cut on the retained label, then shift attention to the next connection.",
+      "sound": "Continuous low-volume original music under the narration; a soft cue marks the completed relationship.",
+      "check": "Read all labels at phone width; ensure both arrows mean the same thing and no words are clipped.",
+      "facts": [
+        "f3"
+      ],
+      "frames": [
+        {
+          "at": 0,
+          "note": "Start with readable words and a complete comparison; nothing begins on black. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Read the whole analogy",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "NIGHT IS TO DAY"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": true
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "AS HAPPY IS TO SAD"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": true
+            },
+            {
+              "move": [
+                170,
+                860,
+                700,
+                860
+              ],
+              "text": "reveal the first connection"
+            }
+          ]
+        },
+        {
+          "at": 0.5,
+          "note": "Reveal the relationship with the pointer aligned to the spoken phrase. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Read the whole analogy",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "NIGHT IS TO DAY"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": false
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "AS HAPPY IS TO SAD"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": false
+            },
+            {
+              "arrow": [
+                650,
+                505,
+                1190,
+                505
+              ]
+            },
+            {
+              "label": [
+                670,
+                550
+              ],
+              "text": "SAME RELATIONSHIP"
+            },
+            {
+              "move": [
+                170,
+                860,
+                1500,
+                860
+              ],
+              "text": "connect the second pair"
+            }
+          ]
+        },
+        {
+          "at": 1,
+          "note": "Hold the matched connection so the next shot inherits its words and direction. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Read the whole analogy",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "NIGHT IS TO DAY"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": false
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "AS HAPPY IS TO SAD"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": false
+            },
+            {
+              "arrow": [
+                650,
+                505,
+                1190,
+                505
+              ]
+            },
+            {
+              "label": [
+                670,
+                550
+              ],
+              "text": "SAME RELATIONSHIP"
+            },
+            {
+              "move": [
+                170,
+                860,
+                1500,
+                860
+              ],
+              "text": "connect the second pair"
+            },
+            {
+              "cut": "carry the relationship into the next view"
+            }
+          ]
+        }
+      ],
+      "visual": "four-scenes"
+    },
+    {
+      "id": "s10",
+      "act": "decode",
+      "type": "diagram",
+      "start": 23.34,
+      "end": 26.735,
+      "caption": "Both pairs belong together",
+      "voice": "as happy is to sad. Notice the matching arrows.",
+      "teaches": "Matched arrows remain visible as the notation returns between the word cards.",
+      "screen": "Original moving coastal landscape at night and day, paired with the same original student character smiling or looking sad. Clear labels remain outside the scene. Matched arrows remain visible as the notation returns between the word cards. The title occupies the upper band; the comparison fills the middle of the landscape frame with large phone-legible labels.",
+      "motion": "Night stars gently shimmer; the sea moves continuously; clouds drift in daylight. The same student blinks, breathes and changes mouth and brow shape between happy and sad. Motion and captions follow this recorded take.",
+      "carries": "HAPPY \u2192 SAD and the relationship highlight stay through the cut.",
+      "transition": "Match-cut on the retained label, then shift attention to the next connection.",
+      "sound": "Continuous low-volume original music under the narration; a soft cue marks the completed relationship.",
+      "check": "Read all labels at phone width; ensure both arrows mean the same thing and no words are clipped.",
+      "facts": [
+        "f2"
+      ],
+      "frames": [
+        {
+          "at": 0,
+          "note": "Start with readable words and a complete comparison; nothing begins on black. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Both pairs belong together",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "NIGHT \u2192 DAY"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": true
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "HAPPY \u2192 SAD"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": true
+            },
+            {
+              "label": [
+                1430,
+                610
+              ],
+              "text": "COMPARE"
+            },
+            {
+              "arrow": [
+                620,
+                420,
+                1010,
+                420
+              ]
+            },
+            {
+              "move": [
+                170,
+                860,
+                700,
+                860
+              ],
+              "text": "reveal the first connection"
+            }
+          ]
+        },
+        {
+          "at": 0.5,
+          "note": "Reveal the relationship with the pointer aligned to the spoken phrase. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Both pairs belong together",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "NIGHT \u2192 DAY"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": false
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "HAPPY \u2192 SAD"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": false
+            },
+            {
+              "label": [
+                1430,
+                610
+              ],
+              "text": "OPPOSITES"
+            },
+            {
+              "arrow": [
+                620,
+                420,
+                1010,
+                420
+              ]
+            },
+            {
+              "arrow": [
+                650,
+                505,
+                1190,
+                505
+              ]
+            },
+            {
+              "label": [
+                670,
+                550
+              ],
+              "text": "SAME RELATIONSHIP"
+            },
+            {
+              "move": [
+                170,
+                860,
+                1500,
+                860
+              ],
+              "text": "connect the second pair"
+            }
+          ]
+        },
+        {
+          "at": 1,
+          "note": "Hold the matched connection so the next shot inherits its words and direction. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Both pairs belong together",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "NIGHT \u2192 DAY"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": false
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "HAPPY \u2192 SAD"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": false
+            },
+            {
+              "label": [
+                1430,
+                610
+              ],
+              "text": "OPPOSITES"
+            },
+            {
+              "arrow": [
+                620,
+                420,
+                1010,
+                420
+              ]
+            },
+            {
+              "arrow": [
+                650,
+                505,
+                1190,
+                505
+              ]
+            },
+            {
+              "label": [
+                670,
+                550
+              ],
+              "text": "SAME RELATIONSHIP"
+            },
+            {
+              "move": [
+                170,
+                860,
+                1500,
+                860
+              ],
+              "text": "connect the second pair"
+            },
+            {
+              "cut": "carry the relationship into the next view"
+            }
+          ]
+        }
+      ],
+      "visual": "four-scenes"
+    },
+    {
+      "id": "s11",
+      "act": "apply",
+      "type": "compare",
+      "start": 26.735,
+      "end": 30.835,
+      "caption": "Find the relationship first",
+      "voice": "But sharing a topic isn't enough; the relationship must match.",
+      "teaches": "Fade out decorative icons, leaving the question above each relationship arrow.",
+      "screen": "Original moving coastal landscape at night and day, paired with the same original student character smiling or looking sad. Clear labels remain outside the scene. Fade out decorative icons, leaving the question above each relationship arrow. The title occupies the upper band; the comparison fills the middle of the landscape frame with large phone-legible labels.",
+      "motion": "Night stars gently shimmer; the sea moves continuously; clouds drift in daylight. The same student blinks, breathes and changes mouth and brow shape between happy and sad. Motion and captions follow this recorded take.",
+      "carries": "DOES THIS PAIR MATCH? and the relationship highlight stay through the cut.",
+      "transition": "Match-cut on the retained label, then shift attention to the next connection.",
+      "sound": "Continuous low-volume original music under the narration; a soft cue marks the completed relationship.",
+      "check": "Read all labels at phone width; ensure both arrows mean the same thing and no words are clipped.",
+      "facts": [
+        "f1"
+      ],
+      "frames": [
+        {
+          "at": 0,
+          "note": "Start with readable words and a complete comparison; nothing begins on black. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Find the relationship first",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "WHAT CONNECTS THIS PAIR?"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": true
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "DOES THIS PAIR MATCH?"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": true
+            },
+            {
+              "move": [
+                170,
+                860,
+                700,
+                860
+              ],
+              "text": "reveal the first connection"
+            }
+          ]
+        },
+        {
+          "at": 0.5,
+          "note": "Reveal the relationship with the pointer aligned to the spoken phrase. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Find the relationship first",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "WHAT CONNECTS THIS PAIR?"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": false
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "DOES THIS PAIR MATCH?"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": false
+            },
+            {
+              "arrow": [
+                650,
+                505,
+                1190,
+                505
+              ]
+            },
+            {
+              "label": [
+                670,
+                550
+              ],
+              "text": "SAME RELATIONSHIP"
+            },
+            {
+              "move": [
+                170,
+                860,
+                1500,
+                860
+              ],
+              "text": "connect the second pair"
+            }
+          ]
+        },
+        {
+          "at": 1,
+          "note": "Hold the matched connection so the next shot inherits its words and direction. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Find the relationship first",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "WHAT CONNECTS THIS PAIR?"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": false
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "DOES THIS PAIR MATCH?"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": false
+            },
+            {
+              "arrow": [
+                650,
+                505,
+                1190,
+                505
+              ]
+            },
+            {
+              "label": [
+                670,
+                550
+              ],
+              "text": "SAME RELATIONSHIP"
+            },
+            {
+              "move": [
+                170,
+                860,
+                1500,
+                860
+              ],
+              "text": "connect the second pair"
+            },
+            {
+              "cut": "carry the relationship into the next view"
+            }
+          ]
+        }
+      ],
+      "visual": "four-scenes"
+    },
+    {
+      "id": "s12",
+      "act": "apply",
+      "type": "wide",
+      "start": 30.835,
+      "end": 33.585,
+      "caption": "Another relationship",
+      "voice": "Here's another relationship from your module.",
+      "teaches": "Introduce the next two pairs together so students can see their parallel structure.",
+      "screen": "Introduce the next two pairs together so students can see their parallel structure. The title occupies the upper band; the comparison fills the middle of the landscape frame with large phone-legible labels.",
+      "motion": "A single measured highlight leads the eye along the relationship arrow; other words remain still until they are compared.",
+      "carries": "TITLE PAGE : BOOK and the relationship highlight stay through the cut.",
+      "transition": "Match-cut on the retained label, then shift attention to the next connection.",
+      "sound": "Continuous low-volume original music under the narration; a soft cue marks the completed relationship.",
+      "check": "Read all labels at phone width; ensure both arrows mean the same thing and no words are clipped.",
+      "facts": [
+        "f4"
+      ],
+      "frames": [
+        {
+          "at": 0,
+          "note": "Start with readable words and a complete comparison; nothing begins on black. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Another relationship",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "GREETING : LETTER"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": true
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "TITLE PAGE : BOOK"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": true
+            },
+            {
+              "move": [
+                170,
+                860,
+                700,
+                860
+              ],
+              "text": "reveal the first connection"
+            }
+          ]
+        },
+        {
+          "at": 0.5,
+          "note": "Reveal the relationship with the pointer aligned to the spoken phrase. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Another relationship",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "GREETING : LETTER"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": false
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "TITLE PAGE : BOOK"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": false
+            },
+            {
+              "arrow": [
+                650,
+                505,
+                1190,
+                505
+              ]
+            },
+            {
+              "label": [
+                670,
+                550
+              ],
+              "text": "SAME RELATIONSHIP"
+            },
+            {
+              "move": [
+                170,
+                860,
+                1500,
+                860
+              ],
+              "text": "connect the second pair"
+            }
+          ]
+        },
+        {
+          "at": 1,
+          "note": "Hold the matched connection so the next shot inherits its words and direction. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Another relationship",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "GREETING : LETTER"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": false
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "TITLE PAGE : BOOK"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": false
+            },
+            {
+              "arrow": [
+                650,
+                505,
+                1190,
+                505
+              ]
+            },
+            {
+              "label": [
+                670,
+                550
+              ],
+              "text": "SAME RELATIONSHIP"
+            },
+            {
+              "move": [
+                170,
+                860,
+                1500,
+                860
+              ],
+              "text": "connect the second pair"
+            },
+            {
+              "cut": "carry the relationship into the next view"
+            }
+          ]
+        }
+      ],
+      "visual": "letter-book"
+    },
+    {
+      "id": "s13",
+      "act": "apply",
+      "type": "diagram",
+      "start": 33.585,
+      "end": 35.26,
+      "caption": "Greeting: a part",
+      "voice": "A greeting is part of a letter,",
+      "teaches": "Highlight a greeting inside an illustrated letter; a leader labels its position.",
+      "screen": "Highlight a greeting inside an illustrated letter; a leader labels its position. The title occupies the upper band; the comparison fills the middle of the landscape frame with large phone-legible labels.",
+      "motion": "A single measured highlight leads the eye along the relationship arrow; other words remain still until they are compared.",
+      "carries": "LETTER and the relationship highlight stay through the cut.",
+      "transition": "Match-cut on the retained label, then shift attention to the next connection.",
+      "sound": "Continuous low-volume original music under the narration; a soft cue marks the completed relationship.",
+      "check": "Read all labels at phone width; ensure both arrows mean the same thing and no words are clipped.",
+      "facts": [
+        "f4"
+      ],
+      "frames": [
+        {
+          "at": 0,
+          "note": "Start with readable words and a complete comparison; nothing begins on black. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "A greeting is a part",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "GREETING"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": true
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "LETTER"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": true
+            },
+            {
+              "path": "M1250 320 L1660 320 L1660 780 L1250 780 Z",
+              "colour": "blue"
+            },
+            {
+              "line": [
+                1300,
+                420,
+                1600,
+                420
+              ]
+            },
+            {
+              "line": [
+                1300,
+                480,
+                1600,
+                480
+              ]
+            },
+            {
+              "label": [
+                1455,
+                380
+              ],
+              "text": "Dear friend,"
+            },
+            {
+              "move": [
+                1150,
+                380,
+                1260,
+                380
+              ],
+              "text": "highlight the part"
+            },
+            {
+              "move": [
+                170,
+                860,
+                700,
+                860
+              ],
+              "text": "reveal the first connection"
+            }
+          ]
+        },
+        {
+          "at": 0.5,
+          "note": "Reveal the relationship with the pointer aligned to the spoken phrase. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "A greeting is a part",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "GREETING"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": false
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "LETTER"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": false
+            },
+            {
+              "path": "M1250 320 L1660 320 L1660 780 L1250 780 Z",
+              "colour": "blue"
+            },
+            {
+              "line": [
+                1300,
+                420,
+                1600,
+                420
+              ]
+            },
+            {
+              "line": [
+                1300,
+                480,
+                1600,
+                480
+              ]
+            },
+            {
+              "label": [
+                1455,
+                380
+              ],
+              "text": "Dear friend,"
+            },
+            {
+              "move": [
+                1150,
+                380,
+                1260,
+                380
+              ],
+              "text": "highlight the part"
+            },
+            {
+              "move": [
+                170,
+                860,
+                1500,
+                860
+              ],
+              "text": "connect the second pair"
+            }
+          ]
+        },
+        {
+          "at": 1,
+          "note": "Hold the matched connection so the next shot inherits its words and direction. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "A greeting is a part",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "GREETING"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": false
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "LETTER"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": false
+            },
+            {
+              "path": "M1250 320 L1660 320 L1660 780 L1250 780 Z",
+              "colour": "blue"
+            },
+            {
+              "line": [
+                1300,
+                420,
+                1600,
+                420
+              ]
+            },
+            {
+              "line": [
+                1300,
+                480,
+                1600,
+                480
+              ]
+            },
+            {
+              "label": [
+                1455,
+                380
+              ],
+              "text": "Dear friend,"
+            },
+            {
+              "move": [
+                1150,
+                380,
+                1260,
+                380
+              ],
+              "text": "highlight the part"
+            },
+            {
+              "move": [
+                170,
+                860,
+                1500,
+                860
+              ],
+              "text": "connect the second pair"
+            },
+            {
+              "cut": "carry the relationship into the next view"
+            }
+          ]
+        }
+      ],
+      "visual": "letter-book"
+    },
+    {
+      "id": "s14",
+      "act": "apply",
+      "type": "compare",
+      "start": 35.26,
+      "end": 38.085,
+      "caption": "A title page is a part",
+      "voice": "just as a title page is part of a book.",
+      "teaches": "Show a title page inside a simple open-book illustration with the same highlight color.",
+      "screen": "Show a title page inside a simple open-book illustration with the same highlight color. The title occupies the upper band; the comparison fills the middle of the landscape frame with large phone-legible labels.",
+      "motion": "A single measured highlight leads the eye along the relationship arrow; other words remain still until they are compared.",
+      "carries": "BOOK and the relationship highlight stay through the cut.",
+      "transition": "Match-cut on the retained label, then shift attention to the next connection.",
+      "sound": "Continuous low-volume original music under the narration; a soft cue marks the completed relationship.",
+      "check": "Read all labels at phone width; ensure both arrows mean the same thing and no words are clipped.",
+      "facts": [
+        "f4"
+      ],
+      "frames": [
+        {
+          "at": 0,
+          "note": "Start with readable words and a complete comparison; nothing begins on black. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "A title page is a part",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "TITLE PAGE"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": true
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "BOOK"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": true
+            },
+            {
+              "path": "M1250 320 L1660 320 L1660 780 L1250 780 Z",
+              "colour": "blue"
+            },
+            {
+              "line": [
+                1300,
+                420,
+                1600,
+                420
+              ]
+            },
+            {
+              "line": [
+                1300,
+                480,
+                1600,
+                480
+              ]
+            },
+            {
+              "label": [
+                1455,
+                380
+              ],
+              "text": "TITLE PAGE"
+            },
+            {
+              "move": [
+                1150,
+                380,
+                1260,
+                380
+              ],
+              "text": "highlight the part"
+            },
+            {
+              "move": [
+                170,
+                860,
+                700,
+                860
+              ],
+              "text": "reveal the first connection"
+            }
+          ]
+        },
+        {
+          "at": 0.5,
+          "note": "Reveal the relationship with the pointer aligned to the spoken phrase. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "A title page is a part",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "TITLE PAGE"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": false
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "BOOK"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": false
+            },
+            {
+              "path": "M1250 320 L1660 320 L1660 780 L1250 780 Z",
+              "colour": "blue"
+            },
+            {
+              "line": [
+                1300,
+                420,
+                1600,
+                420
+              ]
+            },
+            {
+              "line": [
+                1300,
+                480,
+                1600,
+                480
+              ]
+            },
+            {
+              "label": [
+                1455,
+                380
+              ],
+              "text": "TITLE PAGE"
+            },
+            {
+              "move": [
+                1150,
+                380,
+                1260,
+                380
+              ],
+              "text": "highlight the part"
+            },
+            {
+              "move": [
+                170,
+                860,
+                1500,
+                860
+              ],
+              "text": "connect the second pair"
+            }
+          ]
+        },
+        {
+          "at": 1,
+          "note": "Hold the matched connection so the next shot inherits its words and direction. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "A title page is a part",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "TITLE PAGE"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": false
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "BOOK"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": false
+            },
+            {
+              "path": "M1250 320 L1660 320 L1660 780 L1250 780 Z",
+              "colour": "blue"
+            },
+            {
+              "line": [
+                1300,
+                420,
+                1600,
+                420
+              ]
+            },
+            {
+              "line": [
+                1300,
+                480,
+                1600,
+                480
+              ]
+            },
+            {
+              "label": [
+                1455,
+                380
+              ],
+              "text": "TITLE PAGE"
+            },
+            {
+              "move": [
+                1150,
+                380,
+                1260,
+                380
+              ],
+              "text": "highlight the part"
+            },
+            {
+              "move": [
+                170,
+                860,
+                1500,
+                860
+              ],
+              "text": "connect the second pair"
+            },
+            {
+              "cut": "carry the relationship into the next view"
+            }
+          ]
+        }
+      ],
+      "visual": "letter-book"
+    },
+    {
+      "id": "s15",
+      "act": "apply",
+      "type": "diagram",
+      "start": 38.085,
+      "end": 40.56,
+      "caption": "Part \u2192 whole",
+      "voice": "Both pairs go from a part to its whole.",
+      "teaches": "Use matching left-to-right arrows from the highlighted part toward the complete document.",
+      "screen": "Use matching left-to-right arrows from the highlighted part toward the complete document. The title occupies the upper band; the comparison fills the middle of the landscape frame with large phone-legible labels.",
+      "motion": "A single measured highlight leads the eye along the relationship arrow; other words remain still until they are compared.",
+      "carries": "TITLE PAGE \u2192 BOOK and the relationship highlight stay through the cut.",
+      "transition": "Match-cut on the retained label, then shift attention to the next connection.",
+      "sound": "Continuous low-volume original music under the narration; a soft cue marks the completed relationship.",
+      "check": "Read all labels at phone width; ensure both arrows mean the same thing and no words are clipped.",
+      "facts": [
+        "f4"
+      ],
+      "frames": [
+        {
+          "at": 0,
+          "note": "Start with readable words and a complete comparison; nothing begins on black. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Part \u2192 whole",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "GREETING \u2192 LETTER"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": true
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "TITLE PAGE \u2192 BOOK"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": true
+            },
+            {
+              "move": [
+                170,
+                860,
+                700,
+                860
+              ],
+              "text": "reveal the first connection"
+            }
+          ]
+        },
+        {
+          "at": 0.5,
+          "note": "Reveal the relationship with the pointer aligned to the spoken phrase. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Part \u2192 whole",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "GREETING \u2192 LETTER"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": false
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "TITLE PAGE \u2192 BOOK"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": false
+            },
+            {
+              "arrow": [
+                650,
+                505,
+                1190,
+                505
+              ]
+            },
+            {
+              "label": [
+                670,
+                550
+              ],
+              "text": "SAME RELATIONSHIP"
+            },
+            {
+              "move": [
+                170,
+                860,
+                1500,
+                860
+              ],
+              "text": "connect the second pair"
+            }
+          ]
+        },
+        {
+          "at": 1,
+          "note": "Hold the matched connection so the next shot inherits its words and direction. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Part \u2192 whole",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "GREETING \u2192 LETTER"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": false
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "TITLE PAGE \u2192 BOOK"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": false
+            },
+            {
+              "arrow": [
+                650,
+                505,
+                1190,
+                505
+              ]
+            },
+            {
+              "label": [
+                670,
+                550
+              ],
+              "text": "SAME RELATIONSHIP"
+            },
+            {
+              "move": [
+                170,
+                860,
+                1500,
+                860
+              ],
+              "text": "connect the second pair"
+            },
+            {
+              "cut": "carry the relationship into the next view"
+            }
+          ]
+        }
+      ],
+      "visual": "letter-book"
+    },
+    {
+      "id": "s16",
+      "act": "apply",
+      "type": "type",
+      "start": 40.56,
+      "end": 43.31,
+      "caption": "Part to whole",
+      "voice": "That's a part-to-whole analogy. Keep that order",
+      "teaches": "The same two terms settle above the same arrow direction in both rows.",
+      "screen": "The same two terms settle above the same arrow direction in both rows. The title occupies the upper band; the comparison fills the middle of the landscape frame with large phone-legible labels.",
+      "motion": "A single measured highlight leads the eye along the relationship arrow; other words remain still until they are compared.",
+      "carries": "WHOLE and the relationship highlight stay through the cut.",
+      "transition": "Match-cut on the retained label, then shift attention to the next connection.",
+      "sound": "Continuous low-volume original music under the narration; a soft cue marks the completed relationship.",
+      "check": "Read all labels at phone width; ensure both arrows mean the same thing and no words are clipped.",
+      "facts": [
+        "f4"
+      ],
+      "frames": [
+        {
+          "at": 0,
+          "note": "Start with readable words and a complete comparison; nothing begins on black. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Part to whole",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "PART"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": true
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "WHOLE"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": true
+            },
+            {
+              "move": [
+                170,
+                860,
+                700,
+                860
+              ],
+              "text": "reveal the first connection"
+            }
+          ]
+        },
+        {
+          "at": 0.5,
+          "note": "Reveal the relationship with the pointer aligned to the spoken phrase. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Part to whole",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "PART"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": false
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "WHOLE"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": false
+            },
+            {
+              "arrow": [
+                650,
+                505,
+                1190,
+                505
+              ]
+            },
+            {
+              "label": [
+                670,
+                550
+              ],
+              "text": "SAME RELATIONSHIP"
+            },
+            {
+              "move": [
+                170,
+                860,
+                1500,
+                860
+              ],
+              "text": "connect the second pair"
+            }
+          ]
+        },
+        {
+          "at": 1,
+          "note": "Hold the matched connection so the next shot inherits its words and direction. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Part to whole",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "PART"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": false
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "WHOLE"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": false
+            },
+            {
+              "arrow": [
+                650,
+                505,
+                1190,
+                505
+              ]
+            },
+            {
+              "label": [
+                670,
+                550
+              ],
+              "text": "SAME RELATIONSHIP"
+            },
+            {
+              "move": [
+                170,
+                860,
+                1500,
+                860
+              ],
+              "text": "connect the second pair"
+            },
+            {
+              "cut": "carry the relationship into the next view"
+            }
+          ]
+        }
+      ],
+      "visual": "letter-book"
+    },
+    {
+      "id": "s17",
+      "act": "apply",
+      "type": "compare",
+      "start": 43.31,
+      "end": 45.585,
+      "caption": "Keep the order",
+      "voice": "when you read and compare the pairs.",
+      "teaches": "Align the rows vertically so first position matches first position and second matches second.",
+      "screen": "Align the rows vertically so first position matches first position and second matches second. The title occupies the upper band; the comparison fills the middle of the landscape frame with large phone-legible labels.",
+      "motion": "A single measured highlight leads the eye along the relationship arrow; other words remain still until they are compared.",
+      "carries": "PART \u2192 WHOLE and the relationship highlight stay through the cut.",
+      "transition": "Match-cut on the retained label, then shift attention to the next connection.",
+      "sound": "Continuous low-volume original music under the narration; a soft cue marks the completed relationship.",
+      "check": "Read all labels at phone width; ensure both arrows mean the same thing and no words are clipped.",
+      "facts": [
+        "f4"
+      ],
+      "frames": [
+        {
+          "at": 0,
+          "note": "Start with readable words and a complete comparison; nothing begins on black. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Keep the order",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "PART \u2192 WHOLE"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": true
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "PART \u2192 WHOLE"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": true
+            },
+            {
+              "move": [
+                170,
+                860,
+                700,
+                860
+              ],
+              "text": "reveal the first connection"
+            }
+          ]
+        },
+        {
+          "at": 0.5,
+          "note": "Reveal the relationship with the pointer aligned to the spoken phrase. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Keep the order",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "PART \u2192 WHOLE"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": false
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "PART \u2192 WHOLE"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": false
+            },
+            {
+              "arrow": [
+                650,
+                505,
+                1190,
+                505
+              ]
+            },
+            {
+              "label": [
+                670,
+                550
+              ],
+              "text": "SAME RELATIONSHIP"
+            },
+            {
+              "move": [
+                170,
+                860,
+                1500,
+                860
+              ],
+              "text": "connect the second pair"
+            }
+          ]
+        },
+        {
+          "at": 1,
+          "note": "Hold the matched connection so the next shot inherits its words and direction. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Keep the order",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "PART \u2192 WHOLE"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": false
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "PART \u2192 WHOLE"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": false
+            },
+            {
+              "arrow": [
+                650,
+                505,
+                1190,
+                505
+              ]
+            },
+            {
+              "label": [
+                670,
+                550
+              ],
+              "text": "SAME RELATIONSHIP"
+            },
+            {
+              "move": [
+                170,
+                860,
+                1500,
+                860
+              ],
+              "text": "connect the second pair"
+            },
+            {
+              "cut": "carry the relationship into the next view"
+            }
+          ]
+        }
+      ],
+      "visual": "letter-book"
+    },
+    {
+      "id": "s18",
+      "act": "patterns",
+      "type": "diagram",
+      "start": 45.585,
+      "end": 50.135,
+      "caption": "Synonyms",
+      "voice": "The module also names synonyms: words with similar meanings.",
+      "teaches": "Replace opposite with similar on a fresh pair of meaning brackets; no new example is introduced.",
+      "screen": "Replace opposite with similar on a fresh pair of meaning brackets; no new example is introduced. The title occupies the upper band; the comparison fills the middle of the landscape frame with large phone-legible labels.",
+      "motion": "A single measured highlight leads the eye along the relationship arrow; other words remain still until they are compared.",
+      "carries": "SYNONYMS and the relationship highlight stay through the cut.",
+      "transition": "Match-cut on the retained label, then shift attention to the next connection.",
+      "sound": "Continuous low-volume original music under the narration; a soft cue marks the completed relationship.",
+      "check": "Read all labels at phone width; ensure both arrows mean the same thing and no words are clipped.",
+      "facts": [
+        "f5"
+      ],
+      "frames": [
+        {
+          "at": 0,
+          "note": "Start with readable words and a complete comparison; nothing begins on black. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Synonyms",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "SIMILAR MEANINGS"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": true
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "SYNONYMS"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": true
+            },
+            {
+              "move": [
+                170,
+                860,
+                700,
+                860
+              ],
+              "text": "reveal the first connection"
+            }
+          ]
+        },
+        {
+          "at": 0.5,
+          "note": "Reveal the relationship with the pointer aligned to the spoken phrase. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Synonyms",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "SIMILAR MEANINGS"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": false
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "SYNONYMS"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": false
+            },
+            {
+              "arrow": [
+                650,
+                505,
+                1190,
+                505
+              ]
+            },
+            {
+              "label": [
+                670,
+                550
+              ],
+              "text": "SAME RELATIONSHIP"
+            },
+            {
+              "move": [
+                170,
+                860,
+                1500,
+                860
+              ],
+              "text": "connect the second pair"
+            }
+          ]
+        },
+        {
+          "at": 1,
+          "note": "Hold the matched connection so the next shot inherits its words and direction. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Synonyms",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "SIMILAR MEANINGS"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": false
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "SYNONYMS"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": false
+            },
+            {
+              "arrow": [
+                650,
+                505,
+                1190,
+                505
+              ]
+            },
+            {
+              "label": [
+                670,
+                550
+              ],
+              "text": "SAME RELATIONSHIP"
+            },
+            {
+              "move": [
+                170,
+                860,
+                1500,
+                860
+              ],
+              "text": "connect the second pair"
+            },
+            {
+              "cut": "carry the relationship into the next view"
+            }
+          ]
+        }
+      ],
+      "visual": "patterns"
+    },
+    {
+      "id": "s19",
+      "act": "patterns",
+      "type": "type",
+      "start": 50.135,
+      "end": 53.56,
+      "caption": "Cause \u2192 effect",
+      "voice": "Cause and effect connects a condition to its result.",
+      "teaches": "A condition card sends one labeled arrow toward a result card.",
+      "screen": "A condition card sends one labeled arrow toward a result card. The title occupies the upper band; the comparison fills the middle of the landscape frame with large phone-legible labels.",
+      "motion": "A single measured highlight leads the eye along the relationship arrow; other words remain still until they are compared.",
+      "carries": "EFFECT and the relationship highlight stay through the cut.",
+      "transition": "Match-cut on the retained label, then shift attention to the next connection.",
+      "sound": "Continuous low-volume original music under the narration; a soft cue marks the completed relationship.",
+      "check": "Read all labels at phone width; ensure both arrows mean the same thing and no words are clipped.",
+      "facts": [
+        "f6"
+      ],
+      "frames": [
+        {
+          "at": 0,
+          "note": "Start with readable words and a complete comparison; nothing begins on black. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Cause \u2192 effect",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "CAUSE"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": true
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "EFFECT"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": true
+            },
+            {
+              "move": [
+                170,
+                860,
+                700,
+                860
+              ],
+              "text": "reveal the first connection"
+            }
+          ]
+        },
+        {
+          "at": 0.5,
+          "note": "Reveal the relationship with the pointer aligned to the spoken phrase. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Cause \u2192 effect",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "CAUSE"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": false
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "EFFECT"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": false
+            },
+            {
+              "arrow": [
+                650,
+                505,
+                1190,
+                505
+              ]
+            },
+            {
+              "label": [
+                670,
+                550
+              ],
+              "text": "FOLLOW THE ARROW"
+            },
+            {
+              "move": [
+                170,
+                860,
+                1500,
+                860
+              ],
+              "text": "connect the second pair"
+            }
+          ]
+        },
+        {
+          "at": 1,
+          "note": "Hold the matched connection so the next shot inherits its words and direction. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Cause \u2192 effect",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "CAUSE"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": false
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "EFFECT"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": false
+            },
+            {
+              "arrow": [
+                650,
+                505,
+                1190,
+                505
+              ]
+            },
+            {
+              "label": [
+                670,
+                550
+              ],
+              "text": "FOLLOW THE ARROW"
+            },
+            {
+              "move": [
+                170,
+                860,
+                1500,
+                860
+              ],
+              "text": "connect the second pair"
+            },
+            {
+              "cut": "carry the relationship into the next view"
+            }
+          ]
+        }
+      ],
+      "visual": "patterns"
+    },
+    {
+      "id": "s20",
+      "act": "patterns",
+      "type": "diagram",
+      "start": 53.56,
+      "end": 56.96,
+      "caption": "Location",
+      "voice": "Location connects something to the place where it belongs.",
+      "teaches": "Place the thing label within a bounded place outline and connect it with a leader.",
+      "screen": "Place the thing label within a bounded place outline and connect it with a leader. The title occupies the upper band; the comparison fills the middle of the landscape frame with large phone-legible labels.",
+      "motion": "A single measured highlight leads the eye along the relationship arrow; other words remain still until they are compared.",
+      "carries": "ITS PLACE and the relationship highlight stay through the cut.",
+      "transition": "Match-cut on the retained label, then shift attention to the next connection.",
+      "sound": "Continuous low-volume original music under the narration; a soft cue marks the completed relationship.",
+      "check": "Read all labels at phone width; ensure both arrows mean the same thing and no words are clipped.",
+      "facts": [
+        "f7"
+      ],
+      "frames": [
+        {
+          "at": 0,
+          "note": "Start with readable words and a complete comparison; nothing begins on black. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Location",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "SOMETHING"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": true
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "ITS PLACE"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": true
+            },
+            {
+              "move": [
+                170,
+                860,
+                700,
+                860
+              ],
+              "text": "reveal the first connection"
+            }
+          ]
+        },
+        {
+          "at": 0.5,
+          "note": "Reveal the relationship with the pointer aligned to the spoken phrase. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Location",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "SOMETHING"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": false
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "ITS PLACE"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": false
+            },
+            {
+              "arrow": [
+                650,
+                505,
+                1190,
+                505
+              ]
+            },
+            {
+              "label": [
+                670,
+                550
+              ],
+              "text": "FOLLOW THE ARROW"
+            },
+            {
+              "move": [
+                170,
+                860,
+                1500,
+                860
+              ],
+              "text": "connect the second pair"
+            }
+          ]
+        },
+        {
+          "at": 1,
+          "note": "Hold the matched connection so the next shot inherits its words and direction. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Location",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "SOMETHING"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": false
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "ITS PLACE"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": false
+            },
+            {
+              "arrow": [
+                650,
+                505,
+                1190,
+                505
+              ]
+            },
+            {
+              "label": [
+                670,
+                550
+              ],
+              "text": "FOLLOW THE ARROW"
+            },
+            {
+              "move": [
+                170,
+                860,
+                1500,
+                860
+              ],
+              "text": "connect the second pair"
+            },
+            {
+              "cut": "carry the relationship into the next view"
+            }
+          ]
+        }
+      ],
+      "visual": "patterns"
+    },
+    {
+      "id": "s21",
+      "act": "remember",
+      "type": "compare",
+      "start": 56.96,
+      "end": 60.035,
+      "caption": "Name the first connection",
+      "voice": "Start by saying how the first pair is connected,",
+      "teaches": "Return to the two-pair structure; reveal only the first relationship label.",
+      "screen": "Original moving coastal landscape at night and day, paired with the same original student character smiling or looking sad. Clear labels remain outside the scene. Return to the two-pair structure; reveal only the first relationship label. The title occupies the upper band; the comparison fills the middle of the landscape frame with large phone-legible labels.",
+      "motion": "Night stars gently shimmer; the sea moves continuously; clouds drift in daylight. The same student blinks, breathes and changes mouth and brow shape between happy and sad. Motion and captions follow this recorded take.",
+      "carries": "NAME THE RELATIONSHIP and the relationship highlight stay through the cut.",
+      "transition": "Match-cut on the retained label, then shift attention to the next connection.",
+      "sound": "Continuous low-volume original music under the narration; a soft cue marks the completed relationship.",
+      "check": "Read all labels at phone width; ensure both arrows mean the same thing and no words are clipped.",
+      "facts": [
+        "f1"
+      ],
+      "frames": [
+        {
+          "at": 0,
+          "note": "Start with readable words and a complete comparison; nothing begins on black. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Name the first connection",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "FIRST PAIR"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": true
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "NAME THE RELATIONSHIP"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": true
+            },
+            {
+              "move": [
+                170,
+                860,
+                700,
+                860
+              ],
+              "text": "reveal the first connection"
+            }
+          ]
+        },
+        {
+          "at": 0.5,
+          "note": "Reveal the relationship with the pointer aligned to the spoken phrase. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Name the first connection",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "FIRST PAIR"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": false
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "NAME THE RELATIONSHIP"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": false
+            },
+            {
+              "arrow": [
+                650,
+                505,
+                1190,
+                505
+              ]
+            },
+            {
+              "label": [
+                670,
+                550
+              ],
+              "text": "SAME RELATIONSHIP"
+            },
+            {
+              "move": [
+                170,
+                860,
+                1500,
+                860
+              ],
+              "text": "connect the second pair"
+            }
+          ]
+        },
+        {
+          "at": 1,
+          "note": "Hold the matched connection so the next shot inherits its words and direction. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Name the first connection",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "FIRST PAIR"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": false
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "NAME THE RELATIONSHIP"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": false
+            },
+            {
+              "arrow": [
+                650,
+                505,
+                1190,
+                505
+              ]
+            },
+            {
+              "label": [
+                670,
+                550
+              ],
+              "text": "SAME RELATIONSHIP"
+            },
+            {
+              "move": [
+                170,
+                860,
+                1500,
+                860
+              ],
+              "text": "connect the second pair"
+            },
+            {
+              "cut": "carry the relationship into the next view"
+            }
+          ]
+        }
+      ],
+      "visual": "four-scenes"
+    },
+    {
+      "id": "s22",
+      "act": "remember",
+      "type": "diagram",
+      "start": 60.035,
+      "end": 63.185,
+      "caption": "Check the second connection",
+      "voice": "then check the second pair in the same direction.",
+      "teaches": "Carry the same relationship label and arrow direction to the second row.",
+      "screen": "Original moving coastal landscape at night and day, paired with the same original student character smiling or looking sad. Clear labels remain outside the scene. Carry the same relationship label and arrow direction to the second row. The title occupies the upper band; the comparison fills the middle of the landscape frame with large phone-legible labels.",
+      "motion": "Night stars gently shimmer; the sea moves continuously; clouds drift in daylight. The same student blinks, breathes and changes mouth and brow shape between happy and sad. Motion and captions follow this recorded take.",
+      "carries": "FIRST \u2192 SECOND and the relationship highlight stay through the cut.",
+      "transition": "Match-cut on the retained label, then shift attention to the next connection.",
+      "sound": "Continuous low-volume original music under the narration; a soft cue marks the completed relationship.",
+      "check": "Read all labels at phone width; ensure both arrows mean the same thing and no words are clipped.",
+      "facts": [
+        "f1"
+      ],
+      "frames": [
+        {
+          "at": 0,
+          "note": "Start with readable words and a complete comparison; nothing begins on black. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Check the second connection",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "FIRST \u2192 SECOND"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": true
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "FIRST \u2192 SECOND"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": true
+            },
+            {
+              "move": [
+                170,
+                860,
+                700,
+                860
+              ],
+              "text": "reveal the first connection"
+            }
+          ]
+        },
+        {
+          "at": 0.5,
+          "note": "Reveal the relationship with the pointer aligned to the spoken phrase. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Check the second connection",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "FIRST \u2192 SECOND"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": false
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "FIRST \u2192 SECOND"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": false
+            },
+            {
+              "arrow": [
+                650,
+                505,
+                1190,
+                505
+              ]
+            },
+            {
+              "label": [
+                670,
+                550
+              ],
+              "text": "SAME RELATIONSHIP"
+            },
+            {
+              "move": [
+                170,
+                860,
+                1500,
+                860
+              ],
+              "text": "connect the second pair"
+            }
+          ]
+        },
+        {
+          "at": 1,
+          "note": "Hold the matched connection so the next shot inherits its words and direction. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Check the second connection",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "FIRST \u2192 SECOND"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": false
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "FIRST \u2192 SECOND"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": false
+            },
+            {
+              "arrow": [
+                650,
+                505,
+                1190,
+                505
+              ]
+            },
+            {
+              "label": [
+                670,
+                550
+              ],
+              "text": "SAME RELATIONSHIP"
+            },
+            {
+              "move": [
+                170,
+                860,
+                1500,
+                860
+              ],
+              "text": "connect the second pair"
+            },
+            {
+              "cut": "carry the relationship into the next view"
+            }
+          ]
+        }
+      ],
+      "visual": "four-scenes"
+    },
+    {
+      "id": "s23",
+      "act": "remember",
+      "type": "recap",
+      "start": 63.185,
+      "end": 66.285,
+      "caption": "Match the relationship",
+      "voice": "So an analogy isn't just a pair of words.",
+      "teaches": "Hold a single summary frame with the two examples and their relationship labels.",
+      "screen": "Original moving coastal landscape at night and day, paired with the same original student character smiling or looking sad. Clear labels remain outside the scene. Hold a single summary frame with the two examples and their relationship labels. The title occupies the upper band; the comparison fills the middle of the landscape frame with large phone-legible labels.",
+      "motion": "Night stars gently shimmer; the sea moves continuously; clouds drift in daylight. The same student blinks, breathes and changes mouth and brow shape between happy and sad. Motion and captions follow this recorded take.",
+      "carries": "PAIR \u2192 SAME RELATIONSHIP and the relationship highlight stay through the cut.",
+      "transition": "Match-cut on the retained label, then shift attention to the next connection.",
+      "sound": "Continuous low-volume original music under the narration; a soft cue marks the completed relationship.",
+      "check": "Read all labels at phone width; ensure both arrows mean the same thing and no words are clipped.",
+      "facts": [
+        "f1"
+      ],
+      "frames": [
+        {
+          "at": 0,
+          "note": "Start with readable words and a complete comparison; nothing begins on black. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Match the relationship",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "PAIR \u2192 RELATIONSHIP"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": true
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "PAIR \u2192 SAME RELATIONSHIP"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": true
+            },
+            {
+              "move": [
+                170,
+                860,
+                700,
+                860
+              ],
+              "text": "reveal the first connection"
+            }
+          ]
+        },
+        {
+          "at": 0.5,
+          "note": "Reveal the relationship with the pointer aligned to the spoken phrase. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Match the relationship",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "PAIR \u2192 RELATIONSHIP"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": false
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "PAIR \u2192 SAME RELATIONSHIP"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": false
+            },
+            {
+              "arrow": [
+                650,
+                505,
+                1190,
+                505
+              ]
+            },
+            {
+              "label": [
+                670,
+                550
+              ],
+              "text": "SAME RELATIONSHIP"
+            },
+            {
+              "move": [
+                170,
+                860,
+                1500,
+                860
+              ],
+              "text": "connect the second pair"
+            }
+          ]
+        },
+        {
+          "at": 1,
+          "note": "Hold the matched connection so the next shot inherits its words and direction. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Match the relationship",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "PAIR \u2192 RELATIONSHIP"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": false
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "PAIR \u2192 SAME RELATIONSHIP"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": false
+            },
+            {
+              "arrow": [
+                650,
+                505,
+                1190,
+                505
+              ]
+            },
+            {
+              "label": [
+                670,
+                550
+              ],
+              "text": "SAME RELATIONSHIP"
+            },
+            {
+              "move": [
+                170,
+                860,
+                1500,
+                860
+              ],
+              "text": "connect the second pair"
+            },
+            {
+              "cut": "carry the relationship into the next view"
+            }
+          ]
+        }
+      ],
+      "visual": "four-scenes"
+    },
+    {
+      "id": "s24",
+      "act": "remember",
+      "type": "endcard",
+      "start": 66.285,
+      "end": 70.505,
+      "caption": "Same relationship. Same direction.",
+      "voice": "It's two pairs linked by the same relationship.",
+      "teaches": "End on a clean poster: matching relationship arrows, the key line, and the module title.",
+      "screen": "Original moving coastal landscape at night and day, paired with the same original student character smiling or looking sad. Clear labels remain outside the scene. End on a clean poster: matching relationship arrows, the key line, and the module title. The title occupies the upper band; the comparison fills the middle of the landscape frame with large phone-legible labels.",
+      "motion": "Night stars gently shimmer; the sea moves continuously; clouds drift in daylight. The same student blinks, breathes and changes mouth and brow shape between happy and sad. Motion and captions follow this recorded take.",
+      "carries": "KEEP THE ORDER and the relationship highlight stay through the cut.",
+      "transition": "Match-cut on the retained label, then shift attention to the next connection.",
+      "sound": "Continuous low-volume original music under the narration; a soft cue marks the completed relationship.",
+      "check": "Read all labels at phone width; ensure both arrows mean the same thing and no words are clipped.",
+      "facts": [
+        "f1"
+      ],
+      "frames": [
+        {
+          "at": 0,
+          "note": "Start with readable words and a complete comparison; nothing begins on black. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Same relationship. Same direction.",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "MATCH THE RELATIONSHIP"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": true
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "KEEP THE ORDER"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": true
+            },
+            {
+              "move": [
+                170,
+                860,
+                700,
+                860
+              ],
+              "text": "reveal the first connection"
+            }
+          ]
+        },
+        {
+          "at": 0.5,
+          "note": "Reveal the relationship with the pointer aligned to the spoken phrase. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Same relationship. Same direction.",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "MATCH THE RELATIONSHIP"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": false
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "KEEP THE ORDER"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": false
+            },
+            {
+              "arrow": [
+                650,
+                505,
+                1190,
+                505
+              ]
+            },
+            {
+              "label": [
+                670,
+                550
+              ],
+              "text": "SAME RELATIONSHIP"
+            },
+            {
+              "move": [
+                170,
+                860,
+                1500,
+                860
+              ],
+              "text": "connect the second pair"
+            }
+          ]
+        },
+        {
+          "at": 1,
+          "note": "Hold the matched connection so the next shot inherits its words and direction. Original night/day scene and same student expressions replace the corresponding word-only artwork.",
+          "draw": [
+            {
+              "title": [
+                110,
+                130
+              ],
+              "text": "Same relationship. Same direction.",
+              "size": 70,
+              "align": "start"
+            },
+            {
+              "label": [
+                960,
+                220
+              ],
+              "text": "GRADE 7  /  QUARTER 1  /  ANALOGY"
+            },
+            {
+              "label": [
+                650,
+                400
+              ],
+              "text": "MATCH THE RELATIONSHIP"
+            },
+            {
+              "line": [
+                180,
+                432,
+                1490,
+                432
+              ],
+              "dashed": false
+            },
+            {
+              "label": [
+                650,
+                650
+              ],
+              "text": "KEEP THE ORDER"
+            },
+            {
+              "line": [
+                180,
+                682,
+                1490,
+                682
+              ],
+              "dashed": false
+            },
+            {
+              "arrow": [
+                650,
+                505,
+                1190,
+                505
+              ]
+            },
+            {
+              "label": [
+                670,
+                550
+              ],
+              "text": "SAME RELATIONSHIP"
+            },
+            {
+              "move": [
+                170,
+                860,
+                1500,
+                860
+              ],
+              "text": "connect the second pair"
+            },
+            {
+              "cut": "carry the relationship into the next view"
+            }
+          ]
+        }
+      ],
+      "visual": "four-scenes"
+    }
+  ],
+  "rendering": "Native deterministic 2D frame renderer used because local headless Chromium cannot launch under the desktop permissions. Reads the same approved storyboard clock."
+}
