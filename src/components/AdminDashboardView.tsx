@@ -1,3 +1,4 @@
+import {DashboardSectionBack} from './DashboardSectionBack';
 import { DashboardGuide } from './DashboardGuide';
 import { AudioSettings } from './AudioSettings';
 import React, { useState, useMemo } from 'react';
@@ -1081,6 +1082,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 space-y-8 animate-fade-in">
+      {activeTab!=='APPROVAL_QUEUE'&&<DashboardSectionBack label="Back to approval queue" onBack={()=>setActiveTab('APPROVAL_QUEUE')}/>}
       <DashboardGuide key={currentAdmin.id + String(isMainAdmin)} accountId={currentAdmin.id}
         role={isMainAdmin ? 'division' : 'principal'} currentView="ADMIN" onNavigate={() => {}} />
 

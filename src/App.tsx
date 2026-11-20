@@ -1,3 +1,5 @@
+import {useDashboardHistory,canLeavePage} from './hooks/useDashboardHistory';
+import {PageBackNavigation} from './components/PageBackNavigation';
 import { AudioSettings } from './components/AudioSettings';
 import { AudioScene } from './context/AudioContext';
 import { DashboardGuide } from './components/DashboardGuide';
@@ -294,7 +296,7 @@ export default function App() {
   // Active current user ID - clean start
   const [currentUserId, setCurrentUserId] = useState<string>('');
 
-  const [currentView, setCurrentView] = useState<AppView>(() => {
+  const [currentView, setCurrentViewState] = useState<AppView>(() => {
     try {
       const saved = localStorage.getItem(STORAGE_KEY_CURRENT_USER);
       if (saved && saved.trim() !== '' && saved !== 'guest-explorer') return 'STUDENT_DASHBOARD';
@@ -302,11 +304,26 @@ export default function App() {
     return 'AUTH';
   });
 
+  const currentViewRef=useRef(currentView);currentViewRef.current=currentView;
+  const setCurrentView=(view:AppView)=>{
+    if(view===currentViewRef.current)return;
+    if(view!=='AUTH'&&view!=='WAITING_APPROVAL'&&!canLeavePage())return;
+    setCurrentViewState(view);
+  };
+
   // Active module for Lesson / Quiz
   const [selectedModule, setSelectedModule] = useState<Module>(() => {
     return modules.find((m) => m.gradeLevel === 8 && m.moduleNumber === 1) || modules[0];
   });
   const [lessonInitialStage, setLessonInitialStage] = useState<'LESSON' | 'QUIZ_SETUP'>('LESSON');
+
+  const pageHistory=useDashboardHistory(currentView,selectedModule.id,currentUserId, page=>{
+    const restored=modules.find(module=>module.id===page.moduleId);
+    if(restored)setSelectedModule(restored);
+    if(page.view==='LESSON_QUIZ')setLessonInitialStage('LESSON');
+    setCurrentViewState(page.view as AppView);
+    setIsMobileMenuOpen(false);setIsAccountMenuOpen(false);
+  });
 
   // Personalization browsing state
   const [browseGrade, setBrowseGrade] = useState<GradeLevel>(8);
@@ -916,6 +933,7 @@ export default function App() {
 
   // Log Out
   const handleLogOut = () => {
+    if(['LESSON_QUIZ','WRITING'].includes(currentView)&&currentUser?.status==='approved'&&!canLeavePage())return;
     soundFX.playClick();
     customTransitionTriggeredRef.current = true;
     triggerLogoTransition({
@@ -1903,6 +1921,7 @@ export default function App() {
           <DashboardGuide key={currentUser.id} accountId={currentUser.id} role={currentUser.role}
             currentView={currentView} onNavigate={navigateStudent} />
         )}
+        {currentUser&&!['AUTH','WAITING_APPROVAL','LESSON_QUIZ','STUDENT_DASHBOARD','TEACHER','ADMIN'].includes(currentView)&&<PageBackNavigation backView={pageHistory.backLabel} onBack={pageHistory.goBack} onHome={()=>setCurrentView(currentUser.role==='student'?'STUDENT_DASHBOARD':currentUser.role==='teacher'?'TEACHER':'ADMIN')}/>}
         <div key={currentView} className="animate-lq-page-enter">
         {/* Authentication View */}
         {currentView === 'AUTH' && (
