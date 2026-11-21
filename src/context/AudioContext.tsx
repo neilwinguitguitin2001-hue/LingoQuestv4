@@ -29,7 +29,7 @@ type AudioControls = {
   error: boolean;
   setStudy: (study: boolean) => void;
   setQuiz: (quiz: boolean) => void;
-  registerMap: () => () => void;
+  registerMap: (quiet?: boolean) => () => void;
 };
 const AudioControlsContext = createContext<AudioControls | null>(null);
 export function useAudioSettings() {
@@ -44,20 +44,22 @@ export function AudioProvider({ children }: { children: ReactNode }) {
   const [study, setStudy] = useState(false);
   const [quiz, setQuiz] = useState(false);
   const [maps, setMaps] = useState(0);
+  const [quietMaps, setQuietMaps] = useState(0);
   const engine = useRef<{ context: AudioContext; music: GainNode; sea: GainNode } | null>(null);
   const suspendTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const latest = useRef({ preferences, study, quiz, maps });
-  latest.current = { preferences, study, quiz, maps };
+  const latest = useRef({ preferences, study, quiz, maps, quietMaps });
+  latest.current = { preferences, study, quiz, maps, quietMaps };
 
   function syncAudio() {
-    const { preferences: value, study: reading, quiz: playing, maps: visibleMaps } = latest.current;
+    const { preferences: value, study: reading, quiz: playing, maps: visibleMaps, quietMaps: visibleQuietMaps } = latest.current;
     const output = engine.current;
     if (!output) return;
     const { context, music, sea } = output;
     const audible = value.musicEnabled && value.musicVolume > 0 && !document.hidden;
     const volume = audible ? value.musicVolume / 100 : 0;
     music.gain.setTargetAtTime(volume * (playing ? 0.4 : reading ? 0.25 : visibleMaps ? 0.55 : 1), context.currentTime, 0.25);
-    sea.gain.setTargetAtTime(visibleMaps && audible && !playing ? volume * 0.8 : 0, context.currentTime, 0.25);
+    // Keep the public sign-in map's waves behind the music; dashboard mix is unchanged.
+    sea.gain.setTargetAtTime(visibleMaps && audible && !playing ? volume * (visibleQuietMaps > 0 ? 0.18 : 0.8) : 0, context.currentTime, 0.25);
     // Keep the same looping sources through navigation and mute changes. Fade
     // before suspending a hidden tab, and cancel stale suspension on return.
     if (suspendTimer.current !== null) clearTimeout(suspendTimer.current);
@@ -115,15 +117,19 @@ export function AudioProvider({ children }: { children: ReactNode }) {
     soundFX.setVolume(preferences.effectsVolume / 100);
     try { localStorage.setItem(storageKey, JSON.stringify(preferences)); } catch {}
     syncAudio();
-  }, [preferences, study, quiz, maps]);
+  }, [preferences, study, quiz, maps, quietMaps]);
 
   return (
     <AudioControlsContext.Provider value={{
       preferences, error, setStudy, setQuiz,
       update: changes => setPreferences(previous => ({ ...previous, ...changes })),
-      registerMap: () => {
+      registerMap: (quiet = false) => {
         setMaps(count => count + 1);
-        return () => setMaps(count => Math.max(0, count - 1));
+        if (quiet) setQuietMaps(count => count + 1);
+        return () => {
+          setMaps(count => Math.max(0, count - 1));
+          if (quiet) setQuietMaps(count => Math.max(0, count - 1));
+        };
       },
     }}>
       {children}
@@ -138,8 +144,8 @@ export function AudioScene({ study }: { study: boolean }) {
   return null;
 }
 
-export function useMapAudio() {
+export function useMapAudio(quiet = false) {
   const { registerMap } = useAudioSettings();
   const register = useRef(registerMap);
-  useEffect(() => register.current(), []);
+  useEffect(() => register.current(quiet), [quiet]);
 }
