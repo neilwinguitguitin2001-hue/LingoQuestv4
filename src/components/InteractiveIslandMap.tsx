@@ -211,7 +211,7 @@ export const InteractiveIslandMap: React.FC<InteractiveIslandMapProps> = ({
   interactive = true,
   showRouteLine = true,
 }) => {
-  useMapAudio();
+  useMapAudio(mode === 'signin');
   // Keep onSelectIsland in a ref so changes in parent callbacks do not trigger effect re-runs
   const onSelectIslandRef = useRef(onSelectIsland);
   onSelectIslandRef.current = onSelectIsland;
